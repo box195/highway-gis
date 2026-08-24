@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>고속도로 지하 시설물 및 통신 인프라 관제 지도 | 한국도로공사 동서울지사</title>
+  
+  <!-- SEO & PWA Meta Tags -->
+  <meta name="description" content="한국도로공사 동서울지사 관내 고속도로 지하 통신관로, 맨홀, 광케이블, CCTV, VDS, VMS, C-ITS 및 전주 인프라를 실시간으로 탐색·관제하는 모바일/PC 반응형 인터랙티브 GIS 지도 시스템" />
+  <meta name="keywords" content="고속도로, 지하시설물, 통신관로, 맨홀, 광케이블, GIS, 관제지도, 한국도로공사, 동서울지사, C-ITS" />
+  <meta name="theme-color" content="#0b0f19" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="고속도로 관제" />
+
+  <!-- Google Fonts: Pretendard & Inter -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+              950: '#083344',
+            },
+            highway: {
+              blue: '#2563eb',
+              emerald: '#10b981',
+              amber: '#f59e0b',
+              purple: '#8b5cf6',
+              rose: '#f43f5e',
+              dark: '#0b0f19',
+              panel: '#111827',
+              border: '#1f2937'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Proj4js for Korean Coordinate Systems Transformation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.2/proj4.js"></script>
+
+  <!-- SheetJS (xlsx) for Excel upload & export -->
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+
+  <!-- Master Data Bundle (Relative path for GitHub Pages compatibility) -->
+  <script src="./data/master_data.js"></script>
+
+  <style>
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.6); }
+    ::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.5); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.8); }
+
+    /* Map container styling */
+    #map {
+      width: 100%;
+      height: 100%;
+      background: #0b0f19;
+      z-index: 10;
+    }
+
+    /* Custom Leaflet Tooltips & Popups */
+    .leaflet-popup-content-wrapper {
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(12px);
+      color: #f8fafc;
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 14px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+      padding: 4px;
+    }
+    .leaflet-popup-tip {
+      background: rgba(15, 23, 42, 0.96);
+    }
+    .leaflet-popup-content {
+      margin: 10px 14px;
+      line-height: 1.5;
+    }
+
+    /* Glass Panel Utility */
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(51, 65, 85, 0.6);
+    }
+
+    /* Mobile Touch optimization */
+    @media (max-width: 768px) {
+      .touch-target {
+        min-height: 44px;
+        min-width: 44px;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans h-screen w-screen overflow-hidden flex flex-col select-none antialiased">
+
+  <!-- ========================================================================= -->
+  <!-- TOP HEADER BAR (Mobile & Desktop Optimized)                              -->
+  <!-- ========================================================================= -->
+  <header class="h-12 md:h-14 bg-slate-900/95 border-b border-slate-800/80 px-3 md:px-4 flex items-center justify-between z-30 shadow-lg shrink-0">
+    <div class="flex items-center space-x-2 md:space-x-3 truncate">
+      <!-- Mobile Menu / Sidebar Trigger -->
+      <button id="btn-toggle-sidebar-mobile" class="md:hidden p-1.5 rounded-lg bg-slate-800 text-slate-200 hover:bg-slate-700 transition">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+
+      <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-gradient-to-tr from-cyan-600 to-blue-600 flex items-center justify-center shadow-md shadow-cyan-500/20 border border-cyan-400/30 shrink-0">
+        <i data-lucide="network" class="w-4 h-4 md:w-5 md:h-5 text-white"></i>
+      </div>
+      <div class="truncate">
+        <div class="flex items-center space-x-1.5 md:space-x-2">
+          <h1 class="text-xs md:text-base font-bold tracking-tight text-white truncate flex items-center gap-1.5">
+            <span class="truncate">고속도로 지하 통신 인프라 관제</span>
+            <span class="text-[9px] md:text-[10px] bg-cyan-500/20 text-cyan-400 font-semibold px-1.5 py-0.2 md:py-0.5 rounded-full border border-cyan-500/30 shrink-0">동서울지사</span>
+          </h1>
+        </div>
+        <p class="text-[10px] md:text-[11px] text-slate-400 hidden lg:block truncate">수도권 제1순환선 지하 통신관로 노드 연계망 · 맨홀 · 광케이블 간선 · ITS 설비</p>
+      </div>
+    </div>
+
+    <!-- Desktop Tool Buttons -->
+    <div class="hidden md:flex items-center space-x-2">
+      <button id="btn-straight-map" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
+        <i data-lucide="git-commit" class="w-3.5 h-3.5 text-cyan-400"></i>
+        <span>직선도 스키마</span>
+      </button>
+
+      <button id="btn-measure" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
+        <i data-lucide="ruler" class="w-3.5 h-3.5 text-amber-400"></i>
+        <span>거리/면적 측정</span>
+      </button>
+
+      <button id="btn-upload-modal" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-cyan-600/90 hover:bg-cyan-500 text-xs font-medium text-white shadow-sm shadow-cyan-600/30 border border-cyan-400/30 transition">
+        <i data-lucide="upload-cloud" class="w-3.5 h-3.5"></i>
+        <span>데이터 업로드</span>
+      </button>
+
+      <button id="btn-export-menu" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
+        <i data-lucide="download" class="w-3.5 h-3.5 text-emerald-400"></i>
+        <span>내보내기</span>
+      </button>
+
+      <button id="btn-gps" title="내 위치 찾기" class="p-2 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+        <i data-lucide="crosshair" class="w-4 h-4 text-cyan-400"></i>
+      </button>
+
+      <button id="btn-toggle-sidebar" title="사이드바 토글" class="p-2 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+        <i data-lucide="sidebar" class="w-4 h-4 text-slate-300"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Header Quick GPS & More -->
+    <div class="flex md:hidden items-center space-x-1">
+      <button id="btn-gps-mobile" title="내 위치" class="p-1.5 rounded-lg bg-slate-800 text-cyan-400 border border-slate-700 transition">
+        <i data-lucide="crosshair" class="w-4 h-4"></i>
+      </button>
+      <button id="btn-more-mobile" title="메뉴" class="p-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 transition">
+        <i data-lucide="more-vertical" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- MAIN WORKSPACE: SIDEBAR + MAP + DETAIL DRAWER                            -->
+  <!-- ========================================================================= -->
+  <div class="flex-1 relative flex overflow-hidden">
+
+    <!-- Backdrop for Mobile Sidebar -->
+    <div id="sidebar-backdrop" class="fixed inset-0 bg-black/60 z-30 hidden md:hidden transition-opacity"></div>
+
+    <!-- --------------------------------------------------------------------- -->
+    <!-- LEFT CONTROL PANEL / SIDEBAR (Responsive Off-Canvas on Mobile)       -->
+    <!-- --------------------------------------------------------------------- -->
+    <aside id="sidebar" class="fixed md:relative inset-y-0 left-0 w-full sm:w-96 glass-panel z-40 md:z-20 flex flex-col transition-transform duration-300 -translate-x-full md:translate-x-0 border-r border-slate-800/80 shadow-2xl shrink-0 overflow-hidden">
+      
+      <!-- Mobile Close Header inside sidebar -->
+      <div class="flex md:hidden items-center justify-between p-3 border-b border-slate-800 bg-slate-950">
+        <div class="font-bold text-sm text-cyan-400 flex items-center gap-1.5">
+          <i data-lucide="layers" class="w-4 h-4"></i>
+          <span>관제 필터 & 시설물 검색</span>
+        </div>
+        <button id="btn-close-sidebar-mobile" class="p-1.5 rounded-lg bg-slate-800 text-slate-300">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Live Search & Autocomplete -->
+      <div class="p-3 border-b border-slate-800/80 bg-slate-900/60">
+        <div class="relative">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
+          <input id="search-input" type="text" placeholder="시설물 ID, 2M, 이정(km), VDS-101..." class="w-full bg-slate-950/80 border border-slate-700/80 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition" />
+          <button id="btn-clear-search" class="hidden absolute right-2.5 top-2 text-slate-400 hover:text-slate-200">
+            <i data-lucide="x" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+
+        <div id="search-results" class="hidden mt-2 max-h-56 overflow-y-auto bg-slate-900 border border-slate-700 rounded-lg divide-y divide-slate-800 shadow-xl"></div>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="flex border-b border-slate-800 bg-slate-950/40 text-xs font-medium">
+        <button id="tab-layers-btn" class="flex-1 py-2.5 text-cyan-400 border-b-2 border-cyan-400 flex items-center justify-center gap-1.5 transition">
+          <i data-lucide="layers" class="w-3.5 h-3.5"></i> 레이어 필터
+        </button>
+        <button id="tab-list-btn" class="flex-1 py-2.5 text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 transition">
+          <i data-lucide="list-filter" class="w-3.5 h-3.5"></i> 시설물 (<span id="filtered-count">0</span>)
+        </button>
+        <button id="tab-stats-btn" class="flex-1 py-2.5 text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 transition">
+          <i data-lucide="bar-chart-2" class="w-3.5 h-3.5"></i> 통계
+        </button>
+      </div>
+
+      <!-- Tab Content Area -->
+      <div class="flex-1 overflow-y-auto p-3 space-y-4">
+        
+        <!-- [TAB 1: LAYER CONTROLS] -->
+        <div id="tab-layers" class="space-y-4">
+          
+          <!-- Line Separation Mode Setting -->
+          <div class="p-2.5 rounded-xl bg-slate-900/90 border border-cyan-500/40 space-y-2 text-xs">
+            <div class="flex items-center justify-between text-slate-200 font-semibold">
+              <span class="flex items-center gap-1.5 text-cyan-300">
+                <i data-lucide="split" class="w-4 h-4"></i>
+                <span>선로 겹침 분리 표출 방식</span>
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-400 leading-snug">
+              갓길 내 미세 평행 분리(-1.8m/+1.8m)로 차선을 침범하지 않고 확대 시 선명하게 구분됩니다.
+            </p>
+            <div class="grid grid-cols-2 gap-1.5 pt-1">
+              <button id="mode-parallel" class="line-mode-btn py-1.5 rounded-lg bg-cyan-600 text-white font-medium text-center transition flex items-center justify-center gap-1">
+                <span>⚡ 평행 분리 (추천)</span>
+              </button>
+              <button id="mode-tube" class="line-mode-btn py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center transition flex items-center justify-center gap-1">
+                <span>🔘 튜브 수용</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Facility Layers Multi-toggle -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-[11px] font-semibold text-slate-400 tracking-wider uppercase">
+              <span>시설물 레이어 토글</span>
+              <button id="btn-toggle-all-layers" class="text-cyan-400 hover:underline">전체 선택/해제</button>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <!-- Manhole Layer -->
+              <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
+                <input type="checkbox" id="layer-manholes" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
+                <div class="flex items-center space-x-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400/50"></span>
+                  <span class="text-slate-200">맨홀 (<span id="count-manholes">120</span>)</span>
+                </div>
+              </label>
+
+              <!-- Conduit Layer -->
+              <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
+                <input type="checkbox" id="layer-conduits" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
+                <div class="flex items-center space-x-1.5">
+                  <span class="w-3 h-1 rounded bg-cyan-400 shadow-sm shadow-cyan-400/50"></span>
+                  <span class="text-slate-200">통신관로 (<span id="count-conduits">119</span>)</span>
+                </div>
+              </label>
+
+              <!-- Cable Layer -->
+              <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
+                <input type="checkbox" id="layer-cables" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
+                <div class="flex items-center space-x-1.5">
+                  <span class="w-3 h-1 rounded bg-pink-400 shadow-sm shadow-pink-400/50"></span>
+                  <span class="text-slate-200">광케이블 (<span id="count-cables">15</span>)</span>
+                </div>
+              </label>
+
+              <!-- CCTV Layer -->
+              <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
+                <input type="checkbox" id="layer-cctv" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="video" class="w-3 h-3 text-blue-400"></i>
+                  <span class="text-slate-200">CCTV</span>
+                </div>
+              </label>
+
+              <!-- VDS Layer -->
+              <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
+                <input type="checkbox" id="layer-vds" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="activity" class="w-3 h-3 text-emerald-400"></i>
+                  <span class="text-slate-200">VDS 검지기</span>
+                </div>
+              </label>
+
+              <!-- VMS Layer -->
+              <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
+                <input type="checkbox" id="layer-vms" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="tv" class="w-3 h-3 text-amber-400"></i>
+                  <span class="text-slate-200">VMS 전광판</span>
+                </div>
+              </label>
+
+              <!-- C-ITS Layer -->
+              <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
+                <input type="checkbox" id="layer-cits" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="radio" class="w-3 h-3 text-rose-400"></i>
+                  <span class="text-slate-200">C-ITS RSU</span>
+                </div>
+              </label>
+
+              <!-- Utility Pole Layer -->
+              <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
+                <input type="checkbox" id="layer-poles" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="zap" class="w-3 h-3 text-yellow-400"></i>
+                  <span class="text-slate-200">전주 (<span id="count-poles">7</span>)</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Section Filter -->
+          <div class="space-y-1.5">
+            <label class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider">구간별 필터</label>
+            <select id="filter-section" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-2 text-xs text-slate-100 focus:outline-none focus:border-cyan-500">
+              <option value="ALL">전체 구간 (판교 ~ 퇴계원 & 학의 ~ 평촌)</option>
+              <option value="판교JCT-성남IC">판교JCT - 성남IC</option>
+              <option value="성남IC-송파IC">성남IC - 송파IC</option>
+              <option value="송파IC-서하남JCT">송파IC - 서하남JCT</option>
+              <option value="서하남JCT-하남JCT">서하남JCT - 하남JCT</option>
+              <option value="하남JCT-상일IC">하남JCT - 상일IC</option>
+              <option value="상일IC-강일IC">상일IC - 강일IC</option>
+              <option value="강일IC-남양주IC">강일IC - 남양주IC</option>
+              <option value="남양주IC-구리IC">남양주IC - 구리IC</option>
+              <option value="구리IC-퇴계원IC">구리IC - 퇴계원IC</option>
+              <option value="판교JCT-청계TG">판교JCT - 청계TG</option>
+              <option value="청계TG-학의JCT">청계TG - 학의JCT</option>
+              <option value="학의JCT-평촌IC">학의JCT - 평촌IC</option>
+            </select>
+          </div>
+
+          <!-- Direction & Bound Filter -->
+          <div class="space-y-1.5">
+            <label class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider">상/하행 구분</label>
+            <div class="grid grid-cols-3 gap-1.5 text-xs">
+              <button data-bound="ALL" class="bound-btn py-2 rounded-lg bg-cyan-600 text-white font-medium text-center transition">전체</button>
+              <button data-bound="상행선" class="bound-btn py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center transition">상행선 (판교)</button>
+              <button data-bound="하행선" class="bound-btn py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center transition">하행선 (일산/퇴계원)</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- [TAB 2: FILTERED FACILITY LIST] -->
+        <div id="tab-list" class="hidden space-y-2">
+          <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
+            <span>목록 터치 시 해당 위치로 즉시 이동</span>
+          </div>
+          <div id="facility-list-container" class="space-y-1.5"></div>
+        </div>
+
+        <!-- [TAB 3: SUMMARY DASHBOARD] -->
+        <div id="tab-stats" class="hidden space-y-3">
+          <div class="grid grid-cols-2 gap-2">
+            <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+              <div class="text-[10px] text-slate-400">총 맨홀 수량</div>
+              <div class="text-base md:text-lg font-bold text-emerald-400 mt-0.5">120 <span class="text-xs font-normal text-slate-400">개소</span></div>
+              <div class="text-[10px] text-slate-500 mt-0.5">인공 118 / 수공 2</div>
+            </div>
+
+            <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+              <div class="text-[10px] text-slate-400">통신관로 구간</div>
+              <div class="text-base md:text-lg font-bold text-cyan-400 mt-0.5">119 <span class="text-xs font-normal text-slate-400">구간</span></div>
+              <div class="text-[10px] text-slate-500 mt-0.5">노드 간 순차 연결</div>
+            </div>
+
+            <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+              <div class="text-[10px] text-slate-400">광케이블 간선</div>
+              <div class="text-base md:text-lg font-bold text-purple-400 mt-0.5">15 <span class="text-xs font-normal text-slate-400">구간</span></div>
+              <div class="text-[10px] text-slate-500 mt-0.5">최대 96C / 평균 54C</div>
+            </div>
+
+            <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+              <div class="text-[10px] text-slate-400">연계 ITS/통신장비</div>
+              <div class="text-base md:text-lg font-bold text-amber-400 mt-0.5">118 <span class="text-xs font-normal text-slate-400">개소</span></div>
+              <div class="text-[10px] text-slate-500 mt-0.5">CCTV, VDS, VMS, C-ITS</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Legend Footer -->
+      <div class="p-2.5 bg-slate-950 border-t border-slate-800/80 text-[11px] text-slate-400 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <div class="flex items-center space-x-1">
+            <span class="w-3 h-1 bg-cyan-400"></span>
+            <span class="text-[10px]">관로</span>
+          </div>
+          <div class="flex items-center space-x-1">
+            <span class="w-3 h-1 bg-pink-400"></span>
+            <span class="text-[10px]">광케이블</span>
+          </div>
+          <div class="flex items-center space-x-1">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span class="text-[10px]">맨홀</span>
+          </div>
+        </div>
+        <span class="text-[10px] text-slate-500">EPSG:4326/5186</span>
+      </div>
+
+    </aside>
+
+    <!-- --------------------------------------------------------------------- -->
+    <!-- CENTER MAP CONTAINER                                                  -->
+    <!-- --------------------------------------------------------------------- -->
+    <main class="flex-1 relative h-full">
+      <div id="map"></div>
+
+      <!-- Quick Layer Focus Toolbar (Floating Top-Left) -->
+      <div class="absolute top-3 left-3 z-20 flex bg-slate-900/90 backdrop-blur-md rounded-lg border border-slate-700/80 p-0.5 shadow-xl text-[11px] md:text-xs space-x-0.5">
+        <button id="focus-all" class="focus-btn px-2 md:px-2.5 py-1 rounded-md bg-cyan-600 text-white font-medium transition">전체 동시</button>
+        <button id="focus-conduit" class="focus-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition">관로만</button>
+        <button id="focus-cable" class="focus-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition">광케이블만</button>
+      </div>
+
+      <!-- Base Map Switcher Floating Toolbar (Top-Right) -->
+      <div class="absolute top-3 right-3 z-20 flex bg-slate-900/90 backdrop-blur-md rounded-lg border border-slate-700/80 p-0.5 shadow-xl text-[11px] md:text-xs space-x-0.5">
+        <button data-basemap="dark" class="basemap-btn px-2 md:px-2.5 py-1 rounded-md bg-cyan-600 text-white font-medium transition">야간</button>
+        <button data-basemap="standard" class="basemap-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition">일반</button>
+        <button data-basemap="satellite" class="basemap-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition">위성</button>
+      </div>
+
+      <!-- Map Overlay Status / Quick Coordinates Pill (Hidden on tiny screens) -->
+      <div class="hidden sm:flex absolute bottom-4 left-4 z-20 glass-panel rounded-lg px-3 py-1.5 text-xs text-slate-300 items-center space-x-3 shadow-lg pointer-events-none">
+        <div class="flex items-center space-x-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="font-medium text-slate-200">노드 연계 정상</span>
+        </div>
+        <span class="text-slate-600">|</span>
+        <div id="cursor-coords" class="font-mono text-slate-400 text-[11px]">위도: 37.4068 | 경도: 127.0973</div>
+        <span class="text-slate-600">|</span>
+        <div id="zoom-level" class="text-slate-400 text-[11px]">줌: 12</div>
+      </div>
+
+      <!-- Floating Measurement Toolbar -->
+      <div id="measure-toolbar" class="hidden absolute top-14 right-3 z-20 glass-panel rounded-xl p-3 border border-cyan-500/40 shadow-2xl space-y-2 text-xs w-60 sm:w-64">
+        <div class="flex items-center justify-between pb-1 border-b border-slate-700">
+          <div class="flex items-center space-x-1.5 font-bold text-cyan-400">
+            <i data-lucide="ruler" class="w-4 h-4"></i>
+            <span>거리/면적 측정 도구</span>
+          </div>
+          <button id="btn-close-measure" class="text-slate-400 hover:text-slate-200">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+        <div class="grid grid-cols-2 gap-1.5">
+          <button id="btn-measure-dist" class="py-1.5 rounded-lg bg-cyan-600 text-white font-medium text-center">거리 측정</button>
+          <button id="btn-measure-area" class="py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center">면적 측정</button>
+        </div>
+        <div id="measure-result" class="p-2 rounded bg-slate-950/80 text-center font-mono font-bold text-cyan-300 text-xs sm:text-sm">
+          지도 터치하여 시작
+        </div>
+        <button id="btn-clear-measure" class="w-full py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-400 text-[11px]">
+          측정 초기화
+        </button>
+      </div>
+
+    </main>
+
+    <!-- --------------------------------------------------------------------- -->
+    <!-- RIGHT DETAIL DRAWER / MOBILE BOTTOM SHEET                             -->
+    <!-- --------------------------------------------------------------------- -->
+    <aside id="detail-drawer" class="fixed md:absolute inset-x-0 bottom-0 md:inset-y-0 md:right-0 md:left-auto w-full md:w-96 max-h-[82vh] md:max-h-full glass-panel z-40 md:z-20 flex flex-col transition-all duration-300 translate-y-full md:translate-y-0 md:translate-x-full border-t md:border-t-0 md:border-l border-slate-800/80 shadow-2xl rounded-t-3xl md:rounded-none overflow-hidden">
+      
+      <!-- Mobile Grabber handle -->
+      <div class="md:hidden w-12 h-1 bg-slate-600 rounded-full mx-auto mt-2 mb-1 shrink-0"></div>
+
+      <!-- Drawer Header -->
+      <div class="p-3 md:p-3.5 border-b border-slate-800/80 bg-slate-900/90 flex items-center justify-between shrink-0">
+        <div class="flex items-center space-x-2">
+          <div id="drawer-type-badge" class="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
+            맨홀
+          </div>
+          <h2 id="drawer-title" class="text-xs md:text-sm font-bold text-white truncate max-w-[200px]">
+            M-1001-00021S-B-H
+          </h2>
+        </div>
+        <button id="btn-close-drawer" class="p-1 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 transition">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Drawer Content -->
+      <div id="drawer-body" class="flex-1 overflow-y-auto p-3.5 md:p-4 space-y-3.5 text-xs"></div>
+
+      <!-- Drawer Footer Actions -->
+      <div class="p-2.5 md:p-3 bg-slate-950 border-t border-slate-800/80 flex space-x-2 shrink-0">
+        <button id="btn-copy-coords" class="flex-1 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center justify-center gap-1.5 transition text-xs">
+          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+          <span>좌표 복사</span>
+        </button>
+        <button id="btn-download-json" class="flex-1 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-medium flex items-center justify-center gap-1.5 transition text-xs">
+          <i data-lucide="file-json" class="w-3.5 h-3.5"></i>
+          <span>JSON 저장</span>
+        </button>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MOBILE BOTTOM NAVIGATION BAR (Visible on mobile screens)                 -->
+  <!-- ========================================================================= -->
+  <nav class="md:hidden h-14 bg-slate-900/98 border-t border-slate-800 px-2 flex items-center justify-around z-30 shrink-0 shadow-2xl">
+    <button id="nav-btn-layers" class="flex flex-col items-center justify-center text-cyan-400 py-1 px-2 touch-target">
+      <i data-lucide="layers" class="w-4 h-4"></i>
+      <span class="text-[10px] mt-0.5">레이어</span>
+    </button>
+    <button id="nav-btn-search" class="flex flex-col items-center justify-center text-slate-400 hover:text-slate-200 py-1 px-2 touch-target">
+      <i data-lucide="search" class="w-4 h-4"></i>
+      <span class="text-[10px] mt-0.5">검색</span>
+    </button>
+    <button id="nav-btn-straight" class="flex flex-col items-center justify-center text-slate-400 hover:text-slate-200 py-1 px-2 touch-target">
+      <i data-lucide="git-commit" class="w-4 h-4"></i>
+      <span class="text-[10px] mt-0.5">직선도</span>
+    </button>
+    <button id="nav-btn-measure" class="flex flex-col items-center justify-center text-slate-400 hover:text-slate-200 py-1 px-2 touch-target">
+      <i data-lucide="ruler" class="w-4 h-4"></i>
+      <span class="text-[10px] mt-0.5">측정</span>
+    </button>
+    <button id="nav-btn-more" class="flex flex-col items-center justify-center text-slate-400 hover:text-slate-200 py-1 px-2 touch-target">
+      <i data-lucide="settings" class="w-4 h-4"></i>
+      <span class="text-[10px] mt-0.5">도구</span>
+    </button>
+  </nav>
+
+  <!-- ========================================================================= -->
+  <!-- MODALS                                                                    -->
+  <!-- ========================================================================= -->
+
+  <!-- 1. Straight Route Diagram Modal -->
+  <div id="modal-straight" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-3 md:p-4">
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-4xl w-full max-h-[88vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="p-3.5 md:p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/60">
+        <div class="flex items-center space-x-2 truncate">
+          <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center border border-cyan-500/30 shrink-0">
+            <i data-lucide="git-commit" class="w-4 h-4"></i>
+          </div>
+          <div class="truncate">
+            <h3 class="text-xs md:text-sm font-bold text-white truncate">수도권 제1순환선 동서울지사 직선도</h3>
+            <p class="text-[10px] md:text-[11px] text-slate-400">판교JCT (0.0km) ~ 퇴계원IC (33.7km) 및 청계 ~ 평촌</p>
+          </div>
+        </div>
+        <button class="modal-close p-1.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-3 md:p-4 overflow-y-auto space-y-3">
+        <div class="p-2.5 bg-slate-950/80 rounded-xl border border-slate-800 text-xs text-slate-300 leading-relaxed">
+          💡 각 노드(JCT/IC/TG)를 터치하면 지도 상의 해당 지점으로 즉시 이동합니다.
+        </div>
+        <div id="straight-map-container" class="space-y-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Dynamic File Upload Modal -->
+  <div id="modal-upload" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-3 md:p-4">
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-xl w-full flex flex-col shadow-2xl overflow-hidden">
+      <div class="p-3.5 md:p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/60">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center border border-cyan-500/30">
+            <i data-lucide="upload-cloud" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h3 class="text-xs md:text-sm font-bold text-white">데이터 업로드 & 좌표 자동 변환</h3>
+            <p class="text-[10px] md:text-[11px] text-slate-400">엑셀(.xlsx, .xls), CSV, GeoJSON 지원</p>
+          </div>
+        </div>
+        <button class="modal-close p-1.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-4 md:p-5 space-y-3.5 text-xs">
+        <div id="dropzone" class="border-2 border-dashed border-slate-700 hover:border-cyan-500 rounded-xl p-6 text-center cursor-pointer transition bg-slate-950/50 space-y-1.5">
+          <i data-lucide="file-spreadsheet" class="w-8 h-8 text-cyan-400 mx-auto"></i>
+          <div class="font-medium text-slate-200">파일을 선택하거나 드래그하세요</div>
+          <div class="text-[10px] text-slate-500">.xlsx, .xls, .csv, .geojson 지원</div>
+          <input type="file" id="file-input" accept=".xlsx,.xls,.csv,.geojson,.json" class="hidden" />
+        </div>
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-slate-300 text-[11px]">원본 좌표계 선택</label>
+          <select id="select-projection" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-2.5 py-2 text-slate-200 focus:outline-none focus:border-cyan-500 text-xs">
+            <option value="AUTO">자동 감지 (WGS84 위경도 또는 TM 좌표 자동 판단)</option>
+            <option value="EPSG:4326">EPSG:4326 (WGS84 위경도: Lat/Lon)</option>
+            <option value="EPSG:5186">EPSG:5186 (GRS80 TM 중부원점 2010)</option>
+            <option value="EPSG:5181">EPSG:5181 (GRS80 중부원점 - 카카오)</option>
+            <option value="EPSG:5174">EPSG:5174 (Bessel TM 구좌표계)</option>
+            <option value="EPSG:5179">EPSG:5179 (UTM-K 한국 표준)</option>
+          </select>
+        </div>
+
+        <div id="upload-status" class="hidden p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-300 space-y-1"></div>
+
+        <div class="flex justify-end space-x-2 pt-2">
+          <button class="modal-close px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium">취소</button>
+          <button id="btn-confirm-upload" class="px-3.5 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-medium shadow-md shadow-cyan-600/30">지도에 추가</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Mobile More Tools Action Sheet -->
+  <div id="modal-more-tools" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-end md:hidden">
+    <div class="bg-slate-900 border-t border-slate-700 rounded-t-3xl w-full p-4 space-y-3">
+      <div class="w-12 h-1 bg-slate-600 rounded-full mx-auto mb-2"></div>
+      <div class="font-bold text-sm text-white mb-2">관제 지도 확장 도구</div>
+      <div class="grid grid-cols-2 gap-2 text-xs">
+        <button id="btn-mobile-upload" class="p-3 rounded-xl bg-slate-800/80 border border-slate-700 text-left flex items-center gap-2">
+          <i data-lucide="upload-cloud" class="w-4 h-4 text-cyan-400"></i>
+          <span>데이터 업로드</span>
+        </button>
+        <button id="btn-mobile-export" class="p-3 rounded-xl bg-slate-800/80 border border-slate-700 text-left flex items-center gap-2">
+          <i data-lucide="download" class="w-4 h-4 text-emerald-400"></i>
+          <span>데이터 내보내기</span>
+        </button>
+      </div>
+      <button class="modal-close w-full py-2.5 rounded-xl bg-slate-800 text-slate-300 font-medium mt-2">닫기</button>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT LOGIC & APP CORE                                               -->
+  <!-- ========================================================================= -->
+  <script>
+    proj4.defs([
+      ['EPSG:4326', '+proj=longlat +datum=WGS84 +no_defs'],
+      ['EPSG:5186', '+proj=tmerc +lat_0=38 +lon_0=127 +k=1 +x_0=200000 +y_0=600000 +ellps=GRS80 +units=m +no_defs'],
+      ['EPSG:5181', '+proj=tmerc +lat_0=38 +lon_0=127 +k=1 +x_0=200000 +y_0=500000 +ellps=GRS80 +units=m +no_defs'],
+      ['EPSG:5174', '+proj=tmerc +lat_0=38 +lon_0=127.0028902777778 +k=1 +x_0=200000 +y_0=500000 +ellps=bessel +units=m +no_defs +towgs84=-115.80,474.99,674.11,1.16,-2.31,-1.63,6.43'],
+      ['EPSG:5179', '+proj=tmerc +lat_0=38 +lon_0=127.5 +k=0.9996 +x_0=1000000 +y_0=2000000 +ellps=GRS80 +units=m +no_defs']
+    ]);
+
+    const AppState = {
+      map: null,
+      baseLayers: {},
+      currentBaseMap: 'dark',
+      lineSeparationMode: 'parallel',
+      focusMode: 'all',
+      data: window.HIGHWAY_MASTER_DATA || { manholes: [], conduits: [], cables: [], poles: [], cctv_devices: [], straight_map: [] },
+      layerGroups: {
+        conduits: L.layerGroup(),
+        cables: L.layerGroup(),
+        manholes: L.layerGroup(),
+        cctv: L.layerGroup(),
+        vds: L.layerGroup(),
+        vms: L.layerGroup(),
+        cits: L.layerGroup(),
+        poles: L.layerGroup(),
+        measurement: L.layerGroup(),
+        customUpload: L.layerGroup()
+      },
+      selectedFacility: null,
+      activeSection: 'ALL',
+      activeBound: 'ALL',
+      measuring: false,
+      measureMode: 'dist',
+      measurePoints: [],
+      measureLayers: []
+    };
+
+    function offsetPolyline(coords, offsetMeters = 1.8) {
+      if (!coords || coords.length < 2) return coords;
+      const R = 6378137.0;
+      const result = [];
+
+      for (let i = 0; i < coords.length; i++) {
+        const lat = coords[i][0];
+        const lon = coords[i][1];
+
+        let dlat, dlon;
+        if (i === 0) {
+          dlat = (coords[i+1][0] - lat) * (Math.PI / 180);
+          dlon = (coords[i+1][1] - lon) * (Math.PI / 180);
+        } else if (i === coords.length - 1) {
+          dlat = (lat - coords[i-1][0]) * (Math.PI / 180);
+          dlon = (lon - coords[i-1][1]) * (Math.PI / 180);
+        } else {
+          dlat = (coords[i+1][0] - coords[i-1][0]) * (Math.PI / 180);
+          dlon = (coords[i+1][1] - coords[i-1][1]) * (Math.PI / 180);
+        }
+
+        const dx = dlon * Math.cos(lat * (Math.PI / 180));
+        const dy = dlat;
+        const len = Math.sqrt(dx * dx + dy * dy);
+
+        if (len === 0) {
+          result.push([lat, lon]);
+          continue;
+        }
+
+        const nx = -dy / len;
+        const ny = dx / len;
+
+        const dlatDeg = (ny * offsetMeters / R) * (180 / Math.PI);
+        const dlonDeg = (nx * offsetMeters / (R * Math.cos(lat * (Math.PI / 180)))) * (180 / Math.PI);
+
+        result.push([lat + dlatDeg, lon + dlonDeg]);
+      }
+      return result;
+    }
+
+    function initMap() {
+      const isMobile = window.innerWidth < 768;
+      const defaultCenter = isMobile ? [37.485, 127.125] : [37.485, 127.125];
+      const defaultZoom = isMobile ? 11 : 12;
+
+      const map = L.map('map', {
+        center: defaultCenter,
+        zoom: defaultZoom,
+        zoomControl: false
+      });
+
+      L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+      AppState.baseLayers.dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; CartoDB &copy; OpenStreetMap',
+        maxZoom: 19
+      });
+
+      AppState.baseLayers.standard = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors',
+        maxZoom: 19
+      });
+
+      AppState.baseLayers.satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: '&copy; Esri World Imagery',
+        maxZoom: 19
+      });
+
+      AppState.baseLayers.dark.addTo(map);
+      AppState.map = map;
+
+      Object.values(AppState.layerGroups).forEach(lg => lg.addTo(map));
+
+      map.on('mousemove', (e) => {
+        const el = document.getElementById('cursor-coords');
+        if (el) el.innerText = `위도: ${e.latlng.lat.toFixed(5)} | 경도: ${e.latlng.lng.toFixed(5)}`;
+      });
+      map.on('zoomend', () => {
+        const el = document.getElementById('zoom-level');
+        if (el) el.innerText = `줌: ${map.getZoom()}`;
+        renderAllLayers();
+      });
+
+      map.on('click', handleMapClick);
+
+      renderAllLayers();
+    }
+
+    function convertFromWGS84(lat, lng, toProj = 'EPSG:5186') {
+      try {
+        const res = proj4('EPSG:4326', toProj, [lng, lat]);
+        return { x: res[0], y: res[1] };
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function convertToCoords(x, y, fromProj = 'EPSG:5186') {
+      try {
+        const res = proj4(fromProj, 'EPSG:4326', [x, y]);
+        return { lng: res[0], lat: res[1] };
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function renderAllLayers() {
+      Object.keys(AppState.layerGroups).forEach(k => {
+        if (k !== 'measurement' && k !== 'customUpload') {
+          AppState.layerGroups[k].clearLayers();
+        }
+      });
+
+      const sectionFilter = AppState.activeSection;
+      const boundFilter = AppState.activeBound;
+      const zoom = AppState.map ? AppState.map.getZoom() : 12;
+      const mode = AppState.lineSeparationMode;
+      const focus = AppState.focusMode;
+
+      let filteredManholes = 0;
+
+      // 1. Render Conduits
+      const showConduits = document.getElementById('layer-conduits').checked && focus !== 'cable';
+      if (showConduits) {
+        AppState.data.conduits.forEach(c => {
+          if (sectionFilter !== 'ALL' && c.section !== sectionFilter) return;
+
+          if (c.coordinates && c.coordinates.length >= 2) {
+            let color = '#06b6d4';
+            if (c.pipe_type.includes('COD')) color = '#f59e0b';
+            else if (c.pipe_type.includes('스틸') || c.pipe_type.includes('강관')) color = '#a855f7';
+
+            let polyCoords = c.coordinates;
+            let weight = 4;
+            let opacity = (focus === 'conduit') ? 1.0 : 0.9;
+
+            if (mode === 'parallel') {
+              polyCoords = offsetPolyline(c.coordinates, -1.8);
+              weight = (zoom >= 15) ? 5 : (zoom >= 13 ? 4 : 3);
+            } else if (mode === 'tube') {
+              weight = (zoom >= 15) ? 9 : (zoom >= 13 ? 7 : 5);
+              opacity = 0.55;
+            }
+
+            const polyline = L.polyline(polyCoords, {
+              color: color,
+              weight: weight,
+              opacity: opacity,
+              lineCap: 'round',
+              lineJoin: 'round'
+            });
+
+            polyline.on('mouseover', function () {
+              this.setStyle({ weight: weight + 3, opacity: 1, color: '#38bdf8' });
+            });
+            polyline.on('mouseout', function () {
+              this.setStyle({ weight: weight, opacity: opacity, color: color });
+            });
+
+            polyline.on('click', () => {
+              showDetailDrawer('conduit', c);
+            });
+
+            polyline.bindTooltip(`
+              <div class="text-xs">
+                <div class="font-bold text-cyan-400">통신관로 No.${c.no} (${c.pipe_type})</div>
+                <div class="text-slate-200">${c.section}</div>
+                <div class="text-slate-400 font-mono">${c.source_manhole_id} ➔ ${c.target_manhole_id}</div>
+              </div>
+            `, { sticky: true, className: 'leaflet-popup-content-wrapper' });
+
+            AppState.layerGroups.conduits.addLayer(polyline);
+          }
+        });
+      }
+
+      // 2. Render Optical Cables
+      const showCables = document.getElementById('layer-cables').checked && focus !== 'conduit';
+      if (showCables) {
+        AppState.data.cables.forEach(cb => {
+          if (sectionFilter !== 'ALL' && cb.section !== sectionFilter) return;
+
+          if (cb.coordinates && cb.coordinates.length >= 2) {
+            let polyCoords = cb.coordinates;
+            let weight = (zoom >= 15) ? 4.5 : (zoom >= 13 ? 3.5 : 2.5);
+            let color = '#ec4899';
+
+            if (mode === 'parallel') {
+              polyCoords = offsetPolyline(cb.coordinates, +1.8);
+            } else if (mode === 'tube') {
+              color = '#f43f5e';
+              weight = 3;
+            }
+
+            const cableLine = L.polyline(polyCoords, {
+              color: color,
+              weight: weight,
+              opacity: (focus === 'cable') ? 1.0 : 0.95,
+              dashArray: (mode === 'parallel') ? '8, 5' : null,
+              lineCap: 'round'
+            });
+
+            cableLine.on('mouseover', function () {
+              this.setStyle({ weight: weight + 3, opacity: 1, color: '#fbbf24' });
+            });
+            cableLine.on('mouseout', function () {
+              this.setStyle({ weight: weight, opacity: (focus === 'cable') ? 1.0 : 0.95, color: color });
+            });
+
+            cableLine.on('click', () => {
+              showDetailDrawer('cable', cb);
+            });
+
+            cableLine.bindTooltip(`
+              <div class="text-xs">
+                <div class="font-bold text-pink-400">광케이블 간선: ${cb.section}</div>
+                <div class="text-slate-100 font-bold">코어수: ${cb.total_cores}C (${cb.expansion_round})</div>
+                <div class="text-slate-400">경유 맨홀: ${cb.node_count}개소 (${cb.length_km} km)</div>
+              </div>
+            `, { sticky: true, className: 'leaflet-popup-content-wrapper' });
+
+            AppState.layerGroups.cables.addLayer(cableLine);
+          }
+        });
+      }
+
+      // 3. Render Manholes & ITS Equipment
+      const showManholes = document.getElementById('layer-manholes').checked;
+      const showCCTV = document.getElementById('layer-cctv').checked;
+      const showVDS = document.getElementById('layer-vds').checked;
+      const showVMS = document.getElementById('layer-vms').checked;
+      const showCITS = document.getElementById('layer-cits').checked;
+
+      const listContainer = document.getElementById('facility-list-container');
+      listContainer.innerHTML = '';
+
+      AppState.data.manholes.forEach(m => {
+        if (!m.lat || !m.lng) return;
+        if (sectionFilter !== 'ALL' && m.section !== sectionFilter) return;
+        if (boundFilter !== 'ALL' && m.bound !== boundFilter) return;
+
+        filteredManholes++;
+
+        if (showManholes) {
+          const isSplice = m.type.includes('접속');
+          const fillColor = isSplice ? '#10b981' : '#f59e0b';
+          const radius = (zoom >= 15) ? (isSplice ? 7 : 5.5) : (isSplice ? 5.5 : 4.5);
+
+          const marker = L.circleMarker([m.lat, m.lng], {
+            radius: radius,
+            fillColor: fillColor,
+            color: '#ffffff',
+            weight: 1.5,
+            opacity: 0.95,
+            fillOpacity: 0.9
+          });
+
+          marker.on('click', () => {
+            showDetailDrawer('manhole', m);
+          });
+
+          marker.bindTooltip(`
+            <div class="text-xs">
+              <div class="font-bold flex items-center gap-1.5 ${isSplice ? 'text-emerald-400' : 'text-amber-400'}">
+                <span>${m.id}</span>
+                <span class="text-[10px] px-1 rounded bg-slate-800 text-slate-300">${m.type}</span>
+              </div>
+              <div class="text-slate-300 text-[11px]">${m.section} (${m.milepost}km, ${m.bound})</div>
+              ${m.cctv ? `<div class="text-blue-400 text-[10px]">📹 CCTV: ${m.cctv}</div>` : ''}
+              ${m.vds ? `<div class="text-emerald-400 text-[10px]">📡 VDS: ${m.vds}</div>` : ''}
+              ${m.cits ? `<div class="text-rose-400 text-[10px]">📻 C-ITS: ${m.cits}</div>` : ''}
+            </div>
+          `, { sticky: true, className: 'leaflet-popup-content-wrapper' });
+
+          AppState.layerGroups.manholes.addLayer(marker);
+        }
+
+        // Dedicated ITS Equipment Markers
+        if (showCCTV && m.cctv) {
+          const cctvIcon = L.divIcon({
+            className: 'custom-icon',
+            html: `<div class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition"><i data-lucide="video" class="w-3 h-3"></i></div>`,
+            iconSize: [20, 20]
+          });
+          const cctvMarker = L.marker([m.lat + 0.0001, m.lng + 0.0001], { icon: cctvIcon });
+          cctvMarker.on('click', () => showDetailDrawer('cctv', m));
+          AppState.layerGroups.cctv.addLayer(cctvMarker);
+        }
+
+        if (showVDS && m.vds) {
+          const vdsIcon = L.divIcon({
+            className: 'custom-icon',
+            html: `<div class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center shadow-lg border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition"><i data-lucide="activity" class="w-3 h-3"></i></div>`,
+            iconSize: [20, 20]
+          });
+          const vdsMarker = L.marker([m.lat - 0.0001, m.lng - 0.0001], { icon: vdsIcon });
+          vdsMarker.on('click', () => showDetailDrawer('vds', m));
+          AppState.layerGroups.vds.addLayer(vdsMarker);
+        }
+
+        if (showVMS && m.vms) {
+          const vmsIcon = L.divIcon({
+            className: 'custom-icon',
+            html: `<div class="w-5 h-5 rounded-full bg-amber-500 text-slate-900 flex items-center justify-center shadow-lg border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition font-bold text-[10px]">VMS</div>`,
+            iconSize: [20, 20]
+          });
+          const vmsMarker = L.marker([m.lat + 0.00015, m.lng - 0.00015], { icon: vmsIcon });
+          vmsMarker.on('click', () => showDetailDrawer('vms', m));
+          AppState.layerGroups.vms.addLayer(vmsMarker);
+        }
+
+        if (showCITS && m.cits) {
+          const citsIcon = L.divIcon({
+            className: 'custom-icon',
+            html: `<div class="w-5 h-5 rounded-full bg-rose-600 text-white flex items-center justify-center shadow-lg border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition"><i data-lucide="radio" class="w-3 h-3"></i></div>`,
+            iconSize: [20, 20]
+          });
+          const citsMarker = L.marker([m.lat - 0.00015, m.lng + 0.00015], { icon: citsIcon });
+          citsMarker.on('click', () => showDetailDrawer('cits', m));
+          AppState.layerGroups.cits.addLayer(citsMarker);
+        }
+
+        // List item
+        const itemEl = document.createElement('div');
+        itemEl.className = 'p-2.5 rounded-lg bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/50 cursor-pointer transition flex items-center justify-between';
+        itemEl.innerHTML = `
+          <div>
+            <div class="font-bold text-slate-200 flex items-center gap-1.5">
+              <span>${m.id}</span>
+              <span class="text-[10px] px-1.5 py-0.5 rounded ${m.type.includes('접속') ? 'bg-emerald-500/20 text-emerald-400' : 'bg-amber-500/20 text-amber-400'}">${m.type}</span>
+            </div>
+            <div class="text-[11px] text-slate-400 mt-0.5">${m.section} · ${m.milepost}km (${m.bound})</div>
+          </div>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        `;
+        itemEl.addEventListener('click', () => {
+          AppState.map.flyTo([m.lat, m.lng], 16, { duration: 1 });
+          showDetailDrawer('manhole', m);
+          closeMobileSidebar();
+        });
+        listContainer.appendChild(itemEl);
+      });
+
+      // 4. Render Utility Poles
+      if (document.getElementById('layer-poles').checked) {
+        AppState.data.poles.forEach(p => {
+          if (!p.lat || !p.lng) return;
+          const poleIcon = L.divIcon({
+            className: 'custom-icon',
+            html: `<div class="w-4 h-4 rounded bg-yellow-500 text-slate-950 flex items-center justify-center shadow-lg border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition"><i data-lucide="zap" class="w-2.5 h-2.5"></i></div>`,
+            iconSize: [16, 16]
+          });
+          const poleMarker = L.marker([p.lat, p.lng], { icon: poleIcon });
+          poleMarker.on('click', () => showDetailDrawer('pole', p));
+          AppState.layerGroups.poles.addLayer(poleMarker);
+        });
+      }
+
+      document.getElementById('filtered-count').innerText = filteredManholes;
+      lucide.createIcons();
+    }
+
+    // Detail Drawer / Bottom Sheet Renderer
+    function showDetailDrawer(type, item) {
+      AppState.selectedFacility = { type, item };
+      const drawer = document.getElementById('detail-drawer');
+      const badge = document.getElementById('drawer-type-badge');
+      const title = document.getElementById('drawer-title');
+      const body = document.getElementById('drawer-body');
+
+      // Desktop: slide in from right; Mobile: slide up from bottom
+      drawer.classList.remove('translate-x-full', 'translate-y-full');
+
+      let tmCoords = { x: 0, y: 0 };
+      if (item.lat && item.lng) {
+        const conv = convertFromWGS84(item.lat, item.lng, 'EPSG:5186');
+        if (conv) tmCoords = conv;
+      }
+
+      if (type === 'manhole') {
+        badge.className = 'px-2 py-0.5 rounded text-[10px] font-bold ' + (item.type.includes('접속') ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-amber-500/20 text-amber-400 border border-amber-500/30');
+        badge.innerText = item.type;
+        title.innerText = item.id;
+
+        body.innerHTML = `
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex justify-between items-center text-slate-400">
+              <span>관리번호 / 순번</span>
+              <span class="font-mono font-bold text-slate-200">No. ${item.no} ${item.old_mh_no ? `(${item.old_mh_no})` : ''}</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-400">
+              <span>노선 및 구간</span>
+              <span class="font-medium text-slate-200">${item.route} (${item.section})</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-400">
+              <span>이정 / 방향</span>
+              <span class="font-mono text-cyan-400 font-bold">${item.milepost} km <span class="text-slate-400 font-normal">(${item.bound} / ${item.direction})</span></span>
+            </div>
+            <div class="flex justify-between items-center text-slate-400">
+              <span>맨홀 규격</span>
+              <span class="text-slate-200">${item.category} / ${item.standard} ${item.sub_std1}</span>
+            </div>
+          </div>
+
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+            <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider flex items-center justify-between">
+              <span>정밀 좌표 정보</span>
+              <span class="text-cyan-400 text-[10px]">WGS84 & GRS80 TM</span>
+            </div>
+            <div class="bg-slate-950 p-2 rounded-lg font-mono text-[11px] space-y-1">
+              <div class="flex justify-between text-slate-300">
+                <span class="text-slate-500">위도 (Lat):</span>
+                <span class="text-cyan-300">${item.lat ? item.lat.toFixed(6) : 'N/A'}</span>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span class="text-slate-500">경도 (Lon):</span>
+                <span class="text-cyan-300">${item.lng ? item.lng.toFixed(6) : 'N/A'}</span>
+              </div>
+              <div class="flex justify-between text-slate-400 border-t border-slate-800 pt-1 mt-1">
+                <span class="text-slate-500">TM (EPSG:5186 X):</span>
+                <span>${tmCoords.x ? tmCoords.x.toFixed(1) : 'N/A'}</span>
+              </div>
+              <div class="flex justify-between text-slate-400">
+                <span class="text-slate-500">TM (EPSG:5186 Y):</span>
+                <span>${tmCoords.y ? tmCoords.y.toFixed(1) : 'N/A'}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+            <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">접속 통신 및 ITS 설비</div>
+            <div class="space-y-1.5">
+              ${item.cctv ? `
+                <div class="p-2 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-between">
+                  <div class="flex items-center gap-1.5 text-blue-400 font-medium">
+                    <i data-lucide="video" class="w-3.5 h-3.5"></i>
+                    <span>CCTV</span>
+                  </div>
+                  <span class="text-slate-200 font-mono">${item.cctv}</span>
+                </div>` : ''}
+
+              ${item.vds ? `
+                <div class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-between">
+                  <div class="flex items-center gap-1.5 text-emerald-400 font-medium">
+                    <i data-lucide="activity" class="w-3.5 h-3.5"></i>
+                    <span>VDS 차량검지기</span>
+                  </div>
+                  <span class="text-slate-200 font-mono">${item.vds}</span>
+                </div>` : ''}
+
+              ${item.vms ? `
+                <div class="p-2 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-between">
+                  <div class="flex items-center gap-1.5 text-amber-400 font-medium">
+                    <i data-lucide="tv" class="w-3.5 h-3.5"></i>
+                    <span>VMS 도로전광판</span>
+                  </div>
+                  <span class="text-slate-200 font-mono">${item.vms}</span>
+                </div>` : ''}
+
+              ${item.cits ? `
+                <div class="p-2 rounded-lg bg-rose-500/10 border border-rose-500/30 flex items-center justify-between">
+                  <div class="flex items-center gap-1.5 text-rose-400 font-medium">
+                    <i data-lucide="radio" class="w-3.5 h-3.5"></i>
+                    <span>C-ITS 기지국/레이더</span>
+                  </div>
+                  <span class="text-slate-200 font-mono">${item.cits}</span>
+                </div>` : ''}
+
+              ${item.splice_point ? `
+                <div class="p-2 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-between">
+                  <div class="flex items-center gap-1.5 text-purple-400 font-medium">
+                    <i data-lucide="git-branch" class="w-3.5 h-3.5"></i>
+                    <span>광접속점</span>
+                  </div>
+                  <span class="text-slate-200 font-mono">${item.splice_point}</span>
+                </div>` : ''}
+
+              ${(!item.cctv && !item.vds && !item.vms && !item.cits && !item.splice_point) ? `
+                <div class="text-slate-500 text-center py-2">연계 장비 없음 (단순 통과 구간)</div>` : ''}
+            </div>
+          </div>
+
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-1.5 text-slate-400">
+            <div class="flex justify-between">
+              <span>준공연도 / 하자만료</span>
+              <span class="text-slate-200">${item.completion_year || '-'}년 / ${item.warranty_year || '-'}년</span>
+            </div>
+            <div class="flex justify-between">
+              <span>지형 및 비고</span>
+              <span class="text-slate-200">${item.terrain || ''} ${item.remarks ? `(${item.remarks})` : '-'}</span>
+            </div>
+          </div>
+        `;
+      } else if (type === 'conduit') {
+        badge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-500/20 text-cyan-400 border border-cyan-500/30';
+        badge.innerText = '통신관로 (구간)';
+        title.innerText = `관로 No.${item.no} (${item.section})`;
+
+        body.innerHTML = `
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex justify-between items-center text-slate-400">
+              <span>구간명</span>
+              <span class="font-bold text-slate-200">${item.section}</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-400">
+              <span>연결 맨홀</span>
+              <span class="font-mono text-cyan-400">${item.source_manhole_id} ➔ ${item.target_manhole_id}</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-400">
+              <span>매설 구분</span>
+              <span class="text-slate-200">${item.category} (${item.pipe_type})</span>
+            </div>
+          </div>
+
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+            <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">관로 단면 및 수용 내역</div>
+            
+            <div class="bg-slate-950 p-3 rounded-lg space-y-2">
+              <div class="flex items-center justify-between text-slate-300">
+                <span class="text-slate-400">외관 규격:</span>
+                <span class="font-bold text-cyan-300">
+                  ${item.outer_spec1 ? `Ø${item.outer_spec1}mm × ${item.outer_qty1 || 1}조` : ''} 
+                  ${item.outer_spec2 ? `, Ø${item.outer_spec2}mm × ${item.outer_qty2 || 1}조` : ''}
+                </span>
+              </div>
+              <div class="flex items-center justify-between text-slate-300">
+                <span class="text-slate-400">내관 규격:</span>
+                <span class="font-bold text-emerald-300">
+                  ${item.inner_spec1 ? `Ø${item.inner_spec1}mm × ${item.inner_qty1 || 3}조` : '28mm × 3조'}
+                </span>
+              </div>
+              <div class="flex items-center justify-between text-slate-300 border-t border-slate-800 pt-2">
+                <span class="text-slate-400">사용 내역:</span>
+                <span class="font-bold text-amber-300">
+                  ${item.use_desc1 || '자가망'} (Ø${item.use_spec1 || 28}mm ${item.use_qty1 || 2}공 사용중)
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-1.5 text-slate-400">
+            <div class="flex justify-between">
+              <span>관리기관</span>
+              <span class="text-slate-200">${item.hq} ${item.branch}</span>
+            </div>
+            <div class="flex justify-between">
+              <span>준공 / 하자만료</span>
+              <span class="text-slate-200">${item.completion_year || '-'} / ${item.warranty_year || '-'}</span>
+            </div>
+          </div>
+        `;
+      } else if (type === 'cable') {
+        badge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-pink-500/20 text-pink-400 border border-pink-500/30';
+        badge.innerText = '광케이블 간선';
+        title.innerText = `광케이블: ${item.section}`;
+
+        body.innerHTML = `
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex justify-between items-center text-slate-400">
+              <span>구간 연장</span>
+              <span class="font-bold text-cyan-400 font-mono">${item.length_km} km</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-400">
+              <span>총 코어 수</span>
+              <span class="font-bold text-pink-400 text-sm font-mono">${item.total_cores}C</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-400">
+              <span>경유 맨홀 수</span>
+              <span class="font-bold text-emerald-400 font-mono">${item.node_count}개소</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-400">
+              <span>증설 차수</span>
+              <span class="text-slate-200">${item.expansion_round}</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-400">
+              <span>시작 ➔ 종료 지점</span>
+              <span class="text-slate-200 text-right">${item.start_point} ➔ ${item.end_point}</span>
+            </div>
+          </div>
+
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+            <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">경유 맨홀 노드 목록</div>
+            <div class="bg-slate-950 p-2 rounded-lg max-h-40 overflow-y-auto space-y-1 font-mono text-[11px] text-slate-300">
+              ${(item.node_path || []).map((nid, i) => `
+                <div class="flex justify-between text-slate-400 py-0.5 border-b border-slate-900">
+                  <span>#${i+1}</span>
+                  <span class="text-cyan-300 font-medium">${nid}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      lucide.createIcons();
+    }
+
+    function closeDetailDrawer() {
+      const drawer = document.getElementById('detail-drawer');
+      drawer.classList.add('translate-x-full', 'translate-y-full');
+    }
+
+    function openMobileSidebar() {
+      document.getElementById('sidebar').classList.remove('-translate-x-full');
+      document.getElementById('sidebar-backdrop').classList.remove('hidden');
+    }
+
+    function closeMobileSidebar() {
+      document.getElementById('sidebar').classList.add('-translate-x-full');
+      document.getElementById('sidebar-backdrop').classList.add('hidden');
+    }
+
+    function handleMapClick(e) {
+      if (!AppState.measuring) return;
+
+      const latlng = e.latlng;
+      AppState.measurePoints.push(latlng);
+
+      const pointMarker = L.circleMarker(latlng, {
+        radius: 4,
+        fillColor: '#06b6d4',
+        color: '#ffffff',
+        weight: 2,
+        fillOpacity: 1
+      });
+      AppState.layerGroups.measurement.addLayer(pointMarker);
+      AppState.measureLayers.push(pointMarker);
+
+      if (AppState.measureMode === 'dist') {
+        if (AppState.measurePoints.length >= 2) {
+          const line = L.polyline(AppState.measurePoints, {
+            color: '#06b6d4',
+            weight: 3,
+            dashArray: '4, 4'
+          });
+          AppState.layerGroups.measurement.addLayer(line);
+          AppState.measureLayers.push(line);
+
+          let totalDistM = 0;
+          for (let i = 0; i < AppState.measurePoints.length - 1; i++) {
+            totalDistM += AppState.measurePoints[i].distanceTo(AppState.measurePoints[i + 1]);
+          }
+
+          const distStr = totalDistM >= 1000 ? `${(totalDistM / 1000).toFixed(2)} km` : `${Math.round(totalDistM)} m`;
+          document.getElementById('measure-result').innerText = `총 거리: ${distStr}`;
+        }
+      } else if (AppState.measureMode === 'area') {
+        if (AppState.measurePoints.length >= 3) {
+          const polygon = L.polygon(AppState.measurePoints, {
+            color: '#06b6d4',
+            fillColor: '#06b6d4',
+            fillOpacity: 0.25
+          });
+          AppState.layerGroups.measurement.addLayer(polygon);
+          AppState.measureLayers.push(polygon);
+
+          const pts = AppState.measurePoints;
+          let area = 0;
+          for (let i = 0; i < pts.length; i++) {
+            const j = (i + 1) % pts.length;
+            area += (pts[i].lng * pts[j].lat) - (pts[j].lng * pts[i].lat);
+          }
+          area = Math.abs(area) * 111319.9 * 111319.9 / 2;
+          const areaStr = area >= 1000000 ? `${(area / 1000000).toFixed(2)} km²` : `${Math.round(area)} m²`;
+          document.getElementById('measure-result').innerText = `면적: ${areaStr}`;
+        }
+      }
+    }
+
+    function clearMeasurement() {
+      AppState.measurePoints = [];
+      AppState.measureLayers.forEach(l => AppState.layerGroups.measurement.removeLayer(l));
+      AppState.measureLayers = [];
+      document.getElementById('measure-result').innerText = '지도 터치하여 시작';
+    }
+
+    function triggerGPS() {
+      if (!navigator.geolocation) {
+        alert('현재 브라우저에서 위치 서비스를 지원하지 않습니다.');
+        return;
+      }
+      navigator.geolocation.getCurrentPosition((pos) => {
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        AppState.map.flyTo([lat, lng], 16);
+
+        const gpsMarker = L.circleMarker([lat, lng], {
+          radius: 8,
+          fillColor: '#06b6d4',
+          color: '#ffffff',
+          weight: 3,
+          fillOpacity: 1
+        }).addTo(AppState.map);
+        gpsMarker.bindPopup('<div class="font-bold text-xs text-cyan-400">📍 현재 내 위치</div>').openPopup();
+      }, (err) => {
+        alert('GPS 위치를 가져올 수 없습니다: ' + err.message);
+      });
+    }
+
+    function setupEventListeners() {
+      // Base map switcher buttons
+      document.querySelectorAll('.basemap-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const type = e.currentTarget.getAttribute('data-basemap');
+          Object.values(AppState.baseLayers).forEach(layer => AppState.map.removeLayer(layer));
+          AppState.baseLayers[type].addTo(AppState.map);
+          AppState.currentBaseMap = type;
+
+          document.querySelectorAll('.basemap-btn').forEach(b => {
+            b.className = 'basemap-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition';
+          });
+          e.currentTarget.className = 'basemap-btn px-2 md:px-2.5 py-1 rounded-md bg-cyan-600 text-white font-medium transition';
+        });
+      });
+
+      // Separation Mode Buttons
+      document.getElementById('mode-parallel').addEventListener('click', () => {
+        AppState.lineSeparationMode = 'parallel';
+        document.getElementById('mode-parallel').className = 'line-mode-btn py-1.5 rounded-lg bg-cyan-600 text-white font-medium text-center transition flex items-center justify-center gap-1';
+        document.getElementById('mode-tube').className = 'line-mode-btn py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center transition flex items-center justify-center gap-1';
+        renderAllLayers();
+      });
+
+      document.getElementById('mode-tube').addEventListener('click', () => {
+        AppState.lineSeparationMode = 'tube';
+        document.getElementById('mode-tube').className = 'line-mode-btn py-1.5 rounded-lg bg-cyan-600 text-white font-medium text-center transition flex items-center justify-center gap-1';
+        document.getElementById('mode-parallel').className = 'line-mode-btn py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center transition flex items-center justify-center gap-1';
+        renderAllLayers();
+      });
+
+      // Quick Focus Toolbar Buttons
+      const focusBtns = [
+        { id: 'focus-all', mode: 'all' },
+        { id: 'focus-conduit', mode: 'conduit' },
+        { id: 'focus-cable', mode: 'cable' }
+      ];
+      focusBtns.forEach(fb => {
+        document.getElementById(fb.id).addEventListener('click', () => {
+          AppState.focusMode = fb.mode;
+          focusBtns.forEach(o => {
+            document.getElementById(o.id).className = 'focus-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition';
+          });
+          document.getElementById(fb.id).className = 'focus-btn px-2 md:px-2.5 py-1 rounded-md bg-cyan-600 text-white font-medium transition';
+          renderAllLayers();
+        });
+      });
+
+      // Layer checkboxes
+      ['layer-manholes', 'layer-conduits', 'layer-cables', 'layer-cctv', 'layer-vds', 'layer-vms', 'layer-cits', 'layer-poles'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('change', renderAllLayers);
+      });
+
+      document.getElementById('filter-section').addEventListener('change', (e) => {
+        AppState.activeSection = e.target.value;
+        renderAllLayers();
+      });
+
+      document.querySelectorAll('.bound-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          document.querySelectorAll('.bound-btn').forEach(b => {
+            b.className = 'bound-btn py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center transition';
+          });
+          e.currentTarget.className = 'bound-btn py-2 rounded-lg bg-cyan-600 text-white font-medium text-center transition';
+          AppState.activeBound = e.currentTarget.getAttribute('data-bound');
+          renderAllLayers();
+        });
+      });
+
+      // Tabs
+      const tabs = [
+        { btn: 'tab-layers-btn', content: 'tab-layers' },
+        { btn: 'tab-list-btn', content: 'tab-list' },
+        { btn: 'tab-stats-btn', content: 'tab-stats' }
+      ];
+      tabs.forEach(t => {
+        document.getElementById(t.btn).addEventListener('click', () => {
+          tabs.forEach(o => {
+            document.getElementById(o.btn).className = 'flex-1 py-2.5 text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 transition';
+            document.getElementById(o.content).classList.add('hidden');
+          });
+          document.getElementById(t.btn).className = 'flex-1 py-2.5 text-cyan-400 border-b-2 border-cyan-400 flex items-center justify-center gap-1.5 transition';
+          document.getElementById(t.content).classList.remove('hidden');
+        });
+      });
+
+      // Search & Autocomplete
+      const searchInput = document.getElementById('search-input');
+      const searchResults = document.getElementById('search-results');
+      const clearBtn = document.getElementById('btn-clear-search');
+
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.trim().toLowerCase();
+        if (!query) {
+          searchResults.classList.add('hidden');
+          clearBtn.classList.add('hidden');
+          return;
+        }
+
+        clearBtn.classList.remove('hidden');
+        const matches = AppState.data.manholes.filter(m => {
+          return (m.id && m.id.toLowerCase().includes(query)) ||
+                 (m.old_mh_no && m.old_mh_no.toLowerCase().includes(query)) ||
+                 (m.section && m.section.toLowerCase().includes(query)) ||
+                 (m.milepost && m.milepost.toString().includes(query)) ||
+                 (m.cctv && m.cctv.toLowerCase().includes(query)) ||
+                 (m.vds && m.vds.toLowerCase().includes(query)) ||
+                 (m.cits && m.cits.toLowerCase().includes(query));
+        }).slice(0, 15);
+
+        if (matches.length === 0) {
+          searchResults.innerHTML = '<div class="p-3 text-slate-500 text-center text-xs">일치하는 시설물이 없습니다.</div>';
+        } else {
+          searchResults.innerHTML = matches.map(m => `
+            <div class="search-item p-2.5 hover:bg-slate-800/80 cursor-pointer text-xs flex items-center justify-between" data-id="${m.id}">
+              <div>
+                <div class="font-bold text-cyan-400">${m.id} <span class="text-[10px] text-slate-400 font-normal">(${m.type})</span></div>
+                <div class="text-[11px] text-slate-400">${m.section} · ${m.milepost}km</div>
+              </div>
+              <i data-lucide="navigation" class="w-3.5 h-3.5 text-slate-400"></i>
+            </div>
+          `).join('');
+
+          document.querySelectorAll('.search-item').forEach(el => {
+            el.addEventListener('click', (ev) => {
+              const id = ev.currentTarget.getAttribute('data-id');
+              const target = AppState.data.manholes.find(m => m.id === id);
+              if (target && target.lat && target.lng) {
+                AppState.map.flyTo([target.lat, target.lng], 17, { duration: 1.2 });
+                showDetailDrawer('manhole', target);
+                searchResults.classList.add('hidden');
+                closeMobileSidebar();
+              }
+            });
+          });
+          lucide.createIcons();
+        }
+        searchResults.classList.remove('hidden');
+      });
+
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchResults.classList.add('hidden');
+        clearBtn.classList.add('hidden');
+      });
+
+      // Mobile Drawer & Sidebar Triggers
+      document.getElementById('btn-toggle-sidebar-mobile').addEventListener('click', openMobileSidebar);
+      document.getElementById('btn-close-sidebar-mobile').addEventListener('click', closeMobileSidebar);
+      document.getElementById('sidebar-backdrop').addEventListener('click', closeMobileSidebar);
+
+      document.getElementById('btn-close-drawer').addEventListener('click', closeDetailDrawer);
+
+      // Desktop Sidebar Toggle
+      document.getElementById('btn-toggle-sidebar').addEventListener('click', () => {
+        document.getElementById('sidebar').classList.toggle('md:hidden');
+      });
+
+      // GPS
+      document.getElementById('btn-gps').addEventListener('click', triggerGPS);
+      document.getElementById('btn-gps-mobile').addEventListener('click', triggerGPS);
+
+      // Mobile Bottom Nav Triggers
+      document.getElementById('nav-btn-layers').addEventListener('click', () => {
+        openMobileSidebar();
+        document.getElementById('tab-layers-btn').click();
+      });
+      document.getElementById('nav-btn-search').addEventListener('click', () => {
+        openMobileSidebar();
+        document.getElementById('search-input').focus();
+      });
+      document.getElementById('nav-btn-straight').addEventListener('click', () => {
+        renderStraightMapNodes();
+        document.getElementById('modal-straight').classList.remove('hidden');
+      });
+      document.getElementById('nav-btn-measure').addEventListener('click', () => {
+        AppState.measuring = !AppState.measuring;
+        if (AppState.measuring) {
+          document.getElementById('measure-toolbar').classList.remove('hidden');
+        } else {
+          document.getElementById('measure-toolbar').classList.add('hidden');
+          clearMeasurement();
+        }
+      });
+      document.getElementById('nav-btn-more').addEventListener('click', () => {
+        document.getElementById('modal-more-tools').classList.remove('hidden');
+      });
+      document.getElementById('btn-more-mobile').addEventListener('click', () => {
+        document.getElementById('modal-more-tools').classList.remove('hidden');
+      });
+
+      // Desktop Modals
+      document.getElementById('btn-straight-map').addEventListener('click', () => {
+        renderStraightMapNodes();
+        document.getElementById('modal-straight').classList.remove('hidden');
+      });
+      document.getElementById('btn-upload-modal').addEventListener('click', () => {
+        document.getElementById('modal-upload').classList.remove('hidden');
+      });
+      document.getElementById('btn-mobile-upload').addEventListener('click', () => {
+        document.getElementById('modal-more-tools').classList.add('hidden');
+        document.getElementById('modal-upload').classList.remove('hidden');
+      });
+
+      // Export
+      const handleExport = () => {
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(AppState.data, null, 2));
+        const dlAnchor = document.createElement('a');
+        dlAnchor.setAttribute("href", dataStr);
+        dlAnchor.setAttribute("download", `dongseoul_highway_facilities_${new Date().toISOString().slice(0, 10)}.json`);
+        dlAnchor.click();
+      };
+      document.getElementById('btn-export-menu').addEventListener('click', handleExport);
+      document.getElementById('btn-mobile-export').addEventListener('click', () => {
+        document.getElementById('modal-more-tools').classList.add('hidden');
+        handleExport();
+      });
+
+      // Measurement
+      document.getElementById('btn-measure').addEventListener('click', () => {
+        AppState.measuring = !AppState.measuring;
+        if (AppState.measuring) {
+          document.getElementById('measure-toolbar').classList.remove('hidden');
+        } else {
+          document.getElementById('measure-toolbar').classList.add('hidden');
+          clearMeasurement();
+        }
+      });
+      document.getElementById('btn-close-measure').addEventListener('click', () => {
+        AppState.measuring = false;
+        document.getElementById('measure-toolbar').classList.add('hidden');
+        clearMeasurement();
+      });
+      document.getElementById('btn-measure-dist').addEventListener('click', (e) => {
+        AppState.measureMode = 'dist';
+        e.currentTarget.className = 'py-1.5 rounded-lg bg-cyan-600 text-white font-medium text-center';
+        document.getElementById('btn-measure-area').className = 'py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center';
+        clearMeasurement();
+      });
+      document.getElementById('btn-measure-area').addEventListener('click', (e) => {
+        AppState.measureMode = 'area';
+        e.currentTarget.className = 'py-1.5 rounded-lg bg-cyan-600 text-white font-medium text-center';
+        document.getElementById('btn-measure-dist').className = 'py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center';
+        clearMeasurement();
+      });
+      document.getElementById('btn-clear-measure').addEventListener('click', clearMeasurement);
+
+      // Copy & JSON Download
+      document.getElementById('btn-copy-coords').addEventListener('click', () => {
+        if (AppState.selectedFacility && AppState.selectedFacility.item) {
+          const item = AppState.selectedFacility.item;
+          if (item.lat && item.lng) {
+            const text = `${item.lat.toFixed(6)}, ${item.lng.toFixed(6)}`;
+            navigator.clipboard.writeText(text).then(() => {
+              alert(`좌표가 복사되었습니다:\n${text}`);
+            });
+          }
+        }
+      });
+
+      document.getElementById('btn-download-json').addEventListener('click', () => {
+        if (AppState.selectedFacility) {
+          const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(AppState.selectedFacility.item, null, 2));
+          const dlAnchor = document.createElement('a');
+          dlAnchor.setAttribute("href", dataStr);
+          dlAnchor.setAttribute("download", `${AppState.selectedFacility.item.id || 'facility'}.json`);
+          dlAnchor.click();
+        }
+      });
+
+      // Modal Close
+      document.querySelectorAll('.modal-close').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.getElementById('modal-straight').classList.add('hidden');
+          document.getElementById('modal-upload').classList.add('hidden');
+          document.getElementById('modal-more-tools').classList.add('hidden');
+        });
+      });
+
+      setupFileUpload();
+    }
+
+    function renderStraightMapNodes() {
+      const container = document.getElementById('straight-map-container');
+      container.innerHTML = `
+        <div class="relative border-l-2 border-cyan-500/50 ml-4 pl-5 md:pl-6 space-y-3 my-2 md:my-3">
+          ${AppState.data.straight_map.map(node => `
+            <div class="straight-node relative p-2.5 md:p-3 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-cyan-500/80 cursor-pointer transition flex items-center justify-between" data-name="${node.name}">
+              <div class="absolute -left-[27px] md:-left-[31px] top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 rounded-full ${node.type === 'JCT' ? 'bg-purple-500 shadow-purple-500/50' : (node.type === 'TG' ? 'bg-amber-500 shadow-amber-500/50' : (node.type === 'OFFICE' ? 'bg-cyan-500 shadow-cyan-500/50' : 'bg-blue-500 shadow-blue-500/50'))} border-2 border-slate-900 shadow-md"></div>
+              <div>
+                <div class="font-bold text-white flex items-center gap-1.5 md:gap-2 text-xs md:text-sm">
+                  <span>${node.name}</span>
+                  <span class="text-[9px] md:text-[10px] px-1.5 py-0.2 rounded font-mono ${node.type === 'JCT' ? 'bg-purple-500/20 text-purple-400' : (node.type === 'TG' ? 'bg-amber-500/20 text-amber-400' : 'bg-blue-500/20 text-blue-400')}">${node.type}</span>
+                </div>
+                <div class="text-[10px] md:text-[11px] text-slate-400 mt-0.5">${node.desc}</div>
+              </div>
+              <div class="text-right font-mono font-bold text-cyan-400 text-xs md:text-sm">
+                ${node.mile} km
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+
+      document.querySelectorAll('.straight-node').forEach(el => {
+        el.addEventListener('click', (e) => {
+          const name = e.currentTarget.getAttribute('data-name');
+          const target = AppState.data.manholes.find(m => m.section.includes(name.replace('IC', '').replace('JCT', '')));
+          if (target && target.lat && target.lng) {
+            AppState.map.flyTo([target.lat, target.lng], 15, { duration: 1.2 });
+            showDetailDrawer('manhole', target);
+          }
+          document.getElementById('modal-straight').classList.add('hidden');
+        });
+      });
+      lucide.createIcons();
+    }
+
+    function setupFileUpload() {
+      const dropzone = document.getElementById('dropzone');
+      const fileInput = document.getElementById('file-input');
+      const statusBox = document.getElementById('upload-status');
+      let parsedUploadData = [];
+
+      dropzone.addEventListener('click', () => fileInput.click());
+      dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('border-cyan-400'); });
+      dropzone.addEventListener('dragleave', () => dropzone.classList.remove('border-cyan-400'));
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('border-cyan-400');
+        if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length) handleFile(e.target.files[0]);
+      });
+
+      function handleFile(file) {
+        statusBox.classList.remove('hidden');
+        statusBox.innerHTML = `<div class="text-cyan-400">파일 분석 중: ${file.name}...</div>`;
+
+        const reader = new FileReader();
+        const ext = file.name.split('.').pop().toLowerCase();
+
+        if (ext === 'xlsx' || ext === 'xls') {
+          reader.onload = (e) => {
+            try {
+              const data = new Uint8Array(e.target.result);
+              const workbook = XLSX.read(data, { type: 'array' });
+              const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+              const json = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+              processUploadedMatrix(json, file.name);
+            } catch (err) {
+              statusBox.innerHTML = `<div class="text-rose-400">파일 파싱 실패: ${err.message}</div>`;
+            }
+          };
+          reader.readAsArrayBuffer(file);
+        } else if (ext === 'csv') {
+          reader.onload = (e) => {
+            try {
+              const text = e.target.result;
+              const rows = text.split('\n').map(r => r.split(','));
+              processUploadedMatrix(rows, file.name);
+            } catch (err) {
+              statusBox.innerHTML = `<div class="text-rose-400">CSV 파싱 실패: ${err.message}</div>`;
+            }
+          };
+          reader.readAsText(file);
+        } else if (ext === 'geojson' || ext === 'json') {
+          reader.onload = (e) => {
+            try {
+              const obj = JSON.parse(e.target.result);
+              if (obj.features) {
+                statusBox.innerHTML = `<div class="text-emerald-400">GeoJSON ${obj.features.length}개 객체 인식 완료!</div>`;
+                parsedUploadData = obj.features.map((f, i) => ({
+                  id: f.properties?.id || `GeoJSON-${i+1}`,
+                  type: 'GeoJSON',
+                  lat: f.geometry?.coordinates[1],
+                  lng: f.geometry?.coordinates[0],
+                  properties: f.properties
+                }));
+              }
+            } catch (err) {
+              statusBox.innerHTML = `<div class="text-rose-400">JSON 파싱 오류: ${err.message}</div>`;
+            }
+          };
+          reader.readAsText(file);
+        }
+      }
+
+      function processUploadedMatrix(rows, filename) {
+        if (!rows || rows.length < 2) {
+          statusBox.innerHTML = `<div class="text-rose-400">유효한 데이터 행이 없습니다.</div>`;
+          return;
+        }
+
+        let headerRowIdx = 0;
+        for (let i = 0; i < Math.min(10, rows.length); i++) {
+          const rowStr = rows[i].join(' ').toLowerCase();
+          if (rowStr.includes('좌표') || rowStr.includes('lat') || rowStr.includes('경도') || rowStr.includes('위도') || rowStr.includes('x') || rowStr.includes('y')) {
+            headerRowIdx = i;
+            break;
+          }
+        }
+
+        const headers = rows[headerRowIdx].map(h => String(h || '').trim());
+        let latIdx = -1, lonIdx = -1, idIdx = -1;
+
+        headers.forEach((h, idx) => {
+          const hl = h.toLowerCase();
+          if (hl.includes('위도') || hl.includes('lat') || hl.includes('y좌표')) latIdx = idx;
+          if (hl.includes('경도') || hl.includes('lon') || hl.includes('lng') || hl.includes('x좌표')) lonIdx = idx;
+          if (hl.includes('id') || hl.includes('기기번호') || hl.includes('명칭') || hl.includes('번호')) idIdx = idx;
+        });
+
+        if (latIdx === -1) latIdx = 15;
+        if (lonIdx === -1) lonIdx = 16;
+        if (idIdx === -1) idIdx = 1;
+
+        const proj = document.getElementById('select-projection').value;
+
+        parsedUploadData = [];
+        for (let r = headerRowIdx + 1; r < rows.length; r++) {
+          const row = rows[r];
+          if (!row || !row[latIdx] || !row[lonIdx]) continue;
+
+          let v1 = parseFloat(String(row[latIdx]).trim());
+          let v2 = parseFloat(String(row[lonIdx]).trim());
+          if (isNaN(v1) || isNaN(v2)) continue;
+
+          let lat, lng;
+          if (proj === 'AUTO' || proj === 'EPSG:4326') {
+            if (30 <= v1 && v1 <= 45) { lat = v1; lng = v2; }
+            else if (30 <= v2 && v2 <= 45) { lat = v2; lng = v1; }
+            else {
+              const conv = convertToCoords(v1, v2, 'EPSG:5186');
+              if (conv) { lat = conv.lat; lng = conv.lng; }
+            }
+          } else {
+            const conv = convertToCoords(v1, v2, proj);
+            if (conv) { lat = conv.lat; lng = conv.lng; }
+          }
+
+          if (lat && lng) {
+            parsedUploadData.push({
+              id: row[idIdx] ? String(row[idIdx]).trim() : `업로드-${r}`,
+              type: '사용자 업로드',
+              lat: lat,
+              lng: lng,
+              raw: row
+            });
+          }
+        }
+
+        statusBox.innerHTML = `
+          <div class="text-emerald-400 font-bold">성공: 총 ${parsedUploadData.length}개 지점 파싱 완료!</div>
+          <div class="text-[11px] text-slate-400">좌표계: ${proj} | 컬럼: [${headers[idIdx] || 'ID'}, ${headers[latIdx] || 'Lat'}, ${headers[lonIdx] || 'Lon'}]</div>
+        `;
+      }
+
+      document.getElementById('btn-confirm-upload').addEventListener('click', () => {
+        if (!parsedUploadData.length) {
+          alert('추가할 유효한 데이터가 없습니다.');
+          return;
+        }
+
+        parsedUploadData.forEach(p => {
+          const marker = L.circleMarker([p.lat, p.lng], {
+            radius: 6,
+            fillColor: '#f43f5e',
+            color: '#ffffff',
+            weight: 2,
+            fillOpacity: 0.9
+          });
+          marker.bindTooltip(`<div class="font-bold text-rose-400 text-xs">${p.id}</div><div class="text-[10px] text-slate-300">${p.type}</div>`, { className: 'leaflet-popup-content-wrapper' });
+          AppState.layerGroups.customUpload.addLayer(marker);
+        });
+
+        if (parsedUploadData[0]) {
+          AppState.map.flyTo([parsedUploadData[0].lat, parsedUploadData[0].lng], 14);
+        }
+
+        document.getElementById('modal-upload').classList.add('hidden');
+        alert(`${parsedUploadData.length}개의 사용자 데이터가 지도에 성공적으로 렌더링되었습니다!`);
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initMap();
+      setupEventListeners();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
