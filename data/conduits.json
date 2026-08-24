@@ -1,27 +1,13 @@
 [
   {
     "no": 1,
-    "hq": "서울경기본부",
-    "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
     "section": "판교JCT-성남IC",
-    "source_manhole_id": "M-1001-00021S-B-H",
-    "target_manhole_id": "M-1001-00062S-B-H",
-    "source_manhole_no": 1,
-    "target_manhole_no": 2,
-    "category": "도로",
-    "pipe_type": "PVC",
-    "outer_spec1": 100,
-    "outer_qty1": 1,
-    "outer_spec2": 150,
-    "outer_qty2": 1,
-    "inner_spec1": 28,
-    "inner_qty1": 3,
-    "use_spec1": 28,
-    "use_qty1": 2,
-    "use_desc1": "자가망",
-    "completion_year": "",
-    "warranty_year": "1993",
+    "source_manhole_id": "2M",
+    "target_manhole_id": "3M",
+    "source_code": "M-1001-00021S-B-H",
+    "target_code": "M-1001-00062S-B-H",
+    "source_no": 1,
+    "target_no": 2,
     "coordinates": [
       [
         37.406823,
@@ -31,18 +17,10 @@
         37.407726,
         127.101357
       ]
-    ]
-  },
-  {
-    "no": 2,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "판교JCT-성남IC",
-    "source_manhole_id": "M-1001-00062S-B-H",
-    "target_manhole_id": "M-1001-00125S-P-H",
-    "source_manhole_no": 2,
-    "target_manhole_no": 3,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -55,7 +33,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 2,
+    "section": "판교JCT-성남IC",
+    "source_manhole_id": "3M",
+    "target_manhole_id": "4M",
+    "source_code": "M-1001-00062S-B-H",
+    "target_code": "M-1001-00125S-P-H",
+    "source_no": 2,
+    "target_no": 3,
     "coordinates": [
       [
         37.407726,
@@ -65,18 +53,46 @@
         37.407856,
         127.10839
       ]
-    ]
+    ],
+    "hq": "서울경기본부",
+    "branch": "동서울지사",
+    "route": "수도권제1순환선",
+    "category": "도로",
+    "pipe_type": "PVC",
+    "outer_spec1": 100,
+    "outer_qty1": 1,
+    "outer_spec2": 150,
+    "outer_qty2": 1,
+    "inner_spec1": 28,
+    "inner_qty1": 3,
+    "use_spec1": 28,
+    "use_qty1": 2,
+    "use_desc1": "자가망",
+    "completion_year": "",
+    "warranty_year": "1993"
   },
   {
     "no": 3,
+    "section": "판교JCT-성남IC",
+    "source_manhole_id": "4M",
+    "target_manhole_id": "5M",
+    "source_code": "M-1001-00125S-P-H",
+    "target_code": "M-1001-00162S-B-H",
+    "source_no": 3,
+    "target_no": 4,
+    "coordinates": [
+      [
+        37.407856,
+        127.10839
+      ],
+      [
+        37.409206,
+        127.115537
+      ]
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "판교JCT-성남IC",
-    "source_manhole_id": "M-1001-00125S-P-H",
-    "target_manhole_id": "M-1001-00162S-B-H",
-    "source_manhole_no": 3,
-    "target_manhole_no": 4,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -89,28 +105,30 @@
     "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "2018",
-    "coordinates": [
-      [
-        37.407856,
-        127.10839
-      ],
-      [
-        37.409206,
-        127.115537
-      ]
-    ]
+    "warranty_year": "2018"
   },
   {
     "no": 4,
+    "section": "판교JCT-성남IC",
+    "source_manhole_id": "5M",
+    "target_manhole_id": "6M",
+    "source_code": "M-1001-00162S-B-H",
+    "target_code": "M-1001-00208S-B-H",
+    "source_no": 4,
+    "target_no": 5,
+    "coordinates": [
+      [
+        37.409206,
+        127.115537
+      ],
+      [
+        37.410498,
+        127.117402
+      ]
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "판교JCT-성남IC",
-    "source_manhole_id": "M-1001-00162S-B-H",
-    "target_manhole_id": "M-1001-00208S-B-H",
-    "source_manhole_no": 4,
-    "target_manhole_no": 5,
+    "route": "수도권제1순환선",
     "category": "터널",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -123,28 +141,30 @@
     "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
-    "coordinates": [
-      [
-        37.409206,
-        127.115537
-      ],
-      [
-        37.410498,
-        127.117402
-      ]
-    ]
+    "warranty_year": "1993"
   },
   {
     "no": 5,
+    "section": "판교JCT-성남IC",
+    "source_manhole_id": "6M",
+    "target_manhole_id": "7M",
+    "source_code": "M-1001-00208S-B-H",
+    "target_code": "M-1001-00253S-B-H",
+    "source_no": 5,
+    "target_no": 6,
+    "coordinates": [
+      [
+        37.410498,
+        127.117402
+      ],
+      [
+        37.413172,
+        127.119508
+      ]
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "판교JCT-성남IC",
-    "source_manhole_id": "M-1001-00208S-B-H",
-    "target_manhole_id": "M-1001-00253S-B-H",
-    "source_manhole_no": 5,
-    "target_manhole_no": 6,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -157,41 +177,17 @@
     "use_qty1": 3,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
-    "coordinates": [
-      [
-        37.410498,
-        127.117402
-      ],
-      [
-        37.413172,
-        127.119508
-      ]
-    ]
+    "warranty_year": "1993"
   },
   {
     "no": 6,
-    "hq": "서울경기본부",
-    "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
     "section": "판교JCT-성남IC",
-    "source_manhole_id": "M-1001-00253S-B-H",
-    "target_manhole_id": "M-1001-00310S-B-H",
-    "source_manhole_no": 6,
-    "target_manhole_no": 7,
-    "category": "도로",
-    "pipe_type": "PVC",
-    "outer_spec1": 100,
-    "outer_qty1": 1,
-    "outer_spec2": 150,
-    "outer_qty2": 1,
-    "inner_spec1": 28,
-    "inner_qty1": 3,
-    "use_spec1": 28,
-    "use_qty1": 3,
-    "use_desc1": "자가망,FTMS",
-    "completion_year": "",
-    "warranty_year": "1993",
+    "source_manhole_id": "7M",
+    "target_manhole_id": "8M",
+    "source_code": "M-1001-00253S-B-H",
+    "target_code": "M-1001-00310S-B-H",
+    "source_no": 6,
+    "target_no": 7,
     "coordinates": [
       [
         37.413172,
@@ -201,18 +197,10 @@
         37.417347,
         127.122412
       ]
-    ]
-  },
-  {
-    "no": 7,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "판교JCT-성남IC",
-    "source_manhole_id": "M-1001-00310S-B-H",
-    "target_manhole_id": "M-1001-00359S-P-H",
-    "source_manhole_no": 7,
-    "target_manhole_no": 8,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -225,7 +213,17 @@
     "use_qty1": 3,
     "use_desc1": "자가망,FTMS",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 7,
+    "section": "판교JCT-성남IC",
+    "source_manhole_id": "8M",
+    "target_manhole_id": "9M",
+    "source_code": "M-1001-00310S-B-H",
+    "target_code": "M-1001-00359S-P-H",
+    "source_no": 7,
+    "target_no": 8,
     "coordinates": [
       [
         37.417347,
@@ -235,18 +233,10 @@
         37.42114,
         127.123095
       ]
-    ]
-  },
-  {
-    "no": 8,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "판교JCT-성남IC",
-    "source_manhole_id": "M-1001-00359S-P-H",
-    "target_manhole_id": "M-1001-00395S-P-H",
-    "source_manhole_no": 8,
-    "target_manhole_no": 9,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -259,7 +249,17 @@
     "use_qty1": 3,
     "use_desc1": "자가망,FTMS",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 8,
+    "section": "판교JCT-성남IC",
+    "source_manhole_id": "9M",
+    "target_manhole_id": "10M",
+    "source_code": "M-1001-00359S-P-H",
+    "target_code": "M-1001-00395S-P-H",
+    "source_no": 8,
+    "target_no": 9,
     "coordinates": [
       [
         37.42114,
@@ -269,18 +269,10 @@
         37.424991,
         127.123087
       ]
-    ]
-  },
-  {
-    "no": 9,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "판교JCT-성남IC",
-    "source_manhole_id": "M-1001-00395S-P-H",
-    "target_manhole_id": "M-1001-00442S-B-H",
-    "source_manhole_no": 9,
-    "target_manhole_no": 10,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -293,7 +285,17 @@
     "use_qty1": 3,
     "use_desc1": "자가망,FTMS",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 9,
+    "section": "판교JCT-성남IC",
+    "source_manhole_id": "10M",
+    "target_manhole_id": "11M",
+    "source_code": "M-1001-00395S-P-H",
+    "target_code": "M-1001-00442S-B-H",
+    "source_no": 9,
+    "target_no": 10,
     "coordinates": [
       [
         37.424991,
@@ -303,18 +305,10 @@
         37.428721,
         127.123225
       ]
-    ]
-  },
-  {
-    "no": 10,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "판교JCT-성남IC",
-    "source_manhole_id": "M-1001-00442S-B-H",
-    "target_manhole_id": "M-1001-00443S-P-H",
-    "source_manhole_no": 10,
-    "target_manhole_no": 11,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -324,10 +318,20 @@
     "inner_spec1": 28,
     "inner_qty1": 3,
     "use_spec1": 28,
-    "use_qty1": 1,
-    "use_desc1": "자가망",
+    "use_qty1": 3,
+    "use_desc1": "자가망,FTMS",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 10,
+    "section": "판교JCT-성남IC",
+    "source_manhole_id": "11M",
+    "target_manhole_id": "12M",
+    "source_code": "M-1001-00442S-B-H",
+    "target_code": "M-1001-00443S-P-H",
+    "source_no": 10,
+    "target_no": 11,
     "coordinates": [
       [
         37.428721,
@@ -337,18 +341,10 @@
         37.4294,
         127.123034
       ]
-    ]
-  },
-  {
-    "no": 11,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "판교JCT-성남IC",
-    "source_manhole_id": "M-1001-00443S-P-H",
-    "target_manhole_id": "M-1001-00501S-P-H",
-    "source_manhole_no": 11,
-    "target_manhole_no": 12,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -361,7 +357,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 11,
+    "section": "판교JCT-성남IC",
+    "source_manhole_id": "12M",
+    "target_manhole_id": "13M",
+    "source_code": "M-1001-00443S-P-H",
+    "target_code": "M-1001-00501S-P-H",
+    "source_no": 11,
+    "target_no": 12,
     "coordinates": [
       [
         37.4294,
@@ -371,18 +377,10 @@
         37.433212,
         127.123177
       ]
-    ]
-  },
-  {
-    "no": 12,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "판교JCT-성남IC",
-    "source_manhole_id": "M-1001-00501S-P-H",
-    "target_manhole_id": "M-1001-00508E-B-H",
-    "source_manhole_no": 12,
-    "target_manhole_no": 13,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -395,7 +393,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 12,
+    "section": "판교JCT-성남IC",
+    "source_manhole_id": "13M",
+    "target_manhole_id": "14M",
+    "source_code": "M-1001-00501S-P-H",
+    "target_code": "M-1001-00508E-B-H",
+    "source_no": 12,
+    "target_no": 13,
     "coordinates": [
       [
         37.433212,
@@ -405,18 +413,46 @@
         37.435587,
         127.123847
       ]
-    ]
+    ],
+    "hq": "서울경기본부",
+    "branch": "동서울지사",
+    "route": "수도권제1순환선",
+    "category": "도로",
+    "pipe_type": "PVC",
+    "outer_spec1": 100,
+    "outer_qty1": 1,
+    "outer_spec2": 150,
+    "outer_qty2": 1,
+    "inner_spec1": 28,
+    "inner_qty1": 3,
+    "use_spec1": 28,
+    "use_qty1": 1,
+    "use_desc1": "자가망",
+    "completion_year": "",
+    "warranty_year": "1993"
   },
   {
     "no": 13,
+    "section": "성남IC-서하남JCT",
+    "source_manhole_id": "14M",
+    "target_manhole_id": "15M",
+    "source_code": "M-1001-00508E-B-H",
+    "target_code": "M-1001-00540E-B-H",
+    "source_no": 13,
+    "target_no": 14,
+    "coordinates": [
+      [
+        37.435587,
+        127.123847
+      ],
+      [
+        37.437811,
+        127.122972
+      ]
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "성남IC-서하남JCT",
-    "source_manhole_id": "M-1001-00508E-B-H",
-    "target_manhole_id": "M-1001-00540E-B-H",
-    "source_manhole_no": 13,
-    "target_manhole_no": 14,
+    "route": "수도권제1순환선",
     "category": "영업소",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -429,41 +465,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망,FTMS",
     "completion_year": "",
-    "warranty_year": "1993",
-    "coordinates": [
-      [
-        37.435587,
-        127.123847
-      ],
-      [
-        37.437811,
-        127.122972
-      ]
-    ]
+    "warranty_year": "1993"
   },
   {
     "no": 14,
-    "hq": "서울경기본부",
-    "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
     "section": "성남IC-송파IC",
-    "source_manhole_id": "M-1001-00540E-B-H",
-    "target_manhole_id": "H-1001-00565E-P-H",
-    "source_manhole_no": 14,
-    "target_manhole_no": 15,
-    "category": "도로",
-    "pipe_type": "PVC",
-    "outer_spec1": 100,
-    "outer_qty1": 1,
-    "outer_spec2": 150,
-    "outer_qty2": 1,
-    "inner_spec1": 28,
-    "inner_qty1": 3,
-    "use_spec1": 28,
-    "use_qty1": 1,
-    "use_desc1": "자가망",
-    "completion_year": "",
-    "warranty_year": "1993",
+    "source_manhole_id": "15M",
+    "target_manhole_id": "16-1H",
+    "source_code": "M-1001-00540E-B-H",
+    "target_code": "H-1001-00565E-P-H",
+    "source_no": 14,
+    "target_no": 15,
     "coordinates": [
       [
         37.437811,
@@ -473,18 +485,10 @@
         37.44082,
         127.123088
       ]
-    ]
-  },
-  {
-    "no": 15,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "성남IC-송파IC",
-    "source_manhole_id": "H-1001-00565E-P-H",
-    "target_manhole_id": "M-1001-00618E-P-H",
-    "source_manhole_no": 15,
-    "target_manhole_no": 16,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -497,7 +501,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 15,
+    "section": "성남IC-송파IC",
+    "source_manhole_id": "16-1H",
+    "target_manhole_id": "17M",
+    "source_code": "H-1001-00565E-P-H",
+    "target_code": "M-1001-00618E-P-H",
+    "source_no": 15,
+    "target_no": 16,
     "coordinates": [
       [
         37.44082,
@@ -507,18 +521,10 @@
         37.443839,
         127.124351
       ]
-    ]
-  },
-  {
-    "no": 16,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "성남IC-송파IC",
-    "source_manhole_id": "M-1001-00618E-P-H",
-    "target_manhole_id": "M-1001-00657E-B-H",
-    "source_manhole_no": 16,
-    "target_manhole_no": 17,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -531,7 +537,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 16,
+    "section": "성남IC-송파IC",
+    "source_manhole_id": "17M",
+    "target_manhole_id": "18M",
+    "source_code": "M-1001-00618E-P-H",
+    "target_code": "M-1001-00657E-B-H",
+    "source_no": 16,
+    "target_no": 17,
     "coordinates": [
       [
         37.443839,
@@ -541,18 +557,10 @@
         37.446892,
         127.125621
       ]
-    ]
-  },
-  {
-    "no": 17,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "성남IC-송파IC",
-    "source_manhole_id": "M-1001-00657E-B-H",
-    "target_manhole_id": "M-1001-00695E-P-H",
-    "source_manhole_no": 17,
-    "target_manhole_no": 18,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -565,7 +573,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 17,
+    "section": "성남IC-송파IC",
+    "source_manhole_id": "18M",
+    "target_manhole_id": "19-1H",
+    "source_code": "M-1001-00657E-B-H",
+    "target_code": "M-1001-00695E-P-H",
+    "source_no": 17,
+    "target_no": 18,
     "coordinates": [
       [
         37.446892,
@@ -575,18 +593,10 @@
         37.450525,
         127.126259
       ]
-    ]
-  },
-  {
-    "no": 18,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "성남IC-송파IC",
-    "source_manhole_id": "M-1001-00695E-P-H",
-    "target_manhole_id": "M-1001-00696S-P-H",
-    "source_manhole_no": 18,
-    "target_manhole_no": 19,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -599,7 +609,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 18,
+    "section": "성남IC-송파IC",
+    "source_manhole_id": "19-1H",
+    "target_manhole_id": "20M",
+    "source_code": "M-1001-00695E-P-H",
+    "target_code": "M-1001-00696S-P-H",
+    "source_no": 18,
+    "target_no": 19,
     "coordinates": [
       [
         37.450525,
@@ -609,18 +629,10 @@
         37.450529,
         127.125678
       ]
-    ]
-  },
-  {
-    "no": 19,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "성남IC-송파IC",
-    "source_manhole_id": "M-1001-00696S-P-H",
-    "target_manhole_id": "M-1001-00727S-B-H",
-    "source_manhole_no": 19,
-    "target_manhole_no": 20,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -633,7 +645,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 19,
+    "section": "성남IC-송파IC",
+    "source_manhole_id": "20M",
+    "target_manhole_id": "21M",
+    "source_code": "M-1001-00696S-P-H",
+    "target_code": "M-1001-00727S-B-H",
+    "source_no": 19,
+    "target_no": 20,
     "coordinates": [
       [
         37.450529,
@@ -643,18 +665,10 @@
         37.453784,
         127.125639
       ]
-    ]
-  },
-  {
-    "no": 20,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "성남IC-송파IC",
-    "source_manhole_id": "M-1001-00727S-B-H",
-    "target_manhole_id": "M-1001-00781S-P-H",
-    "source_manhole_no": 20,
-    "target_manhole_no": 21,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -667,7 +681,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 20,
+    "section": "성남IC-송파IC",
+    "source_manhole_id": "21M",
+    "target_manhole_id": "22M",
+    "source_code": "M-1001-00727S-B-H",
+    "target_code": "M-1001-00781S-P-H",
+    "source_no": 20,
+    "target_no": 21,
     "coordinates": [
       [
         37.453784,
@@ -677,18 +701,10 @@
         37.457222,
         127.125195
       ]
-    ]
-  },
-  {
-    "no": 21,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "성남IC-송파IC",
-    "source_manhole_id": "M-1001-00781S-P-H",
-    "target_manhole_id": "M-1001-00801S-B-H",
-    "source_manhole_no": 21,
-    "target_manhole_no": 22,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -701,7 +717,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 21,
+    "section": "성남IC-송파IC",
+    "source_manhole_id": "22M",
+    "target_manhole_id": "23M",
+    "source_code": "M-1001-00781S-P-H",
+    "target_code": "M-1001-00801S-B-H",
+    "source_no": 21,
+    "target_no": 22,
     "coordinates": [
       [
         37.457222,
@@ -711,18 +737,46 @@
         37.459745,
         127.125099
       ]
-    ]
+    ],
+    "hq": "서울경기본부",
+    "branch": "동서울지사",
+    "route": "수도권제1순환선",
+    "category": "도로",
+    "pipe_type": "PVC",
+    "outer_spec1": 100,
+    "outer_qty1": 1,
+    "outer_spec2": 150,
+    "outer_qty2": 1,
+    "inner_spec1": 28,
+    "inner_qty1": 3,
+    "use_spec1": 28,
+    "use_qty1": 1,
+    "use_desc1": "자가망",
+    "completion_year": "",
+    "warranty_year": "1993"
   },
   {
     "no": 22,
+    "section": "성남IC-송파IC",
+    "source_manhole_id": "23M",
+    "target_manhole_id": "24M",
+    "source_code": "M-1001-00801S-B-H",
+    "target_code": "M-1001-00870S-P-H",
+    "source_no": 22,
+    "target_no": 23,
+    "coordinates": [
+      [
+        37.459745,
+        127.125099
+      ],
+      [
+        37.465845,
+        127.125407
+      ]
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "성남IC-송파IC",
-    "source_manhole_id": "M-1001-00801S-B-H",
-    "target_manhole_id": "M-1001-00870S-P-H",
-    "source_manhole_no": 22,
-    "target_manhole_no": 23,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -735,28 +789,30 @@
     "use_qty1": 2,
     "use_desc1": "자가망,FTMS",
     "completion_year": "",
-    "warranty_year": "1993",
-    "coordinates": [
-      [
-        37.459745,
-        127.125099
-      ],
-      [
-        37.465845,
-        127.125407
-      ]
-    ]
+    "warranty_year": "1993"
   },
   {
     "no": 23,
+    "section": "성남IC-송파IC",
+    "source_manhole_id": "24M",
+    "target_manhole_id": "25M",
+    "source_code": "M-1001-00870S-P-H",
+    "target_code": "M-1001-00896S-B-H",
+    "source_no": 23,
+    "target_no": 24,
+    "coordinates": [
+      [
+        37.465845,
+        127.125407
+      ],
+      [
+        37.469056,
+        127.124826
+      ]
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "성남IC-송파IC",
-    "source_manhole_id": "M-1001-00870S-P-H",
-    "target_manhole_id": "M-1001-00896S-B-H",
-    "source_manhole_no": 23,
-    "target_manhole_no": 24,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -769,41 +825,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망,FTMS",
     "completion_year": "",
-    "warranty_year": "1993",
-    "coordinates": [
-      [
-        37.465845,
-        127.125407
-      ],
-      [
-        37.469056,
-        127.124826
-      ]
-    ]
+    "warranty_year": "1993"
   },
   {
     "no": 24,
-    "hq": "서울경기본부",
-    "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
     "section": "성남IC-송파IC",
-    "source_manhole_id": "M-1001-00896S-B-H",
-    "target_manhole_id": "M-1001-00925S-P-H",
-    "source_manhole_no": 24,
-    "target_manhole_no": 25,
-    "category": "도로",
-    "pipe_type": "직매",
-    "outer_spec1": 28,
-    "outer_qty1": 1,
-    "outer_spec2": null,
-    "outer_qty2": null,
-    "inner_spec1": 28,
-    "inner_qty1": 1,
-    "use_spec1": 28,
-    "use_qty1": 1,
-    "use_desc1": "자가망,FTMS",
-    "completion_year": "",
-    "warranty_year": "1993",
+    "source_manhole_id": "25M",
+    "target_manhole_id": "26M",
+    "source_code": "M-1001-00896S-B-H",
+    "target_code": "M-1001-00925S-P-H",
+    "source_no": 24,
+    "target_no": 25,
     "coordinates": [
       [
         37.469056,
@@ -813,18 +845,10 @@
         37.472551,
         127.125835
       ]
-    ]
-  },
-  {
-    "no": 25,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "성남IC-송파IC",
-    "source_manhole_id": "M-1001-00925S-P-H",
-    "target_manhole_id": "M-1001-00950S-B-H",
-    "source_manhole_no": 25,
-    "target_manhole_no": 26,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "직매",
     "outer_spec1": 28,
@@ -837,7 +861,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망,FTMS",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 25,
+    "section": "성남IC-송파IC",
+    "source_manhole_id": "26M",
+    "target_manhole_id": "27M",
+    "source_code": "M-1001-00925S-P-H",
+    "target_code": "M-1001-00950S-B-H",
+    "source_no": 25,
+    "target_no": 26,
     "coordinates": [
       [
         37.472551,
@@ -847,18 +881,46 @@
         37.474509,
         127.127877
       ]
-    ]
+    ],
+    "hq": "서울경기본부",
+    "branch": "동서울지사",
+    "route": "수도권제1순환선",
+    "category": "도로",
+    "pipe_type": "직매",
+    "outer_spec1": 28,
+    "outer_qty1": 1,
+    "outer_spec2": null,
+    "outer_qty2": null,
+    "inner_spec1": 28,
+    "inner_qty1": 1,
+    "use_spec1": 28,
+    "use_qty1": 1,
+    "use_desc1": "자가망,FTMS",
+    "completion_year": "",
+    "warranty_year": "1993"
   },
   {
     "no": 26,
+    "section": "성남IC-송파IC",
+    "source_manhole_id": "27M",
+    "target_manhole_id": "28M",
+    "source_code": "M-1001-00950S-B-H",
+    "target_code": "M-1001-01002S-P-H",
+    "source_no": 26,
+    "target_no": 27,
+    "coordinates": [
+      [
+        37.474509,
+        127.127877
+      ],
+      [
+        37.477532,
+        127.132344
+      ]
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "성남IC-송파IC",
-    "source_manhole_id": "M-1001-00950S-B-H",
-    "target_manhole_id": "M-1001-01002S-P-H",
-    "source_manhole_no": 26,
-    "target_manhole_no": 27,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "스틸배관",
     "outer_spec1": 100,
@@ -871,41 +933,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
-    "coordinates": [
-      [
-        37.474509,
-        127.127877
-      ],
-      [
-        37.477532,
-        127.132344
-      ]
-    ]
+    "warranty_year": "1993"
   },
   {
     "no": 27,
-    "hq": "서울경기본부",
-    "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
     "section": "송파IC-서하남JCT",
-    "source_manhole_id": "M-1001-01002S-P-H",
-    "target_manhole_id": "M-1001-01050S-B-H",
-    "source_manhole_no": 27,
-    "target_manhole_no": 28,
-    "category": "도로",
-    "pipe_type": "PVC",
-    "outer_spec1": 100,
-    "outer_qty1": 1,
-    "outer_spec2": 150,
-    "outer_qty2": 1,
-    "inner_spec1": 28,
-    "inner_qty1": 3,
-    "use_spec1": 28,
-    "use_qty1": 2,
-    "use_desc1": "자가망",
-    "completion_year": "",
-    "warranty_year": "1993",
+    "source_manhole_id": "28M",
+    "target_manhole_id": "29M",
+    "source_code": "M-1001-01002S-P-H",
+    "target_code": "M-1001-01050S-B-H",
+    "source_no": 27,
+    "target_no": 28,
     "coordinates": [
       [
         37.477532,
@@ -915,18 +953,10 @@
         37.481026,
         127.134972
       ]
-    ]
-  },
-  {
-    "no": 28,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "송파IC-서하남JCT",
-    "source_manhole_id": "M-1001-01050S-B-H",
-    "target_manhole_id": "M-1001-01093S-B-H",
-    "source_manhole_no": 28,
-    "target_manhole_no": 29,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -939,7 +969,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 28,
+    "section": "송파IC-서하남JCT",
+    "source_manhole_id": "29M",
+    "target_manhole_id": "30M",
+    "source_code": "M-1001-01050S-B-H",
+    "target_code": "M-1001-01093S-B-H",
+    "source_no": 28,
+    "target_no": 29,
     "coordinates": [
       [
         37.481026,
@@ -949,18 +989,46 @@
         37.483153,
         127.135391
       ]
-    ]
+    ],
+    "hq": "서울경기본부",
+    "branch": "동서울지사",
+    "route": "수도권제1순환선",
+    "category": "도로",
+    "pipe_type": "PVC",
+    "outer_spec1": 100,
+    "outer_qty1": 1,
+    "outer_spec2": 150,
+    "outer_qty2": 1,
+    "inner_spec1": 28,
+    "inner_qty1": 3,
+    "use_spec1": 28,
+    "use_qty1": 2,
+    "use_desc1": "자가망",
+    "completion_year": "",
+    "warranty_year": "1993"
   },
   {
     "no": 29,
+    "section": "송파IC-서하남JCT",
+    "source_manhole_id": "30M",
+    "target_manhole_id": "31M",
+    "source_code": "M-1001-01093S-B-H",
+    "target_code": "M-1001-01131S-B-H",
+    "source_no": 29,
+    "target_no": 30,
+    "coordinates": [
+      [
+        37.483153,
+        127.135391
+      ],
+      [
+        37.487652,
+        127.136187
+      ]
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "송파IC-서하남JCT",
-    "source_manhole_id": "M-1001-01093S-B-H",
-    "target_manhole_id": "M-1001-01131S-B-H",
-    "source_manhole_no": 29,
-    "target_manhole_no": 30,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -973,41 +1041,17 @@
     "use_qty1": 3,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
-    "coordinates": [
-      [
-        37.483153,
-        127.135391
-      ],
-      [
-        37.487652,
-        127.136187
-      ]
-    ]
+    "warranty_year": "1993"
   },
   {
     "no": 30,
-    "hq": "서울경기본부",
-    "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
     "section": "송파IC-서하남JCT",
-    "source_manhole_id": "M-1001-01131S-B-H",
-    "target_manhole_id": "M-1001-01165S-P-H",
-    "source_manhole_no": 30,
-    "target_manhole_no": 31,
-    "category": "도로",
-    "pipe_type": "PVC",
-    "outer_spec1": 100,
-    "outer_qty1": 1,
-    "outer_spec2": 150,
-    "outer_qty2": 1,
-    "inner_spec1": 28,
-    "inner_qty1": 3,
-    "use_spec1": 28,
-    "use_qty1": 2,
-    "use_desc1": "자가망",
-    "completion_year": "",
-    "warranty_year": "1993",
+    "source_manhole_id": "31M",
+    "target_manhole_id": "32M",
+    "source_code": "M-1001-01131S-B-H",
+    "target_code": "M-1001-01165S-P-H",
+    "source_no": 30,
+    "target_no": 31,
     "coordinates": [
       [
         37.487652,
@@ -1017,18 +1061,10 @@
         37.489901,
         127.136881
       ]
-    ]
-  },
-  {
-    "no": 31,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "송파IC-서하남JCT",
-    "source_manhole_id": "M-1001-01165S-P-H",
-    "target_manhole_id": "M-1001-01202S-B-H",
-    "source_manhole_no": 31,
-    "target_manhole_no": 32,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -1041,7 +1077,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 31,
+    "section": "송파IC-서하남JCT",
+    "source_manhole_id": "32M",
+    "target_manhole_id": "33M",
+    "source_code": "M-1001-01165S-P-H",
+    "target_code": "M-1001-01202S-B-H",
+    "source_no": 31,
+    "target_no": 32,
     "coordinates": [
       [
         37.489901,
@@ -1051,18 +1097,10 @@
         37.494765,
         127.139192
       ]
-    ]
-  },
-  {
-    "no": 32,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "송파IC-서하남JCT",
-    "source_manhole_id": "M-1001-01202S-B-H",
-    "target_manhole_id": "M-1001-01308S-B-H",
-    "source_manhole_no": 32,
-    "target_manhole_no": 33,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -1075,7 +1113,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 32,
+    "section": "송파IC-서하남JCT",
+    "source_manhole_id": "33M",
+    "target_manhole_id": "34M",
+    "source_code": "M-1001-01202S-B-H",
+    "target_code": "M-1001-01308S-B-H",
+    "source_no": 32,
+    "target_no": 33,
     "coordinates": [
       [
         37.494765,
@@ -1085,18 +1133,10 @@
         37.503279,
         127.143384
       ]
-    ]
-  },
-  {
-    "no": 33,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "송파IC-서하남JCT",
-    "source_manhole_id": "M-1001-01308S-B-H",
-    "target_manhole_id": "M-1001-01337S-B-H",
-    "source_manhole_no": 33,
-    "target_manhole_no": 34,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -1109,7 +1149,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 33,
+    "section": "송파IC-서하남JCT",
+    "source_manhole_id": "34M",
+    "target_manhole_id": "35M",
+    "source_code": "M-1001-01308S-B-H",
+    "target_code": "M-1001-01337S-B-H",
+    "source_no": 33,
+    "target_no": 34,
     "coordinates": [
       [
         37.503279,
@@ -1119,18 +1169,10 @@
         37.506489,
         127.145351
       ]
-    ]
-  },
-  {
-    "no": 34,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "송파IC-서하남JCT",
-    "source_manhole_id": "M-1001-01337S-B-H",
-    "target_manhole_id": "M-1001-01379S-P-H",
-    "source_manhole_no": 34,
-    "target_manhole_no": 35,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -1140,10 +1182,20 @@
     "inner_spec1": 28,
     "inner_qty1": 3,
     "use_spec1": 28,
-    "use_qty1": 3,
+    "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 34,
+    "section": "송파IC-서하남JCT",
+    "source_manhole_id": "35M",
+    "target_manhole_id": "36M",
+    "source_code": "M-1001-01337S-B-H",
+    "target_code": "M-1001-01379S-P-H",
+    "source_no": 34,
+    "target_no": 35,
     "coordinates": [
       [
         37.506489,
@@ -1153,18 +1205,10 @@
         37.509158,
         127.147083
       ]
-    ]
-  },
-  {
-    "no": 35,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "송파IC-서하남JCT",
-    "source_manhole_id": "M-1001-01379S-P-H",
-    "target_manhole_id": "M-1001-01412S-P-H",
-    "source_manhole_no": 35,
-    "target_manhole_no": 36,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -1174,10 +1218,20 @@
     "inner_spec1": 28,
     "inner_qty1": 3,
     "use_spec1": 28,
-    "use_qty1": 2,
+    "use_qty1": 3,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 35,
+    "section": "송파IC-서하남JCT",
+    "source_manhole_id": "36M",
+    "target_manhole_id": "37M",
+    "source_code": "M-1001-01379S-P-H",
+    "target_code": "M-1001-01412S-P-H",
+    "source_no": 35,
+    "target_no": 36,
     "coordinates": [
       [
         37.509158,
@@ -1187,18 +1241,10 @@
         37.511496,
         127.149364
       ]
-    ]
-  },
-  {
-    "no": 36,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "송파IC-서하남JCT",
-    "source_manhole_id": "M-1001-01412S-P-H",
-    "target_manhole_id": "M-1001-01454S-B-H",
-    "source_manhole_no": 36,
-    "target_manhole_no": 37,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -1211,7 +1257,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 36,
+    "section": "송파IC-서하남JCT",
+    "source_manhole_id": "37M",
+    "target_manhole_id": "38M",
+    "source_code": "M-1001-01412S-P-H",
+    "target_code": "M-1001-01454S-B-H",
+    "source_no": 36,
+    "target_no": 37,
     "coordinates": [
       [
         37.511496,
@@ -1221,18 +1277,10 @@
         37.513205762230214,
         127.15388348606811
       ]
-    ]
-  },
-  {
-    "no": 37,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "송파IC-서하남JCT",
-    "source_manhole_id": "M-1001-01454S-B-H",
-    "target_manhole_id": "M-1001-01455S-P-H",
-    "source_manhole_no": 37,
-    "target_manhole_no": 38,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -1245,7 +1293,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 37,
+    "section": "송파IC-서하남JCT",
+    "source_manhole_id": "38M",
+    "target_manhole_id": "39M",
+    "source_code": "M-1001-01454S-B-H",
+    "target_code": "M-1001-01455S-P-H",
+    "source_no": 37,
+    "target_no": 38,
     "coordinates": [
       [
         37.513205762230214,
@@ -1255,31 +1313,33 @@
         37.51324536888914,
         127.15399109287927
       ]
-    ]
-  },
-  {
-    "no": 38,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "송파IC-서하남JCT",
-    "source_manhole_id": "M-1001-01455S-P-H",
-    "target_manhole_id": "H-1001-01456S-P-R",
-    "source_manhole_no": 38,
-    "target_manhole_no": 39,
+    "route": "수도권제1순환선",
     "category": "도로",
-    "pipe_type": "스틸배관",
+    "pipe_type": "PVC",
     "outer_spec1": 100,
     "outer_qty1": 1,
-    "outer_spec2": null,
-    "outer_qty2": null,
+    "outer_spec2": 150,
+    "outer_qty2": 1,
     "inner_spec1": 28,
     "inner_qty1": 3,
     "use_spec1": 28,
-    "use_qty1": 1,
+    "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 38,
+    "section": "송파IC-서하남JCT",
+    "source_manhole_id": "39M",
+    "target_manhole_id": "39-1H",
+    "source_code": "M-1001-01455S-P-H",
+    "target_code": "H-1001-01456S-P-R",
+    "source_no": 38,
+    "target_no": 39,
     "coordinates": [
       [
         37.51324536888914,
@@ -1289,31 +1349,33 @@
         37.51328489870555,
         127.15409869969041
       ]
-    ]
-  },
-  {
-    "no": 39,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "송파IC-서하남JCT",
-    "source_manhole_id": "H-1001-01456S-P-R",
-    "target_manhole_id": "M-1001-01495S-B-H",
-    "source_manhole_no": 39,
-    "target_manhole_no": 40,
+    "route": "수도권제1순환선",
     "category": "도로",
-    "pipe_type": "PVC",
+    "pipe_type": "스틸배관",
     "outer_spec1": 100,
     "outer_qty1": 1,
-    "outer_spec2": 150,
-    "outer_qty2": 1,
+    "outer_spec2": null,
+    "outer_qty2": null,
     "inner_spec1": 28,
     "inner_qty1": 3,
     "use_spec1": 28,
-    "use_qty1": 2,
+    "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 39,
+    "section": "송파IC-서하남JCT",
+    "source_manhole_id": "39-1H",
+    "target_manhole_id": "40M",
+    "source_code": "H-1001-01456S-P-R",
+    "target_code": "M-1001-01495S-B-H",
+    "source_no": 39,
+    "target_no": 40,
     "coordinates": [
       [
         37.51328489870555,
@@ -1323,18 +1385,46 @@
         37.51474960461726,
         127.15829536532509
       ]
-    ]
+    ],
+    "hq": "서울경기본부",
+    "branch": "동서울지사",
+    "route": "수도권제1순환선",
+    "category": "도로",
+    "pipe_type": "PVC",
+    "outer_spec1": 100,
+    "outer_qty1": 1,
+    "outer_spec2": 150,
+    "outer_qty2": 1,
+    "inner_spec1": 28,
+    "inner_qty1": 3,
+    "use_spec1": 28,
+    "use_qty1": 2,
+    "use_desc1": "자가망",
+    "completion_year": "",
+    "warranty_year": "1993"
   },
   {
     "no": 40,
+    "section": "송파IC-서하남JCT",
+    "source_manhole_id": "40M",
+    "target_manhole_id": "41M",
+    "source_code": "M-1001-01495S-B-H",
+    "target_code": "M-1001-01602S-B-H",
+    "source_no": 40,
+    "target_no": 41,
+    "coordinates": [
+      [
+        37.51474960461726,
+        127.15829536532509
+      ],
+      [
+        37.51756023952164,
+        127.16980929411766
+      ]
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "송파IC-서하남JCT",
-    "source_manhole_id": "M-1001-01495S-B-H",
-    "target_manhole_id": "M-1001-01602S-B-H",
-    "source_manhole_no": 40,
-    "target_manhole_no": 41,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -1347,28 +1437,30 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "2025",
-    "coordinates": [
-      [
-        37.51474960461726,
-        127.15829536532509
-      ],
-      [
-        37.51756023952164,
-        127.16980929411766
-      ]
-    ]
+    "warranty_year": "2025"
   },
   {
     "no": 41,
+    "section": "송파IC-서하남JCT",
+    "source_manhole_id": "41M",
+    "target_manhole_id": "41M",
+    "source_code": "M-1001-01602S-B-H",
+    "target_code": "M-1001-01603S-B-H",
+    "source_no": 41,
+    "target_no": 42,
+    "coordinates": [
+      [
+        37.51756023952164,
+        127.16980929411766
+      ],
+      [
+        37.517576617733624,
+        127.1699169009288
+      ]
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "송파IC-서하남JCT",
-    "source_manhole_id": "M-1001-01602S-B-H",
-    "target_manhole_id": "M-1001-01603S-B-H",
-    "source_manhole_no": 41,
-    "target_manhole_no": 42,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -1381,28 +1473,30 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "2025",
-    "coordinates": [
-      [
-        37.51756023952164,
-        127.16980929411766
-      ],
-      [
-        37.517576617733624,
-        127.1699169009288
-      ]
-    ]
+    "warranty_year": "2025"
   },
   {
     "no": 42,
+    "section": "송파IC-서하남JCT",
+    "source_manhole_id": "41M",
+    "target_manhole_id": "42M",
+    "source_code": "M-1001-01603S-B-H",
+    "target_code": "M-1001-01648S-B-H",
+    "source_no": 42,
+    "target_no": 43,
+    "coordinates": [
+      [
+        37.517576617733624,
+        127.1699169009288
+      ],
+      [
+        37.51813656396393,
+        127.17475920743034
+      ]
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "송파IC-서하남JCT",
-    "source_manhole_id": "M-1001-01603S-B-H",
-    "target_manhole_id": "M-1001-01648S-B-H",
-    "source_manhole_no": 42,
-    "target_manhole_no": 43,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "스틸배관",
     "outer_spec1": 100,
@@ -1415,28 +1509,30 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "2025",
-    "coordinates": [
-      [
-        37.517576617733624,
-        127.1699169009288
-      ],
-      [
-        37.51813656396393,
-        127.17475920743034
-      ]
-    ]
+    "warranty_year": "2025"
   },
   {
     "no": 43,
+    "section": "서하남JCT-하남JCT",
+    "source_manhole_id": "42M",
+    "target_manhole_id": "43M",
+    "source_code": "M-1001-01648S-B-H",
+    "target_code": "M-1001-01735S-B-H",
+    "source_no": 43,
+    "target_no": 44,
+    "coordinates": [
+      [
+        37.51813656396393,
+        127.17475920743034
+      ],
+      [
+        37.518535,
+        127.184121
+      ]
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "서하남JCT-하남JCT",
-    "source_manhole_id": "M-1001-01648S-B-H",
-    "target_manhole_id": "M-1001-01735S-B-H",
-    "source_manhole_no": 43,
-    "target_manhole_no": 44,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "직매",
     "outer_spec1": 100,
@@ -1449,41 +1545,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "2025",
-    "coordinates": [
-      [
-        37.51813656396393,
-        127.17475920743034
-      ],
-      [
-        37.518535,
-        127.184121
-      ]
-    ]
+    "warranty_year": "2025"
   },
   {
     "no": 44,
-    "hq": "서울경기본부",
-    "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
     "section": "서하남JCT-하남JCT",
-    "source_manhole_id": "M-1001-01735S-B-H",
-    "target_manhole_id": "M-1001-01771S-B-H",
-    "source_manhole_no": 44,
-    "target_manhole_no": 45,
-    "category": "도로",
-    "pipe_type": "COD",
-    "outer_spec1": 122,
-    "outer_qty1": 2,
-    "outer_spec2": null,
-    "outer_qty2": null,
-    "inner_spec1": 28,
-    "inner_qty1": 9,
-    "use_spec1": 28,
-    "use_qty1": 3,
-    "use_desc1": "자가망,FTMS",
-    "completion_year": "",
-    "warranty_year": "1993",
+    "source_manhole_id": "43M",
+    "target_manhole_id": "44M",
+    "source_code": "M-1001-01735S-B-H",
+    "target_code": "M-1001-01771S-B-H",
+    "source_no": 44,
+    "target_no": 45,
     "coordinates": [
       [
         37.518535,
@@ -1493,18 +1565,10 @@
         37.519871,
         127.188155
       ]
-    ]
-  },
-  {
-    "no": 45,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "서하남JCT-하남JCT",
-    "source_manhole_id": "M-1001-01771S-B-H",
-    "target_manhole_id": "M-1001-01807S-B-H",
-    "source_manhole_no": 45,
-    "target_manhole_no": 46,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -1517,7 +1581,17 @@
     "use_qty1": 3,
     "use_desc1": "자가망,FTMS",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 45,
+    "section": "서하남JCT-하남JCT",
+    "source_manhole_id": "44M",
+    "target_manhole_id": "45M",
+    "source_code": "M-1001-01771S-B-H",
+    "target_code": "M-1001-01807S-B-H",
+    "source_no": 45,
+    "target_no": 46,
     "coordinates": [
       [
         37.519871,
@@ -1527,18 +1601,10 @@
         37.522219,
         127.191133
       ]
-    ]
-  },
-  {
-    "no": 46,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "서하남JCT-하남JCT",
-    "source_manhole_id": "M-1001-01807S-B-H",
-    "target_manhole_id": "M-1001-01851S-P-H",
-    "source_manhole_no": 46,
-    "target_manhole_no": 47,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -1551,7 +1617,17 @@
     "use_qty1": 3,
     "use_desc1": "자가망,FTMS",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 46,
+    "section": "서하남JCT-하남JCT",
+    "source_manhole_id": "45M",
+    "target_manhole_id": "46M",
+    "source_code": "M-1001-01807S-B-H",
+    "target_code": "M-1001-01851S-P-H",
+    "source_no": 46,
+    "target_no": 47,
     "coordinates": [
       [
         37.522219,
@@ -1561,18 +1637,10 @@
         37.52485,
         127.192828
       ]
-    ]
-  },
-  {
-    "no": 47,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "서하남JCT-하남JCT",
-    "source_manhole_id": "M-1001-01851S-P-H",
-    "target_manhole_id": "M-1001-01882S-B-H",
-    "source_manhole_no": 47,
-    "target_manhole_no": 48,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -1582,10 +1650,20 @@
     "inner_spec1": 28,
     "inner_qty1": 9,
     "use_spec1": 28,
-    "use_qty1": 2,
-    "use_desc1": "자가망",
+    "use_qty1": 3,
+    "use_desc1": "자가망,FTMS",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 47,
+    "section": "서하남JCT-하남JCT",
+    "source_manhole_id": "46M",
+    "target_manhole_id": "47M",
+    "source_code": "M-1001-01851S-P-H",
+    "target_code": "M-1001-01882S-B-H",
+    "source_no": 47,
+    "target_no": 48,
     "coordinates": [
       [
         37.52485,
@@ -1595,31 +1673,33 @@
         37.528048,
         127.194698
       ]
-    ]
-  },
-  {
-    "no": 48,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "서하남JCT-하남JCT",
-    "source_manhole_id": "M-1001-01882S-B-H",
-    "target_manhole_id": "M-1001-01913S-B-H",
-    "source_manhole_no": 48,
-    "target_manhole_no": 49,
+    "route": "수도권제1순환선",
     "category": "도로",
-    "pipe_type": "PVC",
-    "outer_spec1": 100,
-    "outer_qty1": 1,
-    "outer_spec2": 150,
-    "outer_qty2": 1,
+    "pipe_type": "COD",
+    "outer_spec1": 122,
+    "outer_qty1": 2,
+    "outer_spec2": null,
+    "outer_qty2": null,
     "inner_spec1": 28,
-    "inner_qty1": 3,
+    "inner_qty1": 9,
     "use_spec1": 28,
     "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 48,
+    "section": "서하남JCT-하남JCT",
+    "source_manhole_id": "47M",
+    "target_manhole_id": "48M",
+    "source_code": "M-1001-01882S-B-H",
+    "target_code": "M-1001-01913S-B-H",
+    "source_no": 48,
+    "target_no": 49,
     "coordinates": [
       [
         37.528048,
@@ -1629,18 +1709,10 @@
         37.530501,
         127.195296
       ]
-    ]
-  },
-  {
-    "no": 49,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "서하남JCT-하남JCT",
-    "source_manhole_id": "M-1001-01913S-B-H",
-    "target_manhole_id": "M-1001-01962S-B-H",
-    "source_manhole_no": 49,
-    "target_manhole_no": 50,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -1650,10 +1722,20 @@
     "inner_spec1": 28,
     "inner_qty1": 3,
     "use_spec1": 28,
-    "use_qty1": 3,
-    "use_desc1": "자가망,FTMS",
+    "use_qty1": 2,
+    "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 49,
+    "section": "서하남JCT-하남JCT",
+    "source_manhole_id": "48M",
+    "target_manhole_id": "49M",
+    "source_code": "M-1001-01913S-B-H",
+    "target_code": "M-1001-01962S-B-H",
+    "source_no": 49,
+    "target_no": 50,
     "coordinates": [
       [
         37.530501,
@@ -1663,18 +1745,10 @@
         37.531984,
         127.193722
       ]
-    ]
-  },
-  {
-    "no": 50,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "서하남JCT-하남JCT",
-    "source_manhole_id": "M-1001-01962S-B-H",
-    "target_manhole_id": "M-1001-02021S-B-H",
-    "source_manhole_no": 50,
-    "target_manhole_no": 51,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -1685,9 +1759,19 @@
     "inner_qty1": 3,
     "use_spec1": 28,
     "use_qty1": 3,
-    "use_desc1": "자가망,임대",
+    "use_desc1": "자가망,FTMS",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 50,
+    "section": "서하남JCT-하남JCT",
+    "source_manhole_id": "49M",
+    "target_manhole_id": "50M",
+    "source_code": "M-1001-01962S-B-H",
+    "target_code": "M-1001-02021S-B-H",
+    "source_no": 50,
+    "target_no": 51,
     "coordinates": [
       [
         37.531984,
@@ -1697,18 +1781,10 @@
         37.534426,
         127.188173
       ]
-    ]
-  },
-  {
-    "no": 51,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "하남JCT-상일IC",
-    "source_manhole_id": "M-1001-02021S-B-H",
-    "target_manhole_id": "M-1001-02060S-P-H",
-    "source_manhole_no": 51,
-    "target_manhole_no": 52,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -1721,7 +1797,17 @@
     "use_qty1": 3,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 51,
+    "section": "하남JCT-상일IC",
+    "source_manhole_id": "50M",
+    "target_manhole_id": "51M",
+    "source_code": "M-1001-02021S-B-H",
+    "target_code": "M-1001-02060S-P-H",
+    "source_no": 51,
+    "target_no": 52,
     "coordinates": [
       [
         37.534426,
@@ -1731,18 +1817,10 @@
         37.536868,
         127.185376
       ]
-    ]
-  },
-  {
-    "no": 52,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "하남JCT-상일IC",
-    "source_manhole_id": "M-1001-02060S-P-H",
-    "target_manhole_id": "M-1001-02105S-B-H",
-    "source_manhole_no": 52,
-    "target_manhole_no": 53,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -1755,7 +1833,17 @@
     "use_qty1": 3,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 52,
+    "section": "하남JCT-상일IC",
+    "source_manhole_id": "51M",
+    "target_manhole_id": "52M",
+    "source_code": "M-1001-02060S-P-H",
+    "target_code": "M-1001-02105S-B-H",
+    "source_no": 52,
+    "target_no": 53,
     "coordinates": [
       [
         37.536868,
@@ -1765,18 +1853,10 @@
         37.541381,
         127.182699
       ]
-    ]
-  },
-  {
-    "no": 53,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "하남JCT-상일IC",
-    "source_manhole_id": "M-1001-02105S-B-H",
-    "target_manhole_id": "M-1001-02161S-B-H",
-    "source_manhole_no": 53,
-    "target_manhole_no": 54,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -1789,7 +1869,17 @@
     "use_qty1": 3,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 53,
+    "section": "하남JCT-상일IC",
+    "source_manhole_id": "52M",
+    "target_manhole_id": "53M(배)",
+    "source_code": "M-1001-02105S-B-H",
+    "target_code": "M-1001-02161S-B-H",
+    "source_no": 53,
+    "target_no": 54,
     "coordinates": [
       [
         37.541381,
@@ -1799,18 +1889,10 @@
         37.545485,
         127.180598
       ]
-    ]
-  },
-  {
-    "no": 54,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "하남JCT-상일IC",
-    "source_manhole_id": "M-1001-02161S-B-H",
-    "target_manhole_id": "M-1001-02162S-P-H",
-    "source_manhole_no": 54,
-    "target_manhole_no": 55,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -1823,7 +1905,17 @@
     "use_qty1": 3,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 54,
+    "section": "하남JCT-상일IC",
+    "source_manhole_id": "53M(배)",
+    "target_manhole_id": "54M",
+    "source_code": "M-1001-02161S-B-H",
+    "target_code": "M-1001-02162S-P-H",
+    "source_no": 54,
+    "target_no": 55,
     "coordinates": [
       [
         37.545485,
@@ -1833,31 +1925,33 @@
         37.545513,
         127.180754
       ]
-    ]
+    ],
+    "hq": "서울경기본부",
+    "branch": "동서울지사",
+    "route": "수도권제1순환선",
+    "category": "도로",
+    "pipe_type": "PVC",
+    "outer_spec1": 100,
+    "outer_qty1": 1,
+    "outer_spec2": 150,
+    "outer_qty2": 1,
+    "inner_spec1": 28,
+    "inner_qty1": 3,
+    "use_spec1": 28,
+    "use_qty1": 3,
+    "use_desc1": "자가망,임대",
+    "completion_year": "",
+    "warranty_year": "1993"
   },
   {
     "no": 55,
-    "hq": "서울경기본부",
-    "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
     "section": "하남JCT-상일IC",
-    "source_manhole_id": "M-1001-02162S-P-H",
-    "target_manhole_id": "M-1001-02202S-P-H",
-    "source_manhole_no": 55,
-    "target_manhole_no": 56,
-    "category": "도로",
-    "pipe_type": "스틸배관",
-    "outer_spec1": 100,
-    "outer_qty1": 1,
-    "outer_spec2": null,
-    "outer_qty2": null,
-    "inner_spec1": 28,
-    "inner_qty1": 1,
-    "use_spec1": 28,
-    "use_qty1": 1,
-    "use_desc1": "자가망",
-    "completion_year": "",
-    "warranty_year": "1993",
+    "source_manhole_id": "54M",
+    "target_manhole_id": "55M",
+    "source_code": "M-1001-02162S-P-H",
+    "target_code": "M-1001-02202S-P-H",
+    "source_no": 55,
+    "target_no": 56,
     "coordinates": [
       [
         37.545513,
@@ -1867,18 +1961,10 @@
         37.549617,
         127.178957
       ]
-    ]
-  },
-  {
-    "no": 56,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "하남JCT-상일IC",
-    "source_manhole_id": "M-1001-02202S-P-H",
-    "target_manhole_id": "M-1001-02242S-B-H",
-    "source_manhole_no": 56,
-    "target_manhole_no": 57,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "스틸배관",
     "outer_spec1": 100,
@@ -1891,7 +1977,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 56,
+    "section": "하남JCT-상일IC",
+    "source_manhole_id": "55M",
+    "target_manhole_id": "56M",
+    "source_code": "M-1001-02202S-P-H",
+    "target_code": "M-1001-02242S-B-H",
+    "source_no": 56,
+    "target_no": 57,
     "coordinates": [
       [
         37.549617,
@@ -1901,18 +1997,10 @@
         37.552861,
         127.177456
       ]
-    ]
-  },
-  {
-    "no": 57,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "하남JCT-상일IC",
-    "source_manhole_id": "M-1001-02242S-B-H",
-    "target_manhole_id": "M-1001-02243S-P-H",
-    "source_manhole_no": 57,
-    "target_manhole_no": 58,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "스틸배관",
     "outer_spec1": 100,
@@ -1925,7 +2013,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 57,
+    "section": "하남JCT-상일IC",
+    "source_manhole_id": "56M",
+    "target_manhole_id": "57M",
+    "source_code": "M-1001-02242S-B-H",
+    "target_code": "M-1001-02243S-P-H",
+    "source_no": 57,
+    "target_no": 58,
     "coordinates": [
       [
         37.552861,
@@ -1935,18 +2033,10 @@
         37.553013,
         127.177225
       ]
-    ]
-  },
-  {
-    "no": 58,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "하남JCT-상일IC",
-    "source_manhole_id": "M-1001-02243S-P-H",
-    "target_manhole_id": "M-1001-02285S-B-H",
-    "source_manhole_no": 58,
-    "target_manhole_no": 59,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "스틸배관",
     "outer_spec1": 100,
@@ -1959,7 +2049,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 58,
+    "section": "하남JCT-상일IC",
+    "source_manhole_id": "57M",
+    "target_manhole_id": "58M",
+    "source_code": "M-1001-02243S-P-H",
+    "target_code": "M-1001-02285S-B-H",
+    "source_no": 58,
+    "target_no": 59,
     "coordinates": [
       [
         37.553013,
@@ -1969,18 +2069,10 @@
         37.557225,
         127.175527
       ]
-    ]
-  },
-  {
-    "no": 59,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "상일IC-강일IC",
-    "source_manhole_id": "M-1001-02285S-B-H",
-    "target_manhole_id": "M-1001-02321S-B-H",
-    "source_manhole_no": 59,
-    "target_manhole_no": 60,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "스틸배관",
     "outer_spec1": 100,
@@ -1993,7 +2085,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 59,
+    "section": "상일IC-강일IC",
+    "source_manhole_id": "58M",
+    "target_manhole_id": "59-1M",
+    "source_code": "M-1001-02285S-B-H",
+    "target_code": "M-1001-02321S-B-H",
+    "source_no": 59,
+    "target_no": 60,
     "coordinates": [
       [
         37.557225,
@@ -2003,18 +2105,10 @@
         37.559098,
         127.174878
       ]
-    ]
-  },
-  {
-    "no": 60,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "상일IC-강일IC",
-    "source_manhole_id": "M-1001-02321S-B-H",
-    "target_manhole_id": "M-1001-02340S-P-H",
-    "source_manhole_no": 60,
-    "target_manhole_no": 61,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "스틸배관",
     "outer_spec1": 100,
@@ -2027,7 +2121,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 60,
+    "section": "상일IC-강일IC",
+    "source_manhole_id": "59-1M",
+    "target_manhole_id": "59M",
+    "source_code": "M-1001-02321S-B-H",
+    "target_code": "M-1001-02340S-P-H",
+    "source_no": 60,
+    "target_no": 61,
     "coordinates": [
       [
         37.559098,
@@ -2037,18 +2141,10 @@
         37.563005,
         127.173366
       ]
-    ]
-  },
-  {
-    "no": 61,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "상일IC-강일IC",
-    "source_manhole_id": "M-1001-02340S-P-H",
-    "target_manhole_id": "M-1001-02386S-B-H",
-    "source_manhole_no": 61,
-    "target_manhole_no": 62,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "스틸배관",
     "outer_spec1": 100,
@@ -2061,7 +2157,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 61,
+    "section": "상일IC-강일IC",
+    "source_manhole_id": "59M",
+    "target_manhole_id": "60M",
+    "source_code": "M-1001-02340S-P-H",
+    "target_code": "M-1001-02386S-B-H",
+    "source_no": 61,
+    "target_no": 62,
     "coordinates": [
       [
         37.563005,
@@ -2071,18 +2177,10 @@
         37.564824,
         127.17204
       ]
-    ]
-  },
-  {
-    "no": 62,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "상일IC-강일IC",
-    "source_manhole_id": "M-1001-02386S-B-H",
-    "target_manhole_id": "M-1001-02422S-P-H",
-    "source_manhole_no": 62,
-    "target_manhole_no": 63,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "스틸배관",
     "outer_spec1": 100,
@@ -2095,7 +2193,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 62,
+    "section": "상일IC-강일IC",
+    "source_manhole_id": "60M",
+    "target_manhole_id": "61M",
+    "source_code": "M-1001-02386S-B-H",
+    "target_code": "M-1001-02422S-P-H",
+    "source_no": 62,
+    "target_no": 63,
     "coordinates": [
       [
         37.564824,
@@ -2105,18 +2213,10 @@
         37.567301,
         127.169972
       ]
-    ]
-  },
-  {
-    "no": 63,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "상일IC-강일IC",
-    "source_manhole_id": "M-1001-02422S-P-H",
-    "target_manhole_id": "M-1001-02465S-P-H",
-    "source_manhole_no": 63,
-    "target_manhole_no": 64,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "스틸배관",
     "outer_spec1": 100,
@@ -2129,7 +2229,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 63,
+    "section": "상일IC-강일IC",
+    "source_manhole_id": "61M",
+    "target_manhole_id": "62M",
+    "source_code": "M-1001-02422S-P-H",
+    "target_code": "M-1001-02465S-P-H",
+    "source_no": 63,
+    "target_no": 64,
     "coordinates": [
       [
         37.567301,
@@ -2139,31 +2249,33 @@
         37.570606,
         127.16697
       ]
-    ]
-  },
-  {
-    "no": 64,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "상일IC-강일IC",
-    "source_manhole_id": "M-1001-02465S-P-H",
-    "target_manhole_id": "M-1001-02481S-P-H",
-    "source_manhole_no": 64,
-    "target_manhole_no": 65,
+    "route": "수도권제1순환선",
     "category": "도로",
-    "pipe_type": "COD",
-    "outer_spec1": 122,
-    "outer_qty1": 2,
+    "pipe_type": "스틸배관",
+    "outer_spec1": 100,
+    "outer_qty1": 1,
     "outer_spec2": null,
     "outer_qty2": null,
     "inner_spec1": 28,
-    "inner_qty1": 9,
+    "inner_qty1": 1,
     "use_spec1": 28,
-    "use_qty1": 2,
-    "use_desc1": "자가망,임대",
+    "use_qty1": 1,
+    "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 64,
+    "section": "상일IC-강일IC",
+    "source_manhole_id": "62M",
+    "target_manhole_id": "63M",
+    "source_code": "M-1001-02465S-P-H",
+    "target_code": "M-1001-02481S-P-H",
+    "source_no": 64,
+    "target_no": 65,
     "coordinates": [
       [
         37.570606,
@@ -2173,18 +2285,10 @@
         37.571217,
         127.166551
       ]
-    ]
-  },
-  {
-    "no": 65,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "상일IC-강일IC",
-    "source_manhole_id": "M-1001-02481S-P-H",
-    "target_manhole_id": "M-1001-02487S-B-H",
-    "source_manhole_no": 65,
-    "target_manhole_no": 66,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2197,7 +2301,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 65,
+    "section": "상일IC-강일IC",
+    "source_manhole_id": "63M",
+    "target_manhole_id": "64M",
+    "source_code": "M-1001-02481S-P-H",
+    "target_code": "M-1001-02487S-B-H",
+    "source_no": 65,
+    "target_no": 66,
     "coordinates": [
       [
         37.571217,
@@ -2207,18 +2321,10 @@
         37.573441,
         127.164525
       ]
-    ]
-  },
-  {
-    "no": 66,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "상일IC-강일IC",
-    "source_manhole_id": "M-1001-02487S-B-H",
-    "target_manhole_id": "M-1001-02598S-B-H",
-    "source_manhole_no": 66,
-    "target_manhole_no": 67,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2231,7 +2337,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 66,
+    "section": "상일IC-강일IC",
+    "source_manhole_id": "64M",
+    "target_manhole_id": "65M(배)",
+    "source_code": "M-1001-02487S-B-H",
+    "target_code": "M-1001-02598S-B-H",
+    "source_no": 66,
+    "target_no": 67,
     "coordinates": [
       [
         37.573441,
@@ -2241,18 +2357,10 @@
         37.581754,
         127.157797
       ]
-    ]
-  },
-  {
-    "no": 67,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "강일IC-남양주IC",
-    "source_manhole_id": "M-1001-02598S-B-H",
-    "target_manhole_id": "M-1001-02637S-P-H",
-    "source_manhole_no": 67,
-    "target_manhole_no": 68,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2265,7 +2373,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 67,
+    "section": "강일IC-남양주IC",
+    "source_manhole_id": "65M(배)",
+    "target_manhole_id": "66M",
+    "source_code": "M-1001-02598S-B-H",
+    "target_code": "M-1001-02637S-P-H",
+    "source_no": 67,
+    "target_no": 68,
     "coordinates": [
       [
         37.581754,
@@ -2275,18 +2393,10 @@
         37.585037,
         127.156294
       ]
-    ]
-  },
-  {
-    "no": 68,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "강일IC-남양주IC",
-    "source_manhole_id": "M-1001-02637S-P-H",
-    "target_manhole_id": "H-1001-02647S-P-H",
-    "source_manhole_no": 68,
-    "target_manhole_no": 69,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2299,7 +2409,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 68,
+    "section": "강일IC-남양주IC",
+    "source_manhole_id": "66M",
+    "target_manhole_id": "66-1H",
+    "source_code": "M-1001-02637S-P-H",
+    "target_code": "H-1001-02647S-P-H",
+    "source_no": 68,
+    "target_no": 69,
     "coordinates": [
       [
         37.585037,
@@ -2309,18 +2429,10 @@
         37.588187,
         127.156103
       ]
-    ]
-  },
-  {
-    "no": 69,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "강일IC-남양주IC",
-    "source_manhole_id": "H-1001-02647S-P-H",
-    "target_manhole_id": "H-1001-02652S-P-H",
-    "source_manhole_no": 69,
-    "target_manhole_no": 70,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2333,7 +2445,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 69,
+    "section": "강일IC-남양주IC",
+    "source_manhole_id": "66-1H",
+    "target_manhole_id": "66-2H",
+    "source_code": "H-1001-02647S-P-H",
+    "target_code": "H-1001-02652S-P-H",
+    "source_no": 69,
+    "target_no": 70,
     "coordinates": [
       [
         37.588187,
@@ -2343,18 +2465,10 @@
         37.589229,
         127.155586
       ]
-    ]
-  },
-  {
-    "no": 70,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "강일IC-남양주IC",
-    "source_manhole_id": "H-1001-02652S-P-H",
-    "target_manhole_id": "H-1001-02689S-P-H",
-    "source_manhole_no": 70,
-    "target_manhole_no": 71,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2367,7 +2481,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 70,
+    "section": "강일IC-남양주IC",
+    "source_manhole_id": "66-2H",
+    "target_manhole_id": "66-3H",
+    "source_code": "H-1001-02652S-P-H",
+    "target_code": "H-1001-02689S-P-H",
+    "source_no": 70,
+    "target_no": 71,
     "coordinates": [
       [
         37.589229,
@@ -2377,18 +2501,10 @@
         37.589905,
         127.155612
       ]
-    ]
-  },
-  {
-    "no": 71,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "강일IC-남양주IC",
-    "source_manhole_id": "H-1001-02689S-P-H",
-    "target_manhole_id": "H-1001-02696S-P-H",
-    "source_manhole_no": 71,
-    "target_manhole_no": 72,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2401,7 +2517,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 71,
+    "section": "강일IC-남양주IC",
+    "source_manhole_id": "66-3H",
+    "target_manhole_id": "66-4H",
+    "source_code": "H-1001-02689S-P-H",
+    "target_code": "H-1001-02696S-P-H",
+    "source_no": 71,
+    "target_no": 72,
     "coordinates": [
       [
         37.589905,
@@ -2411,18 +2537,10 @@
         37.590595,
         127.156194
       ]
-    ]
-  },
-  {
-    "no": 72,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "강일IC-남양주IC",
-    "source_manhole_id": "H-1001-02696S-P-H",
-    "target_manhole_id": "M-1001-02690S-P-H",
-    "source_manhole_no": 72,
-    "target_manhole_no": 73,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2435,7 +2553,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 72,
+    "section": "강일IC-남양주IC",
+    "source_manhole_id": "66-4H",
+    "target_manhole_id": "67M",
+    "source_code": "H-1001-02696S-P-H",
+    "target_code": "M-1001-02690S-P-H",
+    "source_no": 72,
+    "target_no": 73,
     "coordinates": [
       [
         37.590595,
@@ -2445,18 +2573,10 @@
         37.5899394,
         127.155583
       ]
-    ]
-  },
-  {
-    "no": 73,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "강일IC-남양주IC",
-    "source_manhole_id": "M-1001-02690S-P-H",
-    "target_manhole_id": "M-1001-02721S-B-H",
-    "source_manhole_no": 73,
-    "target_manhole_no": 74,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2469,7 +2589,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 73,
+    "section": "강일IC-남양주IC",
+    "source_manhole_id": "67M",
+    "target_manhole_id": "68M(배)",
+    "source_code": "M-1001-02690S-P-H",
+    "target_code": "M-1001-02721S-B-H",
+    "source_no": 73,
+    "target_no": 74,
     "coordinates": [
       [
         37.5899394,
@@ -2479,18 +2609,10 @@
         37.592171,
         127.156503
       ]
-    ]
-  },
-  {
-    "no": 74,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "강일IC-남양주IC",
-    "source_manhole_id": "M-1001-02721S-B-H",
-    "target_manhole_id": "M-1001-02784S-B-H",
-    "source_manhole_no": 74,
-    "target_manhole_no": 75,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2503,7 +2625,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 74,
+    "section": "강일IC-남양주IC",
+    "source_manhole_id": "68M(배)",
+    "target_manhole_id": "69M",
+    "source_code": "M-1001-02721S-B-H",
+    "target_code": "M-1001-02784S-B-H",
+    "source_no": 74,
+    "target_no": 75,
     "coordinates": [
       [
         37.592171,
@@ -2513,18 +2645,10 @@
         37.597473,
         127.155824
       ]
-    ]
-  },
-  {
-    "no": 75,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "강일IC-남양주IC",
-    "source_manhole_id": "M-1001-02784S-B-H",
-    "target_manhole_id": "M-1001-02822S-B-H",
-    "source_manhole_no": 75,
-    "target_manhole_no": 76,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2537,7 +2661,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 75,
+    "section": "강일IC-남양주IC",
+    "source_manhole_id": "69M",
+    "target_manhole_id": "70M(배)",
+    "source_code": "M-1001-02784S-B-H",
+    "target_code": "M-1001-02822S-B-H",
+    "source_no": 75,
+    "target_no": 76,
     "coordinates": [
       [
         37.597473,
@@ -2547,18 +2681,10 @@
         37.60069,
         127.153933
       ]
-    ]
-  },
-  {
-    "no": 76,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "강일IC-남양주IC",
-    "source_manhole_id": "M-1001-02822S-B-H",
-    "target_manhole_id": "M-1001-02855S-P-H",
-    "source_manhole_no": 76,
-    "target_manhole_no": 77,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2571,7 +2697,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 76,
+    "section": "강일IC-남양주IC",
+    "source_manhole_id": "70M(배)",
+    "target_manhole_id": "71M(배)",
+    "source_code": "M-1001-02822S-B-H",
+    "target_code": "M-1001-02855S-P-H",
+    "source_no": 76,
+    "target_no": 77,
     "coordinates": [
       [
         37.60069,
@@ -2581,18 +2717,10 @@
         37.602962,
         127.151618
       ]
-    ]
-  },
-  {
-    "no": 77,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "강일IC-남양주IC",
-    "source_manhole_id": "M-1001-02855S-P-H",
-    "target_manhole_id": "M-1001-02920S-B-H",
-    "source_manhole_no": 77,
-    "target_manhole_no": 78,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2602,10 +2730,20 @@
     "inner_spec1": 28,
     "inner_qty1": 9,
     "use_spec1": 28,
-    "use_qty1": 1,
+    "use_qty1": 2,
     "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 77,
+    "section": "강일IC-남양주IC",
+    "source_manhole_id": "71M(배)",
+    "target_manhole_id": "72M(배)",
+    "source_code": "M-1001-02855S-P-H",
+    "target_code": "M-1001-02920S-B-H",
+    "source_no": 77,
+    "target_no": 78,
     "coordinates": [
       [
         37.602962,
@@ -2615,18 +2753,10 @@
         37.607338,
         127.146304
       ]
-    ]
-  },
-  {
-    "no": 78,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "남양주IC-구리IC",
-    "source_manhole_id": "M-1001-02920S-B-H",
-    "target_manhole_id": "M-1001-02974S-P-H",
-    "source_manhole_no": 78,
-    "target_manhole_no": 79,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2637,9 +2767,19 @@
     "inner_qty1": 9,
     "use_spec1": 28,
     "use_qty1": 1,
-    "use_desc1": "자가망",
+    "use_desc1": "자가망,임대",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 78,
+    "section": "남양주IC-구리IC",
+    "source_manhole_id": "72M(배)",
+    "target_manhole_id": "73M(배)",
+    "source_code": "M-1001-02920S-B-H",
+    "target_code": "M-1001-02974S-P-H",
+    "source_no": 78,
+    "target_no": 79,
     "coordinates": [
       [
         37.607338,
@@ -2649,18 +2789,10 @@
         37.611002,
         127.142892
       ]
-    ]
-  },
-  {
-    "no": 79,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "남양주IC-구리IC",
-    "source_manhole_id": "M-1001-02974S-P-H",
-    "target_manhole_id": "M-1001-03005S-B-H",
-    "source_manhole_no": 79,
-    "target_manhole_no": 80,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2673,7 +2805,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 79,
+    "section": "남양주IC-구리IC",
+    "source_manhole_id": "73M(배)",
+    "target_manhole_id": "74M",
+    "source_code": "M-1001-02974S-P-H",
+    "target_code": "M-1001-03005S-B-H",
+    "source_no": 79,
+    "target_no": 80,
     "coordinates": [
       [
         37.611002,
@@ -2683,18 +2825,10 @@
         37.6140365,
         127.1417495
       ]
-    ]
-  },
-  {
-    "no": 80,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "남양주IC-구리IC",
-    "source_manhole_id": "M-1001-03005S-B-H",
-    "target_manhole_id": "M-1001-03042S-B-H",
-    "source_manhole_no": 80,
-    "target_manhole_no": 81,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2707,7 +2841,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 80,
+    "section": "남양주IC-구리IC",
+    "source_manhole_id": "74M",
+    "target_manhole_id": "75M",
+    "source_code": "M-1001-03005S-B-H",
+    "target_code": "M-1001-03042S-B-H",
+    "source_no": 80,
+    "target_no": 81,
     "coordinates": [
       [
         37.6140365,
@@ -2717,18 +2861,10 @@
         37.6172261,
         127.1409174
       ]
-    ]
-  },
-  {
-    "no": 81,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "남양주IC구리IC",
-    "source_manhole_id": "M-1001-03042S-B-H",
-    "target_manhole_id": "M-1001-03088S-B-H",
-    "source_manhole_no": 81,
-    "target_manhole_no": 82,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2741,7 +2877,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 81,
+    "section": "남양주IC구리IC",
+    "source_manhole_id": "75M",
+    "target_manhole_id": "76M",
+    "source_code": "M-1001-03042S-B-H",
+    "target_code": "M-1001-03088S-B-H",
+    "source_no": 81,
+    "target_no": 82,
     "coordinates": [
       [
         37.6172261,
@@ -2751,18 +2897,10 @@
         37.621453,
         127.139953
       ]
-    ]
-  },
-  {
-    "no": 82,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "구리IC-퇴계원IC",
-    "source_manhole_id": "M-1001-03088S-B-H",
-    "target_manhole_id": "M-1001-03121S-P-H",
-    "source_manhole_no": 82,
-    "target_manhole_no": 83,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2775,7 +2913,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 82,
+    "section": "구리IC-퇴계원IC",
+    "source_manhole_id": "76M",
+    "target_manhole_id": "77M",
+    "source_code": "M-1001-03088S-B-H",
+    "target_code": "M-1001-03121S-P-H",
+    "source_no": 82,
+    "target_no": 83,
     "coordinates": [
       [
         37.621453,
@@ -2785,18 +2933,10 @@
         37.62539,
         127.13905
       ]
-    ]
-  },
-  {
-    "no": 83,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "구리IC-퇴계원IC",
-    "source_manhole_id": "M-1001-03121S-P-H",
-    "target_manhole_id": "M-1001-03179S-B-H",
-    "source_manhole_no": 83,
-    "target_manhole_no": 84,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2809,7 +2949,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 83,
+    "section": "구리IC-퇴계원IC",
+    "source_manhole_id": "77M",
+    "target_manhole_id": "78M",
+    "source_code": "M-1001-03121S-P-H",
+    "target_code": "M-1001-03179S-B-H",
+    "source_no": 83,
+    "target_no": 84,
     "coordinates": [
       [
         37.62539,
@@ -2819,18 +2969,10 @@
         37.629335,
         127.137431
       ]
-    ]
-  },
-  {
-    "no": 84,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "구리IC-퇴계원IC",
-    "source_manhole_id": "M-1001-03179S-B-H",
-    "target_manhole_id": "M-1001-03224S-P-H",
-    "source_manhole_no": 84,
-    "target_manhole_no": 85,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2843,7 +2985,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 84,
+    "section": "구리IC-퇴계원IC",
+    "source_manhole_id": "78M",
+    "target_manhole_id": "79M",
+    "source_code": "M-1001-03179S-B-H",
+    "target_code": "M-1001-03224S-P-H",
+    "source_no": 84,
+    "target_no": 85,
     "coordinates": [
       [
         37.629335,
@@ -2853,18 +3005,10 @@
         37.632664,
         127.134764
       ]
-    ]
-  },
-  {
-    "no": 85,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "구리IC-퇴계원IC",
-    "source_manhole_id": "M-1001-03224S-P-H",
-    "target_manhole_id": "M-1001-03280S-B-H",
-    "source_manhole_no": 85,
-    "target_manhole_no": 86,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2877,7 +3021,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 85,
+    "section": "구리IC-퇴계원IC",
+    "source_manhole_id": "79M",
+    "target_manhole_id": "80M",
+    "source_code": "M-1001-03224S-P-H",
+    "target_code": "M-1001-03280S-B-H",
+    "source_no": 85,
+    "target_no": 86,
     "coordinates": [
       [
         37.632664,
@@ -2887,18 +3041,10 @@
         37.636601,
         127.133627
       ]
-    ]
-  },
-  {
-    "no": 86,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "구리IC-퇴계원IC",
-    "source_manhole_id": "M-1001-03280S-B-H",
-    "target_manhole_id": "M-1001-03315S-P-H",
-    "source_manhole_no": 86,
-    "target_manhole_no": 87,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2911,7 +3057,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 86,
+    "section": "구리IC-퇴계원IC",
+    "source_manhole_id": "80M",
+    "target_manhole_id": "81M",
+    "source_code": "M-1001-03280S-B-H",
+    "target_code": "M-1001-03315S-P-H",
+    "source_no": 86,
+    "target_no": 87,
     "coordinates": [
       [
         37.636601,
@@ -2921,18 +3077,10 @@
         37.640112,
         127.132663
       ]
-    ]
-  },
-  {
-    "no": 87,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 본선",
-    "section": "퇴계원IC-종점",
-    "source_manhole_id": "M-1001-03315S-P-H",
-    "target_manhole_id": "M-1001-03369S-P-H",
-    "source_manhole_no": 87,
-    "target_manhole_no": 88,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -2945,7 +3093,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1993",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 87,
+    "section": "퇴계원IC-종점",
+    "source_manhole_id": "81M",
+    "target_manhole_id": "82M",
+    "source_code": "M-1001-03315S-P-H",
+    "target_code": "M-1001-03369S-P-H",
+    "source_no": 87,
+    "target_no": 88,
     "coordinates": [
       [
         37.640112,
@@ -2955,52 +3113,12 @@
         37.643775,
         127.130165
       ]
-    ]
-  },
-  {
-    "no": 88,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 판교JCT 분기선",
-    "section": "판교JCT 분기선로",
-    "source_manhole_id": "M-1001-00021S-B-H",
-    "target_manhole_id": "M-1003-12820S-B-H",
-    "source_manhole_no": 1,
-    "target_manhole_no": 89,
+    "route": "수도권제1순환선",
     "category": "도로",
-    "pipe_type": "PVC",
-    "outer_spec1": 100,
-    "outer_qty1": 1,
-    "inner_spec1": 28,
-    "inner_qty1": 3,
-    "use_spec1": 28,
-    "use_qty1": 2,
-    "use_desc1": "자가망",
-    "completion_year": "1993",
-    "warranty_year": "1995",
-    "coordinates": [
-      [
-        37.406823,
-        127.097339
-      ],
-      [
-        37.406264,
-        127.095579
-      ]
-    ]
-  },
-  {
-    "no": 89,
-    "hq": "서울경기본부",
-    "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12820S-B-H",
-    "target_manhole_id": "M-1003-12770S-P-H",
-    "source_manhole_no": 89,
-    "target_manhole_no": 90,
-    "category": "도로",
-    "pipe_type": "PVC",
+    "pipe_type": "COD",
     "outer_spec1": 122,
     "outer_qty1": 2,
     "outer_spec2": null,
@@ -3008,10 +3126,20 @@
     "inner_spec1": 28,
     "inner_qty1": 9,
     "use_spec1": 28,
-    "use_qty1": 2,
+    "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1993"
+  },
+  {
+    "no": 89,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "1M",
+    "target_manhole_id": "2M",
+    "source_code": "M-1003-12820S-B-H",
+    "target_code": "M-1003-12770S-P-H",
+    "source_no": 89,
+    "target_no": 90,
     "coordinates": [
       [
         37.406264,
@@ -3021,18 +3149,10 @@
         37.405031,
         127.091826
       ]
-    ]
-  },
-  {
-    "no": 90,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12770S-P-H",
-    "target_manhole_id": "M-1003-12724S-B-H",
-    "source_manhole_no": 90,
-    "target_manhole_no": 91,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 122,
@@ -3045,7 +3165,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 90,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "2M",
+    "target_manhole_id": "3M",
+    "source_code": "M-1003-12770S-P-H",
+    "target_code": "M-1003-12724S-B-H",
+    "source_no": 90,
+    "target_no": 91,
     "coordinates": [
       [
         37.405031,
@@ -3055,18 +3185,10 @@
         37.403166,
         127.087003
       ]
-    ]
-  },
-  {
-    "no": 91,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12724S-B-H",
-    "target_manhole_id": "M-1003-12681S-B-H",
-    "source_manhole_no": 91,
-    "target_manhole_no": 92,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 122,
@@ -3079,7 +3201,17 @@
     "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 91,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "3M",
+    "target_manhole_id": "4M",
+    "source_code": "M-1003-12724S-B-H",
+    "target_code": "M-1003-12681S-B-H",
+    "source_no": 91,
+    "target_no": 92,
     "coordinates": [
       [
         37.403166,
@@ -3089,31 +3221,33 @@
         37.400378,
         127.082726
       ]
-    ]
-  },
-  {
-    "no": 92,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12681S-B-H",
-    "target_manhole_id": "M-1003-12625S-B-H",
-    "source_manhole_no": 92,
-    "target_manhole_no": 93,
+    "route": "수도권제1순환선",
     "category": "도로",
-    "pipe_type": "COD",
+    "pipe_type": "PVC",
     "outer_spec1": 122,
-    "outer_qty1": 1,
+    "outer_qty1": 2,
     "outer_spec2": null,
     "outer_qty2": null,
     "inner_spec1": 28,
-    "inner_qty1": 3,
+    "inner_qty1": 9,
     "use_spec1": 28,
-    "use_qty1": 1,
+    "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "2017",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 92,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "4M",
+    "target_manhole_id": "5M",
+    "source_code": "M-1003-12681S-B-H",
+    "target_code": "M-1003-12625S-B-H",
+    "source_no": 92,
+    "target_no": 93,
     "coordinates": [
       [
         37.400378,
@@ -3123,18 +3257,10 @@
         37.397473,
         127.078364
       ]
-    ]
-  },
-  {
-    "no": 93,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12625S-B-H",
-    "target_manhole_id": "M-1003-12582S-P-H",
-    "source_manhole_no": 93,
-    "target_manhole_no": 94,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -3147,7 +3273,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "2017",
+    "warranty_year": "2017"
+  },
+  {
+    "no": 93,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "5M",
+    "target_manhole_id": "6M",
+    "source_code": "M-1003-12625S-B-H",
+    "target_code": "M-1003-12582S-P-H",
+    "source_no": 93,
+    "target_no": 94,
     "coordinates": [
       [
         37.397473,
@@ -3157,18 +3293,10 @@
         37.395869,
         127.073134
       ]
-    ]
-  },
-  {
-    "no": 94,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12582S-P-H",
-    "target_manhole_id": "M-1003-12530S-B-H",
-    "source_manhole_no": 94,
-    "target_manhole_no": 95,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -3181,7 +3309,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "2017",
+    "warranty_year": "2017"
+  },
+  {
+    "no": 94,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "6M",
+    "target_manhole_id": "7M",
+    "source_code": "M-1003-12582S-P-H",
+    "target_code": "M-1003-12530S-B-H",
+    "source_no": 94,
+    "target_no": 95,
     "coordinates": [
       [
         37.395869,
@@ -3191,18 +3329,10 @@
         37.395588,
         127.069172
       ]
-    ]
-  },
-  {
-    "no": 95,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12530S-B-H",
-    "target_manhole_id": "M-1003-12490S-P-H",
-    "source_manhole_no": 95,
-    "target_manhole_no": 96,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 122,
@@ -3215,7 +3345,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "2017",
+    "warranty_year": "2017"
+  },
+  {
+    "no": 95,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "7M",
+    "target_manhole_id": "8M",
+    "source_code": "M-1003-12530S-B-H",
+    "target_code": "M-1003-12490S-P-H",
+    "source_no": 95,
+    "target_no": 96,
     "coordinates": [
       [
         37.395588,
@@ -3225,21 +3365,13 @@
         37.395514,
         127.064835
       ]
-    ]
-  },
-  {
-    "no": 96,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12490S-P-H",
-    "target_manhole_id": "M-1003-12442S-B-H",
-    "source_manhole_no": 96,
-    "target_manhole_no": 97,
+    "route": "수도권제1순환선",
     "category": "도로",
-    "pipe_type": "PVC",
-    "outer_spec1": 100,
+    "pipe_type": "COD",
+    "outer_spec1": 122,
     "outer_qty1": 1,
     "outer_spec2": null,
     "outer_qty2": null,
@@ -3249,7 +3381,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "2017",
+    "warranty_year": "2017"
+  },
+  {
+    "no": 96,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "8M",
+    "target_manhole_id": "9M",
+    "source_code": "M-1003-12490S-P-H",
+    "target_code": "M-1003-12442S-B-H",
+    "source_no": 96,
+    "target_no": 97,
     "coordinates": [
       [
         37.395514,
@@ -3259,31 +3401,33 @@
         37.395871,
         127.059087
       ]
-    ]
-  },
-  {
-    "no": 97,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12442S-B-H",
-    "target_manhole_id": "M-1003-12408S-B-H",
-    "source_manhole_no": 97,
-    "target_manhole_no": 98,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
     "outer_qty1": 1,
-    "outer_spec2": 150,
-    "outer_qty2": 1,
+    "outer_spec2": null,
+    "outer_qty2": null,
     "inner_spec1": 28,
     "inner_qty1": 3,
     "use_spec1": 28,
-    "use_qty1": 3,
-    "use_desc1": "자가망,FTMS",
+    "use_qty1": 1,
+    "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "2017"
+  },
+  {
+    "no": 97,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "9M",
+    "target_manhole_id": "10M",
+    "source_code": "M-1003-12442S-B-H",
+    "target_code": "M-1003-12408S-B-H",
+    "source_no": 97,
+    "target_no": 98,
     "coordinates": [
       [
         37.395871,
@@ -3293,18 +3437,10 @@
         37.396437,
         127.055475
       ]
-    ]
-  },
-  {
-    "no": 98,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12408S-B-H",
-    "target_manhole_id": "M-1003-12358S-P-H",
-    "source_manhole_no": 98,
-    "target_manhole_no": 99,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -3317,7 +3453,17 @@
     "use_qty1": 3,
     "use_desc1": "자가망,FTMS",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 98,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "10M",
+    "target_manhole_id": "11M",
+    "source_code": "M-1003-12408S-B-H",
+    "target_code": "M-1003-12358S-P-H",
+    "source_no": 98,
+    "target_no": 99,
     "coordinates": [
       [
         37.396437,
@@ -3327,18 +3473,10 @@
         37.396438,
         127.04996
       ]
-    ]
-  },
-  {
-    "no": 99,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12358S-P-H",
-    "target_manhole_id": "M-1003-12318S-P-H",
-    "source_manhole_no": 99,
-    "target_manhole_no": 100,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -3348,10 +3486,20 @@
     "inner_spec1": 28,
     "inner_qty1": 3,
     "use_spec1": 28,
-    "use_qty1": 1,
-    "use_desc1": "자가망",
+    "use_qty1": 3,
+    "use_desc1": "자가망,FTMS",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 99,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "11M",
+    "target_manhole_id": "12M",
+    "source_code": "M-1003-12358S-P-H",
+    "target_code": "M-1003-12318S-P-H",
+    "source_no": 99,
+    "target_no": 100,
     "coordinates": [
       [
         37.396438,
@@ -3361,18 +3509,10 @@
         37.39576,
         127.045788
       ]
-    ]
-  },
-  {
-    "no": 100,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12318S-P-H",
-    "target_manhole_id": "M-1003-12286S-B-H",
-    "source_manhole_no": 100,
-    "target_manhole_no": 101,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -3385,7 +3525,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 100,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "12M",
+    "target_manhole_id": "13M",
+    "source_code": "M-1003-12318S-P-H",
+    "target_code": "M-1003-12286S-B-H",
+    "source_no": 100,
+    "target_no": 101,
     "coordinates": [
       [
         37.39576,
@@ -3395,18 +3545,10 @@
         37.395122,
         127.040621
       ]
-    ]
-  },
-  {
-    "no": 101,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12286S-B-H",
-    "target_manhole_id": "M-1003-12215S-P-H",
-    "source_manhole_no": 101,
-    "target_manhole_no": 102,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -3419,7 +3561,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 101,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "13M",
+    "target_manhole_id": "14M",
+    "source_code": "M-1003-12286S-B-H",
+    "target_code": "M-1003-12215S-P-H",
+    "source_no": 101,
+    "target_no": 102,
     "coordinates": [
       [
         37.395122,
@@ -3429,18 +3581,10 @@
         37.394351,
         127.034554
       ]
-    ]
-  },
-  {
-    "no": 102,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12215S-P-H",
-    "target_manhole_id": "M-1003-12185S-B-H",
-    "source_manhole_no": 102,
-    "target_manhole_no": 103,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -3453,7 +3597,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 102,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "14M",
+    "target_manhole_id": "15M",
+    "source_code": "M-1003-12215S-P-H",
+    "target_code": "M-1003-12185S-B-H",
+    "source_no": 102,
+    "target_no": 103,
     "coordinates": [
       [
         37.394351,
@@ -3463,18 +3617,10 @@
         37.393535,
         127.030302
       ]
-    ]
-  },
-  {
-    "no": 103,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12185S-B-H",
-    "target_manhole_id": "M-1003-12135S-P-H",
-    "source_manhole_no": 103,
-    "target_manhole_no": 104,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -3487,7 +3633,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 103,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "15M",
+    "target_manhole_id": "16M",
+    "source_code": "M-1003-12185S-B-H",
+    "target_code": "M-1003-12135S-P-H",
+    "source_no": 103,
+    "target_no": 104,
     "coordinates": [
       [
         37.393535,
@@ -3497,18 +3653,10 @@
         37.393488,
         127.025445
       ]
-    ]
-  },
-  {
-    "no": 104,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12135S-P-H",
-    "target_manhole_id": "M-1003-12134S-B-H",
-    "source_manhole_no": 104,
-    "target_manhole_no": 105,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -3521,7 +3669,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 104,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "16M",
+    "target_manhole_id": "17M",
+    "source_code": "M-1003-12135S-P-H",
+    "target_code": "M-1003-12134S-B-H",
+    "source_no": 104,
+    "target_no": 105,
     "coordinates": [
       [
         37.393488,
@@ -3531,18 +3689,10 @@
         37.393623,
         127.025429
       ]
-    ]
-  },
-  {
-    "no": 105,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "판교JCT-청계TG",
-    "source_manhole_id": "M-1003-12134S-B-H",
-    "target_manhole_id": "M-1003-12126S-P-H",
-    "source_manhole_no": 105,
-    "target_manhole_no": 106,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -3555,7 +3705,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 105,
+    "section": "판교JCT-청계TG",
+    "source_manhole_id": "17M",
+    "target_manhole_id": "18M",
+    "source_code": "M-1003-12134S-B-H",
+    "target_code": "M-1003-12126S-P-H",
+    "source_no": 105,
+    "target_no": 106,
     "coordinates": [
       [
         37.393623,
@@ -3565,18 +3725,10 @@
         37.393538,
         127.024567
       ]
-    ]
-  },
-  {
-    "no": 106,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "청계TG-학의JCT",
-    "source_manhole_id": "M-1003-12126S-P-H",
-    "target_manhole_id": "M-1003-12125S-P-H",
-    "source_manhole_no": 106,
-    "target_manhole_no": 107,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -3589,7 +3741,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 106,
+    "section": "청계TG-학의JCT",
+    "source_manhole_id": "18M",
+    "target_manhole_id": "19M",
+    "source_code": "M-1003-12126S-P-H",
+    "target_code": "M-1003-12125S-P-H",
+    "source_no": 106,
+    "target_no": 107,
     "coordinates": [
       [
         37.393538,
@@ -3599,18 +3761,10 @@
         37.39354,
         127.02455
       ]
-    ]
-  },
-  {
-    "no": 107,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "청계TG-학의JCT",
-    "source_manhole_id": "M-1003-12125S-P-H",
-    "target_manhole_id": "M-1003-12085S-P-H",
-    "source_manhole_no": 107,
-    "target_manhole_no": 108,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -3623,7 +3777,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 107,
+    "section": "청계TG-학의JCT",
+    "source_manhole_id": "19M",
+    "target_manhole_id": "20M",
+    "source_code": "M-1003-12125S-P-H",
+    "target_code": "M-1003-12085S-P-H",
+    "source_no": 107,
+    "target_no": 108,
     "coordinates": [
       [
         37.39354,
@@ -3633,18 +3797,10 @@
         37.393114,
         127.021744
       ]
-    ]
-  },
-  {
-    "no": 108,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "청계TG-학의JCT",
-    "source_manhole_id": "M-1003-12085S-P-H",
-    "target_manhole_id": "M-1003-12035S-B-H",
-    "source_manhole_no": 108,
-    "target_manhole_no": 109,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -3657,7 +3813,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 108,
+    "section": "청계TG-학의JCT",
+    "source_manhole_id": "20M",
+    "target_manhole_id": "21M",
+    "source_code": "M-1003-12085S-P-H",
+    "target_code": "M-1003-12035S-B-H",
+    "source_no": 108,
+    "target_no": 109,
     "coordinates": [
       [
         37.393114,
@@ -3667,18 +3833,10 @@
         37.392433,
         127.014132
       ]
-    ]
-  },
-  {
-    "no": 109,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "청계TG-학의JCT",
-    "source_manhole_id": "M-1003-12035S-B-H",
-    "target_manhole_id": "M-1003-11992S-P-H",
-    "source_manhole_no": 109,
-    "target_manhole_no": 110,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -3691,7 +3849,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 109,
+    "section": "청계TG-학의JCT",
+    "source_manhole_id": "21M",
+    "target_manhole_id": "22M",
+    "source_code": "M-1003-12035S-B-H",
+    "target_code": "M-1003-11992S-P-H",
+    "source_no": 109,
+    "target_no": 110,
     "coordinates": [
       [
         37.392433,
@@ -3701,18 +3869,10 @@
         37.389705,
         127.007837
       ]
-    ]
-  },
-  {
-    "no": 110,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "학의JCT-평촌IC",
-    "source_manhole_id": "M-1003-11992S-P-H",
-    "target_manhole_id": "M-1003-11950S-B-H",
-    "source_manhole_no": 110,
-    "target_manhole_no": 111,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -3725,7 +3885,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 110,
+    "section": "학의JCT-평촌IC",
+    "source_manhole_id": "22M",
+    "target_manhole_id": "23M",
+    "source_code": "M-1003-11992S-P-H",
+    "target_code": "M-1003-11950S-B-H",
+    "source_no": 110,
+    "target_no": 111,
     "coordinates": [
       [
         37.389705,
@@ -3735,18 +3905,10 @@
         37.388243,
         127.004452
       ]
-    ]
-  },
-  {
-    "no": 111,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "학의JCT-평촌IC",
-    "source_manhole_id": "M-1003-11950S-B-H",
-    "target_manhole_id": "M-1003-11930S-P-H",
-    "source_manhole_no": 111,
-    "target_manhole_no": 112,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -3759,7 +3921,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 111,
+    "section": "학의JCT-평촌IC",
+    "source_manhole_id": "23M",
+    "target_manhole_id": "24M",
+    "source_code": "M-1003-11950S-B-H",
+    "target_code": "M-1003-11930S-P-H",
+    "source_no": 111,
+    "target_no": 112,
     "coordinates": [
       [
         37.388243,
@@ -3769,19 +3941,11 @@
         37.387747,
         127.002723
       ]
-    ]
-  },
-  {
-    "no": 112,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "학의JCT-평촌IC",
-    "source_manhole_id": "M-1003-11930S-P-H",
-    "target_manhole_id": "M-1003-11885S-P-H",
-    "source_manhole_no": 112,
-    "target_manhole_no": 113,
-    "category": "교량",
+    "route": "수도권제1순환선",
+    "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
     "outer_qty1": 1,
@@ -3793,7 +3957,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 112,
+    "section": "학의JCT-평촌IC",
+    "source_manhole_id": "24M",
+    "target_manhole_id": "25M",
+    "source_code": "M-1003-11930S-P-H",
+    "target_code": "M-1003-11885S-P-H",
+    "source_no": 112,
+    "target_no": 113,
     "coordinates": [
       [
         37.387747,
@@ -3803,18 +3977,10 @@
         37.386601,
         126.99805
       ]
-    ]
-  },
-  {
-    "no": 113,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "학의JCT-평촌IC",
-    "source_manhole_id": "M-1003-11885S-P-H",
-    "target_manhole_id": "M-1003-11815S-B-H",
-    "source_manhole_no": 113,
-    "target_manhole_no": 114,
+    "route": "수도권제1순환선",
     "category": "교량",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -3827,7 +3993,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 113,
+    "section": "학의JCT-평촌IC",
+    "source_manhole_id": "25M",
+    "target_manhole_id": "26M",
+    "source_code": "M-1003-11885S-P-H",
+    "target_code": "M-1003-11815S-B-H",
+    "source_no": 113,
+    "target_no": 114,
     "coordinates": [
       [
         37.386601,
@@ -3837,19 +4013,11 @@
         37.384511,
         126.990919
       ]
-    ]
-  },
-  {
-    "no": 114,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "학의JCT-평촌IC",
-    "source_manhole_id": "M-1003-11815S-B-H",
-    "target_manhole_id": "M-1003-11782S-P-H",
-    "source_manhole_no": 114,
-    "target_manhole_no": 115,
-    "category": "도로",
+    "route": "수도권제1순환선",
+    "category": "교량",
     "pipe_type": "PVC",
     "outer_spec1": 100,
     "outer_qty1": 1,
@@ -3858,10 +4026,20 @@
     "inner_spec1": 28,
     "inner_qty1": 3,
     "use_spec1": 28,
-    "use_qty1": 2,
+    "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "2025",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 114,
+    "section": "학의JCT-평촌IC",
+    "source_manhole_id": "26M",
+    "target_manhole_id": "27M",
+    "source_code": "M-1003-11815S-B-H",
+    "target_code": "M-1003-11782S-P-H",
+    "source_no": 114,
+    "target_no": 115,
     "coordinates": [
       [
         37.384511,
@@ -3871,31 +4049,33 @@
         37.383011,
         126.986948
       ]
-    ]
-  },
-  {
-    "no": 115,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "학의JCT-평촌IC",
-    "source_manhole_id": "M-1003-11782S-P-H",
-    "target_manhole_id": "M-1003-11746S-P-H",
-    "source_manhole_no": 115,
-    "target_manhole_no": 116,
+    "route": "수도권제1순환선",
     "category": "도로",
-    "pipe_type": "COD",
+    "pipe_type": "PVC",
     "outer_spec1": 100,
     "outer_qty1": 1,
-    "outer_spec2": null,
-    "outer_qty2": null,
+    "outer_spec2": 150,
+    "outer_qty2": 1,
     "inner_spec1": 28,
     "inner_qty1": 3,
     "use_spec1": 28,
-    "use_qty1": 1,
+    "use_qty1": 2,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "2025",
+    "warranty_year": "2025"
+  },
+  {
+    "no": 115,
+    "section": "학의JCT-평촌IC",
+    "source_manhole_id": "27M",
+    "target_manhole_id": "28M",
+    "source_code": "M-1003-11782S-P-H",
+    "target_code": "M-1003-11746S-P-H",
+    "source_no": 115,
+    "target_no": 116,
     "coordinates": [
       [
         37.383011,
@@ -3905,18 +4085,10 @@
         37.381661,
         126.983366
       ]
-    ]
-  },
-  {
-    "no": 116,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "학의JCT-평촌IC",
-    "source_manhole_id": "M-1003-11746S-P-H",
-    "target_manhole_id": "M-1003-11703S-B-H",
-    "source_manhole_no": 116,
-    "target_manhole_no": 117,
+    "route": "수도권제1순환선",
     "category": "도로",
     "pipe_type": "COD",
     "outer_spec1": 100,
@@ -3929,7 +4101,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "2025",
+    "warranty_year": "2025"
+  },
+  {
+    "no": 116,
+    "section": "학의JCT-평촌IC",
+    "source_manhole_id": "28M",
+    "target_manhole_id": "29M",
+    "source_code": "M-1003-11746S-P-H",
+    "target_code": "M-1003-11703S-B-H",
+    "source_no": 116,
+    "target_no": 117,
     "coordinates": [
       [
         37.381661,
@@ -3939,31 +4121,33 @@
         37.379845,
         126.97802
       ]
-    ]
-  },
-  {
-    "no": 117,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "학의JCT-평촌IC",
-    "source_manhole_id": "M-1003-11703S-B-H",
-    "target_manhole_id": "M-1003-11632S-P-H",
-    "source_manhole_no": 117,
-    "target_manhole_no": 118,
+    "route": "수도권제1순환선",
     "category": "도로",
-    "pipe_type": "PVC",
+    "pipe_type": "COD",
     "outer_spec1": 100,
     "outer_qty1": 1,
-    "outer_spec2": 150,
-    "outer_qty2": 1,
+    "outer_spec2": null,
+    "outer_qty2": null,
     "inner_spec1": 28,
     "inner_qty1": 3,
     "use_spec1": 28,
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "2025"
+  },
+  {
+    "no": 117,
+    "section": "학의JCT-평촌IC",
+    "source_manhole_id": "29M",
+    "target_manhole_id": "30M",
+    "source_code": "M-1003-11703S-B-H",
+    "target_code": "M-1003-11632S-P-H",
+    "source_no": 117,
+    "target_no": 118,
     "coordinates": [
       [
         37.379845,
@@ -3973,19 +4157,11 @@
         37.381552,
         126.968254
       ]
-    ]
-  },
-  {
-    "no": 118,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "학의JCT-평촌IC",
-    "source_manhole_id": "M-1003-11632S-P-H",
-    "target_manhole_id": "M-1003-11576S-B-H",
-    "source_manhole_no": 118,
-    "target_manhole_no": 119,
-    "category": "교량",
+    "route": "수도권제1순환선",
+    "category": "도로",
     "pipe_type": "PVC",
     "outer_spec1": 100,
     "outer_qty1": 1,
@@ -3997,7 +4173,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 118,
+    "section": "학의JCT-평촌IC",
+    "source_manhole_id": "30M",
+    "target_manhole_id": "31M",
+    "source_code": "M-1003-11632S-P-H",
+    "target_code": "M-1003-11576S-B-H",
+    "source_no": 118,
+    "target_no": 119,
     "coordinates": [
       [
         37.381552,
@@ -4007,18 +4193,10 @@
         37.382046,
         126.96624
       ]
-    ]
-  },
-  {
-    "no": 119,
+    ],
     "hq": "서울경기본부",
     "branch": "동서울지사",
-    "route": "수도권제1순환선 외곽선(청계-학의-평촌)",
-    "section": "학의JCT-평촌IC",
-    "source_manhole_id": "M-1003-11576S-B-H",
-    "target_manhole_id": "M-1003-11515S-P-H",
-    "source_manhole_no": 119,
-    "target_manhole_no": 120,
+    "route": "수도권제1순환선",
     "category": "교량",
     "pipe_type": "PVC",
     "outer_spec1": 100,
@@ -4031,7 +4209,17 @@
     "use_qty1": 1,
     "use_desc1": "자가망",
     "completion_year": "",
-    "warranty_year": "1995",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 119,
+    "section": "학의JCT-평촌IC",
+    "source_manhole_id": "31M",
+    "target_manhole_id": "32M",
+    "source_code": "M-1003-11576S-B-H",
+    "target_code": "M-1003-11515S-P-H",
+    "source_no": 119,
+    "target_no": 120,
     "coordinates": [
       [
         37.382046,
@@ -4041,6 +4229,58 @@
         37.38165,
         126.962927
       ]
-    ]
+    ],
+    "hq": "서울경기본부",
+    "branch": "동서울지사",
+    "route": "수도권제1순환선",
+    "category": "교량",
+    "pipe_type": "PVC",
+    "outer_spec1": 100,
+    "outer_qty1": 1,
+    "outer_spec2": 150,
+    "outer_qty2": 1,
+    "inner_spec1": 28,
+    "inner_qty1": 3,
+    "use_spec1": 28,
+    "use_qty1": 1,
+    "use_desc1": "자가망",
+    "completion_year": "",
+    "warranty_year": "1995"
+  },
+  {
+    "no": 120,
+    "section": "판교JCT 분기선",
+    "source_manhole_id": "2M",
+    "target_manhole_id": "1M",
+    "source_code": "M-1001-00021S-B-H",
+    "target_code": "M-1003-12820S-B-H",
+    "source_no": 1,
+    "target_no": 89,
+    "coordinates": [
+      [
+        37.406823,
+        127.097339
+      ],
+      [
+        37.406264,
+        127.095579
+      ]
+    ],
+    "hq": "서울경기본부",
+    "branch": "동서울지사",
+    "route": "수도권제1순환선",
+    "category": "도로(분기점)",
+    "pipe_type": "PVC (강관보호)",
+    "outer_spec1": 150,
+    "outer_qty1": 1,
+    "outer_spec2": null,
+    "outer_qty2": null,
+    "inner_spec1": 28,
+    "inner_qty1": 3,
+    "use_spec1": 28,
+    "use_qty1": 2,
+    "use_desc1": "자가망 (분기연결)",
+    "completion_year": "1995",
+    "warranty_year": "1995"
   }
 ]
