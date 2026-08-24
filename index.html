@@ -113,6 +113,32 @@
       border: 1px solid rgba(51, 65, 85, 0.6);
     }
 
+    /* Detail Drawer Responsive Animation (Desktop Slide-in & Mobile Bottom Sheet) */
+    #detail-drawer {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: auto;
+    }
+
+    /* Mobile: Slide up from bottom */
+    @media (max-width: 767px) {
+      #detail-drawer {
+        transform: translateY(100%);
+      }
+      #detail-drawer.drawer-open {
+        transform: translateY(0) !important;
+      }
+    }
+
+    /* Desktop: Slide in from right */
+    @media (min-width: 768px) {
+      #detail-drawer {
+        transform: translateX(100%);
+      }
+      #detail-drawer.drawer-open {
+        transform: translateX(0) !important;
+      }
+    }
+
     /* Mobile Touch optimization */
     @media (max-width: 768px) {
       .touch-target {
@@ -502,7 +528,7 @@
     <!-- --------------------------------------------------------------------- -->
     <!-- RIGHT DETAIL DRAWER / MOBILE BOTTOM SHEET                             -->
     <!-- --------------------------------------------------------------------- -->
-    <aside id="detail-drawer" class="fixed md:absolute inset-x-0 bottom-0 md:inset-y-0 md:right-0 md:left-auto w-full md:w-96 max-h-[85vh] md:max-h-full glass-panel z-40 md:z-20 flex flex-col transition-all duration-300 translate-y-full md:translate-y-0 md:translate-x-full border-t md:border-t-0 md:border-l border-slate-800/80 shadow-2xl rounded-t-3xl md:rounded-none overflow-hidden">
+    <aside id="detail-drawer" class="fixed md:absolute inset-x-0 bottom-0 md:inset-y-0 md:right-0 md:left-auto w-full md:w-96 max-h-[85vh] md:max-h-full glass-panel z-40 md:z-20 flex flex-col border-t md:border-t-0 md:border-l border-slate-800/80 shadow-2xl rounded-t-3xl md:rounded-none overflow-hidden">
       
       <!-- Mobile Grabber handle -->
       <div class="md:hidden w-12 h-1 bg-slate-600 rounded-full mx-auto mt-2 mb-1 shrink-0"></div>
@@ -1081,7 +1107,8 @@
       const title = document.getElementById('drawer-title');
       const body = document.getElementById('drawer-body');
 
-      drawer.classList.remove('translate-x-full', 'translate-y-full');
+      // Trigger open state
+      drawer.classList.add('drawer-open');
 
       let tmCoords = { x: 0, y: 0 };
       if (item.lat && item.lng) {
@@ -1090,7 +1117,7 @@
       }
 
       if (type === 'manhole') {
-        const isHandhole = item.category === '수공' || item.name.includes('H');
+        const isHandhole = item.category === '수공' || (item.name && item.name.includes('H'));
         const isSplice = item.type.includes('접속') || (item.splice_point && item.splice_point.length > 0);
 
         badge.className = 'px-2 py-0.5 rounded text-[10px] font-bold ' + (isSplice ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : (isHandhole ? 'bg-sky-500/20 text-sky-400 border border-sky-500/30' : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'));
@@ -1312,6 +1339,95 @@
             </div>
           </div>
         `;
+      } else if (type === 'cctv') {
+        badge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-400 border border-blue-500/30';
+        badge.innerText = 'CCTV 카메라';
+        title.innerText = item.cctv || item.name;
+
+        body.innerHTML = `
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex justify-between items-center text-slate-400">
+              <span>연계 맨홀</span>
+              <span class="font-bold text-cyan-300">${item.name}</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-400">
+              <span>설치 위치</span>
+              <span class="text-slate-200">${item.section} (${item.milepost}km, ${item.bound})</span>
+            </div>
+          </div>
+        `;
+      } else if (type === 'vds') {
+        badge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
+        badge.innerText = 'VDS 차량검지기';
+        title.innerText = item.vds || item.name;
+
+        body.innerHTML = `
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex justify-between items-center text-slate-400">
+              <span>연계 맨홀</span>
+              <span class="font-bold text-emerald-300">${item.name}</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-400">
+              <span>설치 위치</span>
+              <span class="text-slate-200">${item.section} (${item.milepost}km, ${item.bound})</span>
+            </div>
+          </div>
+        `;
+      } else if (type === 'vms') {
+        badge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30';
+        badge.innerText = 'VMS 도로전광판';
+        title.innerText = item.vms || item.name;
+
+        body.innerHTML = `
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex justify-between items-center text-slate-400">
+              <span>연계 맨홀</span>
+              <span class="font-bold text-amber-300">${item.name}</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-400">
+              <span>설치 위치</span>
+              <span class="text-slate-200">${item.section} (${item.milepost}km, ${item.bound})</span>
+            </div>
+          </div>
+        `;
+      } else if (type === 'cits') {
+        badge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30';
+        badge.innerText = 'C-ITS RSU 기지국';
+        title.innerText = item.cits || item.name;
+
+        body.innerHTML = `
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex justify-between items-center text-slate-400">
+              <span>연계 맨홀</span>
+              <span class="font-bold text-rose-300">${item.name}</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-400">
+              <span>설치 위치</span>
+              <span class="text-slate-200">${item.section} (${item.milepost}km, ${item.bound})</span>
+            </div>
+          </div>
+        `;
+      } else if (type === 'pole') {
+        badge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-yellow-500/20 text-yellow-400 border border-yellow-500/30';
+        badge.innerText = '전주 (인입선)';
+        title.innerText = item.id;
+
+        body.innerHTML = `
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex justify-between items-center text-slate-400">
+              <span>전주 번호</span>
+              <span class="font-bold text-yellow-300">${item.id}</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-400">
+              <span>구간 및 이정</span>
+              <span class="text-slate-200">${item.section} (${item.milepost || '-'} km)</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-400">
+              <span>전주 규격</span>
+              <span class="text-slate-200">${item.type} (${item.length_m}m)</span>
+            </div>
+          </div>
+        `;
       }
 
       lucide.createIcons();
@@ -1319,7 +1435,7 @@
 
     function closeDetailDrawer() {
       const drawer = document.getElementById('detail-drawer');
-      drawer.classList.add('translate-x-full', 'translate-y-full');
+      drawer.classList.remove('drawer-open');
     }
 
     function openMobileSidebar() {
