@@ -1246,6 +1246,11 @@
               <span class="text-slate-400">도로명 주소</span>
               <span class="text-slate-200 text-right max-w-[200px] truncate">${item.address || '-'}</span>
             </div>
+            ${item.jibun_address ? `
+            <div class="flex justify-between items-center text-slate-300 text-xs">
+              <span class="text-slate-400">지번 주소</span>
+              <span class="text-amber-300 font-medium text-right max-w-[200px] truncate">${item.jibun_address}</span>
+            </div>` : ''}
             <div class="text-[11px] text-slate-400 bg-slate-900 p-2 rounded-lg border border-slate-800 leading-relaxed">
               ℹ️ ${item.desc || '한국도로공사 관할 주요 거점 시설물'}
             </div>
@@ -1834,12 +1839,14 @@
 
         clearBtn.classList.remove('hidden');
 
-        // Match offices first (including matching inside equipment names and IPs!)
+        // Match offices first (including matching inside equipment names, IPs, and parcel/road addresses!)
         const matchedOffices = (AppState.data.offices || []).filter(o => {
           const matchBasic = (o.name && o.name.toLowerCase().includes(query)) ||
                              (o.section && o.section.toLowerCase().includes(query)) ||
                              (o.category && o.category.toLowerCase().includes(query)) ||
-                             (o.org && o.org.toLowerCase().includes(query));
+                             (o.org && o.org.toLowerCase().includes(query)) ||
+                             (o.address && o.address.toLowerCase().includes(query)) ||
+                             (o.jibun_address && o.jibun_address.toLowerCase().includes(query));
           const matchEquip = (o.devices || []).some(d => {
             return (d.name && d.name.toLowerCase().includes(query)) ||
                    (d.ip && d.ip.toLowerCase().includes(query)) ||
