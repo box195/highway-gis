@@ -1,1 +1,16949 @@
-window.HIGHWAY_MASTER_DATA = {"metadata": {"title": "한국도로공사 동서울지사 고속도로 지하 시설물 및 통신 인프라 관제 데이터", "generatedAt": "2026-08-21", "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 (판교-퇴계원 및 판교-학의-평촌)", "counts": {"manholes": 120, "conduits": 119, "cables": 15, "poles": 7, "cctv_devices": 449, "straight_nodes": 17}}, "manholes": [{"no": 1, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-성남IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00021S-B-H", "type": "접속맨홀", "milepost": 0.21, "bound": "상행선", "direction": "판교방향", "lat": 37.406823, "lng": 127.097339, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "VDS", "name": "VDS-101-1(Ring3)", "icon": "activity"}, {"type": "C-ITS", "name": "IDS-13,RSU-62", "icon": "radio"}], "cctv": null, "vds": "VDS-101-1(Ring3)", "vms": null, "ep": null, "cits": "IDS-13,RSU-62", "branch_info": null, "splice_point": "F(42)", "remarks": "금호교", "terrain": null, "old_mh_no": "2M"}, {"no": 2, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-성남IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00062S-B-H", "type": "접속맨홀", "milepost": 0.62, "bound": "상행선", "direction": "판교방향", "lat": 37.407726, "lng": 127.101357, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": "F(42)", "remarks": null, "terrain": null, "old_mh_no": "3M"}, {"no": 3, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-성남IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00125S-P-H", "type": "접속맨홀", "milepost": 1.25, "bound": "상행선", "direction": "판교방향", "lat": 37.407856, "lng": 127.10839, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "VDS", "name": "VDS-101-2(Ring1)", "icon": "activity"}], "cctv": null, "vds": "VDS-101-2(Ring1)", "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": "F(42)", "remarks": null, "terrain": null, "old_mh_no": "4M"}, {"no": 4, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-성남IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00162S-B-H", "type": "접속맨홀", "milepost": 1.62, "bound": "상행선", "direction": "판교방향", "lat": 37.409206, "lng": 127.115537, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "TTMS", "icon": "video"}, {"type": "C-ITS", "name": "RSU-63", "icon": "radio"}], "cctv": "TTMS", "vds": null, "vms": null, "ep": null, "cits": "RSU-63", "branch_info": "DSRC 3-1 제어기\nIOT", "splice_point": null, "remarks": "방음터널41Km지점,30C", "terrain": null, "old_mh_no": "5M"}, {"no": 5, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-성남IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00208S-B-H", "type": "접속맨홀", "milepost": 2.08, "bound": "상행선", "direction": "판교방향", "lat": 37.410498, "lng": 127.117402, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": "F(42)", "remarks": "30C,42C접속점", "terrain": null, "old_mh_no": "6M"}, {"no": 6, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-성남IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00253S-B-H", "type": "접속맨홀", "milepost": 2.53, "bound": "상행선", "direction": "판교방향", "lat": 37.413172, "lng": 127.119508, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "삼평터널", "icon": "video"}, {"type": "VMS", "name": "삼평터널", "icon": "tv"}], "cctv": "삼평터널", "vds": null, "vms": "삼평터널", "ep": null, "cits": null, "branch_info": null, "splice_point": "F(72)", "remarks": null, "terrain": null, "old_mh_no": "7M"}, {"no": 7, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-성남IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00310S-B-H", "type": "통과맨홀", "milepost": 3.1, "bound": "상행선", "direction": "판교방향", "lat": 37.417347, "lng": 127.122412, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "VDS", "name": "VDS-101-3(Ring2)인입7M\nVDS-101-4(Ring1)인입9M", "icon": "activity"}], "cctv": null, "vds": "VDS-101-3(Ring2)인입7M\nVDS-101-4(Ring1)인입9M", "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "탄천교", "terrain": null, "old_mh_no": "8M"}, {"no": 8, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-성남IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00359S-P-H", "type": "접속맨홀", "milepost": 3.59, "bound": "상행선", "direction": "판교방향", "lat": 37.42114, "lng": 127.123095, "completion_year": "2017", "warranty_year": "2018", "equipment": [{"type": "C-ITS", "name": "IDS-12,IDS-14,RSU-65", "icon": "radio"}], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": "IDS-12,IDS-14,RSU-65", "branch_info": null, "splice_point": "F(72)", "remarks": "여수육교", "terrain": null, "old_mh_no": "9M"}, {"no": 9, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-성남IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00395S-P-H", "type": "통과맨홀", "milepost": 3.95, "bound": "상행선", "direction": "판교방향", "lat": 37.424991, "lng": 127.123087, "completion_year": "2017", "warranty_year": "2018", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "성남육교", "terrain": null, "old_mh_no": "10M"}, {"no": 10, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-성남IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00442S-B-H", "type": "접속맨홀", "milepost": 4.42, "bound": "상행선", "direction": "판교방향", "lat": 37.428721, "lng": 127.123225, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "성남IC", "icon": "video"}, {"type": "VDS", "name": "VDS-101-5(Ring4)", "icon": "activity"}, {"type": "VMS", "name": "성남TG(구리향)", "icon": "tv"}, {"type": "C-ITS", "name": "RSU-66", "icon": "radio"}], "cctv": "성남IC", "vds": "VDS-101-5(Ring4)", "vms": "성남TG(구리향)", "ep": null, "cits": "RSU-66", "branch_info": "ILJIN 12C\nDSRC 3-2(1,2)/\nVMS(11M->9)\n5,6,7,8\nIOT", "splice_point": "F(3M)", "remarks": "L3형, 42C,30C → 72C", "terrain": null, "old_mh_no": "11M"}, {"no": 11, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-성남IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00443S-P-H", "type": "통과맨홀", "milepost": 4.43, "bound": "상행선", "direction": "판교방향", "lat": 37.4294, "lng": 127.123034, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "L3", "terrain": null, "old_mh_no": "12M"}, {"no": 12, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-성남IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00501S-P-H", "type": "통과맨홀", "milepost": 5.01, "bound": "상행선", "direction": "판교방향", "lat": 37.433212, "lng": 127.123177, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "직2호", "terrain": null, "old_mh_no": "13M"}, {"no": 13, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "성남IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00508E-B-H", "type": "접속맨홀", "milepost": 5.08, "bound": "하행선", "direction": "퇴계원방향", "lat": 37.435587, "lng": 127.123847, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "VMS", "name": "성남TG(판교향)", "icon": "tv"}], "cctv": null, "vds": null, "vms": "성남TG(판교향)", "ep": null, "cits": null, "branch_info": null, "splice_point": "F(신)", "remarks": "성남영인입(48C),횡단", "terrain": null, "old_mh_no": "14M"}, {"no": 14, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "성남IC-송파IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00540E-B-H", "type": "접속맨홀", "milepost": 5.4, "bound": "하행선", "direction": "퇴계원방향", "lat": 37.437811, "lng": 127.122972, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "성남T/G", "icon": "video"}, {"type": "VDS", "name": "VDS-101-6(Ring2)", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-67", "icon": "radio"}], "cctv": "성남T/G", "vds": "VDS-101-6(Ring2)", "vms": null, "ep": null, "cits": "RSU-67", "branch_info": null, "splice_point": "F(신)", "remarks": "독정교", "terrain": null, "old_mh_no": "15M"}, {"no": 15, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "성남IC-송파IC", "category": "수공", "standard": "", "sub_std1": "2호", "sub_std2": "", "id": "H-1001-00565E-P-H", "type": "통과맨홀", "milepost": 5.65, "bound": "하행선", "direction": "퇴계원방향", "lat": 37.44082, "lng": 127.123088, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "수공,2002.10 준공", "terrain": null, "old_mh_no": "16-1H"}, {"no": 16, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "성남IC-송파IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00618E-P-H", "type": "통과맨홀", "milepost": 6.18, "bound": "하행선", "direction": "퇴계원방향", "lat": 37.443839, "lng": 127.124351, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "방음벽", "terrain": null, "old_mh_no": "17M"}, {"no": 17, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "성남IC-송파IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00657E-B-H", "type": "접속맨홀", "milepost": 6.57, "bound": "하행선", "direction": "퇴계원방향", "lat": 37.446892, "lng": 127.125621, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "VDS", "name": "VDS-101-7(Ring1)", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-68", "icon": "radio"}], "cctv": null, "vds": "VDS-101-7(Ring1)", "vms": null, "ep": null, "cits": "RSU-68", "branch_info": null, "splice_point": "F", "remarks": "태평교", "terrain": null, "old_mh_no": "18M"}, {"no": 18, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "성남IC-송파IC", "category": "수공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00695E-P-H", "type": "통과맨홀", "milepost": 6.95, "bound": "하행선", "direction": "퇴계원방향", "lat": 37.450525, "lng": 127.126259, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "횡단", "terrain": null, "old_mh_no": "19-1H"}, {"no": 19, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "성남IC-송파IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00696S-P-H", "type": "통과맨홀", "milepost": 6.96, "bound": "상행선", "direction": "판교방향", "lat": 37.450529, "lng": 127.125678, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "복정교(닥트철거)", "terrain": null, "old_mh_no": "20M"}, {"no": 20, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "성남IC-송파IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00727S-B-H", "type": "접속맨홀", "milepost": 7.27, "bound": "상행선", "direction": "판교방향", "lat": 37.453784, "lng": 127.125639, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "복정교", "icon": "video"}, {"type": "VDS", "name": "VDS-101-8(Ring3)\nAVC겸용", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-69", "icon": "radio"}], "cctv": "복정교", "vds": "VDS-101-8(Ring3)\nAVC겸용", "vms": null, "ep": null, "cits": "RSU-69", "branch_info": "교통량조사장비,\nDSRC 4-1 제어기\nIOT", "splice_point": "F", "remarks": null, "terrain": null, "old_mh_no": "21M"}, {"no": 21, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "성남IC-송파IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00781S-P-H", "type": "통과맨홀", "milepost": 7.81, "bound": "상행선", "direction": "판교방향", "lat": 37.457222, "lng": 127.125195, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "22M"}, {"no": 22, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "성남IC-송파IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00801S-B-H", "type": "접속맨홀", "milepost": 8.01, "bound": "상행선", "direction": "판교방향", "lat": 37.459745, "lng": 127.125099, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "VDS", "name": "VDS-101-9(Ring4)", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-70", "icon": "radio"}], "cctv": null, "vds": "VDS-101-9(Ring4)", "vms": null, "ep": null, "cits": "RSU-70", "branch_info": null, "splice_point": "F", "remarks": "복정2교(닥트철거)", "terrain": null, "old_mh_no": "23M"}, {"no": 23, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "성남IC-송파IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00870S-P-H", "type": "통과맨홀", "milepost": 8.7, "bound": "상행선", "direction": "판교방향", "lat": 37.465845, "lng": 127.125407, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "24M"}, {"no": 24, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "성남IC-송파IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00896S-B-H", "type": "접속맨홀", "milepost": 8.86, "bound": "상행선", "direction": "판교방향", "lat": 37.469056, "lng": 127.124826, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "VDS", "name": "VDS-101-10(Ring3)", "icon": "activity"}], "cctv": null, "vds": "VDS-101-10(Ring3)", "vms": null, "ep": null, "cits": null, "branch_info": "IOT", "splice_point": "F", "remarks": "복정3교(닥트철거)", "terrain": null, "old_mh_no": "25M"}, {"no": 25, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "성남IC-송파IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00925S-P-H", "type": "통과맨홀", "milepost": 9.25, "bound": "상행선", "direction": "판교방향", "lat": 37.472551, "lng": 127.125835, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "현릉육교", "terrain": null, "old_mh_no": "26M"}, {"no": 26, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "성남IC-송파IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-00950S-B-H", "type": "접속맨홀", "milepost": 9.5, "bound": "상행선", "direction": "판교방향", "lat": 37.474509, "lng": 127.127877, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "송파IC", "icon": "video"}, {"type": "VDS", "name": "VDS-101-11(Ring4)", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-71", "icon": "radio"}], "cctv": "송파IC", "vds": "VDS-101-11(Ring4)", "vms": null, "ep": null, "cits": "RSU-71", "branch_info": "D/L", "splice_point": "F", "remarks": "송파육교", "terrain": null, "old_mh_no": "27M"}, {"no": 27, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01002S-P-H", "type": "통과맨홀", "milepost": 10.02, "bound": "상행선", "direction": "판교방향", "lat": 37.477532, "lng": 127.132344, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "28M"}, {"no": 28, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01050S-B-H", "type": "접속맨홀", "milepost": 10.5, "bound": "상행선", "direction": "판교방향", "lat": 37.481026, "lng": 127.134972, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "위례", "icon": "video"}, {"type": "VDS", "name": "VDS-101-12(Ring3)", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-72", "icon": "radio"}], "cctv": "위례", "vds": "VDS-101-12(Ring3)", "vms": null, "ep": null, "cits": "RSU-72", "branch_info": "적.불.단(성남)", "splice_point": "F", "remarks": "사자교", "terrain": null, "old_mh_no": "29M"}, {"no": 29, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01093S-B-H", "type": "접속맨홀", "milepost": 10.93, "bound": "상행선", "direction": "판교방향", "lat": 37.483153, "lng": 127.135391, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "30M"}, {"no": 30, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01131S-B-H", "type": "접속맨홀", "milepost": 11.31, "bound": "상행선", "direction": "판교방향", "lat": 37.487652, "lng": 127.136187, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "VDS", "name": "VDS-101-13(Ring4)", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-73", "icon": "radio"}], "cctv": null, "vds": "VDS-101-13(Ring4)", "vms": null, "ep": null, "cits": "RSU-73", "branch_info": null, "splice_point": "F", "remarks": null, "terrain": null, "old_mh_no": "31M"}, {"no": 31, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01165S-P-H", "type": "통과맨홀", "milepost": 11.65, "bound": "상행선", "direction": "판교방향", "lat": 37.489901, "lng": 127.136881, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "32M"}, {"no": 32, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01202S-B-H", "type": "접속맨홀", "milepost": 12.02, "bound": "상행선", "direction": "판교방향", "lat": 37.494765, "lng": 127.139192, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "거여고가교", "icon": "video"}, {"type": "VDS", "name": "VDS-101-14(Ring3)", "icon": "activity"}], "cctv": "거여고가교", "vds": "VDS-101-14(Ring3)", "vms": null, "ep": null, "cits": null, "branch_info": "적.불.단(하남)\nDSRC 4-2", "splice_point": "F", "remarks": null, "terrain": null, "old_mh_no": "33M"}, {"no": 33, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01308S-B-H", "type": "접속맨홀", "milepost": 13.08, "bound": "상행선", "direction": "판교방향", "lat": 37.503279, "lng": 127.143384, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "VDS", "name": "VDS-101-15(Ring4)", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-74,RSU-75", "icon": "radio"}], "cctv": null, "vds": "VDS-101-15(Ring4)", "vms": null, "ep": null, "cits": "RSU-74,RSU-75", "branch_info": "IOT", "splice_point": "F", "remarks": "거여고가교", "terrain": null, "old_mh_no": "34M"}, {"no": 34, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01337S-B-H", "type": "접속맨홀", "milepost": 13.37, "bound": "상행선", "direction": "판교방향", "lat": 37.506489, "lng": 127.145351, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "35M"}, {"no": 35, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01379S-P-H", "type": "통과맨홀", "milepost": 13.79, "bound": "상행선", "direction": "판교방향", "lat": 37.509158, "lng": 127.147083, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "36M"}, {"no": 36, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01412S-P-H", "type": "통과맨홀", "milepost": 14.12, "bound": "상행선", "direction": "판교방향", "lat": 37.511496, "lng": 127.149364, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "감일2교(닥트철거)", "terrain": null, "old_mh_no": "37M"}, {"no": 37, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01454S-B-H", "type": "접속맨홀", "milepost": 14.54, "bound": "상행선", "direction": "판교방향", "lat": 37.513205762230214, "lng": 127.15388348606811, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "서하남IC", "icon": "video"}, {"type": "VDS", "name": "VDS-101-16(Ring3)", "icon": "activity"}], "cctv": "서하남IC", "vds": "VDS-101-16(Ring3)", "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": "F", "remarks": "서하남IC교(닥트철거)\n동서울지사본선분기", "terrain": null, "old_mh_no": "38M"}, {"no": 38, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01455S-P-H", "type": "통과맨홀", "milepost": 14.55, "bound": "상행선", "direction": "판교방향", "lat": 37.51324536888914, "lng": 127.15399109287927, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "60C 1조", "terrain": null, "old_mh_no": "39M"}, {"no": 39, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-서하남JCT", "category": "수공", "standard": "", "sub_std1": "2호", "sub_std2": "", "id": "H-1001-01456S-P-R", "type": "접속맨홀", "milepost": 14.56, "bound": "상행선", "direction": "판교방향", "lat": 37.51328489870555, "lng": 127.15409869969041, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "동서울지사인입수공", "terrain": null, "old_mh_no": "39-1H"}, {"no": 40, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01495S-B-H", "type": "접속맨홀", "milepost": 14.95, "bound": "상행선", "direction": "판교방향", "lat": 37.51474960461726, "lng": 127.15829536532509, "completion_year": "2025", "warranty_year": "2026", "equipment": [{"type": "VDS", "name": "VDS-101-17(Ring4)", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-76", "icon": "radio"}], "cctv": null, "vds": "VDS-101-17(Ring4)", "vms": null, "ep": null, "cits": "RSU-76", "branch_info": null, "splice_point": "F", "remarks": "서하남 2육교", "terrain": null, "old_mh_no": "40M"}, {"no": 41, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01602S-B-H", "type": "접속맨홀", "milepost": 16.02, "bound": "상행선", "direction": "판교방향", "lat": 37.51756023952164, "lng": 127.16980929411766, "completion_year": "2025", "warranty_year": "2026", "equipment": [{"type": "CCTV", "name": "광암T/N1", "icon": "video"}, {"type": "VDS", "name": "VDS-101-18(Ring2)", "icon": "activity"}, {"type": "EP", "name": "EP", "icon": "phone-call"}, {"type": "C-ITS", "name": "RSU-77", "icon": "radio"}], "cctv": "광암T/N1", "vds": "VDS-101-18(Ring2)", "vms": null, "ep": "EP", "cits": "RSU-77", "branch_info": "광암터널재방송,\n터널감시장치", "splice_point": "F", "remarks": "DSRC 5-1 제어기", "terrain": null, "old_mh_no": "41M"}, {"no": 42, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제2순환선", "section": "송파IC-서하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01603S-B-H", "type": "통과맨홀", "milepost": 16.03, "bound": "상행선", "direction": "판교방향", "lat": 37.517576617733624, "lng": 127.1699169009288, "completion_year": "2025", "warranty_year": "2026", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null}, {"no": 43, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "서하남JCT-하남JCT", "category": "수공", "standard": "", "sub_std1": "2호", "sub_std2": "", "id": "M-1001-01648S-B-H", "type": "접속맨홀", "milepost": 16.48, "bound": "상행선", "direction": "판교방향", "lat": 37.51813656396393, "lng": 127.17475920743034, "completion_year": "2025", "warranty_year": "2026", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": "TTMS", "splice_point": null, "remarks": "광암터널", "terrain": null, "old_mh_no": "42M"}, {"no": 44, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "서하남JCT-하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01735S-B-H", "type": "접속맨홀", "milepost": 17.35, "bound": "상행선", "direction": "판교방향", "lat": 37.518535, "lng": 127.184121, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "43M"}, {"no": 45, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "서하남JCT-하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01771S-B-H", "type": "접속맨홀", "milepost": 17.74, "bound": "상행선", "direction": "판교방향", "lat": 37.519871, "lng": 127.188155, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "광암T/N2", "icon": "video"}, {"type": "VDS", "name": "VDS-101-19(Ring1)\nVDS-101-20(Ring3)", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-78,RSU-79", "icon": "radio"}], "cctv": "광암T/N2", "vds": "VDS-101-19(Ring1)\nVDS-101-20(Ring3)", "vms": null, "ep": null, "cits": "RSU-78,RSU-79", "branch_info": "DSRC 5-2\nIOT", "splice_point": "F", "remarks": "준궁육교", "terrain": null, "old_mh_no": "44M"}, {"no": 46, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "서하남JCT-하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01807S-B-H", "type": "접속맨홀", "milepost": 18.08, "bound": "상행선", "direction": "판교방향", "lat": 37.522219, "lng": 127.191133, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "45M"}, {"no": 47, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "서하남JCT-하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01851S-P-H", "type": "접속맨홀", "milepost": 18.51, "bound": "상행선", "direction": "판교방향", "lat": 37.52485, "lng": 127.192828, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "46M"}, {"no": 48, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "서하남JCT-하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01882S-B-H", "type": "통과맨홀", "milepost": 18.82, "bound": "상행선", "direction": "판교방향", "lat": 37.528048, "lng": 127.194698, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "C-ITS", "name": "RSU-80", "icon": "radio"}], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": "RSU-80", "branch_info": null, "splice_point": "F", "remarks": null, "terrain": null, "old_mh_no": "47M"}, {"no": 49, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "서하남JCT-하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01913S-B-H", "type": "접속맨홀", "milepost": 19.13, "bound": "상행선", "direction": "판교방향", "lat": 37.530501, "lng": 127.195296, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "48M"}, {"no": 50, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "서하남JCT-하남JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-01962S-B-H", "type": "통과맨홀", "milepost": 19.62, "bound": "상행선", "direction": "판교방향", "lat": 37.531984, "lng": 127.193722, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "하남J/C", "icon": "video"}, {"type": "VDS", "name": "VDS-101-21(Ring2)\n49M에서퇴계원방향\n30C로연장후 50M분기", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-81", "icon": "radio"}], "cctv": "하남J/C", "vds": "VDS-101-21(Ring2)\n49M에서퇴계원방향\n30C로연장후 50M분기", "vms": null, "ep": null, "cits": "RSU-81", "branch_info": "~동서울지사 5.44\n~동서울영 4.187\nIOT", "splice_point": "F", "remarks": "60C →24C,30C", "terrain": null, "old_mh_no": "49M"}, {"no": 51, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "하남JCT-상일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02021S-B-H", "type": "접속맨홀", "milepost": 20.21, "bound": "상행선", "direction": "판교방향", "lat": 37.534426, "lng": 127.188173, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "C-ITS", "name": "RSU-82", "icon": "radio"}], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": "RSU-82", "branch_info": null, "splice_point": "F", "remarks": "24C(2001.11)30C(2002.10)준공", "terrain": null, "old_mh_no": "50M"}, {"no": 52, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "하남JCT-상일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02060S-P-H", "type": "통과맨홀", "milepost": 20.6, "bound": "상행선", "direction": "판교방향", "lat": 37.536868, "lng": 127.185376, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "방음벽뒤  51M ~ 52M 내관", "terrain": null, "old_mh_no": "51M"}, {"no": 53, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "하남JCT-상일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02105S-B-H", "type": "접속맨홀", "milepost": 21.11, "bound": "상행선", "direction": "판교방향", "lat": 37.541381, "lng": 127.182699, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "VDS", "name": "VDS-101-22(Ring1)\nVDS-101-23(Ring2)", "icon": "activity"}], "cctv": null, "vds": "VDS-101-22(Ring1)\nVDS-101-23(Ring2)", "vms": null, "ep": null, "cits": null, "branch_info": "DSRC 6-1 제어기", "splice_point": "F(삼진)", "remarks": null, "terrain": null, "old_mh_no": "52M"}, {"no": 54, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "하남JCT-상일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02161S-B-H", "type": "접속맨홀", "milepost": 21.61, "bound": "상행선", "direction": "판교방향", "lat": 37.545485, "lng": 127.180598, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "상일IC", "icon": "video"}, {"type": "C-ITS", "name": "RSU-83,RSU-84", "icon": "radio"}], "cctv": "상일IC", "vds": null, "vms": null, "ep": null, "cits": "RSU-83,RSU-84", "branch_info": "IOT", "splice_point": "F(54C)", "remarks": "24C,30C-->54C", "terrain": null, "old_mh_no": "53M(배)"}, {"no": 55, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "하남JCT-상일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02162S-P-H", "type": "접속맨홀", "milepost": 21.62, "bound": "상행선", "direction": "판교방향", "lat": 37.545513, "lng": 127.180754, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "54M ~ 55 M 내관", "terrain": null, "old_mh_no": "54M"}, {"no": 56, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "하남JCT-상일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02202S-P-H", "type": "통과맨홀", "milepost": 22.02, "bound": "상행선", "direction": "판교방향", "lat": 37.549617, "lng": 127.178957, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "55M"}, {"no": 57, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "하남JCT-상일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02242S-B-H", "type": "접속맨홀", "milepost": 22.42, "bound": "상행선", "direction": "판교방향", "lat": 37.552861, "lng": 127.177456, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "VDS", "name": "VDS-101-24(Ring1)", "icon": "activity"}], "cctv": null, "vds": "VDS-101-24(Ring1)", "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": "F(54c)빛샘", "remarks": "횡단_본선", "terrain": null, "old_mh_no": "56M"}, {"no": 58, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "하남JCT-상일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02243S-P-H", "type": "통과맨홀", "milepost": 22.43, "bound": "상행선", "direction": "판교방향", "lat": 37.553013, "lng": 127.177225, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "진출로", "terrain": null, "old_mh_no": "57M"}, {"no": 59, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "상일IC-강일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02285S-B-H", "type": "통과맨홀", "milepost": 22.99, "bound": "상행선", "direction": "판교방향", "lat": 37.557225, "lng": 127.175527, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "2011년 12월 신설", "terrain": null, "old_mh_no": "58M"}, {"no": 60, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "상일IC-강일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02321S-B-H", "type": "접속맨홀", "milepost": 23.21, "bound": "상행선", "direction": "판교방향", "lat": 37.559098, "lng": 127.174878, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null}, {"no": 61, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "상일IC-강일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02340S-P-H", "type": "통과맨홀", "milepost": 23.7, "bound": "상행선", "direction": "판교방향", "lat": 37.563005, "lng": 127.173366, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "2011년 12월 신설", "terrain": null, "old_mh_no": "59M"}, {"no": 62, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "상일IC-강일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02386S-B-H", "type": "접속맨홀", "milepost": 23.9, "bound": "상행선", "direction": "판교방향", "lat": 37.564824, "lng": 127.17204, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "VDS", "name": "VDS-101-25(Ring2)\nVDS-101-26(Ring1)", "icon": "activity"}], "cctv": null, "vds": "VDS-101-25(Ring2)\nVDS-101-26(Ring1)", "vms": null, "ep": null, "cits": null, "branch_info": "교통량조사장비\nD/L, SKN", "splice_point": "F(54)만공", "remarks": "54C\n59M(퇴계원)~60M(판교) VDS분기 케이블 본선 내관 사용", "terrain": null, "old_mh_no": "60M"}, {"no": 63, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "상일IC-강일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02422S-P-H", "type": "통과맨홀", "milepost": 24.25, "bound": "상행선", "direction": "판교방향", "lat": 37.567301, "lng": 127.169972, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "신규 2013년", "terrain": null, "old_mh_no": "61M"}, {"no": 64, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "상일IC-강일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02465S-P-H", "type": "통과맨홀", "milepost": 24.65, "bound": "상행선", "direction": "판교방향", "lat": 37.570606, "lng": 127.16697, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "신규 2013년", "terrain": null, "old_mh_no": "62M"}, {"no": 65, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "상일IC-강일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02481S-P-H", "type": "통과맨홀", "milepost": 24.81, "bound": "상행선", "direction": "판교방향", "lat": 37.571217, "lng": 127.166551, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "63M"}, {"no": 66, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "상일IC-강일IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02487S-B-H", "type": "접속맨홀", "milepost": 24.87, "bound": "상행선", "direction": "판교방향", "lat": 37.573441, "lng": 127.164525, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "강일IC", "icon": "video"}, {"type": "VDS", "name": "VDS-101-27(Ring4)", "icon": "activity"}], "cctv": "강일IC", "vds": "VDS-101-27(Ring4)", "vms": null, "ep": null, "cits": null, "branch_info": "강동대교 교량계측\nDSRC 6-2\nIOT", "splice_point": "F", "remarks": "54C→50C,교량계측용24C 분기", "terrain": null, "old_mh_no": "64M"}, {"no": 67, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "강일IC-남양주IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02598S-B-H", "type": "접속맨홀", "milepost": 25.98, "bound": "상행선", "direction": "판교방향", "lat": 37.581754, "lng": 127.157797, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "토평IC", "icon": "video"}, {"type": "VDS", "name": "VDS-101-28(Ring3)", "icon": "activity"}, {"type": "VMS", "name": "VMS(구리)", "icon": "tv"}], "cctv": "토평IC", "vds": "VDS-101-28(Ring3)", "vms": "VMS(구리)", "ep": null, "cits": null, "branch_info": "DSRC 5-3독립형", "splice_point": "F", "remarks": "토평(영) 인입,50C → 54C", "terrain": null, "old_mh_no": "65M(배)"}, {"no": 68, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "강일IC-남양주IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02637S-P-H", "type": "통과맨홀", "milepost": 26.37, "bound": "상행선", "direction": "판교방향", "lat": 37.585037, "lng": 127.156294, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "방음벽뒤", "terrain": null, "old_mh_no": "66M"}, {"no": 69, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "강일IC-남양주IC", "category": "수공", "standard": "", "sub_std1": "2호", "sub_std2": "", "id": "H-1001-02647S-P-H", "type": "통과맨홀", "milepost": 26.65, "bound": "상행선", "direction": "판교방향", "lat": 37.588187, "lng": 127.156103, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "토평BS", "terrain": null, "old_mh_no": "66-1H"}, {"no": 70, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "강일IC-남양주IC", "category": "수공", "standard": "", "sub_std1": "2호", "sub_std2": "", "id": "H-1001-02652S-P-H", "type": "통과맨홀", "milepost": 26.85, "bound": "상행선", "direction": "판교방향", "lat": 37.589229, "lng": 127.155586, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "토평주차장", "terrain": null, "old_mh_no": "66-2H"}, {"no": 71, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "강일IC-남양주IC", "category": "수공", "standard": "", "sub_std1": "2호", "sub_std2": "", "id": "H-1001-02689S-P-H", "type": "통과맨홀", "milepost": 26.89, "bound": "상행선", "direction": "판교방향", "lat": 37.589905, "lng": 127.155612, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "67M바로전", "terrain": null, "old_mh_no": "66-3H"}, {"no": 72, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "강일IC-남양주IC", "category": "수공", "standard": "", "sub_std1": "2호", "sub_std2": "", "id": "H-1001-02696S-P-H", "type": "통과맨홀", "milepost": 26.96, "bound": "상행선", "direction": "판교방향", "lat": 37.590595, "lng": 127.156194, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "68M전", "terrain": null, "old_mh_no": "66-4H"}, {"no": 73, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "강일IC-남양주IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02690S-P-H", "type": "통과맨홀", "milepost": 26.9, "bound": "상행선", "direction": "판교방향", "lat": 37.5899394, "lng": 127.155583, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "구리영업소(인입)", "terrain": null, "old_mh_no": "67M"}, {"no": 74, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "강일IC-남양주IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02721S-B-H", "type": "접속맨홀", "milepost": 27.21, "bound": "상행선", "direction": "판교방향", "lat": 37.592171, "lng": 127.156503, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": "F", "remarks": "왕숙1교", "terrain": null, "old_mh_no": "68M(배)"}, {"no": 75, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "강일IC-남양주IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02784S-B-H", "type": "접속맨홀", "milepost": 27.8, "bound": "상행선", "direction": "판교방향", "lat": 37.597473, "lng": 127.155824, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "VDS", "name": "VDS-101-30(Ring4)", "icon": "activity"}, {"type": "VMS", "name": "VMS(판교)", "icon": "tv"}], "cctv": null, "vds": "VDS-101-30(Ring4)", "vms": "VMS(판교)", "ep": null, "cits": null, "branch_info": "DSRC 7-2", "splice_point": "F", "remarks": "도농교", "terrain": null, "old_mh_no": "69M"}, {"no": 76, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "강일IC-남양주IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02822S-B-H", "type": "접속맨홀", "milepost": 28.22, "bound": "상행선", "direction": "판교방향", "lat": 37.60069, "lng": 127.153933, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "남양주IC", "icon": "video"}, {"type": "VDS", "name": "VDS-101-31(Ring3)", "icon": "activity"}], "cctv": "남양주IC", "vds": "VDS-101-31(Ring3)", "vms": null, "ep": null, "cits": null, "branch_info": "적재불량단속시스템\n(양방향)", "splice_point": "F(만공)", "remarks": null, "terrain": null, "old_mh_no": "70M(배)"}, {"no": 77, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "강일IC-남양주IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02855S-P-H", "type": "통과맨홀", "milepost": 28.55, "bound": "상행선", "direction": "판교방향", "lat": 37.602962, "lng": 127.151618, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "왕수2교", "terrain": null, "old_mh_no": "71M(배)"}, {"no": 78, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "남양주IC-구리IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02920S-B-H", "type": "접속맨홀", "milepost": 29.2, "bound": "상행선", "direction": "판교방향", "lat": 37.607338, "lng": 127.146304, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "VDS", "name": "VDS-101-32(Ring4)", "icon": "activity"}], "cctv": null, "vds": "VDS-101-32(Ring4)", "vms": null, "ep": null, "cits": null, "branch_info": "IOT", "splice_point": "F", "remarks": null, "terrain": null, "old_mh_no": "72M(배)"}, {"no": 79, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "남양주IC-구리IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-02974S-P-H", "type": "통과맨홀", "milepost": 29.74, "bound": "상행선", "direction": "판교방향", "lat": 37.611002, "lng": 127.142892, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "인창교", "terrain": null, "old_mh_no": "73M(배)"}, {"no": 80, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "남양주IC-구리IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-03005S-B-H", "type": "접속맨홀", "milepost": 30.05, "bound": "상행선", "direction": "판교방향", "lat": 37.6140365, "lng": 127.1417495, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "구리IC", "icon": "video"}], "cctv": "구리IC", "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": "F", "remarks": null, "terrain": null, "old_mh_no": "74M"}, {"no": 81, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "남양주IC구리IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-03042S-B-H", "type": "접속맨홀", "milepost": 30.42, "bound": "상행선", "direction": "판교방향", "lat": 37.6172261, "lng": 127.1409174, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": "F", "remarks": "동창육교,강관28mm X 2(~76M)", "terrain": null, "old_mh_no": "75M"}, {"no": 82, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "구리IC-퇴계원IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-03088S-B-H", "type": "접속맨홀", "milepost": 30.88, "bound": "상행선", "direction": "판교방향", "lat": 37.621453, "lng": 127.139953, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": "교통량조사장비", "splice_point": "F", "remarks": null, "terrain": null, "old_mh_no": "76M"}, {"no": 83, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "구리IC-퇴계원IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-03121S-P-H", "type": "통과맨홀", "milepost": 31.32, "bound": "상행선", "direction": "판교방향", "lat": 37.62539, "lng": 127.13905, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "방음벽", "terrain": null, "old_mh_no": "77M"}, {"no": 84, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "구리IC-퇴계원IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-03179S-B-H", "type": "접속맨홀", "milepost": 31.79, "bound": "상행선", "direction": "판교방향", "lat": 37.629335, "lng": 127.137431, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "VDS", "name": "VDS-101-35(Ring1)", "icon": "activity"}], "cctv": null, "vds": "VDS-101-35(Ring1)", "vms": null, "ep": null, "cits": null, "branch_info": "DSRC 7-1 제어기\nIOT", "splice_point": "F(만공)", "remarks": "안달교", "terrain": null, "old_mh_no": "78M"}, {"no": 85, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "구리IC-퇴계원IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-03224S-P-H", "type": "통과맨홀", "milepost": 32.24, "bound": "상행선", "direction": "판교방향", "lat": 37.632664, "lng": 127.134764, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "79M"}, {"no": 86, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "구리IC-퇴계원IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-03280S-B-H", "type": "접속맨홀", "milepost": 32.8, "bound": "상행선", "direction": "판교방향", "lat": 37.636601, "lng": 127.133627, "completion_year": "1993", "warranty_year": "1995", "equipment": [{"type": "CCTV", "name": "퇴계원IC", "icon": "video"}], "cctv": "퇴계원IC", "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": "F", "remarks": "퇴계원진입로(본선 안전지대)", "terrain": null, "old_mh_no": "80M"}, {"no": 87, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "퇴계원IC-종점", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-03315S-P-H", "type": "통과맨홀", "milepost": 33.15, "bound": "상행선", "direction": "판교방향", "lat": 37.640112, "lng": 127.132663, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "81M"}, {"no": 88, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "퇴계원IC-종점", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1001-03369S-P-H", "type": "접속맨홀", "milepost": 33.69, "bound": "상행선", "direction": "판교방향", "lat": 37.643775, "lng": 127.130165, "completion_year": "1993", "warranty_year": "1995", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": "F", "remarks": "모르트 일부파손", "terrain": null, "old_mh_no": "82M"}, {"no": 89, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12820S-B-H", "type": "접속맨홀", "milepost": 128.2, "bound": "상행선", "direction": "일산방향", "lat": 37.406264, "lng": 127.095579, "completion_year": "1995", "warranty_year": "1997", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": "F(144)", "remarks": "판교 42C,30C,18C/청계72C\n경부선방향 72c 2조(#1판교,#2청계)", "terrain": "성토", "old_mh_no": "1M"}, {"no": 90, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12770S-P-H", "type": "통과맨홀", "milepost": 127.7, "bound": "상행선", "direction": "일산방향", "lat": 37.405031, "lng": 127.091826, "completion_year": "1995", "warranty_year": "1997", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": "성토", "old_mh_no": "2M"}, {"no": 91, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12724S-B-H", "type": "접속맨홀", "milepost": 127.24, "bound": "상행선", "direction": "일산방향", "lat": 37.403166, "lng": 127.087003, "completion_year": "1995", "warranty_year": "1997", "equipment": [{"type": "VDS", "name": "V-100-1 (1014CH)", "icon": "activity"}], "cctv": null, "vds": "V-100-1 (1014CH)", "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": "F(3M)", "remarks": null, "terrain": "성토", "old_mh_no": "3M"}, {"no": 92, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12681S-B-H", "type": "접속맨홀", "milepost": 126.81, "bound": "상행선", "direction": "일산방향", "lat": 37.400378, "lng": 127.082726, "completion_year": "1995", "warranty_year": "1997", "equipment": [{"type": "CCTV", "name": "판교JCT", "icon": "video"}, {"type": "C-ITS", "name": "RSU-61", "icon": "radio"}], "cctv": "판교JCT", "vds": null, "vms": null, "ep": null, "cits": "RSU-61", "branch_info": null, "splice_point": "F(레이켐)", "remarks": null, "terrain": "성토", "old_mh_no": "4M"}, {"no": 93, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12625S-B-H", "type": "접속맨홀", "milepost": 126.23, "bound": "상행선", "direction": "일산방향", "lat": 37.397473, "lng": 127.078364, "completion_year": "2017", "warranty_year": "2018", "equipment": [{"type": "C-ITS", "name": "RSU-60", "icon": "radio"}], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": "RSU-60", "branch_info": "D/L\nIOT", "splice_point": "F(빛샘)", "remarks": null, "terrain": "절토", "old_mh_no": "5M"}, {"no": 94, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12582S-P-H", "type": "통과맨홀", "milepost": 125.7, "bound": "상행선", "direction": "일산방향", "lat": 37.395869, "lng": 127.073134, "completion_year": "2017", "warranty_year": "2018", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": "절토", "old_mh_no": "6M"}, {"no": 95, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12530S-B-H", "type": "접속맨홀", "milepost": 125.37, "bound": "상행선", "direction": "일산방향", "lat": 37.395588, "lng": 127.069172, "completion_year": "2017", "warranty_year": "2018", "equipment": [{"type": "VDS", "name": "V-100-2(1015CH)", "icon": "activity"}], "cctv": null, "vds": "V-100-2(1015CH)", "vms": null, "ep": null, "cits": null, "branch_info": "DSRC 2-2", "splice_point": "F(빛샘)", "remarks": null, "terrain": "평지", "old_mh_no": "7M"}, {"no": 96, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12490S-P-H", "type": "통과맨홀", "milepost": 124.99, "bound": "상행선", "direction": "일산방향", "lat": 37.395514, "lng": 127.064835, "completion_year": "2017", "warranty_year": "2018", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": "평지", "old_mh_no": "8M"}, {"no": 97, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12442S-B-H", "type": "접속맨홀", "milepost": 124.42, "bound": "상행선", "direction": "일산방향", "lat": 37.395871, "lng": 127.059087, "completion_year": "1995", "warranty_year": "1997", "equipment": [{"type": "CCTV", "name": "운중교", "icon": "video"}, {"type": "VDS", "name": "V-100-3 (1014CH)", "icon": "activity"}, {"type": "VMS", "name": "판교(성남방향)", "icon": "tv"}, {"type": "C-ITS", "name": "RSU-59", "icon": "radio"}], "cctv": "운중교", "vds": "V-100-3 (1014CH)", "vms": "판교(성남방향)", "ep": null, "cits": "RSU-59", "branch_info": null, "splice_point": "F(레이켐)", "remarks": null, "terrain": "성토", "old_mh_no": "9M"}, {"no": 98, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12408S-B-H", "type": "접속맨홀", "milepost": 124.08, "bound": "상행선", "direction": "일산방향", "lat": 37.396437, "lng": 127.055475, "completion_year": "1995", "warranty_year": "1997", "equipment": [{"type": "CCTV", "name": "청계T/N", "icon": "video"}, {"type": "VDS", "name": "V-100-4 (1015CH)", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-58", "icon": "radio"}], "cctv": "청계T/N", "vds": "V-100-4 (1015CH)", "vms": null, "ep": null, "cits": "RSU-58", "branch_info": "IOT", "splice_point": "F(빗셈)", "remarks": null, "terrain": null, "old_mh_no": "10M"}, {"no": 99, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12358S-P-H", "type": "통과맨홀", "milepost": 123.58, "bound": "상행선", "direction": "일산방향", "lat": 37.396438, "lng": 127.04996, "completion_year": "1995", "warranty_year": "1997", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": "성토", "old_mh_no": "11M"}, {"no": 100, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12318S-P-H", "type": "통과맨홀", "milepost": 123.18, "bound": "상행선", "direction": "일산방향", "lat": 37.39576, "lng": 127.045788, "completion_year": "1995", "warranty_year": "1997", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": "성토", "old_mh_no": "12M"}, {"no": 101, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12286S-B-H", "type": "통과맨홀", "milepost": 122.86, "bound": "상행선", "direction": "일산방향", "lat": 37.395122, "lng": 127.040621, "completion_year": "1995", "warranty_year": "1997", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": "F", "remarks": null, "terrain": "성토", "old_mh_no": "13M"}, {"no": 102, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12215S-P-H", "type": "통과맨홀", "milepost": 122.15, "bound": "상행선", "direction": "일산방향", "lat": 37.394351, "lng": 127.034554, "completion_year": "1995", "warranty_year": "1997", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "청계터널 중접 함체(12C)", "terrain": "성토", "old_mh_no": "14M"}, {"no": 103, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12185S-B-H", "type": "접속맨홀", "milepost": 121.85, "bound": "상행선", "direction": "일산방향", "lat": 37.393535, "lng": 127.030302, "completion_year": "1995", "warranty_year": "1997", "equipment": [{"type": "CCTV", "name": "TTMS\n청계터널", "icon": "video"}, {"type": "VDS", "name": "V-100-5 (1014CH)", "icon": "activity"}, {"type": "VMS", "name": "청계(일산)", "icon": "tv"}, {"type": "C-ITS", "name": "RSU-57", "icon": "radio"}], "cctv": "TTMS\n청계터널", "vds": "V-100-5 (1014CH)", "vms": "청계(일산)", "ep": null, "cits": "RSU-57", "branch_info": "DSRC 2-1 \n제어기", "splice_point": "F(레이켐)", "remarks": "신규TTMS링", "terrain": "성토", "old_mh_no": "15M"}, {"no": 104, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12135S-P-H", "type": "통과맨홀", "milepost": 121.35, "bound": "상행선", "direction": "일산방향", "lat": 37.393488, "lng": 127.025445, "completion_year": "1995", "warranty_year": "1997", "equipment": [{"type": "CCTV", "name": "청계T/G", "icon": "video"}], "cctv": "청계T/G", "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "영업소관내", "terrain": null, "old_mh_no": "16M"}, {"no": 105, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계TG", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12134S-B-H", "type": "접속맨홀", "milepost": 121.34, "bound": "상행선", "direction": "일산방향", "lat": 37.393623, "lng": 127.025429, "completion_year": "1995", "warranty_year": "1997", "equipment": [{"type": "CCTV", "name": "17M접속후16M분기", "icon": "video"}, {"type": "C-ITS", "name": "RSU-56", "icon": "radio"}], "cctv": "17M접속후16M분기", "vds": null, "vms": null, "ep": null, "cits": "RSU-56", "branch_info": "D/L2조\nLGT1조", "splice_point": "F(레이켐)", "remarks": "청계영업소인입(30C)", "terrain": null, "old_mh_no": "17M(배)"}, {"no": 106, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "청계TG-학의JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12126S-P-H", "type": "통과맨홀", "milepost": 121.26, "bound": "상행선", "direction": "일산방향", "lat": 37.393538, "lng": 127.024567, "completion_year": "1995", "warranty_year": "1997", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "영업소관내", "terrain": null, "old_mh_no": "18M"}, {"no": 107, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "청계TG-학의JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12125S-P-H", "type": "통과맨홀", "milepost": 121.25, "bound": "상행선", "direction": "일산방향", "lat": 37.39354, "lng": 127.02455, "completion_year": "1995", "warranty_year": "1997", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "영업소관내", "terrain": null, "old_mh_no": "19M"}, {"no": 108, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "청계TG-학의JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12085S-P-H", "type": "통과맨홀", "milepost": 120.85, "bound": "상행선", "direction": "일산방향", "lat": 37.393114, "lng": 127.021744, "completion_year": "1995", "warranty_year": "1997", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "SA진출로 본선화단\n20-1M(120.7K)", "terrain": null, "old_mh_no": "20M(배)"}, {"no": 109, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "청계TG-학의JCT", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-12035S-B-H", "type": "접속맨홀", "milepost": 120.35, "bound": "상행선", "direction": "일산방향", "lat": 37.392433, "lng": 127.014132, "completion_year": "1995", "warranty_year": "1997", "equipment": [{"type": "VDS", "name": "V-100-6 (1013CH)", "icon": "activity"}, {"type": "VMS", "name": "청계(판교)", "icon": "tv"}, {"type": "C-ITS", "name": "RSU-55,IDS-17", "icon": "radio"}], "cctv": null, "vds": "V-100-6 (1013CH)", "vms": "청계(판교)", "ep": null, "cits": "RSU-55,IDS-17", "branch_info": "DSRC 1-2\nIOT", "splice_point": "F", "remarks": "학현교(닥트부식중)", "terrain": null, "old_mh_no": "21M"}, {"no": 110, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "학의JCT-평촌IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-11992S-P-H", "type": "통과맨홀", "milepost": 119.92, "bound": "상행선", "direction": "일산방향", "lat": 37.389705, "lng": 127.007837, "completion_year": "1995", "warranty_year": "1997", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "22M"}, {"no": 111, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "학의JCT-평촌IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-11950S-B-H", "type": "접속맨홀", "milepost": 119.5, "bound": "상행선", "direction": "일산방향", "lat": 37.388243, "lng": 127.004452, "completion_year": "1995", "warranty_year": "1997", "equipment": [{"type": "VDS", "name": "V-100-7 (1013CH)", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-54", "icon": "radio"}], "cctv": null, "vds": "V-100-7 (1013CH)", "vms": null, "ep": null, "cits": "RSU-54", "branch_info": null, "splice_point": "F", "remarks": "학의대교(닥트철거)", "terrain": null, "old_mh_no": "23M"}, {"no": 112, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "학의JCT-평촌IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-11930S-P-H", "type": "통과맨홀", "milepost": 119.3, "bound": "상행선", "direction": "일산방향", "lat": 37.387747, "lng": 127.002723, "completion_year": "1995", "warranty_year": "1997", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "철재맨홀", "terrain": null, "old_mh_no": "24M"}, {"no": 113, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "학의JCT-평촌IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-11885S-P-H", "type": "통과맨홀", "milepost": 118.85, "bound": "상행선", "direction": "일산방향", "lat": 37.386601, "lng": 126.99805, "completion_year": "1995", "warranty_year": "1997", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "철재맨홀", "terrain": null, "old_mh_no": "25M"}, {"no": 114, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "학의JCT-평촌IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-11815S-B-H", "type": "접속맨홀", "milepost": 118.15, "bound": "상행선", "direction": "일산방향", "lat": 37.384511, "lng": 126.990919, "completion_year": "1995", "warranty_year": "1997", "equipment": [{"type": "CCTV", "name": "학의J/C", "icon": "video"}, {"type": "VDS", "name": "V-100-8 (1013CH)", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-53", "icon": "radio"}], "cctv": "학의J/C", "vds": "V-100-8 (1013CH)", "vms": null, "ep": null, "cits": "RSU-53", "branch_info": "교통량조사", "splice_point": "F(22년5월환체)", "remarks": "DSRC 1-1 제어기", "terrain": null, "old_mh_no": "26M"}, {"no": 115, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "학의JCT-평촌IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-11782S-P-H", "type": "통과맨홀", "milepost": 117.82, "bound": "상행선", "direction": "일산방향", "lat": 37.383011, "lng": 126.986948, "completion_year": "2025", "warranty_year": "2026", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": null, "terrain": null, "old_mh_no": "27M"}, {"no": 116, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "학의JCT-평촌IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-11746S-P-H", "type": "통과맨홀", "milepost": 117.46, "bound": "상행선", "direction": "일산방향", "lat": 37.381661, "lng": 126.983366, "completion_year": "2025", "warranty_year": "2026", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": "F(25년5월신규)", "remarks": null, "terrain": null, "old_mh_no": "28M"}, {"no": 117, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "학의JCT-평촌IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-11703S-B-H", "type": "접속맨홀", "milepost": 117.03, "bound": "상행선", "direction": "일산방향", "lat": 37.379845, "lng": 126.97802, "completion_year": "1995", "warranty_year": "1997", "equipment": [{"type": "CCTV", "name": "평촌고가교", "icon": "video"}, {"type": "VDS", "name": "V-100-9 (1012CH)\nLCS2 / LCS3", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-52", "icon": "radio"}], "cctv": "평촌고가교", "vds": "V-100-9 (1012CH)\nLCS2 / LCS3", "vms": null, "ep": null, "cits": "RSU-52", "branch_info": "노면결빙\nIOT", "splice_point": "F(25년5월환체)", "remarks": "평촌고가교(닥트철거)", "terrain": null, "old_mh_no": "29M"}, {"no": 118, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "학의JCT-평촌IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-11632S-P-H", "type": "통과맨홀", "milepost": 116.32, "bound": "상행선", "direction": "일산방향", "lat": 37.381552, "lng": 126.968254, "completion_year": "1995", "warranty_year": "1997", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "철재맨홀", "terrain": null, "old_mh_no": "30M"}, {"no": 119, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "학의JCT-평촌IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-11576S-B-H", "type": "접속맨홀", "milepost": 115.76, "bound": "상행선", "direction": "일산방향", "lat": 37.382046, "lng": 126.96624, "completion_year": "1995", "warranty_year": "1997", "equipment": [{"type": "VDS", "name": "IOT", "icon": "activity"}, {"type": "C-ITS", "name": "RSU-51,RSU-50", "icon": "radio"}], "cctv": null, "vds": "IOT", "vms": null, "ep": null, "cits": "RSU-51,RSU-50", "branch_info": null, "splice_point": "F", "remarks": "철재맨홀", "terrain": null, "old_mh_no": "31M"}, {"no": 120, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "학의JCT-평촌IC", "category": "인공", "standard": "PMS형", "sub_std1": "3호", "sub_std2": "", "id": "M-1003-11515S-P-H", "type": "통과맨홀", "milepost": 115.15, "bound": "상행선", "direction": "일산방향", "lat": 37.38165, "lng": 126.962927, "completion_year": "1995", "warranty_year": "1997", "equipment": [], "cctv": null, "vds": null, "vms": null, "ep": null, "cits": null, "branch_info": null, "splice_point": null, "remarks": "철재맨홀", "terrain": null, "old_mh_no": "32M"}], "conduits": [{"no": 1, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "판교JCT-성남IC", "source_manhole_id": "M-1001-00021S-B-H", "target_manhole_id": "M-1001-00062S-B-H", "source_manhole_no": 1, "target_manhole_no": 2, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.406823, 127.097339], [37.407726, 127.101357]]}, {"no": 2, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "판교JCT-성남IC", "source_manhole_id": "M-1001-00062S-B-H", "target_manhole_id": "M-1001-00125S-P-H", "source_manhole_no": 2, "target_manhole_no": 3, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.407726, 127.101357], [37.407856, 127.10839]]}, {"no": 3, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "판교JCT-성남IC", "source_manhole_id": "M-1001-00125S-P-H", "target_manhole_id": "M-1001-00162S-B-H", "source_manhole_no": 3, "target_manhole_no": 4, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "2018", "coordinates": [[37.407856, 127.10839], [37.409206, 127.115537]]}, {"no": 4, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "판교JCT-성남IC", "source_manhole_id": "M-1001-00162S-B-H", "target_manhole_id": "M-1001-00208S-B-H", "source_manhole_no": 4, "target_manhole_no": 5, "category": "터널", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.409206, 127.115537], [37.410498, 127.117402]]}, {"no": 5, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "판교JCT-성남IC", "source_manhole_id": "M-1001-00208S-B-H", "target_manhole_id": "M-1001-00253S-B-H", "source_manhole_no": 5, "target_manhole_no": 6, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.410498, 127.117402], [37.413172, 127.119508]]}, {"no": 6, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "판교JCT-성남IC", "source_manhole_id": "M-1001-00253S-B-H", "target_manhole_id": "M-1001-00310S-B-H", "source_manhole_no": 6, "target_manhole_no": 7, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망,FTMS", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.413172, 127.119508], [37.417347, 127.122412]]}, {"no": 7, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "판교JCT-성남IC", "source_manhole_id": "M-1001-00310S-B-H", "target_manhole_id": "M-1001-00359S-P-H", "source_manhole_no": 7, "target_manhole_no": 8, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망,FTMS", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.417347, 127.122412], [37.42114, 127.123095]]}, {"no": 8, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "판교JCT-성남IC", "source_manhole_id": "M-1001-00359S-P-H", "target_manhole_id": "M-1001-00395S-P-H", "source_manhole_no": 8, "target_manhole_no": 9, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망,FTMS", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.42114, 127.123095], [37.424991, 127.123087]]}, {"no": 9, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "판교JCT-성남IC", "source_manhole_id": "M-1001-00395S-P-H", "target_manhole_id": "M-1001-00442S-B-H", "source_manhole_no": 9, "target_manhole_no": 10, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망,FTMS", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.424991, 127.123087], [37.428721, 127.123225]]}, {"no": 10, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "판교JCT-성남IC", "source_manhole_id": "M-1001-00442S-B-H", "target_manhole_id": "M-1001-00443S-P-H", "source_manhole_no": 10, "target_manhole_no": 11, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.428721, 127.123225], [37.4294, 127.123034]]}, {"no": 11, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "판교JCT-성남IC", "source_manhole_id": "M-1001-00443S-P-H", "target_manhole_id": "M-1001-00501S-P-H", "source_manhole_no": 11, "target_manhole_no": 12, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.4294, 127.123034], [37.433212, 127.123177]]}, {"no": 12, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "판교JCT-성남IC", "source_manhole_id": "M-1001-00501S-P-H", "target_manhole_id": "M-1001-00508E-B-H", "source_manhole_no": 12, "target_manhole_no": 13, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.433212, 127.123177], [37.435587, 127.123847]]}, {"no": 13, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "성남IC-서하남JCT", "source_manhole_id": "M-1001-00508E-B-H", "target_manhole_id": "M-1001-00540E-B-H", "source_manhole_no": 13, "target_manhole_no": 14, "category": "영업소", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망,FTMS", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.435587, 127.123847], [37.437811, 127.122972]]}, {"no": 14, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "성남IC-송파IC", "source_manhole_id": "M-1001-00540E-B-H", "target_manhole_id": "H-1001-00565E-P-H", "source_manhole_no": 14, "target_manhole_no": 15, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.437811, 127.122972], [37.44082, 127.123088]]}, {"no": 15, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "성남IC-송파IC", "source_manhole_id": "H-1001-00565E-P-H", "target_manhole_id": "M-1001-00618E-P-H", "source_manhole_no": 15, "target_manhole_no": 16, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.44082, 127.123088], [37.443839, 127.124351]]}, {"no": 16, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "성남IC-송파IC", "source_manhole_id": "M-1001-00618E-P-H", "target_manhole_id": "M-1001-00657E-B-H", "source_manhole_no": 16, "target_manhole_no": 17, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.443839, 127.124351], [37.446892, 127.125621]]}, {"no": 17, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "성남IC-송파IC", "source_manhole_id": "M-1001-00657E-B-H", "target_manhole_id": "M-1001-00695E-P-H", "source_manhole_no": 17, "target_manhole_no": 18, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.446892, 127.125621], [37.450525, 127.126259]]}, {"no": 18, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "성남IC-송파IC", "source_manhole_id": "M-1001-00695E-P-H", "target_manhole_id": "M-1001-00696S-P-H", "source_manhole_no": 18, "target_manhole_no": 19, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.450525, 127.126259], [37.450529, 127.125678]]}, {"no": 19, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "성남IC-송파IC", "source_manhole_id": "M-1001-00696S-P-H", "target_manhole_id": "M-1001-00727S-B-H", "source_manhole_no": 19, "target_manhole_no": 20, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.450529, 127.125678], [37.453784, 127.125639]]}, {"no": 20, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "성남IC-송파IC", "source_manhole_id": "M-1001-00727S-B-H", "target_manhole_id": "M-1001-00781S-P-H", "source_manhole_no": 20, "target_manhole_no": 21, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.453784, 127.125639], [37.457222, 127.125195]]}, {"no": 21, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "성남IC-송파IC", "source_manhole_id": "M-1001-00781S-P-H", "target_manhole_id": "M-1001-00801S-B-H", "source_manhole_no": 21, "target_manhole_no": 22, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.457222, 127.125195], [37.459745, 127.125099]]}, {"no": 22, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "성남IC-송파IC", "source_manhole_id": "M-1001-00801S-B-H", "target_manhole_id": "M-1001-00870S-P-H", "source_manhole_no": 22, "target_manhole_no": 23, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망,FTMS", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.459745, 127.125099], [37.465845, 127.125407]]}, {"no": 23, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "성남IC-송파IC", "source_manhole_id": "M-1001-00870S-P-H", "target_manhole_id": "M-1001-00896S-B-H", "source_manhole_no": 23, "target_manhole_no": 24, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망,FTMS", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.465845, 127.125407], [37.469056, 127.124826]]}, {"no": 24, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "성남IC-송파IC", "source_manhole_id": "M-1001-00896S-B-H", "target_manhole_id": "M-1001-00925S-P-H", "source_manhole_no": 24, "target_manhole_no": 25, "category": "도로", "pipe_type": "직매", "outer_spec1": 28, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 1, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망,FTMS", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.469056, 127.124826], [37.472551, 127.125835]]}, {"no": 25, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "성남IC-송파IC", "source_manhole_id": "M-1001-00925S-P-H", "target_manhole_id": "M-1001-00950S-B-H", "source_manhole_no": 25, "target_manhole_no": 26, "category": "도로", "pipe_type": "직매", "outer_spec1": 28, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 1, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망,FTMS", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.472551, 127.125835], [37.474509, 127.127877]]}, {"no": 26, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "성남IC-송파IC", "source_manhole_id": "M-1001-00950S-B-H", "target_manhole_id": "M-1001-01002S-P-H", "source_manhole_no": 26, "target_manhole_no": 27, "category": "도로", "pipe_type": "스틸배관", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 1, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.474509, 127.127877], [37.477532, 127.132344]]}, {"no": 27, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "M-1001-01002S-P-H", "target_manhole_id": "M-1001-01050S-B-H", "source_manhole_no": 27, "target_manhole_no": 28, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.477532, 127.132344], [37.481026, 127.134972]]}, {"no": 28, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "M-1001-01050S-B-H", "target_manhole_id": "M-1001-01093S-B-H", "source_manhole_no": 28, "target_manhole_no": 29, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.481026, 127.134972], [37.483153, 127.135391]]}, {"no": 29, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "M-1001-01093S-B-H", "target_manhole_id": "M-1001-01131S-B-H", "source_manhole_no": 29, "target_manhole_no": 30, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.483153, 127.135391], [37.487652, 127.136187]]}, {"no": 30, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "M-1001-01131S-B-H", "target_manhole_id": "M-1001-01165S-P-H", "source_manhole_no": 30, "target_manhole_no": 31, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.487652, 127.136187], [37.489901, 127.136881]]}, {"no": 31, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "M-1001-01165S-P-H", "target_manhole_id": "M-1001-01202S-B-H", "source_manhole_no": 31, "target_manhole_no": 32, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.489901, 127.136881], [37.494765, 127.139192]]}, {"no": 32, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "M-1001-01202S-B-H", "target_manhole_id": "M-1001-01308S-B-H", "source_manhole_no": 32, "target_manhole_no": 33, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.494765, 127.139192], [37.503279, 127.143384]]}, {"no": 33, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "M-1001-01308S-B-H", "target_manhole_id": "M-1001-01337S-B-H", "source_manhole_no": 33, "target_manhole_no": 34, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.503279, 127.143384], [37.506489, 127.145351]]}, {"no": 34, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "M-1001-01337S-B-H", "target_manhole_id": "M-1001-01379S-P-H", "source_manhole_no": 34, "target_manhole_no": 35, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.506489, 127.145351], [37.509158, 127.147083]]}, {"no": 35, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "M-1001-01379S-P-H", "target_manhole_id": "M-1001-01412S-P-H", "source_manhole_no": 35, "target_manhole_no": 36, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.509158, 127.147083], [37.511496, 127.149364]]}, {"no": 36, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "M-1001-01412S-P-H", "target_manhole_id": "M-1001-01454S-B-H", "source_manhole_no": 36, "target_manhole_no": 37, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.511496, 127.149364], [37.513205762230214, 127.15388348606811]]}, {"no": 37, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "M-1001-01454S-B-H", "target_manhole_id": "M-1001-01455S-P-H", "source_manhole_no": 37, "target_manhole_no": 38, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.513205762230214, 127.15388348606811], [37.51324536888914, 127.15399109287927]]}, {"no": 38, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "M-1001-01455S-P-H", "target_manhole_id": "H-1001-01456S-P-R", "source_manhole_no": 38, "target_manhole_no": 39, "category": "도로", "pipe_type": "스틸배관", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.51324536888914, 127.15399109287927], [37.51328489870555, 127.15409869969041]]}, {"no": 39, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "H-1001-01456S-P-R", "target_manhole_id": "M-1001-01495S-B-H", "source_manhole_no": 39, "target_manhole_no": 40, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.51328489870555, 127.15409869969041], [37.51474960461726, 127.15829536532509]]}, {"no": 40, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "M-1001-01495S-B-H", "target_manhole_id": "M-1001-01602S-B-H", "source_manhole_no": 40, "target_manhole_no": 41, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "2025", "coordinates": [[37.51474960461726, 127.15829536532509], [37.51756023952164, 127.16980929411766]]}, {"no": 41, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "M-1001-01602S-B-H", "target_manhole_id": "M-1001-01603S-B-H", "source_manhole_no": 41, "target_manhole_no": 42, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 5, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "2025", "coordinates": [[37.51756023952164, 127.16980929411766], [37.517576617733624, 127.1699169009288]]}, {"no": 42, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "송파IC-서하남JCT", "source_manhole_id": "M-1001-01603S-B-H", "target_manhole_id": "M-1001-01648S-B-H", "source_manhole_no": 42, "target_manhole_no": 43, "category": "도로", "pipe_type": "스틸배관", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "2025", "coordinates": [[37.517576617733624, 127.1699169009288], [37.51813656396393, 127.17475920743034]]}, {"no": 43, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "서하남JCT-하남JCT", "source_manhole_id": "M-1001-01648S-B-H", "target_manhole_id": "M-1001-01735S-B-H", "source_manhole_no": 43, "target_manhole_no": 44, "category": "도로", "pipe_type": "직매", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 1, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "2025", "coordinates": [[37.51813656396393, 127.17475920743034], [37.518535, 127.184121]]}, {"no": 44, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "서하남JCT-하남JCT", "source_manhole_id": "M-1001-01735S-B-H", "target_manhole_id": "M-1001-01771S-B-H", "source_manhole_no": 44, "target_manhole_no": 45, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망,FTMS", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.518535, 127.184121], [37.519871, 127.188155]]}, {"no": 45, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "서하남JCT-하남JCT", "source_manhole_id": "M-1001-01771S-B-H", "target_manhole_id": "M-1001-01807S-B-H", "source_manhole_no": 45, "target_manhole_no": 46, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망,FTMS", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.519871, 127.188155], [37.522219, 127.191133]]}, {"no": 46, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "서하남JCT-하남JCT", "source_manhole_id": "M-1001-01807S-B-H", "target_manhole_id": "M-1001-01851S-P-H", "source_manhole_no": 46, "target_manhole_no": 47, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망,FTMS", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.522219, 127.191133], [37.52485, 127.192828]]}, {"no": 47, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "서하남JCT-하남JCT", "source_manhole_id": "M-1001-01851S-P-H", "target_manhole_id": "M-1001-01882S-B-H", "source_manhole_no": 47, "target_manhole_no": 48, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.52485, 127.192828], [37.528048, 127.194698]]}, {"no": 48, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "서하남JCT-하남JCT", "source_manhole_id": "M-1001-01882S-B-H", "target_manhole_id": "M-1001-01913S-B-H", "source_manhole_no": 48, "target_manhole_no": 49, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.528048, 127.194698], [37.530501, 127.195296]]}, {"no": 49, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "서하남JCT-하남JCT", "source_manhole_id": "M-1001-01913S-B-H", "target_manhole_id": "M-1001-01962S-B-H", "source_manhole_no": 49, "target_manhole_no": 50, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망,FTMS", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.530501, 127.195296], [37.531984, 127.193722]]}, {"no": 50, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "서하남JCT-하남JCT", "source_manhole_id": "M-1001-01962S-B-H", "target_manhole_id": "M-1001-02021S-B-H", "source_manhole_no": 50, "target_manhole_no": 51, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.531984, 127.193722], [37.534426, 127.188173]]}, {"no": 51, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "하남JCT-상일IC", "source_manhole_id": "M-1001-02021S-B-H", "target_manhole_id": "M-1001-02060S-P-H", "source_manhole_no": 51, "target_manhole_no": 52, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.534426, 127.188173], [37.536868, 127.185376]]}, {"no": 52, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "하남JCT-상일IC", "source_manhole_id": "M-1001-02060S-P-H", "target_manhole_id": "M-1001-02105S-B-H", "source_manhole_no": 52, "target_manhole_no": 53, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.536868, 127.185376], [37.541381, 127.182699]]}, {"no": 53, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "하남JCT-상일IC", "source_manhole_id": "M-1001-02105S-B-H", "target_manhole_id": "M-1001-02161S-B-H", "source_manhole_no": 53, "target_manhole_no": 54, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.541381, 127.182699], [37.545485, 127.180598]]}, {"no": 54, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "하남JCT-상일IC", "source_manhole_id": "M-1001-02161S-B-H", "target_manhole_id": "M-1001-02162S-P-H", "source_manhole_no": 54, "target_manhole_no": 55, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.545485, 127.180598], [37.545513, 127.180754]]}, {"no": 55, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "하남JCT-상일IC", "source_manhole_id": "M-1001-02162S-P-H", "target_manhole_id": "M-1001-02202S-P-H", "source_manhole_no": 55, "target_manhole_no": 56, "category": "도로", "pipe_type": "스틸배관", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 1, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.545513, 127.180754], [37.549617, 127.178957]]}, {"no": 56, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "하남JCT-상일IC", "source_manhole_id": "M-1001-02202S-P-H", "target_manhole_id": "M-1001-02242S-B-H", "source_manhole_no": 56, "target_manhole_no": 57, "category": "도로", "pipe_type": "스틸배관", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 1, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.549617, 127.178957], [37.552861, 127.177456]]}, {"no": 57, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "하남JCT-상일IC", "source_manhole_id": "M-1001-02242S-B-H", "target_manhole_id": "M-1001-02243S-P-H", "source_manhole_no": 57, "target_manhole_no": 58, "category": "도로", "pipe_type": "스틸배관", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 1, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.552861, 127.177456], [37.553013, 127.177225]]}, {"no": 58, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "하남JCT-상일IC", "source_manhole_id": "M-1001-02243S-P-H", "target_manhole_id": "M-1001-02285S-B-H", "source_manhole_no": 58, "target_manhole_no": 59, "category": "도로", "pipe_type": "스틸배관", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 1, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.553013, 127.177225], [37.557225, 127.175527]]}, {"no": 59, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "상일IC-강일IC", "source_manhole_id": "M-1001-02285S-B-H", "target_manhole_id": "M-1001-02321S-B-H", "source_manhole_no": 59, "target_manhole_no": 60, "category": "도로", "pipe_type": "스틸배관", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 1, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.557225, 127.175527], [37.559098, 127.174878]]}, {"no": 60, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "상일IC-강일IC", "source_manhole_id": "M-1001-02321S-B-H", "target_manhole_id": "M-1001-02340S-P-H", "source_manhole_no": 60, "target_manhole_no": 61, "category": "도로", "pipe_type": "스틸배관", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 1, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.559098, 127.174878], [37.563005, 127.173366]]}, {"no": 61, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "상일IC-강일IC", "source_manhole_id": "M-1001-02340S-P-H", "target_manhole_id": "M-1001-02386S-B-H", "source_manhole_no": 61, "target_manhole_no": 62, "category": "도로", "pipe_type": "스틸배관", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 1, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.563005, 127.173366], [37.564824, 127.17204]]}, {"no": 62, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "상일IC-강일IC", "source_manhole_id": "M-1001-02386S-B-H", "target_manhole_id": "M-1001-02422S-P-H", "source_manhole_no": 62, "target_manhole_no": 63, "category": "도로", "pipe_type": "스틸배관", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 1, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.564824, 127.17204], [37.567301, 127.169972]]}, {"no": 63, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "상일IC-강일IC", "source_manhole_id": "M-1001-02422S-P-H", "target_manhole_id": "M-1001-02465S-P-H", "source_manhole_no": 63, "target_manhole_no": 64, "category": "도로", "pipe_type": "스틸배관", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 1, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.567301, 127.169972], [37.570606, 127.16697]]}, {"no": 64, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "상일IC-강일IC", "source_manhole_id": "M-1001-02465S-P-H", "target_manhole_id": "M-1001-02481S-P-H", "source_manhole_no": 64, "target_manhole_no": 65, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.570606, 127.16697], [37.571217, 127.166551]]}, {"no": 65, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "상일IC-강일IC", "source_manhole_id": "M-1001-02481S-P-H", "target_manhole_id": "M-1001-02487S-B-H", "source_manhole_no": 65, "target_manhole_no": 66, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.571217, 127.166551], [37.573441, 127.164525]]}, {"no": 66, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "상일IC-강일IC", "source_manhole_id": "M-1001-02487S-B-H", "target_manhole_id": "M-1001-02598S-B-H", "source_manhole_no": 66, "target_manhole_no": 67, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.573441, 127.164525], [37.581754, 127.157797]]}, {"no": 67, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "강일IC-남양주IC", "source_manhole_id": "M-1001-02598S-B-H", "target_manhole_id": "M-1001-02637S-P-H", "source_manhole_no": 67, "target_manhole_no": 68, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.581754, 127.157797], [37.585037, 127.156294]]}, {"no": 68, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "강일IC-남양주IC", "source_manhole_id": "M-1001-02637S-P-H", "target_manhole_id": "H-1001-02647S-P-H", "source_manhole_no": 68, "target_manhole_no": 69, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.585037, 127.156294], [37.588187, 127.156103]]}, {"no": 69, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "강일IC-남양주IC", "source_manhole_id": "H-1001-02647S-P-H", "target_manhole_id": "H-1001-02652S-P-H", "source_manhole_no": 69, "target_manhole_no": 70, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.588187, 127.156103], [37.589229, 127.155586]]}, {"no": 70, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "강일IC-남양주IC", "source_manhole_id": "H-1001-02652S-P-H", "target_manhole_id": "H-1001-02689S-P-H", "source_manhole_no": 70, "target_manhole_no": 71, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.589229, 127.155586], [37.589905, 127.155612]]}, {"no": 71, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "강일IC-남양주IC", "source_manhole_id": "H-1001-02689S-P-H", "target_manhole_id": "H-1001-02696S-P-H", "source_manhole_no": 71, "target_manhole_no": 72, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.589905, 127.155612], [37.590595, 127.156194]]}, {"no": 72, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "강일IC-남양주IC", "source_manhole_id": "H-1001-02696S-P-H", "target_manhole_id": "M-1001-02690S-P-H", "source_manhole_no": 72, "target_manhole_no": 73, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.590595, 127.156194], [37.5899394, 127.155583]]}, {"no": 73, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "강일IC-남양주IC", "source_manhole_id": "M-1001-02690S-P-H", "target_manhole_id": "M-1001-02721S-B-H", "source_manhole_no": 73, "target_manhole_no": 74, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.5899394, 127.155583], [37.592171, 127.156503]]}, {"no": 74, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "강일IC-남양주IC", "source_manhole_id": "M-1001-02721S-B-H", "target_manhole_id": "M-1001-02784S-B-H", "source_manhole_no": 74, "target_manhole_no": 75, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.592171, 127.156503], [37.597473, 127.155824]]}, {"no": 75, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "강일IC-남양주IC", "source_manhole_id": "M-1001-02784S-B-H", "target_manhole_id": "M-1001-02822S-B-H", "source_manhole_no": 75, "target_manhole_no": 76, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.597473, 127.155824], [37.60069, 127.153933]]}, {"no": 76, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "강일IC-남양주IC", "source_manhole_id": "M-1001-02822S-B-H", "target_manhole_id": "M-1001-02855S-P-H", "source_manhole_no": 76, "target_manhole_no": 77, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.60069, 127.153933], [37.602962, 127.151618]]}, {"no": 77, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "강일IC-남양주IC", "source_manhole_id": "M-1001-02855S-P-H", "target_manhole_id": "M-1001-02920S-B-H", "source_manhole_no": 77, "target_manhole_no": 78, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망,임대", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.602962, 127.151618], [37.607338, 127.146304]]}, {"no": 78, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "남양주IC-구리IC", "source_manhole_id": "M-1001-02920S-B-H", "target_manhole_id": "M-1001-02974S-P-H", "source_manhole_no": 78, "target_manhole_no": 79, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.607338, 127.146304], [37.611002, 127.142892]]}, {"no": 79, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "남양주IC-구리IC", "source_manhole_id": "M-1001-02974S-P-H", "target_manhole_id": "M-1001-03005S-B-H", "source_manhole_no": 79, "target_manhole_no": 80, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.611002, 127.142892], [37.6140365, 127.1417495]]}, {"no": 80, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "남양주IC-구리IC", "source_manhole_id": "M-1001-03005S-B-H", "target_manhole_id": "M-1001-03042S-B-H", "source_manhole_no": 80, "target_manhole_no": 81, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.6140365, 127.1417495], [37.6172261, 127.1409174]]}, {"no": 81, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "남양주IC구리IC", "source_manhole_id": "M-1001-03042S-B-H", "target_manhole_id": "M-1001-03088S-B-H", "source_manhole_no": 81, "target_manhole_no": 82, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.6172261, 127.1409174], [37.621453, 127.139953]]}, {"no": 82, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "구리IC-퇴계원IC", "source_manhole_id": "M-1001-03088S-B-H", "target_manhole_id": "M-1001-03121S-P-H", "source_manhole_no": 82, "target_manhole_no": 83, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.621453, 127.139953], [37.62539, 127.13905]]}, {"no": 83, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "구리IC-퇴계원IC", "source_manhole_id": "M-1001-03121S-P-H", "target_manhole_id": "M-1001-03179S-B-H", "source_manhole_no": 83, "target_manhole_no": 84, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.62539, 127.13905], [37.629335, 127.137431]]}, {"no": 84, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "구리IC-퇴계원IC", "source_manhole_id": "M-1001-03179S-B-H", "target_manhole_id": "M-1001-03224S-P-H", "source_manhole_no": 84, "target_manhole_no": 85, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.629335, 127.137431], [37.632664, 127.134764]]}, {"no": 85, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "구리IC-퇴계원IC", "source_manhole_id": "M-1001-03224S-P-H", "target_manhole_id": "M-1001-03280S-B-H", "source_manhole_no": 85, "target_manhole_no": 86, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.632664, 127.134764], [37.636601, 127.133627]]}, {"no": 86, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "구리IC-퇴계원IC", "source_manhole_id": "M-1001-03280S-B-H", "target_manhole_id": "M-1001-03315S-P-H", "source_manhole_no": 86, "target_manhole_no": 87, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.636601, 127.133627], [37.640112, 127.132663]]}, {"no": 87, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 본선", "section": "퇴계원IC-종점", "source_manhole_id": "M-1001-03315S-P-H", "target_manhole_id": "M-1001-03369S-P-H", "source_manhole_no": 87, "target_manhole_no": 88, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1993", "coordinates": [[37.640112, 127.132663], [37.643775, 127.130165]]}, {"no": 88, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 판교JCT 분기선", "section": "판교JCT 분기선로", "source_manhole_id": "M-1001-00021S-B-H", "target_manhole_id": "M-1003-12820S-B-H", "source_manhole_no": 1, "target_manhole_no": 89, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "1993", "warranty_year": "1995", "coordinates": [[37.406823, 127.097339], [37.406264, 127.095579]]}, {"no": 89, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12820S-B-H", "target_manhole_id": "M-1003-12770S-P-H", "source_manhole_no": 89, "target_manhole_no": 90, "category": "도로", "pipe_type": "PVC", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.406264, 127.095579], [37.405031, 127.091826]]}, {"no": 90, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12770S-P-H", "target_manhole_id": "M-1003-12724S-B-H", "source_manhole_no": 90, "target_manhole_no": 91, "category": "도로", "pipe_type": "PVC", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.405031, 127.091826], [37.403166, 127.087003]]}, {"no": 91, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12724S-B-H", "target_manhole_id": "M-1003-12681S-B-H", "source_manhole_no": 91, "target_manhole_no": 92, "category": "도로", "pipe_type": "PVC", "outer_spec1": 122, "outer_qty1": 2, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 9, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.403166, 127.087003], [37.400378, 127.082726]]}, {"no": 92, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12681S-B-H", "target_manhole_id": "M-1003-12625S-B-H", "source_manhole_no": 92, "target_manhole_no": 93, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "2017", "coordinates": [[37.400378, 127.082726], [37.397473, 127.078364]]}, {"no": 93, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12625S-B-H", "target_manhole_id": "M-1003-12582S-P-H", "source_manhole_no": 93, "target_manhole_no": 94, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "2017", "coordinates": [[37.397473, 127.078364], [37.395869, 127.073134]]}, {"no": 94, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12582S-P-H", "target_manhole_id": "M-1003-12530S-B-H", "source_manhole_no": 94, "target_manhole_no": 95, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "2017", "coordinates": [[37.395869, 127.073134], [37.395588, 127.069172]]}, {"no": 95, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12530S-B-H", "target_manhole_id": "M-1003-12490S-P-H", "source_manhole_no": 95, "target_manhole_no": 96, "category": "도로", "pipe_type": "COD", "outer_spec1": 122, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "2017", "coordinates": [[37.395588, 127.069172], [37.395514, 127.064835]]}, {"no": 96, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12490S-P-H", "target_manhole_id": "M-1003-12442S-B-H", "source_manhole_no": 96, "target_manhole_no": 97, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "2017", "coordinates": [[37.395514, 127.064835], [37.395871, 127.059087]]}, {"no": 97, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12442S-B-H", "target_manhole_id": "M-1003-12408S-B-H", "source_manhole_no": 97, "target_manhole_no": 98, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망,FTMS", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.395871, 127.059087], [37.396437, 127.055475]]}, {"no": 98, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12408S-B-H", "target_manhole_id": "M-1003-12358S-P-H", "source_manhole_no": 98, "target_manhole_no": 99, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 3, "use_desc1": "자가망,FTMS", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.396437, 127.055475], [37.396438, 127.04996]]}, {"no": 99, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12358S-P-H", "target_manhole_id": "M-1003-12318S-P-H", "source_manhole_no": 99, "target_manhole_no": 100, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.396438, 127.04996], [37.39576, 127.045788]]}, {"no": 100, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12318S-P-H", "target_manhole_id": "M-1003-12286S-B-H", "source_manhole_no": 100, "target_manhole_no": 101, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.39576, 127.045788], [37.395122, 127.040621]]}, {"no": 101, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12286S-B-H", "target_manhole_id": "M-1003-12215S-P-H", "source_manhole_no": 101, "target_manhole_no": 102, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.395122, 127.040621], [37.394351, 127.034554]]}, {"no": 102, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12215S-P-H", "target_manhole_id": "M-1003-12185S-B-H", "source_manhole_no": 102, "target_manhole_no": 103, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.394351, 127.034554], [37.393535, 127.030302]]}, {"no": 103, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12185S-B-H", "target_manhole_id": "M-1003-12135S-P-H", "source_manhole_no": 103, "target_manhole_no": 104, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.393535, 127.030302], [37.393488, 127.025445]]}, {"no": 104, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12135S-P-H", "target_manhole_id": "M-1003-12134S-B-H", "source_manhole_no": 104, "target_manhole_no": 105, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.393488, 127.025445], [37.393623, 127.025429]]}, {"no": 105, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "판교JCT-청계TG", "source_manhole_id": "M-1003-12134S-B-H", "target_manhole_id": "M-1003-12126S-P-H", "source_manhole_no": 105, "target_manhole_no": 106, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.393623, 127.025429], [37.393538, 127.024567]]}, {"no": 106, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "청계TG-학의JCT", "source_manhole_id": "M-1003-12126S-P-H", "target_manhole_id": "M-1003-12125S-P-H", "source_manhole_no": 106, "target_manhole_no": 107, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.393538, 127.024567], [37.39354, 127.02455]]}, {"no": 107, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "청계TG-학의JCT", "source_manhole_id": "M-1003-12125S-P-H", "target_manhole_id": "M-1003-12085S-P-H", "source_manhole_no": 107, "target_manhole_no": 108, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.39354, 127.02455], [37.393114, 127.021744]]}, {"no": 108, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "청계TG-학의JCT", "source_manhole_id": "M-1003-12085S-P-H", "target_manhole_id": "M-1003-12035S-B-H", "source_manhole_no": 108, "target_manhole_no": 109, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.393114, 127.021744], [37.392433, 127.014132]]}, {"no": 109, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "청계TG-학의JCT", "source_manhole_id": "M-1003-12035S-B-H", "target_manhole_id": "M-1003-11992S-P-H", "source_manhole_no": 109, "target_manhole_no": 110, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.392433, 127.014132], [37.389705, 127.007837]]}, {"no": 110, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "학의JCT-평촌IC", "source_manhole_id": "M-1003-11992S-P-H", "target_manhole_id": "M-1003-11950S-B-H", "source_manhole_no": 110, "target_manhole_no": 111, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.389705, 127.007837], [37.388243, 127.004452]]}, {"no": 111, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "학의JCT-평촌IC", "source_manhole_id": "M-1003-11950S-B-H", "target_manhole_id": "M-1003-11930S-P-H", "source_manhole_no": 111, "target_manhole_no": 112, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.388243, 127.004452], [37.387747, 127.002723]]}, {"no": 112, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "학의JCT-평촌IC", "source_manhole_id": "M-1003-11930S-P-H", "target_manhole_id": "M-1003-11885S-P-H", "source_manhole_no": 112, "target_manhole_no": 113, "category": "교량", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.387747, 127.002723], [37.386601, 126.99805]]}, {"no": 113, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "학의JCT-평촌IC", "source_manhole_id": "M-1003-11885S-P-H", "target_manhole_id": "M-1003-11815S-B-H", "source_manhole_no": 113, "target_manhole_no": 114, "category": "교량", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.386601, 126.99805], [37.384511, 126.990919]]}, {"no": 114, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "학의JCT-평촌IC", "source_manhole_id": "M-1003-11815S-B-H", "target_manhole_id": "M-1003-11782S-P-H", "source_manhole_no": 114, "target_manhole_no": 115, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 2, "use_desc1": "자가망", "completion_year": "", "warranty_year": "2025", "coordinates": [[37.384511, 126.990919], [37.383011, 126.986948]]}, {"no": 115, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "학의JCT-평촌IC", "source_manhole_id": "M-1003-11782S-P-H", "target_manhole_id": "M-1003-11746S-P-H", "source_manhole_no": 115, "target_manhole_no": 116, "category": "도로", "pipe_type": "COD", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "2025", "coordinates": [[37.383011, 126.986948], [37.381661, 126.983366]]}, {"no": 116, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "학의JCT-평촌IC", "source_manhole_id": "M-1003-11746S-P-H", "target_manhole_id": "M-1003-11703S-B-H", "source_manhole_no": 116, "target_manhole_no": 117, "category": "도로", "pipe_type": "COD", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": null, "outer_qty2": null, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "2025", "coordinates": [[37.381661, 126.983366], [37.379845, 126.97802]]}, {"no": 117, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "학의JCT-평촌IC", "source_manhole_id": "M-1003-11703S-B-H", "target_manhole_id": "M-1003-11632S-P-H", "source_manhole_no": 117, "target_manhole_no": 118, "category": "도로", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.379845, 126.97802], [37.381552, 126.968254]]}, {"no": 118, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "학의JCT-평촌IC", "source_manhole_id": "M-1003-11632S-P-H", "target_manhole_id": "M-1003-11576S-B-H", "source_manhole_no": 118, "target_manhole_no": 119, "category": "교량", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.381552, 126.968254], [37.382046, 126.96624]]}, {"no": 119, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선 외곽선(청계-학의-평촌)", "section": "학의JCT-평촌IC", "source_manhole_id": "M-1003-11576S-B-H", "target_manhole_id": "M-1003-11515S-P-H", "source_manhole_no": 119, "target_manhole_no": 120, "category": "교량", "pipe_type": "PVC", "outer_spec1": 100, "outer_qty1": 1, "outer_spec2": 150, "outer_qty2": 1, "inner_spec1": 28, "inner_qty1": 3, "use_spec1": 28, "use_qty1": 1, "use_desc1": "자가망", "completion_year": "", "warranty_year": "1995", "coordinates": [[37.382046, 126.96624], [37.38165, 126.962927]]}], "cables": [{"no": 1, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-성남TG", "start_point": "M-1001-00021S-B-H", "end_point": "M-1001-00508E-B-H", "length_km": 4.87, "expansion_round": "1차 증설", "total_cores": 72, "completion_year": "1993/2001", "node_count": 13, "node_path": ["M-1001-00021S-B-H", "M-1001-00062S-B-H", "M-1001-00125S-P-H", "M-1001-00162S-B-H", "M-1001-00208S-B-H", "M-1001-00253S-B-H", "M-1001-00310S-B-H", "M-1001-00359S-P-H", "M-1001-00395S-P-H", "M-1001-00442S-B-H", "M-1001-00443S-P-H", "M-1001-00501S-P-H", "M-1001-00508E-B-H"], "coordinates": [[37.406823, 127.097339], [37.407726, 127.101357], [37.407856, 127.10839], [37.409206, 127.115537], [37.410498, 127.117402], [37.413172, 127.119508], [37.417347, 127.122412], [37.42114, 127.123095], [37.424991, 127.123087], [37.428721, 127.123225], [37.4294, 127.123034], [37.433212, 127.123177], [37.435587, 127.123847]]}, {"no": 2, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "성남TG-송파IC", "start_point": "M-1001-00508E-B-H", "end_point": "M-1001-00950S-B-H", "length_km": 3.7, "expansion_round": "1차 증설", "total_cores": 72, "completion_year": "2002", "node_count": 14, "node_path": ["M-1001-00508E-B-H", "M-1001-00540E-B-H", "H-1001-00565E-P-H", "M-1001-00618E-P-H", "M-1001-00657E-B-H", "M-1001-00695E-P-H", "M-1001-00696S-P-H", "M-1001-00727S-B-H", "M-1001-00781S-P-H", "M-1001-00801S-B-H", "M-1001-00870S-P-H", "M-1001-00896S-B-H", "M-1001-00925S-P-H", "M-1001-00950S-B-H"], "coordinates": [[37.435587, 127.123847], [37.437811, 127.122972], [37.44082, 127.123088], [37.443839, 127.124351], [37.446892, 127.125621], [37.450525, 127.126259], [37.450529, 127.125678], [37.453784, 127.125639], [37.457222, 127.125195], [37.459745, 127.125099], [37.465845, 127.125407], [37.469056, 127.124826], [37.472551, 127.125835], [37.474509, 127.127877]]}, {"no": 3, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "송파IC-동서울지사", "start_point": "M-1001-00950S-B-H", "end_point": "M-1001-01602S-B-H", "length_km": 6.04, "expansion_round": "2차 증설", "total_cores": 96, "completion_year": "2002", "node_count": 16, "node_path": ["M-1001-00950S-B-H", "M-1001-01002S-P-H", "M-1001-01050S-B-H", "M-1001-01093S-B-H", "M-1001-01131S-B-H", "M-1001-01165S-P-H", "M-1001-01202S-B-H", "M-1001-01308S-B-H", "M-1001-01337S-B-H", "M-1001-01379S-P-H", "M-1001-01412S-P-H", "M-1001-01454S-B-H", "M-1001-01455S-P-H", "H-1001-01456S-P-R", "M-1001-01495S-B-H", "M-1001-01602S-B-H"], "coordinates": [[37.474509, 127.127877], [37.477532, 127.132344], [37.481026, 127.134972], [37.483153, 127.135391], [37.487652, 127.136187], [37.489901, 127.136881], [37.494765, 127.139192], [37.503279, 127.143384], [37.506489, 127.145351], [37.509158, 127.147083], [37.511496, 127.149364], [37.513205762230214, 127.15388348606811], [37.51324536888914, 127.15399109287927], [37.51328489870555, 127.15409869969041], [37.51474960461726, 127.15829536532509], [37.51756023952164, 127.16980929411766]]}, {"no": 4, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "동서울지사-하남JCT", "start_point": "M-1001-01602S-B-H", "end_point": "M-1001-01962S-B-H", "length_km": 6.08, "expansion_round": "2차 증설", "total_cores": 96, "completion_year": "1993/2025", "node_count": 10, "node_path": ["M-1001-01602S-B-H", "M-1001-01603S-B-H", "M-1001-01648S-B-H", "M-1001-01735S-B-H", "M-1001-01771S-B-H", "M-1001-01807S-B-H", "M-1001-01851S-P-H", "M-1001-01882S-B-H", "M-1001-01913S-B-H", "M-1001-01962S-B-H"], "coordinates": [[37.51756023952164, 127.16980929411766], [37.517576617733624, 127.1699169009288], [37.51813656396393, 127.17475920743034], [37.518535, 127.184121], [37.519871, 127.188155], [37.522219, 127.191133], [37.52485, 127.192828], [37.528048, 127.194698], [37.530501, 127.195296], [37.531984, 127.193722]]}, {"no": 5, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "하남JCT-상일IC", "start_point": "M-1001-01962S-B-H", "end_point": "M-1001-02243S-P-H", "length_km": 2.0, "expansion_round": "1차 증설", "total_cores": 54, "completion_year": "1993/2001", "node_count": 9, "node_path": ["M-1001-01962S-B-H", "M-1001-02021S-B-H", "M-1001-02060S-P-H", "M-1001-02105S-B-H", "M-1001-02161S-B-H", "M-1001-02162S-P-H", "M-1001-02202S-P-H", "M-1001-02242S-B-H", "M-1001-02243S-P-H"], "coordinates": [[37.531984, 127.193722], [37.534426, 127.188173], [37.536868, 127.185376], [37.541381, 127.182699], [37.545485, 127.180598], [37.545513, 127.180754], [37.549617, 127.178957], [37.552861, 127.177456], [37.553013, 127.177225]]}, {"no": 6, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "상일IC-강일IC", "start_point": "M-1001-02243S-P-H", "end_point": "M-1001-02487S-B-H", "length_km": 3.03, "expansion_round": "1차 증설", "total_cores": 54, "completion_year": "1993/2001", "node_count": 9, "node_path": ["M-1001-02243S-P-H", "M-1001-02285S-B-H", "M-1001-02321S-B-H", "M-1001-02340S-P-H", "M-1001-02386S-B-H", "M-1001-02422S-P-H", "M-1001-02465S-P-H", "M-1001-02481S-P-H", "M-1001-02487S-B-H"], "coordinates": [[37.553013, 127.177225], [37.557225, 127.175527], [37.559098, 127.174878], [37.563005, 127.173366], [37.564824, 127.17204], [37.567301, 127.169972], [37.570606, 127.16697], [37.571217, 127.166551], [37.573441, 127.164525]]}, {"no": 7, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "강일IC-토평IC", "start_point": "M-1001-02487S-B-H", "end_point": "H-1001-02696S-P-H", "length_km": 1.33, "expansion_round": "1차 증설", "total_cores": 54, "completion_year": "1993/2001", "node_count": 7, "node_path": ["M-1001-02487S-B-H", "M-1001-02598S-B-H", "M-1001-02637S-P-H", "H-1001-02647S-P-H", "H-1001-02652S-P-H", "H-1001-02689S-P-H", "H-1001-02696S-P-H"], "coordinates": [[37.573441, 127.164525], [37.581754, 127.157797], [37.585037, 127.156294], [37.588187, 127.156103], [37.589229, 127.155586], [37.589905, 127.155612], [37.590595, 127.156194]]}, {"no": 8, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "토평IC-구리남양주영업소", "start_point": "H-1001-02696S-P-H", "end_point": "M-1001-02721S-B-H", "length_km": 0.93, "expansion_round": "1차 증설", "total_cores": 50, "completion_year": "2002", "node_count": 3, "node_path": ["H-1001-02696S-P-H", "M-1001-02690S-P-H", "M-1001-02721S-B-H"], "coordinates": [[37.590595, 127.156194], [37.5899394, 127.155583], [37.592171, 127.156503]]}, {"no": 9, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "구리남양주영업소-남양주IC", "start_point": "M-1001-02721S-B-H", "end_point": "M-1001-02855S-P-H", "length_km": 1.75, "expansion_round": "1차 증설", "total_cores": 54, "completion_year": "2002", "node_count": 4, "node_path": ["M-1001-02721S-B-H", "M-1001-02784S-B-H", "M-1001-02822S-B-H", "M-1001-02855S-P-H"], "coordinates": [[37.592171, 127.156503], [37.597473, 127.155824], [37.60069, 127.153933], [37.602962, 127.151618]]}, {"no": 10, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "남양주IC-구리IC", "start_point": "M-1001-02855S-P-H", "end_point": "M-1001-03005S-B-H", "length_km": 1.5, "expansion_round": "1차 증설", "total_cores": 54, "completion_year": "2002", "node_count": 4, "node_path": ["M-1001-02855S-P-H", "M-1001-02920S-B-H", "M-1001-02974S-P-H", "M-1001-03005S-B-H"], "coordinates": [[37.602962, 127.151618], [37.607338, 127.146304], [37.611002, 127.142892], [37.6140365, 127.1417495]]}, {"no": 11, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "구리IC-퇴계원IC", "start_point": "M-1001-03005S-B-H", "end_point": "M-1001-03280S-B-H", "length_km": 2.75, "expansion_round": "1차 증설", "total_cores": 54, "completion_year": "2002", "node_count": 7, "node_path": ["M-1001-03005S-B-H", "M-1001-03042S-B-H", "M-1001-03088S-B-H", "M-1001-03121S-P-H", "M-1001-03179S-B-H", "M-1001-03224S-P-H", "M-1001-03280S-B-H"], "coordinates": [[37.6140365, 127.1417495], [37.6172261, 127.1409174], [37.621453, 127.139953], [37.62539, 127.13905], [37.629335, 127.137431], [37.632664, 127.134764], [37.636601, 127.133627]]}, {"no": 12, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "퇴계원IC-종점", "start_point": "M-1001-03280S-B-H", "end_point": "M-1001-03369S-P-H", "length_km": 0.89, "expansion_round": "1차 증설", "total_cores": 54, "completion_year": "2002", "node_count": 3, "node_path": ["M-1001-03280S-B-H", "M-1001-03315S-P-H", "M-1001-03369S-P-H"], "coordinates": [[37.636601, 127.133627], [37.640112, 127.132663], [37.643775, 127.130165]]}, {"no": 13, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "판교JCT-청계영업소", "start_point": "M-1003-12820S-B-H", "end_point": "M-1003-12134S-B-H", "length_km": 7.1, "expansion_round": "1차 증설", "total_cores": 72, "completion_year": "1995", "node_count": 17, "node_path": ["M-1003-12820S-B-H", "M-1003-12770S-P-H", "M-1003-12724S-B-H", "M-1003-12681S-B-H", "M-1003-12625S-B-H", "M-1003-12582S-P-H", "M-1003-12530S-B-H", "M-1003-12490S-P-H", "M-1003-12442S-B-H", "M-1003-12408S-B-H", "M-1003-12358S-P-H", "M-1003-12318S-P-H", "M-1003-12286S-B-H", "M-1003-12215S-P-H", "M-1003-12185S-B-H", "M-1003-12135S-P-H", "M-1003-12134S-B-H"], "coordinates": [[37.406264, 127.095579], [37.405031, 127.091826], [37.403166, 127.087003], [37.400378, 127.082726], [37.397473, 127.078364], [37.395869, 127.073134], [37.395588, 127.069172], [37.395514, 127.064835], [37.395871, 127.059087], [37.396437, 127.055475], [37.396438, 127.04996], [37.39576, 127.045788], [37.395122, 127.040621], [37.394351, 127.034554], [37.393535, 127.030302], [37.393488, 127.025445], [37.393623, 127.025429]]}, {"no": 14, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "청계영업소-학의JCT", "start_point": "M-1003-12134S-B-H", "end_point": "M-1003-12035S-B-H", "length_km": 1.84, "expansion_round": "1차 증설", "total_cores": 72, "completion_year": "1995", "node_count": 5, "node_path": ["M-1003-12134S-B-H", "M-1003-12126S-P-H", "M-1003-12125S-P-H", "M-1003-12085S-P-H", "M-1003-12035S-B-H"], "coordinates": [[37.393623, 127.025429], [37.393538, 127.024567], [37.39354, 127.02455], [37.393114, 127.021744], [37.392433, 127.014132]]}, {"no": 15, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권제1순환선", "section": "학의JCT-평촌IC", "start_point": "M-1003-12035S-B-H", "end_point": "M-1003-11515S-P-H", "length_km": 4.35, "expansion_round": "1차 증설", "total_cores": 72, "completion_year": "1995", "node_count": 12, "node_path": ["M-1003-12035S-B-H", "M-1003-11992S-P-H", "M-1003-11950S-B-H", "M-1003-11930S-P-H", "M-1003-11885S-P-H", "M-1003-11815S-B-H", "M-1003-11782S-P-H", "M-1003-11746S-P-H", "M-1003-11703S-B-H", "M-1003-11632S-P-H", "M-1003-11576S-B-H", "M-1003-11515S-P-H"], "coordinates": [[37.392433, 127.014132], [37.389705, 127.007837], [37.388243, 127.004452], [37.387747, 127.002723], [37.386601, 126.99805], [37.384511, 126.990919], [37.383011, 126.986948], [37.381661, 126.983366], [37.379845, 126.97802], [37.381552, 126.968254], [37.382046, 126.96624], [37.38165, 126.962927]]}], "poles": [{"no": 1, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권1순환선", "section": "하남JCT-상일IC", "id": "하남JCT-상일IC 임시전주 1", "category": "임시전주", "pole_type": "IP주", "height": "7m", "messenger_wire": "유", "milepost": 21.64, "bound": "상행선", "direction": "판교방향", "lat": 37.324497, "lng": 127.105214, "completion_date": "2023.8", "warranty_date": "2025.7"}, {"no": 2, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권1순환선", "section": "하남JCT-상일IC", "id": "하남JCT-상일IC 임시전주 1", "category": "임시전주", "pole_type": "IP주", "height": "7m", "messenger_wire": "유", "milepost": 21.67, "bound": "상행선", "direction": "판교방향", "lat": 37.324807, "lng": 127.110558, "completion_date": "2023.8", "warranty_date": "2025.7"}, {"no": 3, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권1순환선", "section": "하남JCT-상일IC", "id": "하남JCT-상일IC 임시전주 1", "category": "임시전주", "pole_type": "IP주", "height": "7m", "messenger_wire": "유", "milepost": 21.7, "bound": "상행선", "direction": "판교방향", "lat": 37.32483, "lng": 127.110598, "completion_date": "2023.8", "warranty_date": "2025.7"}, {"no": 4, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권1순환선", "section": "하남JCT-상일IC", "id": "하남JCT-상일IC 임시전주 1", "category": "임시전주", "pole_type": "IP주", "height": "7m", "messenger_wire": "유", "milepost": 21.73, "bound": "상행선", "direction": "판교방향", "lat": 37.324644, "lng": 127.110588, "completion_date": "2023.8", "warranty_date": "2025.7"}, {"no": 5, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권1순환선", "section": "하남JCT-상일IC", "id": "하남JCT-상일IC 임시전주 1", "category": "임시전주", "pole_type": "IP주", "height": "7m", "messenger_wire": "유", "milepost": 21.76, "bound": "상행선", "direction": "판교방향", "lat": 37.325002, "lng": 127.110575, "completion_date": "2023.8", "warranty_date": "2025.7"}, {"no": 6, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권1순환선", "section": "하남JCT-상일IC", "id": "하남JCT-상일IC 임시전주 1", "category": "임시전주", "pole_type": "IP주", "height": "7m", "messenger_wire": "유", "milepost": 21.79, "bound": "상행선", "direction": "판교방향", "lat": 37.324915, "lng": 127.11053, "completion_date": "2023.8", "warranty_date": "2025.7"}, {"no": 7, "hq": "서울경기본부", "branch": "동서울지사", "route": "수도권1순환선", "section": "하남JCT-상일IC", "id": "하남JCT-상일IC 임시전주 1", "category": "임시전주", "pole_type": "IP주", "height": "7m", "messenger_wire": "유", "milepost": 21.82, "bound": "상행선", "direction": "판교방향", "lat": 37.324624, "lng": 127.110574, "completion_date": "2023.8", "warranty_date": "2025.7"}], "cctv_devices": [{"branch_group": "수도권본부", "ring_name": "수도권본부 방범망", "type": "AP", "name": "수도권본부-4", "device_no": "무선브릿지-Rx", "serial_no": "0824181000001087", "mac": "00:19:3B:15:F8:F0", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "무선브릿지-Rx", "install_location": "상황실(교통정보센터)", "ip": "172.19.4.112", "subnet": "255.255.255.0", "gateway": "172.19.4.254"}, {"branch_group": "수도권본부", "ring_name": "수도권본부 방범망", "type": "AP", "name": "수도권본부-5", "device_no": "무선브릿지-Tx", "serial_no": "0824181000001055", "mac": "00:19:3B:15:F8:8C", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "무선브릿지-Tx", "install_location": "상황실(교통정보센터)", "ip": "172.19.4.113", "subnet": "255.255.255.0", "gateway": "172.19.4.254"}, {"branch_group": "수도권본부", "ring_name": "수도권본부 방범망", "type": "영상", "name": "수도권본부-6", "device_no": "돔카메라-01", "serial_no": "DOM20190111101", "mac": "00:50:C2:80:CC:4E", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "정보시스템실", "ip": "172.19.4.114", "subnet": "255.255.255.0", "gateway": "172.19.4.254"}, {"branch_group": "수도권본부", "ring_name": "수도권본부 방범망", "type": "영상", "name": "수도권본부-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205438", "mac": "00:50:C2:7C:B0:49", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "정보시스템실", "ip": "172.19.4.115", "subnet": "255.255.255.0", "gateway": "172.19.4.254"}, {"branch_group": "수도권본부", "ring_name": "수도권본부 방범망", "type": "영상", "name": "수도권본부-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205391", "mac": "00:50:C2:7C:B0:01", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "돔카메라-03(CAM#3)", "install_location": "정보시스템실 앞", "ip": "172.19.4.116", "subnet": "255.255.255.0", "gateway": "172.19.4.254"}, {"branch_group": "수도권본부", "ring_name": "수도권본부 방범망", "type": "영상", "name": "수도권본부-9", "device_no": "돔카메라-04", "serial_no": "DOM20181205383", "mac": "00:50:C2:7C:B0:03", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "돔카메라-04(CAM#4)", "install_location": "계단", "ip": "172.19.4.117", "subnet": "255.255.255.0", "gateway": "172.19.4.254"}, {"branch_group": "수도권본부", "ring_name": "수도권본부 방범망", "type": "영상", "name": "수도권본부-10", "device_no": "불렛카메라-01", "serial_no": "BUL20181205214", "mac": "00:50:C2:80:07:DD", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "불렛카메라-01(CAM#5)", "install_location": "정문 방향", "ip": "172.19.4.118", "subnet": "255.255.255.0", "gateway": "172.19.4.254"}, {"branch_group": "동서울지사", "ring_name": "동서울지사 방범망", "type": "영상", "name": "동서울지사-5", "device_no": "돔카메라-01", "serial_no": "DOM20181205395", "mac": "00:50:C2:7C:AF:D6", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.192.1", "subnet": "255.255.255.224", "gateway": "172.19.192.30"}, {"branch_group": "동서울지사", "ring_name": "동서울지사 방범망", "type": "영상", "name": "동서울지사-6", "device_no": "돔카메라-02", "serial_no": "DOM20181205392", "mac": "00:50:C2:7C:AF:B2", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "소모품창고", "ip": "172.19.192.2", "subnet": "255.255.255.224", "gateway": "172.19.192.30"}, {"branch_group": "동서울지사", "ring_name": "동서울지사 방범망", "type": "영상", "name": "동서울지사-7", "device_no": "돔카메라-03", "serial_no": "DOM20181205444", "mac": "00:50:C2:7C:B0:59", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "침실", "ip": "172.19.192.3", "subnet": "255.255.255.224", "gateway": "172.19.192.30"}, {"branch_group": "동서울지사", "ring_name": "동서울지사 방범망", "type": "영상", "name": "동서울지사-8", "device_no": "돔카메라-04", "serial_no": "DOM20181205393", "mac": "00:50:C2:7C:B0:9C", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "부장실", "ip": "172.19.192.4", "subnet": "255.255.255.224", "gateway": "172.19.192.30"}, {"branch_group": "동서울지사", "ring_name": "동서울지사 방범망", "type": "영상", "name": "동서울지사-9", "device_no": "돔카메라-05", "serial_no": "DOM20181205399", "mac": "00:50:C2:7C:B0:1E", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "2F 복도", "ip": "172.19.192.5", "subnet": "255.255.255.224", "gateway": "172.19.192.30"}, {"branch_group": "동서울지사", "ring_name": "동서울지사 방범망", "type": "영상", "name": "동서울지사-10", "device_no": "불렛카메라-01", "serial_no": "BUL20181205218", "mac": "00:50:C2:7C:AF:3A", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "옥상-주차장", "ip": "172.19.192.6", "subnet": "255.255.255.224", "gateway": "172.19.192.30"}, {"branch_group": "동서울지사", "ring_name": "동서울지사 방범망", "type": "영상", "name": "동서울지사-11", "device_no": "불렛카메라-02", "serial_no": "BUL20181205217", "mac": "00:50:C2:80:07:E7", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "17103DPKG0074", "alias": "", "install_location": "건물뒤", "ip": "172.19.192.7", "subnet": "255.255.255.224", "gateway": "172.19.192.30"}, {"branch_group": "동서울지사", "ring_name": "동서울지사 방범망", "type": "영상", "name": "동서울지사-12", "device_no": "불렛카메라-03", "serial_no": "BUL20181205164", "mac": "00:50:C2:7E:8E:25", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "18111DPKG0216", "alias": "", "install_location": "정문 방향", "ip": "172.19.192.8", "subnet": "255.255.255.224", "gateway": "172.19.192.30"}, {"branch_group": "동서울지사", "ring_name": "동서울지사 방범망", "type": "AP", "name": "동서울지사-13", "device_no": "무선브릿지-Rx", "serial_no": "08241836000005D1", "mac": "00:19:3B:18:4C:50", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "", "install_location": "주유기 카메라  전송용", "ip": "172.19.192.19", "subnet": "255.255.255.224", "gateway": "172.19.192.30"}, {"branch_group": "동서울지사", "ring_name": "동서울지사 방범망", "type": "AP", "name": "동서울지사-14", "device_no": "무선브릿지-Tx", "serial_no": "08241836000005D4", "mac": "00:19:3B:18:4C:56", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "", "install_location": "주유기 카메라  전송용", "ip": "172.19.192.20", "subnet": "255.255.255.224", "gateway": "172.19.192.30"}, {"branch_group": "동서울지사", "ring_name": "동서울지사 방범망", "type": "영상", "name": "동서울지사-15", "device_no": "불렛카메라-04", "serial_no": "BUL20191118801", "mac": "00:50:C2:80:07:C7", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "", "alias": "", "install_location": "주유기(추가)", "ip": "172.19.192.9", "subnet": "255.255.255.224", "gateway": "172.19.192.30"}, {"branch_group": "인천지사", "ring_name": "인천지사 방범망", "type": "AP", "name": "인천지사-3", "device_no": "무선브릿지-Rx", "serial_no": "0824181000001072", "mac": "00:19:3B:15:F8:C6", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "", "install_location": "", "ip": "172.19.194.19", "subnet": "255.255.255.224", "gateway": "172.19.194.30"}, {"branch_group": "인천지사", "ring_name": "인천지사 방범망", "type": "AP", "name": "인천지사-4", "device_no": "무선브릿지-Tx", "serial_no": "0824181000001053", "mac": "00:19:3B:15:F8:88", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "", "install_location": "", "ip": "172.19.194.20", "subnet": "255.255.255.224", "gateway": "172.19.194.30"}, {"branch_group": "인천지사", "ring_name": "인천지사 방범망", "type": "영상", "name": "인천지사-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205439", "mac": "00:50:C2:7C:B0:39", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.194.1", "subnet": "255.255.255.224", "gateway": "172.19.194.30"}, {"branch_group": "인천지사", "ring_name": "인천지사 방범망", "type": "영상", "name": "인천지사-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205377", "mac": "00:50:C2:7C:B0:94", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "1F 사무실", "ip": "172.19.194.2", "subnet": "255.255.255.224", "gateway": "172.19.194.30"}, {"branch_group": "인천지사", "ring_name": "인천지사 방범망", "type": "영상", "name": "인천지사-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205386", "mac": "00:50:C2:7C:B0:60", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "2F 입구", "ip": "172.19.194.3", "subnet": "255.255.255.224", "gateway": "172.19.194.30"}, {"branch_group": "인천지사", "ring_name": "인천지사 방범망", "type": "영상", "name": "인천지사-9", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205014", "mac": "00:50:C2:79:2A:85", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "차고지 앞", "ip": "172.19.194.4", "subnet": "255.255.255.224", "gateway": "172.19.194.30"}, {"branch_group": "인천지사", "ring_name": "인천지사 방범망", "type": "영상", "name": "인천지사-10", "device_no": "불렛카메라-01", "serial_no": "BUL20181205212", "mac": "00:50:C2:80:07:B5", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "염수고 방향", "ip": "172.19.194.5", "subnet": "255.255.255.224", "gateway": "172.19.194.30"}, {"branch_group": "인천지사", "ring_name": "인천지사 방범망", "type": "영상", "name": "인천지사-11", "device_no": "불렛카메라-02", "serial_no": "BUL20181205213", "mac": "00:50:C2:7E:8E:7F", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "정문 방향", "ip": "172.19.194.6", "subnet": "255.255.255.224", "gateway": "172.19.194.30"}, {"branch_group": "시흥지사", "ring_name": "시흥지사 방범망", "type": "영상", "name": "시흥지사-4", "device_no": "돔카메라-01", "serial_no": "DOM20181205344", "mac": "00:50:C2:7C:AF:F0", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "1F 계단 앞", "ip": "172.19.196.1", "subnet": "255.255.255.224", "gateway": "172.19.196.30"}, {"branch_group": "시흥지사", "ring_name": "시흥지사 방범망", "type": "영상", "name": "시흥지사-5", "device_no": "불렛카메라-01", "serial_no": "BUL20181205202", "mac": "00:50:C2:7E:8E:5C", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "18111DPKG0215", "alias": "", "install_location": "정비소", "ip": "172.19.196.2", "subnet": "255.255.255.224", "gateway": "172.19.196.30"}, {"branch_group": "시흥지사", "ring_name": "시흥지사 방범망", "type": "영상", "name": "시흥지사-6", "device_no": "불렛카메라-02", "serial_no": "BUL20181205204", "mac": "00:50:C2:80:07:A0", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "17103DPKG0014", "alias": "", "install_location": "정문차단기", "ip": "172.19.196.3", "subnet": "255.255.255.224", "gateway": "172.19.196.30"}, {"branch_group": "시흥지사", "ring_name": "시흥지사 방범망", "type": "영상", "name": "시흥지사-7", "device_no": "불렛카메라-03", "serial_no": "BUL20181205137", "mac": "00:50:C2:7E:8E:4B", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "17103DPKG0075", "alias": "", "install_location": "후문차단기", "ip": "172.19.196.4", "subnet": "255.255.255.224", "gateway": "172.19.196.30"}, {"branch_group": "시흥지사", "ring_name": "시흥지사 방범망", "type": "AP", "name": "시흥지사-8", "device_no": "무선브릿지-Rx", "serial_no": "082418360000069B", "mac": "00:19:3B:18:4D:E5", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "", "install_location": "주유기 카메라  전송용", "ip": "172.19.196.19", "subnet": "255.255.255.224", "gateway": "172.19.196.30"}, {"branch_group": "시흥지사", "ring_name": "시흥지사 방범망", "type": "AP", "name": "시흥지사-9", "device_no": "무선브릿지-Tx", "serial_no": "082418360000068B", "mac": "00:19:3B:18:4D:C5", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "", "install_location": "주유기 카메라  전송용", "ip": "172.19.196.20", "subnet": "255.255.255.224", "gateway": "172.19.196.30"}, {"branch_group": "시흥지사", "ring_name": "시흥지사 방범망", "type": "영상", "name": "시흥지사-10", "device_no": "불렛카메라-04", "serial_no": "BUL20191230301", "mac": "00:50:C2:80:9C:00", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "주유기(추가)", "ip": "172.19.196.5", "subnet": "255.255.255.224", "gateway": "172.19.196.30"}, {"branch_group": "군포지사", "ring_name": "군포지사 방범망", "type": "영상", "name": "군포지사-5", "device_no": "돔카메라-01", "serial_no": "DOM20181205363", "mac": "00:50:C2:7C:AF:B1", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "상황실 앞", "ip": "172.19.198.1", "subnet": "255.255.255.224", "gateway": "172.19.198.30"}, {"branch_group": "군포지사", "ring_name": "군포지사 방범망", "type": "영상", "name": "군포지사-6", "device_no": "돔카메라-02", "serial_no": "DOM20181205339", "mac": "00:50:C2:7C:AF:BD", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "2F 복도", "ip": "172.19.198.2", "subnet": "255.255.255.224", "gateway": "172.19.198.30"}, {"branch_group": "군포지사", "ring_name": "군포지사 방범망", "type": "영상", "name": "군포지사-7", "device_no": "불렛카메라-01", "serial_no": "BUL20181205125", "mac": "00:50:C2:80:07:B0", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "측면주차장", "ip": "172.19.198.3", "subnet": "255.255.255.224", "gateway": "172.19.198.30"}, {"branch_group": "군포지사", "ring_name": "군포지사 방범망", "type": "영상", "name": "군포지사-8", "device_no": "불렛카메라-02", "serial_no": "BUL20181205201", "mac": "00:50:C2:80:07:A9", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "후문주차장", "ip": "172.19.198.4", "subnet": "255.255.255.224", "gateway": "172.19.198.30"}, {"branch_group": "군포지사", "ring_name": "군포지사 방범망", "type": "영상", "name": "군포지사-9", "device_no": "불렛카메라-03", "serial_no": "BUL20181205203", "mac": "00:50:C2:7E:8E:7A", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "후문", "ip": "172.19.198.5", "subnet": "255.255.255.224", "gateway": "172.19.198.30"}, {"branch_group": "군포지사", "ring_name": "군포지사 방범망", "type": "영상", "name": "군포지사-10", "device_no": "불렛카메라-04", "serial_no": "BUL20181205124", "mac": "00:50:C2:80:08:01", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "염화물창고", "ip": "172.19.198.6", "subnet": "255.255.255.224", "gateway": "172.19.198.30"}, {"branch_group": "군포지사", "ring_name": "군포지사 방범망", "type": "영상", "name": "군포지사-11", "device_no": "불렛카메라-05", "serial_no": "BUL20181205210", "mac": "00:50:C2:7C:AF:3C", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "", "install_location": "정문", "ip": "172.19.198.7", "subnet": "255.255.255.224", "gateway": "172.19.198.30"}, {"branch_group": "군포지사", "ring_name": "군포지사 방범망", "type": "영상", "name": "군포지사-12", "device_no": "불렛카메라-06", "serial_no": "BUL20181205131", "mac": "00:50:C2:80:07:F4", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "", "install_location": "쓰레기분리수거장", "ip": "172.19.198.8", "subnet": "255.255.255.224", "gateway": "172.19.198.30"}, {"branch_group": "화성지사", "ring_name": "화성지사 방범망", "type": "영상", "name": "화성지사-4", "device_no": "돔카메라-01", "serial_no": "DOM20181205370", "mac": "00:50:C2:7C:B0:16", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.200.1", "subnet": "255.255.255.224", "gateway": "172.19.200.30"}, {"branch_group": "화성지사", "ring_name": "화성지사 방범망", "type": "영상", "name": "화성지사-5", "device_no": "불렛카메라-01", "serial_no": "BUL20181205208", "mac": "00:50:C2:7E:8E:19", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "18111DPKG0246", "alias": "", "install_location": "정비고", "ip": "172.19.200.2", "subnet": "255.255.255.224", "gateway": "172.19.200.30"}, {"branch_group": "화성지사", "ring_name": "화성지사 방범망", "type": "영상", "name": "화성지사-6", "device_no": "불렛카메라-02", "serial_no": "BUL20181205136", "mac": "00:50:C2:7E:8E:73", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "17103DPKG0007", "alias": "", "install_location": "야적장", "ip": "172.19.200.3", "subnet": "255.255.255.224", "gateway": "172.19.200.30"}, {"branch_group": "화성지사", "ring_name": "화성지사 방범망", "type": "영상", "name": "화성지사-7", "device_no": "불렛카메라-03", "serial_no": "BUL20181205206", "mac": "00:50:C2:80:07:AC", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "주유시설", "ip": "172.19.200.4", "subnet": "255.255.255.224", "gateway": "172.19.200.30"}, {"branch_group": "화성지사", "ring_name": "화성지사 방범망", "type": "영상", "name": "화성지사-8", "device_no": "불렛카메라-04", "serial_no": "BUL20181205139", "mac": "00:50:C2:7E:8E:3A", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "정문", "ip": "172.19.200.5", "subnet": "255.255.255.224", "gateway": "172.19.200.30"}, {"branch_group": "화성지사", "ring_name": "화성지사 방범망", "type": "AP", "name": "화성지사-9", "device_no": "무선브릿지01-Rx", "serial_no": "08241810000010C1", "mac": "00:19:3B:15:F9:64", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "", "install_location": "화성지사 옥상", "ip": "172.19.200.19", "subnet": "255.255.255.224", "gateway": "172.19.200.30"}, {"branch_group": "화성지사", "ring_name": "화성지사 방범망", "type": "AP", "name": "화성지사-10", "device_no": "무선브릿지01-Tx", "serial_no": "082418100000109D", "mac": "00:19:3B:15:F9:1C", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "", "install_location": "주유시설", "ip": "172.19.200.20", "subnet": "255.255.255.224", "gateway": "172.19.200.30"}, {"branch_group": "화성지사", "ring_name": "화성지사 방범망", "type": "AP", "name": "화성지사-11", "device_no": "무선브릿지02-Rx", "serial_no": "0824181000000F58", "mac": "00:19:3B:15:F6:92", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "", "install_location": "화성지사 옥상", "ip": "172.19.200.15", "subnet": "255.255.255.224", "gateway": "172.19.200.30"}, {"branch_group": "화성지사", "ring_name": "화성지사 방범망", "type": "AP", "name": "화성지사-12", "device_no": "무선브릿지02-Tx", "serial_no": "082418100000104D", "mac": "00:19:3B:15:F8:7C", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "", "install_location": "정문", "ip": "172.19.200.16", "subnet": "255.255.255.224", "gateway": "172.19.200.30"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "AP", "name": "수원지사-4", "device_no": "무선브릿지-Rx", "serial_no": "0824181000001084", "mac": "00:19:3B:15:F8:EA", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "", "install_location": "주자창 카메라용", "ip": "172.19.202.51", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "AP", "name": "수원지사-5", "device_no": "무선브릿지-Tx", "serial_no": "0824181000000F75", "mac": "00:19:3B:15:F6:CC", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "", "install_location": "주자창 카메라용", "ip": "172.19.202.52", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "영상", "name": "수원지사-7", "device_no": "돔카메라-01", "serial_no": "DOM20181205366", "mac": "00:50:C2:7C:AF:CB", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "1F 현관", "ip": "172.19.202.1", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "영상", "name": "수원지사-8", "device_no": "돔카메라-02", "serial_no": "DOM20181205352", "mac": "00:50:C2:7C:AF:CA", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "1F 후문(식당쪽)", "ip": "172.19.202.2", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "영상", "name": "수원지사-9", "device_no": "돔카메라-03", "serial_no": "DOM20181205328", "mac": "00:50:C2:7C:AF:EA", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "2F 사무실", "ip": "172.19.202.3", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "영상", "name": "수원지사-10", "device_no": "돔카메라-04", "serial_no": "DOM20181205359", "mac": "00:50:C2:7C:B0:79", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "2F 계단(1~2층)", "ip": "172.19.202.4", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "영상", "name": "수원지사-11", "device_no": "돔카메라-05", "serial_no": "DOM20181205340", "mac": "00:50:C2:7C:B0:71", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "2F 복도", "ip": "172.19.202.5", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "영상", "name": "수원지사-12", "device_no": "돔카메라-06", "serial_no": "DOM20181205335", "mac": "00:50:C2:7C:AF:F4", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "2F 계단", "ip": "172.19.202.6", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "영상", "name": "수원지사-13", "device_no": "돔카메라-07", "serial_no": "DOM20181205326", "mac": "00:50:C2:7C:B0:2E", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "", "install_location": "2F 복도(대회의실 방향)", "ip": "172.19.202.7", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "영상", "name": "수원지사-14", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205020", "mac": "00:50:C2:79:2A:82", "ip_type": "카메라", "drawing_name": "CAM#14", "eoc_sn": "", "alias": "", "install_location": "정비동", "ip": "172.19.202.8", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "영상", "name": "수원지사-15", "device_no": "불렛카메라-01", "serial_no": "BUL20181205143", "mac": "00:50:C2:80:07:F9", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "", "install_location": "정문 방향", "ip": "172.19.202.9", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "영상", "name": "수원지사-16", "device_no": "불렛카메라-02", "serial_no": "BUL20181205142", "mac": "00:50:C2:80:07:CE", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "", "alias": "", "install_location": "기계화팀", "ip": "172.19.202.10", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "영상", "name": "수원지사-17", "device_no": "불렛카메라-03", "serial_no": "BUL20181205157", "mac": "00:50:C2:7E:8E:78", "ip_type": "카메라", "drawing_name": "CAM#10", "eoc_sn": "", "alias": "", "install_location": "주유기1", "ip": "172.19.202.11", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "영상", "name": "수원지사-18", "device_no": "불렛카메라-04", "serial_no": "BUL20181205209", "mac": "00:50:C2:7E:8E:6B", "ip_type": "카메라", "drawing_name": "CAM#11", "eoc_sn": "", "alias": "", "install_location": "주유기2", "ip": "172.19.202.12", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "영상", "name": "수원지사-19", "device_no": "불렛카메라-05", "serial_no": "BUL20181205133", "mac": "00:50:C2:7E:8E:33", "ip_type": "카메라", "drawing_name": "CAM#12", "eoc_sn": "", "alias": "", "install_location": "월동창고", "ip": "172.19.202.13", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "수원지사", "ring_name": "수원지사 방범망", "type": "영상", "name": "수원지사-20", "device_no": "불렛카메라-06", "serial_no": "BUL20181205126", "mac": "00:50:C2:80:07:A6", "ip_type": "카메라", "drawing_name": "CAM#13", "eoc_sn": "", "alias": "", "install_location": "주차장", "ip": "172.19.202.14", "subnet": "255.255.255.192", "gateway": "172.19.202.62"}, {"branch_group": "경기광주지사", "ring_name": "경기광주지사 방범망", "type": "영상", "name": "경기광주지사-4", "device_no": "돔카메라-01", "serial_no": "DOM20181205389", "mac": "00:50:C2:7C:AF:F8", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.204.1", "subnet": "255.255.255.224", "gateway": "172.19.204.30"}, {"branch_group": "경기광주지사", "ring_name": "경기광주지사 방범망", "type": "영상", "name": "경기광주지사-5", "device_no": "돔카메라-02", "serial_no": "DOM20181205422", "mac": "00:50:C2:7C:B0:23", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "후문(식당쪽)", "ip": "172.19.204.2", "subnet": "255.255.255.224", "gateway": "172.19.204.30"}, {"branch_group": "경기광주지사", "ring_name": "경기광주지사 방범망", "type": "영상", "name": "경기광주지사-6", "device_no": "돔카메라-03", "serial_no": "DOM20181205374", "mac": "00:50:C2:7C:B0:5C", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "2F 복도", "ip": "172.19.204.3", "subnet": "255.255.255.224", "gateway": "172.19.204.30"}, {"branch_group": "경기광주지사", "ring_name": "경기광주지사 방범망", "type": "영상", "name": "경기광주지사-7", "device_no": "불렛카메라-01", "serial_no": "BUL20181205186", "mac": "00:50:C2:7E:8E:54", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "건물뒤", "ip": "172.19.204.4", "subnet": "255.255.255.224", "gateway": "172.19.204.30"}, {"branch_group": "경기광주지사", "ring_name": "경기광주지사 방범망", "type": "영상", "name": "경기광주지사-8", "device_no": "불렛카메라-02", "serial_no": "BUL20181205190", "mac": "00:50:C2:7E:8E:12", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "17103DPKG0077", "alias": "", "install_location": "정문", "ip": "172.19.204.5", "subnet": "255.255.255.224", "gateway": "172.19.204.30"}, {"branch_group": "경기광주지사", "ring_name": "경기광주지사 방범망", "type": "영상", "name": "경기광주지사-9", "device_no": "불렛카메라-03", "serial_no": "BUL20181205163", "mac": "00:50:C2:80:07:D6", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "17103DPKG0080", "alias": "", "install_location": "주차장", "ip": "172.19.204.6", "subnet": "255.255.255.224", "gateway": "172.19.204.30"}, {"branch_group": "경기광주지사", "ring_name": "경기광주지사 방범망", "type": "영상", "name": "경기광주지사-10", "device_no": "불렛카메라-04", "serial_no": "BUL20181205184", "mac": "00:50:C2:7E:8E:50", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "17103DPKG0079", "alias": "", "install_location": "정비고", "ip": "172.19.204.7", "subnet": "255.255.255.224", "gateway": "172.19.204.30"}, {"branch_group": "경기광주지사", "ring_name": "경기광주지사 방범망", "type": "영상", "name": "경기광주지사-11", "device_no": "불렛카메라-05", "serial_no": "BUL20181205189", "mac": "00:50:C2:7E:8E:38", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "17103DPKG0078", "alias": "", "install_location": "운동장", "ip": "172.19.204.8", "subnet": "255.255.255.224", "gateway": "172.19.204.30"}, {"branch_group": "경기광주지사", "ring_name": "경기광주지사 방범망", "type": "영상", "name": "경기광주지사-12", "device_no": "불렛카메라-05", "serial_no": "BUL20190403001", "mac": "00:50:C2:7E:8E:65", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "운동장", "alias": "172.19.204.8", "install_location": "영업소 후문", "ip": "172.19.204.9", "subnet": "255.255.255.224", "gateway": "172.19.204.30"}, {"branch_group": "경기광주지사", "ring_name": "경기광주지사 방범망", "type": "AP", "name": "경기광주지사-13", "device_no": "무선브릿지-Rx", "serial_no": "08241836000005B5", "mac": "00:19:3B:18:4C:18", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "255.255.255.224", "alias": "172.19.204.30", "install_location": "주유기 카메라  전송용", "ip": "172.19.204.19", "subnet": "255.255.255.224", "gateway": "172.19.204.30"}, {"branch_group": "경기광주지사", "ring_name": "경기광주지사 방범망", "type": "AP", "name": "경기광주지사-14", "device_no": "무선브릿지-Tx", "serial_no": "082418350000093D", "mac": "00:19:3B:18:38:E5", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "255.255.255.224", "alias": "172.19.204.30", "install_location": "주유기 카메라  전송용", "ip": "172.19.204.20", "subnet": "255.255.255.224", "gateway": "172.19.204.30"}, {"branch_group": "경기광주지사", "ring_name": "경기광주지사 방범망", "type": "영상", "name": "경기광주지사-15", "device_no": "불렛카메라-06", "serial_no": "BUL20191118802", "mac": "00:50:C2:80:07:94", "ip_type": "카메라", "drawing_name": "CAM#10", "eoc_sn": "255.255.255.224", "alias": "172.19.204.30", "install_location": "주유기(추가)", "ip": "172.19.204.10", "subnet": "255.255.255.224", "gateway": "172.19.204.30"}, {"branch_group": "동서울지사", "ring_name": "성남영업소 방범망", "type": "영상", "name": "성남영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205378", "mac": "00:50:C2:7C:AF:F3", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.192.33", "subnet": "255.255.255.224", "gateway": "172.19.192.62"}, {"branch_group": "동서울지사", "ring_name": "성남영업소 방범망", "type": "영상", "name": "성남영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205435", "mac": "00:50:C2:7C:B0:66", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "1F 사무실", "ip": "172.19.192.34", "subnet": "255.255.255.224", "gateway": "172.19.192.62"}, {"branch_group": "동서울지사", "ring_name": "성남영업소 방범망", "type": "영상", "name": "성남영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205432", "mac": "00:50:C2:7C:B0:45", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "17103DPKG0004", "alias": "", "install_location": "민원실(건너편)", "ip": "172.19.192.35", "subnet": "255.255.255.224", "gateway": "172.19.192.62"}, {"branch_group": "동서울지사", "ring_name": "성남영업소 방범망", "type": "영상", "name": "성남영업소-9", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205181", "mac": "00:50:C2:7E:8E:37", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.192.36", "subnet": "255.255.255.224", "gateway": "172.19.192.62"}, {"branch_group": "동서울지사", "ring_name": "성남영업소 방범망", "type": "영상", "name": "성남영업소-10", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181205183", "mac": "00:50:C2:80:07:F3", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.192.37", "subnet": "255.255.255.224", "gateway": "172.19.192.62"}, {"branch_group": "동서울지사", "ring_name": "성남영업소 방범망", "type": "영상", "name": "성남영업소-11", "device_no": "(지)불렛카메라-03", "serial_no": "BUL20181205182", "mac": "00:50:C2:80:07:CF", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.192.38", "subnet": "255.255.255.224", "gateway": "172.19.192.62"}, {"branch_group": "동서울지사", "ring_name": "성남영업소 방범망", "type": "영상", "name": "성남영업소-12", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205029", "mac": "00:50:C2:78:8E:8B", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "현관 옥상", "ip": "172.19.192.39", "subnet": "255.255.255.224", "gateway": "172.19.192.62"}, {"branch_group": "동서울지사", "ring_name": "성남영업소 방범망", "type": "영상", "name": "성남영업소-13", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205187", "mac": "00:50:C2:7E:8E:58", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "", "install_location": "현관 옥상", "ip": "172.19.192.40", "subnet": "255.255.255.224", "gateway": "172.19.192.62"}, {"branch_group": "동서울지사", "ring_name": "성남영업소 방범망", "type": "영상", "name": "성남영업소-14", "device_no": "(외)불렛카메라-02", "serial_no": "BUL20181205219", "mac": "00:50:C2:7E:8E:51", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "", "alias": "", "install_location": "건물측면취부", "ip": "172.19.192.41", "subnet": "255.255.255.224", "gateway": "172.19.192.62"}, {"branch_group": "동서울지사", "ring_name": "토평영업소 방범망", "type": "영상", "name": "토평영업소-5", "device_no": "돔카메라-01", "serial_no": "DOM20181205350", "mac": "00:50:C2:7C:AF:E3", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.192.65", "subnet": "255.255.255.224", "gateway": "172.19.192.94"}, {"branch_group": "동서울지사", "ring_name": "토평영업소 방범망", "type": "영상", "name": "토평영업소-6", "device_no": "돔카메라-02", "serial_no": "DOM20181205348", "mac": "00:50:C2:7C:AF:E8", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.192.66", "subnet": "255.255.255.224", "gateway": "172.19.192.94"}, {"branch_group": "동서울지사", "ring_name": "토평영업소 방범망", "type": "영상", "name": "토평영업소-7", "device_no": "돔카메라-03", "serial_no": "DOM20181205334", "mac": "00:50:C2:7C:B0:6C", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.192.67", "subnet": "255.255.255.224", "gateway": "172.19.192.94"}, {"branch_group": "동서울지사", "ring_name": "토평영업소 방범망", "type": "영상", "name": "토평영업소-8", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205026", "mac": "00:50:C2:74:FA:09", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.192.68", "subnet": "255.255.255.224", "gateway": "172.19.192.94"}, {"branch_group": "동서울지사", "ring_name": "토평영업소 방범망", "type": "영상", "name": "토평영업소-9", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205135", "mac": "00:50:C2:7E:8E:31", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "17103DPKG0006", "alias": "", "install_location": "상행통행로1", "ip": "172.19.192.69", "subnet": "255.255.255.224", "gateway": "172.19.192.94"}, {"branch_group": "동서울지사", "ring_name": "토평영업소 방범망", "type": "영상", "name": "토평영업소-10", "device_no": "(외)불렛카메라-02", "serial_no": "BUL20181205134", "mac": "00:50:C2:80:07:B8", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "17103DPKG0062", "alias": "", "install_location": "상행통행로2", "ip": "172.19.192.70", "subnet": "255.255.255.224", "gateway": "172.19.192.94"}, {"branch_group": "동서울지사", "ring_name": "토평영업소 방범망", "type": "영상", "name": "토평영업소-11", "device_no": "(외)불렛카메라-03", "serial_no": "BUL20181205128", "mac": "00:50:C2:7E:8E:47", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "17103DPKG0001", "alias": "", "install_location": "상행광장", "ip": "172.19.192.71", "subnet": "255.255.255.224", "gateway": "172.19.192.94"}, {"branch_group": "동서울지사", "ring_name": "구리남양주영업소 방범망", "type": "영상", "name": "구리남양주영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205390", "mac": "00:50:C2:7C:B0:2D", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.192.129", "subnet": "255.255.255.192", "gateway": "172.19.192.190"}, {"branch_group": "동서울지사", "ring_name": "구리남양주영업소 방범망", "type": "영상", "name": "구리남양주영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205388", "mac": "00:50:C2:7C:AF:CF", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "통행권보관실", "ip": "172.19.192.130", "subnet": "255.255.255.192", "gateway": "172.19.192.190"}, {"branch_group": "동서울지사", "ring_name": "구리남양주영업소 방범망", "type": "영상", "name": "구리남양주영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205373", "mac": "00:50:C2:7C:AF:D5", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "1F 사무실", "ip": "172.19.192.131", "subnet": "255.255.255.192", "gateway": "172.19.192.190"}, {"branch_group": "동서울지사", "ring_name": "구리남양주영업소 방범망", "type": "영상", "name": "구리남양주영업소-9", "device_no": "돔카메라-04", "serial_no": "DOM20181205394", "mac": "00:50:C2:7C:AF:EB", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "1F 계단 앞", "ip": "172.19.192.132", "subnet": "255.255.255.192", "gateway": "172.19.192.190"}, {"branch_group": "동서울지사", "ring_name": "구리남양주영업소 방범망", "type": "영상", "name": "구리남양주영업소-10", "device_no": "돔카메라-05", "serial_no": "DOM20181205380", "mac": "00:50:C2:7C:AF:F7", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "회의 및 휴게실", "ip": "172.19.192.133", "subnet": "255.255.255.192", "gateway": "172.19.192.190"}, {"branch_group": "동서울지사", "ring_name": "구리남양주영업소 방범망", "type": "영상", "name": "구리남양주영업소-11", "device_no": "돔카메라-06", "serial_no": "DOM20181205385", "mac": "00:50:C2:7C:AF:D7", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "17103DPKG0023", "alias": "", "install_location": "민원실(건너편)", "ip": "172.19.192.134", "subnet": "255.255.255.192", "gateway": "172.19.192.190"}, {"branch_group": "동서울지사", "ring_name": "구리남양주영업소 방범망", "type": "영상", "name": "구리남양주영업소-12", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205211", "mac": "00:50:C2:80:07:D1", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.192.135", "subnet": "255.255.255.192", "gateway": "172.19.192.190"}, {"branch_group": "동서울지사", "ring_name": "구리남양주영업소 방범망", "type": "영상", "name": "구리남양주영업소-13", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181205215", "mac": "00:50:C2:80:07:EF", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.192.136", "subnet": "255.255.255.192", "gateway": "172.19.192.190"}, {"branch_group": "동서울지사", "ring_name": "구리남양주영업소 방범망", "type": "영상", "name": "구리남양주영업소-14", "device_no": "(지)불렛카메라-03", "serial_no": "BUL20181205185", "mac": "00:50:C2:80:08:05", "ip_type": "카메라", "drawing_name": "CAM#10", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.192.137", "subnet": "255.255.255.192", "gateway": "172.19.192.190"}, {"branch_group": "동서울지사", "ring_name": "구리남양주영업소 방범망", "type": "영상", "name": "구리남양주영업소-15", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205011", "mac": "00:50:C2:79:2A:94", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "침실(여) 밖", "ip": "172.19.192.138", "subnet": "255.255.255.192", "gateway": "172.19.192.190"}, {"branch_group": "동서울지사", "ring_name": "구리남양주영업소 방범망", "type": "영상", "name": "구리남양주영업소-16", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205188", "mac": "00:50:C2:7E:8E:75", "ip_type": "카메라", "drawing_name": "CAM#11", "eoc_sn": "", "alias": "", "install_location": "영업소측면-주유소화단", "ip": "172.19.192.139", "subnet": "255.255.255.192", "gateway": "172.19.192.190"}, {"branch_group": "동서울지사", "ring_name": "청계영업소 방범망", "type": "영상", "name": "청계영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205433", "mac": "00:50:C2:7C:B0:62", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "금고실", "ip": "172.19.192.193", "subnet": "255.255.255.192", "gateway": "172.19.192.254"}, {"branch_group": "동서울지사", "ring_name": "청계영업소 방범망", "type": "영상", "name": "청계영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205431", "mac": "00:50:C2:7C:B0:1C", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "사무실", "ip": "172.19.192.194", "subnet": "255.255.255.192", "gateway": "172.19.192.254"}, {"branch_group": "동서울지사", "ring_name": "청계영업소 방범망", "type": "영상", "name": "청계영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205409", "mac": "00:50:C2:7C:B0:6A", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "17103DPKG0072", "alias": "돔카메라-03(CAM#3)", "install_location": "민원실(건너편)", "ip": "172.19.192.195", "subnet": "255.255.255.192", "gateway": "172.19.192.254"}, {"branch_group": "동서울지사", "ring_name": "청계영업소 방범망", "type": "영상", "name": "청계영업소-9", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205162", "mac": "00:50:C2:7E:8E:81", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#5)", "install_location": "지하통로", "ip": "172.19.192.196", "subnet": "255.255.255.192", "gateway": "172.19.192.254"}, {"branch_group": "동서울지사", "ring_name": "청계영업소 방범망", "type": "영상", "name": "청계영업소-10", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181205216", "mac": "00:50:C2:80:07:8B", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "(지)불렛카메라-02(CAM#6)", "install_location": "지하통로", "ip": "172.19.192.197", "subnet": "255.255.255.192", "gateway": "172.19.192.254"}, {"branch_group": "동서울지사", "ring_name": "청계영업소 방범망", "type": "영상", "name": "청계영업소-11", "device_no": "(지)불렛카메라-03", "serial_no": "BUL20181205167", "mac": "00:50:C2:7E:8E:24", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "(지)불렛카메라-03(CAM#7)", "install_location": "지하통로", "ip": "172.19.192.198", "subnet": "255.255.255.192", "gateway": "172.19.192.254"}, {"branch_group": "동서울지사", "ring_name": "청계영업소 방범망", "type": "영상", "name": "청계영업소-12", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205028", "mac": "00:50:C2:74:FA:12", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#4)", "install_location": "현관", "ip": "172.19.192.199", "subnet": "255.255.255.192", "gateway": "172.19.192.254"}, {"branch_group": "동서울지사", "ring_name": "청계영업소 방범망", "type": "영상", "name": "청계영업소-13", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205168", "mac": "00:50:C2:7E:8E:30", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "(외)불렛카메라-01(CAM#8)", "install_location": "옥상-뒷길", "ip": "172.19.192.200", "subnet": "255.255.255.192", "gateway": "172.19.192.254"}, {"branch_group": "동서울지사", "ring_name": "청계영업소 방범망", "type": "영상", "name": "청계영업소-14", "device_no": "(외)불렛카메라-02", "serial_no": "BUL20181205178", "mac": "00:50:C2:80:07:FF", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "", "alias": "(외)불렛카메라-02(CAM#9)", "install_location": "옥상-광장측면", "ip": "172.19.192.201", "subnet": "255.255.255.192", "gateway": "172.19.192.254"}, {"branch_group": "동서울지사", "ring_name": "청계영업소 방범망", "type": "영상", "name": "청계영업소-15", "device_no": "(외)불렛카메라-03", "serial_no": "BUL20181205177", "mac": "00:50:C2:80:07:9A", "ip_type": "카메라", "drawing_name": "CAM#10", "eoc_sn": "17103DPKG0073", "alias": "(외)불렛카메라-03(CAM#10)", "install_location": "광장상(캐노피)", "ip": "172.19.192.202", "subnet": "255.255.255.192", "gateway": "172.19.192.254"}, {"branch_group": "동서울지사", "ring_name": "청계영업소 방범망", "type": "영상", "name": "청계영업소-16", "device_no": "(외)불렛카메라-04", "serial_no": "BUL20181205161", "mac": "00:50:C2:7E:8E:17", "ip_type": "카메라", "drawing_name": "CAM#11", "eoc_sn": "17103DPKG0059", "alias": "(외)불렛카메라-04(CAM#11)", "install_location": "광장하(캐노피)", "ip": "172.19.192.203", "subnet": "255.255.255.192", "gateway": "172.19.192.254"}, {"branch_group": "동서울지사", "ring_name": "청계영업소 방범망", "type": "영상", "name": "청계영업소-17", "device_no": "(외)불렛카메라-05", "serial_no": "BUL20181205165", "mac": "00:50:C2:80:07:CC", "ip_type": "카메라", "drawing_name": "CAM#12", "eoc_sn": "17103DPKG0036", "alias": "(외)불렛카메라-05(CAM#12)", "install_location": "하단주차장", "ip": "172.19.192.204", "subnet": "255.255.255.192", "gateway": "172.19.192.254"}, {"branch_group": "동서울지사", "ring_name": "청계영업소 방범망", "type": "영상", "name": "청계영업소-18", "device_no": "(외)불렛카메라-06", "serial_no": "BUL20181205166", "mac": "00:50:C2:80:07:DA", "ip_type": "카메라", "drawing_name": "CAM#13", "eoc_sn": "18111DPKG0229", "alias": "(외)불렛카메라-06(CAM#13)", "install_location": "민원실 야외휴게실", "ip": "172.19.192.205", "subnet": "255.255.255.192", "gateway": "172.19.192.254"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "AP", "name": "김포영업소-4", "device_no": "무선브릿지-Rx", "serial_no": "08241810000010DF", "mac": "00:19:3B:15:F9:A0", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "무선브릿지-Rx", "install_location": "옥상", "ip": "172.19.194.178", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "AP", "name": "김포영업소-5", "device_no": "무선브릿지-Tx", "serial_no": "0824181000001089", "mac": "00:19:3B:15:F8:F4", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "무선브릿지-Tx", "install_location": "주차장", "ip": "172.19.194.179", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "영상", "name": "김포영업소-8", "device_no": "돔카메라-01", "serial_no": "DOM20181205375", "mac": "00:50:C2:7C:B0:21", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "홀", "ip": "172.19.194.129", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "영상", "name": "김포영업소-9", "device_no": "돔카메라-02", "serial_no": "DOM20181205440", "mac": "00:50:C2:7C:B0:05", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "금고실", "ip": "172.19.194.130", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "영상", "name": "김포영업소-10", "device_no": "돔카메라-03", "serial_no": "DOM20181205379", "mac": "00:50:C2:7C:AF:F6", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "돔카메라-03(CAM#3)", "install_location": "사무실", "ip": "172.19.194.131", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "영상", "name": "김포영업소-11", "device_no": "돔카메라-04", "serial_no": "DOM20181205434", "mac": "00:50:C2:7C:B0:31", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "돔카메라-04(CAM#5)", "install_location": "편의점 앞", "ip": "172.19.194.132", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "영상", "name": "김포영업소-12", "device_no": "돔카메라-05", "serial_no": "DOM20181205414", "mac": "00:50:C2:7C:B0:9A", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "돔카메라-05(CAM#6)", "install_location": "영업소 우측 입구", "ip": "172.19.194.133", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "영상", "name": "김포영업소-13", "device_no": "돔카메라-06", "serial_no": "DOM20181205396", "mac": "00:50:C2:7C:AF:D0", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "돔카메라-06(CAM#7)", "install_location": "계단", "ip": "172.19.194.134", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "영상", "name": "김포영업소-14", "device_no": "돔카메라-07", "serial_no": "DOM20181205425", "mac": "00:50:C2:7C:B0:90", "ip_type": "카메라", "drawing_name": "CAM#15", "eoc_sn": "", "alias": "돔카메라-07(CAM#15)", "install_location": "하이패스센터 지문등록기 감시", "ip": "172.19.194.135", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "영상", "name": "김포영업소-15", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205172", "mac": "00:50:C2:80:07:BD", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#8)", "install_location": "지하통로", "ip": "172.19.194.136", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "영상", "name": "김포영업소-16", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181205176", "mac": "00:50:C2:80:07:E4", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "", "alias": "(지)불렛카메라-02(CAM#9)", "install_location": "지하통로", "ip": "172.19.194.137", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "영상", "name": "김포영업소-17", "device_no": "(지)불렛카메라-03", "serial_no": "BUL20181205170", "mac": "00:50:C2:80:07:F1", "ip_type": "카메라", "drawing_name": "CAM#10", "eoc_sn": "", "alias": "(지)불렛카메라-03(CAM#10)", "install_location": "지하통로", "ip": "172.19.194.138", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "영상", "name": "김포영업소-18", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205033", "mac": "00:50:C2:79:2A:C7", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#4)", "install_location": "소장실 밖", "ip": "172.19.194.139", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "영상", "name": "김포영업소-19", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205180", "mac": "00:50:C2:80:07:E6", "ip_type": "카메라", "drawing_name": "CAM#11", "eoc_sn": "18111DPKG0240", "alias": "(외)불렛카메라-01(CAM#11)", "install_location": "계중실", "ip": "172.19.194.140", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "영상", "name": "김포영업소-20", "device_no": "(외)불렛카메라-02", "serial_no": "BUL20181205169", "mac": "00:50:C2:7E:8E:27", "ip_type": "카메라", "drawing_name": "CAM#12", "eoc_sn": "", "alias": "(외)불렛카메라-02(CAM#12)", "install_location": "노조사무실뒤", "ip": "172.19.194.141", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "영상", "name": "김포영업소-21", "device_no": "(외)불렛카메라-03", "serial_no": "BUL20181205171", "mac": "00:50:C2:80:07:D5", "ip_type": "카메라", "drawing_name": "CAM#13", "eoc_sn": "", "alias": "(외)불렛카메라-03(CAM#13)", "install_location": "영업소 정문 옆", "ip": "172.19.194.142", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "김포영업소 방범망", "type": "영상", "name": "김포영업소-22", "device_no": "(외)불렛카메라-04", "serial_no": "BUL20181205179", "mac": "00:50:C2:80:07:D9", "ip_type": "카메라", "drawing_name": "CAM#14", "eoc_sn": "", "alias": "(외)불렛카메라-04(CAM#14)", "install_location": "영업소 좌측 입구", "ip": "172.19.194.143", "subnet": "255.255.255.192", "gateway": "172.19.194.190"}, {"branch_group": "인천지사", "ring_name": "인천영업소 방범망", "type": "AP", "name": "인천영업소-3", "device_no": "무선브릿지-Rx", "serial_no": "0824181000000F69", "mac": "00:19:3B:15:F6:B4", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "무선브릿지-Rx", "install_location": "계중실 외부", "ip": "172.19.194.114", "subnet": "255.255.255.192", "gateway": "172.19.194.126"}, {"branch_group": "인천지사", "ring_name": "인천영업소 방범망", "type": "AP", "name": "인천영업소-4", "device_no": "무선브릿지-Tx", "serial_no": "0824181000001058", "mac": "00:19:3B:15:F8:92", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "무선브릿지-Tx", "install_location": "외곽", "ip": "172.19.194.115", "subnet": "255.255.255.192", "gateway": "172.19.194.126"}, {"branch_group": "인천지사", "ring_name": "인천영업소 방범망", "type": "영상", "name": "인천영업소-8", "device_no": "돔카메라-01", "serial_no": "DOM20181205376", "mac": "00:50:C2:7C:AF:DF", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "1F 중앙계단", "ip": "172.19.194.65", "subnet": "255.255.255.192", "gateway": "172.19.194.126"}, {"branch_group": "인천지사", "ring_name": "인천영업소 방범망", "type": "영상", "name": "인천영업소-9", "device_no": "돔카메라-02", "serial_no": "DOM20181205428", "mac": "00:50:C2:7C:B0:34", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "통행권보관실", "ip": "172.19.194.66", "subnet": "255.255.255.192", "gateway": "172.19.194.126"}, {"branch_group": "인천지사", "ring_name": "인천영업소 방범망", "type": "영상", "name": "인천영업소-10", "device_no": "돔카메라-03", "serial_no": "DOM20181205404", "mac": "00:50:C2:7C:B0:41", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "돔카메라-03(CAM#3)", "install_location": "사무실 데스크 뒤", "ip": "172.19.194.67", "subnet": "255.255.255.192", "gateway": "172.19.194.126"}, {"branch_group": "인천지사", "ring_name": "인천영업소 방범망", "type": "영상", "name": "인천영업소-11", "device_no": "돔카메라-04", "serial_no": "DOM20181205442", "mac": "00:50:C2:7C:B0:61", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "돔카메라-04(CAM#5)", "install_location": "고객상담실 앞", "ip": "172.19.194.68", "subnet": "255.255.255.192", "gateway": "172.19.194.126"}, {"branch_group": "인천지사", "ring_name": "인천영업소 방범망", "type": "영상", "name": "인천영업소-12", "device_no": "돔카메라-05", "serial_no": "DOM20181205413", "mac": "00:50:C2:7C:B0:9E", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "돔카메라-05(CAM#6)", "install_location": "사무실 조서무 앞", "ip": "172.19.194.69", "subnet": "255.255.255.192", "gateway": "172.19.194.126"}, {"branch_group": "인천지사", "ring_name": "인천영업소 방범망", "type": "영상", "name": "인천영업소-13", "device_no": "돔카메라-06", "serial_no": "DOM20181205420", "mac": "00:50:C2:7C:B0:83", "ip_type": "카메라", "drawing_name": "CAM#11", "eoc_sn": "", "alias": "돔카메라-06(CAM#11)", "install_location": "하이패스센터 지문등록기 감시", "ip": "172.19.194.70", "subnet": "255.255.255.192", "gateway": "172.19.194.126"}, {"branch_group": "인천지사", "ring_name": "인천영업소 방범망", "type": "영상", "name": "인천영업소-14", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181026403", "mac": "00:50:C2:6F:37:DB", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#7)", "install_location": "지하통로", "ip": "172.19.194.71", "subnet": "255.255.255.192", "gateway": "172.19.194.126"}, {"branch_group": "인천지사", "ring_name": "인천영업소 방범망", "type": "영상", "name": "인천영업소-15", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181205153", "mac": "00:50:C2:7E:8E:53", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "(지)불렛카메라-02(CAM#8)", "install_location": "지하통로", "ip": "172.19.194.72", "subnet": "255.255.255.192", "gateway": "172.19.194.126"}, {"branch_group": "인천지사", "ring_name": "인천영업소 방범망", "type": "영상", "name": "인천영업소-16", "device_no": "(지)불렛카메라-03", "serial_no": "BUL20181205154", "mac": "00:50:C2:80:07:9E", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "", "alias": "(지)불렛카메라-03(CAM#9)", "install_location": "지하통로", "ip": "172.19.194.73", "subnet": "255.255.255.192", "gateway": "172.19.194.126"}, {"branch_group": "인천지사", "ring_name": "인천영업소 방범망", "type": "영상", "name": "인천영업소-17", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205012", "mac": "00:50:C2:79:2A:CB", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#4)", "install_location": "구급대 침실 밖", "ip": "172.19.194.74", "subnet": "255.255.255.192", "gateway": "172.19.194.126"}, {"branch_group": "인천지사", "ring_name": "인천영업소 방범망", "type": "영상", "name": "인천영업소-18", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205151", "mac": "00:50:C2:80:07:FB", "ip_type": "카메라", "drawing_name": "CAM#10", "eoc_sn": "17103DPKG0037", "alias": "(외)불렛카메라-01(CAM#10)", "install_location": "계중실", "ip": "172.19.194.75", "subnet": "255.255.255.192", "gateway": "172.19.194.126"}, {"branch_group": "인천지사", "ring_name": "인천영업소 방범망", "type": "영상", "name": "인천영업소-19", "device_no": "(외)스피드돔카메라-02", "serial_no": "IRD20181220001", "mac": "00:50:C2:74:FA:0D", "ip_type": "카메라", "drawing_name": "CAM#12", "eoc_sn": "", "alias": "(외)스피드돔카메라-02(CAM#12)", "install_location": "영업소 외곽", "ip": "172.19.194.76", "subnet": "255.255.255.192", "gateway": "172.19.194.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205317", "mac": "00:50:C2:7C:B0:2F", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관 방향", "ip": "172.19.196.65", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205309", "mac": "00:50:C2:7C:B0:20", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.196.66", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205323", "mac": "00:50:C2:7C:B0:43", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.196.67", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-9", "device_no": "돔카메라-04", "serial_no": "DOM20181205314", "mac": "00:50:C2:7C:AF:B9", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "사무실 창옆", "ip": "172.19.196.68", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-10", "device_no": "돔카메라-05", "serial_no": "DOM20181205306", "mac": "00:50:C2:7C:B0:3F", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "현관 좌측 복도 방향", "ip": "172.19.196.69", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-11", "device_no": "돔카메라-06", "serial_no": "DOM20181205308", "mac": "00:50:C2:7C:B0:8B", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "", "install_location": "영업소 좌측 입구", "ip": "172.19.196.70", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-12", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205107", "mac": "00:50:C2:7E:8E:66", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.196.71", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-13", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181205114", "mac": "00:50:C2:80:07:F6", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.196.72", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-14", "device_no": "(지)불렛카메라-03", "serial_no": "BUL20181205106", "mac": "00:50:C2:78:EE:7A", "ip_type": "카메라", "drawing_name": "CAM#10", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.196.73", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-15", "device_no": "(지)불렛카메라-04", "serial_no": "BUL20181205113", "mac": "00:50:C2:80:07:E1", "ip_type": "카메라", "drawing_name": "CAM#11", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.196.74", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-16", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205005", "mac": "00:50:C2:73:17:1A", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "경찰실 밖", "ip": "172.19.196.75", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-17", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205109", "mac": "00:50:C2:80:07:B4", "ip_type": "카메라", "drawing_name": "CAM#12", "eoc_sn": "", "alias": "", "install_location": "지하창고 옆", "ip": "172.19.196.76", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-18", "device_no": "(외)불렛카메라-02", "serial_no": "BUL20181205112", "mac": "00:50:C2:7E:8E:4D", "ip_type": "카메라", "drawing_name": "CAM#13", "eoc_sn": "", "alias": "", "install_location": "영업소 정면", "ip": "172.19.196.77", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-19", "device_no": "(외)불렛카메라-03", "serial_no": "BUL20181205117", "mac": "00:50:C2:80:07:C6", "ip_type": "카메라", "drawing_name": "CAM#14", "eoc_sn": "", "alias": "", "install_location": "영업소 정문 옆", "ip": "172.19.196.78", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-20", "device_no": "(외)불렛카메라-04", "serial_no": "BUL20181205101", "mac": "00:50:C2:78:EE:56", "ip_type": "카메라", "drawing_name": "CAM#15", "eoc_sn": "18111DPKG0244", "alias": "", "install_location": "계중실", "ip": "172.19.196.79", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "서서울영업소 방범망", "type": "영상", "name": "서서울영업소-21", "device_no": "(외)불렛카메라-05", "serial_no": "BUL20181205120", "mac": "00:50:C2:80:07:BC", "ip_type": "카메라", "drawing_name": "CAM#16", "eoc_sn": "", "alias": "", "install_location": "영업소 옥상", "ip": "172.19.196.80", "subnet": "255.255.255.192", "gateway": "172.19.196.126"}, {"branch_group": "시흥지사", "ring_name": "시흥영업소 방범망", "type": "영상", "name": "시흥영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205307", "mac": "00:50:C2:7C:B0:3C", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "현관", "ip": "172.19.196.129", "subnet": "255.255.255.192", "gateway": "172.19.196.190"}, {"branch_group": "시흥지사", "ring_name": "시흥영업소 방범망", "type": "영상", "name": "시흥영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205318", "mac": "00:50:C2:7C:B0:6E", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "사무실", "ip": "172.19.196.130", "subnet": "255.255.255.192", "gateway": "172.19.196.190"}, {"branch_group": "시흥지사", "ring_name": "시흥영업소 방범망", "type": "영상", "name": "시흥영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205316", "mac": "00:50:C2:7C:B0:91", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "돔카메라-03(CAM#3)", "install_location": "사무실", "ip": "172.19.196.131", "subnet": "255.255.255.192", "gateway": "172.19.196.190"}, {"branch_group": "시흥지사", "ring_name": "시흥영업소 방범망", "type": "영상", "name": "시흥영업소-9", "device_no": "돔카메라-04", "serial_no": "DOM20181205302", "mac": "00:50:C2:7C:B0:95", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "돔카메라-04(CAM#5)", "install_location": "영업소 좌측 입구", "ip": "172.19.196.132", "subnet": "255.255.255.192", "gateway": "172.19.196.190"}, {"branch_group": "시흥지사", "ring_name": "시흥영업소 방범망", "type": "영상", "name": "시흥영업소-10", "device_no": "돔카메라-05", "serial_no": "DOM20181205322", "mac": "00:50:C2:7C:B0:69", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "돔카메라-05(CAM#6)", "install_location": "1F 계단", "ip": "172.19.196.133", "subnet": "255.255.255.192", "gateway": "172.19.196.190"}, {"branch_group": "시흥지사", "ring_name": "시흥영업소 방범망", "type": "영상", "name": "시흥영업소-11", "device_no": "돔카메라-06", "serial_no": "DOM20181205312", "mac": "00:50:C2:7C:B0:47", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "돔카메라-06(CAM#7)", "install_location": "영업소 우측 입구", "ip": "172.19.196.134", "subnet": "255.255.255.192", "gateway": "172.19.196.190"}, {"branch_group": "시흥지사", "ring_name": "시흥영업소 방범망", "type": "영상", "name": "시흥영업소-12", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205111", "mac": "00:50:C2:80:07:93", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#8)", "install_location": "지하통로", "ip": "172.19.196.135", "subnet": "255.255.255.192", "gateway": "172.19.196.190"}, {"branch_group": "시흥지사", "ring_name": "시흥영업소 방범망", "type": "영상", "name": "시흥영업소-13", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181205110", "mac": "00:50:C2:7E:8E:59", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "", "alias": "(지)불렛카메라-02(CAM#9)", "install_location": "지하통로", "ip": "172.19.196.136", "subnet": "255.255.255.192", "gateway": "172.19.196.190"}, {"branch_group": "시흥지사", "ring_name": "시흥영업소 방범망", "type": "영상", "name": "시흥영업소-14", "device_no": "(지)불렛카메라-03", "serial_no": "BUL20181205119", "mac": "00:50:C2:80:07:B7", "ip_type": "카메라", "drawing_name": "CAM#10", "eoc_sn": "", "alias": "(지)불렛카메라-03(CAM#10)", "install_location": "지하통로", "ip": "172.19.196.137", "subnet": "255.255.255.192", "gateway": "172.19.196.190"}, {"branch_group": "시흥지사", "ring_name": "시흥영업소 방범망", "type": "영상", "name": "시흥영업소-15", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205006", "mac": "00:50:C2:73:17:13", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#4)", "install_location": "영업소 정면 우측", "ip": "172.19.196.138", "subnet": "255.255.255.192", "gateway": "172.19.196.190"}, {"branch_group": "시흥지사", "ring_name": "시흥영업소 방범망", "type": "영상", "name": "시흥영업소-16", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205108", "mac": "00:50:C2:78:EE:64", "ip_type": "카메라", "drawing_name": "CAM#11", "eoc_sn": "", "alias": "(외)불렛카메라-01(CAM#11)", "install_location": "영업소 좌측 입구", "ip": "172.19.196.139", "subnet": "255.255.255.192", "gateway": "172.19.196.190"}, {"branch_group": "시흥지사", "ring_name": "시흥영업소 방범망", "type": "영상", "name": "시흥영업소-17", "device_no": "(외)불렛카메라-02", "serial_no": "BUL20181205118", "mac": "00:50:C2:80:07:8F", "ip_type": "카메라", "drawing_name": "CAM#12", "eoc_sn": "", "alias": "(외)불렛카메라-02(CAM#12)", "install_location": "영업소 정면", "ip": "172.19.196.140", "subnet": "255.255.255.192", "gateway": "172.19.196.190"}, {"branch_group": "시흥지사", "ring_name": "시흥영업소 방범망", "type": "영상", "name": "시흥영업소-18", "device_no": "(외)불렛카메라-03", "serial_no": "BUL20181205116", "mac": "00:50:C2:80:07:D0", "ip_type": "카메라", "drawing_name": "CAM#13", "eoc_sn": "", "alias": "(외)불렛카메라-03(CAM#13)", "install_location": "영업소 정면 우측", "ip": "172.19.196.141", "subnet": "255.255.255.192", "gateway": "172.19.196.190"}, {"branch_group": "시흥지사", "ring_name": "남인천영업소 방범망", "type": "영상", "name": "남인천영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205333", "mac": "00:50:C2:7C:AF:AF", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "현관", "ip": "172.19.196.33", "subnet": "255.255.255.224", "gateway": "172.19.196.62"}, {"branch_group": "시흥지사", "ring_name": "남인천영업소 방범망", "type": "영상", "name": "남인천영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205372", "mac": "00:50:C2:7C:B0:33", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "금고실", "ip": "172.19.196.34", "subnet": "255.255.255.224", "gateway": "172.19.196.62"}, {"branch_group": "시흥지사", "ring_name": "남인천영업소 방범망", "type": "영상", "name": "남인천영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205362", "mac": "00:50:C2:7C:AF:BE", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "돔카메라-03(CAM#3)", "install_location": "사무실 입구 방향", "ip": "172.19.196.35", "subnet": "255.255.255.224", "gateway": "172.19.196.62"}, {"branch_group": "시흥지사", "ring_name": "남인천영업소 방범망", "type": "영상", "name": "남인천영업소-9", "device_no": "돔카메라-04", "serial_no": "DOM20181205341", "mac": "00:50:C2:7C:B0:2C", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "돔카메라-04(CAM#5)", "install_location": "사무실", "ip": "172.19.196.36", "subnet": "255.255.255.224", "gateway": "172.19.196.62"}, {"branch_group": "시흥지사", "ring_name": "남인천영업소 방범망", "type": "영상", "name": "남인천영업소-10", "device_no": "돔카메라-05", "serial_no": "DOM20181205356", "mac": "00:50:C2:7C:AF:BB", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "돔카메라-05(CAM#6)", "install_location": "2F 복도", "ip": "172.19.196.37", "subnet": "255.255.255.224", "gateway": "172.19.196.62"}, {"branch_group": "시흥지사", "ring_name": "남인천영업소 방범망", "type": "영상", "name": "남인천영업소-11", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205193", "mac": "00:50:C2:80:07:E2", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#7)", "install_location": "지하통로", "ip": "172.19.196.38", "subnet": "255.255.255.224", "gateway": "172.19.196.62"}, {"branch_group": "시흥지사", "ring_name": "남인천영업소 방범망", "type": "영상", "name": "남인천영업소-12", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181205102", "mac": "00:50:C2:78:EE:65", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "(지)불렛카메라-02(CAM#8)", "install_location": "지하통로", "ip": "172.19.196.39", "subnet": "255.255.255.224", "gateway": "172.19.196.62"}, {"branch_group": "시흥지사", "ring_name": "남인천영업소 방범망", "type": "영상", "name": "남인천영업소-13", "device_no": "(지)불렛카메라-03", "serial_no": "BUL20181205103", "mac": "00:50:C2:7E:8E:68", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "", "alias": "(지)불렛카메라-03(CAM#9)", "install_location": "지하통로", "ip": "172.19.196.40", "subnet": "255.255.255.224", "gateway": "172.19.196.62"}, {"branch_group": "시흥지사", "ring_name": "남인천영업소 방범망", "type": "영상", "name": "남인천영업소-14", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205004", "mac": "00:50:C2:73:17:22", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#4)", "install_location": "영업소 정면 우측", "ip": "172.19.196.41", "subnet": "255.255.255.224", "gateway": "172.19.196.62"}, {"branch_group": "군포지사", "ring_name": "군자영업소 방범망", "type": "영상", "name": "군자영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205310", "mac": "00:50:C2:7C:B0:93", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "현관", "ip": "172.19.198.33", "subnet": "255.255.255.224", "gateway": "172.19.198.62"}, {"branch_group": "군포지사", "ring_name": "군자영업소 방범망", "type": "영상", "name": "군자영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205324", "mac": "00:50:C2:7C:B0:48", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "금고실", "ip": "172.19.198.34", "subnet": "255.255.255.224", "gateway": "172.19.198.62"}, {"branch_group": "군포지사", "ring_name": "군자영업소 방범망", "type": "영상", "name": "군자영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205315", "mac": "00:50:C2:7C:B0:9D", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "돔카메라-03(CAM#3)", "install_location": "사무실", "ip": "172.19.198.35", "subnet": "255.255.255.224", "gateway": "172.19.198.62"}, {"branch_group": "군포지사", "ring_name": "군자영업소 방범망", "type": "영상", "name": "군자영업소-9", "device_no": "돔카메라-04", "serial_no": "DOM20181205320", "mac": "00:50:C2:7C:B0:1F", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "", "alias": "돔카메라-04(CAM#9)", "install_location": "하이패스센터 지문등록기 감시", "ip": "172.19.198.36", "subnet": "255.255.255.224", "gateway": "172.19.198.62"}, {"branch_group": "군포지사", "ring_name": "군자영업소 방범망", "type": "영상", "name": "군자영업소-10", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181026456", "mac": "00:50:C2:78:EE:70", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#5)", "install_location": "지하통로", "ip": "172.19.198.37", "subnet": "255.255.255.224", "gateway": "172.19.198.62"}, {"branch_group": "군포지사", "ring_name": "군자영업소 방범망", "type": "영상", "name": "군자영업소-11", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181205105", "mac": "00:50:C2:78:EE:74", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "(지)불렛카메라-02(CAM#6)", "install_location": "지하통로", "ip": "172.19.198.38", "subnet": "255.255.255.224", "gateway": "172.19.198.62"}, {"branch_group": "군포지사", "ring_name": "군자영업소 방범망", "type": "영상", "name": "군자영업소-12", "device_no": "(지)불렛카메라-03", "serial_no": "BUL20181205115", "mac": "00:50:C2:80:07:EC", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "(지)불렛카메라-03(CAM#7)", "install_location": "지하통로", "ip": "172.19.198.39", "subnet": "255.255.255.224", "gateway": "172.19.198.62"}, {"branch_group": "군포지사", "ring_name": "군자영업소 방범망", "type": "영상", "name": "군자영업소-13", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205001", "mac": "00:50:C2:73:17:0C", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#4)", "install_location": "영업소 정면 우측", "ip": "172.19.198.40", "subnet": "255.255.255.224", "gateway": "172.19.198.62"}, {"branch_group": "군포지사", "ring_name": "군자영업소 방범망", "type": "영상", "name": "군자영업소-14", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205104", "mac": "00:50:C2:76:E6:C6", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "(외)불렛카메라-01(CAM#8)", "install_location": "광장", "ip": "172.19.198.41", "subnet": "255.255.255.224", "gateway": "172.19.198.62"}, {"branch_group": "군포지사", "ring_name": "서안산영업소 방범망", "type": "영상", "name": "서안산영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205411", "mac": "00:50:C2:7C:B0:12", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "현관", "ip": "172.19.198.65", "subnet": "255.255.255.224", "gateway": "172.19.198.94"}, {"branch_group": "군포지사", "ring_name": "서안산영업소 방범망", "type": "영상", "name": "서안산영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205402", "mac": "00:50:C2:7C:B0:86", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "금고실", "ip": "172.19.198.66", "subnet": "255.255.255.224", "gateway": "172.19.198.94"}, {"branch_group": "군포지사", "ring_name": "서안산영업소 방범망", "type": "영상", "name": "서안산영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205347", "mac": "00:50:C2:7C:B0:0E", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "돔카메라-03(CAM#3)", "install_location": "사무실", "ip": "172.19.198.67", "subnet": "255.255.255.224", "gateway": "172.19.198.94"}, {"branch_group": "군포지사", "ring_name": "서안산영업소 방범망", "type": "영상", "name": "서안산영업소-9", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205160", "mac": "00:50:C2:7C:AF:39", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#5)", "install_location": "지하통로", "ip": "172.19.198.68", "subnet": "255.255.255.224", "gateway": "172.19.198.94"}, {"branch_group": "군포지사", "ring_name": "서안산영업소 방범망", "type": "영상", "name": "서안산영업소-10", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205021", "mac": "00:50:C2:79:2A:AD", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#4)", "install_location": "영업소 정면 좌측", "ip": "172.19.198.69", "subnet": "255.255.255.224", "gateway": "172.19.198.94"}, {"branch_group": "군포지사", "ring_name": "서안산영업소 방범망", "type": "영상", "name": "서안산영업소-11", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205197", "mac": "00:50:C2:7E:8E:32", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "18111DPKG0245", "alias": "(외)불렛카메라-01(CAM#6)", "install_location": "광장", "ip": "172.19.198.70", "subnet": "255.255.255.224", "gateway": "172.19.198.94"}, {"branch_group": "군포지사", "ring_name": "서안산영업소 방범망", "type": "영상", "name": "서안산영업소-12", "device_no": "(외)불렛카메라-02", "serial_no": "BUL20181205194", "mac": "00:50:C2:7E:8E:72", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "(외)불렛카메라-02(CAM#7)", "install_location": "회차로", "ip": "172.19.198.71", "subnet": "255.255.255.224", "gateway": "172.19.198.94"}, {"branch_group": "군포지사", "ring_name": "안산영업소 방범망", "type": "영상", "name": "안산영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205408", "mac": "00:50:C2:7C:B0:10", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "현관", "ip": "172.19.198.97", "subnet": "255.255.255.224", "gateway": "172.19.198.126"}, {"branch_group": "군포지사", "ring_name": "안산영업소 방범망", "type": "영상", "name": "안산영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205354", "mac": "00:50:C2:7C:AF:C3", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "금고실", "ip": "172.19.198.98", "subnet": "255.255.255.224", "gateway": "172.19.198.126"}, {"branch_group": "군포지사", "ring_name": "안산영업소 방범망", "type": "영상", "name": "안산영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205397", "mac": "00:50:C2:7C:B0:8C", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "돔카메라-03(CAM#3)", "install_location": "사무실", "ip": "172.19.198.99", "subnet": "255.255.255.224", "gateway": "172.19.198.126"}, {"branch_group": "군포지사", "ring_name": "안산영업소 방범망", "type": "영상", "name": "안산영업소-9", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181026424", "mac": "00:50:C2:78:EE:5F", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#6)", "install_location": "지하통로", "ip": "172.19.198.100", "subnet": "255.255.255.224", "gateway": "172.19.198.126"}, {"branch_group": "군포지사", "ring_name": "안산영업소 방범망", "type": "영상", "name": "안산영업소-10", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181026428", "mac": "00:50:C2:78:EE:58", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "(지)불렛카메라-02(CAM#5)", "install_location": "지하통로", "ip": "172.19.198.101", "subnet": "255.255.255.224", "gateway": "172.19.198.126"}, {"branch_group": "군포지사", "ring_name": "안산영업소 방범망", "type": "영상", "name": "안산영업소-11", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205007", "mac": "00:50:C2:73:17:14", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#4)", "install_location": "영업소 정면 좌측", "ip": "172.19.198.102", "subnet": "255.255.255.224", "gateway": "172.19.198.126"}, {"branch_group": "군포지사", "ring_name": "안산영업소 방범망", "type": "영상", "name": "안산영업소-12", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026433", "mac": "00:50:C2:78:EE:55", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "(외)불렛카메라-01(CAM#7)", "install_location": "회차로", "ip": "172.19.198.103", "subnet": "255.255.255.224", "gateway": "172.19.198.126"}, {"branch_group": "군포지사", "ring_name": "군포영업소 방범망", "type": "영상", "name": "군포영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205401", "mac": "00:50:C2:7C:B0:51", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "현관", "ip": "172.19.198.129", "subnet": "255.255.255.224", "gateway": "172.19.198.158"}, {"branch_group": "군포지사", "ring_name": "군포영업소 방범망", "type": "영상", "name": "군포영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205364", "mac": "00:50:C2:7C:AF:FC", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "금고", "ip": "172.19.198.130", "subnet": "255.255.255.224", "gateway": "172.19.198.158"}, {"branch_group": "군포지사", "ring_name": "군포영업소 방범망", "type": "영상", "name": "군포영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205361", "mac": "00:50:C2:7C:B0:3B", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "돔카메라-03(CAM#3)", "install_location": "사무실", "ip": "172.19.198.131", "subnet": "255.255.255.224", "gateway": "172.19.198.158"}, {"branch_group": "군포지사", "ring_name": "군포영업소 방범망", "type": "영상", "name": "군포영업소-9", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205191", "mac": "00:50:C2:80:07:98", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#5)", "install_location": "지하통로", "ip": "172.19.198.132", "subnet": "255.255.255.224", "gateway": "172.19.198.158"}, {"branch_group": "군포지사", "ring_name": "군포영업소 방범망", "type": "영상", "name": "군포영업소-10", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181205199", "mac": "00:50:C2:7E:8E:7B", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "(지)불렛카메라-02(CAM#6)", "install_location": "지하통로", "ip": "172.19.198.133", "subnet": "255.255.255.224", "gateway": "172.19.198.158"}, {"branch_group": "군포지사", "ring_name": "군포영업소 방범망", "type": "영상", "name": "군포영업소-11", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205003", "mac": "00:50:C2:73:17:1B", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#4)", "install_location": "영업소 정면 좌측", "ip": "172.19.198.134", "subnet": "255.255.255.224", "gateway": "172.19.198.158"}, {"branch_group": "군포지사", "ring_name": "군포영업소 방범망", "type": "영상", "name": "군포영업소-12", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205130", "mac": "00:50:C2:80:07:AD", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "(외)불렛카메라-01(CAM#7)", "install_location": "뒷마당", "ip": "172.19.198.135", "subnet": "255.255.255.224", "gateway": "172.19.198.158"}, {"branch_group": "군포지사", "ring_name": "군포영업소 방범망", "type": "영상", "name": "군포영업소-13", "device_no": "(외)불렛카메라-02", "serial_no": "BUL20181205129", "mac": "00:50:C2:80:07:99", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "17103DPKG0054", "alias": "(외)불렛카메라-02(CAM#8)", "install_location": "광장", "ip": "172.19.198.136", "subnet": "255.255.255.224", "gateway": "172.19.198.158"}, {"branch_group": "군포지사", "ring_name": "동군포영업소 방범망", "type": "영상", "name": "동군포영업소-5", "device_no": "돔카메라-01", "serial_no": "DOM20181205337", "mac": "00:50:C2:7C:B0:6F", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "현관", "ip": "172.19.198.161", "subnet": "255.255.255.224", "gateway": "172.19.198.190"}, {"branch_group": "군포지사", "ring_name": "동군포영업소 방범망", "type": "영상", "name": "동군포영업소-6", "device_no": "돔카메라-02", "serial_no": "DOM20181205346", "mac": "00:50:C2:7C:AF:E9", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "갱의실", "ip": "172.19.198.162", "subnet": "255.255.255.224", "gateway": "172.19.198.190"}, {"branch_group": "군포지사", "ring_name": "동군포영업소 방범망", "type": "영상", "name": "동군포영업소-7", "device_no": "돔카메라-03", "serial_no": "DOM20181205355", "mac": "00:50:C2:7C:AF:C5", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "돔카메라-03(CAM#3)", "install_location": "사무실", "ip": "172.19.198.163", "subnet": "255.255.255.224", "gateway": "172.19.198.190"}, {"branch_group": "군포지사", "ring_name": "동군포영업소 방범망", "type": "영상", "name": "동군포영업소-8", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205159", "mac": "00:50:C2:80:07:8C", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#5)", "install_location": "지하통로", "ip": "172.19.198.164", "subnet": "255.255.255.224", "gateway": "172.19.198.190"}, {"branch_group": "군포지사", "ring_name": "동군포영업소 방범망", "type": "영상", "name": "동군포영업소-9", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181205122", "mac": "00:50:C2:7E:8E:2E", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "(지)불렛카메라-02(CAM#6)", "install_location": "지하통로", "ip": "172.19.198.165", "subnet": "255.255.255.224", "gateway": "172.19.198.190"}, {"branch_group": "군포지사", "ring_name": "동군포영업소 방범망", "type": "영상", "name": "동군포영업소-10", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205016", "mac": "00:50:C2:79:2A:7C", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#4)", "install_location": "영업소 정면 좌측", "ip": "172.19.198.166", "subnet": "255.255.255.224", "gateway": "172.19.198.190"}, {"branch_group": "군포지사", "ring_name": "부곡영업소 방범망", "type": "영상", "name": "부곡영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205353", "mac": "00:50:C2:7C:AF:C0", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "현관", "ip": "172.19.198.193", "subnet": "255.255.255.224", "gateway": "172.19.198.222"}, {"branch_group": "군포지사", "ring_name": "부곡영업소 방범망", "type": "영상", "name": "부곡영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205367", "mac": "00:50:C2:7C:B0:70", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "관리자실", "ip": "172.19.198.194", "subnet": "255.255.255.224", "gateway": "172.19.198.222"}, {"branch_group": "군포지사", "ring_name": "부곡영업소 방범망", "type": "영상", "name": "부곡영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205338", "mac": "00:50:C2:7C:B0:67", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "돔카메라-03(CAM#3)", "install_location": "사무실", "ip": "172.19.198.195", "subnet": "255.255.255.224", "gateway": "172.19.198.222"}, {"branch_group": "군포지사", "ring_name": "부곡영업소 방범망", "type": "영상", "name": "부곡영업소-9", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205195", "mac": "00:50:C2:80:08:00", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#5)", "install_location": "지하통로", "ip": "172.19.198.196", "subnet": "255.255.255.224", "gateway": "172.19.198.222"}, {"branch_group": "군포지사", "ring_name": "부곡영업소 방범망", "type": "영상", "name": "부곡영업소-10", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181205192", "mac": "00:50:C2:7E:8E:64", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "(지)불렛카메라-02(CAM#6)", "install_location": "지하통로", "ip": "172.19.198.197", "subnet": "255.255.255.224", "gateway": "172.19.198.222"}, {"branch_group": "군포지사", "ring_name": "부곡영업소 방범망", "type": "영상", "name": "부곡영업소-11", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205017", "mac": "00:50:C2:79:2A:89", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#4)", "install_location": "영업소 정면 우측", "ip": "172.19.198.198", "subnet": "255.255.255.224", "gateway": "172.19.198.222"}, {"branch_group": "군포지사", "ring_name": "부곡영업소 방범망", "type": "영상", "name": "부곡영업소-12", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205127", "mac": "00:50:C2:7E:8E:1C", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "(외)불렛카메라-01(CAM#7)", "install_location": "회차로", "ip": "172.19.198.199", "subnet": "255.255.255.224", "gateway": "172.19.198.222"}, {"branch_group": "군포지사", "ring_name": "북수원영업소 방범망", "type": "영상", "name": "북수원영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205351", "mac": "00:50:C2:7C:AF:BC", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.198.225", "subnet": "255.255.255.224", "gateway": "172.19.198.254"}, {"branch_group": "군포지사", "ring_name": "북수원영업소 방범망", "type": "영상", "name": "북수원영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205329", "mac": "00:50:C2:7C:AF:E1", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.198.226", "subnet": "255.255.255.224", "gateway": "172.19.198.254"}, {"branch_group": "군포지사", "ring_name": "북수원영업소 방범망", "type": "영상", "name": "북수원영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205330", "mac": "00:50:C2:7C:B0:5F", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.198.227", "subnet": "255.255.255.224", "gateway": "172.19.198.254"}, {"branch_group": "군포지사", "ring_name": "북수원영업소 방범망", "type": "영상", "name": "북수원영업소-9", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205205", "mac": "00:50:C2:80:07:C5", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.198.228", "subnet": "255.255.255.224", "gateway": "172.19.198.254"}, {"branch_group": "군포지사", "ring_name": "북수원영업소 방범망", "type": "영상", "name": "북수원영업소-10", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181205132", "mac": "00:50:C2:7E:8E:4E", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.198.229", "subnet": "255.255.255.224", "gateway": "172.19.198.254"}, {"branch_group": "군포지사", "ring_name": "북수원영업소 방범망", "type": "영상", "name": "북수원영업소-11", "device_no": "(지)불렛카메라-03", "serial_no": "BUL20181205158", "mac": "00:50:C2:7E:8E:82", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.198.230", "subnet": "255.255.255.224", "gateway": "172.19.198.254"}, {"branch_group": "군포지사", "ring_name": "북수원영업소 방범망", "type": "영상", "name": "북수원영업소-12", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205015", "mac": "00:50:C2:79:2A:8D", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 우측", "ip": "172.19.198.231", "subnet": "255.255.255.224", "gateway": "172.19.198.254"}, {"branch_group": "군포지사", "ring_name": "북수원영업소 방범망", "type": "영상", "name": "북수원영업소-13", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205121", "mac": "00:50:C2:80:07:BA", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "", "install_location": "회차로", "ip": "172.19.198.232", "subnet": "255.255.255.224", "gateway": "172.19.198.254"}, {"branch_group": "군포지사", "ring_name": "동수원영업소 방범망", "type": "영상", "name": "동수원영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205342", "mac": "00:50:C2:7C:AF:B0", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.199.1", "subnet": "255.255.255.224", "gateway": "172.19.199.30"}, {"branch_group": "군포지사", "ring_name": "동수원영업소 방범망", "type": "영상", "name": "동수원영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205336", "mac": "00:50:C2:7C:B0:06", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.199.2", "subnet": "255.255.255.224", "gateway": "172.19.199.30"}, {"branch_group": "군포지사", "ring_name": "동수원영업소 방범망", "type": "영상", "name": "동수원영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205349", "mac": "00:50:C2:7C:AF:EF", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.199.3", "subnet": "255.255.255.224", "gateway": "172.19.199.30"}, {"branch_group": "군포지사", "ring_name": "동수원영업소 방범망", "type": "영상", "name": "동수원영업소-9", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205138", "mac": "00:50:C2:7E:8E:46", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.199.4", "subnet": "255.255.255.224", "gateway": "172.19.199.30"}, {"branch_group": "군포지사", "ring_name": "동수원영업소 방범망", "type": "영상", "name": "동수원영업소-10", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181205140", "mac": "00:50:C2:7E:8E:23", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.199.5", "subnet": "255.255.255.224", "gateway": "172.19.199.30"}, {"branch_group": "군포지사", "ring_name": "동수원영업소 방범망", "type": "영상", "name": "동수원영업소-11", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205024", "mac": "00:50:C2:79:2A:B4", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 좌측", "ip": "172.19.199.6", "subnet": "255.255.255.224", "gateway": "172.19.199.30"}, {"branch_group": "군포지사", "ring_name": "동수원영업소 방범망", "type": "영상", "name": "동수원영업소-12", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205156", "mac": "00:50:C2:7E:8E:1F", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "옥상-주차장관제", "ip": "172.19.199.7", "subnet": "255.255.255.224", "gateway": "172.19.199.30"}, {"branch_group": "군포지사", "ring_name": "마성영업소 방범망", "type": "영상", "name": "마성영업소-5", "device_no": "돔카메라-01", "serial_no": "DOM20181205332", "mac": "00:50:C2:7C:B0:80", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "현관", "ip": "172.19.199.33", "subnet": "255.255.255.224", "gateway": "172.19.199.62"}, {"branch_group": "군포지사", "ring_name": "마성영업소 방범망", "type": "영상", "name": "마성영업소-6", "device_no": "돔카메라-02", "serial_no": "DOM20181205325", "mac": "00:50:C2:7C:B0:4B", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "2F 사무실 입구", "ip": "172.19.199.34", "subnet": "255.255.255.224", "gateway": "172.19.199.62"}, {"branch_group": "군포지사", "ring_name": "마성영업소 방범망", "type": "영상", "name": "마성영업소-7", "device_no": "돔카메라-03", "serial_no": "DOM20181205368", "mac": "00:50:C2:7C:AF:F1", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "돔카메라-03(CAM#3)", "install_location": "2F 사무실", "ip": "172.19.199.35", "subnet": "255.255.255.224", "gateway": "172.19.199.62"}, {"branch_group": "군포지사", "ring_name": "마성영업소 방범망", "type": "영상", "name": "마성영업소-8", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205123", "mac": "00:50:C2:80:07:8A", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#5)", "install_location": "지하통로", "ip": "172.19.199.36", "subnet": "255.255.255.224", "gateway": "172.19.199.62"}, {"branch_group": "군포지사", "ring_name": "마성영업소 방범망", "type": "영상", "name": "마성영업소-9", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205022", "mac": "00:50:C2:79:2A:75", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#4)", "install_location": "영업소 정면 우측", "ip": "172.19.199.37", "subnet": "255.255.255.224", "gateway": "172.19.199.62"}, {"branch_group": "군포지사", "ring_name": "마성영업소 방범망", "type": "영상", "name": "마성영업소-10", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205207", "mac": "00:50:C2:80:07:A7", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "(외)불렛카메라-01(CAM#6)", "install_location": "현관입구", "ip": "172.19.199.38", "subnet": "255.255.255.224", "gateway": "172.19.199.62"}, {"branch_group": "화성지사", "ring_name": "서평택영업소 방범망", "type": "영상", "name": "서평택영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205418", "mac": "00:50:C2:7C:B0:98", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.200.33", "subnet": "255.255.255.224", "gateway": "172.19.200.62"}, {"branch_group": "화성지사", "ring_name": "서평택영업소 방범망", "type": "영상", "name": "서평택영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205371", "mac": "00:50:C2:7C:AF:E5", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.200.34", "subnet": "255.255.255.224", "gateway": "172.19.200.62"}, {"branch_group": "화성지사", "ring_name": "서평택영업소 방범망", "type": "영상", "name": "서평택영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205398", "mac": "00:50:C2:7C:B0:72", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.200.35", "subnet": "255.255.255.224", "gateway": "172.19.200.62"}, {"branch_group": "화성지사", "ring_name": "서평택영업소 방범망", "type": "영상", "name": "서평택영업소-9", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181026417", "mac": "00:50:C2:6F:37:CB", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.200.36", "subnet": "255.255.255.224", "gateway": "172.19.200.62"}, {"branch_group": "화성지사", "ring_name": "서평택영업소 방범망", "type": "영상", "name": "서평택영업소-10", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181026414", "mac": "00:50:C2:6F:37:CA", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.200.37", "subnet": "255.255.255.224", "gateway": "172.19.200.62"}, {"branch_group": "화성지사", "ring_name": "서평택영업소 방범망", "type": "영상", "name": "서평택영업소-11", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181026515", "mac": "00:50:C2:73:17:19", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 우측", "ip": "172.19.200.38", "subnet": "255.255.255.224", "gateway": "172.19.200.62"}, {"branch_group": "화성지사", "ring_name": "발안영업소 방범망", "type": "영상", "name": "발안영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181026336", "mac": "00:50:C2:78:F2:9F", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.200.65", "subnet": "255.255.255.224", "gateway": "172.19.200.94"}, {"branch_group": "화성지사", "ring_name": "발안영업소 방범망", "type": "영상", "name": "발안영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181026321", "mac": "00:50:C2:78:F2:A9", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.200.66", "subnet": "255.255.255.224", "gateway": "172.19.200.94"}, {"branch_group": "화성지사", "ring_name": "발안영업소 방범망", "type": "영상", "name": "발안영업소-8", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181026453", "mac": "00:50:C2:76:E6:C5", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.200.67", "subnet": "255.255.255.224", "gateway": "172.19.200.94"}, {"branch_group": "화성지사", "ring_name": "발안영업소 방범망", "type": "영상", "name": "발안영업소-9", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181026419", "mac": "00:50:C2:6F:37:BC", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.200.68", "subnet": "255.255.255.224", "gateway": "172.19.200.94"}, {"branch_group": "화성지사", "ring_name": "발안영업소 방범망", "type": "영상", "name": "발안영업소-10", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181026503", "mac": "00:50:C2:73:17:0F", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 우측", "ip": "172.19.200.69", "subnet": "255.255.255.224", "gateway": "172.19.200.94"}, {"branch_group": "화성지사", "ring_name": "비봉영업소 방범망", "type": "영상", "name": "비봉영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205360", "mac": "00:50:C2:7C:B0:24", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "현관", "ip": "172.19.200.97", "subnet": "255.255.255.224", "gateway": "172.19.200.126"}, {"branch_group": "화성지사", "ring_name": "비봉영업소 방범망", "type": "영상", "name": "비봉영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205358", "mac": "00:50:C2:7C:AF:BF", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "사무실", "ip": "172.19.200.98", "subnet": "255.255.255.224", "gateway": "172.19.200.126"}, {"branch_group": "화성지사", "ring_name": "비봉영업소 방범망", "type": "영상", "name": "비봉영업소-8", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205196", "mac": "00:50:C2:7E:8E:52", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#4)", "install_location": "지하통로", "ip": "172.19.200.99", "subnet": "255.255.255.224", "gateway": "172.19.200.126"}, {"branch_group": "화성지사", "ring_name": "비봉영업소 방범망", "type": "영상", "name": "비봉영업소-9", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205018", "mac": "00:50:C2:79:2A:B2", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#3)", "install_location": "영업소 정면 우측", "ip": "172.19.200.100", "subnet": "255.255.255.224", "gateway": "172.19.200.126"}, {"branch_group": "화성지사", "ring_name": "비봉영업소 방범망", "type": "영상", "name": "비봉영업소-10", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205198", "mac": "00:50:C2:7E:8E:2A", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "17103DPKG0060", "alias": "(외)불렛카메라-01(CAM#5)", "install_location": "영업소 건너편광장", "ip": "172.19.200.101", "subnet": "255.255.255.224", "gateway": "172.19.200.126"}, {"branch_group": "화성지사", "ring_name": "비봉영업소 방범망", "type": "영상", "name": "비봉영업소-11", "device_no": "(외)불렛카메라-02", "serial_no": "BUL20181205200", "mac": "00:50:C2:80:07:90", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "17103DPKG0020", "alias": "(외)불렛카메라-02(CAM#6)", "install_location": "회차로 입구 화단", "ip": "172.19.200.102", "subnet": "255.255.255.224", "gateway": "172.19.200.126"}, {"branch_group": "화성지사", "ring_name": "매송영업소 방범망", "type": "영상", "name": "매송영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205365", "mac": "00:50:C2:7C:AF:E2", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.200.129", "subnet": "255.255.255.224", "gateway": "172.19.200.158"}, {"branch_group": "화성지사", "ring_name": "매송영업소 방범망", "type": "영상", "name": "매송영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205343", "mac": "00:50:C2:7C:B0:5A", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.200.130", "subnet": "255.255.255.224", "gateway": "172.19.200.158"}, {"branch_group": "화성지사", "ring_name": "매송영업소 방범망", "type": "영상", "name": "매송영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205345", "mac": "00:50:C2:7C:B0:38", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.200.131", "subnet": "255.255.255.224", "gateway": "172.19.200.158"}, {"branch_group": "화성지사", "ring_name": "매송영업소 방범망", "type": "영상", "name": "매송영업소-9", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181026440", "mac": "00:50:C2:78:EE:6D", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.200.132", "subnet": "255.255.255.224", "gateway": "172.19.200.158"}, {"branch_group": "화성지사", "ring_name": "매송영업소 방범망", "type": "영상", "name": "매송영업소-10", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181026436", "mac": "00:50:C2:78:EE:7C", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.200.133", "subnet": "255.255.255.224", "gateway": "172.19.200.158"}, {"branch_group": "화성지사", "ring_name": "매송영업소 방범망", "type": "영상", "name": "매송영업소-11", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205019", "mac": "00:50:C2:78:8E:8C", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 우측", "ip": "172.19.200.134", "subnet": "255.255.255.224", "gateway": "172.19.200.158"}, {"branch_group": "화성지사", "ring_name": "청북영업소 방범망", "type": "영상", "name": "청북영업소-5", "device_no": "돔카메라-01", "serial_no": "DOM20181205405", "mac": "00:50:C2:7C:B0:7F", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.200.161", "subnet": "255.255.255.224", "gateway": "172.19.200.190"}, {"branch_group": "화성지사", "ring_name": "청북영업소 방범망", "type": "영상", "name": "청북영업소-6", "device_no": "돔카메라-02", "serial_no": "DOM20181205430", "mac": "00:50:C2:7C:B0:63", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.200.162", "subnet": "255.255.255.224", "gateway": "172.19.200.190"}, {"branch_group": "화성지사", "ring_name": "청북영업소 방범망", "type": "영상", "name": "청북영업소-7", "device_no": "돔카메라-03", "serial_no": "DOM20181205445", "mac": "00:50:C2:7C:AF:E4", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.200.163", "subnet": "255.255.255.224", "gateway": "172.19.200.190"}, {"branch_group": "화성지사", "ring_name": "청북영업소 방범망", "type": "영상", "name": "청북영업소-8", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205175", "mac": "00:50:C2:80:07:D7", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.200.164", "subnet": "255.255.255.224", "gateway": "172.19.200.190"}, {"branch_group": "화성지사", "ring_name": "청북영업소 방범망", "type": "영상", "name": "청북영업소-9", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205008", "mac": "00:50:C2:79:2A:CC", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 좌측", "ip": "172.19.200.165", "subnet": "255.255.255.224", "gateway": "172.19.200.190"}, {"branch_group": "화성지사", "ring_name": "평택고덕영업소 방범망", "type": "영상", "name": "평택고덕영업소-5", "device_no": "돔카메라-01", "serial_no": "DOM20181205381", "mac": "00:50:C2:7C:B0:15", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.200.193", "subnet": "255.255.255.224", "gateway": "172.19.200.222"}, {"branch_group": "화성지사", "ring_name": "평택고덕영업소 방범망", "type": "영상", "name": "평택고덕영업소-6", "device_no": "돔카메라-02", "serial_no": "DOM20181205403", "mac": "00:50:C2:7C:B0:00", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.200.194", "subnet": "255.255.255.224", "gateway": "172.19.200.222"}, {"branch_group": "화성지사", "ring_name": "평택고덕영업소 방범망", "type": "영상", "name": "평택고덕영업소-7", "device_no": "돔카메라-03", "serial_no": "DOM20181205426", "mac": "00:50:C2:7C:B0:50", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.200.195", "subnet": "255.255.255.224", "gateway": "172.19.200.222"}, {"branch_group": "화성지사", "ring_name": "평택고덕영업소 방범망", "type": "영상", "name": "평택고덕영업소-8", "device_no": "돔카메라-04", "serial_no": "DOM20181205447", "mac": "00:50:C2:7C:B0:54", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "영업소 좌측 입구", "ip": "172.19.200.196", "subnet": "255.255.255.224", "gateway": "172.19.200.222"}, {"branch_group": "화성지사", "ring_name": "평택고덕영업소 방범망", "type": "영상", "name": "평택고덕영업소-9", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205032", "mac": "00:50:C2:79:2A:7F", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 좌측", "ip": "172.19.200.197", "subnet": "255.255.255.224", "gateway": "172.19.200.222"}, {"branch_group": "화성지사", "ring_name": "평택고덕영업소 방범망", "type": "영상", "name": "평택고덕영업소-10", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205148", "mac": "00:50:C2:7E:8E:5F", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "영업소 좌측 입구", "ip": "172.19.200.198", "subnet": "255.255.255.224", "gateway": "172.19.200.222"}, {"branch_group": "화성지사", "ring_name": "평택고덕영업소 방범망", "type": "영상", "name": "평택고덕영업소-11", "device_no": "(외)불렛카메라-02", "serial_no": "BUL20181205174", "mac": "00:50:C2:80:07:E3", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "", "install_location": "영업소 정면", "ip": "172.19.200.199", "subnet": "255.255.255.224", "gateway": "172.19.200.222"}, {"branch_group": "화성지사", "ring_name": "평택고덕영업소 방범망", "type": "영상", "name": "평택고덕영업소-12", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20190111201", "mac": "00:50:C2:80:9B:4F", "ip_type": "카메라", "drawing_name": "추가건", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.200.200", "subnet": "255.255.255.224", "gateway": "172.19.200.222"}, {"branch_group": "화성지사", "ring_name": "송탄영업소 방범망", "type": "영상", "name": "송탄영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205417", "mac": "00:50:C2:7C:B0:3A", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.200.225", "subnet": "255.255.255.224", "gateway": "172.19.200.254"}, {"branch_group": "화성지사", "ring_name": "송탄영업소 방범망", "type": "영상", "name": "송탄영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205416", "mac": "00:50:C2:7C:B0:26", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.200.226", "subnet": "255.255.255.224", "gateway": "172.19.200.254"}, {"branch_group": "화성지사", "ring_name": "송탄영업소 방범망", "type": "영상", "name": "송탄영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205415", "mac": "00:50:C2:7C:AF:FD", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.200.227", "subnet": "255.255.255.224", "gateway": "172.19.200.254"}, {"branch_group": "화성지사", "ring_name": "송탄영업소 방범망", "type": "영상", "name": "송탄영업소-9", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205145", "mac": "00:50:C2:7E:8E:74", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.200.228", "subnet": "255.255.255.224", "gateway": "172.19.200.254"}, {"branch_group": "화성지사", "ring_name": "송탄영업소 방범망", "type": "영상", "name": "송탄영업소-10", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205035", "mac": "00:50:C2:74:FA:04", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 좌측", "ip": "172.19.200.229", "subnet": "255.255.255.224", "gateway": "172.19.200.254"}, {"branch_group": "화성지사", "ring_name": "송탄영업소 방범망", "type": "영상", "name": "송탄영업소-11", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205147", "mac": "00:50:C2:7E:8E:71", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "17103DPKG0016", "alias": "", "install_location": "반대편광장", "ip": "172.19.200.230", "subnet": "255.255.255.224", "gateway": "172.19.200.254"}, {"branch_group": "화성지사", "ring_name": "서안성영업소 방범망", "type": "영상", "name": "서안성영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205384", "mac": "00:50:C2:7C:AF:C6", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.201.1", "subnet": "255.255.255.224", "gateway": "172.19.201.30"}, {"branch_group": "화성지사", "ring_name": "서안성영업소 방범망", "type": "영상", "name": "서안성영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205441", "mac": "00:50:C2:7C:B0:0F", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.201.2", "subnet": "255.255.255.224", "gateway": "172.19.201.30"}, {"branch_group": "화성지사", "ring_name": "서안성영업소 방범망", "type": "영상", "name": "서안성영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205382", "mac": "00:50:C2:7C:B0:09", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.201.3", "subnet": "255.255.255.224", "gateway": "172.19.201.30"}, {"branch_group": "화성지사", "ring_name": "서안성영업소 방범망", "type": "영상", "name": "서안성영업소-9", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205150", "mac": "00:50:C2:7E:8E:6F", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.201.4", "subnet": "255.255.255.224", "gateway": "172.19.201.30"}, {"branch_group": "화성지사", "ring_name": "서안성영업소 방범망", "type": "영상", "name": "서안성영업소-10", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205025", "mac": "00:50:C2:79:2A:96", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 좌측", "ip": "172.19.201.5", "subnet": "255.255.255.224", "gateway": "172.19.201.30"}, {"branch_group": "화성지사", "ring_name": "서안성영업소 방범망", "type": "영상", "name": "서안성영업소-11", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205152", "mac": "00:50:C2:7E:8E:44", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "17103DPKG0071", "alias": "", "install_location": "반대편광장", "ip": "172.19.201.6", "subnet": "255.255.255.224", "gateway": "172.19.201.30"}, {"branch_group": "화성지사", "ring_name": "남안성영업소 방범망", "type": "영상", "name": "남안성영업소-5", "device_no": "돔카메라-01", "serial_no": "DOM20181205427", "mac": "00:50:C2:7C:B0:35", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "현관", "ip": "172.19.201.33", "subnet": "255.255.255.224", "gateway": "172.19.201.62"}, {"branch_group": "화성지사", "ring_name": "남안성영업소 방범망", "type": "영상", "name": "남안성영업소-6", "device_no": "돔카메라-02", "serial_no": "DOM20181205423", "mac": "00:50:C2:7C:B0:5B", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "금고실", "ip": "172.19.201.34", "subnet": "255.255.255.224", "gateway": "172.19.201.62"}, {"branch_group": "화성지사", "ring_name": "남안성영업소 방범망", "type": "영상", "name": "남안성영업소-7", "device_no": "돔카메라-03", "serial_no": "DOM20181205424", "mac": "00:50:C2:7C:B0:78", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "돔카메라-03(CAM#3)", "install_location": "사무실", "ip": "172.19.201.35", "subnet": "255.255.255.224", "gateway": "172.19.201.62"}, {"branch_group": "화성지사", "ring_name": "남안성영업소 방범망", "type": "영상", "name": "남안성영업소-8", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205149", "mac": "00:50:C2:80:07:97", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#5)", "install_location": "지하통로", "ip": "172.19.201.36", "subnet": "255.255.255.224", "gateway": "172.19.201.62"}, {"branch_group": "화성지사", "ring_name": "남안성영업소 방범망", "type": "영상", "name": "남안성영업소-9", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205031", "mac": "00:50:C2:79:2A:B8", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#4)", "install_location": "영업소 정면 좌측", "ip": "172.19.201.37", "subnet": "255.255.255.224", "gateway": "172.19.201.62"}, {"branch_group": "화성지사", "ring_name": "남안성영업소 방범망", "type": "영상", "name": "남안성영업소-10", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205173", "mac": "00:50:C2:7E:8E:16", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "17103DPKG0055", "alias": "(외)불렛카메라-01(CAM#6)", "install_location": "광장", "ip": "172.19.201.38", "subnet": "255.255.255.224", "gateway": "172.19.201.62"}, {"branch_group": "화성지사", "ring_name": "평택영업소 방범망", "type": "영상", "name": "평택영업소-5", "device_no": "돔카메라-01", "serial_no": "DOM20181205436", "mac": "00:50:C2:7C:B0:77", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.201.65", "subnet": "255.255.255.224", "gateway": "172.19.201.94"}, {"branch_group": "화성지사", "ring_name": "평택영업소 방범망", "type": "영상", "name": "평택영업소-6", "device_no": "돔카메라-02", "serial_no": "DOM20181205421", "mac": "00:50:C2:7C:AF:B6", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.201.66", "subnet": "255.255.255.224", "gateway": "172.19.201.94"}, {"branch_group": "화성지사", "ring_name": "평택영업소 방범망", "type": "영상", "name": "평택영업소-7", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205146", "mac": "00:50:C2:7E:8E:28", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.201.67", "subnet": "255.255.255.224", "gateway": "172.19.201.94"}, {"branch_group": "화성지사", "ring_name": "평택영업소 방범망", "type": "영상", "name": "평택영업소-8", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205013", "mac": "00:50:C2:79:2A:9C", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 우측", "ip": "172.19.201.68", "subnet": "255.255.255.224", "gateway": "172.19.201.94"}, {"branch_group": "수원지사", "ring_name": "오산영업소 방범망", "type": "영상", "name": "오산영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181026337", "mac": "00:50:C2:78:F2:A2", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.202.65", "subnet": "255.255.255.192", "gateway": "172.19.202.126"}, {"branch_group": "수원지사", "ring_name": "오산영업소 방범망", "type": "영상", "name": "오산영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181026320", "mac": "00:50:C2:78:F2:93", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.202.66", "subnet": "255.255.255.192", "gateway": "172.19.202.126"}, {"branch_group": "수원지사", "ring_name": "오산영업소 방범망", "type": "영상", "name": "오산영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181026329", "mac": "00:50:C2:78:F2:91", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.202.67", "subnet": "255.255.255.192", "gateway": "172.19.202.126"}, {"branch_group": "수원지사", "ring_name": "오산영업소 방범망", "type": "영상", "name": "오산영업소-9", "device_no": "돔카메라-04", "serial_no": "DOM20181026330", "mac": "00:50:C2:78:F2:AB", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "", "install_location": "지하통로 입구", "ip": "172.19.202.68", "subnet": "255.255.255.192", "gateway": "172.19.202.126"}, {"branch_group": "수원지사", "ring_name": "오산영업소 방범망", "type": "영상", "name": "오산영업소-10", "device_no": "돔카메라-05", "serial_no": "DOM20181026333", "mac": "00:50:C2:78:F2:A1", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "", "install_location": "고객대기실", "ip": "172.19.202.69", "subnet": "255.255.255.192", "gateway": "172.19.202.126"}, {"branch_group": "수원지사", "ring_name": "오산영업소 방범망", "type": "영상", "name": "오산영업소-11", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181026409", "mac": "00:50:C2:6F:37:D1", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "지하통로 입구", "ip": "172.19.202.70", "subnet": "255.255.255.192", "gateway": "172.19.202.126"}, {"branch_group": "수원지사", "ring_name": "오산영업소 방범망", "type": "영상", "name": "오산영업소-12", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181026418", "mac": "00:50:C2:6F:37:D0", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "지하통로 입구", "ip": "172.19.202.71", "subnet": "255.255.255.192", "gateway": "172.19.202.126"}, {"branch_group": "수원지사", "ring_name": "오산영업소 방범망", "type": "영상", "name": "오산영업소-13", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181026501", "mac": "00:50:C2:73:17:1E", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "영업소 옥상", "ip": "172.19.202.72", "subnet": "255.255.255.192", "gateway": "172.19.202.126"}, {"branch_group": "수원지사", "ring_name": "오산영업소 방범망", "type": "영상", "name": "오산영업소-14", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026401", "mac": "00:50:C2:6F:37:C3", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "17103DPKG0068", "alias": "", "install_location": "광장 진출", "ip": "172.19.202.73", "subnet": "255.255.255.192", "gateway": "172.19.202.126"}, {"branch_group": "수원지사", "ring_name": "오산영업소 방범망", "type": "영상", "name": "오산영업소-15", "device_no": "(외)불렛카메라-02", "serial_no": "BUL20181026413", "mac": "00:50:C2:6F:37:CC", "ip_type": "카메라", "drawing_name": "CAM#10", "eoc_sn": "", "alias": "", "install_location": "광장 진입", "ip": "172.19.202.74", "subnet": "255.255.255.192", "gateway": "172.19.202.126"}, {"branch_group": "수원지사", "ring_name": "기흥영업소 방범망", "type": "영상", "name": "기흥영업소-5", "device_no": "돔카메라-01", "serial_no": "DOM20181026315", "mac": "00:50:C2:78:F2:90", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.202.129", "subnet": "255.255.255.224", "gateway": "172.19.202.158"}, {"branch_group": "수원지사", "ring_name": "기흥영업소 방범망", "type": "영상", "name": "기흥영업소-6", "device_no": "돔카메라-02", "serial_no": "DOM20181026305", "mac": "00:50:C2:78:F2:99", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "탕비실", "ip": "172.19.202.130", "subnet": "255.255.255.224", "gateway": "172.19.202.158"}, {"branch_group": "수원지사", "ring_name": "기흥영업소 방범망", "type": "영상", "name": "기흥영업소-7", "device_no": "돔카메라-03", "serial_no": "DOM20181026324", "mac": "00:50:C2:78:F2:AA", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.202.131", "subnet": "255.255.255.224", "gateway": "172.19.202.158"}, {"branch_group": "수원지사", "ring_name": "기흥영업소 방범망", "type": "영상", "name": "기흥영업소-8", "device_no": "돔카메라-04", "serial_no": "DOM20181026326", "mac": "00:50:C2:78:F2:82", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.202.132", "subnet": "255.255.255.224", "gateway": "172.19.202.158"}, {"branch_group": "수원지사", "ring_name": "기흥영업소 방범망", "type": "영상", "name": "기흥영업소-9", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181026507", "mac": "00:50:C2:73:17:0A", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 좌측", "ip": "172.19.202.133", "subnet": "255.255.255.224", "gateway": "172.19.202.158"}, {"branch_group": "수원지사", "ring_name": "기흥영업소 방범망", "type": "영상", "name": "기흥영업소-10", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026405", "mac": "00:50:C2:6F:37:C6", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "17103DPKG0087", "alias": "", "install_location": "광장 진출", "ip": "172.19.202.134", "subnet": "255.255.255.224", "gateway": "172.19.202.158"}, {"branch_group": "수원지사", "ring_name": "기흥동탄영업소 방범망", "type": "영상", "name": "기흥동탄영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181026325", "mac": "00:50:C2:78:F2:AC", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.202.161", "subnet": "255.255.255.224", "gateway": "172.19.202.190"}, {"branch_group": "수원지사", "ring_name": "기흥동탄영업소 방범망", "type": "영상", "name": "기흥동탄영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181026323", "mac": "00:50:C2:78:F2:A6", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.202.162", "subnet": "255.255.255.224", "gateway": "172.19.202.190"}, {"branch_group": "수원지사", "ring_name": "기흥동탄영업소 방범망", "type": "영상", "name": "기흥동탄영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181026322", "mac": "00:50:C2:78:F2:98", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.202.163", "subnet": "255.255.255.224", "gateway": "172.19.202.190"}, {"branch_group": "수원지사", "ring_name": "기흥동탄영업소 방범망", "type": "영상", "name": "기흥동탄영업소-9", "device_no": "돔카메라-04", "serial_no": "DOM20181026334", "mac": "00:50:C2:78:F2:83", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "영업소 좌측 입구", "ip": "172.19.202.164", "subnet": "255.255.255.224", "gateway": "172.19.202.190"}, {"branch_group": "수원지사", "ring_name": "기흥동탄영업소 방범망", "type": "영상", "name": "기흥동탄영업소-10", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181026444", "mac": "00:50:C2:78:EE:6B", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.202.165", "subnet": "255.255.255.224", "gateway": "172.19.202.190"}, {"branch_group": "수원지사", "ring_name": "기흥동탄영업소 방범망", "type": "영상", "name": "기흥동탄영업소-11", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181026425", "mac": "00:50:C2:78:EE:6F", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.202.166", "subnet": "255.255.255.224", "gateway": "172.19.202.190"}, {"branch_group": "수원지사", "ring_name": "기흥동탄영업소 방범망", "type": "영상", "name": "기흥동탄영업소-12", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181026506", "mac": "00:50:C2:73:17:0B", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 우측", "ip": "172.19.202.167", "subnet": "255.255.255.224", "gateway": "172.19.202.190"}, {"branch_group": "수원지사", "ring_name": "기흥동탄영업소 방범망", "type": "영상", "name": "기흥동탄영업소-13", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026422", "mac": "00:50:C2:78:EE:61", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "17103DPKG0017", "alias": "", "install_location": "광장 진출", "ip": "172.19.202.168", "subnet": "255.255.255.224", "gateway": "172.19.202.190"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(출구)영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205311", "mac": "00:50:C2:7C:B0:44", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "2F 현관", "ip": "172.19.202.193", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(출구)영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205313", "mac": "00:50:C2:7C:B0:42", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.202.194", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(출구)영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205321", "mac": "00:50:C2:7C:B0:8D", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.202.195", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(출구)영업소-9", "device_no": "돔카메라-04", "serial_no": "DOM20181205304", "mac": "00:50:C2:7C:B0:29", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "1F 출입구 세탁실 방향", "ip": "172.19.202.196", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(출구)영업소-10", "device_no": "돔카메라-05", "serial_no": "DOM20181205319", "mac": "00:50:C2:7C:B0:57", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "1F 출입구 주차장 방향", "ip": "172.19.202.197", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(출구)영업소-11", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181026460", "mac": "00:50:C2:76:E6:C2", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.202.198", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(출구)영업소-12", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181026429", "mac": "00:50:C2:78:EE:7E", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.202.199", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(출구)영업소-13", "device_no": "(지)불렛카메라-03", "serial_no": "BUL20181026439", "mac": "00:50:C2:78:EE:62", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.202.200", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(출구)영업소-14", "device_no": "(지)불렛카메라-04", "serial_no": "BUL20181026454", "mac": "00:50:C2:78:EE:7B", "ip_type": "카메라", "drawing_name": "CAM#10", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.202.201", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(출구)영업소-15", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205002", "mac": "00:50:C2:73:17:12", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "옥상-주차장 차단기", "ip": "172.19.202.202", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(출구)영업소-16", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026427", "mac": "00:50:C2:76:E6:C1", "ip_type": "카메라", "drawing_name": "CAM#11", "eoc_sn": "", "alias": "", "install_location": "주차장 차단기", "ip": "172.19.202.203", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(출구)영업소-17", "device_no": "(외)불렛카메라-02", "serial_no": "BUL20181026430", "mac": "00:50:C2:78:EE:68", "ip_type": "카메라", "drawing_name": "CAM#12", "eoc_sn": "", "alias": "", "install_location": "영업소 입구 광장", "ip": "172.19.202.204", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(출구)영업소-18", "device_no": "(외)불렛카메라-03", "serial_no": "BUL20181026452", "mac": "00:50:C2:76:E6:C8", "ip_type": "카메라", "drawing_name": "CAM#13", "eoc_sn": "17103DPKG0022", "alias": "", "install_location": "출구광장 진입", "ip": "172.19.202.205", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(출구)영업소-19", "device_no": "(외)불렛카메라-04", "serial_no": "BUL20181026406", "mac": "00:50:C2:6F:37:DD", "ip_type": "카메라", "drawing_name": "CAM#14", "eoc_sn": "17103DPKG0002", "alias": "", "install_location": "출구광장 진출", "ip": "172.19.202.206", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "AP", "name": "수원신갈(입구)영업소-2", "device_no": "무선브릿지-Rx", "serial_no": "0824181000001124", "mac": "00:19:3B:15:FA:2A", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "무선브릿지-Rx", "install_location": "", "ip": "172.19.202.242", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "AP", "name": "수원신갈(입구)영업소-3", "device_no": "무선브릿지-Tx", "serial_no": "0824181000000F73", "mac": "00:19:3B:15:F6:C8", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "무선브릿지-Tx", "install_location": "", "ip": "172.19.202.243", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(입구)영업소-4", "device_no": "돔카메라-01", "serial_no": "DOM20181205357", "mac": "00:50:C2:7C:AF:DB", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "사무실", "ip": "172.19.202.207", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(입구)영업소-5", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181205141", "mac": "00:50:C2:80:07:B3", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#2)", "install_location": "지하통로", "ip": "172.19.202.208", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(입구)영업소-6", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181205144", "mac": "00:50:C2:80:07:FA", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "(지)불렛카메라-02(CAM#3)", "install_location": "지하통로", "ip": "172.19.202.209", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "영상", "name": "수원신갈(입구)영업소-7", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181205155", "mac": "00:50:C2:80:07:88", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "18111DPKG0237", "alias": "(외)불렛카메라-01(CAM#4)", "install_location": "회차로", "ip": "172.19.202.210", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "수원신갈영업소 방범망", "type": "스위치", "name": "수원신갈(입구)영업소-8", "device_no": "8PoE허브-02(확장)", "serial_no": "00216DD76AC1", "mac": "S140H180906769", "ip_type": "스위치", "drawing_name": "L2 PoE 8", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.202.246", "subnet": "255.255.255.192", "gateway": "172.19.202.254"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "AP", "name": "서울영업소-5", "device_no": "무선브릿지-Rx", "serial_no": "0824181000000FDF", "mac": "00:19:3B:15:F7:A0", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "무선브릿지-Rx", "install_location": "영업소 옥상", "ip": "172.19.203.114", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "AP", "name": "서울영업소-6", "device_no": "무선브릿지-Tx", "serial_no": "08241810000010F4", "mac": "00:19:3B:15:F9:CA", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "무선브릿지-Tx", "install_location": "회차로", "ip": "172.19.203.115", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "영상", "name": "서울영업소-10", "device_no": "돔카메라-01", "serial_no": "DOM20181026308", "mac": "00:50:C2:78:F2:97", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "현관", "ip": "172.19.203.65", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "영상", "name": "서울영업소-11", "device_no": "돔카메라-02", "serial_no": "DOM20181026335", "mac": "00:50:C2:78:F2:8D", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "금고실", "ip": "172.19.203.66", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "영상", "name": "서울영업소-12", "device_no": "돔카메라-03", "serial_no": "DOM20181026311", "mac": "00:50:C2:78:F2:9E", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "돔카메라-03(CAM#3)", "install_location": "사무실", "ip": "172.19.203.67", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "영상", "name": "서울영업소-13", "device_no": "돔카메라-04", "serial_no": "DOM20181026306", "mac": "00:50:C2:78:F2:89", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "돔카메라-04(CAM#5)", "install_location": "영업소 후문 입구", "ip": "172.19.203.68", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "영상", "name": "서울영업소-14", "device_no": "돔카메라-05", "serial_no": "DOM20181026312", "mac": "00:50:C2:78:F2:A0", "ip_type": "카메라", "drawing_name": "CAM#12", "eoc_sn": "17103DPKG0096", "alias": "돔카메라-05(CAM#12)", "install_location": "계중실", "ip": "172.19.203.69", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "영상", "name": "서울영업소-15", "device_no": "돔카메라-06", "serial_no": "DOM20181026327", "mac": "00:50:C2:78:F2:84", "ip_type": "카메라", "drawing_name": "CAM#13", "eoc_sn": "", "alias": "돔카메라-06(CAM#13)", "install_location": "백현고객센터", "ip": "172.19.203.70", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "영상", "name": "서울영업소-16", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181026448", "mac": "00:50:C2:78:EE:59", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#6)", "install_location": "지하통로", "ip": "172.19.203.71", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "영상", "name": "서울영업소-17", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181026431", "mac": "00:50:C2:78:EE:5E", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "(지)불렛카메라-02(CAM#7)", "install_location": "지하통로", "ip": "172.19.203.72", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "영상", "name": "서울영업소-18", "device_no": "(지)불렛카메라-03", "serial_no": "BUL20181026426", "mac": "00:50:C2:78:EE:60", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "(지)불렛카메라-03(CAM#8)", "install_location": "지하통로", "ip": "172.19.203.73", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "영상", "name": "서울영업소-19", "device_no": "(지)불렛카메라-04", "serial_no": "BUL20181026423", "mac": "00:50:C2:78:EE:73", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "", "alias": "(지)불렛카메라-04(CAM#9)", "install_location": "지하통로", "ip": "172.19.203.74", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "영상", "name": "서울영업소-20", "device_no": "(지)불렛카메라-05", "serial_no": "BUL20181026449", "mac": "00:50:C2:78:EE:6C", "ip_type": "카메라", "drawing_name": "CAM#10", "eoc_sn": "", "alias": "(지)불렛카메라-05(CAM#10)", "install_location": "지하통로", "ip": "172.19.203.75", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "영상", "name": "서울영업소-21", "device_no": "(지)불렛카메라-06", "serial_no": "BUL20181026435", "mac": "00:50:C2:76:E6:C7", "ip_type": "카메라", "drawing_name": "CAM#11", "eoc_sn": "", "alias": "(지)불렛카메라-06(CAM#11)", "install_location": "지하통로", "ip": "172.19.203.76", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "영상", "name": "서울영업소-22", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181026504", "mac": "00:50:C2:73:17:16", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#4)", "install_location": "영업소 후문 입구", "ip": "172.19.203.77", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "서울영업소 방범망", "type": "영상", "name": "서울영업소-23", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026447", "mac": "00:50:C2:78:EE:63", "ip_type": "카메라", "drawing_name": "CAM#14", "eoc_sn": "17103DPKG0063", "alias": "(외)불렛카메라-01(CAM#14)", "install_location": "회차로", "ip": "172.19.203.78", "subnet": "255.255.255.192", "gateway": "172.19.203.126"}, {"branch_group": "수원지사", "ring_name": "판교영업소 방범망", "type": "영상", "name": "판교영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181026307", "mac": "00:50:C2:78:F2:88", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.203.1", "subnet": "255.255.255.192", "gateway": "172.19.203.62"}, {"branch_group": "수원지사", "ring_name": "판교영업소 방범망", "type": "영상", "name": "판교영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181026340", "mac": "00:50:C2:78:F2:8B", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.203.2", "subnet": "255.255.255.192", "gateway": "172.19.203.62"}, {"branch_group": "수원지사", "ring_name": "판교영업소 방범망", "type": "영상", "name": "판교영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181026303", "mac": "00:50:C2:78:EE:83", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.203.3", "subnet": "255.255.255.192", "gateway": "172.19.203.62"}, {"branch_group": "수원지사", "ring_name": "판교영업소 방범망", "type": "영상", "name": "판교영업소-9", "device_no": "돔카메라-04", "serial_no": "DOM20181026301", "mac": "00:50:C2:78:F2:9A", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "영업소 좌측 입구", "ip": "172.19.203.4", "subnet": "255.255.255.192", "gateway": "172.19.203.62"}, {"branch_group": "수원지사", "ring_name": "판교영업소 방범망", "type": "영상", "name": "판교영업소-10", "device_no": "돔카메라-05", "serial_no": "DOM20181026302", "mac": "00:50:C2:78:F2:9B", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "식당 앞", "ip": "172.19.203.5", "subnet": "255.255.255.192", "gateway": "172.19.203.62"}, {"branch_group": "수원지사", "ring_name": "판교영업소 방범망", "type": "영상", "name": "판교영업소-11", "device_no": "돔카메라-06", "serial_no": "DOM20181026304", "mac": "00:50:C2:78:F2:8C", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "", "install_location": "지하층 계단", "ip": "172.19.203.6", "subnet": "255.255.255.192", "gateway": "172.19.203.62"}, {"branch_group": "수원지사", "ring_name": "판교영업소 방범망", "type": "영상", "name": "판교영업소-12", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181026415", "mac": "00:50:C2:6F:37:BF", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.203.7", "subnet": "255.255.255.192", "gateway": "172.19.203.62"}, {"branch_group": "수원지사", "ring_name": "판교영업소 방범망", "type": "영상", "name": "판교영업소-13", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181026446", "mac": "00:50:C2:78:EE:78", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.203.8", "subnet": "255.255.255.192", "gateway": "172.19.203.62"}, {"branch_group": "수원지사", "ring_name": "판교영업소 방범망", "type": "영상", "name": "판교영업소-14", "device_no": "(지)불렛카메라-03", "serial_no": "BUL20181026443", "mac": "00:50:C2:78:EE:6A", "ip_type": "카메라", "drawing_name": "CAM#10", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.203.9", "subnet": "255.255.255.192", "gateway": "172.19.203.62"}, {"branch_group": "수원지사", "ring_name": "판교영업소 방범망", "type": "영상", "name": "판교영업소-15", "device_no": "(지)불렛카메라-04", "serial_no": "BUL20181026458", "mac": "00:50:C2:78:EE:72", "ip_type": "카메라", "drawing_name": "CAM#11", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.203.10", "subnet": "255.255.255.192", "gateway": "172.19.203.62"}, {"branch_group": "수원지사", "ring_name": "판교영업소 방범망", "type": "영상", "name": "판교영업소-16", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181026505", "mac": "00:50:C2:73:17:0E", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "장애인 출입구", "ip": "172.19.203.11", "subnet": "255.255.255.192", "gateway": "172.19.203.62"}, {"branch_group": "수원지사", "ring_name": "판교영업소 방범망", "type": "영상", "name": "판교영업소-17", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026411", "mac": "00:50:C2:6F:37:D4", "ip_type": "카메라", "drawing_name": "CAM#12", "eoc_sn": "18111DPKG0238", "alias": "", "install_location": "광장 진입", "ip": "172.19.203.12", "subnet": "255.255.255.192", "gateway": "172.19.203.62"}, {"branch_group": "수원지사", "ring_name": "판교영업소 방범망", "type": "영상", "name": "판교영업소-18", "device_no": "(외)불렛카메라-02", "serial_no": "BUL20181026437", "mac": "00:50:C2:78:EE:77", "ip_type": "카메라", "drawing_name": "CAM#13", "eoc_sn": "18111DPKG0247", "alias": "", "install_location": "광장 진출", "ip": "172.19.203.13", "subnet": "255.255.255.192", "gateway": "172.19.203.62"}, {"branch_group": "수원지사", "ring_name": "판교영업소 방범망", "type": "영상", "name": "판교영업소-19", "device_no": "(외)불렛카메라-03", "serial_no": "BUL20181026445", "mac": "00:50:C2:76:E6:C3", "ip_type": "카메라", "drawing_name": "CAM#14", "eoc_sn": "18111DPKG0243", "alias": "", "install_location": "회차로", "ip": "172.19.203.14", "subnet": "255.255.255.192", "gateway": "172.19.203.62"}, {"branch_group": "수원지사", "ring_name": "대왕판교영업소 방범망", "type": "영상", "name": "대왕판교영업소-5", "device_no": "돔카메라-01", "serial_no": "DOM20181026309", "mac": "00:50:C2:78:F2:9D", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.203.129", "subnet": "255.255.255.224", "gateway": "172.19.203.158"}, {"branch_group": "수원지사", "ring_name": "대왕판교영업소 방범망", "type": "영상", "name": "대왕판교영업소-6", "device_no": "돔카메라-02", "serial_no": "DOM20181026310", "mac": "00:50:C2:78:F2:9C", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.203.130", "subnet": "255.255.255.224", "gateway": "172.19.203.158"}, {"branch_group": "수원지사", "ring_name": "대왕판교영업소 방범망", "type": "영상", "name": "대왕판교영업소-7", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181026514", "mac": "00:50:C2:73:17:15", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 우측", "ip": "172.19.203.131", "subnet": "255.255.255.224", "gateway": "172.19.203.158"}, {"branch_group": "수원지사", "ring_name": "대왕판교영업소 방범망", "type": "영상", "name": "대왕판교영업소-8", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026432", "mac": "00:50:C2:78:EE:7F", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "18111DPKG0336", "alias": "", "install_location": "진출로 차단기", "ip": "172.19.203.132", "subnet": "255.255.255.224", "gateway": "172.19.203.158"}, {"branch_group": "경기광주지사", "ring_name": "서이천영업소 방범망", "type": "영상", "name": "서이천영업소-5", "device_no": "돔카메라-01", "serial_no": "DOM20181026331", "mac": "00:50:C2:78:F2:8E", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.204.33", "subnet": "255.255.255.224", "gateway": "172.19.204.62"}, {"branch_group": "경기광주지사", "ring_name": "서이천영업소 방범망", "type": "영상", "name": "서이천영업소-6", "device_no": "돔카메라-02", "serial_no": "DOM20181026318", "mac": "00:50:C2:78:F2:A5", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.204.34", "subnet": "255.255.255.224", "gateway": "172.19.204.62"}, {"branch_group": "경기광주지사", "ring_name": "서이천영업소 방범망", "type": "영상", "name": "서이천영업소-7", "device_no": "돔카메라-03", "serial_no": "DOM20181026328", "mac": "00:50:C2:78:F2:A7", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.204.35", "subnet": "255.255.255.224", "gateway": "172.19.204.62"}, {"branch_group": "경기광주지사", "ring_name": "서이천영업소 방범망", "type": "영상", "name": "서이천영업소-8", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181026459", "mac": "00:50:C2:78:EE:5B", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.204.36", "subnet": "255.255.255.224", "gateway": "172.19.204.62"}, {"branch_group": "경기광주지사", "ring_name": "서이천영업소 방범망", "type": "영상", "name": "서이천영업소-9", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181026512", "mac": "00:50:C2:73:17:18", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 좌측", "ip": "172.19.204.37", "subnet": "255.255.255.224", "gateway": "172.19.204.62"}, {"branch_group": "경기광주지사", "ring_name": "곤지암영업소 방범망", "type": "영상", "name": "곤지암영업소-5", "device_no": "돔카메라-01", "serial_no": "DOM20181026339", "mac": "00:50:C2:78:F2:94", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.204.65", "subnet": "255.255.255.224", "gateway": "172.19.204.94"}, {"branch_group": "경기광주지사", "ring_name": "곤지암영업소 방범망", "type": "영상", "name": "곤지암영업소-6", "device_no": "돔카메라-02", "serial_no": "DOM20181026316", "mac": "00:50:C2:78:F2:7F", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.204.66", "subnet": "255.255.255.224", "gateway": "172.19.204.94"}, {"branch_group": "경기광주지사", "ring_name": "곤지암영업소 방범망", "type": "영상", "name": "곤지암영업소-7", "device_no": "돔카메라-03", "serial_no": "DOM20181026313", "mac": "00:50:C2:78:F2:80", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.204.67", "subnet": "255.255.255.224", "gateway": "172.19.204.94"}, {"branch_group": "경기광주지사", "ring_name": "곤지암영업소 방범망", "type": "영상", "name": "곤지암영업소-8", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181026502", "mac": "00:50:C2:73:17:11", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 우측", "ip": "172.19.204.68", "subnet": "255.255.255.224", "gateway": "172.19.204.94"}, {"branch_group": "경기광주지사", "ring_name": "곤지암영업소 방범망", "type": "영상", "name": "곤지암영업소-9", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026410", "mac": "00:50:C2:6F:37:BE", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "옥상", "ip": "172.19.204.69", "subnet": "255.255.255.224", "gateway": "172.19.204.94"}, {"branch_group": "경기광주지사", "ring_name": "곤지암영업소 방범망", "type": "영상", "name": "곤지암영업소-10", "device_no": "(외)불렛카메라-02", "serial_no": "BUL20181026434", "mac": "00:50:C2:78:EE:6E", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "17103DPKG0069", "alias": "", "install_location": "광장", "ip": "172.19.204.70", "subnet": "255.255.255.224", "gateway": "172.19.204.94"}, {"branch_group": "경기광주지사", "ring_name": "곤지암영업소 방범망", "type": "영상", "name": "곤지암영업소-11", "device_no": "(외)불렛카메라-03", "serial_no": "BUL20181026450", "mac": "00:50:C2:78:EE:69", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "17103DPKG0061", "alias": "", "install_location": "광장", "ip": "172.19.204.71", "subnet": "255.255.255.224", "gateway": "172.19.204.94"}, {"branch_group": "경기광주지사", "ring_name": "경기광주영업소 방범망", "type": "영상", "name": "경기광주영업소-5", "device_no": "돔카메라-01", "serial_no": "DOM20181026319", "mac": "00:50:C2:78:F2:A8", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.204.97", "subnet": "255.255.255.224", "gateway": "172.19.204.126"}, {"branch_group": "경기광주지사", "ring_name": "경기광주영업소 방범망", "type": "영상", "name": "경기광주영업소-6", "device_no": "돔카메라-02", "serial_no": "DOM20181026314", "mac": "00:50:C2:78:F2:8F", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.204.98", "subnet": "255.255.255.224", "gateway": "172.19.204.126"}, {"branch_group": "경기광주지사", "ring_name": "경기광주영업소 방범망", "type": "영상", "name": "경기광주영업소-7", "device_no": "돔카메라-03", "serial_no": "DOM20181026317", "mac": "00:50:C2:78:F2:96", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.204.99", "subnet": "255.255.255.224", "gateway": "172.19.204.126"}, {"branch_group": "경기광주지사", "ring_name": "경기광주영업소 방범망", "type": "영상", "name": "경기광주영업소-8", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181026508", "mac": "00:50:C2:73:17:10", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 우측", "ip": "172.19.204.100", "subnet": "255.255.255.224", "gateway": "172.19.204.126"}, {"branch_group": "경기광주지사", "ring_name": "경기광주영업소 방범망", "type": "영상", "name": "경기광주영업소-9", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026421", "mac": "00:50:C2:78:EE:7D", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "부스이동 통로", "ip": "172.19.204.101", "subnet": "255.255.255.224", "gateway": "172.19.204.126"}, {"branch_group": "경기광주지사", "ring_name": "동서울영업소 방범망", "type": "AP", "name": "동서울영업소-3", "device_no": "무선브릿지-Rx", "serial_no": "0824181000000F5E", "mac": "00:19:3B:15:F6:9E", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "무선브릿지-Rx", "install_location": "영업소 옥상", "ip": "172.19.204.178", "subnet": "255.255.255.192", "gateway": "172.19.204.190"}, {"branch_group": "경기광주지사", "ring_name": "동서울영업소 방범망", "type": "AP", "name": "동서울영업소-4", "device_no": "무선브릿지-Tx", "serial_no": "0824181000001052", "mac": "00:19:3B:15:F8:86", "ip_type": "AP", "drawing_name": "무선브릿지", "eoc_sn": "", "alias": "무선브릿지-Tx", "install_location": "외부", "ip": "172.19.204.179", "subnet": "255.255.255.192", "gateway": "172.19.204.190"}, {"branch_group": "경기광주지사", "ring_name": "동서울영업소 방범망", "type": "영상", "name": "동서울영업소-8", "device_no": "돔카메라-01", "serial_no": "DOM20181205369", "mac": "00:50:C2:7C:B0:81", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "현관", "ip": "172.19.204.129", "subnet": "255.255.255.192", "gateway": "172.19.204.190"}, {"branch_group": "경기광주지사", "ring_name": "동서울영업소 방범망", "type": "영상", "name": "동서울영업소-9", "device_no": "돔카메라-02", "serial_no": "DOM20181205406", "mac": "00:50:C2:7C:B0:7A", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "금고실", "ip": "172.19.204.130", "subnet": "255.255.255.192", "gateway": "172.19.204.190"}, {"branch_group": "경기광주지사", "ring_name": "동서울영업소 방범망", "type": "영상", "name": "동서울영업소-10", "device_no": "돔카메라-03", "serial_no": "DOM20181205407", "mac": "00:50:C2:7C:B0:88", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "돔카메라-03(CAM#3)", "install_location": "사무실", "ip": "172.19.204.131", "subnet": "255.255.255.192", "gateway": "172.19.204.190"}, {"branch_group": "경기광주지사", "ring_name": "동서울영업소 방범망", "type": "영상", "name": "동서울영업소-11", "device_no": "돔카메라-04", "serial_no": "DOM20181205412", "mac": "00:50:C2:7C:B0:19", "ip_type": "카메라", "drawing_name": "CAM#8", "eoc_sn": "", "alias": "돔카메라-04(CAM#8)", "install_location": "지하도 입구", "ip": "172.19.204.132", "subnet": "255.255.255.192", "gateway": "172.19.204.190"}, {"branch_group": "경기광주지사", "ring_name": "동서울영업소 방범망", "type": "영상", "name": "동서울영업소-12", "device_no": "돔카메라-05", "serial_no": "DOM20181205410", "mac": "00:50:C2:7C:B0:A5", "ip_type": "카메라", "drawing_name": "CAM#9", "eoc_sn": "", "alias": "돔카메라-05(CAM#9)", "install_location": "계중실", "ip": "172.19.204.133", "subnet": "255.255.255.192", "gateway": "172.19.204.190"}, {"branch_group": "경기광주지사", "ring_name": "동서울영업소 방범망", "type": "영상", "name": "동서울영업소-13", "device_no": "돔카메라-06", "serial_no": "DOM20181205419", "mac": "00:50:C2:7C:B0:64", "ip_type": "카메라", "drawing_name": "CAM#10", "eoc_sn": "", "alias": "돔카메라-06(CAM#10)", "install_location": "하이패스 센터 지문등록기 감시", "ip": "172.19.204.134", "subnet": "255.255.255.192", "gateway": "172.19.204.190"}, {"branch_group": "경기광주지사", "ring_name": "동서울영업소 방범망", "type": "영상", "name": "동서울영업소-14", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181026441", "mac": "00:50:C2:76:E6:C4", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "(지)불렛카메라-01(CAM#5)", "install_location": "지하통로", "ip": "172.19.204.135", "subnet": "255.255.255.192", "gateway": "172.19.204.190"}, {"branch_group": "경기광주지사", "ring_name": "동서울영업소 방범망", "type": "영상", "name": "동서울영업소-15", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181026451", "mac": "00:50:C2:78:EE:67", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "(지)불렛카메라-02(CAM#6)", "install_location": "지하통로", "ip": "172.19.204.136", "subnet": "255.255.255.192", "gateway": "172.19.204.190"}, {"branch_group": "경기광주지사", "ring_name": "동서울영업소 방범망", "type": "영상", "name": "동서울영업소-16", "device_no": "(지)불렛카메라-03", "serial_no": "BUL20181026407", "mac": "00:50:C2:6F:37:D7", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "", "alias": "(지)불렛카메라-03(CAM#7)", "install_location": "지하통로", "ip": "172.19.204.137", "subnet": "255.255.255.192", "gateway": "172.19.204.190"}, {"branch_group": "경기광주지사", "ring_name": "동서울영업소 방범망", "type": "영상", "name": "동서울영업소-17", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181026511", "mac": "00:50:C2:73:17:09", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#4)", "install_location": "영업소 정면 좌측", "ip": "172.19.204.138", "subnet": "255.255.255.192", "gateway": "172.19.204.190"}, {"branch_group": "경기광주지사", "ring_name": "하남영업소 방범망", "type": "영상", "name": "하남영업소-6", "device_no": "돔카메라-01", "serial_no": "DOM20181205303", "mac": "00:50:C2:7C:B0:30", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "", "install_location": "현관", "ip": "172.19.204.193", "subnet": "255.255.255.224", "gateway": "172.19.204.222"}, {"branch_group": "경기광주지사", "ring_name": "하남영업소 방범망", "type": "영상", "name": "하남영업소-7", "device_no": "돔카메라-02", "serial_no": "DOM20181205301", "mac": "00:50:C2:7C:B0:11", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "", "install_location": "금고실", "ip": "172.19.204.194", "subnet": "255.255.255.224", "gateway": "172.19.204.222"}, {"branch_group": "경기광주지사", "ring_name": "하남영업소 방범망", "type": "영상", "name": "하남영업소-8", "device_no": "돔카메라-03", "serial_no": "DOM20181205305", "mac": "00:50:C2:7C:AF:F9", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "", "install_location": "사무실", "ip": "172.19.204.195", "subnet": "255.255.255.224", "gateway": "172.19.204.222"}, {"branch_group": "경기광주지사", "ring_name": "하남영업소 방범망", "type": "영상", "name": "하남영업소-9", "device_no": "(지)불렛카메라-01", "serial_no": "BUL20181026438", "mac": "00:50:C2:78:EE:75", "ip_type": "카메라", "drawing_name": "CAM#5", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.204.196", "subnet": "255.255.255.224", "gateway": "172.19.204.222"}, {"branch_group": "경기광주지사", "ring_name": "하남영업소 방범망", "type": "영상", "name": "하남영업소-10", "device_no": "(지)불렛카메라-02", "serial_no": "BUL20181026457", "mac": "00:50:C2:78:EE:5C", "ip_type": "카메라", "drawing_name": "CAM#6", "eoc_sn": "", "alias": "", "install_location": "지하통로", "ip": "172.19.204.197", "subnet": "255.255.255.224", "gateway": "172.19.204.222"}, {"branch_group": "경기광주지사", "ring_name": "하남영업소 방범망", "type": "영상", "name": "하남영업소-11", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181026513", "mac": "00:50:C2:73:17:23", "ip_type": "카메라", "drawing_name": "CAM#4", "eoc_sn": "", "alias": "", "install_location": "영업소 정면 우측", "ip": "172.19.204.198", "subnet": "255.255.255.224", "gateway": "172.19.204.222"}, {"branch_group": "경기광주지사", "ring_name": "하남영업소 방범망", "type": "영상", "name": "하남영업소-12", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026408", "mac": "00:50:C2:6F:37:C7", "ip_type": "카메라", "drawing_name": "CAM#7", "eoc_sn": "17103DPKG0076", "alias": "", "install_location": "지하통로", "ip": "172.19.204.199", "subnet": "255.255.255.224", "gateway": "172.19.204.222"}, {"branch_group": "동서울지사", "ring_name": "경기광주-동서울 TTMS망", "type": "영상", "name": "광암터널관리동-2", "device_no": "돔카메라-01", "serial_no": "DOM20181205387", "mac": "00:50:C2:7C:AF:CC", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "사무실", "ip": "172.20.88.192", "subnet": "255.255.254.0", "gateway": "172.20.88.254"}, {"branch_group": "동서울지사", "ring_name": "경기광주-동서울 TTMS망", "type": "영상", "name": "광암터널관리동-3", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205009", "mac": "00:50:C2:79:2A:77", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#3)", "install_location": "정문 입구", "ip": "172.20.88.193", "subnet": "255.255.254.0", "gateway": "172.20.88.254"}, {"branch_group": "동서울지사", "ring_name": "경기광주-동서울 TTMS망", "type": "영상", "name": "광암터널관리동-4", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026402", "mac": "00:50:C2:6F:37:C5", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "(외)불렛카메라-01(CAM#2)", "install_location": "정문", "ip": "172.20.88.194", "subnet": "255.255.254.0", "gateway": "172.20.88.254"}, {"branch_group": "시흥지사", "ring_name": "수리수암터널 관리동", "type": "영상", "name": "수리수암터널관리동-2", "device_no": "돔카메라-01", "serial_no": "DOM20181205327", "mac": "00:50:C2:7C:AF:EC", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "사무실", "ip": "172.19.104.196", "subnet": "255.255.255.0", "gateway": "172.19.104.254"}, {"branch_group": "시흥지사", "ring_name": "수리수암터널 관리동", "type": "영상", "name": "수리수암터널관리동-3", "device_no": "돔카메라-02", "serial_no": "DOM20181205331", "mac": "00:50:C2:7C:B0:7B", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "돔카메라-02(CAM#2)", "install_location": "전기실", "ip": "172.19.104.197", "subnet": "255.255.255.0", "gateway": "172.19.104.254"}, {"branch_group": "시흥지사", "ring_name": "수리수암터널 관리동", "type": "영상", "name": "수리수암터널관리동-4", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205023", "mac": "00:50:C2:79:2A:BC", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#3)", "install_location": "정문 입구", "ip": "172.19.104.198", "subnet": "255.255.255.0", "gateway": "172.19.104.254"}, {"branch_group": "군포지사", "ring_name": "군포-인천 TTMS망", "type": "영상", "name": "반월터널관리동-2", "device_no": "돔카메라-01", "serial_no": "DOM20181205443", "mac": "00:50:C2:7C:B0:75", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "사무실", "ip": "172.20.93.192", "subnet": "255.255.255.0", "gateway": "172.20.93.254"}, {"branch_group": "군포지사", "ring_name": "군포-인천 TTMS망", "type": "영상", "name": "반월터널관리동-3", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205034", "mac": "00:50:C2:74:FA:05", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#3)", "install_location": "정문 입구", "ip": "172.20.93.193", "subnet": "255.255.255.0", "gateway": "172.20.93.254"}, {"branch_group": "군포지사", "ring_name": "군포-인천 TTMS망", "type": "영상", "name": "반월터널관리동-4", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026404", "mac": "00:50:C2:6F:37:BB", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "(외)불렛카메라-01(CAM#2)", "install_location": "정문 입구", "ip": "172.20.93.194", "subnet": "255.255.255.0", "gateway": "172.20.93.254"}, {"branch_group": "군포지사", "ring_name": "마성터널 관리동", "type": "영상", "name": "마성터널관리동-2", "device_no": "돔카메라-01", "serial_no": "DOM20181205429", "mac": "00:50:C2:7C:B0:A6", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "현관", "ip": "172.19.102.167", "subnet": "255.255.255.0", "gateway": "172.19.102.254"}, {"branch_group": "군포지사", "ring_name": "마성터널 관리동", "type": "영상", "name": "마성터널관리동-3", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205030", "mac": "00:50:C2:79:2A:C9", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#3)", "install_location": "주차공간", "ip": "172.19.102.168", "subnet": "255.255.255.0", "gateway": "172.19.102.254"}, {"branch_group": "군포지사", "ring_name": "마성터널 관리동", "type": "영상", "name": "마성터널관리동-4", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026416", "mac": "00:50:C2:6F:37:D8", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "(외)불렛카메라-01(CAM#2)", "install_location": "1층 옥상 난간", "ip": "172.19.102.169", "subnet": "255.255.255.0", "gateway": "172.19.102.254"}, {"branch_group": "군포지사", "ring_name": "광교방음터널 관리동", "type": "영상", "name": "광교방음터널관리동-2", "device_no": "돔카메라-01", "serial_no": "DOM20181205446", "mac": "00:50:C2:7C:B0:40", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "현관", "ip": "172.19.107.196", "subnet": "255.255.255.0", "gateway": "172.19.107.254"}, {"branch_group": "군포지사", "ring_name": "광교방음터널 관리동", "type": "영상", "name": "광교방음터널관리동-3", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205027", "mac": "00:50:C2:79:2A:A2", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#3)", "install_location": "정문 입구", "ip": "172.19.107.197", "subnet": "255.255.255.0", "gateway": "172.19.107.254"}, {"branch_group": "군포지사", "ring_name": "광교방음터널 관리동", "type": "영상", "name": "광교방음터널관리동-4", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026420", "mac": "00:50:C2:6F:37:BD", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "(외)불렛카메라-01(CAM#2)", "install_location": "정문 입구", "ip": "172.19.107.198", "subnet": "255.255.255.0", "gateway": "172.19.107.254"}, {"branch_group": "군포지사", "ring_name": "이천-군포 TTMS망", "type": "영상", "name": "광교터널관리동-2", "device_no": "돔카메라-01", "serial_no": "DOM20181205437", "mac": "00:50:C2:7C:B0:A1", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "사무실", "ip": "172.20.97.192", "subnet": "255.255.255.0", "gateway": "172.20.97.254"}, {"branch_group": "군포지사", "ring_name": "이천-군포 TTMS망", "type": "영상", "name": "광교터널관리동-3", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181205010", "mac": "00:50:C2:79:2A:B0", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#3)", "install_location": "정문 입구", "ip": "172.20.97.193", "subnet": "255.255.255.0", "gateway": "172.20.97.254"}, {"branch_group": "군포지사", "ring_name": "이천-군포 TTMS망", "type": "영상", "name": "광교터널관리동-4", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026412", "mac": "00:50:C2:6F:37:D3", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "(외)불렛카메라-01(CAM#2)", "install_location": "정문 입구", "ip": "172.20.97.194", "subnet": "255.255.255.0", "gateway": "172.20.97.254"}, {"branch_group": "화성지사", "ring_name": "화성-시흥 TTMS망", "type": "영상", "name": "순산터널관리동-2", "device_no": "돔카메라-01", "serial_no": "DOM20181026338", "mac": "00:50:C2:78:F2:7E", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "사무실", "ip": "172.20.90.192", "subnet": "255.255.254.0", "gateway": "172.20.90.254"}, {"branch_group": "화성지사", "ring_name": "화성-시흥 TTMS망", "type": "영상", "name": "순산터널관리동-3", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181026509", "mac": "00:50:C2:73:17:1D", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#3)", "install_location": "관리동 정면 우측", "ip": "172.20.90.193", "subnet": "255.255.254.0", "gateway": "172.20.90.254"}, {"branch_group": "화성지사", "ring_name": "화성-시흥 TTMS망", "type": "영상", "name": "순산터널관리동-4", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026442", "mac": "00:50:C2:78:EE:66", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "(외)불렛카메라-01(CAM#2)", "install_location": "관리동 정면 좌측", "ip": "172.20.90.194", "subnet": "255.255.254.0", "gateway": "172.20.90.254"}, {"branch_group": "화성지사", "ring_name": "화성-시흥 TTMS망", "type": "영상", "name": "용담터널관리동-2", "device_no": "돔카메라-01", "serial_no": "DOM20181026338", "mac": "00:50:C2:78:F2:7E", "ip_type": "카메라", "drawing_name": "CAM#1", "eoc_sn": "", "alias": "돔카메라-01(CAM#1)", "install_location": "사무실", "ip": "172.20.90.196", "subnet": "255.255.254.0", "gateway": "172.20.90.254"}, {"branch_group": "화성지사", "ring_name": "화성-시흥 TTMS망", "type": "영상", "name": "용담터널관리동-3", "device_no": "(외)스피드돔카메라-01", "serial_no": "IRD20181214201", "mac": "00:50:C2:79:2A:C0", "ip_type": "카메라", "drawing_name": "CAM#3", "eoc_sn": "", "alias": "(외)스피드돔카메라-01(CAM#3)", "install_location": "관리동 정면 우측", "ip": "172.20.90.197", "subnet": "255.255.254.0", "gateway": "172.20.90.254"}, {"branch_group": "화성지사", "ring_name": "화성-시흥 TTMS망", "type": "영상", "name": "용담터널관리동-4", "device_no": "(외)불렛카메라-01", "serial_no": "BUL20181026455", "mac": "00:50:C2:78:EE:79", "ip_type": "카메라", "drawing_name": "CAM#2", "eoc_sn": "", "alias": "(외)불렛카메라-01(CAM#2)", "install_location": "정문 입구", "ip": "172.20.90.198", "subnet": "255.255.254.0", "gateway": "172.20.90.254"}], "straight_map": [{"name": "판교JCT", "mile": 0.0, "type": "JCT", "desc": "경부고속도로 연계 분기점 (상행 기점)"}, {"name": "성남IC", "mile": 4.4, "type": "IC", "desc": "국도 3호선 성남/분당 방면"}, {"name": "성남TG", "mile": 5.0, "type": "TG", "desc": "성남 본선 톨게이트"}, {"name": "송파IC", "mile": 9.5, "type": "IC", "desc": "송파대로 및 위례 방면"}, {"name": "서하남IC", "mile": 14.5, "type": "IC", "desc": "서하남로 감일지구 방면"}, {"name": "동서울지사", "mile": 15.5, "type": "OFFICE", "desc": "한국도로공사 동서울지사"}, {"name": "하남JCT", "mile": 19.6, "type": "JCT", "desc": "중부고속도로 연계 분기점"}, {"name": "상일IC", "mile": 21.6, "type": "IC", "desc": "천호대로 강동 방면"}, {"name": "강일IC", "mile": 24.6, "type": "IC", "desc": "올림픽대로 및 서울양양선 연계"}, {"name": "토평IC", "mile": 26.0, "type": "IC", "desc": "강변북로 연계"}, {"name": "구리남양주TG", "mile": 26.9, "type": "TG", "desc": "구리남양주 본선 영업소"}, {"name": "남양주IC", "mile": 28.5, "type": "IC", "desc": "경춘로 남양주 방면"}, {"name": "구리IC", "mile": 30.0, "type": "IC", "desc": "북부간선도로 연계"}, {"name": "퇴계원IC", "mile": 32.8, "type": "IC", "desc": "동서울지사 본선 관내 종점 (33.7km)"}, {"name": "청계TG", "mile": 121.3, "type": "TG", "desc": "청계 톨게이트 (외곽선 학의 방향)"}, {"name": "학의JCT", "mile": 119.5, "type": "JCT", "desc": "과천봉담도시고속화도로 연계"}, {"name": "평촌IC", "mile": 115.1, "type": "IC", "desc": "평촌 안양 방면 (지사 경계)"}]};
+window.HIGHWAY_MASTER_DATA = {
+  "manholes": [
+    {
+      "no": 1,
+      "name": "2M",
+      "code": "M-1001-00021S-B-H",
+      "id": "2M",
+      "full_id": "2M",
+      "raw_id": "M-1001-00021S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-성남IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 0.21,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.406823,
+      "lng": 127.097339,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "VDS-101-1(Ring3)",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "IDS-13,RSU-62",
+          "icon": "radio"
+        }
+      ],
+      "cctv": null,
+      "vds": "VDS-101-1(Ring3)",
+      "vms": null,
+      "ep": null,
+      "cits": "IDS-13,RSU-62",
+      "branch_info": null,
+      "splice_point": "F(42)",
+      "remarks": "금호교",
+      "terrain": null
+    },
+    {
+      "no": 2,
+      "name": "3M",
+      "code": "M-1001-00062S-B-H",
+      "id": "3M",
+      "full_id": "3M",
+      "raw_id": "M-1001-00062S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-성남IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 0.62,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.407726,
+      "lng": 127.101357,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F(42)",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 3,
+      "name": "4M",
+      "code": "M-1001-00125S-P-H",
+      "id": "4M",
+      "full_id": "4M",
+      "raw_id": "M-1001-00125S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-성남IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 1.25,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.407856,
+      "lng": 127.10839,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "VDS-101-2(Ring1)",
+          "icon": "activity"
+        }
+      ],
+      "cctv": null,
+      "vds": "VDS-101-2(Ring1)",
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F(42)",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 4,
+      "name": "5M",
+      "code": "M-1001-00162S-B-H",
+      "id": "5M",
+      "full_id": "5M",
+      "raw_id": "M-1001-00162S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-성남IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 1.62,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.409206,
+      "lng": 127.115537,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "TTMS",
+          "icon": "video"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-63",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "TTMS",
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-63",
+      "branch_info": "DSRC 3-1 제어기\nIOT",
+      "splice_point": null,
+      "remarks": "방음터널41Km지점,30C",
+      "terrain": null
+    },
+    {
+      "no": 5,
+      "name": "6M",
+      "code": "M-1001-00208S-B-H",
+      "id": "6M",
+      "full_id": "6M",
+      "raw_id": "M-1001-00208S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-성남IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 2.08,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.410498,
+      "lng": 127.117402,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F(42)",
+      "remarks": "30C,42C접속점",
+      "terrain": null
+    },
+    {
+      "no": 6,
+      "name": "7M",
+      "code": "M-1001-00253S-B-H",
+      "id": "7M",
+      "full_id": "7M",
+      "raw_id": "M-1001-00253S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-성남IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 2.53,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.413172,
+      "lng": 127.119508,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "삼평터널",
+          "icon": "video"
+        },
+        {
+          "type": "VMS",
+          "name": "삼평터널",
+          "icon": "tv"
+        }
+      ],
+      "cctv": "삼평터널",
+      "vds": null,
+      "vms": "삼평터널",
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F(72)",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 7,
+      "name": "8M",
+      "code": "M-1001-00310S-B-H",
+      "id": "8M",
+      "full_id": "8M",
+      "raw_id": "M-1001-00310S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-성남IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 3.1,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.417347,
+      "lng": 127.122412,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "VDS-101-3(Ring2)인입7M\nVDS-101-4(Ring1)인입9M",
+          "icon": "activity"
+        }
+      ],
+      "cctv": null,
+      "vds": "VDS-101-3(Ring2)인입7M\nVDS-101-4(Ring1)인입9M",
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "탄천교",
+      "terrain": null
+    },
+    {
+      "no": 8,
+      "name": "9M",
+      "code": "M-1001-00359S-P-H",
+      "id": "9M",
+      "full_id": "9M",
+      "raw_id": "M-1001-00359S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-성남IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 3.59,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.42114,
+      "lng": 127.123095,
+      "completion_year": "2017",
+      "warranty_year": "2018",
+      "equipment": [
+        {
+          "type": "C-ITS",
+          "name": "IDS-12,IDS-14,RSU-65",
+          "icon": "radio"
+        }
+      ],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": "IDS-12,IDS-14,RSU-65",
+      "branch_info": null,
+      "splice_point": "F(72)",
+      "remarks": "여수육교",
+      "terrain": null
+    },
+    {
+      "no": 9,
+      "name": "10M",
+      "code": "M-1001-00395S-P-H",
+      "id": "10M",
+      "full_id": "10M",
+      "raw_id": "M-1001-00395S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-성남IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 3.95,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.424991,
+      "lng": 127.123087,
+      "completion_year": "2017",
+      "warranty_year": "2018",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "성남육교",
+      "terrain": null
+    },
+    {
+      "no": 10,
+      "name": "11M",
+      "code": "M-1001-00442S-B-H",
+      "id": "11M",
+      "full_id": "11M",
+      "raw_id": "M-1001-00442S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-성남IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 4.42,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.428721,
+      "lng": 127.123225,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "성남IC",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "VDS-101-5(Ring4)",
+          "icon": "activity"
+        },
+        {
+          "type": "VMS",
+          "name": "성남TG(구리향)",
+          "icon": "tv"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-66",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "성남IC",
+      "vds": "VDS-101-5(Ring4)",
+      "vms": "성남TG(구리향)",
+      "ep": null,
+      "cits": "RSU-66",
+      "branch_info": "ILJIN 12C\nDSRC 3-2(1,2)/\nVMS(11M->9)\n5,6,7,8\nIOT",
+      "splice_point": "F(3M)",
+      "remarks": "L3형, 42C,30C → 72C",
+      "terrain": null
+    },
+    {
+      "no": 11,
+      "name": "12M",
+      "code": "M-1001-00443S-P-H",
+      "id": "12M",
+      "full_id": "12M",
+      "raw_id": "M-1001-00443S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-성남IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 4.43,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.4294,
+      "lng": 127.123034,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "L3",
+      "terrain": null
+    },
+    {
+      "no": 12,
+      "name": "13M",
+      "code": "M-1001-00501S-P-H",
+      "id": "13M",
+      "full_id": "13M",
+      "raw_id": "M-1001-00501S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-성남IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 5.01,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.433212,
+      "lng": 127.123177,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "직2호",
+      "terrain": null
+    },
+    {
+      "no": 13,
+      "name": "14M",
+      "code": "M-1001-00508E-B-H",
+      "id": "14M",
+      "full_id": "14M",
+      "raw_id": "M-1001-00508E-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "성남IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 5.08,
+      "bound": "하행선",
+      "direction": "퇴계원방향",
+      "lat": 37.435587,
+      "lng": 127.123847,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "VMS",
+          "name": "성남TG(판교향)",
+          "icon": "tv"
+        }
+      ],
+      "cctv": null,
+      "vds": null,
+      "vms": "성남TG(판교향)",
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F(신)",
+      "remarks": "성남영인입(48C),횡단",
+      "terrain": null
+    },
+    {
+      "no": 14,
+      "name": "15M",
+      "code": "M-1001-00540E-B-H",
+      "id": "15M",
+      "full_id": "15M",
+      "raw_id": "M-1001-00540E-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "성남IC-송파IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 5.4,
+      "bound": "하행선",
+      "direction": "퇴계원방향",
+      "lat": 37.437811,
+      "lng": 127.122972,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "성남T/G",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "VDS-101-6(Ring2)",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-67",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "성남T/G",
+      "vds": "VDS-101-6(Ring2)",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-67",
+      "branch_info": null,
+      "splice_point": "F(신)",
+      "remarks": "독정교",
+      "terrain": null
+    },
+    {
+      "no": 15,
+      "name": "16-1H",
+      "code": "H-1001-00565E-P-H",
+      "id": "16-1H",
+      "full_id": "16-1H",
+      "raw_id": "H-1001-00565E-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "성남IC-송파IC",
+      "category": "수공",
+      "standard": "",
+      "sub_std1": "2호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 5.65,
+      "bound": "하행선",
+      "direction": "퇴계원방향",
+      "lat": 37.44082,
+      "lng": 127.123088,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "수공,2002.10 준공",
+      "terrain": null
+    },
+    {
+      "no": 16,
+      "name": "17M",
+      "code": "M-1001-00618E-P-H",
+      "id": "17M",
+      "full_id": "17M",
+      "raw_id": "M-1001-00618E-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "성남IC-송파IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 6.18,
+      "bound": "하행선",
+      "direction": "퇴계원방향",
+      "lat": 37.443839,
+      "lng": 127.124351,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "방음벽",
+      "terrain": null
+    },
+    {
+      "no": 17,
+      "name": "18M",
+      "code": "M-1001-00657E-B-H",
+      "id": "18M",
+      "full_id": "18M",
+      "raw_id": "M-1001-00657E-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "성남IC-송파IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 6.57,
+      "bound": "하행선",
+      "direction": "퇴계원방향",
+      "lat": 37.446892,
+      "lng": 127.125621,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "VDS-101-7(Ring1)",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-68",
+          "icon": "radio"
+        }
+      ],
+      "cctv": null,
+      "vds": "VDS-101-7(Ring1)",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-68",
+      "branch_info": null,
+      "splice_point": "F",
+      "remarks": "태평교",
+      "terrain": null
+    },
+    {
+      "no": 18,
+      "name": "19-1H",
+      "code": "M-1001-00695E-P-H",
+      "id": "19-1H",
+      "full_id": "19-1H",
+      "raw_id": "M-1001-00695E-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "성남IC-송파IC",
+      "category": "수공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 6.95,
+      "bound": "하행선",
+      "direction": "퇴계원방향",
+      "lat": 37.450525,
+      "lng": 127.126259,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "횡단",
+      "terrain": null
+    },
+    {
+      "no": 19,
+      "name": "20M",
+      "code": "M-1001-00696S-P-H",
+      "id": "20M",
+      "full_id": "20M",
+      "raw_id": "M-1001-00696S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "성남IC-송파IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 6.96,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.450529,
+      "lng": 127.125678,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "복정교(닥트철거)",
+      "terrain": null
+    },
+    {
+      "no": 20,
+      "name": "21M",
+      "code": "M-1001-00727S-B-H",
+      "id": "21M",
+      "full_id": "21M",
+      "raw_id": "M-1001-00727S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "성남IC-송파IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 7.27,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.453784,
+      "lng": 127.125639,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "복정교",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "VDS-101-8(Ring3)\nAVC겸용",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-69",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "복정교",
+      "vds": "VDS-101-8(Ring3)\nAVC겸용",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-69",
+      "branch_info": "교통량조사장비,\nDSRC 4-1 제어기\nIOT",
+      "splice_point": "F",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 21,
+      "name": "22M",
+      "code": "M-1001-00781S-P-H",
+      "id": "22M",
+      "full_id": "22M",
+      "raw_id": "M-1001-00781S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "성남IC-송파IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 7.81,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.457222,
+      "lng": 127.125195,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 22,
+      "name": "23M",
+      "code": "M-1001-00801S-B-H",
+      "id": "23M",
+      "full_id": "23M",
+      "raw_id": "M-1001-00801S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "성남IC-송파IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 8.01,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.459745,
+      "lng": 127.125099,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "VDS-101-9(Ring4)",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-70",
+          "icon": "radio"
+        }
+      ],
+      "cctv": null,
+      "vds": "VDS-101-9(Ring4)",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-70",
+      "branch_info": null,
+      "splice_point": "F",
+      "remarks": "복정2교(닥트철거)",
+      "terrain": null
+    },
+    {
+      "no": 23,
+      "name": "24M",
+      "code": "M-1001-00870S-P-H",
+      "id": "24M",
+      "full_id": "24M",
+      "raw_id": "M-1001-00870S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "성남IC-송파IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 8.7,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.465845,
+      "lng": 127.125407,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 24,
+      "name": "25M",
+      "code": "M-1001-00896S-B-H",
+      "id": "25M",
+      "full_id": "25M",
+      "raw_id": "M-1001-00896S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "성남IC-송파IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 8.86,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.469056,
+      "lng": 127.124826,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "VDS-101-10(Ring3)",
+          "icon": "activity"
+        }
+      ],
+      "cctv": null,
+      "vds": "VDS-101-10(Ring3)",
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": "IOT",
+      "splice_point": "F",
+      "remarks": "복정3교(닥트철거)",
+      "terrain": null
+    },
+    {
+      "no": 25,
+      "name": "26M",
+      "code": "M-1001-00925S-P-H",
+      "id": "26M",
+      "full_id": "26M",
+      "raw_id": "M-1001-00925S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "성남IC-송파IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 9.25,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.472551,
+      "lng": 127.125835,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "현릉육교",
+      "terrain": null
+    },
+    {
+      "no": 26,
+      "name": "27M",
+      "code": "M-1001-00950S-B-H",
+      "id": "27M",
+      "full_id": "27M",
+      "raw_id": "M-1001-00950S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "성남IC-송파IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 9.5,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.474509,
+      "lng": 127.127877,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "송파IC",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "VDS-101-11(Ring4)",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-71",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "송파IC",
+      "vds": "VDS-101-11(Ring4)",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-71",
+      "branch_info": "D/L",
+      "splice_point": "F",
+      "remarks": "송파육교",
+      "terrain": null
+    },
+    {
+      "no": 27,
+      "name": "28M",
+      "code": "M-1001-01002S-P-H",
+      "id": "28M",
+      "full_id": "28M",
+      "raw_id": "M-1001-01002S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 10.02,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.477532,
+      "lng": 127.132344,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 28,
+      "name": "29M",
+      "code": "M-1001-01050S-B-H",
+      "id": "29M",
+      "full_id": "29M",
+      "raw_id": "M-1001-01050S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 10.5,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.481026,
+      "lng": 127.134972,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "위례",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "VDS-101-12(Ring3)",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-72",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "위례",
+      "vds": "VDS-101-12(Ring3)",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-72",
+      "branch_info": "적.불.단(성남)",
+      "splice_point": "F",
+      "remarks": "사자교",
+      "terrain": null
+    },
+    {
+      "no": 29,
+      "name": "30M",
+      "code": "M-1001-01093S-B-H",
+      "id": "30M",
+      "full_id": "30M",
+      "raw_id": "M-1001-01093S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 10.93,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.483153,
+      "lng": 127.135391,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 30,
+      "name": "31M",
+      "code": "M-1001-01131S-B-H",
+      "id": "31M",
+      "full_id": "31M",
+      "raw_id": "M-1001-01131S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 11.31,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.487652,
+      "lng": 127.136187,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "VDS-101-13(Ring4)",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-73",
+          "icon": "radio"
+        }
+      ],
+      "cctv": null,
+      "vds": "VDS-101-13(Ring4)",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-73",
+      "branch_info": null,
+      "splice_point": "F",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 31,
+      "name": "32M",
+      "code": "M-1001-01165S-P-H",
+      "id": "32M",
+      "full_id": "32M",
+      "raw_id": "M-1001-01165S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 11.65,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.489901,
+      "lng": 127.136881,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 32,
+      "name": "33M",
+      "code": "M-1001-01202S-B-H",
+      "id": "33M",
+      "full_id": "33M",
+      "raw_id": "M-1001-01202S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 12.02,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.494765,
+      "lng": 127.139192,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "거여고가교",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "VDS-101-14(Ring3)",
+          "icon": "activity"
+        }
+      ],
+      "cctv": "거여고가교",
+      "vds": "VDS-101-14(Ring3)",
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": "적.불.단(하남)\nDSRC 4-2",
+      "splice_point": "F",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 33,
+      "name": "34M",
+      "code": "M-1001-01308S-B-H",
+      "id": "34M",
+      "full_id": "34M",
+      "raw_id": "M-1001-01308S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 13.08,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.503279,
+      "lng": 127.143384,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "VDS-101-15(Ring4)",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-74,RSU-75",
+          "icon": "radio"
+        }
+      ],
+      "cctv": null,
+      "vds": "VDS-101-15(Ring4)",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-74,RSU-75",
+      "branch_info": "IOT",
+      "splice_point": "F",
+      "remarks": "거여고가교",
+      "terrain": null
+    },
+    {
+      "no": 34,
+      "name": "35M",
+      "code": "M-1001-01337S-B-H",
+      "id": "35M",
+      "full_id": "35M",
+      "raw_id": "M-1001-01337S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 13.37,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.506489,
+      "lng": 127.145351,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 35,
+      "name": "36M",
+      "code": "M-1001-01379S-P-H",
+      "id": "36M",
+      "full_id": "36M",
+      "raw_id": "M-1001-01379S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 13.79,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.509158,
+      "lng": 127.147083,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 36,
+      "name": "37M",
+      "code": "M-1001-01412S-P-H",
+      "id": "37M",
+      "full_id": "37M",
+      "raw_id": "M-1001-01412S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 14.12,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.511496,
+      "lng": 127.149364,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "감일2교(닥트철거)",
+      "terrain": null
+    },
+    {
+      "no": 37,
+      "name": "38M",
+      "code": "M-1001-01454S-B-H",
+      "id": "38M",
+      "full_id": "38M",
+      "raw_id": "M-1001-01454S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 14.54,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.513205762230214,
+      "lng": 127.15388348606811,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "서하남IC",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "VDS-101-16(Ring3)",
+          "icon": "activity"
+        }
+      ],
+      "cctv": "서하남IC",
+      "vds": "VDS-101-16(Ring3)",
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F",
+      "remarks": "서하남IC교(닥트철거)\n동서울지사본선분기",
+      "terrain": null
+    },
+    {
+      "no": 38,
+      "name": "39M",
+      "code": "M-1001-01455S-P-H",
+      "id": "39M",
+      "full_id": "39M",
+      "raw_id": "M-1001-01455S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 14.55,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.51324536888914,
+      "lng": 127.15399109287927,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "60C 1조",
+      "terrain": null
+    },
+    {
+      "no": 39,
+      "name": "39-1H",
+      "code": "H-1001-01456S-P-R",
+      "id": "39-1H",
+      "full_id": "39-1H",
+      "raw_id": "H-1001-01456S-P-R",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "수공",
+      "standard": "",
+      "sub_std1": "2호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 14.56,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.51328489870555,
+      "lng": 127.15409869969041,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "동서울지사인입수공",
+      "terrain": null
+    },
+    {
+      "no": 40,
+      "name": "40M",
+      "code": "M-1001-01495S-B-H",
+      "id": "40M",
+      "full_id": "40M",
+      "raw_id": "M-1001-01495S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 14.95,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.51474960461726,
+      "lng": 127.15829536532509,
+      "completion_year": "2025",
+      "warranty_year": "2026",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "VDS-101-17(Ring4)",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-76",
+          "icon": "radio"
+        }
+      ],
+      "cctv": null,
+      "vds": "VDS-101-17(Ring4)",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-76",
+      "branch_info": null,
+      "splice_point": "F",
+      "remarks": "서하남 2육교",
+      "terrain": null
+    },
+    {
+      "no": 41,
+      "name": "41M",
+      "code": "M-1001-01602S-B-H",
+      "id": "41M",
+      "full_id": "41M",
+      "raw_id": "M-1001-01602S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 16.02,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.51756023952164,
+      "lng": 127.16980929411766,
+      "completion_year": "2025",
+      "warranty_year": "2026",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "광암T/N1",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "VDS-101-18(Ring2)",
+          "icon": "activity"
+        },
+        {
+          "type": "EP",
+          "name": "EP",
+          "icon": "phone-call"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-77",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "광암T/N1",
+      "vds": "VDS-101-18(Ring2)",
+      "vms": null,
+      "ep": "EP",
+      "cits": "RSU-77",
+      "branch_info": "광암터널재방송,\n터널감시장치",
+      "splice_point": "F",
+      "remarks": "DSRC 5-1 제어기",
+      "terrain": null
+    },
+    {
+      "no": 42,
+      "name": "41M",
+      "code": "M-1001-01603S-B-H",
+      "id": "41M",
+      "full_id": "41M",
+      "raw_id": "M-1001-01603S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제2순환선",
+      "section": "송파IC-서하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 16.03,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.517576617733624,
+      "lng": 127.1699169009288,
+      "completion_year": "2025",
+      "warranty_year": "2026",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "광암T/N1",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "VDS-101-18(Ring2)",
+          "icon": "activity"
+        },
+        {
+          "type": "EP",
+          "name": "EP",
+          "icon": "phone-call"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-77",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "광암T/N1",
+      "vds": "VDS-101-18(Ring2)",
+      "vms": null,
+      "ep": "EP",
+      "cits": "RSU-77",
+      "branch_info": "광암터널재방송,\n터널감시장치",
+      "splice_point": "F",
+      "remarks": "DSRC 5-1 제어기",
+      "terrain": null
+    },
+    {
+      "no": 43,
+      "name": "42M",
+      "code": "M-1001-01648S-B-H",
+      "id": "42M",
+      "full_id": "42M",
+      "raw_id": "M-1001-01648S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "서하남JCT-하남JCT",
+      "category": "수공",
+      "standard": "",
+      "sub_std1": "2호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 16.48,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.51813656396393,
+      "lng": 127.17475920743034,
+      "completion_year": "2025",
+      "warranty_year": "2026",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": "TTMS",
+      "splice_point": null,
+      "remarks": "광암터널",
+      "terrain": null
+    },
+    {
+      "no": 44,
+      "name": "43M",
+      "code": "M-1001-01735S-B-H",
+      "id": "43M",
+      "full_id": "43M",
+      "raw_id": "M-1001-01735S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "서하남JCT-하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 17.35,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.518535,
+      "lng": 127.184121,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 45,
+      "name": "44M",
+      "code": "M-1001-01771S-B-H",
+      "id": "44M",
+      "full_id": "44M",
+      "raw_id": "M-1001-01771S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "서하남JCT-하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 17.74,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.519871,
+      "lng": 127.188155,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "광암T/N2",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "VDS-101-19(Ring1)\nVDS-101-20(Ring3)",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-78,RSU-79",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "광암T/N2",
+      "vds": "VDS-101-19(Ring1)\nVDS-101-20(Ring3)",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-78,RSU-79",
+      "branch_info": "DSRC 5-2\nIOT",
+      "splice_point": "F",
+      "remarks": "준궁육교",
+      "terrain": null
+    },
+    {
+      "no": 46,
+      "name": "45M",
+      "code": "M-1001-01807S-B-H",
+      "id": "45M",
+      "full_id": "45M",
+      "raw_id": "M-1001-01807S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "서하남JCT-하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 18.08,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.522219,
+      "lng": 127.191133,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 47,
+      "name": "46M",
+      "code": "M-1001-01851S-P-H",
+      "id": "46M",
+      "full_id": "46M",
+      "raw_id": "M-1001-01851S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "서하남JCT-하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 18.51,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.52485,
+      "lng": 127.192828,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 48,
+      "name": "47M",
+      "code": "M-1001-01882S-B-H",
+      "id": "47M",
+      "full_id": "47M",
+      "raw_id": "M-1001-01882S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "서하남JCT-하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 18.82,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.528048,
+      "lng": 127.194698,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "C-ITS",
+          "name": "RSU-80",
+          "icon": "radio"
+        }
+      ],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-80",
+      "branch_info": null,
+      "splice_point": "F",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 49,
+      "name": "48M",
+      "code": "M-1001-01913S-B-H",
+      "id": "48M",
+      "full_id": "48M",
+      "raw_id": "M-1001-01913S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "서하남JCT-하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 19.13,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.530501,
+      "lng": 127.195296,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 50,
+      "name": "49M",
+      "code": "M-1001-01962S-B-H",
+      "id": "49M",
+      "full_id": "49M",
+      "raw_id": "M-1001-01962S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "서하남JCT-하남JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 19.62,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.531984,
+      "lng": 127.193722,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "하남J/C",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "VDS-101-21(Ring2)\n49M에서퇴계원방향\n30C로연장후 50M분기",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-81",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "하남J/C",
+      "vds": "VDS-101-21(Ring2)\n49M에서퇴계원방향\n30C로연장후 50M분기",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-81",
+      "branch_info": "~동서울지사 5.44\n~동서울영 4.187\nIOT",
+      "splice_point": "F",
+      "remarks": "60C →24C,30C",
+      "terrain": null
+    },
+    {
+      "no": 51,
+      "name": "50M",
+      "code": "M-1001-02021S-B-H",
+      "id": "50M",
+      "full_id": "50M",
+      "raw_id": "M-1001-02021S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "하남JCT-상일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 20.21,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.534426,
+      "lng": 127.188173,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "C-ITS",
+          "name": "RSU-82",
+          "icon": "radio"
+        }
+      ],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-82",
+      "branch_info": null,
+      "splice_point": "F",
+      "remarks": "24C(2001.11)30C(2002.10)준공",
+      "terrain": null
+    },
+    {
+      "no": 52,
+      "name": "51M",
+      "code": "M-1001-02060S-P-H",
+      "id": "51M",
+      "full_id": "51M",
+      "raw_id": "M-1001-02060S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "하남JCT-상일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 20.6,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.536868,
+      "lng": 127.185376,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "방음벽뒤  51M ~ 52M 내관",
+      "terrain": null
+    },
+    {
+      "no": 53,
+      "name": "52M",
+      "code": "M-1001-02105S-B-H",
+      "id": "52M",
+      "full_id": "52M",
+      "raw_id": "M-1001-02105S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "하남JCT-상일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 21.11,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.541381,
+      "lng": 127.182699,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "VDS-101-22(Ring1)\nVDS-101-23(Ring2)",
+          "icon": "activity"
+        }
+      ],
+      "cctv": null,
+      "vds": "VDS-101-22(Ring1)\nVDS-101-23(Ring2)",
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": "DSRC 6-1 제어기",
+      "splice_point": "F(삼진)",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 54,
+      "name": "53M(배)",
+      "code": "M-1001-02161S-B-H",
+      "id": "53M(배)",
+      "full_id": "53M(배)",
+      "raw_id": "M-1001-02161S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "하남JCT-상일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 21.61,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.545485,
+      "lng": 127.180598,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "상일IC",
+          "icon": "video"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-83,RSU-84",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "상일IC",
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-83,RSU-84",
+      "branch_info": "IOT",
+      "splice_point": "F(54C)",
+      "remarks": "24C,30C-->54C",
+      "terrain": null
+    },
+    {
+      "no": 55,
+      "name": "54M",
+      "code": "M-1001-02162S-P-H",
+      "id": "54M",
+      "full_id": "54M",
+      "raw_id": "M-1001-02162S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "하남JCT-상일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 21.62,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.545513,
+      "lng": 127.180754,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "54M ~ 55 M 내관",
+      "terrain": null
+    },
+    {
+      "no": 56,
+      "name": "55M",
+      "code": "M-1001-02202S-P-H",
+      "id": "55M",
+      "full_id": "55M",
+      "raw_id": "M-1001-02202S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "하남JCT-상일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 22.02,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.549617,
+      "lng": 127.178957,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 57,
+      "name": "56M",
+      "code": "M-1001-02242S-B-H",
+      "id": "56M",
+      "full_id": "56M",
+      "raw_id": "M-1001-02242S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "하남JCT-상일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 22.42,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.552861,
+      "lng": 127.177456,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "VDS-101-24(Ring1)",
+          "icon": "activity"
+        }
+      ],
+      "cctv": null,
+      "vds": "VDS-101-24(Ring1)",
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F(54c)빛샘",
+      "remarks": "횡단_본선",
+      "terrain": null
+    },
+    {
+      "no": 58,
+      "name": "57M",
+      "code": "M-1001-02243S-P-H",
+      "id": "57M",
+      "full_id": "57M",
+      "raw_id": "M-1001-02243S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "하남JCT-상일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 22.43,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.553013,
+      "lng": 127.177225,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "진출로",
+      "terrain": null
+    },
+    {
+      "no": 59,
+      "name": "58M",
+      "code": "M-1001-02285S-B-H",
+      "id": "58M",
+      "full_id": "58M",
+      "raw_id": "M-1001-02285S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "상일IC-강일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 22.99,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.557225,
+      "lng": 127.175527,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "2011년 12월 신설",
+      "terrain": null
+    },
+    {
+      "no": 60,
+      "name": "59-1M",
+      "code": "M-1001-02321S-B-H",
+      "id": "59-1M",
+      "full_id": "59-1M",
+      "raw_id": "M-1001-02321S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "상일IC-강일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 23.21,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.559098,
+      "lng": 127.174878,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "강일ic육교",
+          "icon": "video"
+        },
+        {
+          "type": "VMS",
+          "name": "상일 VMS",
+          "icon": "tv"
+        }
+      ],
+      "cctv": "강일ic육교",
+      "vds": null,
+      "vms": "상일 VMS",
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F(54C)",
+      "remarks": "2011년 12월 신설\n59-1M~강일CCTV(12코아중\n1~4CCTV / 12,8,9,10 VMS)\nCCTV함체에서->VMS함체로 연장",
+      "terrain": null
+    },
+    {
+      "no": 61,
+      "name": "59M",
+      "code": "M-1001-02340S-P-H",
+      "id": "59M",
+      "full_id": "59M",
+      "raw_id": "M-1001-02340S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "상일IC-강일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 23.7,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.563005,
+      "lng": 127.173366,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "2011년 12월 신설",
+      "terrain": null
+    },
+    {
+      "no": 62,
+      "name": "60M",
+      "code": "M-1001-02386S-B-H",
+      "id": "60M",
+      "full_id": "60M",
+      "raw_id": "M-1001-02386S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "상일IC-강일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 23.9,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.564824,
+      "lng": 127.17204,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "VDS-101-25(Ring2)\nVDS-101-26(Ring1)",
+          "icon": "activity"
+        }
+      ],
+      "cctv": null,
+      "vds": "VDS-101-25(Ring2)\nVDS-101-26(Ring1)",
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": "교통량조사장비\nD/L, SKN",
+      "splice_point": "F(54)만공",
+      "remarks": "54C\n59M(퇴계원)~60M(판교) VDS분기 케이블 본선 내관 사용",
+      "terrain": null
+    },
+    {
+      "no": 63,
+      "name": "61M",
+      "code": "M-1001-02422S-P-H",
+      "id": "61M",
+      "full_id": "61M",
+      "raw_id": "M-1001-02422S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "상일IC-강일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 24.25,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.567301,
+      "lng": 127.169972,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "신규 2013년",
+      "terrain": null
+    },
+    {
+      "no": 64,
+      "name": "62M",
+      "code": "M-1001-02465S-P-H",
+      "id": "62M",
+      "full_id": "62M",
+      "raw_id": "M-1001-02465S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "상일IC-강일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 24.65,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.570606,
+      "lng": 127.16697,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "신규 2013년",
+      "terrain": null
+    },
+    {
+      "no": 65,
+      "name": "63M",
+      "code": "M-1001-02481S-P-H",
+      "id": "63M",
+      "full_id": "63M",
+      "raw_id": "M-1001-02481S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "상일IC-강일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 24.81,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.571217,
+      "lng": 127.166551,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 66,
+      "name": "64M",
+      "code": "M-1001-02487S-B-H",
+      "id": "64M",
+      "full_id": "64M",
+      "raw_id": "M-1001-02487S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "상일IC-강일IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 24.87,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.573441,
+      "lng": 127.164525,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "강일IC",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "VDS-101-27(Ring4)",
+          "icon": "activity"
+        }
+      ],
+      "cctv": "강일IC",
+      "vds": "VDS-101-27(Ring4)",
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": "강동대교 교량계측\nDSRC 6-2\nIOT",
+      "splice_point": "F",
+      "remarks": "54C→50C,교량계측용24C 분기",
+      "terrain": null
+    },
+    {
+      "no": 67,
+      "name": "65M(배)",
+      "code": "M-1001-02598S-B-H",
+      "id": "65M(배)",
+      "full_id": "65M(배)",
+      "raw_id": "M-1001-02598S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "강일IC-남양주IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 25.98,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.581754,
+      "lng": 127.157797,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "토평IC",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "VDS-101-28(Ring3)",
+          "icon": "activity"
+        },
+        {
+          "type": "VMS",
+          "name": "VMS(구리)",
+          "icon": "tv"
+        }
+      ],
+      "cctv": "토평IC",
+      "vds": "VDS-101-28(Ring3)",
+      "vms": "VMS(구리)",
+      "ep": null,
+      "cits": null,
+      "branch_info": "DSRC 5-3독립형",
+      "splice_point": "F",
+      "remarks": "토평(영) 인입,50C → 54C",
+      "terrain": null
+    },
+    {
+      "no": 68,
+      "name": "66M",
+      "code": "M-1001-02637S-P-H",
+      "id": "66M",
+      "full_id": "66M",
+      "raw_id": "M-1001-02637S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "강일IC-남양주IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 26.37,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.585037,
+      "lng": 127.156294,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "방음벽뒤",
+      "terrain": null
+    },
+    {
+      "no": 69,
+      "name": "66-1H",
+      "code": "H-1001-02647S-P-H",
+      "id": "66-1H",
+      "full_id": "66-1H",
+      "raw_id": "H-1001-02647S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "강일IC-남양주IC",
+      "category": "수공",
+      "standard": "",
+      "sub_std1": "2호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 26.65,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.588187,
+      "lng": 127.156103,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "토평BS",
+      "terrain": null
+    },
+    {
+      "no": 70,
+      "name": "66-2H",
+      "code": "H-1001-02652S-P-H",
+      "id": "66-2H",
+      "full_id": "66-2H",
+      "raw_id": "H-1001-02652S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "강일IC-남양주IC",
+      "category": "수공",
+      "standard": "",
+      "sub_std1": "2호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 26.85,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.589229,
+      "lng": 127.155586,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "토평주차장",
+      "terrain": null
+    },
+    {
+      "no": 71,
+      "name": "66-3H",
+      "code": "H-1001-02689S-P-H",
+      "id": "66-3H",
+      "full_id": "66-3H",
+      "raw_id": "H-1001-02689S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "강일IC-남양주IC",
+      "category": "수공",
+      "standard": "",
+      "sub_std1": "2호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 26.89,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.589905,
+      "lng": 127.155612,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "67M바로전",
+      "terrain": null
+    },
+    {
+      "no": 72,
+      "name": "66-4H",
+      "code": "H-1001-02696S-P-H",
+      "id": "66-4H",
+      "full_id": "66-4H",
+      "raw_id": "H-1001-02696S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "강일IC-남양주IC",
+      "category": "수공",
+      "standard": "",
+      "sub_std1": "2호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 26.96,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.590595,
+      "lng": 127.156194,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "68M전",
+      "terrain": null
+    },
+    {
+      "no": 73,
+      "name": "67M",
+      "code": "M-1001-02690S-P-H",
+      "id": "67M",
+      "full_id": "67M",
+      "raw_id": "M-1001-02690S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "강일IC-남양주IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 26.9,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.5899394,
+      "lng": 127.155583,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "구리영업소(인입)",
+      "terrain": null
+    },
+    {
+      "no": 74,
+      "name": "68M(배)",
+      "code": "M-1001-02721S-B-H",
+      "id": "68M(배)",
+      "full_id": "68M(배)",
+      "raw_id": "M-1001-02721S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "강일IC-남양주IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 27.21,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.592171,
+      "lng": 127.156503,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F",
+      "remarks": "왕숙1교",
+      "terrain": null
+    },
+    {
+      "no": 75,
+      "name": "69M",
+      "code": "M-1001-02784S-B-H",
+      "id": "69M",
+      "full_id": "69M",
+      "raw_id": "M-1001-02784S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "강일IC-남양주IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 27.8,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.597473,
+      "lng": 127.155824,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "VDS-101-30(Ring4)",
+          "icon": "activity"
+        },
+        {
+          "type": "VMS",
+          "name": "VMS(판교)",
+          "icon": "tv"
+        }
+      ],
+      "cctv": null,
+      "vds": "VDS-101-30(Ring4)",
+      "vms": "VMS(판교)",
+      "ep": null,
+      "cits": null,
+      "branch_info": "DSRC 7-2",
+      "splice_point": "F",
+      "remarks": "도농교",
+      "terrain": null
+    },
+    {
+      "no": 76,
+      "name": "70M(배)",
+      "code": "M-1001-02822S-B-H",
+      "id": "70M(배)",
+      "full_id": "70M(배)",
+      "raw_id": "M-1001-02822S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "강일IC-남양주IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 28.22,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.60069,
+      "lng": 127.153933,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "남양주IC",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "VDS-101-31(Ring3)",
+          "icon": "activity"
+        }
+      ],
+      "cctv": "남양주IC",
+      "vds": "VDS-101-31(Ring3)",
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": "적재불량단속시스템\n(양방향)",
+      "splice_point": "F(만공)",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 77,
+      "name": "71M(배)",
+      "code": "M-1001-02855S-P-H",
+      "id": "71M(배)",
+      "full_id": "71M(배)",
+      "raw_id": "M-1001-02855S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "강일IC-남양주IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 28.55,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.602962,
+      "lng": 127.151618,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "왕수2교",
+      "terrain": null
+    },
+    {
+      "no": 78,
+      "name": "72M(배)",
+      "code": "M-1001-02920S-B-H",
+      "id": "72M(배)",
+      "full_id": "72M(배)",
+      "raw_id": "M-1001-02920S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "남양주IC-구리IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 29.2,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.607338,
+      "lng": 127.146304,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "VDS-101-32(Ring4)",
+          "icon": "activity"
+        }
+      ],
+      "cctv": null,
+      "vds": "VDS-101-32(Ring4)",
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": "IOT",
+      "splice_point": "F",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 79,
+      "name": "73M(배)",
+      "code": "M-1001-02974S-P-H",
+      "id": "73M(배)",
+      "full_id": "73M(배)",
+      "raw_id": "M-1001-02974S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "남양주IC-구리IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 29.74,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.611002,
+      "lng": 127.142892,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "인창교",
+      "terrain": null
+    },
+    {
+      "no": 80,
+      "name": "74M",
+      "code": "M-1001-03005S-B-H",
+      "id": "74M",
+      "full_id": "74M",
+      "raw_id": "M-1001-03005S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "남양주IC-구리IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 30.05,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.6140365,
+      "lng": 127.1417495,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "구리IC",
+          "icon": "video"
+        }
+      ],
+      "cctv": "구리IC",
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 81,
+      "name": "75M",
+      "code": "M-1001-03042S-B-H",
+      "id": "75M",
+      "full_id": "75M",
+      "raw_id": "M-1001-03042S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "남양주IC구리IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 30.42,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.6172261,
+      "lng": 127.1409174,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F",
+      "remarks": "동창육교,강관28mm X 2(~76M)",
+      "terrain": null
+    },
+    {
+      "no": 82,
+      "name": "76M",
+      "code": "M-1001-03088S-B-H",
+      "id": "76M",
+      "full_id": "76M",
+      "raw_id": "M-1001-03088S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "구리IC-퇴계원IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 30.88,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.621453,
+      "lng": 127.139953,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": "교통량조사장비",
+      "splice_point": "F",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 83,
+      "name": "77M",
+      "code": "M-1001-03121S-P-H",
+      "id": "77M",
+      "full_id": "77M",
+      "raw_id": "M-1001-03121S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "구리IC-퇴계원IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 31.32,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.62539,
+      "lng": 127.13905,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "방음벽",
+      "terrain": null
+    },
+    {
+      "no": 84,
+      "name": "78M",
+      "code": "M-1001-03179S-B-H",
+      "id": "78M",
+      "full_id": "78M",
+      "raw_id": "M-1001-03179S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "구리IC-퇴계원IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 31.79,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.629335,
+      "lng": 127.137431,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "VDS-101-35(Ring1)",
+          "icon": "activity"
+        }
+      ],
+      "cctv": null,
+      "vds": "VDS-101-35(Ring1)",
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": "DSRC 7-1 제어기\nIOT",
+      "splice_point": "F(만공)",
+      "remarks": "안달교",
+      "terrain": null
+    },
+    {
+      "no": 85,
+      "name": "79M",
+      "code": "M-1001-03224S-P-H",
+      "id": "79M",
+      "full_id": "79M",
+      "raw_id": "M-1001-03224S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "구리IC-퇴계원IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 32.24,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.632664,
+      "lng": 127.134764,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 86,
+      "name": "80M",
+      "code": "M-1001-03280S-B-H",
+      "id": "80M",
+      "full_id": "80M",
+      "raw_id": "M-1001-03280S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "구리IC-퇴계원IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 32.8,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.636601,
+      "lng": 127.133627,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "퇴계원IC",
+          "icon": "video"
+        }
+      ],
+      "cctv": "퇴계원IC",
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F",
+      "remarks": "퇴계원진입로(본선 안전지대)",
+      "terrain": null
+    },
+    {
+      "no": 87,
+      "name": "81M",
+      "code": "M-1001-03315S-P-H",
+      "id": "81M",
+      "full_id": "81M",
+      "raw_id": "M-1001-03315S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "퇴계원IC-종점",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 33.15,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.640112,
+      "lng": 127.132663,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 88,
+      "name": "82M",
+      "code": "M-1001-03369S-P-H",
+      "id": "82M",
+      "full_id": "82M",
+      "raw_id": "M-1001-03369S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "퇴계원IC-종점",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 33.69,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.643775,
+      "lng": 127.130165,
+      "completion_year": "1993",
+      "warranty_year": "1995",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F",
+      "remarks": "모르트 일부파손",
+      "terrain": null
+    },
+    {
+      "no": 89,
+      "name": "1M",
+      "code": "M-1003-12820S-B-H",
+      "id": "1M",
+      "full_id": "1M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12820S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 128.2,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.406264,
+      "lng": 127.095579,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F(144)",
+      "remarks": "판교 42C,30C,18C/청계72C\n경부선방향 72c 2조(#1판교,#2청계)",
+      "terrain": null
+    },
+    {
+      "no": 90,
+      "name": "2M",
+      "code": "M-1003-12770S-P-H",
+      "id": "2M",
+      "full_id": "2M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12770S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 127.7,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.405031,
+      "lng": 127.091826,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 91,
+      "name": "3M",
+      "code": "M-1003-12724S-B-H",
+      "id": "3M",
+      "full_id": "3M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12724S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 127.24,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.403166,
+      "lng": 127.087003,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "V-100-1 (1014CH)",
+          "icon": "activity"
+        }
+      ],
+      "cctv": null,
+      "vds": "V-100-1 (1014CH)",
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F(3M)",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 92,
+      "name": "4M",
+      "code": "M-1003-12681S-B-H",
+      "id": "4M",
+      "full_id": "4M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12681S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 126.81,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.400378,
+      "lng": 127.082726,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "판교JCT",
+          "icon": "video"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-61",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "판교JCT",
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-61",
+      "branch_info": null,
+      "splice_point": "F(레이켐)",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 93,
+      "name": "5M",
+      "code": "M-1003-12625S-B-H",
+      "id": "5M",
+      "full_id": "5M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12625S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 126.23,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.397473,
+      "lng": 127.078364,
+      "completion_year": "2017",
+      "warranty_year": "2018",
+      "equipment": [
+        {
+          "type": "C-ITS",
+          "name": "RSU-60",
+          "icon": "radio"
+        }
+      ],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-60",
+      "branch_info": "D/L\nIOT",
+      "splice_point": "F(빛샘)",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 94,
+      "name": "6M",
+      "code": "M-1003-12582S-P-H",
+      "id": "6M",
+      "full_id": "6M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12582S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 125.7,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.395869,
+      "lng": 127.073134,
+      "completion_year": "2017",
+      "warranty_year": "2018",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 95,
+      "name": "7M",
+      "code": "M-1003-12530S-B-H",
+      "id": "7M",
+      "full_id": "7M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12530S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 125.37,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.395588,
+      "lng": 127.069172,
+      "completion_year": "2017",
+      "warranty_year": "2018",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "V-100-2(1015CH)",
+          "icon": "activity"
+        }
+      ],
+      "cctv": null,
+      "vds": "V-100-2(1015CH)",
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": "DSRC 2-2",
+      "splice_point": "F(빛샘)",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 96,
+      "name": "8M",
+      "code": "M-1003-12490S-P-H",
+      "id": "8M",
+      "full_id": "8M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12490S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 124.99,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.395514,
+      "lng": 127.064835,
+      "completion_year": "2017",
+      "warranty_year": "2018",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 97,
+      "name": "9M",
+      "code": "M-1003-12442S-B-H",
+      "id": "9M",
+      "full_id": "9M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12442S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 124.42,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.395871,
+      "lng": 127.059087,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "운중교",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "V-100-3 (1014CH)",
+          "icon": "activity"
+        },
+        {
+          "type": "VMS",
+          "name": "판교(성남방향)",
+          "icon": "tv"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-59",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "운중교",
+      "vds": "V-100-3 (1014CH)",
+      "vms": "판교(성남방향)",
+      "ep": null,
+      "cits": "RSU-59",
+      "branch_info": null,
+      "splice_point": "F(레이켐)",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 98,
+      "name": "10M",
+      "code": "M-1003-12408S-B-H",
+      "id": "10M",
+      "full_id": "10M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12408S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 124.08,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.396437,
+      "lng": 127.055475,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "청계T/N",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "V-100-4 (1015CH)",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-58",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "청계T/N",
+      "vds": "V-100-4 (1015CH)",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-58",
+      "branch_info": "IOT",
+      "splice_point": "F(빗셈)",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 99,
+      "name": "11M",
+      "code": "M-1003-12358S-P-H",
+      "id": "11M",
+      "full_id": "11M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12358S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 123.58,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.396438,
+      "lng": 127.04996,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 100,
+      "name": "12M",
+      "code": "M-1003-12318S-P-H",
+      "id": "12M",
+      "full_id": "12M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12318S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 123.18,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.39576,
+      "lng": 127.045788,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 101,
+      "name": "13M",
+      "code": "M-1003-12286S-B-H",
+      "id": "13M",
+      "full_id": "13M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12286S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 122.86,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.395122,
+      "lng": 127.040621,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 102,
+      "name": "14M",
+      "code": "M-1003-12215S-P-H",
+      "id": "14M",
+      "full_id": "14M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12215S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 122.15,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.394351,
+      "lng": 127.034554,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "청계터널 중접 함체(12C)",
+      "terrain": null
+    },
+    {
+      "no": 103,
+      "name": "15M",
+      "code": "M-1003-12185S-B-H",
+      "id": "15M",
+      "full_id": "15M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12185S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 121.85,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.393535,
+      "lng": 127.030302,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "TTMS\n청계터널",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "V-100-5 (1014CH)",
+          "icon": "activity"
+        },
+        {
+          "type": "VMS",
+          "name": "청계(일산)",
+          "icon": "tv"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-57",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "TTMS\n청계터널",
+      "vds": "V-100-5 (1014CH)",
+      "vms": "청계(일산)",
+      "ep": null,
+      "cits": "RSU-57",
+      "branch_info": "DSRC 2-1 \n제어기",
+      "splice_point": "F(레이켐)",
+      "remarks": "신규TTMS링",
+      "terrain": null
+    },
+    {
+      "no": 104,
+      "name": "16M",
+      "code": "M-1003-12135S-P-H",
+      "id": "16M",
+      "full_id": "16M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12135S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 121.35,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.393488,
+      "lng": 127.025445,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "청계T/G",
+          "icon": "video"
+        }
+      ],
+      "cctv": "청계T/G",
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "영업소관내",
+      "terrain": null
+    },
+    {
+      "no": 105,
+      "name": "17M",
+      "code": "M-1003-12134S-B-H",
+      "id": "17M",
+      "full_id": "17M (판교JCT-청계TG)",
+      "raw_id": "M-1003-12134S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "판교JCT-청계TG",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 121.34,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.393623,
+      "lng": 127.025429,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "17M접속후16M분기",
+          "icon": "video"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-56",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "17M접속후16M분기",
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-56",
+      "branch_info": "D/L2조\nLGT1조",
+      "splice_point": "F(레이켐)",
+      "remarks": "청계영업소인입(30C)",
+      "terrain": null
+    },
+    {
+      "no": 106,
+      "name": "18M",
+      "code": "M-1003-12126S-P-H",
+      "id": "18M",
+      "full_id": "18M (청계TG-학의JCT)",
+      "raw_id": "M-1003-12126S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "청계TG-학의JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 121.26,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.393538,
+      "lng": 127.024567,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "영업소관내",
+      "terrain": null
+    },
+    {
+      "no": 107,
+      "name": "19M",
+      "code": "M-1003-12125S-P-H",
+      "id": "19M",
+      "full_id": "19M (청계TG-학의JCT)",
+      "raw_id": "M-1003-12125S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "청계TG-학의JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 121.25,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.39354,
+      "lng": 127.02455,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "영업소관내",
+      "terrain": null
+    },
+    {
+      "no": 108,
+      "name": "20M",
+      "code": "M-1003-12085S-P-H",
+      "id": "20M",
+      "full_id": "20M (청계TG-학의JCT)",
+      "raw_id": "M-1003-12085S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "청계TG-학의JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 120.85,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.393114,
+      "lng": 127.021744,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "SA진출로 본선화단\n20-1M(120.7K)",
+      "terrain": null
+    },
+    {
+      "no": 109,
+      "name": "21M",
+      "code": "M-1003-12035S-B-H",
+      "id": "21M",
+      "full_id": "21M (청계TG-학의JCT)",
+      "raw_id": "M-1003-12035S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "청계TG-학의JCT",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 120.35,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.392433,
+      "lng": 127.014132,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "V-100-6 (1013CH)",
+          "icon": "activity"
+        },
+        {
+          "type": "VMS",
+          "name": "청계(판교)",
+          "icon": "tv"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-55,IDS-17",
+          "icon": "radio"
+        }
+      ],
+      "cctv": null,
+      "vds": "V-100-6 (1013CH)",
+      "vms": "청계(판교)",
+      "ep": null,
+      "cits": "RSU-55,IDS-17",
+      "branch_info": "DSRC 1-2\nIOT",
+      "splice_point": "F",
+      "remarks": "학현교(닥트부식중)",
+      "terrain": null
+    },
+    {
+      "no": 110,
+      "name": "22M",
+      "code": "M-1003-11992S-P-H",
+      "id": "22M",
+      "full_id": "22M (학의JCT-평촌IC)",
+      "raw_id": "M-1003-11992S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "학의JCT-평촌IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 119.92,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.389705,
+      "lng": 127.007837,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 111,
+      "name": "23M",
+      "code": "M-1003-11950S-B-H",
+      "id": "23M",
+      "full_id": "23M (학의JCT-평촌IC)",
+      "raw_id": "M-1003-11950S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "학의JCT-평촌IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 119.5,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.388243,
+      "lng": 127.004452,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "V-100-7 (1013CH)",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-54",
+          "icon": "radio"
+        }
+      ],
+      "cctv": null,
+      "vds": "V-100-7 (1013CH)",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-54",
+      "branch_info": null,
+      "splice_point": "F",
+      "remarks": "학의대교(닥트철거)",
+      "terrain": null
+    },
+    {
+      "no": 112,
+      "name": "24M",
+      "code": "M-1003-11930S-P-H",
+      "id": "24M",
+      "full_id": "24M (학의JCT-평촌IC)",
+      "raw_id": "M-1003-11930S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "학의JCT-평촌IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 119.3,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.387747,
+      "lng": 127.002723,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "철재맨홀",
+      "terrain": null
+    },
+    {
+      "no": 113,
+      "name": "25M",
+      "code": "M-1003-11885S-P-H",
+      "id": "25M",
+      "full_id": "25M (학의JCT-평촌IC)",
+      "raw_id": "M-1003-11885S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "학의JCT-평촌IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 118.85,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.386601,
+      "lng": 126.99805,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "철재맨홀",
+      "terrain": null
+    },
+    {
+      "no": 114,
+      "name": "26M",
+      "code": "M-1003-11815S-B-H",
+      "id": "26M",
+      "full_id": "26M (학의JCT-평촌IC)",
+      "raw_id": "M-1003-11815S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "학의JCT-평촌IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 118.15,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.384511,
+      "lng": 126.990919,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "학의J/C",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "V-100-8 (1013CH)",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-53",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "학의J/C",
+      "vds": "V-100-8 (1013CH)",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-53",
+      "branch_info": "교통량조사",
+      "splice_point": "F(22년5월환체)",
+      "remarks": "DSRC 1-1 제어기",
+      "terrain": null
+    },
+    {
+      "no": 115,
+      "name": "27M",
+      "code": "M-1003-11782S-P-H",
+      "id": "27M",
+      "full_id": "27M (학의JCT-평촌IC)",
+      "raw_id": "M-1003-11782S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "학의JCT-평촌IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 117.82,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.383011,
+      "lng": 126.986948,
+      "completion_year": "2025",
+      "warranty_year": "2026",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 116,
+      "name": "28M",
+      "code": "M-1003-11746S-P-H",
+      "id": "28M",
+      "full_id": "28M (학의JCT-평촌IC)",
+      "raw_id": "M-1003-11746S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "학의JCT-평촌IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 117.46,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.381661,
+      "lng": 126.983366,
+      "completion_year": "2025",
+      "warranty_year": "2026",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F(25년5월신규)",
+      "remarks": null,
+      "terrain": null
+    },
+    {
+      "no": 117,
+      "name": "29M",
+      "code": "M-1003-11703S-B-H",
+      "id": "29M",
+      "full_id": "29M (학의JCT-평촌IC)",
+      "raw_id": "M-1003-11703S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "학의JCT-평촌IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 117.03,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.379845,
+      "lng": 126.97802,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [
+        {
+          "type": "CCTV",
+          "name": "평촌고가교",
+          "icon": "video"
+        },
+        {
+          "type": "VDS",
+          "name": "V-100-9 (1012CH)\nLCS2 / LCS3",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-52",
+          "icon": "radio"
+        }
+      ],
+      "cctv": "평촌고가교",
+      "vds": "V-100-9 (1012CH)\nLCS2 / LCS3",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-52",
+      "branch_info": "노면결빙\nIOT",
+      "splice_point": "F(25년5월환체)",
+      "remarks": "평촌고가교(닥트철거)",
+      "terrain": null
+    },
+    {
+      "no": 118,
+      "name": "30M",
+      "code": "M-1003-11632S-P-H",
+      "id": "30M",
+      "full_id": "30M (학의JCT-평촌IC)",
+      "raw_id": "M-1003-11632S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "학의JCT-평촌IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 116.32,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.381552,
+      "lng": 126.968254,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "철재맨홀",
+      "terrain": null
+    },
+    {
+      "no": 119,
+      "name": "31M",
+      "code": "M-1003-11576S-B-H",
+      "id": "31M",
+      "full_id": "31M (학의JCT-평촌IC)",
+      "raw_id": "M-1003-11576S-B-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "학의JCT-평촌IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 115.76,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.382046,
+      "lng": 126.96624,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [
+        {
+          "type": "VDS",
+          "name": "IOT",
+          "icon": "activity"
+        },
+        {
+          "type": "C-ITS",
+          "name": "RSU-51,RSU-50",
+          "icon": "radio"
+        }
+      ],
+      "cctv": null,
+      "vds": "IOT",
+      "vms": null,
+      "ep": null,
+      "cits": "RSU-51,RSU-50",
+      "branch_info": null,
+      "splice_point": "F",
+      "remarks": "철재맨홀",
+      "terrain": null
+    },
+    {
+      "no": 120,
+      "name": "32M",
+      "code": "M-1003-11515S-P-H",
+      "id": "32M",
+      "full_id": "32M (학의JCT-평촌IC)",
+      "raw_id": "M-1003-11515S-P-H",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "학의JCT-평촌IC",
+      "category": "인공",
+      "standard": "PMS형",
+      "sub_std1": "3호",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 115.15,
+      "bound": "상행선",
+      "direction": "일산방향",
+      "lat": 37.38165,
+      "lng": 126.962927,
+      "completion_year": "1995",
+      "warranty_year": "1997",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "철재맨홀",
+      "terrain": null
+    },
+    {
+      "no": 1120,
+      "name": "49-1H",
+      "code": "식별번호 없음(이정표 관리 노드)",
+      "id": "49-1H",
+      "full_id": "49-1H (하남JCT-상일IC)",
+      "raw_id": "",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "하남JCT-상일IC",
+      "category": "수공",
+      "standard": "기타 규격",
+      "sub_std1": "",
+      "sub_std2": "",
+      "type": "통과맨홀",
+      "milepost": 19.63,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.5373193,
+      "lng": 127.18510830000001,
+      "completion_year": "2011",
+      "warranty_year": "",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": null,
+      "remarks": "49-1M ~ 49-1H ~ 49M 내관",
+      "terrain": "토공"
+    },
+    {
+      "no": 1121,
+      "name": "59-1M",
+      "code": "식별번호 없음(이정표 관리 노드)",
+      "id": "59-1M",
+      "full_id": "59-1M (강일IC-남양주IC)",
+      "raw_id": "",
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "section": "강일IC-남양주IC",
+      "category": "인공",
+      "standard": "기타 규격",
+      "sub_std1": "",
+      "sub_std2": "",
+      "type": "접속맨홀",
+      "milepost": 23.21,
+      "bound": "상행선",
+      "direction": "판교방향",
+      "lat": 37.571439399999996,
+      "lng": 127.1663484,
+      "completion_year": "2011",
+      "warranty_year": "",
+      "equipment": [],
+      "cctv": null,
+      "vds": null,
+      "vms": null,
+      "ep": null,
+      "cits": null,
+      "branch_info": null,
+      "splice_point": "F(54C)",
+      "remarks": "59-1M~강일CCTV/상일VMS",
+      "terrain": "토공"
+    }
+  ],
+  "conduits": [
+    {
+      "no": 1,
+      "section": "판교JCT-성남IC",
+      "source_manhole_id": "2M",
+      "target_manhole_id": "3M",
+      "source_code": "M-1001-00021S-B-H",
+      "target_code": "M-1001-00062S-B-H",
+      "source_no": 1,
+      "target_no": 2,
+      "coordinates": [
+        [
+          37.406823,
+          127.097339
+        ],
+        [
+          37.407726,
+          127.101357
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 2,
+      "section": "판교JCT-성남IC",
+      "source_manhole_id": "3M",
+      "target_manhole_id": "4M",
+      "source_code": "M-1001-00062S-B-H",
+      "target_code": "M-1001-00125S-P-H",
+      "source_no": 2,
+      "target_no": 3,
+      "coordinates": [
+        [
+          37.407726,
+          127.101357
+        ],
+        [
+          37.407856,
+          127.10839
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 3,
+      "section": "판교JCT-성남IC",
+      "source_manhole_id": "4M",
+      "target_manhole_id": "5M",
+      "source_code": "M-1001-00125S-P-H",
+      "target_code": "M-1001-00162S-B-H",
+      "source_no": 3,
+      "target_no": 4,
+      "coordinates": [
+        [
+          37.407856,
+          127.10839
+        ],
+        [
+          37.409206,
+          127.115537
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2018"
+    },
+    {
+      "no": 4,
+      "section": "판교JCT-성남IC",
+      "source_manhole_id": "5M",
+      "target_manhole_id": "6M",
+      "source_code": "M-1001-00162S-B-H",
+      "target_code": "M-1001-00208S-B-H",
+      "source_no": 4,
+      "target_no": 5,
+      "coordinates": [
+        [
+          37.409206,
+          127.115537
+        ],
+        [
+          37.410498,
+          127.117402
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "터널",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 5,
+      "section": "판교JCT-성남IC",
+      "source_manhole_id": "6M",
+      "target_manhole_id": "7M",
+      "source_code": "M-1001-00208S-B-H",
+      "target_code": "M-1001-00253S-B-H",
+      "source_no": 5,
+      "target_no": 6,
+      "coordinates": [
+        [
+          37.410498,
+          127.117402
+        ],
+        [
+          37.413172,
+          127.119508
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 6,
+      "section": "판교JCT-성남IC",
+      "source_manhole_id": "7M",
+      "target_manhole_id": "8M",
+      "source_code": "M-1001-00253S-B-H",
+      "target_code": "M-1001-00310S-B-H",
+      "source_no": 6,
+      "target_no": 7,
+      "coordinates": [
+        [
+          37.413172,
+          127.119508
+        ],
+        [
+          37.417347,
+          127.122412
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 7,
+      "section": "판교JCT-성남IC",
+      "source_manhole_id": "8M",
+      "target_manhole_id": "9M",
+      "source_code": "M-1001-00310S-B-H",
+      "target_code": "M-1001-00359S-P-H",
+      "source_no": 7,
+      "target_no": 8,
+      "coordinates": [
+        [
+          37.417347,
+          127.122412
+        ],
+        [
+          37.42114,
+          127.123095
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 8,
+      "section": "판교JCT-성남IC",
+      "source_manhole_id": "9M",
+      "target_manhole_id": "10M",
+      "source_code": "M-1001-00359S-P-H",
+      "target_code": "M-1001-00395S-P-H",
+      "source_no": 8,
+      "target_no": 9,
+      "coordinates": [
+        [
+          37.42114,
+          127.123095
+        ],
+        [
+          37.424991,
+          127.123087
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 9,
+      "section": "판교JCT-성남IC",
+      "source_manhole_id": "10M",
+      "target_manhole_id": "11M",
+      "source_code": "M-1001-00395S-P-H",
+      "target_code": "M-1001-00442S-B-H",
+      "source_no": 9,
+      "target_no": 10,
+      "coordinates": [
+        [
+          37.424991,
+          127.123087
+        ],
+        [
+          37.428721,
+          127.123225
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 10,
+      "section": "판교JCT-성남IC",
+      "source_manhole_id": "11M",
+      "target_manhole_id": "12M",
+      "source_code": "M-1001-00442S-B-H",
+      "target_code": "M-1001-00443S-P-H",
+      "source_no": 10,
+      "target_no": 11,
+      "coordinates": [
+        [
+          37.428721,
+          127.123225
+        ],
+        [
+          37.4294,
+          127.123034
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 11,
+      "section": "판교JCT-성남IC",
+      "source_manhole_id": "12M",
+      "target_manhole_id": "13M",
+      "source_code": "M-1001-00443S-P-H",
+      "target_code": "M-1001-00501S-P-H",
+      "source_no": 11,
+      "target_no": 12,
+      "coordinates": [
+        [
+          37.4294,
+          127.123034
+        ],
+        [
+          37.433212,
+          127.123177
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 12,
+      "section": "판교JCT-성남IC",
+      "source_manhole_id": "13M",
+      "target_manhole_id": "14M",
+      "source_code": "M-1001-00501S-P-H",
+      "target_code": "M-1001-00508E-B-H",
+      "source_no": 12,
+      "target_no": 13,
+      "coordinates": [
+        [
+          37.433212,
+          127.123177
+        ],
+        [
+          37.435587,
+          127.123847
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 13,
+      "section": "성남IC-서하남JCT",
+      "source_manhole_id": "14M",
+      "target_manhole_id": "15M",
+      "source_code": "M-1001-00508E-B-H",
+      "target_code": "M-1001-00540E-B-H",
+      "source_no": 13,
+      "target_no": 14,
+      "coordinates": [
+        [
+          37.435587,
+          127.123847
+        ],
+        [
+          37.437811,
+          127.122972
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "영업소",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 14,
+      "section": "성남IC-송파IC",
+      "source_manhole_id": "15M",
+      "target_manhole_id": "16-1H",
+      "source_code": "M-1001-00540E-B-H",
+      "target_code": "H-1001-00565E-P-H",
+      "source_no": 14,
+      "target_no": 15,
+      "coordinates": [
+        [
+          37.437811,
+          127.122972
+        ],
+        [
+          37.44082,
+          127.123088
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 15,
+      "section": "성남IC-송파IC",
+      "source_manhole_id": "16-1H",
+      "target_manhole_id": "17M",
+      "source_code": "H-1001-00565E-P-H",
+      "target_code": "M-1001-00618E-P-H",
+      "source_no": 15,
+      "target_no": 16,
+      "coordinates": [
+        [
+          37.44082,
+          127.123088
+        ],
+        [
+          37.443839,
+          127.124351
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 16,
+      "section": "성남IC-송파IC",
+      "source_manhole_id": "17M",
+      "target_manhole_id": "18M",
+      "source_code": "M-1001-00618E-P-H",
+      "target_code": "M-1001-00657E-B-H",
+      "source_no": 16,
+      "target_no": 17,
+      "coordinates": [
+        [
+          37.443839,
+          127.124351
+        ],
+        [
+          37.446892,
+          127.125621
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 17,
+      "section": "성남IC-송파IC",
+      "source_manhole_id": "18M",
+      "target_manhole_id": "19-1H",
+      "source_code": "M-1001-00657E-B-H",
+      "target_code": "M-1001-00695E-P-H",
+      "source_no": 17,
+      "target_no": 18,
+      "coordinates": [
+        [
+          37.446892,
+          127.125621
+        ],
+        [
+          37.450525,
+          127.126259
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 18,
+      "section": "성남IC-송파IC",
+      "source_manhole_id": "19-1H",
+      "target_manhole_id": "20M",
+      "source_code": "M-1001-00695E-P-H",
+      "target_code": "M-1001-00696S-P-H",
+      "source_no": 18,
+      "target_no": 19,
+      "coordinates": [
+        [
+          37.450525,
+          127.126259
+        ],
+        [
+          37.450529,
+          127.125678
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 19,
+      "section": "성남IC-송파IC",
+      "source_manhole_id": "20M",
+      "target_manhole_id": "21M",
+      "source_code": "M-1001-00696S-P-H",
+      "target_code": "M-1001-00727S-B-H",
+      "source_no": 19,
+      "target_no": 20,
+      "coordinates": [
+        [
+          37.450529,
+          127.125678
+        ],
+        [
+          37.453784,
+          127.125639
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 20,
+      "section": "성남IC-송파IC",
+      "source_manhole_id": "21M",
+      "target_manhole_id": "22M",
+      "source_code": "M-1001-00727S-B-H",
+      "target_code": "M-1001-00781S-P-H",
+      "source_no": 20,
+      "target_no": 21,
+      "coordinates": [
+        [
+          37.453784,
+          127.125639
+        ],
+        [
+          37.457222,
+          127.125195
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 21,
+      "section": "성남IC-송파IC",
+      "source_manhole_id": "22M",
+      "target_manhole_id": "23M",
+      "source_code": "M-1001-00781S-P-H",
+      "target_code": "M-1001-00801S-B-H",
+      "source_no": 21,
+      "target_no": 22,
+      "coordinates": [
+        [
+          37.457222,
+          127.125195
+        ],
+        [
+          37.459745,
+          127.125099
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 22,
+      "section": "성남IC-송파IC",
+      "source_manhole_id": "23M",
+      "target_manhole_id": "24M",
+      "source_code": "M-1001-00801S-B-H",
+      "target_code": "M-1001-00870S-P-H",
+      "source_no": 22,
+      "target_no": 23,
+      "coordinates": [
+        [
+          37.459745,
+          127.125099
+        ],
+        [
+          37.465845,
+          127.125407
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 23,
+      "section": "성남IC-송파IC",
+      "source_manhole_id": "24M",
+      "target_manhole_id": "25M",
+      "source_code": "M-1001-00870S-P-H",
+      "target_code": "M-1001-00896S-B-H",
+      "source_no": 23,
+      "target_no": 24,
+      "coordinates": [
+        [
+          37.465845,
+          127.125407
+        ],
+        [
+          37.469056,
+          127.124826
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 24,
+      "section": "성남IC-송파IC",
+      "source_manhole_id": "25M",
+      "target_manhole_id": "26M",
+      "source_code": "M-1001-00896S-B-H",
+      "target_code": "M-1001-00925S-P-H",
+      "source_no": 24,
+      "target_no": 25,
+      "coordinates": [
+        [
+          37.469056,
+          127.124826
+        ],
+        [
+          37.472551,
+          127.125835
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "직매",
+      "outer_spec1": 28,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 25,
+      "section": "성남IC-송파IC",
+      "source_manhole_id": "26M",
+      "target_manhole_id": "27M",
+      "source_code": "M-1001-00925S-P-H",
+      "target_code": "M-1001-00950S-B-H",
+      "source_no": 25,
+      "target_no": 26,
+      "coordinates": [
+        [
+          37.472551,
+          127.125835
+        ],
+        [
+          37.474509,
+          127.127877
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "직매",
+      "outer_spec1": 28,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 26,
+      "section": "성남IC-송파IC",
+      "source_manhole_id": "27M",
+      "target_manhole_id": "28M",
+      "source_code": "M-1001-00950S-B-H",
+      "target_code": "M-1001-01002S-P-H",
+      "source_no": 26,
+      "target_no": 27,
+      "coordinates": [
+        [
+          37.474509,
+          127.127877
+        ],
+        [
+          37.477532,
+          127.132344
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 27,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "28M",
+      "target_manhole_id": "29M",
+      "source_code": "M-1001-01002S-P-H",
+      "target_code": "M-1001-01050S-B-H",
+      "source_no": 27,
+      "target_no": 28,
+      "coordinates": [
+        [
+          37.477532,
+          127.132344
+        ],
+        [
+          37.481026,
+          127.134972
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 28,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "29M",
+      "target_manhole_id": "30M",
+      "source_code": "M-1001-01050S-B-H",
+      "target_code": "M-1001-01093S-B-H",
+      "source_no": 28,
+      "target_no": 29,
+      "coordinates": [
+        [
+          37.481026,
+          127.134972
+        ],
+        [
+          37.483153,
+          127.135391
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 29,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "30M",
+      "target_manhole_id": "31M",
+      "source_code": "M-1001-01093S-B-H",
+      "target_code": "M-1001-01131S-B-H",
+      "source_no": 29,
+      "target_no": 30,
+      "coordinates": [
+        [
+          37.483153,
+          127.135391
+        ],
+        [
+          37.487652,
+          127.136187
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 30,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "31M",
+      "target_manhole_id": "32M",
+      "source_code": "M-1001-01131S-B-H",
+      "target_code": "M-1001-01165S-P-H",
+      "source_no": 30,
+      "target_no": 31,
+      "coordinates": [
+        [
+          37.487652,
+          127.136187
+        ],
+        [
+          37.489901,
+          127.136881
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 31,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "32M",
+      "target_manhole_id": "33M",
+      "source_code": "M-1001-01165S-P-H",
+      "target_code": "M-1001-01202S-B-H",
+      "source_no": 31,
+      "target_no": 32,
+      "coordinates": [
+        [
+          37.489901,
+          127.136881
+        ],
+        [
+          37.494765,
+          127.139192
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 32,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "33M",
+      "target_manhole_id": "34M",
+      "source_code": "M-1001-01202S-B-H",
+      "target_code": "M-1001-01308S-B-H",
+      "source_no": 32,
+      "target_no": 33,
+      "coordinates": [
+        [
+          37.494765,
+          127.139192
+        ],
+        [
+          37.503279,
+          127.143384
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 33,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "34M",
+      "target_manhole_id": "35M",
+      "source_code": "M-1001-01308S-B-H",
+      "target_code": "M-1001-01337S-B-H",
+      "source_no": 33,
+      "target_no": 34,
+      "coordinates": [
+        [
+          37.503279,
+          127.143384
+        ],
+        [
+          37.506489,
+          127.145351
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 34,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "35M",
+      "target_manhole_id": "36M",
+      "source_code": "M-1001-01337S-B-H",
+      "target_code": "M-1001-01379S-P-H",
+      "source_no": 34,
+      "target_no": 35,
+      "coordinates": [
+        [
+          37.506489,
+          127.145351
+        ],
+        [
+          37.509158,
+          127.147083
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 35,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "36M",
+      "target_manhole_id": "37M",
+      "source_code": "M-1001-01379S-P-H",
+      "target_code": "M-1001-01412S-P-H",
+      "source_no": 35,
+      "target_no": 36,
+      "coordinates": [
+        [
+          37.509158,
+          127.147083
+        ],
+        [
+          37.511496,
+          127.149364
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 36,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "37M",
+      "target_manhole_id": "38M",
+      "source_code": "M-1001-01412S-P-H",
+      "target_code": "M-1001-01454S-B-H",
+      "source_no": 36,
+      "target_no": 37,
+      "coordinates": [
+        [
+          37.511496,
+          127.149364
+        ],
+        [
+          37.513205762230214,
+          127.15388348606811
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 37,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "38M",
+      "target_manhole_id": "39M",
+      "source_code": "M-1001-01454S-B-H",
+      "target_code": "M-1001-01455S-P-H",
+      "source_no": 37,
+      "target_no": 38,
+      "coordinates": [
+        [
+          37.513205762230214,
+          127.15388348606811
+        ],
+        [
+          37.51324536888914,
+          127.15399109287927
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 38,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "39M",
+      "target_manhole_id": "39-1H",
+      "source_code": "M-1001-01455S-P-H",
+      "target_code": "H-1001-01456S-P-R",
+      "source_no": 38,
+      "target_no": 39,
+      "coordinates": [
+        [
+          37.51324536888914,
+          127.15399109287927
+        ],
+        [
+          37.51328489870555,
+          127.15409869969041
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 39,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "39-1H",
+      "target_manhole_id": "40M",
+      "source_code": "H-1001-01456S-P-R",
+      "target_code": "M-1001-01495S-B-H",
+      "source_no": 39,
+      "target_no": 40,
+      "coordinates": [
+        [
+          37.51328489870555,
+          127.15409869969041
+        ],
+        [
+          37.51474960461726,
+          127.15829536532509
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 40,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "40M",
+      "target_manhole_id": "41M",
+      "source_code": "M-1001-01495S-B-H",
+      "target_code": "M-1001-01602S-B-H",
+      "source_no": 40,
+      "target_no": 41,
+      "coordinates": [
+        [
+          37.51474960461726,
+          127.15829536532509
+        ],
+        [
+          37.51756023952164,
+          127.16980929411766
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2025"
+    },
+    {
+      "no": 41,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "41M",
+      "target_manhole_id": "41M",
+      "source_code": "M-1001-01602S-B-H",
+      "target_code": "M-1001-01603S-B-H",
+      "source_no": 41,
+      "target_no": 42,
+      "coordinates": [
+        [
+          37.51756023952164,
+          127.16980929411766
+        ],
+        [
+          37.517576617733624,
+          127.1699169009288
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 5,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2025"
+    },
+    {
+      "no": 42,
+      "section": "송파IC-서하남JCT",
+      "source_manhole_id": "41M",
+      "target_manhole_id": "42M",
+      "source_code": "M-1001-01603S-B-H",
+      "target_code": "M-1001-01648S-B-H",
+      "source_no": 42,
+      "target_no": 43,
+      "coordinates": [
+        [
+          37.517576617733624,
+          127.1699169009288
+        ],
+        [
+          37.51813656396393,
+          127.17475920743034
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2025"
+    },
+    {
+      "no": 43,
+      "section": "서하남JCT-하남JCT",
+      "source_manhole_id": "42M",
+      "target_manhole_id": "43M",
+      "source_code": "M-1001-01648S-B-H",
+      "target_code": "M-1001-01735S-B-H",
+      "source_no": 43,
+      "target_no": 44,
+      "coordinates": [
+        [
+          37.51813656396393,
+          127.17475920743034
+        ],
+        [
+          37.518535,
+          127.184121
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "직매",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2025"
+    },
+    {
+      "no": 44,
+      "section": "서하남JCT-하남JCT",
+      "source_manhole_id": "43M",
+      "target_manhole_id": "44M",
+      "source_code": "M-1001-01735S-B-H",
+      "target_code": "M-1001-01771S-B-H",
+      "source_no": 44,
+      "target_no": 45,
+      "coordinates": [
+        [
+          37.518535,
+          127.184121
+        ],
+        [
+          37.519871,
+          127.188155
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 45,
+      "section": "서하남JCT-하남JCT",
+      "source_manhole_id": "44M",
+      "target_manhole_id": "45M",
+      "source_code": "M-1001-01771S-B-H",
+      "target_code": "M-1001-01807S-B-H",
+      "source_no": 45,
+      "target_no": 46,
+      "coordinates": [
+        [
+          37.519871,
+          127.188155
+        ],
+        [
+          37.522219,
+          127.191133
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 46,
+      "section": "서하남JCT-하남JCT",
+      "source_manhole_id": "45M",
+      "target_manhole_id": "46M",
+      "source_code": "M-1001-01807S-B-H",
+      "target_code": "M-1001-01851S-P-H",
+      "source_no": 46,
+      "target_no": 47,
+      "coordinates": [
+        [
+          37.522219,
+          127.191133
+        ],
+        [
+          37.52485,
+          127.192828
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 47,
+      "section": "서하남JCT-하남JCT",
+      "source_manhole_id": "46M",
+      "target_manhole_id": "47M",
+      "source_code": "M-1001-01851S-P-H",
+      "target_code": "M-1001-01882S-B-H",
+      "source_no": 47,
+      "target_no": 48,
+      "coordinates": [
+        [
+          37.52485,
+          127.192828
+        ],
+        [
+          37.528048,
+          127.194698
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 48,
+      "section": "서하남JCT-하남JCT",
+      "source_manhole_id": "47M",
+      "target_manhole_id": "48M",
+      "source_code": "M-1001-01882S-B-H",
+      "target_code": "M-1001-01913S-B-H",
+      "source_no": 48,
+      "target_no": 49,
+      "coordinates": [
+        [
+          37.528048,
+          127.194698
+        ],
+        [
+          37.530501,
+          127.195296
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 49,
+      "section": "서하남JCT-하남JCT",
+      "source_manhole_id": "48M",
+      "target_manhole_id": "49M",
+      "source_code": "M-1001-01913S-B-H",
+      "target_code": "M-1001-01962S-B-H",
+      "source_no": 49,
+      "target_no": 50,
+      "coordinates": [
+        [
+          37.530501,
+          127.195296
+        ],
+        [
+          37.531984,
+          127.193722
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 50,
+      "section": "서하남JCT-하남JCT",
+      "source_manhole_id": "49M",
+      "target_manhole_id": "50M",
+      "source_code": "M-1001-01962S-B-H",
+      "target_code": "M-1001-02021S-B-H",
+      "source_no": 50,
+      "target_no": 51,
+      "coordinates": [
+        [
+          37.531984,
+          127.193722
+        ],
+        [
+          37.534426,
+          127.188173
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 51,
+      "section": "하남JCT-상일IC",
+      "source_manhole_id": "50M",
+      "target_manhole_id": "51M",
+      "source_code": "M-1001-02021S-B-H",
+      "target_code": "M-1001-02060S-P-H",
+      "source_no": 51,
+      "target_no": 52,
+      "coordinates": [
+        [
+          37.534426,
+          127.188173
+        ],
+        [
+          37.536868,
+          127.185376
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 52,
+      "section": "하남JCT-상일IC",
+      "source_manhole_id": "51M",
+      "target_manhole_id": "52M",
+      "source_code": "M-1001-02060S-P-H",
+      "target_code": "M-1001-02105S-B-H",
+      "source_no": 52,
+      "target_no": 53,
+      "coordinates": [
+        [
+          37.536868,
+          127.185376
+        ],
+        [
+          37.541381,
+          127.182699
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 53,
+      "section": "하남JCT-상일IC",
+      "source_manhole_id": "52M",
+      "target_manhole_id": "53M(배)",
+      "source_code": "M-1001-02105S-B-H",
+      "target_code": "M-1001-02161S-B-H",
+      "source_no": 53,
+      "target_no": 54,
+      "coordinates": [
+        [
+          37.541381,
+          127.182699
+        ],
+        [
+          37.545485,
+          127.180598
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 54,
+      "section": "하남JCT-상일IC",
+      "source_manhole_id": "53M(배)",
+      "target_manhole_id": "54M",
+      "source_code": "M-1001-02161S-B-H",
+      "target_code": "M-1001-02162S-P-H",
+      "source_no": 54,
+      "target_no": 55,
+      "coordinates": [
+        [
+          37.545485,
+          127.180598
+        ],
+        [
+          37.545513,
+          127.180754
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 55,
+      "section": "하남JCT-상일IC",
+      "source_manhole_id": "54M",
+      "target_manhole_id": "55M",
+      "source_code": "M-1001-02162S-P-H",
+      "target_code": "M-1001-02202S-P-H",
+      "source_no": 55,
+      "target_no": 56,
+      "coordinates": [
+        [
+          37.545513,
+          127.180754
+        ],
+        [
+          37.549617,
+          127.178957
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 56,
+      "section": "하남JCT-상일IC",
+      "source_manhole_id": "55M",
+      "target_manhole_id": "56M",
+      "source_code": "M-1001-02202S-P-H",
+      "target_code": "M-1001-02242S-B-H",
+      "source_no": 56,
+      "target_no": 57,
+      "coordinates": [
+        [
+          37.549617,
+          127.178957
+        ],
+        [
+          37.552861,
+          127.177456
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 57,
+      "section": "하남JCT-상일IC",
+      "source_manhole_id": "56M",
+      "target_manhole_id": "57M",
+      "source_code": "M-1001-02242S-B-H",
+      "target_code": "M-1001-02243S-P-H",
+      "source_no": 57,
+      "target_no": 58,
+      "coordinates": [
+        [
+          37.552861,
+          127.177456
+        ],
+        [
+          37.553013,
+          127.177225
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 58,
+      "section": "하남JCT-상일IC",
+      "source_manhole_id": "57M",
+      "target_manhole_id": "58M",
+      "source_code": "M-1001-02243S-P-H",
+      "target_code": "M-1001-02285S-B-H",
+      "source_no": 58,
+      "target_no": 59,
+      "coordinates": [
+        [
+          37.553013,
+          127.177225
+        ],
+        [
+          37.557225,
+          127.175527
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 59,
+      "section": "상일IC-강일IC",
+      "source_manhole_id": "58M",
+      "target_manhole_id": "59-1M",
+      "source_code": "M-1001-02285S-B-H",
+      "target_code": "M-1001-02321S-B-H",
+      "source_no": 59,
+      "target_no": 60,
+      "coordinates": [
+        [
+          37.557225,
+          127.175527
+        ],
+        [
+          37.559098,
+          127.174878
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 60,
+      "section": "상일IC-강일IC",
+      "source_manhole_id": "59-1M",
+      "target_manhole_id": "59M",
+      "source_code": "M-1001-02321S-B-H",
+      "target_code": "M-1001-02340S-P-H",
+      "source_no": 60,
+      "target_no": 61,
+      "coordinates": [
+        [
+          37.559098,
+          127.174878
+        ],
+        [
+          37.563005,
+          127.173366
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 61,
+      "section": "상일IC-강일IC",
+      "source_manhole_id": "59M",
+      "target_manhole_id": "60M",
+      "source_code": "M-1001-02340S-P-H",
+      "target_code": "M-1001-02386S-B-H",
+      "source_no": 61,
+      "target_no": 62,
+      "coordinates": [
+        [
+          37.563005,
+          127.173366
+        ],
+        [
+          37.564824,
+          127.17204
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 62,
+      "section": "상일IC-강일IC",
+      "source_manhole_id": "60M",
+      "target_manhole_id": "61M",
+      "source_code": "M-1001-02386S-B-H",
+      "target_code": "M-1001-02422S-P-H",
+      "source_no": 62,
+      "target_no": 63,
+      "coordinates": [
+        [
+          37.564824,
+          127.17204
+        ],
+        [
+          37.567301,
+          127.169972
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 63,
+      "section": "상일IC-강일IC",
+      "source_manhole_id": "61M",
+      "target_manhole_id": "62M",
+      "source_code": "M-1001-02422S-P-H",
+      "target_code": "M-1001-02465S-P-H",
+      "source_no": 63,
+      "target_no": 64,
+      "coordinates": [
+        [
+          37.567301,
+          127.169972
+        ],
+        [
+          37.570606,
+          127.16697
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 64,
+      "section": "상일IC-강일IC",
+      "source_manhole_id": "62M",
+      "target_manhole_id": "63M",
+      "source_code": "M-1001-02465S-P-H",
+      "target_code": "M-1001-02481S-P-H",
+      "source_no": 64,
+      "target_no": 65,
+      "coordinates": [
+        [
+          37.570606,
+          127.16697
+        ],
+        [
+          37.571217,
+          127.166551
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 65,
+      "section": "상일IC-강일IC",
+      "source_manhole_id": "63M",
+      "target_manhole_id": "64M",
+      "source_code": "M-1001-02481S-P-H",
+      "target_code": "M-1001-02487S-B-H",
+      "source_no": 65,
+      "target_no": 66,
+      "coordinates": [
+        [
+          37.571217,
+          127.166551
+        ],
+        [
+          37.573441,
+          127.164525
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 66,
+      "section": "상일IC-강일IC",
+      "source_manhole_id": "64M",
+      "target_manhole_id": "65M(배)",
+      "source_code": "M-1001-02487S-B-H",
+      "target_code": "M-1001-02598S-B-H",
+      "source_no": 66,
+      "target_no": 67,
+      "coordinates": [
+        [
+          37.573441,
+          127.164525
+        ],
+        [
+          37.581754,
+          127.157797
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 67,
+      "section": "강일IC-남양주IC",
+      "source_manhole_id": "65M(배)",
+      "target_manhole_id": "66M",
+      "source_code": "M-1001-02598S-B-H",
+      "target_code": "M-1001-02637S-P-H",
+      "source_no": 67,
+      "target_no": 68,
+      "coordinates": [
+        [
+          37.581754,
+          127.157797
+        ],
+        [
+          37.585037,
+          127.156294
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 68,
+      "section": "강일IC-남양주IC",
+      "source_manhole_id": "66M",
+      "target_manhole_id": "66-1H",
+      "source_code": "M-1001-02637S-P-H",
+      "target_code": "H-1001-02647S-P-H",
+      "source_no": 68,
+      "target_no": 69,
+      "coordinates": [
+        [
+          37.585037,
+          127.156294
+        ],
+        [
+          37.588187,
+          127.156103
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 69,
+      "section": "강일IC-남양주IC",
+      "source_manhole_id": "66-1H",
+      "target_manhole_id": "66-2H",
+      "source_code": "H-1001-02647S-P-H",
+      "target_code": "H-1001-02652S-P-H",
+      "source_no": 69,
+      "target_no": 70,
+      "coordinates": [
+        [
+          37.588187,
+          127.156103
+        ],
+        [
+          37.589229,
+          127.155586
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 70,
+      "section": "강일IC-남양주IC",
+      "source_manhole_id": "66-2H",
+      "target_manhole_id": "66-3H",
+      "source_code": "H-1001-02652S-P-H",
+      "target_code": "H-1001-02689S-P-H",
+      "source_no": 70,
+      "target_no": 71,
+      "coordinates": [
+        [
+          37.589229,
+          127.155586
+        ],
+        [
+          37.589905,
+          127.155612
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 71,
+      "section": "강일IC-남양주IC",
+      "source_manhole_id": "66-3H",
+      "target_manhole_id": "66-4H",
+      "source_code": "H-1001-02689S-P-H",
+      "target_code": "H-1001-02696S-P-H",
+      "source_no": 71,
+      "target_no": 72,
+      "coordinates": [
+        [
+          37.589905,
+          127.155612
+        ],
+        [
+          37.590595,
+          127.156194
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 72,
+      "section": "강일IC-남양주IC",
+      "source_manhole_id": "66-4H",
+      "target_manhole_id": "67M",
+      "source_code": "H-1001-02696S-P-H",
+      "target_code": "M-1001-02690S-P-H",
+      "source_no": 72,
+      "target_no": 73,
+      "coordinates": [
+        [
+          37.590595,
+          127.156194
+        ],
+        [
+          37.5899394,
+          127.155583
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 73,
+      "section": "강일IC-남양주IC",
+      "source_manhole_id": "67M",
+      "target_manhole_id": "68M(배)",
+      "source_code": "M-1001-02690S-P-H",
+      "target_code": "M-1001-02721S-B-H",
+      "source_no": 73,
+      "target_no": 74,
+      "coordinates": [
+        [
+          37.5899394,
+          127.155583
+        ],
+        [
+          37.592171,
+          127.156503
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 74,
+      "section": "강일IC-남양주IC",
+      "source_manhole_id": "68M(배)",
+      "target_manhole_id": "69M",
+      "source_code": "M-1001-02721S-B-H",
+      "target_code": "M-1001-02784S-B-H",
+      "source_no": 74,
+      "target_no": 75,
+      "coordinates": [
+        [
+          37.592171,
+          127.156503
+        ],
+        [
+          37.597473,
+          127.155824
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 75,
+      "section": "강일IC-남양주IC",
+      "source_manhole_id": "69M",
+      "target_manhole_id": "70M(배)",
+      "source_code": "M-1001-02784S-B-H",
+      "target_code": "M-1001-02822S-B-H",
+      "source_no": 75,
+      "target_no": 76,
+      "coordinates": [
+        [
+          37.597473,
+          127.155824
+        ],
+        [
+          37.60069,
+          127.153933
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 76,
+      "section": "강일IC-남양주IC",
+      "source_manhole_id": "70M(배)",
+      "target_manhole_id": "71M(배)",
+      "source_code": "M-1001-02822S-B-H",
+      "target_code": "M-1001-02855S-P-H",
+      "source_no": 76,
+      "target_no": 77,
+      "coordinates": [
+        [
+          37.60069,
+          127.153933
+        ],
+        [
+          37.602962,
+          127.151618
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 77,
+      "section": "강일IC-남양주IC",
+      "source_manhole_id": "71M(배)",
+      "target_manhole_id": "72M(배)",
+      "source_code": "M-1001-02855S-P-H",
+      "target_code": "M-1001-02920S-B-H",
+      "source_no": 77,
+      "target_no": 78,
+      "coordinates": [
+        [
+          37.602962,
+          127.151618
+        ],
+        [
+          37.607338,
+          127.146304
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 78,
+      "section": "남양주IC-구리IC",
+      "source_manhole_id": "72M(배)",
+      "target_manhole_id": "73M(배)",
+      "source_code": "M-1001-02920S-B-H",
+      "target_code": "M-1001-02974S-P-H",
+      "source_no": 78,
+      "target_no": 79,
+      "coordinates": [
+        [
+          37.607338,
+          127.146304
+        ],
+        [
+          37.611002,
+          127.142892
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 79,
+      "section": "남양주IC-구리IC",
+      "source_manhole_id": "73M(배)",
+      "target_manhole_id": "74M",
+      "source_code": "M-1001-02974S-P-H",
+      "target_code": "M-1001-03005S-B-H",
+      "source_no": 79,
+      "target_no": 80,
+      "coordinates": [
+        [
+          37.611002,
+          127.142892
+        ],
+        [
+          37.6140365,
+          127.1417495
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 80,
+      "section": "남양주IC-구리IC",
+      "source_manhole_id": "74M",
+      "target_manhole_id": "75M",
+      "source_code": "M-1001-03005S-B-H",
+      "target_code": "M-1001-03042S-B-H",
+      "source_no": 80,
+      "target_no": 81,
+      "coordinates": [
+        [
+          37.6140365,
+          127.1417495
+        ],
+        [
+          37.6172261,
+          127.1409174
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 81,
+      "section": "남양주IC구리IC",
+      "source_manhole_id": "75M",
+      "target_manhole_id": "76M",
+      "source_code": "M-1001-03042S-B-H",
+      "target_code": "M-1001-03088S-B-H",
+      "source_no": 81,
+      "target_no": 82,
+      "coordinates": [
+        [
+          37.6172261,
+          127.1409174
+        ],
+        [
+          37.621453,
+          127.139953
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 82,
+      "section": "구리IC-퇴계원IC",
+      "source_manhole_id": "76M",
+      "target_manhole_id": "77M",
+      "source_code": "M-1001-03088S-B-H",
+      "target_code": "M-1001-03121S-P-H",
+      "source_no": 82,
+      "target_no": 83,
+      "coordinates": [
+        [
+          37.621453,
+          127.139953
+        ],
+        [
+          37.62539,
+          127.13905
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 83,
+      "section": "구리IC-퇴계원IC",
+      "source_manhole_id": "77M",
+      "target_manhole_id": "78M",
+      "source_code": "M-1001-03121S-P-H",
+      "target_code": "M-1001-03179S-B-H",
+      "source_no": 83,
+      "target_no": 84,
+      "coordinates": [
+        [
+          37.62539,
+          127.13905
+        ],
+        [
+          37.629335,
+          127.137431
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 84,
+      "section": "구리IC-퇴계원IC",
+      "source_manhole_id": "78M",
+      "target_manhole_id": "79M",
+      "source_code": "M-1001-03179S-B-H",
+      "target_code": "M-1001-03224S-P-H",
+      "source_no": 84,
+      "target_no": 85,
+      "coordinates": [
+        [
+          37.629335,
+          127.137431
+        ],
+        [
+          37.632664,
+          127.134764
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 85,
+      "section": "구리IC-퇴계원IC",
+      "source_manhole_id": "79M",
+      "target_manhole_id": "80M",
+      "source_code": "M-1001-03224S-P-H",
+      "target_code": "M-1001-03280S-B-H",
+      "source_no": 85,
+      "target_no": 86,
+      "coordinates": [
+        [
+          37.632664,
+          127.134764
+        ],
+        [
+          37.636601,
+          127.133627
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 86,
+      "section": "구리IC-퇴계원IC",
+      "source_manhole_id": "80M",
+      "target_manhole_id": "81M",
+      "source_code": "M-1001-03280S-B-H",
+      "target_code": "M-1001-03315S-P-H",
+      "source_no": 86,
+      "target_no": 87,
+      "coordinates": [
+        [
+          37.636601,
+          127.133627
+        ],
+        [
+          37.640112,
+          127.132663
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 87,
+      "section": "퇴계원IC-종점",
+      "source_manhole_id": "81M",
+      "target_manhole_id": "82M",
+      "source_code": "M-1001-03315S-P-H",
+      "target_code": "M-1001-03369S-P-H",
+      "source_no": 87,
+      "target_no": 88,
+      "coordinates": [
+        [
+          37.640112,
+          127.132663
+        ],
+        [
+          37.643775,
+          127.130165
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
+    },
+    {
+      "no": 89,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "1M",
+      "target_manhole_id": "2M",
+      "source_code": "M-1003-12820S-B-H",
+      "target_code": "M-1003-12770S-P-H",
+      "source_no": 89,
+      "target_no": 90,
+      "coordinates": [
+        [
+          37.406264,
+          127.095579
+        ],
+        [
+          37.405031,
+          127.091826
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 90,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "2M",
+      "target_manhole_id": "3M",
+      "source_code": "M-1003-12770S-P-H",
+      "target_code": "M-1003-12724S-B-H",
+      "source_no": 90,
+      "target_no": 91,
+      "coordinates": [
+        [
+          37.405031,
+          127.091826
+        ],
+        [
+          37.403166,
+          127.087003
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 91,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "3M",
+      "target_manhole_id": "4M",
+      "source_code": "M-1003-12724S-B-H",
+      "target_code": "M-1003-12681S-B-H",
+      "source_no": 91,
+      "target_no": 92,
+      "coordinates": [
+        [
+          37.403166,
+          127.087003
+        ],
+        [
+          37.400378,
+          127.082726
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 92,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "4M",
+      "target_manhole_id": "5M",
+      "source_code": "M-1003-12681S-B-H",
+      "target_code": "M-1003-12625S-B-H",
+      "source_no": 92,
+      "target_no": 93,
+      "coordinates": [
+        [
+          37.400378,
+          127.082726
+        ],
+        [
+          37.397473,
+          127.078364
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2017"
+    },
+    {
+      "no": 93,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "5M",
+      "target_manhole_id": "6M",
+      "source_code": "M-1003-12625S-B-H",
+      "target_code": "M-1003-12582S-P-H",
+      "source_no": 93,
+      "target_no": 94,
+      "coordinates": [
+        [
+          37.397473,
+          127.078364
+        ],
+        [
+          37.395869,
+          127.073134
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2017"
+    },
+    {
+      "no": 94,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "6M",
+      "target_manhole_id": "7M",
+      "source_code": "M-1003-12582S-P-H",
+      "target_code": "M-1003-12530S-B-H",
+      "source_no": 94,
+      "target_no": 95,
+      "coordinates": [
+        [
+          37.395869,
+          127.073134
+        ],
+        [
+          37.395588,
+          127.069172
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2017"
+    },
+    {
+      "no": 95,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "7M",
+      "target_manhole_id": "8M",
+      "source_code": "M-1003-12530S-B-H",
+      "target_code": "M-1003-12490S-P-H",
+      "source_no": 95,
+      "target_no": 96,
+      "coordinates": [
+        [
+          37.395588,
+          127.069172
+        ],
+        [
+          37.395514,
+          127.064835
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2017"
+    },
+    {
+      "no": 96,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "8M",
+      "target_manhole_id": "9M",
+      "source_code": "M-1003-12490S-P-H",
+      "target_code": "M-1003-12442S-B-H",
+      "source_no": 96,
+      "target_no": 97,
+      "coordinates": [
+        [
+          37.395514,
+          127.064835
+        ],
+        [
+          37.395871,
+          127.059087
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2017"
+    },
+    {
+      "no": 97,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "9M",
+      "target_manhole_id": "10M",
+      "source_code": "M-1003-12442S-B-H",
+      "target_code": "M-1003-12408S-B-H",
+      "source_no": 97,
+      "target_no": 98,
+      "coordinates": [
+        [
+          37.395871,
+          127.059087
+        ],
+        [
+          37.396437,
+          127.055475
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 98,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "10M",
+      "target_manhole_id": "11M",
+      "source_code": "M-1003-12408S-B-H",
+      "target_code": "M-1003-12358S-P-H",
+      "source_no": 98,
+      "target_no": 99,
+      "coordinates": [
+        [
+          37.396437,
+          127.055475
+        ],
+        [
+          37.396438,
+          127.04996
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 99,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "11M",
+      "target_manhole_id": "12M",
+      "source_code": "M-1003-12358S-P-H",
+      "target_code": "M-1003-12318S-P-H",
+      "source_no": 99,
+      "target_no": 100,
+      "coordinates": [
+        [
+          37.396438,
+          127.04996
+        ],
+        [
+          37.39576,
+          127.045788
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 100,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "12M",
+      "target_manhole_id": "13M",
+      "source_code": "M-1003-12318S-P-H",
+      "target_code": "M-1003-12286S-B-H",
+      "source_no": 100,
+      "target_no": 101,
+      "coordinates": [
+        [
+          37.39576,
+          127.045788
+        ],
+        [
+          37.395122,
+          127.040621
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 101,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "13M",
+      "target_manhole_id": "14M",
+      "source_code": "M-1003-12286S-B-H",
+      "target_code": "M-1003-12215S-P-H",
+      "source_no": 101,
+      "target_no": 102,
+      "coordinates": [
+        [
+          37.395122,
+          127.040621
+        ],
+        [
+          37.394351,
+          127.034554
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 102,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "14M",
+      "target_manhole_id": "15M",
+      "source_code": "M-1003-12215S-P-H",
+      "target_code": "M-1003-12185S-B-H",
+      "source_no": 102,
+      "target_no": 103,
+      "coordinates": [
+        [
+          37.394351,
+          127.034554
+        ],
+        [
+          37.393535,
+          127.030302
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 103,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "15M",
+      "target_manhole_id": "16M",
+      "source_code": "M-1003-12185S-B-H",
+      "target_code": "M-1003-12135S-P-H",
+      "source_no": 103,
+      "target_no": 104,
+      "coordinates": [
+        [
+          37.393535,
+          127.030302
+        ],
+        [
+          37.393488,
+          127.025445
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 104,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "16M",
+      "target_manhole_id": "17M",
+      "source_code": "M-1003-12135S-P-H",
+      "target_code": "M-1003-12134S-B-H",
+      "source_no": 104,
+      "target_no": 105,
+      "coordinates": [
+        [
+          37.393488,
+          127.025445
+        ],
+        [
+          37.393623,
+          127.025429
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 105,
+      "section": "판교JCT-청계TG",
+      "source_manhole_id": "17M",
+      "target_manhole_id": "18M",
+      "source_code": "M-1003-12134S-B-H",
+      "target_code": "M-1003-12126S-P-H",
+      "source_no": 105,
+      "target_no": 106,
+      "coordinates": [
+        [
+          37.393623,
+          127.025429
+        ],
+        [
+          37.393538,
+          127.024567
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 106,
+      "section": "청계TG-학의JCT",
+      "source_manhole_id": "18M",
+      "target_manhole_id": "19M",
+      "source_code": "M-1003-12126S-P-H",
+      "target_code": "M-1003-12125S-P-H",
+      "source_no": 106,
+      "target_no": 107,
+      "coordinates": [
+        [
+          37.393538,
+          127.024567
+        ],
+        [
+          37.39354,
+          127.02455
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 107,
+      "section": "청계TG-학의JCT",
+      "source_manhole_id": "19M",
+      "target_manhole_id": "20M",
+      "source_code": "M-1003-12125S-P-H",
+      "target_code": "M-1003-12085S-P-H",
+      "source_no": 107,
+      "target_no": 108,
+      "coordinates": [
+        [
+          37.39354,
+          127.02455
+        ],
+        [
+          37.393114,
+          127.021744
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 108,
+      "section": "청계TG-학의JCT",
+      "source_manhole_id": "20M",
+      "target_manhole_id": "21M",
+      "source_code": "M-1003-12085S-P-H",
+      "target_code": "M-1003-12035S-B-H",
+      "source_no": 108,
+      "target_no": 109,
+      "coordinates": [
+        [
+          37.393114,
+          127.021744
+        ],
+        [
+          37.392433,
+          127.014132
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 109,
+      "section": "청계TG-학의JCT",
+      "source_manhole_id": "21M",
+      "target_manhole_id": "22M",
+      "source_code": "M-1003-12035S-B-H",
+      "target_code": "M-1003-11992S-P-H",
+      "source_no": 109,
+      "target_no": 110,
+      "coordinates": [
+        [
+          37.392433,
+          127.014132
+        ],
+        [
+          37.389705,
+          127.007837
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 110,
+      "section": "학의JCT-평촌IC",
+      "source_manhole_id": "22M",
+      "target_manhole_id": "23M",
+      "source_code": "M-1003-11992S-P-H",
+      "target_code": "M-1003-11950S-B-H",
+      "source_no": 110,
+      "target_no": 111,
+      "coordinates": [
+        [
+          37.389705,
+          127.007837
+        ],
+        [
+          37.388243,
+          127.004452
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 111,
+      "section": "학의JCT-평촌IC",
+      "source_manhole_id": "23M",
+      "target_manhole_id": "24M",
+      "source_code": "M-1003-11950S-B-H",
+      "target_code": "M-1003-11930S-P-H",
+      "source_no": 111,
+      "target_no": 112,
+      "coordinates": [
+        [
+          37.388243,
+          127.004452
+        ],
+        [
+          37.387747,
+          127.002723
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 112,
+      "section": "학의JCT-평촌IC",
+      "source_manhole_id": "24M",
+      "target_manhole_id": "25M",
+      "source_code": "M-1003-11930S-P-H",
+      "target_code": "M-1003-11885S-P-H",
+      "source_no": 112,
+      "target_no": 113,
+      "coordinates": [
+        [
+          37.387747,
+          127.002723
+        ],
+        [
+          37.386601,
+          126.99805
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "교량",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 113,
+      "section": "학의JCT-평촌IC",
+      "source_manhole_id": "25M",
+      "target_manhole_id": "26M",
+      "source_code": "M-1003-11885S-P-H",
+      "target_code": "M-1003-11815S-B-H",
+      "source_no": 113,
+      "target_no": 114,
+      "coordinates": [
+        [
+          37.386601,
+          126.99805
+        ],
+        [
+          37.384511,
+          126.990919
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "교량",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 114,
+      "section": "학의JCT-평촌IC",
+      "source_manhole_id": "26M",
+      "target_manhole_id": "27M",
+      "source_code": "M-1003-11815S-B-H",
+      "target_code": "M-1003-11782S-P-H",
+      "source_no": 114,
+      "target_no": 115,
+      "coordinates": [
+        [
+          37.384511,
+          126.990919
+        ],
+        [
+          37.383011,
+          126.986948
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2025"
+    },
+    {
+      "no": 115,
+      "section": "학의JCT-평촌IC",
+      "source_manhole_id": "27M",
+      "target_manhole_id": "28M",
+      "source_code": "M-1003-11782S-P-H",
+      "target_code": "M-1003-11746S-P-H",
+      "source_no": 115,
+      "target_no": 116,
+      "coordinates": [
+        [
+          37.383011,
+          126.986948
+        ],
+        [
+          37.381661,
+          126.983366
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2025"
+    },
+    {
+      "no": 116,
+      "section": "학의JCT-평촌IC",
+      "source_manhole_id": "28M",
+      "target_manhole_id": "29M",
+      "source_code": "M-1003-11746S-P-H",
+      "target_code": "M-1003-11703S-B-H",
+      "source_no": 116,
+      "target_no": 117,
+      "coordinates": [
+        [
+          37.381661,
+          126.983366
+        ],
+        [
+          37.379845,
+          126.97802
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2025"
+    },
+    {
+      "no": 117,
+      "section": "학의JCT-평촌IC",
+      "source_manhole_id": "29M",
+      "target_manhole_id": "30M",
+      "source_code": "M-1003-11703S-B-H",
+      "target_code": "M-1003-11632S-P-H",
+      "source_no": 117,
+      "target_no": 118,
+      "coordinates": [
+        [
+          37.379845,
+          126.97802
+        ],
+        [
+          37.381552,
+          126.968254
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 118,
+      "section": "학의JCT-평촌IC",
+      "source_manhole_id": "30M",
+      "target_manhole_id": "31M",
+      "source_code": "M-1003-11632S-P-H",
+      "target_code": "M-1003-11576S-B-H",
+      "source_no": 118,
+      "target_no": 119,
+      "coordinates": [
+        [
+          37.381552,
+          126.968254
+        ],
+        [
+          37.382046,
+          126.96624
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "교량",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 119,
+      "section": "학의JCT-평촌IC",
+      "source_manhole_id": "31M",
+      "target_manhole_id": "32M",
+      "source_code": "M-1003-11576S-B-H",
+      "target_code": "M-1003-11515S-P-H",
+      "source_no": 119,
+      "target_no": 120,
+      "coordinates": [
+        [
+          37.382046,
+          126.96624
+        ],
+        [
+          37.38165,
+          126.962927
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "교량",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
+    },
+    {
+      "no": 120,
+      "section": "판교JCT 분기선",
+      "source_manhole_id": "2M",
+      "target_manhole_id": "1M",
+      "source_code": "M-1001-00021S-B-H",
+      "target_code": "M-1003-12820S-B-H",
+      "source_no": 1,
+      "target_no": 89,
+      "coordinates": [
+        [
+          37.406823,
+          127.097339
+        ],
+        [
+          37.406264,
+          127.095579
+        ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로(분기점)",
+      "pipe_type": "PVC (강관보호)",
+      "outer_spec1": 150,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망 (분기연결)",
+      "completion_year": "1995",
+      "warranty_year": "1995"
+    }
+  ],
+  "cables": [
+    {
+      "no": 1,
+      "section": "판교JCT-성남TG",
+      "total_cores": 30,
+      "expansion_round": "3차",
+      "length_km": 1993.0,
+      "start_point": "",
+      "end_point": "2001",
+      "coordinates": [
+        [
+          37.406823,
+          127.097339
+        ],
+        [
+          37.407726,
+          127.101357
+        ],
+        [
+          37.407856,
+          127.10839
+        ],
+        [
+          37.409206,
+          127.115537
+        ],
+        [
+          37.410498,
+          127.117402
+        ],
+        [
+          37.413172,
+          127.119508
+        ],
+        [
+          37.417347,
+          127.122412
+        ],
+        [
+          37.42114,
+          127.123095
+        ],
+        [
+          37.424991,
+          127.123087
+        ],
+        [
+          37.428721,
+          127.123225
+        ],
+        [
+          37.4294,
+          127.123034
+        ],
+        [
+          37.433212,
+          127.123177
+        ],
+        [
+          37.435587,
+          127.123847
+        ]
+      ],
+      "node_count": 13,
+      "node_path": [
+        "2M",
+        "3M",
+        "4M",
+        "5M",
+        "6M",
+        "7M",
+        "8M",
+        "9M",
+        "10M",
+        "11M",
+        "12M",
+        "13M",
+        "14M"
+      ]
+    },
+    {
+      "no": 2,
+      "section": "성남TG-송파IC",
+      "total_cores": 72,
+      "expansion_round": "3차",
+      "length_km": 0.0,
+      "start_point": "",
+      "end_point": "2002",
+      "coordinates": [
+        [
+          37.435587,
+          127.123847
+        ],
+        [
+          37.437811,
+          127.122972
+        ],
+        [
+          37.44082,
+          127.123088
+        ],
+        [
+          37.443839,
+          127.124351
+        ],
+        [
+          37.446892,
+          127.125621
+        ],
+        [
+          37.450525,
+          127.126259
+        ],
+        [
+          37.450529,
+          127.125678
+        ],
+        [
+          37.453784,
+          127.125639
+        ],
+        [
+          37.457222,
+          127.125195
+        ],
+        [
+          37.459745,
+          127.125099
+        ],
+        [
+          37.465845,
+          127.125407
+        ],
+        [
+          37.469056,
+          127.124826
+        ],
+        [
+          37.472551,
+          127.125835
+        ],
+        [
+          37.474509,
+          127.127877
+        ],
+        [
+          37.477532,
+          127.132344
+        ],
+        [
+          37.481026,
+          127.134972
+        ]
+      ],
+      "node_count": 16,
+      "node_path": [
+        "14M",
+        "15M",
+        "16-1H",
+        "17M",
+        "18M",
+        "19-1H",
+        "20M",
+        "21M",
+        "22M",
+        "23M",
+        "24M",
+        "25M",
+        "26M",
+        "27M",
+        "28M",
+        "29M"
+      ]
+    },
+    {
+      "no": 3,
+      "section": "송파IC-동서울지사",
+      "total_cores": 72,
+      "expansion_round": "24",
+      "length_km": 0.0,
+      "start_point": "",
+      "end_point": "2002",
+      "coordinates": [
+        [
+          37.406823,
+          127.097339
+        ],
+        [
+          37.407726,
+          127.101357
+        ],
+        [
+          37.407856,
+          127.10839
+        ],
+        [
+          37.409206,
+          127.115537
+        ],
+        [
+          37.410498,
+          127.117402
+        ],
+        [
+          37.413172,
+          127.119508
+        ],
+        [
+          37.417347,
+          127.122412
+        ],
+        [
+          37.42114,
+          127.123095
+        ],
+        [
+          37.424991,
+          127.123087
+        ],
+        [
+          37.428721,
+          127.123225
+        ],
+        [
+          37.4294,
+          127.123034
+        ],
+        [
+          37.433212,
+          127.123177
+        ],
+        [
+          37.435587,
+          127.123847
+        ],
+        [
+          37.437811,
+          127.122972
+        ],
+        [
+          37.44082,
+          127.123088
+        ],
+        [
+          37.443839,
+          127.124351
+        ],
+        [
+          37.446892,
+          127.125621
+        ],
+        [
+          37.450525,
+          127.126259
+        ],
+        [
+          37.450529,
+          127.125678
+        ],
+        [
+          37.453784,
+          127.125639
+        ],
+        [
+          37.457222,
+          127.125195
+        ],
+        [
+          37.459745,
+          127.125099
+        ],
+        [
+          37.465845,
+          127.125407
+        ],
+        [
+          37.469056,
+          127.124826
+        ],
+        [
+          37.472551,
+          127.125835
+        ],
+        [
+          37.474509,
+          127.127877
+        ],
+        [
+          37.477532,
+          127.132344
+        ],
+        [
+          37.481026,
+          127.134972
+        ],
+        [
+          37.483153,
+          127.135391
+        ],
+        [
+          37.487652,
+          127.136187
+        ],
+        [
+          37.489901,
+          127.136881
+        ],
+        [
+          37.494765,
+          127.139192
+        ],
+        [
+          37.503279,
+          127.143384
+        ],
+        [
+          37.506489,
+          127.145351
+        ],
+        [
+          37.509158,
+          127.147083
+        ],
+        [
+          37.511496,
+          127.149364
+        ],
+        [
+          37.513205762230214,
+          127.15388348606811
+        ],
+        [
+          37.51324536888914,
+          127.15399109287927
+        ],
+        [
+          37.51328489870555,
+          127.15409869969041
+        ],
+        [
+          37.51474960461726,
+          127.15829536532509
+        ],
+        [
+          37.51756023952164,
+          127.16980929411766
+        ],
+        [
+          37.517576617733624,
+          127.1699169009288
+        ],
+        [
+          37.51813656396393,
+          127.17475920743034
+        ],
+        [
+          37.518535,
+          127.184121
+        ],
+        [
+          37.519871,
+          127.188155
+        ],
+        [
+          37.522219,
+          127.191133
+        ],
+        [
+          37.52485,
+          127.192828
+        ],
+        [
+          37.528048,
+          127.194698
+        ],
+        [
+          37.530501,
+          127.195296
+        ],
+        [
+          37.531984,
+          127.193722
+        ],
+        [
+          37.534426,
+          127.188173
+        ],
+        [
+          37.536868,
+          127.185376
+        ],
+        [
+          37.541381,
+          127.182699
+        ],
+        [
+          37.545485,
+          127.180598
+        ],
+        [
+          37.545513,
+          127.180754
+        ],
+        [
+          37.549617,
+          127.178957
+        ],
+        [
+          37.552861,
+          127.177456
+        ],
+        [
+          37.553013,
+          127.177225
+        ],
+        [
+          37.557225,
+          127.175527
+        ],
+        [
+          37.559098,
+          127.174878
+        ],
+        [
+          37.563005,
+          127.173366
+        ],
+        [
+          37.564824,
+          127.17204
+        ],
+        [
+          37.567301,
+          127.169972
+        ],
+        [
+          37.570606,
+          127.16697
+        ],
+        [
+          37.571217,
+          127.166551
+        ],
+        [
+          37.573441,
+          127.164525
+        ],
+        [
+          37.581754,
+          127.157797
+        ],
+        [
+          37.585037,
+          127.156294
+        ],
+        [
+          37.588187,
+          127.156103
+        ],
+        [
+          37.589229,
+          127.155586
+        ],
+        [
+          37.589905,
+          127.155612
+        ],
+        [
+          37.590595,
+          127.156194
+        ],
+        [
+          37.5899394,
+          127.155583
+        ],
+        [
+          37.592171,
+          127.156503
+        ],
+        [
+          37.597473,
+          127.155824
+        ],
+        [
+          37.60069,
+          127.153933
+        ],
+        [
+          37.602962,
+          127.151618
+        ],
+        [
+          37.607338,
+          127.146304
+        ],
+        [
+          37.611002,
+          127.142892
+        ],
+        [
+          37.6140365,
+          127.1417495
+        ],
+        [
+          37.6172261,
+          127.1409174
+        ],
+        [
+          37.621453,
+          127.139953
+        ],
+        [
+          37.62539,
+          127.13905
+        ],
+        [
+          37.629335,
+          127.137431
+        ],
+        [
+          37.632664,
+          127.134764
+        ],
+        [
+          37.636601,
+          127.133627
+        ],
+        [
+          37.640112,
+          127.132663
+        ],
+        [
+          37.643775,
+          127.130165
+        ]
+      ],
+      "node_count": 88,
+      "node_path": [
+        "2M",
+        "3M",
+        "4M",
+        "5M",
+        "6M",
+        "7M",
+        "8M",
+        "9M",
+        "10M",
+        "11M",
+        "12M",
+        "13M",
+        "14M",
+        "15M",
+        "16-1H",
+        "17M",
+        "18M",
+        "19-1H",
+        "20M",
+        "21M",
+        "22M",
+        "23M",
+        "24M",
+        "25M",
+        "26M",
+        "27M",
+        "28M",
+        "29M",
+        "30M",
+        "31M",
+        "32M",
+        "33M",
+        "34M",
+        "35M",
+        "36M",
+        "37M",
+        "38M",
+        "39M",
+        "39-1H",
+        "40M",
+        "41M",
+        "41M",
+        "42M",
+        "43M",
+        "44M",
+        "45M",
+        "46M",
+        "47M",
+        "48M",
+        "49M",
+        "50M",
+        "51M",
+        "52M",
+        "53M(배)",
+        "54M",
+        "55M",
+        "56M",
+        "57M",
+        "58M",
+        "59-1M",
+        "59M",
+        "60M",
+        "61M",
+        "62M",
+        "63M",
+        "64M",
+        "65M(배)",
+        "66M",
+        "66-1H",
+        "66-2H",
+        "66-3H",
+        "66-4H",
+        "67M",
+        "68M(배)",
+        "69M",
+        "70M(배)",
+        "71M(배)",
+        "72M(배)",
+        "73M(배)",
+        "74M",
+        "75M",
+        "76M",
+        "77M",
+        "78M",
+        "79M",
+        "80M",
+        "81M",
+        "82M"
+      ]
+    },
+    {
+      "no": 4,
+      "section": "동서울지사-하남JCT",
+      "total_cores": 72,
+      "expansion_round": "96",
+      "length_km": 1993.0,
+      "start_point": "",
+      "end_point": "",
+      "coordinates": [
+        [
+          37.406823,
+          127.097339
+        ],
+        [
+          37.407726,
+          127.101357
+        ],
+        [
+          37.407856,
+          127.10839
+        ],
+        [
+          37.409206,
+          127.115537
+        ],
+        [
+          37.410498,
+          127.117402
+        ],
+        [
+          37.413172,
+          127.119508
+        ],
+        [
+          37.417347,
+          127.122412
+        ],
+        [
+          37.42114,
+          127.123095
+        ],
+        [
+          37.424991,
+          127.123087
+        ],
+        [
+          37.428721,
+          127.123225
+        ],
+        [
+          37.4294,
+          127.123034
+        ],
+        [
+          37.433212,
+          127.123177
+        ],
+        [
+          37.435587,
+          127.123847
+        ],
+        [
+          37.437811,
+          127.122972
+        ],
+        [
+          37.44082,
+          127.123088
+        ],
+        [
+          37.443839,
+          127.124351
+        ],
+        [
+          37.446892,
+          127.125621
+        ],
+        [
+          37.450525,
+          127.126259
+        ],
+        [
+          37.450529,
+          127.125678
+        ],
+        [
+          37.453784,
+          127.125639
+        ],
+        [
+          37.457222,
+          127.125195
+        ],
+        [
+          37.459745,
+          127.125099
+        ],
+        [
+          37.465845,
+          127.125407
+        ],
+        [
+          37.469056,
+          127.124826
+        ],
+        [
+          37.472551,
+          127.125835
+        ],
+        [
+          37.474509,
+          127.127877
+        ],
+        [
+          37.477532,
+          127.132344
+        ],
+        [
+          37.481026,
+          127.134972
+        ],
+        [
+          37.483153,
+          127.135391
+        ],
+        [
+          37.487652,
+          127.136187
+        ],
+        [
+          37.489901,
+          127.136881
+        ],
+        [
+          37.494765,
+          127.139192
+        ],
+        [
+          37.503279,
+          127.143384
+        ],
+        [
+          37.506489,
+          127.145351
+        ],
+        [
+          37.509158,
+          127.147083
+        ],
+        [
+          37.511496,
+          127.149364
+        ],
+        [
+          37.513205762230214,
+          127.15388348606811
+        ],
+        [
+          37.51324536888914,
+          127.15399109287927
+        ],
+        [
+          37.51328489870555,
+          127.15409869969041
+        ],
+        [
+          37.51474960461726,
+          127.15829536532509
+        ],
+        [
+          37.51756023952164,
+          127.16980929411766
+        ],
+        [
+          37.517576617733624,
+          127.1699169009288
+        ],
+        [
+          37.51813656396393,
+          127.17475920743034
+        ],
+        [
+          37.518535,
+          127.184121
+        ],
+        [
+          37.519871,
+          127.188155
+        ],
+        [
+          37.522219,
+          127.191133
+        ],
+        [
+          37.52485,
+          127.192828
+        ],
+        [
+          37.528048,
+          127.194698
+        ],
+        [
+          37.530501,
+          127.195296
+        ],
+        [
+          37.531984,
+          127.193722
+        ],
+        [
+          37.534426,
+          127.188173
+        ],
+        [
+          37.536868,
+          127.185376
+        ],
+        [
+          37.541381,
+          127.182699
+        ],
+        [
+          37.545485,
+          127.180598
+        ],
+        [
+          37.545513,
+          127.180754
+        ],
+        [
+          37.549617,
+          127.178957
+        ],
+        [
+          37.552861,
+          127.177456
+        ],
+        [
+          37.553013,
+          127.177225
+        ],
+        [
+          37.557225,
+          127.175527
+        ],
+        [
+          37.559098,
+          127.174878
+        ],
+        [
+          37.563005,
+          127.173366
+        ],
+        [
+          37.564824,
+          127.17204
+        ],
+        [
+          37.567301,
+          127.169972
+        ],
+        [
+          37.570606,
+          127.16697
+        ],
+        [
+          37.571217,
+          127.166551
+        ],
+        [
+          37.573441,
+          127.164525
+        ],
+        [
+          37.581754,
+          127.157797
+        ],
+        [
+          37.585037,
+          127.156294
+        ],
+        [
+          37.588187,
+          127.156103
+        ],
+        [
+          37.589229,
+          127.155586
+        ],
+        [
+          37.589905,
+          127.155612
+        ],
+        [
+          37.590595,
+          127.156194
+        ],
+        [
+          37.5899394,
+          127.155583
+        ],
+        [
+          37.592171,
+          127.156503
+        ],
+        [
+          37.597473,
+          127.155824
+        ],
+        [
+          37.60069,
+          127.153933
+        ],
+        [
+          37.602962,
+          127.151618
+        ],
+        [
+          37.607338,
+          127.146304
+        ],
+        [
+          37.611002,
+          127.142892
+        ],
+        [
+          37.6140365,
+          127.1417495
+        ],
+        [
+          37.6172261,
+          127.1409174
+        ],
+        [
+          37.621453,
+          127.139953
+        ],
+        [
+          37.62539,
+          127.13905
+        ],
+        [
+          37.629335,
+          127.137431
+        ],
+        [
+          37.632664,
+          127.134764
+        ],
+        [
+          37.636601,
+          127.133627
+        ],
+        [
+          37.640112,
+          127.132663
+        ],
+        [
+          37.643775,
+          127.130165
+        ]
+      ],
+      "node_count": 88,
+      "node_path": [
+        "2M",
+        "3M",
+        "4M",
+        "5M",
+        "6M",
+        "7M",
+        "8M",
+        "9M",
+        "10M",
+        "11M",
+        "12M",
+        "13M",
+        "14M",
+        "15M",
+        "16-1H",
+        "17M",
+        "18M",
+        "19-1H",
+        "20M",
+        "21M",
+        "22M",
+        "23M",
+        "24M",
+        "25M",
+        "26M",
+        "27M",
+        "28M",
+        "29M",
+        "30M",
+        "31M",
+        "32M",
+        "33M",
+        "34M",
+        "35M",
+        "36M",
+        "37M",
+        "38M",
+        "39M",
+        "39-1H",
+        "40M",
+        "41M",
+        "41M",
+        "42M",
+        "43M",
+        "44M",
+        "45M",
+        "46M",
+        "47M",
+        "48M",
+        "49M",
+        "50M",
+        "51M",
+        "52M",
+        "53M(배)",
+        "54M",
+        "55M",
+        "56M",
+        "57M",
+        "58M",
+        "59-1M",
+        "59M",
+        "60M",
+        "61M",
+        "62M",
+        "63M",
+        "64M",
+        "65M(배)",
+        "66M",
+        "66-1H",
+        "66-2H",
+        "66-3H",
+        "66-4H",
+        "67M",
+        "68M(배)",
+        "69M",
+        "70M(배)",
+        "71M(배)",
+        "72M(배)",
+        "73M(배)",
+        "74M",
+        "75M",
+        "76M",
+        "77M",
+        "78M",
+        "79M",
+        "80M",
+        "81M",
+        "82M"
+      ]
+    },
+    {
+      "no": 5,
+      "section": "하남JCT-상일IC",
+      "total_cores": 24,
+      "expansion_round": "3차",
+      "length_km": 1993.0,
+      "start_point": "",
+      "end_point": "2001",
+      "coordinates": [
+        [
+          37.531984,
+          127.193722
+        ],
+        [
+          37.534426,
+          127.188173
+        ],
+        [
+          37.536868,
+          127.185376
+        ],
+        [
+          37.541381,
+          127.182699
+        ],
+        [
+          37.545485,
+          127.180598
+        ],
+        [
+          37.545513,
+          127.180754
+        ],
+        [
+          37.549617,
+          127.178957
+        ],
+        [
+          37.552861,
+          127.177456
+        ],
+        [
+          37.553013,
+          127.177225
+        ],
+        [
+          37.557225,
+          127.175527
+        ]
+      ],
+      "node_count": 10,
+      "node_path": [
+        "49M",
+        "50M",
+        "51M",
+        "52M",
+        "53M(배)",
+        "54M",
+        "55M",
+        "56M",
+        "57M",
+        "58M"
+      ]
+    },
+    {
+      "no": 6,
+      "section": "상일IC-강일IC",
+      "total_cores": 24,
+      "expansion_round": "3차",
+      "length_km": 1993.0,
+      "start_point": "",
+      "end_point": "2001",
+      "coordinates": [
+        [
+          37.553013,
+          127.177225
+        ],
+        [
+          37.557225,
+          127.175527
+        ],
+        [
+          37.559098,
+          127.174878
+        ],
+        [
+          37.563005,
+          127.173366
+        ],
+        [
+          37.564824,
+          127.17204
+        ],
+        [
+          37.567301,
+          127.169972
+        ],
+        [
+          37.570606,
+          127.16697
+        ],
+        [
+          37.571217,
+          127.166551
+        ],
+        [
+          37.573441,
+          127.164525
+        ],
+        [
+          37.581754,
+          127.157797
+        ]
+      ],
+      "node_count": 10,
+      "node_path": [
+        "57M",
+        "58M",
+        "59-1M",
+        "59M",
+        "60M",
+        "61M",
+        "62M",
+        "63M",
+        "64M",
+        "65M(배)"
+      ]
+    },
+    {
+      "no": 7,
+      "section": "강일IC-토평IC",
+      "total_cores": 24,
+      "expansion_round": "3차",
+      "length_km": 1993.0,
+      "start_point": "",
+      "end_point": "2001",
+      "coordinates": [
+        [
+          37.406823,
+          127.097339
+        ],
+        [
+          37.407726,
+          127.101357
+        ],
+        [
+          37.407856,
+          127.10839
+        ],
+        [
+          37.409206,
+          127.115537
+        ],
+        [
+          37.410498,
+          127.117402
+        ],
+        [
+          37.413172,
+          127.119508
+        ],
+        [
+          37.417347,
+          127.122412
+        ],
+        [
+          37.42114,
+          127.123095
+        ],
+        [
+          37.424991,
+          127.123087
+        ],
+        [
+          37.428721,
+          127.123225
+        ],
+        [
+          37.4294,
+          127.123034
+        ],
+        [
+          37.433212,
+          127.123177
+        ],
+        [
+          37.435587,
+          127.123847
+        ],
+        [
+          37.437811,
+          127.122972
+        ],
+        [
+          37.44082,
+          127.123088
+        ],
+        [
+          37.443839,
+          127.124351
+        ],
+        [
+          37.446892,
+          127.125621
+        ],
+        [
+          37.450525,
+          127.126259
+        ],
+        [
+          37.450529,
+          127.125678
+        ],
+        [
+          37.453784,
+          127.125639
+        ],
+        [
+          37.457222,
+          127.125195
+        ],
+        [
+          37.459745,
+          127.125099
+        ],
+        [
+          37.465845,
+          127.125407
+        ],
+        [
+          37.469056,
+          127.124826
+        ],
+        [
+          37.472551,
+          127.125835
+        ],
+        [
+          37.474509,
+          127.127877
+        ],
+        [
+          37.477532,
+          127.132344
+        ],
+        [
+          37.481026,
+          127.134972
+        ],
+        [
+          37.483153,
+          127.135391
+        ],
+        [
+          37.487652,
+          127.136187
+        ],
+        [
+          37.489901,
+          127.136881
+        ],
+        [
+          37.494765,
+          127.139192
+        ],
+        [
+          37.503279,
+          127.143384
+        ],
+        [
+          37.506489,
+          127.145351
+        ],
+        [
+          37.509158,
+          127.147083
+        ],
+        [
+          37.511496,
+          127.149364
+        ],
+        [
+          37.513205762230214,
+          127.15388348606811
+        ],
+        [
+          37.51324536888914,
+          127.15399109287927
+        ],
+        [
+          37.51328489870555,
+          127.15409869969041
+        ],
+        [
+          37.51474960461726,
+          127.15829536532509
+        ],
+        [
+          37.51756023952164,
+          127.16980929411766
+        ],
+        [
+          37.517576617733624,
+          127.1699169009288
+        ],
+        [
+          37.51813656396393,
+          127.17475920743034
+        ],
+        [
+          37.518535,
+          127.184121
+        ],
+        [
+          37.519871,
+          127.188155
+        ],
+        [
+          37.522219,
+          127.191133
+        ],
+        [
+          37.52485,
+          127.192828
+        ],
+        [
+          37.528048,
+          127.194698
+        ],
+        [
+          37.530501,
+          127.195296
+        ],
+        [
+          37.531984,
+          127.193722
+        ],
+        [
+          37.534426,
+          127.188173
+        ],
+        [
+          37.536868,
+          127.185376
+        ],
+        [
+          37.541381,
+          127.182699
+        ],
+        [
+          37.545485,
+          127.180598
+        ],
+        [
+          37.545513,
+          127.180754
+        ],
+        [
+          37.549617,
+          127.178957
+        ],
+        [
+          37.552861,
+          127.177456
+        ],
+        [
+          37.553013,
+          127.177225
+        ],
+        [
+          37.557225,
+          127.175527
+        ],
+        [
+          37.559098,
+          127.174878
+        ],
+        [
+          37.563005,
+          127.173366
+        ],
+        [
+          37.564824,
+          127.17204
+        ],
+        [
+          37.567301,
+          127.169972
+        ],
+        [
+          37.570606,
+          127.16697
+        ],
+        [
+          37.571217,
+          127.166551
+        ],
+        [
+          37.573441,
+          127.164525
+        ],
+        [
+          37.581754,
+          127.157797
+        ],
+        [
+          37.585037,
+          127.156294
+        ],
+        [
+          37.588187,
+          127.156103
+        ],
+        [
+          37.589229,
+          127.155586
+        ],
+        [
+          37.589905,
+          127.155612
+        ],
+        [
+          37.590595,
+          127.156194
+        ],
+        [
+          37.5899394,
+          127.155583
+        ],
+        [
+          37.592171,
+          127.156503
+        ],
+        [
+          37.597473,
+          127.155824
+        ],
+        [
+          37.60069,
+          127.153933
+        ],
+        [
+          37.602962,
+          127.151618
+        ],
+        [
+          37.607338,
+          127.146304
+        ],
+        [
+          37.611002,
+          127.142892
+        ],
+        [
+          37.6140365,
+          127.1417495
+        ],
+        [
+          37.6172261,
+          127.1409174
+        ],
+        [
+          37.621453,
+          127.139953
+        ],
+        [
+          37.62539,
+          127.13905
+        ],
+        [
+          37.629335,
+          127.137431
+        ],
+        [
+          37.632664,
+          127.134764
+        ],
+        [
+          37.636601,
+          127.133627
+        ],
+        [
+          37.640112,
+          127.132663
+        ],
+        [
+          37.643775,
+          127.130165
+        ]
+      ],
+      "node_count": 88,
+      "node_path": [
+        "2M",
+        "3M",
+        "4M",
+        "5M",
+        "6M",
+        "7M",
+        "8M",
+        "9M",
+        "10M",
+        "11M",
+        "12M",
+        "13M",
+        "14M",
+        "15M",
+        "16-1H",
+        "17M",
+        "18M",
+        "19-1H",
+        "20M",
+        "21M",
+        "22M",
+        "23M",
+        "24M",
+        "25M",
+        "26M",
+        "27M",
+        "28M",
+        "29M",
+        "30M",
+        "31M",
+        "32M",
+        "33M",
+        "34M",
+        "35M",
+        "36M",
+        "37M",
+        "38M",
+        "39M",
+        "39-1H",
+        "40M",
+        "41M",
+        "41M",
+        "42M",
+        "43M",
+        "44M",
+        "45M",
+        "46M",
+        "47M",
+        "48M",
+        "49M",
+        "50M",
+        "51M",
+        "52M",
+        "53M(배)",
+        "54M",
+        "55M",
+        "56M",
+        "57M",
+        "58M",
+        "59-1M",
+        "59M",
+        "60M",
+        "61M",
+        "62M",
+        "63M",
+        "64M",
+        "65M(배)",
+        "66M",
+        "66-1H",
+        "66-2H",
+        "66-3H",
+        "66-4H",
+        "67M",
+        "68M(배)",
+        "69M",
+        "70M(배)",
+        "71M(배)",
+        "72M(배)",
+        "73M(배)",
+        "74M",
+        "75M",
+        "76M",
+        "77M",
+        "78M",
+        "79M",
+        "80M",
+        "81M",
+        "82M"
+      ]
+    },
+    {
+      "no": 8,
+      "section": "토평IC-구리남양주영업소",
+      "total_cores": 50,
+      "expansion_round": "3차",
+      "length_km": 0.0,
+      "start_point": "",
+      "end_point": "2002",
+      "coordinates": [
+        [
+          37.589229,
+          127.155586
+        ],
+        [
+          37.589905,
+          127.155612
+        ],
+        [
+          37.590595,
+          127.156194
+        ],
+        [
+          37.5899394,
+          127.155583
+        ],
+        [
+          37.592171,
+          127.156503
+        ],
+        [
+          37.597473,
+          127.155824
+        ],
+        [
+          37.60069,
+          127.153933
+        ],
+        [
+          37.602962,
+          127.151618
+        ]
+      ],
+      "node_count": 8,
+      "node_path": [
+        "66-2H",
+        "66-3H",
+        "66-4H",
+        "67M",
+        "68M(배)",
+        "69M",
+        "70M(배)",
+        "71M(배)"
+      ]
+    },
+    {
+      "no": 9,
+      "section": "구리남양주영업소-남양주IC",
+      "total_cores": 54,
+      "expansion_round": "3차",
+      "length_km": 0.0,
+      "start_point": "",
+      "end_point": "2002",
+      "coordinates": [
+        [
+          37.589229,
+          127.155586
+        ],
+        [
+          37.589905,
+          127.155612
+        ],
+        [
+          37.590595,
+          127.156194
+        ],
+        [
+          37.5899394,
+          127.155583
+        ],
+        [
+          37.592171,
+          127.156503
+        ],
+        [
+          37.597473,
+          127.155824
+        ],
+        [
+          37.60069,
+          127.153933
+        ],
+        [
+          37.602962,
+          127.151618
+        ]
+      ],
+      "node_count": 8,
+      "node_path": [
+        "66-2H",
+        "66-3H",
+        "66-4H",
+        "67M",
+        "68M(배)",
+        "69M",
+        "70M(배)",
+        "71M(배)"
+      ]
+    },
+    {
+      "no": 10,
+      "section": "남양주IC-구리IC",
+      "total_cores": 54,
+      "expansion_round": "3차",
+      "length_km": 0.0,
+      "start_point": "",
+      "end_point": "2002",
+      "coordinates": [
+        [
+          37.602962,
+          127.151618
+        ],
+        [
+          37.607338,
+          127.146304
+        ],
+        [
+          37.611002,
+          127.142892
+        ],
+        [
+          37.6140365,
+          127.1417495
+        ],
+        [
+          37.6172261,
+          127.1409174
+        ]
+      ],
+      "node_count": 5,
+      "node_path": [
+        "71M(배)",
+        "72M(배)",
+        "73M(배)",
+        "74M",
+        "75M"
+      ]
+    },
+    {
+      "no": 11,
+      "section": "구리IC-퇴계원IC",
+      "total_cores": 54,
+      "expansion_round": "3차",
+      "length_km": 0.0,
+      "start_point": "",
+      "end_point": "2002",
+      "coordinates": [
+        [
+          37.6172261,
+          127.1409174
+        ],
+        [
+          37.621453,
+          127.139953
+        ],
+        [
+          37.62539,
+          127.13905
+        ],
+        [
+          37.629335,
+          127.137431
+        ],
+        [
+          37.632664,
+          127.134764
+        ],
+        [
+          37.636601,
+          127.133627
+        ],
+        [
+          37.640112,
+          127.132663
+        ]
+      ],
+      "node_count": 7,
+      "node_path": [
+        "75M",
+        "76M",
+        "77M",
+        "78M",
+        "79M",
+        "80M",
+        "81M"
+      ]
+    },
+    {
+      "no": 12,
+      "section": "퇴계원IC-종점",
+      "total_cores": 54,
+      "expansion_round": "3차",
+      "length_km": 0.0,
+      "start_point": "",
+      "end_point": "2002",
+      "coordinates": [
+        [
+          37.636601,
+          127.133627
+        ],
+        [
+          37.640112,
+          127.132663
+        ],
+        [
+          37.643775,
+          127.130165
+        ]
+      ],
+      "node_count": 3,
+      "node_path": [
+        "80M",
+        "81M",
+        "82M"
+      ]
+    },
+    {
+      "no": 13,
+      "section": "판교JCT(19-1H)-청계영업소",
+      "total_cores": 72,
+      "expansion_round": "3차",
+      "length_km": 1995.0,
+      "start_point": "",
+      "end_point": "",
+      "coordinates": [
+        [
+          37.406264,
+          127.095579
+        ],
+        [
+          37.405031,
+          127.091826
+        ],
+        [
+          37.403166,
+          127.087003
+        ],
+        [
+          37.400378,
+          127.082726
+        ],
+        [
+          37.397473,
+          127.078364
+        ],
+        [
+          37.395869,
+          127.073134
+        ],
+        [
+          37.395588,
+          127.069172
+        ],
+        [
+          37.395514,
+          127.064835
+        ],
+        [
+          37.395871,
+          127.059087
+        ],
+        [
+          37.396437,
+          127.055475
+        ],
+        [
+          37.396438,
+          127.04996
+        ],
+        [
+          37.39576,
+          127.045788
+        ],
+        [
+          37.395122,
+          127.040621
+        ],
+        [
+          37.394351,
+          127.034554
+        ],
+        [
+          37.393535,
+          127.030302
+        ],
+        [
+          37.393488,
+          127.025445
+        ],
+        [
+          37.393623,
+          127.025429
+        ],
+        [
+          37.393538,
+          127.024567
+        ],
+        [
+          37.39354,
+          127.02455
+        ],
+        [
+          37.393114,
+          127.021744
+        ],
+        [
+          37.392433,
+          127.014132
+        ],
+        [
+          37.389705,
+          127.007837
+        ],
+        [
+          37.388243,
+          127.004452
+        ],
+        [
+          37.387747,
+          127.002723
+        ],
+        [
+          37.386601,
+          126.99805
+        ],
+        [
+          37.384511,
+          126.990919
+        ],
+        [
+          37.383011,
+          126.986948
+        ],
+        [
+          37.381661,
+          126.983366
+        ],
+        [
+          37.379845,
+          126.97802
+        ],
+        [
+          37.381552,
+          126.968254
+        ],
+        [
+          37.382046,
+          126.96624
+        ],
+        [
+          37.38165,
+          126.962927
+        ]
+      ],
+      "node_count": 32,
+      "node_path": [
+        "1M",
+        "2M",
+        "3M",
+        "4M",
+        "5M",
+        "6M",
+        "7M",
+        "8M",
+        "9M",
+        "10M",
+        "11M",
+        "12M",
+        "13M",
+        "14M",
+        "15M",
+        "16M",
+        "17M",
+        "18M",
+        "19M",
+        "20M",
+        "21M",
+        "22M",
+        "23M",
+        "24M",
+        "25M",
+        "26M",
+        "27M",
+        "28M",
+        "29M",
+        "30M",
+        "31M",
+        "32M"
+      ]
+    },
+    {
+      "no": 14,
+      "section": "청계영업소-학의JCT",
+      "total_cores": 72,
+      "expansion_round": "3차",
+      "length_km": 1995.0,
+      "start_point": "",
+      "end_point": "",
+      "coordinates": [
+        [
+          37.406264,
+          127.095579
+        ],
+        [
+          37.405031,
+          127.091826
+        ],
+        [
+          37.403166,
+          127.087003
+        ],
+        [
+          37.400378,
+          127.082726
+        ],
+        [
+          37.397473,
+          127.078364
+        ],
+        [
+          37.395869,
+          127.073134
+        ],
+        [
+          37.395588,
+          127.069172
+        ],
+        [
+          37.395514,
+          127.064835
+        ],
+        [
+          37.395871,
+          127.059087
+        ],
+        [
+          37.396437,
+          127.055475
+        ],
+        [
+          37.396438,
+          127.04996
+        ],
+        [
+          37.39576,
+          127.045788
+        ],
+        [
+          37.395122,
+          127.040621
+        ],
+        [
+          37.394351,
+          127.034554
+        ],
+        [
+          37.393535,
+          127.030302
+        ],
+        [
+          37.393488,
+          127.025445
+        ],
+        [
+          37.393623,
+          127.025429
+        ],
+        [
+          37.393538,
+          127.024567
+        ],
+        [
+          37.39354,
+          127.02455
+        ],
+        [
+          37.393114,
+          127.021744
+        ],
+        [
+          37.392433,
+          127.014132
+        ],
+        [
+          37.389705,
+          127.007837
+        ],
+        [
+          37.388243,
+          127.004452
+        ],
+        [
+          37.387747,
+          127.002723
+        ],
+        [
+          37.386601,
+          126.99805
+        ],
+        [
+          37.384511,
+          126.990919
+        ],
+        [
+          37.383011,
+          126.986948
+        ],
+        [
+          37.381661,
+          126.983366
+        ],
+        [
+          37.379845,
+          126.97802
+        ],
+        [
+          37.381552,
+          126.968254
+        ],
+        [
+          37.382046,
+          126.96624
+        ],
+        [
+          37.38165,
+          126.962927
+        ]
+      ],
+      "node_count": 32,
+      "node_path": [
+        "1M",
+        "2M",
+        "3M",
+        "4M",
+        "5M",
+        "6M",
+        "7M",
+        "8M",
+        "9M",
+        "10M",
+        "11M",
+        "12M",
+        "13M",
+        "14M",
+        "15M",
+        "16M",
+        "17M",
+        "18M",
+        "19M",
+        "20M",
+        "21M",
+        "22M",
+        "23M",
+        "24M",
+        "25M",
+        "26M",
+        "27M",
+        "28M",
+        "29M",
+        "30M",
+        "31M",
+        "32M"
+      ]
+    },
+    {
+      "no": 15,
+      "section": "학의JCT-평촌IC",
+      "total_cores": 72,
+      "expansion_round": "3차",
+      "length_km": 1995.0,
+      "start_point": "",
+      "end_point": "",
+      "coordinates": [
+        [
+          37.406264,
+          127.095579
+        ],
+        [
+          37.405031,
+          127.091826
+        ],
+        [
+          37.403166,
+          127.087003
+        ],
+        [
+          37.400378,
+          127.082726
+        ],
+        [
+          37.397473,
+          127.078364
+        ],
+        [
+          37.395869,
+          127.073134
+        ],
+        [
+          37.395588,
+          127.069172
+        ],
+        [
+          37.395514,
+          127.064835
+        ],
+        [
+          37.395871,
+          127.059087
+        ],
+        [
+          37.396437,
+          127.055475
+        ],
+        [
+          37.396438,
+          127.04996
+        ],
+        [
+          37.39576,
+          127.045788
+        ],
+        [
+          37.395122,
+          127.040621
+        ],
+        [
+          37.394351,
+          127.034554
+        ],
+        [
+          37.393535,
+          127.030302
+        ],
+        [
+          37.393488,
+          127.025445
+        ],
+        [
+          37.393623,
+          127.025429
+        ],
+        [
+          37.393538,
+          127.024567
+        ],
+        [
+          37.39354,
+          127.02455
+        ],
+        [
+          37.393114,
+          127.021744
+        ],
+        [
+          37.392433,
+          127.014132
+        ],
+        [
+          37.389705,
+          127.007837
+        ],
+        [
+          37.388243,
+          127.004452
+        ],
+        [
+          37.387747,
+          127.002723
+        ],
+        [
+          37.386601,
+          126.99805
+        ],
+        [
+          37.384511,
+          126.990919
+        ],
+        [
+          37.383011,
+          126.986948
+        ],
+        [
+          37.381661,
+          126.983366
+        ],
+        [
+          37.379845,
+          126.97802
+        ],
+        [
+          37.381552,
+          126.968254
+        ],
+        [
+          37.382046,
+          126.96624
+        ],
+        [
+          37.38165,
+          126.962927
+        ]
+      ],
+      "node_count": 32,
+      "node_path": [
+        "1M",
+        "2M",
+        "3M",
+        "4M",
+        "5M",
+        "6M",
+        "7M",
+        "8M",
+        "9M",
+        "10M",
+        "11M",
+        "12M",
+        "13M",
+        "14M",
+        "15M",
+        "16M",
+        "17M",
+        "18M",
+        "19M",
+        "20M",
+        "21M",
+        "22M",
+        "23M",
+        "24M",
+        "25M",
+        "26M",
+        "27M",
+        "28M",
+        "29M",
+        "30M",
+        "31M",
+        "32M"
+      ]
+    }
+  ],
+  "poles": [],
+  "cctv_devices": [
+    {
+      "no": null,
+      "branch": "1",
+      "name": "2",
+      "ip": "3",
+      "location_desc": "4",
+      "camera_model": "",
+      "pole_type": "",
+      "switch_ip": "5",
+      "wireless_bridge": "6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "지사구분",
+      "branch": "링명",
+      "name": "설비구분",
+      "ip": "설비명",
+      "location_desc": "기기번호",
+      "camera_model": "카메라 S/N",
+      "pole_type": "카메라 MAC",
+      "switch_ip": "IP적용장비",
+      "wireless_bridge": "도면이름",
+      "bridge_ip": "EOC S/N"
+    },
+    {
+      "no": "수도권본부",
+      "branch": "수도권본부 방범망",
+      "name": "AP",
+      "ip": "수도권본부-4",
+      "location_desc": "무선브릿지-Rx",
+      "camera_model": "0824181000001087",
+      "pole_type": "00:19:3B:15:F8:F0",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수도권본부",
+      "branch": "수도권본부 방범망",
+      "name": "AP",
+      "ip": "수도권본부-5",
+      "location_desc": "무선브릿지-Tx",
+      "camera_model": "0824181000001055",
+      "pole_type": "00:19:3B:15:F8:8C",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수도권본부",
+      "branch": "수도권본부 방범망",
+      "name": "영상",
+      "ip": "수도권본부-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20190111101",
+      "pole_type": "00:50:C2:80:CC:4E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수도권본부",
+      "branch": "수도권본부 방범망",
+      "name": "영상",
+      "ip": "수도권본부-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205438",
+      "pole_type": "00:50:C2:7C:B0:49",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수도권본부",
+      "branch": "수도권본부 방범망",
+      "name": "영상",
+      "ip": "수도권본부-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205391",
+      "pole_type": "00:50:C2:7C:B0:01",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수도권본부",
+      "branch": "수도권본부 방범망",
+      "name": "영상",
+      "ip": "수도권본부-9",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181205383",
+      "pole_type": "00:50:C2:7C:B0:03",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수도권본부",
+      "branch": "수도권본부 방범망",
+      "name": "영상",
+      "ip": "수도권본부-10",
+      "location_desc": "불렛카메라-01",
+      "camera_model": "BUL20181205214",
+      "pole_type": "00:50:C2:80:07:DD",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "동서울지사 방범망",
+      "name": "영상",
+      "ip": "동서울지사-5",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205395",
+      "pole_type": "00:50:C2:7C:AF:D6",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "동서울지사 방범망",
+      "name": "영상",
+      "ip": "동서울지사-6",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205392",
+      "pole_type": "00:50:C2:7C:AF:B2",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "동서울지사 방범망",
+      "name": "영상",
+      "ip": "동서울지사-7",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205444",
+      "pole_type": "00:50:C2:7C:B0:59",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "동서울지사 방범망",
+      "name": "영상",
+      "ip": "동서울지사-8",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181205393",
+      "pole_type": "00:50:C2:7C:B0:9C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "동서울지사 방범망",
+      "name": "영상",
+      "ip": "동서울지사-9",
+      "location_desc": "돔카메라-05",
+      "camera_model": "DOM20181205399",
+      "pole_type": "00:50:C2:7C:B0:1E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "동서울지사 방범망",
+      "name": "영상",
+      "ip": "동서울지사-10",
+      "location_desc": "불렛카메라-01",
+      "camera_model": "BUL20181205218",
+      "pole_type": "00:50:C2:7C:AF:3A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "동서울지사 방범망",
+      "name": "영상",
+      "ip": "동서울지사-11",
+      "location_desc": "불렛카메라-02",
+      "camera_model": "BUL20181205217",
+      "pole_type": "00:50:C2:80:07:E7",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": "17103DPKG0074"
+    },
+    {
+      "no": "동서울지사",
+      "branch": "동서울지사 방범망",
+      "name": "영상",
+      "ip": "동서울지사-12",
+      "location_desc": "불렛카메라-03",
+      "camera_model": "BUL20181205164",
+      "pole_type": "00:50:C2:7E:8E:25",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": "18111DPKG0216"
+    },
+    {
+      "no": "동서울지사",
+      "branch": "동서울지사 방범망",
+      "name": "AP",
+      "ip": "동서울지사-13",
+      "location_desc": "무선브릿지-Rx",
+      "camera_model": "08241836000005D1",
+      "pole_type": "00:19:3B:18:4C:50",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "동서울지사 방범망",
+      "name": "AP",
+      "ip": "동서울지사-14",
+      "location_desc": "무선브릿지-Tx",
+      "camera_model": "08241836000005D4",
+      "pole_type": "00:19:3B:18:4C:56",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "동서울지사 방범망",
+      "name": "영상",
+      "ip": "동서울지사-15",
+      "location_desc": "불렛카메라-04",
+      "camera_model": "BUL20191118801",
+      "pole_type": "00:50:C2:80:07:C7",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천지사 방범망",
+      "name": "AP",
+      "ip": "인천지사-3",
+      "location_desc": "무선브릿지-Rx",
+      "camera_model": "0824181000001072",
+      "pole_type": "00:19:3B:15:F8:C6",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천지사 방범망",
+      "name": "AP",
+      "ip": "인천지사-4",
+      "location_desc": "무선브릿지-Tx",
+      "camera_model": "0824181000001053",
+      "pole_type": "00:19:3B:15:F8:88",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천지사 방범망",
+      "name": "영상",
+      "ip": "인천지사-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205439",
+      "pole_type": "00:50:C2:7C:B0:39",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천지사 방범망",
+      "name": "영상",
+      "ip": "인천지사-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205377",
+      "pole_type": "00:50:C2:7C:B0:94",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천지사 방범망",
+      "name": "영상",
+      "ip": "인천지사-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205386",
+      "pole_type": "00:50:C2:7C:B0:60",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천지사 방범망",
+      "name": "영상",
+      "ip": "인천지사-9",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205014",
+      "pole_type": "00:50:C2:79:2A:85",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천지사 방범망",
+      "name": "영상",
+      "ip": "인천지사-10",
+      "location_desc": "불렛카메라-01",
+      "camera_model": "BUL20181205212",
+      "pole_type": "00:50:C2:80:07:B5",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천지사 방범망",
+      "name": "영상",
+      "ip": "인천지사-11",
+      "location_desc": "불렛카메라-02",
+      "camera_model": "BUL20181205213",
+      "pole_type": "00:50:C2:7E:8E:7F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥지사 방범망",
+      "name": "영상",
+      "ip": "시흥지사-4",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205344",
+      "pole_type": "00:50:C2:7C:AF:F0",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥지사 방범망",
+      "name": "영상",
+      "ip": "시흥지사-5",
+      "location_desc": "불렛카메라-01",
+      "camera_model": "BUL20181205202",
+      "pole_type": "00:50:C2:7E:8E:5C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": "18111DPKG0215"
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥지사 방범망",
+      "name": "영상",
+      "ip": "시흥지사-6",
+      "location_desc": "불렛카메라-02",
+      "camera_model": "BUL20181205204",
+      "pole_type": "00:50:C2:80:07:A0",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": "17103DPKG0014"
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥지사 방범망",
+      "name": "영상",
+      "ip": "시흥지사-7",
+      "location_desc": "불렛카메라-03",
+      "camera_model": "BUL20181205137",
+      "pole_type": "00:50:C2:7E:8E:4B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": "17103DPKG0075"
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥지사 방범망",
+      "name": "AP",
+      "ip": "시흥지사-8",
+      "location_desc": "무선브릿지-Rx",
+      "camera_model": "082418360000069B",
+      "pole_type": "00:19:3B:18:4D:E5",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥지사 방범망",
+      "name": "AP",
+      "ip": "시흥지사-9",
+      "location_desc": "무선브릿지-Tx",
+      "camera_model": "082418360000068B",
+      "pole_type": "00:19:3B:18:4D:C5",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥지사 방범망",
+      "name": "영상",
+      "ip": "시흥지사-10",
+      "location_desc": "불렛카메라-04",
+      "camera_model": "BUL20191230301",
+      "pole_type": "00:50:C2:80:9C:00",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포지사 방범망",
+      "name": "영상",
+      "ip": "군포지사-5",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205363",
+      "pole_type": "00:50:C2:7C:AF:B1",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포지사 방범망",
+      "name": "영상",
+      "ip": "군포지사-6",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205339",
+      "pole_type": "00:50:C2:7C:AF:BD",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포지사 방범망",
+      "name": "영상",
+      "ip": "군포지사-7",
+      "location_desc": "불렛카메라-01",
+      "camera_model": "BUL20181205125",
+      "pole_type": "00:50:C2:80:07:B0",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포지사 방범망",
+      "name": "영상",
+      "ip": "군포지사-8",
+      "location_desc": "불렛카메라-02",
+      "camera_model": "BUL20181205201",
+      "pole_type": "00:50:C2:80:07:A9",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포지사 방범망",
+      "name": "영상",
+      "ip": "군포지사-9",
+      "location_desc": "불렛카메라-03",
+      "camera_model": "BUL20181205203",
+      "pole_type": "00:50:C2:7E:8E:7A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포지사 방범망",
+      "name": "영상",
+      "ip": "군포지사-10",
+      "location_desc": "불렛카메라-04",
+      "camera_model": "BUL20181205124",
+      "pole_type": "00:50:C2:80:08:01",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포지사 방범망",
+      "name": "영상",
+      "ip": "군포지사-11",
+      "location_desc": "불렛카메라-05",
+      "camera_model": "BUL20181205210",
+      "pole_type": "00:50:C2:7C:AF:3C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포지사 방범망",
+      "name": "영상",
+      "ip": "군포지사-12",
+      "location_desc": "불렛카메라-06",
+      "camera_model": "BUL20181205131",
+      "pole_type": "00:50:C2:80:07:F4",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "화성지사 방범망",
+      "name": "영상",
+      "ip": "화성지사-4",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205370",
+      "pole_type": "00:50:C2:7C:B0:16",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "화성지사 방범망",
+      "name": "영상",
+      "ip": "화성지사-5",
+      "location_desc": "불렛카메라-01",
+      "camera_model": "BUL20181205208",
+      "pole_type": "00:50:C2:7E:8E:19",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": "18111DPKG0246"
+    },
+    {
+      "no": "화성지사",
+      "branch": "화성지사 방범망",
+      "name": "영상",
+      "ip": "화성지사-6",
+      "location_desc": "불렛카메라-02",
+      "camera_model": "BUL20181205136",
+      "pole_type": "00:50:C2:7E:8E:73",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": "17103DPKG0007"
+    },
+    {
+      "no": "화성지사",
+      "branch": "화성지사 방범망",
+      "name": "영상",
+      "ip": "화성지사-7",
+      "location_desc": "불렛카메라-03",
+      "camera_model": "BUL20181205206",
+      "pole_type": "00:50:C2:80:07:AC",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "화성지사 방범망",
+      "name": "영상",
+      "ip": "화성지사-8",
+      "location_desc": "불렛카메라-04",
+      "camera_model": "BUL20181205139",
+      "pole_type": "00:50:C2:7E:8E:3A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "화성지사 방범망",
+      "name": "AP",
+      "ip": "화성지사-9",
+      "location_desc": "무선브릿지01-Rx",
+      "camera_model": "08241810000010C1",
+      "pole_type": "00:19:3B:15:F9:64",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "화성지사 방범망",
+      "name": "AP",
+      "ip": "화성지사-10",
+      "location_desc": "무선브릿지01-Tx",
+      "camera_model": "082418100000109D",
+      "pole_type": "00:19:3B:15:F9:1C",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "화성지사 방범망",
+      "name": "AP",
+      "ip": "화성지사-11",
+      "location_desc": "무선브릿지02-Rx",
+      "camera_model": "0824181000000F58",
+      "pole_type": "00:19:3B:15:F6:92",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "화성지사 방범망",
+      "name": "AP",
+      "ip": "화성지사-12",
+      "location_desc": "무선브릿지02-Tx",
+      "camera_model": "082418100000104D",
+      "pole_type": "00:19:3B:15:F8:7C",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "AP",
+      "ip": "수원지사-4",
+      "location_desc": "무선브릿지-Rx",
+      "camera_model": "0824181000001084",
+      "pole_type": "00:19:3B:15:F8:EA",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "AP",
+      "ip": "수원지사-5",
+      "location_desc": "무선브릿지-Tx",
+      "camera_model": "0824181000000F75",
+      "pole_type": "00:19:3B:15:F6:CC",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "영상",
+      "ip": "수원지사-7",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205366",
+      "pole_type": "00:50:C2:7C:AF:CB",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "영상",
+      "ip": "수원지사-8",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205352",
+      "pole_type": "00:50:C2:7C:AF:CA",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "영상",
+      "ip": "수원지사-9",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205328",
+      "pole_type": "00:50:C2:7C:AF:EA",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "영상",
+      "ip": "수원지사-10",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181205359",
+      "pole_type": "00:50:C2:7C:B0:79",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "영상",
+      "ip": "수원지사-11",
+      "location_desc": "돔카메라-05",
+      "camera_model": "DOM20181205340",
+      "pole_type": "00:50:C2:7C:B0:71",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "영상",
+      "ip": "수원지사-12",
+      "location_desc": "돔카메라-06",
+      "camera_model": "DOM20181205335",
+      "pole_type": "00:50:C2:7C:AF:F4",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "영상",
+      "ip": "수원지사-13",
+      "location_desc": "돔카메라-07",
+      "camera_model": "DOM20181205326",
+      "pole_type": "00:50:C2:7C:B0:2E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "영상",
+      "ip": "수원지사-14",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205020",
+      "pole_type": "00:50:C2:79:2A:82",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#14",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "영상",
+      "ip": "수원지사-15",
+      "location_desc": "불렛카메라-01",
+      "camera_model": "BUL20181205143",
+      "pole_type": "00:50:C2:80:07:F9",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "영상",
+      "ip": "수원지사-16",
+      "location_desc": "불렛카메라-02",
+      "camera_model": "BUL20181205142",
+      "pole_type": "00:50:C2:80:07:CE",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "영상",
+      "ip": "수원지사-17",
+      "location_desc": "불렛카메라-03",
+      "camera_model": "BUL20181205157",
+      "pole_type": "00:50:C2:7E:8E:78",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#10",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "영상",
+      "ip": "수원지사-18",
+      "location_desc": "불렛카메라-04",
+      "camera_model": "BUL20181205209",
+      "pole_type": "00:50:C2:7E:8E:6B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#11",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "영상",
+      "ip": "수원지사-19",
+      "location_desc": "불렛카메라-05",
+      "camera_model": "BUL20181205133",
+      "pole_type": "00:50:C2:7E:8E:33",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#12",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원지사 방범망",
+      "name": "영상",
+      "ip": "수원지사-20",
+      "location_desc": "불렛카메라-06",
+      "camera_model": "BUL20181205126",
+      "pole_type": "00:50:C2:80:07:A6",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#13",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주지사 방범망",
+      "name": "영상",
+      "ip": "경기광주지사-4",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205389",
+      "pole_type": "00:50:C2:7C:AF:F8",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주지사 방범망",
+      "name": "영상",
+      "ip": "경기광주지사-5",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205422",
+      "pole_type": "00:50:C2:7C:B0:23",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주지사 방범망",
+      "name": "영상",
+      "ip": "경기광주지사-6",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205374",
+      "pole_type": "00:50:C2:7C:B0:5C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주지사 방범망",
+      "name": "영상",
+      "ip": "경기광주지사-7",
+      "location_desc": "불렛카메라-01",
+      "camera_model": "BUL20181205186",
+      "pole_type": "00:50:C2:7E:8E:54",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주지사 방범망",
+      "name": "영상",
+      "ip": "경기광주지사-8",
+      "location_desc": "불렛카메라-02",
+      "camera_model": "BUL20181205190",
+      "pole_type": "00:50:C2:7E:8E:12",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": "17103DPKG0077"
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주지사 방범망",
+      "name": "영상",
+      "ip": "경기광주지사-9",
+      "location_desc": "불렛카메라-03",
+      "camera_model": "BUL20181205163",
+      "pole_type": "00:50:C2:80:07:D6",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": "17103DPKG0080"
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주지사 방범망",
+      "name": "영상",
+      "ip": "경기광주지사-10",
+      "location_desc": "불렛카메라-04",
+      "camera_model": "BUL20181205184",
+      "pole_type": "00:50:C2:7E:8E:50",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": "17103DPKG0079"
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주지사 방범망",
+      "name": "영상",
+      "ip": "경기광주지사-11",
+      "location_desc": "불렛카메라-05",
+      "camera_model": "BUL20181205189",
+      "pole_type": "00:50:C2:7E:8E:38",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": "17103DPKG0078"
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주지사 방범망",
+      "name": "영상",
+      "ip": "경기광주지사-12",
+      "location_desc": "불렛카메라-05",
+      "camera_model": "BUL20190403001",
+      "pole_type": "00:50:C2:7E:8E:65",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": "운동장"
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주지사 방범망",
+      "name": "AP",
+      "ip": "경기광주지사-13",
+      "location_desc": "무선브릿지-Rx",
+      "camera_model": "08241836000005B5",
+      "pole_type": "00:19:3B:18:4C:18",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": "255.255.255.224"
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주지사 방범망",
+      "name": "AP",
+      "ip": "경기광주지사-14",
+      "location_desc": "무선브릿지-Tx",
+      "camera_model": "082418350000093D",
+      "pole_type": "00:19:3B:18:38:E5",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": "255.255.255.224"
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주지사 방범망",
+      "name": "영상",
+      "ip": "경기광주지사-15",
+      "location_desc": "불렛카메라-06",
+      "camera_model": "BUL20191118802",
+      "pole_type": "00:50:C2:80:07:94",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#10",
+      "bridge_ip": "255.255.255.224"
+    },
+    {
+      "no": "동서울지사",
+      "branch": "성남영업소 방범망",
+      "name": "영상",
+      "ip": "성남영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205378",
+      "pole_type": "00:50:C2:7C:AF:F3",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "성남영업소 방범망",
+      "name": "영상",
+      "ip": "성남영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205435",
+      "pole_type": "00:50:C2:7C:B0:66",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "성남영업소 방범망",
+      "name": "영상",
+      "ip": "성남영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205432",
+      "pole_type": "00:50:C2:7C:B0:45",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": "17103DPKG0004"
+    },
+    {
+      "no": "동서울지사",
+      "branch": "성남영업소 방범망",
+      "name": "영상",
+      "ip": "성남영업소-9",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205181",
+      "pole_type": "00:50:C2:7E:8E:37",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "성남영업소 방범망",
+      "name": "영상",
+      "ip": "성남영업소-10",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181205183",
+      "pole_type": "00:50:C2:80:07:F3",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "성남영업소 방범망",
+      "name": "영상",
+      "ip": "성남영업소-11",
+      "location_desc": "(지)불렛카메라-03",
+      "camera_model": "BUL20181205182",
+      "pole_type": "00:50:C2:80:07:CF",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "성남영업소 방범망",
+      "name": "영상",
+      "ip": "성남영업소-12",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205029",
+      "pole_type": "00:50:C2:78:8E:8B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "성남영업소 방범망",
+      "name": "영상",
+      "ip": "성남영업소-13",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205187",
+      "pole_type": "00:50:C2:7E:8E:58",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "성남영업소 방범망",
+      "name": "영상",
+      "ip": "성남영업소-14",
+      "location_desc": "(외)불렛카메라-02",
+      "camera_model": "BUL20181205219",
+      "pole_type": "00:50:C2:7E:8E:51",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "토평영업소 방범망",
+      "name": "영상",
+      "ip": "토평영업소-5",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205350",
+      "pole_type": "00:50:C2:7C:AF:E3",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "토평영업소 방범망",
+      "name": "영상",
+      "ip": "토평영업소-6",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205348",
+      "pole_type": "00:50:C2:7C:AF:E8",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "토평영업소 방범망",
+      "name": "영상",
+      "ip": "토평영업소-7",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205334",
+      "pole_type": "00:50:C2:7C:B0:6C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "토평영업소 방범망",
+      "name": "영상",
+      "ip": "토평영업소-8",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205026",
+      "pole_type": "00:50:C2:74:FA:09",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "토평영업소 방범망",
+      "name": "영상",
+      "ip": "토평영업소-9",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205135",
+      "pole_type": "00:50:C2:7E:8E:31",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": "17103DPKG0006"
+    },
+    {
+      "no": "동서울지사",
+      "branch": "토평영업소 방범망",
+      "name": "영상",
+      "ip": "토평영업소-10",
+      "location_desc": "(외)불렛카메라-02",
+      "camera_model": "BUL20181205134",
+      "pole_type": "00:50:C2:80:07:B8",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": "17103DPKG0062"
+    },
+    {
+      "no": "동서울지사",
+      "branch": "토평영업소 방범망",
+      "name": "영상",
+      "ip": "토평영업소-11",
+      "location_desc": "(외)불렛카메라-03",
+      "camera_model": "BUL20181205128",
+      "pole_type": "00:50:C2:7E:8E:47",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": "17103DPKG0001"
+    },
+    {
+      "no": "동서울지사",
+      "branch": "구리남양주영업소 방범망",
+      "name": "영상",
+      "ip": "구리남양주영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205390",
+      "pole_type": "00:50:C2:7C:B0:2D",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "구리남양주영업소 방범망",
+      "name": "영상",
+      "ip": "구리남양주영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205388",
+      "pole_type": "00:50:C2:7C:AF:CF",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "구리남양주영업소 방범망",
+      "name": "영상",
+      "ip": "구리남양주영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205373",
+      "pole_type": "00:50:C2:7C:AF:D5",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "구리남양주영업소 방범망",
+      "name": "영상",
+      "ip": "구리남양주영업소-9",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181205394",
+      "pole_type": "00:50:C2:7C:AF:EB",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "구리남양주영업소 방범망",
+      "name": "영상",
+      "ip": "구리남양주영업소-10",
+      "location_desc": "돔카메라-05",
+      "camera_model": "DOM20181205380",
+      "pole_type": "00:50:C2:7C:AF:F7",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "구리남양주영업소 방범망",
+      "name": "영상",
+      "ip": "구리남양주영업소-11",
+      "location_desc": "돔카메라-06",
+      "camera_model": "DOM20181205385",
+      "pole_type": "00:50:C2:7C:AF:D7",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": "17103DPKG0023"
+    },
+    {
+      "no": "동서울지사",
+      "branch": "구리남양주영업소 방범망",
+      "name": "영상",
+      "ip": "구리남양주영업소-12",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205211",
+      "pole_type": "00:50:C2:80:07:D1",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "구리남양주영업소 방범망",
+      "name": "영상",
+      "ip": "구리남양주영업소-13",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181205215",
+      "pole_type": "00:50:C2:80:07:EF",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "구리남양주영업소 방범망",
+      "name": "영상",
+      "ip": "구리남양주영업소-14",
+      "location_desc": "(지)불렛카메라-03",
+      "camera_model": "BUL20181205185",
+      "pole_type": "00:50:C2:80:08:05",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#10",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "구리남양주영업소 방범망",
+      "name": "영상",
+      "ip": "구리남양주영업소-15",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205011",
+      "pole_type": "00:50:C2:79:2A:94",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "구리남양주영업소 방범망",
+      "name": "영상",
+      "ip": "구리남양주영업소-16",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205188",
+      "pole_type": "00:50:C2:7E:8E:75",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#11",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "청계영업소 방범망",
+      "name": "영상",
+      "ip": "청계영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205433",
+      "pole_type": "00:50:C2:7C:B0:62",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "청계영업소 방범망",
+      "name": "영상",
+      "ip": "청계영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205431",
+      "pole_type": "00:50:C2:7C:B0:1C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "청계영업소 방범망",
+      "name": "영상",
+      "ip": "청계영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205409",
+      "pole_type": "00:50:C2:7C:B0:6A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": "17103DPKG0072"
+    },
+    {
+      "no": "동서울지사",
+      "branch": "청계영업소 방범망",
+      "name": "영상",
+      "ip": "청계영업소-9",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205162",
+      "pole_type": "00:50:C2:7E:8E:81",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "청계영업소 방범망",
+      "name": "영상",
+      "ip": "청계영업소-10",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181205216",
+      "pole_type": "00:50:C2:80:07:8B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "청계영업소 방범망",
+      "name": "영상",
+      "ip": "청계영업소-11",
+      "location_desc": "(지)불렛카메라-03",
+      "camera_model": "BUL20181205167",
+      "pole_type": "00:50:C2:7E:8E:24",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "청계영업소 방범망",
+      "name": "영상",
+      "ip": "청계영업소-12",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205028",
+      "pole_type": "00:50:C2:74:FA:12",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "청계영업소 방범망",
+      "name": "영상",
+      "ip": "청계영업소-13",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205168",
+      "pole_type": "00:50:C2:7E:8E:30",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "청계영업소 방범망",
+      "name": "영상",
+      "ip": "청계영업소-14",
+      "location_desc": "(외)불렛카메라-02",
+      "camera_model": "BUL20181205178",
+      "pole_type": "00:50:C2:80:07:FF",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "청계영업소 방범망",
+      "name": "영상",
+      "ip": "청계영업소-15",
+      "location_desc": "(외)불렛카메라-03",
+      "camera_model": "BUL20181205177",
+      "pole_type": "00:50:C2:80:07:9A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#10",
+      "bridge_ip": "17103DPKG0073"
+    },
+    {
+      "no": "동서울지사",
+      "branch": "청계영업소 방범망",
+      "name": "영상",
+      "ip": "청계영업소-16",
+      "location_desc": "(외)불렛카메라-04",
+      "camera_model": "BUL20181205161",
+      "pole_type": "00:50:C2:7E:8E:17",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#11",
+      "bridge_ip": "17103DPKG0059"
+    },
+    {
+      "no": "동서울지사",
+      "branch": "청계영업소 방범망",
+      "name": "영상",
+      "ip": "청계영업소-17",
+      "location_desc": "(외)불렛카메라-05",
+      "camera_model": "BUL20181205165",
+      "pole_type": "00:50:C2:80:07:CC",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#12",
+      "bridge_ip": "17103DPKG0036"
+    },
+    {
+      "no": "동서울지사",
+      "branch": "청계영업소 방범망",
+      "name": "영상",
+      "ip": "청계영업소-18",
+      "location_desc": "(외)불렛카메라-06",
+      "camera_model": "BUL20181205166",
+      "pole_type": "00:50:C2:80:07:DA",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#13",
+      "bridge_ip": "18111DPKG0229"
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "AP",
+      "ip": "김포영업소-4",
+      "location_desc": "무선브릿지-Rx",
+      "camera_model": "08241810000010DF",
+      "pole_type": "00:19:3B:15:F9:A0",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "AP",
+      "ip": "김포영업소-5",
+      "location_desc": "무선브릿지-Tx",
+      "camera_model": "0824181000001089",
+      "pole_type": "00:19:3B:15:F8:F4",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "영상",
+      "ip": "김포영업소-8",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205375",
+      "pole_type": "00:50:C2:7C:B0:21",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "영상",
+      "ip": "김포영업소-9",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205440",
+      "pole_type": "00:50:C2:7C:B0:05",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "영상",
+      "ip": "김포영업소-10",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205379",
+      "pole_type": "00:50:C2:7C:AF:F6",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "영상",
+      "ip": "김포영업소-11",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181205434",
+      "pole_type": "00:50:C2:7C:B0:31",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "영상",
+      "ip": "김포영업소-12",
+      "location_desc": "돔카메라-05",
+      "camera_model": "DOM20181205414",
+      "pole_type": "00:50:C2:7C:B0:9A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "영상",
+      "ip": "김포영업소-13",
+      "location_desc": "돔카메라-06",
+      "camera_model": "DOM20181205396",
+      "pole_type": "00:50:C2:7C:AF:D0",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "영상",
+      "ip": "김포영업소-14",
+      "location_desc": "돔카메라-07",
+      "camera_model": "DOM20181205425",
+      "pole_type": "00:50:C2:7C:B0:90",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#15",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "영상",
+      "ip": "김포영업소-15",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205172",
+      "pole_type": "00:50:C2:80:07:BD",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "영상",
+      "ip": "김포영업소-16",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181205176",
+      "pole_type": "00:50:C2:80:07:E4",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "영상",
+      "ip": "김포영업소-17",
+      "location_desc": "(지)불렛카메라-03",
+      "camera_model": "BUL20181205170",
+      "pole_type": "00:50:C2:80:07:F1",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#10",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "영상",
+      "ip": "김포영업소-18",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205033",
+      "pole_type": "00:50:C2:79:2A:C7",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "영상",
+      "ip": "김포영업소-19",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205180",
+      "pole_type": "00:50:C2:80:07:E6",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#11",
+      "bridge_ip": "18111DPKG0240"
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "영상",
+      "ip": "김포영업소-20",
+      "location_desc": "(외)불렛카메라-02",
+      "camera_model": "BUL20181205169",
+      "pole_type": "00:50:C2:7E:8E:27",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#12",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "영상",
+      "ip": "김포영업소-21",
+      "location_desc": "(외)불렛카메라-03",
+      "camera_model": "BUL20181205171",
+      "pole_type": "00:50:C2:80:07:D5",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#13",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "김포영업소 방범망",
+      "name": "영상",
+      "ip": "김포영업소-22",
+      "location_desc": "(외)불렛카메라-04",
+      "camera_model": "BUL20181205179",
+      "pole_type": "00:50:C2:80:07:D9",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#14",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천영업소 방범망",
+      "name": "AP",
+      "ip": "인천영업소-3",
+      "location_desc": "무선브릿지-Rx",
+      "camera_model": "0824181000000F69",
+      "pole_type": "00:19:3B:15:F6:B4",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천영업소 방범망",
+      "name": "AP",
+      "ip": "인천영업소-4",
+      "location_desc": "무선브릿지-Tx",
+      "camera_model": "0824181000001058",
+      "pole_type": "00:19:3B:15:F8:92",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천영업소 방범망",
+      "name": "영상",
+      "ip": "인천영업소-8",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205376",
+      "pole_type": "00:50:C2:7C:AF:DF",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천영업소 방범망",
+      "name": "영상",
+      "ip": "인천영업소-9",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205428",
+      "pole_type": "00:50:C2:7C:B0:34",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천영업소 방범망",
+      "name": "영상",
+      "ip": "인천영업소-10",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205404",
+      "pole_type": "00:50:C2:7C:B0:41",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천영업소 방범망",
+      "name": "영상",
+      "ip": "인천영업소-11",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181205442",
+      "pole_type": "00:50:C2:7C:B0:61",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천영업소 방범망",
+      "name": "영상",
+      "ip": "인천영업소-12",
+      "location_desc": "돔카메라-05",
+      "camera_model": "DOM20181205413",
+      "pole_type": "00:50:C2:7C:B0:9E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천영업소 방범망",
+      "name": "영상",
+      "ip": "인천영업소-13",
+      "location_desc": "돔카메라-06",
+      "camera_model": "DOM20181205420",
+      "pole_type": "00:50:C2:7C:B0:83",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#11",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천영업소 방범망",
+      "name": "영상",
+      "ip": "인천영업소-14",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181026403",
+      "pole_type": "00:50:C2:6F:37:DB",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천영업소 방범망",
+      "name": "영상",
+      "ip": "인천영업소-15",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181205153",
+      "pole_type": "00:50:C2:7E:8E:53",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천영업소 방범망",
+      "name": "영상",
+      "ip": "인천영업소-16",
+      "location_desc": "(지)불렛카메라-03",
+      "camera_model": "BUL20181205154",
+      "pole_type": "00:50:C2:80:07:9E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천영업소 방범망",
+      "name": "영상",
+      "ip": "인천영업소-17",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205012",
+      "pole_type": "00:50:C2:79:2A:CB",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천영업소 방범망",
+      "name": "영상",
+      "ip": "인천영업소-18",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205151",
+      "pole_type": "00:50:C2:80:07:FB",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#10",
+      "bridge_ip": "17103DPKG0037"
+    },
+    {
+      "no": "인천지사",
+      "branch": "인천영업소 방범망",
+      "name": "영상",
+      "ip": "인천영업소-19",
+      "location_desc": "(외)스피드돔카메라-02",
+      "camera_model": "IRD20181220001",
+      "pole_type": "00:50:C2:74:FA:0D",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#12",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205317",
+      "pole_type": "00:50:C2:7C:B0:2F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205309",
+      "pole_type": "00:50:C2:7C:B0:20",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205323",
+      "pole_type": "00:50:C2:7C:B0:43",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-9",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181205314",
+      "pole_type": "00:50:C2:7C:AF:B9",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-10",
+      "location_desc": "돔카메라-05",
+      "camera_model": "DOM20181205306",
+      "pole_type": "00:50:C2:7C:B0:3F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-11",
+      "location_desc": "돔카메라-06",
+      "camera_model": "DOM20181205308",
+      "pole_type": "00:50:C2:7C:B0:8B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-12",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205107",
+      "pole_type": "00:50:C2:7E:8E:66",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-13",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181205114",
+      "pole_type": "00:50:C2:80:07:F6",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-14",
+      "location_desc": "(지)불렛카메라-03",
+      "camera_model": "BUL20181205106",
+      "pole_type": "00:50:C2:78:EE:7A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#10",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-15",
+      "location_desc": "(지)불렛카메라-04",
+      "camera_model": "BUL20181205113",
+      "pole_type": "00:50:C2:80:07:E1",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#11",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-16",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205005",
+      "pole_type": "00:50:C2:73:17:1A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-17",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205109",
+      "pole_type": "00:50:C2:80:07:B4",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#12",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-18",
+      "location_desc": "(외)불렛카메라-02",
+      "camera_model": "BUL20181205112",
+      "pole_type": "00:50:C2:7E:8E:4D",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#13",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-19",
+      "location_desc": "(외)불렛카메라-03",
+      "camera_model": "BUL20181205117",
+      "pole_type": "00:50:C2:80:07:C6",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#14",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-20",
+      "location_desc": "(외)불렛카메라-04",
+      "camera_model": "BUL20181205101",
+      "pole_type": "00:50:C2:78:EE:56",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#15",
+      "bridge_ip": "18111DPKG0244"
+    },
+    {
+      "no": "시흥지사",
+      "branch": "서서울영업소 방범망",
+      "name": "영상",
+      "ip": "서서울영업소-21",
+      "location_desc": "(외)불렛카메라-05",
+      "camera_model": "BUL20181205120",
+      "pole_type": "00:50:C2:80:07:BC",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#16",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥영업소 방범망",
+      "name": "영상",
+      "ip": "시흥영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205307",
+      "pole_type": "00:50:C2:7C:B0:3C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥영업소 방범망",
+      "name": "영상",
+      "ip": "시흥영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205318",
+      "pole_type": "00:50:C2:7C:B0:6E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥영업소 방범망",
+      "name": "영상",
+      "ip": "시흥영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205316",
+      "pole_type": "00:50:C2:7C:B0:91",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥영업소 방범망",
+      "name": "영상",
+      "ip": "시흥영업소-9",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181205302",
+      "pole_type": "00:50:C2:7C:B0:95",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥영업소 방범망",
+      "name": "영상",
+      "ip": "시흥영업소-10",
+      "location_desc": "돔카메라-05",
+      "camera_model": "DOM20181205322",
+      "pole_type": "00:50:C2:7C:B0:69",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥영업소 방범망",
+      "name": "영상",
+      "ip": "시흥영업소-11",
+      "location_desc": "돔카메라-06",
+      "camera_model": "DOM20181205312",
+      "pole_type": "00:50:C2:7C:B0:47",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥영업소 방범망",
+      "name": "영상",
+      "ip": "시흥영업소-12",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205111",
+      "pole_type": "00:50:C2:80:07:93",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥영업소 방범망",
+      "name": "영상",
+      "ip": "시흥영업소-13",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181205110",
+      "pole_type": "00:50:C2:7E:8E:59",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥영업소 방범망",
+      "name": "영상",
+      "ip": "시흥영업소-14",
+      "location_desc": "(지)불렛카메라-03",
+      "camera_model": "BUL20181205119",
+      "pole_type": "00:50:C2:80:07:B7",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#10",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥영업소 방범망",
+      "name": "영상",
+      "ip": "시흥영업소-15",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205006",
+      "pole_type": "00:50:C2:73:17:13",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥영업소 방범망",
+      "name": "영상",
+      "ip": "시흥영업소-16",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205108",
+      "pole_type": "00:50:C2:78:EE:64",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#11",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥영업소 방범망",
+      "name": "영상",
+      "ip": "시흥영업소-17",
+      "location_desc": "(외)불렛카메라-02",
+      "camera_model": "BUL20181205118",
+      "pole_type": "00:50:C2:80:07:8F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#12",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "시흥영업소 방범망",
+      "name": "영상",
+      "ip": "시흥영업소-18",
+      "location_desc": "(외)불렛카메라-03",
+      "camera_model": "BUL20181205116",
+      "pole_type": "00:50:C2:80:07:D0",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#13",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "남인천영업소 방범망",
+      "name": "영상",
+      "ip": "남인천영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205333",
+      "pole_type": "00:50:C2:7C:AF:AF",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "남인천영업소 방범망",
+      "name": "영상",
+      "ip": "남인천영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205372",
+      "pole_type": "00:50:C2:7C:B0:33",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "남인천영업소 방범망",
+      "name": "영상",
+      "ip": "남인천영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205362",
+      "pole_type": "00:50:C2:7C:AF:BE",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "남인천영업소 방범망",
+      "name": "영상",
+      "ip": "남인천영업소-9",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181205341",
+      "pole_type": "00:50:C2:7C:B0:2C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "남인천영업소 방범망",
+      "name": "영상",
+      "ip": "남인천영업소-10",
+      "location_desc": "돔카메라-05",
+      "camera_model": "DOM20181205356",
+      "pole_type": "00:50:C2:7C:AF:BB",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "남인천영업소 방범망",
+      "name": "영상",
+      "ip": "남인천영업소-11",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205193",
+      "pole_type": "00:50:C2:80:07:E2",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "남인천영업소 방범망",
+      "name": "영상",
+      "ip": "남인천영업소-12",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181205102",
+      "pole_type": "00:50:C2:78:EE:65",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "남인천영업소 방범망",
+      "name": "영상",
+      "ip": "남인천영업소-13",
+      "location_desc": "(지)불렛카메라-03",
+      "camera_model": "BUL20181205103",
+      "pole_type": "00:50:C2:7E:8E:68",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "남인천영업소 방범망",
+      "name": "영상",
+      "ip": "남인천영업소-14",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205004",
+      "pole_type": "00:50:C2:73:17:22",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군자영업소 방범망",
+      "name": "영상",
+      "ip": "군자영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205310",
+      "pole_type": "00:50:C2:7C:B0:93",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군자영업소 방범망",
+      "name": "영상",
+      "ip": "군자영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205324",
+      "pole_type": "00:50:C2:7C:B0:48",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군자영업소 방범망",
+      "name": "영상",
+      "ip": "군자영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205315",
+      "pole_type": "00:50:C2:7C:B0:9D",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군자영업소 방범망",
+      "name": "영상",
+      "ip": "군자영업소-9",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181205320",
+      "pole_type": "00:50:C2:7C:B0:1F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군자영업소 방범망",
+      "name": "영상",
+      "ip": "군자영업소-10",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181026456",
+      "pole_type": "00:50:C2:78:EE:70",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군자영업소 방범망",
+      "name": "영상",
+      "ip": "군자영업소-11",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181205105",
+      "pole_type": "00:50:C2:78:EE:74",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군자영업소 방범망",
+      "name": "영상",
+      "ip": "군자영업소-12",
+      "location_desc": "(지)불렛카메라-03",
+      "camera_model": "BUL20181205115",
+      "pole_type": "00:50:C2:80:07:EC",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군자영업소 방범망",
+      "name": "영상",
+      "ip": "군자영업소-13",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205001",
+      "pole_type": "00:50:C2:73:17:0C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군자영업소 방범망",
+      "name": "영상",
+      "ip": "군자영업소-14",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205104",
+      "pole_type": "00:50:C2:76:E6:C6",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "서안산영업소 방범망",
+      "name": "영상",
+      "ip": "서안산영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205411",
+      "pole_type": "00:50:C2:7C:B0:12",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "서안산영업소 방범망",
+      "name": "영상",
+      "ip": "서안산영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205402",
+      "pole_type": "00:50:C2:7C:B0:86",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "서안산영업소 방범망",
+      "name": "영상",
+      "ip": "서안산영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205347",
+      "pole_type": "00:50:C2:7C:B0:0E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "서안산영업소 방범망",
+      "name": "영상",
+      "ip": "서안산영업소-9",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205160",
+      "pole_type": "00:50:C2:7C:AF:39",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "서안산영업소 방범망",
+      "name": "영상",
+      "ip": "서안산영업소-10",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205021",
+      "pole_type": "00:50:C2:79:2A:AD",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "서안산영업소 방범망",
+      "name": "영상",
+      "ip": "서안산영업소-11",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205197",
+      "pole_type": "00:50:C2:7E:8E:32",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": "18111DPKG0245"
+    },
+    {
+      "no": "군포지사",
+      "branch": "서안산영업소 방범망",
+      "name": "영상",
+      "ip": "서안산영업소-12",
+      "location_desc": "(외)불렛카메라-02",
+      "camera_model": "BUL20181205194",
+      "pole_type": "00:50:C2:7E:8E:72",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "안산영업소 방범망",
+      "name": "영상",
+      "ip": "안산영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205408",
+      "pole_type": "00:50:C2:7C:B0:10",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "안산영업소 방범망",
+      "name": "영상",
+      "ip": "안산영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205354",
+      "pole_type": "00:50:C2:7C:AF:C3",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "안산영업소 방범망",
+      "name": "영상",
+      "ip": "안산영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205397",
+      "pole_type": "00:50:C2:7C:B0:8C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "안산영업소 방범망",
+      "name": "영상",
+      "ip": "안산영업소-9",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181026424",
+      "pole_type": "00:50:C2:78:EE:5F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "안산영업소 방범망",
+      "name": "영상",
+      "ip": "안산영업소-10",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181026428",
+      "pole_type": "00:50:C2:78:EE:58",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "안산영업소 방범망",
+      "name": "영상",
+      "ip": "안산영업소-11",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205007",
+      "pole_type": "00:50:C2:73:17:14",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "안산영업소 방범망",
+      "name": "영상",
+      "ip": "안산영업소-12",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026433",
+      "pole_type": "00:50:C2:78:EE:55",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포영업소 방범망",
+      "name": "영상",
+      "ip": "군포영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205401",
+      "pole_type": "00:50:C2:7C:B0:51",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포영업소 방범망",
+      "name": "영상",
+      "ip": "군포영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205364",
+      "pole_type": "00:50:C2:7C:AF:FC",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포영업소 방범망",
+      "name": "영상",
+      "ip": "군포영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205361",
+      "pole_type": "00:50:C2:7C:B0:3B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포영업소 방범망",
+      "name": "영상",
+      "ip": "군포영업소-9",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205191",
+      "pole_type": "00:50:C2:80:07:98",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포영업소 방범망",
+      "name": "영상",
+      "ip": "군포영업소-10",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181205199",
+      "pole_type": "00:50:C2:7E:8E:7B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포영업소 방범망",
+      "name": "영상",
+      "ip": "군포영업소-11",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205003",
+      "pole_type": "00:50:C2:73:17:1B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포영업소 방범망",
+      "name": "영상",
+      "ip": "군포영업소-12",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205130",
+      "pole_type": "00:50:C2:80:07:AD",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포영업소 방범망",
+      "name": "영상",
+      "ip": "군포영업소-13",
+      "location_desc": "(외)불렛카메라-02",
+      "camera_model": "BUL20181205129",
+      "pole_type": "00:50:C2:80:07:99",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": "17103DPKG0054"
+    },
+    {
+      "no": "군포지사",
+      "branch": "동군포영업소 방범망",
+      "name": "영상",
+      "ip": "동군포영업소-5",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205337",
+      "pole_type": "00:50:C2:7C:B0:6F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "동군포영업소 방범망",
+      "name": "영상",
+      "ip": "동군포영업소-6",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205346",
+      "pole_type": "00:50:C2:7C:AF:E9",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "동군포영업소 방범망",
+      "name": "영상",
+      "ip": "동군포영업소-7",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205355",
+      "pole_type": "00:50:C2:7C:AF:C5",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "동군포영업소 방범망",
+      "name": "영상",
+      "ip": "동군포영업소-8",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205159",
+      "pole_type": "00:50:C2:80:07:8C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "동군포영업소 방범망",
+      "name": "영상",
+      "ip": "동군포영업소-9",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181205122",
+      "pole_type": "00:50:C2:7E:8E:2E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "동군포영업소 방범망",
+      "name": "영상",
+      "ip": "동군포영업소-10",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205016",
+      "pole_type": "00:50:C2:79:2A:7C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "부곡영업소 방범망",
+      "name": "영상",
+      "ip": "부곡영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205353",
+      "pole_type": "00:50:C2:7C:AF:C0",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "부곡영업소 방범망",
+      "name": "영상",
+      "ip": "부곡영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205367",
+      "pole_type": "00:50:C2:7C:B0:70",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "부곡영업소 방범망",
+      "name": "영상",
+      "ip": "부곡영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205338",
+      "pole_type": "00:50:C2:7C:B0:67",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "부곡영업소 방범망",
+      "name": "영상",
+      "ip": "부곡영업소-9",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205195",
+      "pole_type": "00:50:C2:80:08:00",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "부곡영업소 방범망",
+      "name": "영상",
+      "ip": "부곡영업소-10",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181205192",
+      "pole_type": "00:50:C2:7E:8E:64",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "부곡영업소 방범망",
+      "name": "영상",
+      "ip": "부곡영업소-11",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205017",
+      "pole_type": "00:50:C2:79:2A:89",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "부곡영업소 방범망",
+      "name": "영상",
+      "ip": "부곡영업소-12",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205127",
+      "pole_type": "00:50:C2:7E:8E:1C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "북수원영업소 방범망",
+      "name": "영상",
+      "ip": "북수원영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205351",
+      "pole_type": "00:50:C2:7C:AF:BC",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "북수원영업소 방범망",
+      "name": "영상",
+      "ip": "북수원영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205329",
+      "pole_type": "00:50:C2:7C:AF:E1",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "북수원영업소 방범망",
+      "name": "영상",
+      "ip": "북수원영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205330",
+      "pole_type": "00:50:C2:7C:B0:5F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "북수원영업소 방범망",
+      "name": "영상",
+      "ip": "북수원영업소-9",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205205",
+      "pole_type": "00:50:C2:80:07:C5",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "북수원영업소 방범망",
+      "name": "영상",
+      "ip": "북수원영업소-10",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181205132",
+      "pole_type": "00:50:C2:7E:8E:4E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "북수원영업소 방범망",
+      "name": "영상",
+      "ip": "북수원영업소-11",
+      "location_desc": "(지)불렛카메라-03",
+      "camera_model": "BUL20181205158",
+      "pole_type": "00:50:C2:7E:8E:82",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "북수원영업소 방범망",
+      "name": "영상",
+      "ip": "북수원영업소-12",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205015",
+      "pole_type": "00:50:C2:79:2A:8D",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "북수원영업소 방범망",
+      "name": "영상",
+      "ip": "북수원영업소-13",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205121",
+      "pole_type": "00:50:C2:80:07:BA",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "동수원영업소 방범망",
+      "name": "영상",
+      "ip": "동수원영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205342",
+      "pole_type": "00:50:C2:7C:AF:B0",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "동수원영업소 방범망",
+      "name": "영상",
+      "ip": "동수원영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205336",
+      "pole_type": "00:50:C2:7C:B0:06",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "동수원영업소 방범망",
+      "name": "영상",
+      "ip": "동수원영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205349",
+      "pole_type": "00:50:C2:7C:AF:EF",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "동수원영업소 방범망",
+      "name": "영상",
+      "ip": "동수원영업소-9",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205138",
+      "pole_type": "00:50:C2:7E:8E:46",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "동수원영업소 방범망",
+      "name": "영상",
+      "ip": "동수원영업소-10",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181205140",
+      "pole_type": "00:50:C2:7E:8E:23",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "동수원영업소 방범망",
+      "name": "영상",
+      "ip": "동수원영업소-11",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205024",
+      "pole_type": "00:50:C2:79:2A:B4",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "동수원영업소 방범망",
+      "name": "영상",
+      "ip": "동수원영업소-12",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205156",
+      "pole_type": "00:50:C2:7E:8E:1F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "마성영업소 방범망",
+      "name": "영상",
+      "ip": "마성영업소-5",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205332",
+      "pole_type": "00:50:C2:7C:B0:80",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "마성영업소 방범망",
+      "name": "영상",
+      "ip": "마성영업소-6",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205325",
+      "pole_type": "00:50:C2:7C:B0:4B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "마성영업소 방범망",
+      "name": "영상",
+      "ip": "마성영업소-7",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205368",
+      "pole_type": "00:50:C2:7C:AF:F1",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "마성영업소 방범망",
+      "name": "영상",
+      "ip": "마성영업소-8",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205123",
+      "pole_type": "00:50:C2:80:07:8A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "마성영업소 방범망",
+      "name": "영상",
+      "ip": "마성영업소-9",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205022",
+      "pole_type": "00:50:C2:79:2A:75",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "마성영업소 방범망",
+      "name": "영상",
+      "ip": "마성영업소-10",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205207",
+      "pole_type": "00:50:C2:80:07:A7",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "서평택영업소 방범망",
+      "name": "영상",
+      "ip": "서평택영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205418",
+      "pole_type": "00:50:C2:7C:B0:98",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "서평택영업소 방범망",
+      "name": "영상",
+      "ip": "서평택영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205371",
+      "pole_type": "00:50:C2:7C:AF:E5",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "서평택영업소 방범망",
+      "name": "영상",
+      "ip": "서평택영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205398",
+      "pole_type": "00:50:C2:7C:B0:72",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "서평택영업소 방범망",
+      "name": "영상",
+      "ip": "서평택영업소-9",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181026417",
+      "pole_type": "00:50:C2:6F:37:CB",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "서평택영업소 방범망",
+      "name": "영상",
+      "ip": "서평택영업소-10",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181026414",
+      "pole_type": "00:50:C2:6F:37:CA",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "서평택영업소 방범망",
+      "name": "영상",
+      "ip": "서평택영업소-11",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181026515",
+      "pole_type": "00:50:C2:73:17:19",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "발안영업소 방범망",
+      "name": "영상",
+      "ip": "발안영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181026336",
+      "pole_type": "00:50:C2:78:F2:9F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "발안영업소 방범망",
+      "name": "영상",
+      "ip": "발안영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181026321",
+      "pole_type": "00:50:C2:78:F2:A9",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "발안영업소 방범망",
+      "name": "영상",
+      "ip": "발안영업소-8",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181026453",
+      "pole_type": "00:50:C2:76:E6:C5",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "발안영업소 방범망",
+      "name": "영상",
+      "ip": "발안영업소-9",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181026419",
+      "pole_type": "00:50:C2:6F:37:BC",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "발안영업소 방범망",
+      "name": "영상",
+      "ip": "발안영업소-10",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181026503",
+      "pole_type": "00:50:C2:73:17:0F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "비봉영업소 방범망",
+      "name": "영상",
+      "ip": "비봉영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205360",
+      "pole_type": "00:50:C2:7C:B0:24",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "비봉영업소 방범망",
+      "name": "영상",
+      "ip": "비봉영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205358",
+      "pole_type": "00:50:C2:7C:AF:BF",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "비봉영업소 방범망",
+      "name": "영상",
+      "ip": "비봉영업소-8",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205196",
+      "pole_type": "00:50:C2:7E:8E:52",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "비봉영업소 방범망",
+      "name": "영상",
+      "ip": "비봉영업소-9",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205018",
+      "pole_type": "00:50:C2:79:2A:B2",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "비봉영업소 방범망",
+      "name": "영상",
+      "ip": "비봉영업소-10",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205198",
+      "pole_type": "00:50:C2:7E:8E:2A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": "17103DPKG0060"
+    },
+    {
+      "no": "화성지사",
+      "branch": "비봉영업소 방범망",
+      "name": "영상",
+      "ip": "비봉영업소-11",
+      "location_desc": "(외)불렛카메라-02",
+      "camera_model": "BUL20181205200",
+      "pole_type": "00:50:C2:80:07:90",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": "17103DPKG0020"
+    },
+    {
+      "no": "화성지사",
+      "branch": "매송영업소 방범망",
+      "name": "영상",
+      "ip": "매송영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205365",
+      "pole_type": "00:50:C2:7C:AF:E2",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "매송영업소 방범망",
+      "name": "영상",
+      "ip": "매송영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205343",
+      "pole_type": "00:50:C2:7C:B0:5A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "매송영업소 방범망",
+      "name": "영상",
+      "ip": "매송영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205345",
+      "pole_type": "00:50:C2:7C:B0:38",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "매송영업소 방범망",
+      "name": "영상",
+      "ip": "매송영업소-9",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181026440",
+      "pole_type": "00:50:C2:78:EE:6D",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "매송영업소 방범망",
+      "name": "영상",
+      "ip": "매송영업소-10",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181026436",
+      "pole_type": "00:50:C2:78:EE:7C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "매송영업소 방범망",
+      "name": "영상",
+      "ip": "매송영업소-11",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205019",
+      "pole_type": "00:50:C2:78:8E:8C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "청북영업소 방범망",
+      "name": "영상",
+      "ip": "청북영업소-5",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205405",
+      "pole_type": "00:50:C2:7C:B0:7F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "청북영업소 방범망",
+      "name": "영상",
+      "ip": "청북영업소-6",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205430",
+      "pole_type": "00:50:C2:7C:B0:63",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "청북영업소 방범망",
+      "name": "영상",
+      "ip": "청북영업소-7",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205445",
+      "pole_type": "00:50:C2:7C:AF:E4",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "청북영업소 방범망",
+      "name": "영상",
+      "ip": "청북영업소-8",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205175",
+      "pole_type": "00:50:C2:80:07:D7",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "청북영업소 방범망",
+      "name": "영상",
+      "ip": "청북영업소-9",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205008",
+      "pole_type": "00:50:C2:79:2A:CC",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "평택고덕영업소 방범망",
+      "name": "영상",
+      "ip": "평택고덕영업소-5",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205381",
+      "pole_type": "00:50:C2:7C:B0:15",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "평택고덕영업소 방범망",
+      "name": "영상",
+      "ip": "평택고덕영업소-6",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205403",
+      "pole_type": "00:50:C2:7C:B0:00",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "평택고덕영업소 방범망",
+      "name": "영상",
+      "ip": "평택고덕영업소-7",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205426",
+      "pole_type": "00:50:C2:7C:B0:50",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "평택고덕영업소 방범망",
+      "name": "영상",
+      "ip": "평택고덕영업소-8",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181205447",
+      "pole_type": "00:50:C2:7C:B0:54",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "평택고덕영업소 방범망",
+      "name": "영상",
+      "ip": "평택고덕영업소-9",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205032",
+      "pole_type": "00:50:C2:79:2A:7F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "평택고덕영업소 방범망",
+      "name": "영상",
+      "ip": "평택고덕영업소-10",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205148",
+      "pole_type": "00:50:C2:7E:8E:5F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "평택고덕영업소 방범망",
+      "name": "영상",
+      "ip": "평택고덕영업소-11",
+      "location_desc": "(외)불렛카메라-02",
+      "camera_model": "BUL20181205174",
+      "pole_type": "00:50:C2:80:07:E3",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "평택고덕영업소 방범망",
+      "name": "영상",
+      "ip": "평택고덕영업소-12",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20190111201",
+      "pole_type": "00:50:C2:80:9B:4F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "추가건",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "송탄영업소 방범망",
+      "name": "영상",
+      "ip": "송탄영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205417",
+      "pole_type": "00:50:C2:7C:B0:3A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "송탄영업소 방범망",
+      "name": "영상",
+      "ip": "송탄영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205416",
+      "pole_type": "00:50:C2:7C:B0:26",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "송탄영업소 방범망",
+      "name": "영상",
+      "ip": "송탄영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205415",
+      "pole_type": "00:50:C2:7C:AF:FD",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "송탄영업소 방범망",
+      "name": "영상",
+      "ip": "송탄영업소-9",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205145",
+      "pole_type": "00:50:C2:7E:8E:74",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "송탄영업소 방범망",
+      "name": "영상",
+      "ip": "송탄영업소-10",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205035",
+      "pole_type": "00:50:C2:74:FA:04",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "송탄영업소 방범망",
+      "name": "영상",
+      "ip": "송탄영업소-11",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205147",
+      "pole_type": "00:50:C2:7E:8E:71",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": "17103DPKG0016"
+    },
+    {
+      "no": "화성지사",
+      "branch": "서안성영업소 방범망",
+      "name": "영상",
+      "ip": "서안성영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205384",
+      "pole_type": "00:50:C2:7C:AF:C6",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "서안성영업소 방범망",
+      "name": "영상",
+      "ip": "서안성영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205441",
+      "pole_type": "00:50:C2:7C:B0:0F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "서안성영업소 방범망",
+      "name": "영상",
+      "ip": "서안성영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205382",
+      "pole_type": "00:50:C2:7C:B0:09",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "서안성영업소 방범망",
+      "name": "영상",
+      "ip": "서안성영업소-9",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205150",
+      "pole_type": "00:50:C2:7E:8E:6F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "서안성영업소 방범망",
+      "name": "영상",
+      "ip": "서안성영업소-10",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205025",
+      "pole_type": "00:50:C2:79:2A:96",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "서안성영업소 방범망",
+      "name": "영상",
+      "ip": "서안성영업소-11",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205152",
+      "pole_type": "00:50:C2:7E:8E:44",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": "17103DPKG0071"
+    },
+    {
+      "no": "화성지사",
+      "branch": "남안성영업소 방범망",
+      "name": "영상",
+      "ip": "남안성영업소-5",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205427",
+      "pole_type": "00:50:C2:7C:B0:35",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "남안성영업소 방범망",
+      "name": "영상",
+      "ip": "남안성영업소-6",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205423",
+      "pole_type": "00:50:C2:7C:B0:5B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "남안성영업소 방범망",
+      "name": "영상",
+      "ip": "남안성영업소-7",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205424",
+      "pole_type": "00:50:C2:7C:B0:78",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "남안성영업소 방범망",
+      "name": "영상",
+      "ip": "남안성영업소-8",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205149",
+      "pole_type": "00:50:C2:80:07:97",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "남안성영업소 방범망",
+      "name": "영상",
+      "ip": "남안성영업소-9",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205031",
+      "pole_type": "00:50:C2:79:2A:B8",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "남안성영업소 방범망",
+      "name": "영상",
+      "ip": "남안성영업소-10",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205173",
+      "pole_type": "00:50:C2:7E:8E:16",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": "17103DPKG0055"
+    },
+    {
+      "no": "화성지사",
+      "branch": "평택영업소 방범망",
+      "name": "영상",
+      "ip": "평택영업소-5",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205436",
+      "pole_type": "00:50:C2:7C:B0:77",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "평택영업소 방범망",
+      "name": "영상",
+      "ip": "평택영업소-6",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205421",
+      "pole_type": "00:50:C2:7C:AF:B6",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "평택영업소 방범망",
+      "name": "영상",
+      "ip": "평택영업소-7",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205146",
+      "pole_type": "00:50:C2:7E:8E:28",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "평택영업소 방범망",
+      "name": "영상",
+      "ip": "평택영업소-8",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205013",
+      "pole_type": "00:50:C2:79:2A:9C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "오산영업소 방범망",
+      "name": "영상",
+      "ip": "오산영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181026337",
+      "pole_type": "00:50:C2:78:F2:A2",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "오산영업소 방범망",
+      "name": "영상",
+      "ip": "오산영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181026320",
+      "pole_type": "00:50:C2:78:F2:93",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "오산영업소 방범망",
+      "name": "영상",
+      "ip": "오산영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181026329",
+      "pole_type": "00:50:C2:78:F2:91",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "오산영업소 방범망",
+      "name": "영상",
+      "ip": "오산영업소-9",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181026330",
+      "pole_type": "00:50:C2:78:F2:AB",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "오산영업소 방범망",
+      "name": "영상",
+      "ip": "오산영업소-10",
+      "location_desc": "돔카메라-05",
+      "camera_model": "DOM20181026333",
+      "pole_type": "00:50:C2:78:F2:A1",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "오산영업소 방범망",
+      "name": "영상",
+      "ip": "오산영업소-11",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181026409",
+      "pole_type": "00:50:C2:6F:37:D1",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "오산영업소 방범망",
+      "name": "영상",
+      "ip": "오산영업소-12",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181026418",
+      "pole_type": "00:50:C2:6F:37:D0",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "오산영업소 방범망",
+      "name": "영상",
+      "ip": "오산영업소-13",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181026501",
+      "pole_type": "00:50:C2:73:17:1E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "오산영업소 방범망",
+      "name": "영상",
+      "ip": "오산영업소-14",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026401",
+      "pole_type": "00:50:C2:6F:37:C3",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": "17103DPKG0068"
+    },
+    {
+      "no": "수원지사",
+      "branch": "오산영업소 방범망",
+      "name": "영상",
+      "ip": "오산영업소-15",
+      "location_desc": "(외)불렛카메라-02",
+      "camera_model": "BUL20181026413",
+      "pole_type": "00:50:C2:6F:37:CC",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#10",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "기흥영업소 방범망",
+      "name": "영상",
+      "ip": "기흥영업소-5",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181026315",
+      "pole_type": "00:50:C2:78:F2:90",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "기흥영업소 방범망",
+      "name": "영상",
+      "ip": "기흥영업소-6",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181026305",
+      "pole_type": "00:50:C2:78:F2:99",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "기흥영업소 방범망",
+      "name": "영상",
+      "ip": "기흥영업소-7",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181026324",
+      "pole_type": "00:50:C2:78:F2:AA",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "기흥영업소 방범망",
+      "name": "영상",
+      "ip": "기흥영업소-8",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181026326",
+      "pole_type": "00:50:C2:78:F2:82",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "기흥영업소 방범망",
+      "name": "영상",
+      "ip": "기흥영업소-9",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181026507",
+      "pole_type": "00:50:C2:73:17:0A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "기흥영업소 방범망",
+      "name": "영상",
+      "ip": "기흥영업소-10",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026405",
+      "pole_type": "00:50:C2:6F:37:C6",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": "17103DPKG0087"
+    },
+    {
+      "no": "수원지사",
+      "branch": "기흥동탄영업소 방범망",
+      "name": "영상",
+      "ip": "기흥동탄영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181026325",
+      "pole_type": "00:50:C2:78:F2:AC",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "기흥동탄영업소 방범망",
+      "name": "영상",
+      "ip": "기흥동탄영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181026323",
+      "pole_type": "00:50:C2:78:F2:A6",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "기흥동탄영업소 방범망",
+      "name": "영상",
+      "ip": "기흥동탄영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181026322",
+      "pole_type": "00:50:C2:78:F2:98",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "기흥동탄영업소 방범망",
+      "name": "영상",
+      "ip": "기흥동탄영업소-9",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181026334",
+      "pole_type": "00:50:C2:78:F2:83",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "기흥동탄영업소 방범망",
+      "name": "영상",
+      "ip": "기흥동탄영업소-10",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181026444",
+      "pole_type": "00:50:C2:78:EE:6B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "기흥동탄영업소 방범망",
+      "name": "영상",
+      "ip": "기흥동탄영업소-11",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181026425",
+      "pole_type": "00:50:C2:78:EE:6F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "기흥동탄영업소 방범망",
+      "name": "영상",
+      "ip": "기흥동탄영업소-12",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181026506",
+      "pole_type": "00:50:C2:73:17:0B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "기흥동탄영업소 방범망",
+      "name": "영상",
+      "ip": "기흥동탄영업소-13",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026422",
+      "pole_type": "00:50:C2:78:EE:61",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": "17103DPKG0017"
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(출구)영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205311",
+      "pole_type": "00:50:C2:7C:B0:44",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(출구)영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205313",
+      "pole_type": "00:50:C2:7C:B0:42",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(출구)영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205321",
+      "pole_type": "00:50:C2:7C:B0:8D",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(출구)영업소-9",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181205304",
+      "pole_type": "00:50:C2:7C:B0:29",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(출구)영업소-10",
+      "location_desc": "돔카메라-05",
+      "camera_model": "DOM20181205319",
+      "pole_type": "00:50:C2:7C:B0:57",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(출구)영업소-11",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181026460",
+      "pole_type": "00:50:C2:76:E6:C2",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(출구)영업소-12",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181026429",
+      "pole_type": "00:50:C2:78:EE:7E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(출구)영업소-13",
+      "location_desc": "(지)불렛카메라-03",
+      "camera_model": "BUL20181026439",
+      "pole_type": "00:50:C2:78:EE:62",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(출구)영업소-14",
+      "location_desc": "(지)불렛카메라-04",
+      "camera_model": "BUL20181026454",
+      "pole_type": "00:50:C2:78:EE:7B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#10",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(출구)영업소-15",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205002",
+      "pole_type": "00:50:C2:73:17:12",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(출구)영업소-16",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026427",
+      "pole_type": "00:50:C2:76:E6:C1",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#11",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(출구)영업소-17",
+      "location_desc": "(외)불렛카메라-02",
+      "camera_model": "BUL20181026430",
+      "pole_type": "00:50:C2:78:EE:68",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#12",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(출구)영업소-18",
+      "location_desc": "(외)불렛카메라-03",
+      "camera_model": "BUL20181026452",
+      "pole_type": "00:50:C2:76:E6:C8",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#13",
+      "bridge_ip": "17103DPKG0022"
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(출구)영업소-19",
+      "location_desc": "(외)불렛카메라-04",
+      "camera_model": "BUL20181026406",
+      "pole_type": "00:50:C2:6F:37:DD",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#14",
+      "bridge_ip": "17103DPKG0002"
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "AP",
+      "ip": "수원신갈(입구)영업소-2",
+      "location_desc": "무선브릿지-Rx",
+      "camera_model": "0824181000001124",
+      "pole_type": "00:19:3B:15:FA:2A",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "AP",
+      "ip": "수원신갈(입구)영업소-3",
+      "location_desc": "무선브릿지-Tx",
+      "camera_model": "0824181000000F73",
+      "pole_type": "00:19:3B:15:F6:C8",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(입구)영업소-4",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205357",
+      "pole_type": "00:50:C2:7C:AF:DB",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(입구)영업소-5",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181205141",
+      "pole_type": "00:50:C2:80:07:B3",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(입구)영업소-6",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181205144",
+      "pole_type": "00:50:C2:80:07:FA",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "영상",
+      "ip": "수원신갈(입구)영업소-7",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181205155",
+      "pole_type": "00:50:C2:80:07:88",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": "18111DPKG0237"
+    },
+    {
+      "no": "수원지사",
+      "branch": "수원신갈영업소 방범망",
+      "name": "스위치",
+      "ip": "수원신갈(입구)영업소-8",
+      "location_desc": "8PoE허브-02(확장)",
+      "camera_model": "00216DD76AC1",
+      "pole_type": "S140H180906769",
+      "switch_ip": "스위치",
+      "wireless_bridge": "L2 PoE 8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "AP",
+      "ip": "서울영업소-5",
+      "location_desc": "무선브릿지-Rx",
+      "camera_model": "0824181000000FDF",
+      "pole_type": "00:19:3B:15:F7:A0",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "AP",
+      "ip": "서울영업소-6",
+      "location_desc": "무선브릿지-Tx",
+      "camera_model": "08241810000010F4",
+      "pole_type": "00:19:3B:15:F9:CA",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "영상",
+      "ip": "서울영업소-10",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181026308",
+      "pole_type": "00:50:C2:78:F2:97",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "영상",
+      "ip": "서울영업소-11",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181026335",
+      "pole_type": "00:50:C2:78:F2:8D",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "영상",
+      "ip": "서울영업소-12",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181026311",
+      "pole_type": "00:50:C2:78:F2:9E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "영상",
+      "ip": "서울영업소-13",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181026306",
+      "pole_type": "00:50:C2:78:F2:89",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "영상",
+      "ip": "서울영업소-14",
+      "location_desc": "돔카메라-05",
+      "camera_model": "DOM20181026312",
+      "pole_type": "00:50:C2:78:F2:A0",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#12",
+      "bridge_ip": "17103DPKG0096"
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "영상",
+      "ip": "서울영업소-15",
+      "location_desc": "돔카메라-06",
+      "camera_model": "DOM20181026327",
+      "pole_type": "00:50:C2:78:F2:84",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#13",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "영상",
+      "ip": "서울영업소-16",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181026448",
+      "pole_type": "00:50:C2:78:EE:59",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "영상",
+      "ip": "서울영업소-17",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181026431",
+      "pole_type": "00:50:C2:78:EE:5E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "영상",
+      "ip": "서울영업소-18",
+      "location_desc": "(지)불렛카메라-03",
+      "camera_model": "BUL20181026426",
+      "pole_type": "00:50:C2:78:EE:60",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "영상",
+      "ip": "서울영업소-19",
+      "location_desc": "(지)불렛카메라-04",
+      "camera_model": "BUL20181026423",
+      "pole_type": "00:50:C2:78:EE:73",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "영상",
+      "ip": "서울영업소-20",
+      "location_desc": "(지)불렛카메라-05",
+      "camera_model": "BUL20181026449",
+      "pole_type": "00:50:C2:78:EE:6C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#10",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "영상",
+      "ip": "서울영업소-21",
+      "location_desc": "(지)불렛카메라-06",
+      "camera_model": "BUL20181026435",
+      "pole_type": "00:50:C2:76:E6:C7",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#11",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "영상",
+      "ip": "서울영업소-22",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181026504",
+      "pole_type": "00:50:C2:73:17:16",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "서울영업소 방범망",
+      "name": "영상",
+      "ip": "서울영업소-23",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026447",
+      "pole_type": "00:50:C2:78:EE:63",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#14",
+      "bridge_ip": "17103DPKG0063"
+    },
+    {
+      "no": "수원지사",
+      "branch": "판교영업소 방범망",
+      "name": "영상",
+      "ip": "판교영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181026307",
+      "pole_type": "00:50:C2:78:F2:88",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "판교영업소 방범망",
+      "name": "영상",
+      "ip": "판교영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181026340",
+      "pole_type": "00:50:C2:78:F2:8B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "판교영업소 방범망",
+      "name": "영상",
+      "ip": "판교영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181026303",
+      "pole_type": "00:50:C2:78:EE:83",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "판교영업소 방범망",
+      "name": "영상",
+      "ip": "판교영업소-9",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181026301",
+      "pole_type": "00:50:C2:78:F2:9A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "판교영업소 방범망",
+      "name": "영상",
+      "ip": "판교영업소-10",
+      "location_desc": "돔카메라-05",
+      "camera_model": "DOM20181026302",
+      "pole_type": "00:50:C2:78:F2:9B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "판교영업소 방범망",
+      "name": "영상",
+      "ip": "판교영업소-11",
+      "location_desc": "돔카메라-06",
+      "camera_model": "DOM20181026304",
+      "pole_type": "00:50:C2:78:F2:8C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "판교영업소 방범망",
+      "name": "영상",
+      "ip": "판교영업소-12",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181026415",
+      "pole_type": "00:50:C2:6F:37:BF",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "판교영업소 방범망",
+      "name": "영상",
+      "ip": "판교영업소-13",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181026446",
+      "pole_type": "00:50:C2:78:EE:78",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "판교영업소 방범망",
+      "name": "영상",
+      "ip": "판교영업소-14",
+      "location_desc": "(지)불렛카메라-03",
+      "camera_model": "BUL20181026443",
+      "pole_type": "00:50:C2:78:EE:6A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#10",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "판교영업소 방범망",
+      "name": "영상",
+      "ip": "판교영업소-15",
+      "location_desc": "(지)불렛카메라-04",
+      "camera_model": "BUL20181026458",
+      "pole_type": "00:50:C2:78:EE:72",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#11",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "판교영업소 방범망",
+      "name": "영상",
+      "ip": "판교영업소-16",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181026505",
+      "pole_type": "00:50:C2:73:17:0E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "판교영업소 방범망",
+      "name": "영상",
+      "ip": "판교영업소-17",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026411",
+      "pole_type": "00:50:C2:6F:37:D4",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#12",
+      "bridge_ip": "18111DPKG0238"
+    },
+    {
+      "no": "수원지사",
+      "branch": "판교영업소 방범망",
+      "name": "영상",
+      "ip": "판교영업소-18",
+      "location_desc": "(외)불렛카메라-02",
+      "camera_model": "BUL20181026437",
+      "pole_type": "00:50:C2:78:EE:77",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#13",
+      "bridge_ip": "18111DPKG0247"
+    },
+    {
+      "no": "수원지사",
+      "branch": "판교영업소 방범망",
+      "name": "영상",
+      "ip": "판교영업소-19",
+      "location_desc": "(외)불렛카메라-03",
+      "camera_model": "BUL20181026445",
+      "pole_type": "00:50:C2:76:E6:C3",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#14",
+      "bridge_ip": "18111DPKG0243"
+    },
+    {
+      "no": "수원지사",
+      "branch": "대왕판교영업소 방범망",
+      "name": "영상",
+      "ip": "대왕판교영업소-5",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181026309",
+      "pole_type": "00:50:C2:78:F2:9D",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "대왕판교영업소 방범망",
+      "name": "영상",
+      "ip": "대왕판교영업소-6",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181026310",
+      "pole_type": "00:50:C2:78:F2:9C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "대왕판교영업소 방범망",
+      "name": "영상",
+      "ip": "대왕판교영업소-7",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181026514",
+      "pole_type": "00:50:C2:73:17:15",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "수원지사",
+      "branch": "대왕판교영업소 방범망",
+      "name": "영상",
+      "ip": "대왕판교영업소-8",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026432",
+      "pole_type": "00:50:C2:78:EE:7F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": "18111DPKG0336"
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "서이천영업소 방범망",
+      "name": "영상",
+      "ip": "서이천영업소-5",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181026331",
+      "pole_type": "00:50:C2:78:F2:8E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "서이천영업소 방범망",
+      "name": "영상",
+      "ip": "서이천영업소-6",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181026318",
+      "pole_type": "00:50:C2:78:F2:A5",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "서이천영업소 방범망",
+      "name": "영상",
+      "ip": "서이천영업소-7",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181026328",
+      "pole_type": "00:50:C2:78:F2:A7",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "서이천영업소 방범망",
+      "name": "영상",
+      "ip": "서이천영업소-8",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181026459",
+      "pole_type": "00:50:C2:78:EE:5B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "서이천영업소 방범망",
+      "name": "영상",
+      "ip": "서이천영업소-9",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181026512",
+      "pole_type": "00:50:C2:73:17:18",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "곤지암영업소 방범망",
+      "name": "영상",
+      "ip": "곤지암영업소-5",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181026339",
+      "pole_type": "00:50:C2:78:F2:94",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "곤지암영업소 방범망",
+      "name": "영상",
+      "ip": "곤지암영업소-6",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181026316",
+      "pole_type": "00:50:C2:78:F2:7F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "곤지암영업소 방범망",
+      "name": "영상",
+      "ip": "곤지암영업소-7",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181026313",
+      "pole_type": "00:50:C2:78:F2:80",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "곤지암영업소 방범망",
+      "name": "영상",
+      "ip": "곤지암영업소-8",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181026502",
+      "pole_type": "00:50:C2:73:17:11",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "곤지암영업소 방범망",
+      "name": "영상",
+      "ip": "곤지암영업소-9",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026410",
+      "pole_type": "00:50:C2:6F:37:BE",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "곤지암영업소 방범망",
+      "name": "영상",
+      "ip": "곤지암영업소-10",
+      "location_desc": "(외)불렛카메라-02",
+      "camera_model": "BUL20181026434",
+      "pole_type": "00:50:C2:78:EE:6E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": "17103DPKG0069"
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "곤지암영업소 방범망",
+      "name": "영상",
+      "ip": "곤지암영업소-11",
+      "location_desc": "(외)불렛카메라-03",
+      "camera_model": "BUL20181026450",
+      "pole_type": "00:50:C2:78:EE:69",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": "17103DPKG0061"
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주영업소 방범망",
+      "name": "영상",
+      "ip": "경기광주영업소-5",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181026319",
+      "pole_type": "00:50:C2:78:F2:A8",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주영업소 방범망",
+      "name": "영상",
+      "ip": "경기광주영업소-6",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181026314",
+      "pole_type": "00:50:C2:78:F2:8F",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주영업소 방범망",
+      "name": "영상",
+      "ip": "경기광주영업소-7",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181026317",
+      "pole_type": "00:50:C2:78:F2:96",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주영업소 방범망",
+      "name": "영상",
+      "ip": "경기광주영업소-8",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181026508",
+      "pole_type": "00:50:C2:73:17:10",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "경기광주영업소 방범망",
+      "name": "영상",
+      "ip": "경기광주영업소-9",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026421",
+      "pole_type": "00:50:C2:78:EE:7D",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "동서울영업소 방범망",
+      "name": "AP",
+      "ip": "동서울영업소-3",
+      "location_desc": "무선브릿지-Rx",
+      "camera_model": "0824181000000F5E",
+      "pole_type": "00:19:3B:15:F6:9E",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "동서울영업소 방범망",
+      "name": "AP",
+      "ip": "동서울영업소-4",
+      "location_desc": "무선브릿지-Tx",
+      "camera_model": "0824181000001052",
+      "pole_type": "00:19:3B:15:F8:86",
+      "switch_ip": "AP",
+      "wireless_bridge": "무선브릿지",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "동서울영업소 방범망",
+      "name": "영상",
+      "ip": "동서울영업소-8",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205369",
+      "pole_type": "00:50:C2:7C:B0:81",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "동서울영업소 방범망",
+      "name": "영상",
+      "ip": "동서울영업소-9",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205406",
+      "pole_type": "00:50:C2:7C:B0:7A",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "동서울영업소 방범망",
+      "name": "영상",
+      "ip": "동서울영업소-10",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205407",
+      "pole_type": "00:50:C2:7C:B0:88",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "동서울영업소 방범망",
+      "name": "영상",
+      "ip": "동서울영업소-11",
+      "location_desc": "돔카메라-04",
+      "camera_model": "DOM20181205412",
+      "pole_type": "00:50:C2:7C:B0:19",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#8",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "동서울영업소 방범망",
+      "name": "영상",
+      "ip": "동서울영업소-12",
+      "location_desc": "돔카메라-05",
+      "camera_model": "DOM20181205410",
+      "pole_type": "00:50:C2:7C:B0:A5",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#9",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "동서울영업소 방범망",
+      "name": "영상",
+      "ip": "동서울영업소-13",
+      "location_desc": "돔카메라-06",
+      "camera_model": "DOM20181205419",
+      "pole_type": "00:50:C2:7C:B0:64",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#10",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "동서울영업소 방범망",
+      "name": "영상",
+      "ip": "동서울영업소-14",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181026441",
+      "pole_type": "00:50:C2:76:E6:C4",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "동서울영업소 방범망",
+      "name": "영상",
+      "ip": "동서울영업소-15",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181026451",
+      "pole_type": "00:50:C2:78:EE:67",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "동서울영업소 방범망",
+      "name": "영상",
+      "ip": "동서울영업소-16",
+      "location_desc": "(지)불렛카메라-03",
+      "camera_model": "BUL20181026407",
+      "pole_type": "00:50:C2:6F:37:D7",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "동서울영업소 방범망",
+      "name": "영상",
+      "ip": "동서울영업소-17",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181026511",
+      "pole_type": "00:50:C2:73:17:09",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "하남영업소 방범망",
+      "name": "영상",
+      "ip": "하남영업소-6",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205303",
+      "pole_type": "00:50:C2:7C:B0:30",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "하남영업소 방범망",
+      "name": "영상",
+      "ip": "하남영업소-7",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205301",
+      "pole_type": "00:50:C2:7C:B0:11",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "하남영업소 방범망",
+      "name": "영상",
+      "ip": "하남영업소-8",
+      "location_desc": "돔카메라-03",
+      "camera_model": "DOM20181205305",
+      "pole_type": "00:50:C2:7C:AF:F9",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "하남영업소 방범망",
+      "name": "영상",
+      "ip": "하남영업소-9",
+      "location_desc": "(지)불렛카메라-01",
+      "camera_model": "BUL20181026438",
+      "pole_type": "00:50:C2:78:EE:75",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#5",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "하남영업소 방범망",
+      "name": "영상",
+      "ip": "하남영업소-10",
+      "location_desc": "(지)불렛카메라-02",
+      "camera_model": "BUL20181026457",
+      "pole_type": "00:50:C2:78:EE:5C",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#6",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "하남영업소 방범망",
+      "name": "영상",
+      "ip": "하남영업소-11",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181026513",
+      "pole_type": "00:50:C2:73:17:23",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#4",
+      "bridge_ip": ""
+    },
+    {
+      "no": "경기광주지사",
+      "branch": "하남영업소 방범망",
+      "name": "영상",
+      "ip": "하남영업소-12",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026408",
+      "pole_type": "00:50:C2:6F:37:C7",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#7",
+      "bridge_ip": "17103DPKG0076"
+    },
+    {
+      "no": "동서울지사",
+      "branch": "경기광주-동서울 TTMS망",
+      "name": "영상",
+      "ip": "광암터널관리동-2",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205387",
+      "pole_type": "00:50:C2:7C:AF:CC",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "경기광주-동서울 TTMS망",
+      "name": "영상",
+      "ip": "광암터널관리동-3",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205009",
+      "pole_type": "00:50:C2:79:2A:77",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "동서울지사",
+      "branch": "경기광주-동서울 TTMS망",
+      "name": "영상",
+      "ip": "광암터널관리동-4",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026402",
+      "pole_type": "00:50:C2:6F:37:C5",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "수리수암터널 관리동",
+      "name": "영상",
+      "ip": "수리수암터널관리동-2",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205327",
+      "pole_type": "00:50:C2:7C:AF:EC",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "수리수암터널 관리동",
+      "name": "영상",
+      "ip": "수리수암터널관리동-3",
+      "location_desc": "돔카메라-02",
+      "camera_model": "DOM20181205331",
+      "pole_type": "00:50:C2:7C:B0:7B",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "시흥지사",
+      "branch": "수리수암터널 관리동",
+      "name": "영상",
+      "ip": "수리수암터널관리동-4",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205023",
+      "pole_type": "00:50:C2:79:2A:BC",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포-인천 TTMS망",
+      "name": "영상",
+      "ip": "반월터널관리동-2",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205443",
+      "pole_type": "00:50:C2:7C:B0:75",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포-인천 TTMS망",
+      "name": "영상",
+      "ip": "반월터널관리동-3",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205034",
+      "pole_type": "00:50:C2:74:FA:05",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "군포-인천 TTMS망",
+      "name": "영상",
+      "ip": "반월터널관리동-4",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026404",
+      "pole_type": "00:50:C2:6F:37:BB",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "마성터널 관리동",
+      "name": "영상",
+      "ip": "마성터널관리동-2",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205429",
+      "pole_type": "00:50:C2:7C:B0:A6",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "마성터널 관리동",
+      "name": "영상",
+      "ip": "마성터널관리동-3",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205030",
+      "pole_type": "00:50:C2:79:2A:C9",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "마성터널 관리동",
+      "name": "영상",
+      "ip": "마성터널관리동-4",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026416",
+      "pole_type": "00:50:C2:6F:37:D8",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "광교방음터널 관리동",
+      "name": "영상",
+      "ip": "광교방음터널관리동-2",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205446",
+      "pole_type": "00:50:C2:7C:B0:40",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "광교방음터널 관리동",
+      "name": "영상",
+      "ip": "광교방음터널관리동-3",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205027",
+      "pole_type": "00:50:C2:79:2A:A2",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "광교방음터널 관리동",
+      "name": "영상",
+      "ip": "광교방음터널관리동-4",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026420",
+      "pole_type": "00:50:C2:6F:37:BD",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "이천-군포 TTMS망",
+      "name": "영상",
+      "ip": "광교터널관리동-2",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181205437",
+      "pole_type": "00:50:C2:7C:B0:A1",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "이천-군포 TTMS망",
+      "name": "영상",
+      "ip": "광교터널관리동-3",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181205010",
+      "pole_type": "00:50:C2:79:2A:B0",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "군포지사",
+      "branch": "이천-군포 TTMS망",
+      "name": "영상",
+      "ip": "광교터널관리동-4",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026412",
+      "pole_type": "00:50:C2:6F:37:D3",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "화성-시흥 TTMS망",
+      "name": "영상",
+      "ip": "순산터널관리동-2",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181026338",
+      "pole_type": "00:50:C2:78:F2:7E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "화성-시흥 TTMS망",
+      "name": "영상",
+      "ip": "순산터널관리동-3",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181026509",
+      "pole_type": "00:50:C2:73:17:1D",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "화성-시흥 TTMS망",
+      "name": "영상",
+      "ip": "순산터널관리동-4",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026442",
+      "pole_type": "00:50:C2:78:EE:66",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "화성-시흥 TTMS망",
+      "name": "영상",
+      "ip": "용담터널관리동-2",
+      "location_desc": "돔카메라-01",
+      "camera_model": "DOM20181026338",
+      "pole_type": "00:50:C2:78:F2:7E",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#1",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "화성-시흥 TTMS망",
+      "name": "영상",
+      "ip": "용담터널관리동-3",
+      "location_desc": "(외)스피드돔카메라-01",
+      "camera_model": "IRD20181214201",
+      "pole_type": "00:50:C2:79:2A:C0",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#3",
+      "bridge_ip": ""
+    },
+    {
+      "no": "화성지사",
+      "branch": "화성-시흥 TTMS망",
+      "name": "영상",
+      "ip": "용담터널관리동-4",
+      "location_desc": "(외)불렛카메라-01",
+      "camera_model": "BUL20181026455",
+      "pole_type": "00:50:C2:78:EE:79",
+      "switch_ip": "카메라",
+      "wireless_bridge": "CAM#2",
+      "bridge_ip": ""
+    }
+  ],
+  "straight_map": [
+    {
+      "name": "판교JCT",
+      "type": "JCT",
+      "mile": 0.0,
+      "desc": "경부선 분기점 (수도권제1순환선 시점)"
+    },
+    {
+      "name": "성남IC",
+      "type": "IC",
+      "mile": 4.4,
+      "desc": "국도 3호선 연계 나들목"
+    },
+    {
+      "name": "송파IC",
+      "type": "IC",
+      "mile": 9.5,
+      "desc": "송파대로 및 헌릉로 연계"
+    },
+    {
+      "name": "서하남JCT",
+      "type": "JCT",
+      "mile": 13.4,
+      "desc": "서하남 나들목 및 감일지구"
+    },
+    {
+      "name": "동서울지사",
+      "type": "OFFICE",
+      "mile": 14.2,
+      "desc": "한국도로공사 수도권본부 동서울지사"
+    },
+    {
+      "name": "하남JCT",
+      "type": "JCT",
+      "mile": 17.3,
+      "desc": "중부고속도로 분기점"
+    },
+    {
+      "name": "상일IC",
+      "type": "IC",
+      "mile": 22.0,
+      "desc": "천호대로 연계 나들목"
+    },
+    {
+      "name": "강일IC",
+      "type": "IC",
+      "mile": 24.8,
+      "desc": "올림픽대로 및 서울양양선 분기"
+    },
+    {
+      "name": "남양주IC",
+      "type": "IC",
+      "mile": 27.8,
+      "desc": "경춘국도 46호선 연계"
+    },
+    {
+      "name": "구리IC",
+      "type": "IC",
+      "mile": 30.8,
+      "desc": "북부간선도로 연계"
+    },
+    {
+      "name": "퇴계원IC",
+      "type": "IC",
+      "mile": 33.7,
+      "desc": "동서울지사 관내 종점 (일산방향)"
+    },
+    {
+      "name": "청계TG",
+      "type": "TG",
+      "mile": 10.2,
+      "desc": "외곽선 본선 요금소"
+    },
+    {
+      "name": "학의JCT",
+      "type": "JCT",
+      "mile": 14.8,
+      "desc": "과천봉담도시고속화도로 분기"
+    },
+    {
+      "name": "평촌IC",
+      "type": "IC",
+      "mile": 18.5,
+      "desc": "안양 평촌신도시 연계 나들목"
+    }
+  ]
+};
