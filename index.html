@@ -909,7 +909,7 @@
           const officeIcon = L.divIcon({
             className: 'custom-office-icon',
             html: `
-              <div class="relative flex flex-col items-center cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 transition duration-150">
+              <div class="relative flex flex-col items-center cursor-pointer pointer-events-auto" style="transform: translate(-50%, -100%);">
                 <div class="flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-xl ${iconBg} text-white shadow-md border-2 ${badgeBorder}">
                   <span class="text-xs md:text-sm font-bold">${iconEmoji}</span>
                 </div>
@@ -917,10 +917,14 @@
                   <span>${off.name}</span>
                   ${deviceCount > 0 ? `<span class="px-1 rounded bg-blue-500 text-white text-[9px] font-mono">${deviceCount}</span>` : ''}
                 </div>
+                <!-- Precision Pin Pointer Triangle -->
+                <div class="w-0 h-0 border-x-4 border-x-transparent border-t-[6px] border-t-slate-900 -mt-[1px]"></div>
+                <!-- Ground Target Circle Anchor -->
+                <div class="w-2 h-2 rounded-full ${iconBg} border border-white -mt-[3px] shadow"></div>
               </div>
             `,
-            iconSize: [40, 48],
-            iconAnchor: [20, 46]
+            iconSize: [0, 0],
+            iconAnchor: [0, 0]
           });
 
           const marker = L.marker([off.lat, off.lng], { icon: officeIcon, zIndexOffset: 1200 });
