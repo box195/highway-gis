@@ -6,8 +6,8 @@
   <title>고속도로 지하 시설물 및 통신 인프라 관제 지도 | 한국도로공사 동서울지사</title>
   
   <!-- SEO & PWA Meta Tags -->
-  <meta name="description" content="한국도로공사 동서울지사 관내 고속도로 지하 통신관로, 맨홀(67M, 62-1H), 광케이블, CCTV, VDS, VMS, C-ITS 및 주요 지사/영업소/교통센터 방범망을 실시간으로 관제하는 모바일/PC 반응형 GIS 지도 시스템" />
-  <meta name="keywords" content="고속도로, 지하시설물, 통신관로, 맨홀, 광케이블, GIS, 관제지도, 한국도로공사, 동서울지사, 서울경기본부, 교통센터, 방범CCTV" />
+  <meta name="description" content="한국도로공사 동서울지사 관내 고속도로 지하 통신관로, 맨홀(67M, 62-1H), 광케이블, CCTV, VDS, VMS, C-ITS 및 주요 지사/영업소 방범망을 실시간으로 관제하는 GIS 지도 시스템" />
+  <meta name="keywords" content="고속도로, 지하시설물, 통신관로, 맨홀, 광케이블, GIS, 관제지도, 한국도로공사, 동서울지사, 서울경기본부, 방범CCTV" />
   <meta name="theme-color" content="#0b0f19" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -75,9 +75,9 @@
   <style>
     /* Custom Scrollbars */
     ::-webkit-scrollbar { width: 5px; height: 5px; }
-    ::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.6); }
-    ::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.5); border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.8); }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
 
     /* Map container styling */
     #map {
@@ -87,35 +87,32 @@
       z-index: 10;
     }
 
-    /* Custom Leaflet Tooltips & Popups */
+    /* Leaflet Tooltips & Popups (No heavy blur, crisp rendering) */
     .leaflet-popup-content-wrapper {
-      background: rgba(15, 23, 42, 0.96);
-      backdrop-filter: blur(12px);
+      background: #0f172a;
       color: #f8fafc;
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      border-radius: 14px;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
-      padding: 4px;
+      border: 1px solid #38bdf8;
+      border-radius: 10px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.7);
+      padding: 2px;
     }
     .leaflet-popup-tip {
-      background: rgba(15, 23, 42, 0.96);
+      background: #0f172a;
     }
     .leaflet-popup-content {
-      margin: 10px 14px;
-      line-height: 1.5;
+      margin: 8px 12px;
+      line-height: 1.4;
     }
 
-    /* Glass Panel Utility */
+    /* Clean Solid Panel Utility */
     .glass-panel {
-      background: rgba(15, 23, 42, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(51, 65, 85, 0.6);
+      background: #0f172a;
+      border: 1px solid #1e293b;
     }
 
-    /* Detail Drawer Responsive Animation (Desktop Slide-in & Mobile Bottom Sheet) */
+    /* Detail Drawer Responsive Transitions */
     #detail-drawer {
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.25s ease-out;
       pointer-events: auto;
     }
 
@@ -139,15 +136,6 @@
       }
     }
 
-    /* Custom Office Marker Pulse Animation */
-    @keyframes officeGlow {
-      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.7)); }
-      50% { transform: scale(1.06); filter: drop-shadow(0 0 16px rgba(147, 51, 234, 0.9)); }
-    }
-    .office-pulse {
-      animation: officeGlow 2.5s infinite ease-in-out;
-    }
-
     /* Mobile Touch optimization */
     @media (max-width: 768px) {
       .touch-target {
@@ -163,14 +151,14 @@
   <!-- ========================================================================= -->
   <!-- TOP HEADER BAR (Mobile & Desktop Optimized)                              -->
   <!-- ========================================================================= -->
-  <header class="h-12 md:h-14 bg-slate-900/95 border-b border-slate-800/80 px-3 md:px-4 flex items-center justify-between z-30 shadow-lg shrink-0">
+  <header class="h-12 md:h-14 bg-slate-900 border-b border-slate-800 px-3 md:px-4 flex items-center justify-between z-30 shadow-md shrink-0">
     <div class="flex items-center space-x-2 md:space-x-3 truncate">
       <!-- Mobile Menu / Sidebar Trigger -->
       <button id="btn-toggle-sidebar-mobile" class="md:hidden p-1.5 rounded-lg bg-slate-800 text-slate-200 hover:bg-slate-700 transition">
         <i data-lucide="menu" class="w-5 h-5"></i>
       </button>
 
-      <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-gradient-to-tr from-cyan-600 to-blue-600 flex items-center justify-center shadow-md shadow-cyan-500/20 border border-cyan-400/30 shrink-0">
+      <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-cyan-600 flex items-center justify-center border border-cyan-400/40 shrink-0">
         <i data-lucide="network" class="w-4 h-4 md:w-5 md:h-5 text-white"></i>
       </div>
       <div class="truncate">
@@ -180,37 +168,37 @@
             <span class="text-[9px] md:text-[10px] bg-cyan-500/20 text-cyan-400 font-semibold px-1.5 py-0.2 md:py-0.5 rounded-full border border-cyan-500/30 shrink-0">동서울지사</span>
           </h1>
         </div>
-        <p class="text-[10px] md:text-[11px] text-slate-400 hidden lg:block truncate">수도권 제1순환선 지하 통신관로 · 맨홀(67M, 62-1H) · 지사/영업소/교통센터 방범망 · 광케이블</p>
+        <p class="text-[10px] md:text-[11px] text-slate-400 hidden lg:block truncate">수도권 제1순환선 통신관로 · 맨홀(67M, 62-1H) · 지사/영업소 방범망 · 광케이블</p>
       </div>
     </div>
 
     <!-- Desktop Tool Buttons -->
     <div class="hidden md:flex items-center space-x-2">
-      <button id="btn-straight-map" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
+      <button id="btn-straight-map" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
         <i data-lucide="git-commit" class="w-3.5 h-3.5 text-cyan-400"></i>
         <span>직선도 스키마</span>
       </button>
 
-      <button id="btn-measure" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
+      <button id="btn-measure" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
         <i data-lucide="ruler" class="w-3.5 h-3.5 text-amber-400"></i>
         <span>거리/면적 측정</span>
       </button>
 
-      <button id="btn-upload-modal" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-cyan-600/90 hover:bg-cyan-500 text-xs font-medium text-white shadow-sm shadow-cyan-600/30 border border-cyan-400/30 transition">
+      <button id="btn-upload-modal" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-xs font-medium text-white border border-cyan-400/30 transition">
         <i data-lucide="upload-cloud" class="w-3.5 h-3.5"></i>
         <span>데이터 업로드</span>
       </button>
 
-      <button id="btn-export-menu" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
+      <button id="btn-export-menu" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
         <i data-lucide="download" class="w-3.5 h-3.5 text-emerald-400"></i>
         <span>내보내기</span>
       </button>
 
-      <button id="btn-gps" title="내 위치 찾기" class="p-2 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+      <button id="btn-gps" title="내 위치 찾기" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
         <i data-lucide="crosshair" class="w-4 h-4 text-cyan-400"></i>
       </button>
 
-      <button id="btn-toggle-sidebar" title="사이드바 토글" class="p-2 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+      <button id="btn-toggle-sidebar" title="사이드바 토글" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
         <i data-lucide="sidebar" class="w-4 h-4 text-slate-300"></i>
       </button>
     </div>
@@ -232,12 +220,12 @@
   <div class="flex-1 relative flex overflow-hidden">
 
     <!-- Backdrop for Mobile Sidebar -->
-    <div id="sidebar-backdrop" class="fixed inset-0 bg-black/60 z-30 hidden md:hidden transition-opacity"></div>
+    <div id="sidebar-backdrop" class="fixed inset-0 bg-black/70 z-30 hidden md:hidden"></div>
 
     <!-- --------------------------------------------------------------------- -->
     <!-- LEFT CONTROL PANEL / SIDEBAR (Responsive Off-Canvas on Mobile)       -->
     <!-- --------------------------------------------------------------------- -->
-    <aside id="sidebar" class="fixed md:relative inset-y-0 left-0 w-full sm:w-96 glass-panel z-40 md:z-20 flex flex-col transition-transform duration-300 -translate-x-full md:translate-x-0 border-r border-slate-800/80 shadow-2xl shrink-0 overflow-hidden">
+    <aside id="sidebar" class="fixed md:relative inset-y-0 left-0 w-full sm:w-96 bg-slate-900 z-40 md:z-20 flex flex-col transition-transform duration-200 -translate-x-full md:translate-x-0 border-r border-slate-800 shadow-xl shrink-0 overflow-hidden">
       
       <!-- Mobile Close Header inside sidebar -->
       <div class="flex md:hidden items-center justify-between p-3 border-b border-slate-800 bg-slate-950">
@@ -251,20 +239,20 @@
       </div>
 
       <!-- Live Search & Autocomplete -->
-      <div class="p-3 border-b border-slate-800/80 bg-slate-900/60">
+      <div class="p-3 border-b border-slate-800 bg-slate-900">
         <div class="relative">
           <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
-          <input id="search-input" type="text" placeholder="장소명(동서울지사, 서울영업소), 맨홀(67M)..." class="w-full bg-slate-950/80 border border-slate-700/80 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition" />
+          <input id="search-input" type="text" placeholder="거점(동서울지사, 성남영), 맨홀(67M), 설비명..." class="w-full bg-slate-950 border border-slate-700 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition" />
           <button id="btn-clear-search" class="hidden absolute right-2.5 top-2 text-slate-400 hover:text-slate-200">
             <i data-lucide="x" class="w-3.5 h-3.5"></i>
           </button>
         </div>
 
-        <div id="search-results" class="hidden mt-2 max-h-56 overflow-y-auto bg-slate-900 border border-slate-700 rounded-lg divide-y divide-slate-800 shadow-xl"></div>
+        <div id="search-results" class="hidden mt-2 max-h-56 overflow-y-auto bg-slate-950 border border-slate-700 rounded-lg divide-y divide-slate-800 shadow-xl"></div>
       </div>
 
       <!-- Tab Navigation -->
-      <div class="flex border-b border-slate-800 bg-slate-950/40 text-xs font-medium">
+      <div class="flex border-b border-slate-800 bg-slate-950 text-xs font-medium">
         <button id="tab-layers-btn" class="flex-1 py-2.5 text-cyan-400 border-b-2 border-cyan-400 flex items-center justify-center gap-1.5 transition">
           <i data-lucide="layers" class="w-3.5 h-3.5"></i> 레이어 필터
         </button>
@@ -283,7 +271,7 @@
         <div id="tab-layers" class="space-y-4">
           
           <!-- Line Separation Mode Setting -->
-          <div class="p-2.5 rounded-xl bg-slate-900/90 border border-cyan-500/40 space-y-2 text-xs">
+          <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 space-y-2 text-xs">
             <div class="flex items-center justify-between text-slate-200 font-semibold">
               <span class="flex items-center gap-1.5 text-cyan-300">
                 <i data-lucide="split" class="w-4 h-4"></i>
@@ -312,23 +300,23 @@
 
             <div class="grid grid-cols-2 gap-2 text-xs">
               
-              <!-- [NEW] Major Offices & Building Facilities Layer (Full Width Featured Card) -->
-              <label class="col-span-2 flex items-center justify-between p-2.5 rounded-lg bg-gradient-to-r from-blue-950/70 to-indigo-950/70 border border-blue-500/50 hover:border-blue-400 cursor-pointer transition shadow-md">
+              <!-- Major Offices Layer (Featured Card) -->
+              <label class="col-span-2 flex items-center justify-between p-2.5 rounded-lg bg-blue-950/50 border border-blue-500/40 hover:border-blue-400 cursor-pointer transition">
                 <div class="flex items-center space-x-2">
                   <input type="checkbox" id="layer-offices" checked class="rounded border-slate-700 text-blue-500 focus:ring-blue-500 w-4 h-4 bg-slate-900">
                   <div class="flex items-center space-x-2">
-                    <span class="w-3 h-3 rounded-full bg-blue-500 shadow-md shadow-blue-500/50 flex items-center justify-center text-[9px] text-white">🏢</span>
-                    <span class="font-bold text-white text-xs">주요 거점 (지사·영업소·교통센터·터널)</span>
+                    <span class="w-3 h-3 rounded-full bg-blue-500 flex items-center justify-center text-[9px] text-white font-bold">🏢</span>
+                    <span class="font-bold text-white text-xs">동서울지사 관내 거점 (지사·영업소·터널)</span>
                   </div>
                 </div>
-                <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-cyan-300 font-bold border border-blue-500/30" id="count-offices">12개소</span>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-cyan-300 font-bold border border-blue-500/30" id="count-offices">9개소</span>
               </label>
 
               <!-- Manhole Layer -->
               <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
                 <input type="checkbox" id="layer-manholes" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
                 <div class="flex items-center space-x-1.5">
-                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400/50"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
                   <span class="text-slate-200">맨홀/수공 (<span id="count-manholes">122</span>)</span>
                 </div>
               </label>
@@ -337,7 +325,7 @@
               <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
                 <input type="checkbox" id="layer-conduits" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
                 <div class="flex items-center space-x-1.5">
-                  <span class="w-3 h-1 rounded bg-cyan-400 shadow-sm shadow-cyan-400/50"></span>
+                  <span class="w-3 h-1 rounded bg-cyan-400"></span>
                   <span class="text-slate-200">통신관로 (<span id="count-conduits">119</span>)</span>
                 </div>
               </label>
@@ -346,7 +334,7 @@
               <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
                 <input type="checkbox" id="layer-cables" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
                 <div class="flex items-center space-x-1.5">
-                  <span class="w-3 h-1 rounded bg-pink-400 shadow-sm shadow-pink-400/50"></span>
+                  <span class="w-3 h-1 rounded bg-pink-400"></span>
                   <span class="text-slate-200">광케이블 (<span id="count-cables">15</span>)</span>
                 </div>
               </label>
@@ -356,7 +344,7 @@
                 <input type="checkbox" id="layer-cctv" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
                 <div class="flex items-center space-x-1.5">
                   <i data-lucide="video" class="w-3 h-3 text-blue-400"></i>
-                  <span class="text-slate-200">CCTV</span>
+                  <span class="text-slate-200">본선 CCTV</span>
                 </div>
               </label>
 
@@ -401,7 +389,7 @@
           <!-- Section Filter -->
           <div class="space-y-1.5">
             <label class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider">구간별 필터</label>
-            <select id="filter-section" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-2 text-xs text-slate-100 focus:outline-none focus:border-cyan-500">
+            <select id="filter-section" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-2.5 py-2 text-xs text-slate-100 focus:outline-none focus:border-cyan-500">
               <option value="ALL">전체 구간 (판교 ~ 퇴계원 & 학의 ~ 평촌 & 거점)</option>
               <option value="판교JCT-성남IC">판교JCT - 성남IC</option>
               <option value="성남IC-송파IC">성남IC - 송파IC</option>
@@ -441,34 +429,34 @@
         <!-- [TAB 3: SUMMARY DASHBOARD] -->
         <div id="tab-stats" class="hidden space-y-3">
           <div class="grid grid-cols-2 gap-2">
-            <div class="p-2.5 rounded-lg bg-gradient-to-br from-blue-950/60 to-indigo-950/60 border border-blue-500/40">
-              <div class="text-[10px] text-blue-300">주요 관제 거점</div>
-              <div class="text-base md:text-lg font-bold text-white mt-0.5">12 <span class="text-xs font-normal text-slate-400">개소</span></div>
-              <div class="text-[10px] text-blue-400/80 mt-0.5">지사·본부·영업소·교통센터</div>
+            <div class="p-2.5 rounded-lg bg-blue-950/60 border border-blue-500/40">
+              <div class="text-[10px] text-blue-300">동서울 관내 거점</div>
+              <div class="text-base md:text-lg font-bold text-white mt-0.5">9 <span class="text-xs font-normal text-slate-400">개소</span></div>
+              <div class="text-[10px] text-blue-400 mt-0.5">지사·본부·영업소·터널</div>
             </div>
 
-            <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+            <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
               <div class="text-[10px] text-slate-400">총 맨홀/수공</div>
               <div class="text-base md:text-lg font-bold text-emerald-400 mt-0.5">122 <span class="text-xs font-normal text-slate-400">개소</span></div>
               <div class="text-[10px] text-slate-500 mt-0.5">인공 119 / 수공 3</div>
             </div>
 
-            <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+            <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
               <div class="text-[10px] text-slate-400">통신관로 구간</div>
               <div class="text-base md:text-lg font-bold text-cyan-400 mt-0.5">119 <span class="text-xs font-normal text-slate-400">구간</span></div>
               <div class="text-[10px] text-slate-500 mt-0.5">노드 간 순차 연결</div>
             </div>
 
-            <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+            <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
               <div class="text-[10px] text-slate-400">광케이블 간선</div>
               <div class="text-base md:text-lg font-bold text-purple-400 mt-0.5">15 <span class="text-xs font-normal text-slate-400">구간</span></div>
               <div class="text-[10px] text-slate-500 mt-0.5">최대 96C / 평균 54C</div>
             </div>
 
-            <div class="col-span-2 p-2.5 rounded-lg bg-slate-900 border border-slate-800">
-              <div class="text-[10px] text-slate-400">연계 ITS & 구내 방범설비 총합</div>
-              <div class="text-base md:text-lg font-bold text-amber-400 mt-0.5">260+ <span class="text-xs font-normal text-slate-400">대</span></div>
-              <div class="text-[10px] text-slate-500 mt-0.5">본선 CCTV·VDS·VMS + 청사/영업소 방범망 CCTV·무선AP</div>
+            <div class="col-span-2 p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+              <div class="text-[10px] text-slate-400">구내 방범 및 통신 설비 자산 (대장 기준)</div>
+              <div class="text-base md:text-lg font-bold text-amber-400 mt-0.5">84 <span class="text-xs font-normal text-slate-400">대</span></div>
+              <div class="text-[10px] text-slate-400 mt-0.5">동서울지사 관내 7개 거점 방범CCTV, 무선AP, 스위치, 표출PC</div>
             </div>
           </div>
         </div>
@@ -476,7 +464,7 @@
       </div>
 
       <!-- Quick Legend Footer -->
-      <div class="p-2.5 bg-slate-950 border-t border-slate-800/80 text-[11px] text-slate-400 flex items-center justify-between">
+      <div class="p-2.5 bg-slate-950 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
         <div class="flex items-center space-x-2">
           <div class="flex items-center space-x-1">
             <span class="text-[10px]">🏢</span>
@@ -507,24 +495,24 @@
       <div id="map"></div>
 
       <!-- Quick Layer Focus Toolbar (Floating Top-Left) -->
-      <div class="absolute top-3 left-3 z-20 flex bg-slate-900/90 backdrop-blur-md rounded-lg border border-slate-700/80 p-0.5 shadow-xl text-[11px] md:text-xs space-x-0.5">
+      <div class="absolute top-3 left-3 z-20 flex bg-slate-900 rounded-lg border border-slate-700 p-0.5 shadow-lg text-[11px] md:text-xs space-x-0.5">
         <button id="focus-all" class="focus-btn px-2 md:px-2.5 py-1 rounded-md bg-cyan-600 text-white font-medium transition">전체 동시</button>
         <button id="focus-conduit" class="focus-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition">관로만</button>
         <button id="focus-cable" class="focus-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition">광케이블만</button>
       </div>
 
       <!-- Base Map Switcher Floating Toolbar (Top-Right) -->
-      <div class="absolute top-3 right-3 z-20 flex bg-slate-900/90 backdrop-blur-md rounded-lg border border-slate-700/80 p-0.5 shadow-xl text-[11px] md:text-xs space-x-0.5">
+      <div class="absolute top-3 right-3 z-20 flex bg-slate-900 rounded-lg border border-slate-700 p-0.5 shadow-lg text-[11px] md:text-xs space-x-0.5">
         <button data-basemap="dark" class="basemap-btn px-2 md:px-2.5 py-1 rounded-md bg-cyan-600 text-white font-medium transition">야간</button>
         <button data-basemap="standard" class="basemap-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition">일반</button>
         <button data-basemap="satellite" class="basemap-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition">위성</button>
       </div>
 
       <!-- Map Overlay Status / Quick Coordinates Pill (Hidden on tiny screens) -->
-      <div class="hidden sm:flex absolute bottom-4 left-4 z-20 glass-panel rounded-lg px-3 py-1.5 text-xs text-slate-300 items-center space-x-3 shadow-lg pointer-events-none">
+      <div class="hidden sm:flex absolute bottom-4 left-4 z-20 bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-slate-300 items-center space-x-3 shadow-md pointer-events-none">
         <div class="flex items-center space-x-1.5">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="font-medium text-slate-200">노드 및 거점 연계 정상</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span class="font-medium text-slate-200">노드 및 거점 정상</span>
         </div>
         <span class="text-slate-600">|</span>
         <div id="cursor-coords" class="font-mono text-slate-400 text-[11px]">위도: 37.4068 | 경도: 127.0973</div>
@@ -533,7 +521,7 @@
       </div>
 
       <!-- Floating Measurement Toolbar -->
-      <div id="measure-toolbar" class="hidden absolute top-14 right-3 z-20 glass-panel rounded-xl p-3 border border-cyan-500/40 shadow-2xl space-y-2 text-xs w-60 sm:w-64">
+      <div id="measure-toolbar" class="hidden absolute top-14 right-3 z-20 bg-slate-900 rounded-xl p-3 border border-cyan-500/40 shadow-xl space-y-2 text-xs w-60 sm:w-64">
         <div class="flex items-center justify-between pb-1 border-b border-slate-700">
           <div class="flex items-center space-x-1.5 font-bold text-cyan-400">
             <i data-lucide="ruler" class="w-4 h-4"></i>
@@ -547,7 +535,7 @@
           <button id="btn-measure-dist" class="py-1.5 rounded-lg bg-cyan-600 text-white font-medium text-center">거리 측정</button>
           <button id="btn-measure-area" class="py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center">면적 측정</button>
         </div>
-        <div id="measure-result" class="p-2 rounded bg-slate-950/80 text-center font-mono font-bold text-cyan-300 text-xs sm:text-sm">
+        <div id="measure-result" class="p-2 rounded bg-slate-950 text-center font-mono font-bold text-cyan-300 text-xs sm:text-sm">
           지도 터치하여 시작
         </div>
         <button id="btn-clear-measure" class="w-full py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-400 text-[11px]">
@@ -560,18 +548,18 @@
     <!-- --------------------------------------------------------------------- -->
     <!-- RIGHT DETAIL DRAWER / MOBILE BOTTOM SHEET                             -->
     <!-- --------------------------------------------------------------------- -->
-    <aside id="detail-drawer" class="fixed md:absolute inset-x-0 bottom-0 md:inset-y-0 md:right-0 md:left-auto w-full md:w-96 max-h-[85vh] md:max-h-full glass-panel z-40 md:z-20 flex flex-col border-t md:border-t-0 md:border-l border-slate-800/80 shadow-2xl rounded-t-3xl md:rounded-none overflow-hidden">
+    <aside id="detail-drawer" class="fixed md:absolute inset-x-0 bottom-0 md:inset-y-0 md:right-0 md:left-auto w-full md:w-96 max-h-[88vh] md:max-h-full bg-slate-900 z-40 md:z-20 flex flex-col border-t md:border-t-0 md:border-l border-slate-800 shadow-2xl rounded-t-2xl md:rounded-none overflow-hidden">
       
       <!-- Mobile Grabber handle -->
       <div class="md:hidden w-12 h-1 bg-slate-600 rounded-full mx-auto mt-2 mb-1 shrink-0"></div>
 
       <!-- Drawer Header -->
-      <div class="p-3 md:p-3.5 border-b border-slate-800/80 bg-slate-900/90 flex items-center justify-between shrink-0">
+      <div class="p-3 md:p-3.5 border-b border-slate-800 bg-slate-950 flex items-center justify-between shrink-0">
         <div class="flex items-center space-x-2 truncate">
           <div id="drawer-type-badge" class="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 shrink-0">
             맨홀
           </div>
-          <h2 id="drawer-title" class="text-sm md:text-base font-black text-white truncate max-w-[200px]">
+          <h2 id="drawer-title" class="text-sm md:text-base font-black text-white truncate max-w-[210px]">
             67M
           </h2>
         </div>
@@ -581,10 +569,10 @@
       </div>
 
       <!-- Drawer Content -->
-      <div id="drawer-body" class="flex-1 overflow-y-auto p-3.5 md:p-4 space-y-3.5 text-xs"></div>
+      <div id="drawer-body" class="flex-1 overflow-y-auto p-3.5 md:p-4 space-y-3 text-xs"></div>
 
       <!-- Drawer Footer Actions -->
-      <div class="p-2.5 md:p-3 bg-slate-950 border-t border-slate-800/80 flex space-x-2 shrink-0">
+      <div class="p-2.5 md:p-3 bg-slate-950 border-t border-slate-800 flex space-x-2 shrink-0">
         <button id="btn-copy-coords" class="flex-1 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center justify-center gap-1.5 transition text-xs">
           <i data-lucide="copy" class="w-3.5 h-3.5"></i>
           <span>좌표 복사</span>
@@ -601,7 +589,7 @@
   <!-- ========================================================================= -->
   <!-- MOBILE BOTTOM NAVIGATION BAR                                             -->
   <!-- ========================================================================= -->
-  <nav class="md:hidden h-14 bg-slate-900/98 border-t border-slate-800 px-2 flex items-center justify-around z-30 shrink-0 shadow-2xl">
+  <nav class="md:hidden h-14 bg-slate-900 border-t border-slate-800 px-2 flex items-center justify-around z-30 shrink-0 shadow-lg">
     <button id="nav-btn-layers" class="flex flex-col items-center justify-center text-cyan-400 py-1 px-2 touch-target">
       <i data-lucide="layers" class="w-4 h-4"></i>
       <span class="text-[10px] mt-0.5">레이어</span>
@@ -629,9 +617,9 @@
   <!-- ========================================================================= -->
 
   <!-- 1. Straight Route Diagram Modal -->
-  <div id="modal-straight" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-3 md:p-4">
+  <div id="modal-straight" class="fixed inset-0 z-50 bg-black/80 hidden flex items-center justify-center p-3 md:p-4">
     <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-4xl w-full max-h-[88vh] flex flex-col shadow-2xl overflow-hidden">
-      <div class="p-3.5 md:p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/60">
+      <div class="p-3.5 md:p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950">
         <div class="flex items-center space-x-2 truncate">
           <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center border border-cyan-500/30 shrink-0">
             <i data-lucide="git-commit" class="w-4 h-4"></i>
@@ -647,7 +635,7 @@
       </div>
 
       <div class="p-3 md:p-4 overflow-y-auto space-y-3">
-        <div class="p-2.5 bg-slate-950/80 rounded-xl border border-slate-800 text-xs text-slate-300 leading-relaxed">
+        <div class="p-2.5 bg-slate-950 rounded-xl border border-slate-800 text-xs text-slate-300 leading-relaxed">
           💡 각 노드(JCT/IC/TG/지사)를 터치하면 지도 상의 해당 지점으로 즉시 이동합니다.
         </div>
         <div id="straight-map-container" class="space-y-2"></div>
@@ -656,9 +644,9 @@
   </div>
 
   <!-- 2. Dynamic File Upload Modal -->
-  <div id="modal-upload" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-3 md:p-4">
+  <div id="modal-upload" class="fixed inset-0 z-50 bg-black/80 hidden flex items-center justify-center p-3 md:p-4">
     <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-xl w-full flex flex-col shadow-2xl overflow-hidden">
-      <div class="p-3.5 md:p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/60">
+      <div class="p-3.5 md:p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950">
         <div class="flex items-center space-x-2">
           <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center border border-cyan-500/30">
             <i data-lucide="upload-cloud" class="w-4 h-4"></i>
@@ -674,7 +662,7 @@
       </div>
 
       <div class="p-4 md:p-5 space-y-3.5 text-xs">
-        <div id="dropzone" class="border-2 border-dashed border-slate-700 hover:border-cyan-500 rounded-xl p-6 text-center cursor-pointer transition bg-slate-950/50 space-y-1.5">
+        <div id="dropzone" class="border-2 border-dashed border-slate-700 hover:border-cyan-500 rounded-xl p-6 text-center cursor-pointer transition bg-slate-950 space-y-1.5">
           <i data-lucide="file-spreadsheet" class="w-8 h-8 text-cyan-400 mx-auto"></i>
           <div class="font-medium text-slate-200">파일을 선택하거나 드래그하세요</div>
           <div class="text-[10px] text-slate-500">.xlsx, .xls, .csv, .geojson 지원</div>
@@ -697,23 +685,23 @@
 
         <div class="flex justify-end space-x-2 pt-2">
           <button class="modal-close px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium">취소</button>
-          <button id="btn-confirm-upload" class="px-3.5 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-medium shadow-md shadow-cyan-600/30">지도에 추가</button>
+          <button id="btn-confirm-upload" class="px-3.5 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-medium">지도에 추가</button>
         </div>
       </div>
     </div>
   </div>
 
   <!-- 3. Mobile More Tools Action Sheet -->
-  <div id="modal-more-tools" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-end md:hidden">
+  <div id="modal-more-tools" class="fixed inset-0 z-50 bg-black/80 hidden flex items-end md:hidden">
     <div class="bg-slate-900 border-t border-slate-700 rounded-t-3xl w-full p-4 space-y-3">
       <div class="w-12 h-1 bg-slate-600 rounded-full mx-auto mb-2"></div>
       <div class="font-bold text-sm text-white mb-2">관제 지도 확장 도구</div>
       <div class="grid grid-cols-2 gap-2 text-xs">
-        <button id="btn-mobile-upload" class="p-3 rounded-xl bg-slate-800/80 border border-slate-700 text-left flex items-center gap-2">
+        <button id="btn-mobile-upload" class="p-3 rounded-xl bg-slate-800 border border-slate-700 text-left flex items-center gap-2">
           <i data-lucide="upload-cloud" class="w-4 h-4 text-cyan-400"></i>
           <span>데이터 업로드</span>
         </button>
-        <button id="btn-mobile-export" class="p-3 rounded-xl bg-slate-800/80 border border-slate-700 text-left flex items-center gap-2">
+        <button id="btn-mobile-export" class="p-3 rounded-xl bg-slate-800 border border-slate-700 text-left flex items-center gap-2">
           <i data-lucide="download" class="w-4 h-4 text-emerald-400"></i>
           <span>데이터 내보내기</span>
         </button>
@@ -888,37 +876,32 @@
       const listContainer = document.getElementById('facility-list-container');
       listContainer.innerHTML = '';
 
-      // 0. Render Major Offices & Building Facilities (High Priority Landmark Badges)
+      // 0. Render Major Offices (Solid clean badges)
       const showOffices = document.getElementById('layer-offices') ? document.getElementById('layer-offices').checked : true;
       if (showOffices && AppState.data.offices) {
         AppState.data.offices.forEach(off => {
           if (!off.lat || !off.lng) return;
 
-          let iconBg = 'from-blue-600 to-indigo-700';
+          let iconBg = 'bg-blue-600';
           let iconEmoji = '🏢';
           let badgeBorder = 'border-blue-400';
-          let pulseColor = 'bg-blue-400';
 
           if (off.category.includes('교통')) {
-            iconBg = 'from-purple-600 to-pink-600';
+            iconBg = 'bg-purple-600';
             iconEmoji = '📡';
-            badgeBorder = 'border-pink-400';
-            pulseColor = 'bg-pink-400';
+            badgeBorder = 'border-purple-400';
           } else if (off.category.includes('본부')) {
-            iconBg = 'from-indigo-600 to-blue-800';
+            iconBg = 'bg-indigo-600';
             iconEmoji = '🏛️';
             badgeBorder = 'border-indigo-400';
-            pulseColor = 'bg-indigo-400';
           } else if (off.category.includes('터널')) {
-            iconBg = 'from-amber-600 to-orange-600';
+            iconBg = 'bg-amber-600';
             iconEmoji = '🚇';
             badgeBorder = 'border-amber-400';
-            pulseColor = 'bg-amber-400';
           } else {
-            iconBg = 'from-emerald-600 to-teal-700';
+            iconBg = 'bg-emerald-600';
             iconEmoji = '⛩️';
             badgeBorder = 'border-emerald-400';
-            pulseColor = 'bg-emerald-400';
           }
 
           const deviceCount = off.devices ? off.devices.length : 0;
@@ -926,20 +909,18 @@
           const officeIcon = L.divIcon({
             className: 'custom-office-icon',
             html: `
-              <div class="relative flex flex-col items-center group cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-115 transition duration-200 office-pulse">
-                <div class="relative flex items-center justify-center w-8 h-8 md:w-9 md:h-9 rounded-2xl bg-gradient-to-tr ${iconBg} text-white shadow-2xl border-2 ${badgeBorder}">
-                  <span class="text-sm md:text-base">${iconEmoji}</span>
-                  <span class="absolute -top-1 -right-1 w-2.5 h-2.5 ${pulseColor} rounded-full animate-ping opacity-75"></span>
-                  <span class="absolute -top-1 -right-1 w-2.5 h-2.5 ${pulseColor} rounded-full border border-slate-900"></span>
+              <div class="relative flex flex-col items-center cursor-pointer transform -translate-x-1/2 -translate-y-full hover:scale-105 transition duration-150">
+                <div class="flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-xl ${iconBg} text-white shadow-md border-2 ${badgeBorder}">
+                  <span class="text-xs md:text-sm font-bold">${iconEmoji}</span>
                 </div>
-                <div class="mt-1 px-2 py-0.5 rounded-md bg-slate-950/95 border ${badgeBorder} shadow-xl text-[10px] md:text-[11px] font-black text-white whitespace-nowrap flex items-center gap-1 backdrop-blur-md">
+                <div class="mt-0.5 px-1.5 py-0.5 rounded bg-slate-900 border ${badgeBorder} shadow text-[10px] font-bold text-white whitespace-nowrap flex items-center gap-1">
                   <span>${off.name}</span>
-                  ${deviceCount > 0 ? `<span class="px-1 py-0.2 rounded bg-blue-500/30 text-cyan-300 text-[9px] font-mono">${deviceCount}</span>` : ''}
+                  ${deviceCount > 0 ? `<span class="px-1 rounded bg-blue-500 text-white text-[9px] font-mono">${deviceCount}</span>` : ''}
                 </div>
               </div>
             `,
-            iconSize: [44, 52],
-            iconAnchor: [22, 50]
+            iconSize: [40, 48],
+            iconAnchor: [20, 46]
           });
 
           const marker = L.marker([off.lat, off.lng], { icon: officeIcon, zIndexOffset: 1200 });
@@ -952,24 +933,23 @@
                 <span class="text-[10px] px-1.5 py-0.2 rounded bg-indigo-500/20 text-indigo-300 font-normal">${off.category}</span>
               </div>
               <div class="text-slate-300 text-[11px] mt-0.5">${off.address || off.section}</div>
-              <div class="text-emerald-400 text-[10px] font-medium mt-1">🛡️ 구내 방범/통신 설비: ${deviceCount}대 보유 (클릭하여 확인)</div>
+              ${deviceCount > 0 ? `<div class="text-emerald-400 text-[10px] font-medium mt-0.5">🛡️ 구내 방범설비: ${deviceCount}대 등록</div>` : `<div class="text-slate-400 text-[10px] mt-0.5">위치 정보 전용</div>`}
             </div>
           `, { sticky: true, className: 'leaflet-popup-content-wrapper' });
 
           AppState.layerGroups.offices.addLayer(marker);
 
-          // Add to facility list
           filteredTotal++;
           const offEl = document.createElement('div');
           offEl.className = 'p-2.5 rounded-lg bg-blue-950/40 hover:bg-blue-900/40 border border-blue-500/30 hover:border-blue-400 cursor-pointer transition flex items-center justify-between';
           offEl.innerHTML = `
             <div>
               <div class="font-bold text-white flex items-center gap-1.5">
-                <span class="text-base">${iconEmoji}</span>
+                <span>${iconEmoji}</span>
                 <span class="text-cyan-300 font-bold text-xs">${off.name}</span>
                 <span class="text-[9px] px-1.5 py-0.2 rounded bg-blue-500/20 text-blue-300">${off.category}</span>
               </div>
-              <div class="text-[11px] text-slate-400 mt-0.5">${off.section} · 방범설비 ${deviceCount}대</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">${off.section} ${deviceCount > 0 ? `· 방범설비 ${deviceCount}대` : ''}</div>
             </div>
             <i data-lucide="chevron-right" class="w-4 h-4 text-blue-400"></i>
           `;
@@ -1014,7 +994,7 @@
             });
 
             polyline.on('mouseover', function () {
-              this.setStyle({ weight: weight + 3, opacity: 1, color: '#38bdf8' });
+              this.setStyle({ weight: weight + 2, opacity: 1, color: '#38bdf8' });
             });
             polyline.on('mouseout', function () {
               this.setStyle({ weight: weight, opacity: opacity, color: color });
@@ -1064,7 +1044,7 @@
             });
 
             cableLine.on('mouseover', function () {
-              this.setStyle({ weight: weight + 3, opacity: 1, color: '#fbbf24' });
+              this.setStyle({ weight: weight + 2, opacity: 1, color: '#fbbf24' });
             });
             cableLine.on('mouseout', function () {
               this.setStyle({ weight: weight, opacity: (focus === 'cable') ? 1.0 : 0.95, color: color });
@@ -1106,13 +1086,13 @@
 
         if (showManholes) {
           const fillColor = isSplice ? '#10b981' : (isHandhole ? '#38bdf8' : '#f59e0b');
-          const radius = (zoom >= 15) ? (isSplice ? 7 : (isHandhole ? 5 : 6)) : (isSplice ? 5.5 : 4.5);
+          const radius = (zoom >= 15) ? (isSplice ? 6.5 : (isHandhole ? 5 : 5.5)) : (isSplice ? 5 : 4);
 
           const marker = L.circleMarker([m.lat, m.lng], {
             radius: radius,
             fillColor: fillColor,
             color: '#ffffff',
-            weight: isHandhole ? 1.2 : 1.6,
+            weight: isHandhole ? 1.2 : 1.5,
             opacity: 0.95,
             fillOpacity: 0.9
           });
@@ -1143,7 +1123,7 @@
         if (showCCTV && m.cctv) {
           const cctvIcon = L.divIcon({
             className: 'custom-icon',
-            html: `<div class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition"><i data-lucide="video" class="w-3 h-3"></i></div>`,
+            html: `<div class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center shadow border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition"><i data-lucide="video" class="w-3 h-3"></i></div>`,
             iconSize: [20, 20]
           });
           const cctvMarker = L.marker([m.lat + 0.0001, m.lng + 0.0001], { icon: cctvIcon });
@@ -1154,7 +1134,7 @@
         if (showVDS && m.vds) {
           const vdsIcon = L.divIcon({
             className: 'custom-icon',
-            html: `<div class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center shadow-lg border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition"><i data-lucide="activity" class="w-3 h-3"></i></div>`,
+            html: `<div class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center shadow border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition"><i data-lucide="activity" class="w-3 h-3"></i></div>`,
             iconSize: [20, 20]
           });
           const vdsMarker = L.marker([m.lat - 0.0001, m.lng - 0.0001], { icon: vdsIcon });
@@ -1165,7 +1145,7 @@
         if (showVMS && m.vms) {
           const vmsIcon = L.divIcon({
             className: 'custom-icon',
-            html: `<div class="w-5 h-5 rounded-full bg-amber-500 text-slate-900 flex items-center justify-center shadow-lg border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition font-bold text-[10px]">VMS</div>`,
+            html: `<div class="w-5 h-5 rounded-full bg-amber-500 text-slate-900 flex items-center justify-center shadow border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition font-bold text-[10px]">VMS</div>`,
             iconSize: [20, 20]
           });
           const vmsMarker = L.marker([m.lat + 0.00015, m.lng - 0.00015], { icon: vmsIcon });
@@ -1176,7 +1156,7 @@
         if (showCITS && m.cits) {
           const citsIcon = L.divIcon({
             className: 'custom-icon',
-            html: `<div class="w-5 h-5 rounded-full bg-rose-600 text-white flex items-center justify-center shadow-lg border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition"><i data-lucide="radio" class="w-3 h-3"></i></div>`,
+            html: `<div class="w-5 h-5 rounded-full bg-rose-600 text-white flex items-center justify-center shadow border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition"><i data-lucide="radio" class="w-3 h-3"></i></div>`,
             iconSize: [20, 20]
           });
           const citsMarker = L.marker([m.lat - 0.00015, m.lng + 0.00015], { icon: citsIcon });
@@ -1186,7 +1166,7 @@
 
         // List item with Working Name
         const itemEl = document.createElement('div');
-        itemEl.className = 'p-2.5 rounded-lg bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/50 cursor-pointer transition flex items-center justify-between';
+        itemEl.className = 'p-2.5 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/50 cursor-pointer transition flex items-center justify-between';
         itemEl.innerHTML = `
           <div>
             <div class="font-bold text-slate-200 flex items-center gap-1.5">
@@ -1212,7 +1192,7 @@
           if (!p.lat || !p.lng) return;
           const poleIcon = L.divIcon({
             className: 'custom-icon',
-            html: `<div class="w-4 h-4 rounded bg-yellow-500 text-slate-950 flex items-center justify-center shadow-lg border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition"><i data-lucide="zap" class="w-2.5 h-2.5"></i></div>`,
+            html: `<div class="w-4 h-4 rounded bg-yellow-500 text-slate-950 flex items-center justify-center shadow border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition"><i data-lucide="zap" class="w-2.5 h-2.5"></i></div>`,
             iconSize: [16, 16]
           });
           const poleMarker = L.marker([p.lat, p.lng], { icon: poleIcon });
@@ -1233,7 +1213,6 @@
       const title = document.getElementById('drawer-title');
       const body = document.getElementById('drawer-body');
 
-      // Trigger open state
       drawer.classList.add('drawer-open');
 
       let tmCoords = { x: 0, y: 0 };
@@ -1248,15 +1227,12 @@
         title.innerText = item.name;
 
         const devices = item.devices || [];
-        const cctvCount = devices.filter(d => d.type.includes('영상') || d.location.includes('카메라')).length;
-        const apCount = devices.filter(d => d.type.includes('AP') || d.location.includes('브릿지')).length;
-        const otherCount = devices.length - cctvCount - apCount;
 
         body.innerHTML = `
-          <div class="p-3.5 bg-gradient-to-br from-blue-950/80 to-slate-900/90 rounded-xl border border-blue-500/40 space-y-2.5 shadow-lg">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
             <div class="flex justify-between items-center text-slate-300 text-xs">
               <span class="text-slate-400">기관 / 소속</span>
-              <span class="font-bold text-white text-sm">${item.org || item.name}</span>
+              <span class="font-bold text-white text-xs md:text-sm">${item.org || item.name}</span>
             </div>
             <div class="flex justify-between items-center text-slate-300 text-xs">
               <span class="text-slate-400">위치 / 구간</span>
@@ -1266,17 +1242,17 @@
               <span class="text-slate-400">도로명 주소</span>
               <span class="text-slate-200 text-right max-w-[200px] truncate">${item.address || '-'}</span>
             </div>
-            <div class="text-[11px] text-slate-300 bg-slate-950/70 p-2 rounded-lg border border-slate-800 leading-relaxed">
+            <div class="text-[11px] text-slate-400 bg-slate-900 p-2 rounded-lg border border-slate-800 leading-relaxed">
               ℹ️ ${item.desc || '한국도로공사 관할 주요 거점 시설물'}
             </div>
           </div>
 
-          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-1.5">
             <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider flex items-center justify-between">
               <span>정밀 거점 좌표</span>
               <span class="text-cyan-400 text-[10px]">WGS84 & GRS80 TM</span>
             </div>
-            <div class="bg-slate-950 p-2.5 rounded-lg font-mono text-[11px] space-y-1">
+            <div class="bg-slate-900 p-2 rounded-lg font-mono text-[11px] space-y-1">
               <div class="flex justify-between text-slate-300">
                 <span class="text-slate-500">위도 (Lat):</span>
                 <span class="text-cyan-300 font-bold">${item.lat ? item.lat.toFixed(6) : 'N/A'}</span>
@@ -1286,51 +1262,48 @@
                 <span class="text-cyan-300 font-bold">${item.lng ? item.lng.toFixed(6) : 'N/A'}</span>
               </div>
               <div class="flex justify-between text-slate-400 border-t border-slate-800 pt-1 mt-1">
-                <span class="text-slate-500">TM (EPSG:5186):</span>
+                <span class="text-slate-500">TM 좌표:</span>
                 <span>X: ${tmCoords.x ? tmCoords.x.toFixed(1) : '-'} | Y: ${tmCoords.y ? tmCoords.y.toFixed(1) : '-'}</span>
               </div>
             </div>
           </div>
 
-          <div class="p-3.5 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2.5">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
             <div class="flex items-center justify-between">
               <div class="text-[11px] font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
                 <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
-                <span>구내 방범 및 통신 설비 현황</span>
+                <span>구내 방범 및 통신 설비 현황 (자산관리대장)</span>
               </div>
-              <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-mono font-bold border border-emerald-500/30">
-                총 ${devices.length}대
-              </span>
+              ${devices.length > 0 ? `
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-mono font-bold border border-emerald-500/30">
+                  총 ${devices.length}대
+                </span>
+              ` : ''}
             </div>
 
-            <div class="grid grid-cols-3 gap-1.5 text-center text-xs">
-              <div class="p-2 rounded-lg bg-slate-950 border border-slate-800">
-                <div class="text-[10px] text-slate-500">방범 CCTV</div>
-                <div class="text-sm font-bold text-blue-400 mt-0.5">${cctvCount}대</div>
-              </div>
-              <div class="p-2 rounded-lg bg-slate-950 border border-slate-800">
-                <div class="text-[10px] text-slate-500">무선 AP</div>
-                <div class="text-sm font-bold text-amber-400 mt-0.5">${apCount}대</div>
-              </div>
-              <div class="p-2 rounded-lg bg-slate-950 border border-slate-800">
-                <div class="text-[10px] text-slate-500">관제/기타</div>
-                <div class="text-sm font-bold text-purple-400 mt-0.5">${otherCount}대</div>
-              </div>
-            </div>
-
-            <div class="space-y-1.5 max-h-60 overflow-y-auto pr-1">
-              ${devices.length === 0 ? '<div class="text-center text-slate-500 py-3 text-xs">등록된 구내 방범설비가 없습니다.</div>' : devices.map((d, idx) => `
-                <div class="p-2 rounded-lg bg-slate-950/90 border border-slate-800/90 hover:border-slate-700 text-xs flex items-center justify-between">
-                  <div class="flex items-center gap-2">
-                    <div class="w-6 h-6 rounded bg-slate-800 flex items-center justify-center text-slate-300 text-[11px] font-mono shrink-0">
-                      ${d.type.includes('AP') ? '📡' : '📹'}
+            <div class="space-y-2 max-h-72 overflow-y-auto pr-0.5">
+              ${devices.length === 0 ? `
+                <div class="text-center text-slate-500 py-4 text-xs bg-slate-900 rounded-lg">
+                  📍 세부 장비 목록 없음 (위치 정보 전용 관제점)
+                </div>
+              ` : devices.map(d => `
+                <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-xs space-y-1.5">
+                  <div class="flex items-center justify-between border-b border-slate-800 pb-1">
+                    <div class="font-bold text-cyan-300 text-xs flex items-center gap-1.5">
+                      <span class="text-slate-400 font-mono text-[10px]">#${d.seq}</span>
+                      <span>${d.name}</span>
                     </div>
-                    <div>
-                      <div class="font-bold text-slate-200 text-xs">${d.location || d.no}</div>
-                      <div class="text-[10px] text-slate-500 font-mono">${d.ip || ''} ${d.model ? `· ${d.model}` : ''}</div>
-                    </div>
+                    <span class="text-[10px] px-1.5 py-0.2 rounded bg-slate-800 text-amber-300 font-medium">${d.equip_name}</span>
                   </div>
-                  <span class="text-[10px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 font-medium">${d.type}</span>
+                  
+                  <div class="grid grid-cols-2 gap-x-2 gap-y-1 text-[11px] text-slate-300">
+                    <div><span class="text-slate-500">기기번호:</span> <span class="text-slate-200 font-mono">${d.dev_no || '-'}</span></div>
+                    <div><span class="text-slate-500">IP 주소:</span> <span class="text-emerald-400 font-mono font-bold">${d.ip}</span></div>
+                    <div><span class="text-slate-500">서브넷:</span> <span class="text-slate-300 font-mono">${d.subnet}</span></div>
+                    <div><span class="text-slate-500">G/W:</span> <span class="text-slate-300 font-mono">${d.gw}</span></div>
+                    <div class="col-span-2"><span class="text-slate-500">S/N:</span> <span class="text-slate-200 font-mono">${d.model_sn}</span></div>
+                    <div class="col-span-2"><span class="text-slate-500">MAC 주소:</span> <span class="text-slate-400 font-mono">${d.mac}</span></div>
+                  </div>
                 </div>
               `).join('')}
             </div>
@@ -1345,7 +1318,7 @@
         title.innerText = item.name;
 
         body.innerHTML = `
-          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
             <div class="flex justify-between items-center text-slate-400">
               <span>실무 명칭 / 관리순번</span>
               <span class="font-bold text-white text-sm flex items-center gap-1.5">
@@ -1371,12 +1344,12 @@
             </div>
           </div>
 
-          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
             <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider flex items-center justify-between">
               <span>정밀 좌표 정보</span>
               <span class="text-cyan-400 text-[10px]">WGS84 & GRS80 TM</span>
             </div>
-            <div class="bg-slate-950 p-2 rounded-lg font-mono text-[11px] space-y-1">
+            <div class="bg-slate-900 p-2 rounded-lg font-mono text-[11px] space-y-1">
               <div class="flex justify-between text-slate-300">
                 <span class="text-slate-500">위도 (Lat):</span>
                 <span class="text-cyan-300">${item.lat ? item.lat.toFixed(6) : 'N/A'}</span>
@@ -1396,7 +1369,7 @@
             </div>
           </div>
 
-          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
             <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">접속 통신 및 ITS 설비</div>
             <div class="space-y-1.5">
               ${item.cctv ? `
@@ -1449,7 +1422,7 @@
             </div>
           </div>
 
-          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-1.5 text-slate-400">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-1.5 text-slate-400">
             <div class="flex justify-between">
               <span>준공연도 / 하자만료</span>
               <span class="text-slate-200">${item.completion_year || '-'}년 / ${item.warranty_year || '-'}년</span>
@@ -1466,7 +1439,7 @@
         title.innerText = `${item.source_manhole_id} ➔ ${item.target_manhole_id}`;
 
         body.innerHTML = `
-          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
             <div class="flex justify-between items-center text-slate-400">
               <span>연결 맨홀</span>
               <span class="font-bold text-white text-sm">${item.source_manhole_id} ➔ ${item.target_manhole_id}</span>
@@ -1481,10 +1454,10 @@
             </div>
           </div>
 
-          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
             <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">관로 단면 및 수용 내역</div>
             
-            <div class="bg-slate-950 p-3 rounded-lg space-y-2">
+            <div class="bg-slate-900 p-3 rounded-lg space-y-2">
               <div class="flex items-center justify-between text-slate-300">
                 <span class="text-slate-400">외관 규격:</span>
                 <span class="font-bold text-cyan-300">
@@ -1507,7 +1480,7 @@
             </div>
           </div>
 
-          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-1.5 text-slate-400">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-1.5 text-slate-400">
             <div class="flex justify-between">
               <span>관리기관</span>
               <span class="text-slate-200">${item.hq} ${item.branch}</span>
@@ -1524,7 +1497,7 @@
         title.innerText = `광케이블: ${item.section}`;
 
         body.innerHTML = `
-          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
             <div class="flex justify-between items-center text-slate-400">
               <span>구간 연장</span>
               <span class="font-bold text-cyan-400 font-mono">${item.length_km} km</span>
@@ -1547,11 +1520,11 @@
             </div>
           </div>
 
-          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
             <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">경유 맨홀 노드 목록</div>
-            <div class="bg-slate-950 p-2 rounded-lg max-h-40 overflow-y-auto space-y-1 font-mono text-[11px] text-slate-300">
+            <div class="bg-slate-900 p-2 rounded-lg max-h-40 overflow-y-auto space-y-1 font-mono text-[11px] text-slate-300">
               ${(item.node_path || []).map((nid, i) => `
-                <div class="flex justify-between text-slate-400 py-0.5 border-b border-slate-900">
+                <div class="flex justify-between text-slate-400 py-0.5 border-b border-slate-950">
                   <span>#${i+1}</span>
                   <span class="text-cyan-300 font-bold">${nid}</span>
                 </div>
@@ -1565,7 +1538,7 @@
         title.innerText = item.cctv || item.name;
 
         body.innerHTML = `
-          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
             <div class="flex justify-between items-center text-slate-400">
               <span>연계 맨홀</span>
               <span class="font-bold text-cyan-300">${item.name}</span>
@@ -1582,7 +1555,7 @@
         title.innerText = item.vds || item.name;
 
         body.innerHTML = `
-          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
             <div class="flex justify-between items-center text-slate-400">
               <span>연계 맨홀</span>
               <span class="font-bold text-emerald-300">${item.name}</span>
@@ -1599,7 +1572,7 @@
         title.innerText = item.vms || item.name;
 
         body.innerHTML = `
-          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
             <div class="flex justify-between items-center text-slate-400">
               <span>연계 맨홀</span>
               <span class="font-bold text-amber-300">${item.name}</span>
@@ -1616,7 +1589,7 @@
         title.innerText = item.cits || item.name;
 
         body.innerHTML = `
-          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
             <div class="flex justify-between items-center text-slate-400">
               <span>연계 맨홀</span>
               <span class="font-bold text-rose-300">${item.name}</span>
@@ -1633,7 +1606,7 @@
         title.innerText = item.id;
 
         body.innerHTML = `
-          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 space-y-2">
+          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
             <div class="flex justify-between items-center text-slate-400">
               <span>전주 번호</span>
               <span class="font-bold text-yellow-300">${item.id}</span>
@@ -1857,12 +1830,20 @@
 
         clearBtn.classList.remove('hidden');
 
-        // Match offices first, then manholes
+        // Match offices first (including matching inside equipment names and IPs!)
         const matchedOffices = (AppState.data.offices || []).filter(o => {
-          return (o.name && o.name.toLowerCase().includes(query)) ||
-                 (o.section && o.section.toLowerCase().includes(query)) ||
-                 (o.category && o.category.toLowerCase().includes(query)) ||
-                 (o.org && o.org.toLowerCase().includes(query));
+          const matchBasic = (o.name && o.name.toLowerCase().includes(query)) ||
+                             (o.section && o.section.toLowerCase().includes(query)) ||
+                             (o.category && o.category.toLowerCase().includes(query)) ||
+                             (o.org && o.org.toLowerCase().includes(query));
+          const matchEquip = (o.devices || []).some(d => {
+            return (d.name && d.name.toLowerCase().includes(query)) ||
+                   (d.ip && d.ip.toLowerCase().includes(query)) ||
+                   (d.model_sn && d.model_sn.toLowerCase().includes(query)) ||
+                   (d.mac && d.mac.toLowerCase().includes(query)) ||
+                   (d.dev_no && d.dev_no.toLowerCase().includes(query));
+          });
+          return matchBasic || matchEquip;
         });
 
         const matchedManholes = (AppState.data.manholes || []).filter(m => {
@@ -1883,14 +1864,14 @@
 
           matchedOffices.forEach(o => {
             html += `
-              <div class="search-item p-2.5 hover:bg-blue-950/60 bg-blue-950/20 cursor-pointer text-xs flex items-center justify-between border-b border-slate-800" data-type="office" data-name="${o.name}">
+              <div class="search-item p-2.5 hover:bg-slate-800 bg-slate-900 cursor-pointer text-xs flex items-center justify-between border-b border-slate-800" data-type="office" data-name="${o.name}">
                 <div>
                   <div class="font-bold text-white flex items-center gap-1.5">
-                    <span class="text-base">🏢</span>
+                    <span>🏢</span>
                     <span class="text-sm font-black text-cyan-300">${o.name}</span>
-                    <span class="text-[9px] px-1.5 py-0.2 rounded bg-blue-500/30 text-blue-300">${o.category}</span>
+                    <span class="text-[9px] px-1.5 py-0.2 rounded bg-blue-500/20 text-blue-300">${o.category}</span>
                   </div>
-                  <div class="text-[11px] text-slate-400">${o.section} · 방범설비 ${o.devices ? o.devices.length : 0}대</div>
+                  <div class="text-[11px] text-slate-400">${o.section} ${o.devices && o.devices.length > 0 ? `· 방범설비 ${o.devices.length}대` : ''}</div>
                 </div>
                 <i data-lucide="map-pin" class="w-3.5 h-3.5 text-blue-400"></i>
               </div>
@@ -1899,7 +1880,7 @@
 
           matchedManholes.forEach(m => {
             html += `
-              <div class="search-item p-2.5 hover:bg-slate-800/80 cursor-pointer text-xs flex items-center justify-between" data-type="manhole" data-name="${m.name}">
+              <div class="search-item p-2.5 hover:bg-slate-800 cursor-pointer text-xs flex items-center justify-between" data-type="manhole" data-name="${m.name}">
                 <div>
                   <div class="font-bold text-cyan-400 flex items-center gap-1.5">
                     <span class="text-sm text-white font-black">${m.name}</span>
@@ -1923,7 +1904,7 @@
               if (itemType === 'office') {
                 const target = AppState.data.offices.find(o => o.name === name);
                 if (target && target.lat && target.lng) {
-                  AppState.map.flyTo([target.lat, target.lng], 16, { duration: 1.2 });
+                  AppState.map.flyTo([target.lat, target.lng], 16, { duration: 1 });
                   showDetailDrawer('office', target);
                   searchResults.classList.add('hidden');
                   closeMobileSidebar();
@@ -1931,7 +1912,7 @@
               } else {
                 const target = AppState.data.manholes.find(m => m.name === name);
                 if (target && target.lat && target.lng) {
-                  AppState.map.flyTo([target.lat, target.lng], 17, { duration: 1.2 });
+                  AppState.map.flyTo([target.lat, target.lng], 17, { duration: 1 });
                   showDetailDrawer('manhole', target);
                   searchResults.classList.add('hidden');
                   closeMobileSidebar();
@@ -2089,10 +2070,10 @@
     function renderStraightMapNodes() {
       const container = document.getElementById('straight-map-container');
       container.innerHTML = `
-        <div class="relative border-l-2 border-cyan-500/50 ml-4 pl-5 md:pl-6 space-y-3 my-2 md:my-3">
+        <div class="relative border-l-2 border-cyan-500 ml-4 pl-5 md:pl-6 space-y-3 my-2 md:my-3">
           ${AppState.data.straight_map.map(node => `
-            <div class="straight-node relative p-2.5 md:p-3 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-cyan-500/80 cursor-pointer transition flex items-center justify-between" data-name="${node.name}">
-              <div class="absolute -left-[27px] md:-left-[31px] top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 rounded-full ${node.type === 'JCT' ? 'bg-purple-500 shadow-purple-500/50' : (node.type === 'TG' ? 'bg-amber-500 shadow-amber-500/50' : (node.type === 'OFFICE' ? 'bg-cyan-500 shadow-cyan-500/50' : 'bg-blue-500 shadow-blue-500/50'))} border-2 border-slate-900 shadow-md"></div>
+            <div class="straight-node relative p-2.5 md:p-3 rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-500 cursor-pointer transition flex items-center justify-between" data-name="${node.name}">
+              <div class="absolute -left-[27px] md:-left-[31px] top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 rounded-full ${node.type === 'JCT' ? 'bg-purple-500' : (node.type === 'TG' ? 'bg-amber-500' : (node.type === 'OFFICE' ? 'bg-cyan-500' : 'bg-blue-500'))} border-2 border-slate-900"></div>
               <div>
                 <div class="font-bold text-white flex items-center gap-1.5 md:gap-2 text-xs md:text-sm">
                   <span>${node.name}</span>
@@ -2114,7 +2095,7 @@
           const offTarget = (AppState.data.offices || []).find(o => o.name.includes(name.replace('IC', '').replace('JCT', '').replace('TG', '')));
           const target = offTarget || AppState.data.manholes.find(m => m.section.includes(name.replace('IC', '').replace('JCT', '')));
           if (target && target.lat && target.lng) {
-            AppState.map.flyTo([target.lat, target.lng], 15, { duration: 1.2 });
+            AppState.map.flyTo([target.lat, target.lng], 15, { duration: 1 });
             showDetailDrawer(offTarget ? 'office' : 'manhole', target);
           }
           document.getElementById('modal-straight').classList.add('hidden');
