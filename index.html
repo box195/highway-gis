@@ -69,8 +69,8 @@
   <!-- SheetJS (xlsx) for Excel upload & export -->
   <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
 
-  <!-- Master Data Bundle (Relative path for GitHub Pages compatibility) -->
-  <script src="./data/master_data.js"></script>
+  <!-- Master Data Bundle (Relative path for GitHub Pages compatibility with cache bust) -->
+  <script src="./data/master_data.js?v=20260825_final"></script>
 
   <style>
     /* Custom Scrollbars */
@@ -2077,6 +2077,14 @@
       }
     }
 
+    // Attach to window for global inline event handlers
+    window.selectInspectionDate = selectInspectionDate;
+    window.clearInspectionDate = clearInspectionDate;
+    window.focusManholeDirect = focusManholeDirect;
+    window.renderInspectionCalendar = renderInspectionCalendar;
+    window.showDetailDrawer = showDetailDrawer;
+    window.closeDetailDrawer = closeDetailDrawer;
+
     function handleMapClick(e) {
       if (!AppState.measuring) return;
 
@@ -2266,6 +2274,9 @@
         btnPlanHeader.addEventListener('click', () => {
           document.getElementById('tab-plan-btn')?.click();
           openMobileSidebar();
+          if (!AppState.activeInspectionDate) {
+            selectInspectionDate('2026-08-04');
+          }
         });
       }
       const btnPlanMobile = document.getElementById('btn-plan-mobile');
@@ -2273,6 +2284,9 @@
         btnPlanMobile.addEventListener('click', () => {
           document.getElementById('tab-plan-btn')?.click();
           openMobileSidebar();
+          if (!AppState.activeInspectionDate) {
+            selectInspectionDate('2026-08-04');
+          }
         });
       }
 
