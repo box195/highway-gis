@@ -174,6 +174,11 @@
 
     <!-- Desktop Tool Buttons -->
     <div class="hidden md:flex items-center space-x-2">
+      <button id="btn-plan-header" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/30 hover:bg-indigo-600 text-xs font-bold text-indigo-200 hover:text-white border border-indigo-500/50 transition">
+        <i data-lucide="calendar" class="w-3.5 h-3.5 text-indigo-300"></i>
+        <span>8월 점검계획</span>
+      </button>
+
       <button id="btn-straight-map" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
         <i data-lucide="git-commit" class="w-3.5 h-3.5 text-cyan-400"></i>
         <span>직선도 스키마</span>
@@ -205,6 +210,9 @@
 
     <!-- Mobile Header Quick GPS & More -->
     <div class="flex md:hidden items-center space-x-1">
+      <button id="btn-plan-mobile" title="점검계획" class="p-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/50 transition">
+        <i data-lucide="calendar" class="w-4 h-4"></i>
+      </button>
       <button id="btn-gps-mobile" title="내 위치" class="p-1.5 rounded-lg bg-slate-800 text-cyan-400 border border-slate-700 transition">
         <i data-lucide="crosshair" class="w-4 h-4"></i>
       </button>
@@ -251,16 +259,19 @@
         <div id="search-results" class="hidden mt-2 max-h-56 overflow-y-auto bg-slate-950 border border-slate-700 rounded-lg divide-y divide-slate-800 shadow-xl"></div>
       </div>
 
-      <!-- Tab Navigation -->
-      <div class="flex border-b border-slate-800 bg-slate-950 text-xs font-medium">
-        <button id="tab-layers-btn" class="flex-1 py-2.5 text-cyan-400 border-b-2 border-cyan-400 flex items-center justify-center gap-1.5 transition">
-          <i data-lucide="layers" class="w-3.5 h-3.5"></i> 레이어 필터
+      <!-- Tab Navigation (4 Tabs) -->
+      <div class="grid grid-cols-4 border-b border-slate-800 bg-slate-950 text-[11px] font-medium">
+        <button id="tab-layers-btn" class="py-2.5 text-cyan-400 border-b-2 border-cyan-400 flex flex-col sm:flex-row items-center justify-center gap-1 transition">
+          <i data-lucide="layers" class="w-3.5 h-3.5"></i> <span>레이어</span>
         </button>
-        <button id="tab-list-btn" class="flex-1 py-2.5 text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 transition">
-          <i data-lucide="list-filter" class="w-3.5 h-3.5"></i> 시설물/거점 (<span id="filtered-count">0</span>)
+        <button id="tab-list-btn" class="py-2.5 text-slate-400 hover:text-slate-200 flex flex-col sm:flex-row items-center justify-center gap-1 transition">
+          <i data-lucide="list-filter" class="w-3.5 h-3.5"></i> <span>시설물</span>
         </button>
-        <button id="tab-stats-btn" class="flex-1 py-2.5 text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 transition">
-          <i data-lucide="bar-chart-2" class="w-3.5 h-3.5"></i> 통계
+        <button id="tab-plan-btn" class="py-2.5 text-slate-400 hover:text-slate-200 flex flex-col sm:flex-row items-center justify-center gap-1 transition">
+          <i data-lucide="calendar" class="w-3.5 h-3.5 text-indigo-400"></i> <span class="text-indigo-300 font-bold">점검일정</span>
+        </button>
+        <button id="tab-stats-btn" class="py-2.5 text-slate-400 hover:text-slate-200 flex flex-col sm:flex-row items-center justify-center gap-1 transition">
+          <i data-lucide="bar-chart-2" class="w-3.5 h-3.5"></i> <span>통계</span>
         </button>
       </div>
 
@@ -426,13 +437,98 @@
           <div id="facility-list-container" class="space-y-1.5"></div>
         </div>
 
-        <!-- [TAB 3: SUMMARY DASHBOARD] -->
-        <div id="tab-stats" class="hidden space-y-3">
+        <!-- [TAB 3: ITS INSPECTION SCHEDULE (점검계획 달력)] -->
+        <div id="tab-plan" class="hidden space-y-3">
+          
+          <!-- Month Header & Legend -->
+          <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-1.5 font-bold text-xs text-white">
+                <i data-lucide="calendar" class="w-4 h-4 text-indigo-400"></i>
+                <span>2026년 8월 ITS 점검계획표</span>
+              </div>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-mono font-bold border border-indigo-500/30">
+                총 10개 일정
+              </span>
+            </div>
+            
+            <!-- Clean subtle legend -->
+            <div class="grid grid-cols-2 gap-1.5 text-[11px] pt-1">
+              <div class="flex items-center space-x-1.5 px-2 py-1 rounded-lg bg-slate-900 border border-slate-800 text-blue-300">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                <span>거점 구내 (월간 M)</span>
+              </div>
+              <div class="flex items-center space-x-1.5 px-2 py-1 rounded-lg bg-slate-900 border border-slate-800 text-emerald-300">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span>선로 맨홀 (분기 Q·반기 H)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Calendar Grid -->
+          <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+            <div class="text-[11px] font-bold text-slate-300 flex items-center justify-between">
+              <span>8월 달력에서 날짜를 선택하세요</span>
+              <button id="btn-clear-plan-date" class="hidden text-[10px] text-cyan-400 hover:underline flex items-center gap-1">
+                <i data-lucide="rotate-ccw" class="w-3 h-3"></i> 전체보기 복귀
+              </button>
+            </div>
+
+            <!-- Calendar Days Header -->
+            <div class="grid grid-cols-7 gap-1 text-center text-[10px] font-bold text-slate-400 pb-1 border-b border-slate-800">
+              <span class="text-rose-400">일</span>
+              <span>월</span>
+              <span>화</span>
+              <span>수</span>
+              <span>목</span>
+              <span>금</span>
+              <span class="text-sky-400">토</span>
+            </div>
+
+            <!-- 31 Days Grid (Generated by JS) -->
+            <div id="calendar-days-grid" class="grid grid-cols-7 gap-1 text-center text-xs"></div>
+          </div>
+
+          <!-- Active Inspection Banner (when date is selected) -->
+          <div id="active-inspection-banner" class="hidden p-3 rounded-xl bg-indigo-950/40 border border-indigo-500/40 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="font-bold text-xs text-indigo-200 flex items-center gap-1.5">
+                <span id="active-banner-badge" class="px-1.5 py-0.2 text-[10px] rounded bg-indigo-500 text-white font-black">8/4</span>
+                <span id="active-banner-title" class="truncate max-w-[200px]">동서울지사 구내설비 월간점검</span>
+              </div>
+              <button id="btn-close-active-banner" class="text-slate-400 hover:text-white p-1">
+                <i data-lucide="x" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+            <p id="active-banner-desc" class="text-[11px] text-slate-300 leading-snug"></p>
+            <div class="flex space-x-1.5 pt-1">
+              <button id="btn-view-plan-detail" class="flex-1 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition flex items-center justify-center gap-1">
+                <i data-lucide="info" class="w-3.5 h-3.5"></i>
+                <span>상세 점검표 열기</span>
+              </button>
+              <button id="btn-fit-plan-map" class="flex-1 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium transition flex items-center justify-center gap-1">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>구역 지도 포커스</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Inspection Schedule Cards List -->
+          <div class="space-y-1.5">
+            <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider px-1">
+              8월 전체 점검 일정 리스트 (10건)
+            </div>
+            <div id="inspection-cards-list" class="space-y-1.5 max-h-72 overflow-y-auto pr-0.5"></div>
+          </div>
+
+        </div>
+
+        <!-- [TAB 4: STATS] -->
+        <div id="tab-stats" class="hidden space-y-4">
           <div class="grid grid-cols-2 gap-2">
             <div class="p-2.5 rounded-lg bg-blue-950/60 border border-blue-500/40">
               <div class="text-[10px] text-blue-300">동서울 관내 거점</div>
               <div class="text-base md:text-lg font-bold text-white mt-0.5">9 <span class="text-xs font-normal text-slate-400">개소</span></div>
-              <div class="text-[10px] text-blue-400 mt-0.5">지사·본부·영업소·터널</div>
             </div>
 
             <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
@@ -728,7 +824,7 @@
       currentBaseMap: 'dark',
       lineSeparationMode: 'parallel',
       focusMode: 'all',
-      data: window.HIGHWAY_MASTER_DATA || { manholes: [], conduits: [], cables: [], poles: [], cctv_devices: [], offices: [], straight_map: [] },
+      data: window.HIGHWAY_MASTER_DATA || { manholes: [], conduits: [], cables: [], poles: [], cctv_devices: [], offices: [], straight_map: [], inspection_schedule: {} },
       layerGroups: {
         offices: L.layerGroup(),
         conduits: L.layerGroup(),
@@ -739,10 +835,12 @@
         vms: L.layerGroup(),
         cits: L.layerGroup(),
         poles: L.layerGroup(),
+        inspectionHighlight: L.layerGroup(),
         measurement: L.layerGroup(),
         customUpload: L.layerGroup()
       },
       selectedFacility: null,
+      activeInspectionDate: null,
       activeSection: 'ALL',
       activeBound: 'ALL',
       measuring: false,
@@ -1630,6 +1728,140 @@
             </div>
           </div>
         `;
+      } else if (type === 'inspection') {
+        badge.className = 'px-2 py-0.5 rounded text-[10px] font-bold ' + (item.type === 'OFFICE' ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30');
+        badge.innerText = item.type === 'OFFICE' ? '🏢 거점 구내점검' : '🛣️ 선로 현장점검';
+        title.innerText = item.title;
+
+        let bodyHtml = '';
+
+        if (item.type === 'OFFICE') {
+          const off = item.office_match || {};
+          bodyHtml = `
+            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
+              <div class="flex justify-between items-center text-slate-300 text-xs">
+                <span class="text-slate-400">점검 일자</span>
+                <span class="font-bold text-white">${item.date} (${getDayOfWeek(item.date)})</span>
+              </div>
+              <div class="flex justify-between items-center text-slate-300 text-xs">
+                <span class="text-slate-400">점검 대상 거점</span>
+                <span class="font-bold text-blue-400">${item.office_name}</span>
+              </div>
+              <div class="flex justify-between items-center text-slate-300 text-xs">
+                <span class="text-slate-400">점검 주기</span>
+                <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-medium">월간점검 (M)</span>
+              </div>
+              ${off.address ? `
+              <div class="flex justify-between items-center text-slate-300 text-xs">
+                <span class="text-slate-400">도로명 주소</span>
+                <span class="text-slate-200 text-right max-w-[200px] truncate">${off.address}</span>
+              </div>` : ''}
+              ${off.jibun_address ? `
+              <div class="flex justify-between items-center text-slate-300 text-xs">
+                <span class="text-slate-400">지번 주소</span>
+                <span class="text-amber-300 font-medium text-right max-w-[200px] truncate">${off.jibun_address}</span>
+              </div>` : ''}
+            </div>
+
+            <!-- 전송설비 점검 목록 -->
+            ${item.transmission && item.transmission.length > 0 ? `
+            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
+              <div class="text-[11px] font-bold text-slate-300 flex items-center justify-between">
+                <span class="flex items-center gap-1.5"><i data-lucide="radio" class="w-4 h-4 text-blue-400"></i> 전송설비 점검 대상</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono font-bold">${item.transmission.length}종</span>
+              </div>
+              <div class="grid grid-cols-2 gap-1.5 text-xs">
+                ${item.transmission.map(t => `
+                  <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
+                    <span class="font-medium text-slate-200">${t.facility}</span>
+                    <span class="text-[10px] px-1.5 py-0.2 rounded bg-slate-800 text-amber-300 font-bold">${t.cycle}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>` : ''}
+
+            <!-- 유선/방범설비 점검 목록 -->
+            ${item.wired && item.wired.length > 0 ? `
+            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
+              <div class="text-[11px] font-bold text-slate-300 flex items-center justify-between">
+                <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i> 유선통신 및 방범설비 점검 대상</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">${item.wired.length}종</span>
+              </div>
+              <div class="grid grid-cols-2 gap-1.5 text-xs">
+                ${item.wired.map(w => `
+                  <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
+                    <span class="font-medium text-slate-200">${w.facility}</span>
+                    <span class="text-[10px] px-1.5 py-0.2 rounded bg-slate-800 text-amber-300 font-bold">${w.cycle}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>` : ''}
+          `;
+        } else if (item.type === 'LINE') {
+          const l = item.line;
+          bodyHtml = `
+            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
+              <div class="flex justify-between items-center text-slate-300 text-xs">
+                <span class="text-slate-400">점검 일자</span>
+                <span class="font-bold text-white">${item.date} (${getDayOfWeek(item.date)})</span>
+              </div>
+              <div class="flex justify-between items-center text-slate-300 text-xs">
+                <span class="text-slate-400">고속도로 구간</span>
+                <span class="font-bold text-emerald-400">${l.section_label}</span>
+              </div>
+              <div class="flex justify-between items-center text-slate-300 text-xs">
+                <span class="text-slate-400">점검 이정 범위</span>
+                <span class="font-mono text-cyan-300 font-bold">${l.milepost_range} km</span>
+              </div>
+              <div class="flex justify-between items-center text-slate-300 text-xs">
+                <span class="text-slate-400">점검 주기</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-medium">${l.cycle}</span>
+              </div>
+            </div>
+
+            <!-- 점검 대상 맨홀/수공 리스트 -->
+            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
+              <div class="text-[11px] font-bold text-slate-300 flex items-center justify-between">
+                <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4 text-cyan-400"></i> 점검 대상 맨홀/수공 (${l.manholes.length}개소)</span>
+                <span class="text-[10px] text-slate-400">클릭 시 지도 이동</span>
+              </div>
+              <div class="space-y-1.5 max-h-56 overflow-y-auto pr-0.5">
+                ${l.manholes.map((mh, idx) => `
+                  <div onclick="focusManholeDirect('${mh.name}')" class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 cursor-pointer flex items-center justify-between transition">
+                    <div class="flex items-center gap-2">
+                      <span class="w-5 h-5 rounded-full bg-emerald-600/30 text-emerald-400 border border-emerald-500/40 text-[10px] font-bold flex items-center justify-center">#${idx + 1}</span>
+                      <div>
+                        <div class="font-bold text-white text-xs flex items-center gap-1.5">
+                          <span>${mh.name}</span>
+                          <span class="text-[10px] text-slate-400 font-normal">(${mh.category} · ${mh.type})</span>
+                        </div>
+                        <div class="text-[11px] text-slate-400">${mh.section || l.section_label} · 이정 ${mh.milepost || '-'}km (${mh.bound || '상행선'})</div>
+                      </div>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- 특수 설비 (교량첨가, 접속함체) -->
+            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
+              <div class="text-[11px] font-bold text-slate-300">특수 및 부속 설비 점검</div>
+              <div class="grid grid-cols-2 gap-1.5 text-xs">
+                <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
+                  <span class="text-[10px] text-slate-400">교량첨가 (반기 H)</span>
+                  <div class="font-bold text-amber-300">${l.bridge || '해당 없음'}</div>
+                </div>
+                <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
+                  <span class="text-[10px] text-slate-400">광접속함체 (반기 H)</span>
+                  <div class="font-bold text-cyan-300">${l.joint_box_h ? l.joint_box_h + '개소' : (l.joint_box_q ? l.joint_box_q + '개소(Q)' : '없음')}</div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        body.innerHTML = bodyHtml;
       }
 
       lucide.createIcons();
@@ -1648,6 +1880,201 @@
     function closeMobileSidebar() {
       document.getElementById('sidebar').classList.add('-translate-x-full');
       document.getElementById('sidebar-backdrop').classList.add('hidden');
+    }
+
+    function getDayOfWeek(dateStr) {
+      const days = ['일', '월', '화', '수', '목', '금', '토'];
+      const d = new Date(dateStr);
+      return days[d.getDay()] || '월';
+    }
+
+    function renderInspectionCalendar() {
+      const grid = document.getElementById('calendar-days-grid');
+      const cardsList = document.getElementById('inspection-cards-list');
+      if (!grid || !cardsList) return;
+
+      const schedule = AppState.data.inspection_schedule || {};
+      
+      // 2026 August 1st starts on Saturday (idx 6)
+      let gridHtml = '';
+      for (let i = 0; i < 6; i++) {
+        gridHtml += `<div class="p-1 text-slate-700 text-[10px]">&nbsp;</div>`;
+      }
+
+      for (let day = 1; day <= 31; day++) {
+        const dayKey = `2026-08-${day < 10 ? '0' + day : day}`;
+        const plan = schedule[dayKey];
+        const isSelected = AppState.activeInspectionDate === dayKey;
+
+        if (plan) {
+          const isOffice = plan.type === 'OFFICE';
+          const bgClass = isSelected 
+            ? (isOffice ? 'bg-blue-600 text-white font-black ring-2 ring-blue-300 shadow-md' : 'bg-emerald-600 text-white font-black ring-2 ring-emerald-300 shadow-md')
+            : (isOffice ? 'bg-blue-950/80 text-blue-300 hover:bg-blue-900 border border-blue-500/40' : 'bg-emerald-950/80 text-emerald-300 hover:bg-emerald-900 border border-emerald-500/40');
+
+          const dotColor = isOffice ? 'bg-blue-400' : 'bg-emerald-400';
+
+          gridHtml += `
+            <button onclick="selectInspectionDate('${dayKey}')" class="p-1.5 rounded-lg flex flex-col items-center justify-center transition cursor-pointer ${bgClass}" title="${plan.title}">
+              <span class="font-bold text-xs">${day}</span>
+              <span class="w-1.5 h-1.5 rounded-full ${dotColor} mt-0.5"></span>
+            </button>
+          `;
+        } else {
+          const dateObj = new Date(2026, 7, day);
+          const dow = dateObj.getDay();
+          const txtColor = dow === 0 ? 'text-rose-500/50' : (dow === 6 ? 'text-sky-500/50' : 'text-slate-500');
+
+          gridHtml += `
+            <div class="p-1.5 rounded-lg text-center ${txtColor} hover:bg-slate-900 text-[11px] flex items-center justify-center">
+              <span>${day}</span>
+            </div>
+          `;
+        }
+      }
+      grid.innerHTML = gridHtml;
+
+      // Render Cards List
+      const planKeys = Object.keys(schedule).sort();
+      cardsList.innerHTML = planKeys.map(k => {
+        const p = schedule[k];
+        const isSelected = AppState.activeInspectionDate === k;
+        const isOffice = p.type === 'OFFICE';
+        const cardBorder = isSelected 
+          ? (isOffice ? 'border-blue-400 bg-blue-950/60 ring-1 ring-blue-400' : 'border-emerald-400 bg-emerald-950/60 ring-1 ring-emerald-400')
+          : 'border-slate-800 bg-slate-900 hover:bg-slate-800';
+
+        return `
+          <div onclick="selectInspectionDate('${k}')" class="p-2.5 rounded-xl border ${cardBorder} cursor-pointer transition space-y-1">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1.5">
+                <span class="px-1.5 py-0.2 rounded text-[10px] font-bold ${isOffice ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'}">
+                  8월 ${p.day}일 (${getDayOfWeek(k)})
+                </span>
+                <span class="text-xs font-bold text-white truncate max-w-[150px] sm:max-w-[180px]">${isOffice ? p.office_name : p.line?.section_label}</span>
+              </div>
+              <span class="text-[9px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-300 font-medium">
+                ${isOffice ? '거점 M' : '선로 Q·H'}
+              </span>
+            </div>
+            <div class="text-[11px] text-slate-400 truncate">
+              ${isOffice ? `전송설비 ${p.transmission.length}종 · 유선방범 ${p.wired.length}종 점검` : `이정 ${p.line?.milepost_range}km · 맨홀 ${p.line?.manholes.length}개소`}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function selectInspectionDate(dateKey) {
+      AppState.activeInspectionDate = dateKey;
+      const schedule = AppState.data.inspection_schedule || {};
+      const plan = schedule[dateKey];
+      if (!plan) return;
+
+      renderInspectionCalendar();
+
+      // Show Banner
+      const banner = document.getElementById('active-inspection-banner');
+      const bannerBadge = document.getElementById('active-banner-badge');
+      const bannerTitle = document.getElementById('active-banner-title');
+      const bannerDesc = document.getElementById('active-banner-desc');
+      const clearBtn = document.getElementById('btn-clear-plan-date');
+
+      if (banner) {
+        banner.classList.remove('hidden');
+        bannerBadge.innerText = `8/${plan.day} (${getDayOfWeek(dateKey)})`;
+        bannerTitle.innerText = plan.title;
+        bannerDesc.innerText = plan.type === 'OFFICE' 
+          ? `[월간점검 M] ${plan.office_name} 전송 ${plan.transmission.length}종 및 유선통신/방범 ${plan.wired.length}종 집중 점검`
+          : `[분기·반기점검] ${plan.line.section_label} (이정 ${plan.line.milepost_range}km) 맨홀 ${plan.line.manholes.length}개소 및 부속설비`;
+      }
+      if (clearBtn) clearBtn.classList.remove('hidden');
+
+      // Clear previous inspection highlights
+      AppState.layerGroups.inspectionHighlight.clearLayers();
+
+      if (plan.type === 'OFFICE') {
+        const offObj = plan.office_match || (AppState.data.offices || []).find(o => plan.office_name && o.name.includes(plan.office_name.replace('영업소', '')));
+        if (offObj && offObj.lat && offObj.lng) {
+          AppState.map.flyTo([offObj.lat, offObj.lng], 16, { animate: true, duration: 0.8 });
+
+          const focusRing = L.circle([offObj.lat, offObj.lng], {
+            radius: 45,
+            color: '#3b82f6',
+            weight: 3,
+            fillColor: '#3b82f6',
+            fillOpacity: 0.2
+          });
+          AppState.layerGroups.inspectionHighlight.addLayer(focusRing);
+        }
+      } else if (plan.type === 'LINE') {
+        const mhNames = plan.line.manhole_names || [];
+        const foundMhs = [];
+
+        (AppState.data.manholes || []).forEach(m => {
+          if (mhNames.includes(m.name) && m.lat && m.lng) {
+            foundMhs.push(m);
+          }
+        });
+
+        if (foundMhs.length > 0) {
+          const latlngs = foundMhs.map(m => [m.lat, m.lng]);
+          
+          if (latlngs.length >= 2) {
+            AppState.map.fitBounds(L.latLngBounds(latlngs), { padding: [60, 60], maxZoom: 16 });
+
+            const highlightPoly = L.polyline(latlngs, {
+              color: '#10b981',
+              weight: 6,
+              opacity: 0.95,
+              dashArray: '6, 6'
+            });
+            AppState.layerGroups.inspectionHighlight.addLayer(highlightPoly);
+          } else {
+            AppState.map.flyTo(latlngs[0], 16, { animate: true });
+          }
+
+          foundMhs.forEach((m, idx) => {
+            const badgeIcon = L.divIcon({
+              className: 'inspection-pin-badge',
+              html: `
+                <div class="px-2 py-0.5 rounded-full bg-emerald-600 text-white font-black text-[10px] border-2 border-white shadow-lg whitespace-nowrap flex items-center gap-1">
+                  <span class="text-amber-300">#${idx + 1}</span>
+                  <span>${m.name}</span>
+                </div>
+              `,
+              iconAnchor: [28, 14]
+            });
+            const pMarker = L.marker([m.lat, m.lng], { icon: badgeIcon });
+            pMarker.on('click', () => showDetailDrawer('inspection', plan));
+            AppState.layerGroups.inspectionHighlight.addLayer(pMarker);
+          });
+        }
+      }
+
+      showDetailDrawer('inspection', plan);
+    }
+
+    function clearInspectionDate() {
+      AppState.activeInspectionDate = null;
+      AppState.layerGroups.inspectionHighlight.clearLayers();
+      const banner = document.getElementById('active-inspection-banner');
+      const clearBtn = document.getElementById('btn-clear-plan-date');
+      if (banner) banner.classList.add('hidden');
+      if (clearBtn) clearBtn.classList.add('hidden');
+      renderInspectionCalendar();
+      closeDetailDrawer();
+      renderAllLayers();
+    }
+
+    function focusManholeDirect(mhName) {
+      const mh = (AppState.data.manholes || []).find(m => m.name === mhName);
+      if (mh && mh.lat && mh.lng) {
+        AppState.map.flyTo([mh.lat, mh.lng], 17, { animate: true, duration: 0.8 });
+        showDetailDrawer('manhole', mh);
+      }
     }
 
     function handleMapClick(e) {
@@ -1807,22 +2234,64 @@
         });
       });
 
-      // Tabs
+      // Tabs (4 Tabs)
       const tabs = [
         { btn: 'tab-layers-btn', content: 'tab-layers' },
         { btn: 'tab-list-btn', content: 'tab-list' },
+        { btn: 'tab-plan-btn', content: 'tab-plan' },
         { btn: 'tab-stats-btn', content: 'tab-stats' }
       ];
       tabs.forEach(t => {
-        document.getElementById(t.btn).addEventListener('click', () => {
-          tabs.forEach(o => {
-            document.getElementById(o.btn).className = 'flex-1 py-2.5 text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 transition';
-            document.getElementById(o.content).classList.add('hidden');
+        const btnEl = document.getElementById(t.btn);
+        if (btnEl) {
+          btnEl.addEventListener('click', () => {
+            tabs.forEach(o => {
+              const b = document.getElementById(o.btn);
+              const c = document.getElementById(o.content);
+              if (b && c) {
+                b.className = 'py-2.5 text-slate-400 hover:text-slate-200 flex flex-col sm:flex-row items-center justify-center gap-1 transition';
+                c.classList.add('hidden');
+              }
+            });
+            btnEl.className = 'py-2.5 text-cyan-400 border-b-2 border-cyan-400 flex flex-col sm:flex-row items-center justify-center gap-1 transition';
+            const targetContent = document.getElementById(t.content);
+            if (targetContent) targetContent.classList.remove('hidden');
           });
-          document.getElementById(t.btn).className = 'flex-1 py-2.5 text-cyan-400 border-b-2 border-cyan-400 flex items-center justify-center gap-1.5 transition';
-          document.getElementById(t.content).classList.remove('hidden');
-        });
+        }
       });
+
+      // Quick header buttons for Inspection Plan
+      const btnPlanHeader = document.getElementById('btn-plan-header');
+      if (btnPlanHeader) {
+        btnPlanHeader.addEventListener('click', () => {
+          document.getElementById('tab-plan-btn')?.click();
+          openMobileSidebar();
+        });
+      }
+      const btnPlanMobile = document.getElementById('btn-plan-mobile');
+      if (btnPlanMobile) {
+        btnPlanMobile.addEventListener('click', () => {
+          document.getElementById('tab-plan-btn')?.click();
+          openMobileSidebar();
+        });
+      }
+
+      // Inspection Banner Actions
+      document.getElementById('btn-clear-plan-date')?.addEventListener('click', clearInspectionDate);
+      document.getElementById('btn-close-active-banner')?.addEventListener('click', clearInspectionDate);
+      document.getElementById('btn-view-plan-detail')?.addEventListener('click', () => {
+        if (AppState.activeInspectionDate && AppState.data.inspection_schedule) {
+          const plan = AppState.data.inspection_schedule[AppState.activeInspectionDate];
+          if (plan) showDetailDrawer('inspection', plan);
+        }
+      });
+      document.getElementById('btn-fit-plan-map')?.addEventListener('click', () => {
+        if (AppState.activeInspectionDate && AppState.data.inspection_schedule) {
+          selectInspectionDate(AppState.activeInspectionDate);
+        }
+      });
+
+      renderInspectionCalendar();
 
       // Search & Autocomplete
       const searchInput = document.getElementById('search-input');
