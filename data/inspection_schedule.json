@@ -287,14 +287,14 @@
         },
         {
           "name": "65M",
-          "code": "",
-          "category": "맨홀",
-          "type": "일반",
-          "milepost": 0,
+          "code": "식별번호 없음(이정표 관리 노드)",
+          "category": "인공",
+          "type": "통과맨홀",
+          "milepost": 25.5,
           "bound": "상행선",
-          "lat": null,
-          "lng": null,
-          "section": ""
+          "lat": 37.589974,
+          "lng": 127.1556702,
+          "section": "상일IC-강일IC"
         },
         {
           "name": "64M",
@@ -503,14 +503,14 @@
       "manholes": [
         {
           "name": "53M",
-          "code": "",
-          "category": "맨홀",
-          "type": "일반",
-          "milepost": 0,
+          "code": "식별번호 없음(이정표 관리 노드)",
+          "category": "인공",
+          "type": "통과맨홀",
+          "milepost": 21.3,
           "bound": "상행선",
-          "lat": null,
-          "lng": null,
-          "section": ""
+          "lat": 37.549941399999994,
+          "lng": 127.1788069,
+          "section": "서하남JCT-하남JCT"
         },
         {
           "name": "52M",
@@ -597,25 +597,25 @@
         },
         {
           "name": "49-1M",
-          "code": "",
-          "category": "맨홀",
-          "type": "일반",
-          "milepost": 0,
+          "code": "식별번호 없음(이정표 관리 노드)",
+          "category": "인공",
+          "type": "통과맨홀",
+          "milepost": 19.45,
           "bound": "상행선",
-          "lat": null,
-          "lng": null,
-          "section": ""
+          "lat": 37.5373193,
+          "lng": 127.18510830000001,
+          "section": "서하남JCT-하남JCT"
         },
         {
           "name": "49-2M",
-          "code": "",
-          "category": "맨홀",
-          "type": "일반",
-          "milepost": 0,
+          "code": "식별번호 없음(이정표 관리 노드)",
+          "category": "인공",
+          "type": "통과맨홀",
+          "milepost": 19.3,
           "bound": "상행선",
-          "lat": null,
-          "lng": null,
-          "section": ""
+          "lat": 37.5373193,
+          "lng": 127.18510830000001,
+          "section": "서하남JCT-하남JCT"
         },
         {
           "name": "48M",
