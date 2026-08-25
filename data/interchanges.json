@@ -1,0 +1,122 @@
+[
+  {
+    "name": "판교JCT",
+    "type": "JCT",
+    "milepost": 0.0,
+    "desc": "경부고속도로 분기점",
+    "lat": 37.40682,
+    "lng": 127.09734
+  },
+  {
+    "name": "성남IC",
+    "type": "IC",
+    "milepost": 4.4,
+    "desc": "성남IC 요금소/나들목",
+    "lat": 37.43554,
+    "lng": 127.12427
+  },
+  {
+    "name": "송파IC",
+    "type": "IC",
+    "milepost": 9.5,
+    "desc": "송파IC 나들목",
+    "lat": 37.47451,
+    "lng": 127.12788
+  },
+  {
+    "name": "서하남JCT",
+    "type": "JCT",
+    "milepost": 13.4,
+    "desc": "서하남IC/JCT",
+    "lat": 37.50649,
+    "lng": 127.14535
+  },
+  {
+    "name": "하남JCT",
+    "type": "JCT",
+    "milepost": 17.3,
+    "desc": "중부고속도로 분기점",
+    "lat": 37.51853,
+    "lng": 127.18412
+  },
+  {
+    "name": "상일IC",
+    "type": "IC",
+    "milepost": 22.0,
+    "desc": "천호대로 연계 나들목",
+    "lat": 37.54962,
+    "lng": 127.17896
+  },
+  {
+    "name": "강일IC",
+    "type": "IC",
+    "milepost": 24.8,
+    "desc": "올림픽대로/서울양양선 분기",
+    "lat": 37.57122,
+    "lng": 127.16655
+  },
+  {
+    "name": "토평IC",
+    "type": "IC",
+    "milepost": 26.9,
+    "desc": "토평IC 나들목",
+    "lat": 37.58225,
+    "lng": 127.15872
+  },
+  {
+    "name": "구리남양주TG",
+    "type": "TG",
+    "milepost": 28.0,
+    "desc": "구리남양주 본선요금소",
+    "lat": 37.5897,
+    "lng": 127.15591
+  },
+  {
+    "name": "남양주IC",
+    "type": "IC",
+    "milepost": 28.5,
+    "desc": "경춘국도 46호선 연계",
+    "lat": 37.6042,
+    "lng": 127.1504
+  },
+  {
+    "name": "구리IC",
+    "type": "IC",
+    "milepost": 30.8,
+    "desc": "북부간선도로 연계",
+    "lat": 37.618,
+    "lng": 127.142
+  },
+  {
+    "name": "퇴계원IC",
+    "type": "IC",
+    "milepost": 33.7,
+    "desc": "동서울지사 관내 종점",
+    "lat": 37.64377,
+    "lng": 127.13017
+  },
+  {
+    "name": "청계TG",
+    "type": "TG",
+    "milepost": 10.2,
+    "desc": "외곽선 본선 요금소",
+    "lat": 37.39358,
+    "lng": 127.02497
+  },
+  {
+    "name": "학의JCT",
+    "type": "JCT",
+    "milepost": 14.8,
+    "desc": "과천봉담선 분기",
+    "lat": 37.388,
+    "lng": 126.995
+  },
+  {
+    "name": "평촌IC",
+    "type": "IC",
+    "milepost": 18.5,
+    "desc": "안양 평촌 나들목",
+    "lat": 37.38165,
+    "lng": 126.96293
+  }
+]
