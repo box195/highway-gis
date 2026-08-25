@@ -136,6 +136,71 @@
       }
     }
 
+    /* High-contrast custom badges with dark solid background and bright borders */
+    .inspection-pin-badge {
+      background: transparent !important;
+      border: none !important;
+    }
+    .inspection-pin-card {
+      background: #090d16;
+      border: 1.5px solid #10b981;
+      color: #ffffff;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .inspection-pin-card .badge-num {
+      background: #10b981;
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 9999px;
+    }
+
+    .node-highway-badge {
+      background: transparent !important;
+      border: none !important;
+    }
+    .node-highway-card {
+      background: #090d16;
+      border: 1.5px solid #38bdf8;
+      color: #ffffff;
+      padding: 2px 7px;
+      border-radius: 6px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.85);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10.5px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .node-highway-card.type-ic {
+      border-color: #34d399;
+    }
+    .node-highway-card.type-jct {
+      border-color: #60a5fa;
+    }
+    .node-highway-card.type-tg {
+      border-color: #c084fc;
+    }
+    .node-highway-card .node-tag {
+      font-size: 9px;
+      font-weight: 800;
+      padding: 0.5px 3.5px;
+      border-radius: 4px;
+    }
+    .node-highway-card.type-ic .node-tag { background: #059669; color: #ffffff; }
+    .node-highway-card.type-jct .node-tag { background: #2563eb; color: #ffffff; }
+    .node-highway-card.type-tg .node-tag { background: #7e22ce; color: #ffffff; }
+
     /* Mobile Touch optimization */
     @media (max-width: 768px) {
       .touch-target {
@@ -321,6 +386,18 @@
                   </div>
                 </div>
                 <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-cyan-300 font-bold border border-blue-500/30" id="count-offices">9개소</span>
+              </label>
+
+              <!-- Highway Interchanges (IC / JCT / TG) Layer -->
+              <label class="col-span-2 flex items-center justify-between p-2 rounded-lg bg-emerald-950/40 border border-emerald-500/30 hover:border-emerald-400 cursor-pointer transition">
+                <div class="flex items-center space-x-2">
+                  <input type="checkbox" id="layer-interchanges" checked class="rounded border-slate-700 text-emerald-500 focus:ring-emerald-500 w-4 h-4 bg-slate-900">
+                  <div class="flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full bg-emerald-500 flex items-center justify-center text-[9px] text-white font-bold">🛣️</span>
+                    <span class="font-bold text-white text-xs">고속도로 IC · JCT · TG (15개소)</span>
+                  </div>
+                </div>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30" id="count-interchanges">15개소</span>
               </label>
 
               <!-- Manhole Layer -->
@@ -824,9 +901,10 @@
       currentBaseMap: 'dark',
       lineSeparationMode: 'parallel',
       focusMode: 'all',
-      data: window.HIGHWAY_MASTER_DATA || { manholes: [], conduits: [], cables: [], poles: [], cctv_devices: [], offices: [], straight_map: [], inspection_schedule: {} },
+      data: window.HIGHWAY_MASTER_DATA || { manholes: [], conduits: [], cables: [], poles: [], cctv_devices: [], offices: [], straight_map: [], interchanges: [], inspection_schedule: {} },
       layerGroups: {
         offices: L.layerGroup(),
+        interchanges: L.layerGroup(),
         conduits: L.layerGroup(),
         cables: L.layerGroup(),
         manholes: L.layerGroup(),
@@ -957,6 +1035,8 @@
     }
 
     function renderAllLayers() {
+      if (!AppState.map) return;
+
       Object.keys(AppState.layerGroups).forEach(k => {
         if (k !== 'measurement' && k !== 'customUpload') {
           AppState.layerGroups[k].clearLayers();
@@ -972,9 +1052,177 @@
       let filteredTotal = 0;
 
       const listContainer = document.getElementById('facility-list-container');
-      listContainer.innerHTML = '';
+      if (listContainer) listContainer.innerHTML = '';
 
-      // 0. Render Major Offices (Solid clean badges)
+      // 0. Render Interchanges (IC / JCT / TG) - Always active and persistent across zoom & inspection focus
+      const showInterchanges = document.getElementById('layer-interchanges')?.checked ?? true;
+      if (showInterchanges && AppState.data.interchanges) {
+        AppState.data.interchanges.forEach(node => {
+          if (!node.lat || !node.lng) return;
+
+          let typeClass = 'type-ic';
+          let tagText = 'IC';
+          if (node.type === 'JCT') { typeClass = 'type-jct'; tagText = 'JCT'; }
+          else if (node.type === 'TG') { typeClass = 'type-tg'; tagText = 'TG'; }
+
+          const icIcon = L.divIcon({
+            className: 'node-highway-badge',
+            html: `
+              <div class="node-highway-card ${typeClass}">
+                <span class="node-tag">${tagText}</span>
+                <span>${node.name}</span>
+              </div>
+            `,
+            iconAnchor: [30, 12]
+          });
+
+          const icMarker = L.marker([node.lat, node.lng], { icon: icIcon, zIndexOffset: 950 });
+          icMarker.bindTooltip(`
+            <div class="text-xs">
+              <div class="font-bold text-cyan-300">[${node.type}] ${node.name}</div>
+              <div class="text-slate-300 text-[11px]">${node.desc} (이정 ${node.milepost}km)</div>
+            </div>
+          `, { sticky: true, className: 'leaflet-popup-content-wrapper' });
+
+          icMarker.on('click', () => {
+            AppState.map.flyTo([node.lat, node.lng], 15, { animate: true });
+          });
+
+          AppState.layerGroups.interchanges.addLayer(icMarker);
+        });
+      }
+
+      // ==========================================
+      // [CASE A: INSPECTION FOCUS MODE ACTIVE]
+      // ==========================================
+      const isInspectionActive = !!AppState.activeInspectionDate && !!AppState.data.inspection_schedule;
+      const activePlan = isInspectionActive ? AppState.data.inspection_schedule[AppState.activeInspectionDate] : null;
+
+      if (isInspectionActive && activePlan) {
+        if (activePlan.type === 'OFFICE') {
+          // Render only the target Office with highlight ring
+          const off = activePlan.office_match || (AppState.data.offices || []).find(o => activePlan.office_name && o.name.includes(activePlan.office_name.replace('영업소', '')));
+          if (off && off.lat && off.lng) {
+            const focusRing = L.circle([off.lat, off.lng], {
+              radius: 55,
+              color: '#3b82f6',
+              weight: 3.5,
+              fillColor: '#3b82f6',
+              fillOpacity: 0.25
+            });
+            AppState.layerGroups.inspectionHighlight.addLayer(focusRing);
+
+            const officeIcon = L.divIcon({
+              className: 'custom-office-icon',
+              html: `
+                <div class="relative flex flex-col items-center cursor-pointer pointer-events-auto" style="transform: translate(-50%, -100%);">
+                  <div class="flex items-center justify-center w-9 h-9 rounded-xl bg-blue-600 text-white shadow-xl border-2 border-white ring-4 ring-blue-500/40">
+                    <span class="text-base font-bold">🏢</span>
+                  </div>
+                  <div class="mt-1 px-2.5 py-1 rounded-full bg-slate-950 border border-blue-400 shadow-xl text-xs font-black text-white whitespace-nowrap flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                    <span>${off.name}</span>
+                  </div>
+                  <div class="w-0 h-0 border-x-4 border-x-transparent border-t-[6px] border-t-slate-950 -mt-[1px]"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-blue-500 border-2 border-white -mt-[3px] shadow"></div>
+                </div>
+              `,
+              iconSize: [0, 0],
+              iconAnchor: [0, 0]
+            });
+            const marker = L.marker([off.lat, off.lng], { icon: officeIcon, zIndexOffset: 1500 });
+            marker.on('click', () => showDetailDrawer('inspection', activePlan));
+            AppState.layerGroups.offices.addLayer(marker);
+          }
+        } else if (activePlan.type === 'LINE') {
+          // Render ONLY the target 5 inspected manholes with high-contrast pill badges
+          const mhNames = activePlan.line.manhole_names || [];
+          const targetMhs = (AppState.data.manholes || []).filter(m => mhNames.includes(m.name) && m.lat && m.lng);
+
+          if (targetMhs.length > 0) {
+            const latlngs = targetMhs.map(m => [m.lat, m.lng]);
+
+            if (latlngs.length >= 2) {
+              const highlightPoly = L.polyline(latlngs, {
+                color: '#10b981',
+                weight: 6,
+                opacity: 0.95,
+                dashArray: '6, 6'
+              });
+              AppState.layerGroups.inspectionHighlight.addLayer(highlightPoly);
+            }
+
+            targetMhs.forEach((m, idx) => {
+              const badgeIcon = L.divIcon({
+                className: 'inspection-pin-badge',
+                html: `
+                  <div class="inspection-pin-card">
+                    <span class="badge-num">#${idx + 1}</span>
+                    <span class="pin-name">${m.name}</span>
+                  </div>
+                `,
+                iconAnchor: [35, 14]
+              });
+              const pMarker = L.marker([m.lat, m.lng], { icon: badgeIcon, zIndexOffset: 1400 });
+              pMarker.on('click', () => showDetailDrawer('manhole', m));
+              AppState.layerGroups.inspectionHighlight.addLayer(pMarker);
+            });
+
+            // Conduits for matching inspection section
+            const secLabel = activePlan.line.section_label;
+            (AppState.data.conduits || []).forEach(c => {
+              const matchesSection = (secLabel.includes('강일') && c.section.includes('강일')) ||
+                                     (secLabel.includes('토평') && c.section.includes('토평')) ||
+                                     (secLabel.includes('구리') && c.section.includes('구리')) ||
+                                     (secLabel.includes('상일') && c.section.includes('상일')) ||
+                                     (secLabel.includes('하남') && c.section.includes('하남')) ||
+                                     (secLabel.includes('서하남') && c.section.includes('서하남'));
+              if (matchesSection && c.coordinates && c.coordinates.length >= 2) {
+                const polyCoords = offsetPolyline(c.coordinates, -1.8);
+                const polyline = L.polyline(polyCoords, {
+                  color: '#06b6d4',
+                  weight: 4.5,
+                  opacity: 0.85
+                });
+                polyline.on('click', () => showDetailDrawer('conduit', c));
+                AppState.layerGroups.conduits.addLayer(polyline);
+              }
+            });
+
+            // Optical Cables for matching inspection section
+            (AppState.data.cables || []).forEach(cb => {
+              const matchesSection = (secLabel.includes('강일') && cb.section.includes('강일')) ||
+                                     (secLabel.includes('토평') && cb.section.includes('토평')) ||
+                                     (secLabel.includes('구리') && cb.section.includes('구리')) ||
+                                     (secLabel.includes('상일') && cb.section.includes('상일')) ||
+                                     (secLabel.includes('하남') && cb.section.includes('하남')) ||
+                                     (secLabel.includes('서하남') && cb.section.includes('서하남'));
+              if (matchesSection && cb.coordinates && cb.coordinates.length >= 2) {
+                const polyCoords = offsetPolyline(cb.coordinates, +1.8);
+                const cableLine = L.polyline(polyCoords, {
+                  color: '#ec4899',
+                  weight: 3.5,
+                  opacity: 0.9,
+                  dashArray: '6, 4'
+                });
+                cableLine.on('click', () => showDetailDrawer('cable', cb));
+                AppState.layerGroups.cables.addLayer(cableLine);
+              }
+            });
+          }
+        }
+
+        const countEl = document.getElementById('filtered-count');
+        if (countEl) countEl.innerText = activePlan.type === 'OFFICE' ? '1개 거점' : `${activePlan.line.manholes.length}개 맨홀`;
+        lucide.createIcons();
+        return; // Retain isolated focus view
+      }
+
+      // ==========================================
+      // [CASE B: FULL STANDARD LAYER MODE]
+      // ==========================================
+
+      // 1. Render Major Offices (Solid clean badges)
       const showOffices = document.getElementById('layer-offices') ? document.getElementById('layer-offices').checked : true;
       if (showOffices && AppState.data.offices) {
         AppState.data.offices.forEach(off => {
@@ -1064,7 +1312,7 @@
         });
       }
 
-      // 1. Render Conduits
+      // 2. Render Conduits
       const showConduits = document.getElementById('layer-conduits').checked && focus !== 'cable';
       if (showConduits) {
         AppState.data.conduits.forEach(c => {
@@ -1119,7 +1367,7 @@
         });
       }
 
-      // 2. Render Optical Cables
+      // 3. Render Optical Cables
       const showCables = document.getElementById('layer-cables').checked && focus !== 'conduit';
       if (showCables) {
         AppState.data.cables.forEach(cb => {
@@ -1169,7 +1417,7 @@
         });
       }
 
-      // 3. Render Manholes & ITS Equipment
+      // 4. Render Manholes & ITS Equipment
       const showManholes = document.getElementById('layer-manholes').checked;
       const showCCTV = document.getElementById('layer-cctv').checked;
       const showVDS = document.getElementById('layer-vds').checked;
@@ -1288,7 +1536,7 @@
         listContainer.appendChild(itemEl);
       });
 
-      // 4. Render Utility Poles
+      // 5. Render Utility Poles
       if (document.getElementById('layer-poles').checked) {
         AppState.data.poles.forEach(p => {
           if (!p.lat || !p.lng) return;
@@ -1968,7 +2216,37 @@
       lucide.createIcons();
     }
 
+    function getClosestOrTodayInspectionDate() {
+      const schedule = AppState.data.inspection_schedule || {};
+      const dates = Object.keys(schedule).sort();
+      if (!dates.length) return null;
+
+      const now = new Date();
+      const yr = now.getFullYear();
+      const mo = String(now.getMonth() + 1).padStart(2, '0');
+      const da = String(now.getDate()).padStart(2, '0');
+      const todayStr = `${yr}-${mo}-${da}`;
+
+      // 1. Exact match today
+      if (schedule[todayStr]) return todayStr;
+
+      // 2. First upcoming date >= today
+      const upcoming = dates.find(d => d >= todayStr);
+      if (upcoming) return upcoming;
+
+      // 3. Fallback matching day in 2026-08
+      const augDay = `2026-08-${da}`;
+      if (schedule[augDay]) return augDay;
+      const augUpcoming = dates.find(d => d >= augDay);
+      if (augUpcoming) return augUpcoming;
+
+      return dates[dates.length - 1];
+    }
+
     function selectInspectionDate(dateKey) {
+      if (!dateKey) {
+        dateKey = getClosestOrTodayInspectionDate();
+      }
       AppState.activeInspectionDate = dateKey;
       const schedule = AppState.data.inspection_schedule || {};
       const plan = schedule[dateKey];
@@ -1993,65 +2271,26 @@
       }
       if (clearBtn) clearBtn.classList.remove('hidden');
 
-      // Clear previous inspection highlights
-      AppState.layerGroups.inspectionHighlight.clearLayers();
+      // Trigger isolated focus layer rendering
+      renderAllLayers();
 
+      // Smooth camera movement
       if (plan.type === 'OFFICE') {
         const offObj = plan.office_match || (AppState.data.offices || []).find(o => plan.office_name && o.name.includes(plan.office_name.replace('영업소', '')));
         if (offObj && offObj.lat && offObj.lng) {
           AppState.map.flyTo([offObj.lat, offObj.lng], 16, { animate: true, duration: 0.8 });
-
-          const focusRing = L.circle([offObj.lat, offObj.lng], {
-            radius: 45,
-            color: '#3b82f6',
-            weight: 3,
-            fillColor: '#3b82f6',
-            fillOpacity: 0.2
-          });
-          AppState.layerGroups.inspectionHighlight.addLayer(focusRing);
         }
       } else if (plan.type === 'LINE') {
         const mhNames = plan.line.manhole_names || [];
-        const foundMhs = [];
-
-        (AppState.data.manholes || []).forEach(m => {
-          if (mhNames.includes(m.name) && m.lat && m.lng) {
-            foundMhs.push(m);
-          }
-        });
+        const foundMhs = (AppState.data.manholes || []).filter(m => mhNames.includes(m.name) && m.lat && m.lng);
 
         if (foundMhs.length > 0) {
           const latlngs = foundMhs.map(m => [m.lat, m.lng]);
-          
           if (latlngs.length >= 2) {
             AppState.map.fitBounds(L.latLngBounds(latlngs), { padding: [60, 60], maxZoom: 16 });
-
-            const highlightPoly = L.polyline(latlngs, {
-              color: '#10b981',
-              weight: 6,
-              opacity: 0.95,
-              dashArray: '6, 6'
-            });
-            AppState.layerGroups.inspectionHighlight.addLayer(highlightPoly);
           } else {
             AppState.map.flyTo(latlngs[0], 16, { animate: true });
           }
-
-          foundMhs.forEach((m, idx) => {
-            const badgeIcon = L.divIcon({
-              className: 'inspection-pin-badge',
-              html: `
-                <div class="px-2 py-0.5 rounded-full bg-emerald-600 text-white font-black text-[10px] border-2 border-white shadow-lg whitespace-nowrap flex items-center gap-1">
-                  <span class="text-amber-300">#${idx + 1}</span>
-                  <span>${m.name}</span>
-                </div>
-              `,
-              iconAnchor: [28, 14]
-            });
-            const pMarker = L.marker([m.lat, m.lng], { icon: badgeIcon });
-            pMarker.on('click', () => showDetailDrawer('inspection', plan));
-            AppState.layerGroups.inspectionHighlight.addLayer(pMarker);
-          });
         }
       }
 
@@ -2085,6 +2324,7 @@
     window.renderInspectionCalendar = renderInspectionCalendar;
     window.showDetailDrawer = showDetailDrawer;
     window.closeDetailDrawer = closeDetailDrawer;
+    window.getClosestOrTodayInspectionDate = getClosestOrTodayInspectionDate;
 
     function handleMapClick(e) {
       if (!AppState.measuring) return;
@@ -2221,8 +2461,17 @@
         });
       });
 
+      // Toggle All Layers Button
+      document.getElementById('btn-toggle-all-layers')?.addEventListener('click', () => {
+        const layerIds = ['layer-offices', 'layer-interchanges', 'layer-manholes', 'layer-conduits', 'layer-cables', 'layer-cctv', 'layer-vds', 'layer-vms', 'layer-cits', 'layer-poles'];
+        const checkboxes = layerIds.map(id => document.getElementById(id)).filter(Boolean);
+        const allChecked = checkboxes.every(cb => cb.checked);
+        checkboxes.forEach(cb => { cb.checked = !allChecked; });
+        renderAllLayers();
+      });
+
       // Layer checkboxes
-      ['layer-offices', 'layer-manholes', 'layer-conduits', 'layer-cables', 'layer-cctv', 'layer-vds', 'layer-vms', 'layer-cits', 'layer-poles'].forEach(id => {
+      ['layer-offices', 'layer-interchanges', 'layer-manholes', 'layer-conduits', 'layer-cables', 'layer-cctv', 'layer-vds', 'layer-vms', 'layer-cits', 'layer-poles'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('change', renderAllLayers);
       });
@@ -2265,6 +2514,10 @@
             btnEl.className = 'py-2.5 text-cyan-400 border-b-2 border-cyan-400 flex flex-col sm:flex-row items-center justify-center gap-1 transition';
             const targetContent = document.getElementById(t.content);
             if (targetContent) targetContent.classList.remove('hidden');
+
+            if (t.content === 'tab-plan' && !AppState.activeInspectionDate) {
+              selectInspectionDate(getClosestOrTodayInspectionDate());
+            }
           });
         }
       });
@@ -2275,9 +2528,7 @@
         btnPlanHeader.addEventListener('click', () => {
           document.getElementById('tab-plan-btn')?.click();
           openMobileSidebar();
-          if (!AppState.activeInspectionDate) {
-            selectInspectionDate('2026-08-04');
-          }
+          selectInspectionDate(AppState.activeInspectionDate || getClosestOrTodayInspectionDate());
         });
       }
       const btnPlanMobile = document.getElementById('btn-plan-mobile');
@@ -2285,9 +2536,7 @@
         btnPlanMobile.addEventListener('click', () => {
           document.getElementById('tab-plan-btn')?.click();
           openMobileSidebar();
-          if (!AppState.activeInspectionDate) {
-            selectInspectionDate('2026-08-04');
-          }
+          selectInspectionDate(AppState.activeInspectionDate || getClosestOrTodayInspectionDate());
         });
       }
 
