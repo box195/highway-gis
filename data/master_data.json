@@ -18376,5 +18376,654 @@
       "mile": 18.5,
       "desc": "안양 평촌신도시 연계 나들목"
     }
-  ]
+  ],
+  "inspection_schedule": {
+    "2026-08-04": {
+      "day": 4,
+      "date": "2026-08-04",
+      "type": "OFFICE",
+      "title": "동서울지사 구내설비 월간점검",
+      "office_name": "동서울지사",
+      "office_match": {
+        "name": "한국도로공사 동서울지사",
+        "id": "OFFICE-DONGSEOUL",
+        "address": "경기 하남시 서하남로 88",
+        "jibun_address": "경기 하남시 감일동 168-2",
+        "lat": 37.51413,
+        "lng": 127.15375
+      },
+      "transmission": [
+        {
+          "office": "동서울지사",
+          "facility": "PTN",
+          "cycle": "M,M",
+          "cycle_name": "월간점검"
+        },
+        {
+          "office": "동서울지사",
+          "facility": "정류기",
+          "cycle": "M,M",
+          "cycle_name": "월간점검"
+        },
+        {
+          "office": "동서울지사",
+          "facility": "인버터",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        },
+        {
+          "office": "동서울지사",
+          "facility": "축전지",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        },
+        {
+          "office": "동서울지사",
+          "facility": "ROADM",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        },
+        {
+          "office": "동서울지사",
+          "facility": "IPD",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        },
+        {
+          "office": "동서울지사",
+          "facility": "부대시설",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        },
+        {
+          "office": "동서울지사",
+          "facility": "출입통제 및 \n환경감시장치",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        }
+      ],
+      "wired": [
+        {
+          "office": "동서울지사",
+          "facility": "부대시설",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        },
+        {
+          "office": "동서울지사",
+          "facility": "통합관리서버",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        },
+        {
+          "office": "동서울지사",
+          "facility": "저장분배서버",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        },
+        {
+          "office": "서울경기본부",
+          "facility": "부대시설",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        }
+      ],
+      "line": null
+    },
+    "2026-08-06": {
+      "day": 6,
+      "date": "2026-08-06",
+      "type": "OFFICE",
+      "title": "성남영업소 구내설비 월간점검",
+      "office_name": "성남영업소",
+      "office_match": {
+        "name": "성남영업소 (성남TG)",
+        "id": "OFFICE-SEONGNAM",
+        "address": "경기 성남시 수정구 수도권제1순환고속도로 4",
+        "jibun_address": "경기 성남시 수정구 수진동 4709",
+        "lat": 37.43554,
+        "lng": 127.12427
+      },
+      "transmission": [
+        {
+          "office": "성남영업소",
+          "facility": "PTN",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        },
+        {
+          "office": "성남영업소",
+          "facility": "부대시설",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        }
+      ],
+      "wired": [
+        {
+          "office": "성남영업소",
+          "facility": "부대시설",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        }
+      ],
+      "line": null
+    },
+    "2026-08-10": {
+      "day": 10,
+      "date": "2026-08-10",
+      "type": "OFFICE",
+      "title": "청계영업소 구내설비 월간점검",
+      "office_name": "청계영업소",
+      "office_match": {
+        "name": "청계영업소 (청계TG)",
+        "id": "OFFICE-CHEONGGYE",
+        "address": "경기 의왕시 안양판교로 500",
+        "jibun_address": "경기 의왕시 청계동 154",
+        "lat": 37.39358,
+        "lng": 127.02497
+      },
+      "transmission": [
+        {
+          "office": "청계영업소",
+          "facility": "PTN",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        },
+        {
+          "office": "청계영업소",
+          "facility": "부대시설",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        }
+      ],
+      "wired": [
+        {
+          "office": "청계영업소",
+          "facility": "부대시설",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        }
+      ],
+      "line": null
+    },
+    "2026-08-12": {
+      "day": 12,
+      "date": "2026-08-12",
+      "type": "OFFICE",
+      "title": "구리남양주영업소 구내설비 월간점검",
+      "office_name": "구리남양주영업소",
+      "office_match": {
+        "name": "구리남양주영업소 (구리영)",
+        "id": "OFFICE-GURI",
+        "address": "경기 구리시 수도권제1순환고속도로 27",
+        "jibun_address": "경기 구리시 토평동 86",
+        "lat": 37.5896968,
+        "lng": 127.1559062
+      },
+      "transmission": [
+        {
+          "office": "구리남양주영업소",
+          "facility": "PTN",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        },
+        {
+          "office": "구리남양주영업소",
+          "facility": "부대시설",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        }
+      ],
+      "wired": [
+        {
+          "office": "구리영업소",
+          "facility": "부대시설",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        }
+      ],
+      "line": null
+    },
+    "2026-08-14": {
+      "day": 14,
+      "date": "2026-08-14",
+      "type": "OFFICE",
+      "title": "토평영업소 구내설비 월간점검",
+      "office_name": "토평영업소",
+      "office_match": {
+        "name": "토평영업소 (토평TG)",
+        "id": "OFFICE-TOPYEONG",
+        "address": "경기 구리시 수도권제1순환고속도로 26",
+        "jibun_address": "경기 구리시 토평동 48-99",
+        "lat": 37.5822469,
+        "lng": 127.1587224
+      },
+      "transmission": [
+        {
+          "office": "토평영업소",
+          "facility": "PTN",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        },
+        {
+          "office": "토평영업소",
+          "facility": "부대시설",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        }
+      ],
+      "wired": [
+        {
+          "office": "토평영업소",
+          "facility": "부대시설",
+          "cycle": "M",
+          "cycle_name": "월간점검"
+        }
+      ],
+      "line": null
+    },
+    "2026-08-19": {
+      "day": 19,
+      "date": "2026-08-19",
+      "type": "LINE",
+      "title": "강일IC ~ 토평IC ~ 토평TG (강동대교 구간) 선로점검",
+      "office_name": "",
+      "office_match": null,
+      "transmission": [],
+      "wired": [],
+      "line": {
+        "route": "수도권제1순환선",
+        "milepost_range": "24.87~ 26.96",
+        "section_label": "강일IC ~ 토평IC ~ 토평TG (강동대교 구간)",
+        "manhole_names": [
+          "66-4H",
+          "66M",
+          "65M",
+          "64M"
+        ],
+        "manholes": [
+          {
+            "name": "66-4H",
+            "code": "H-1001-02696S-P-H",
+            "category": "수공",
+            "type": "통과맨홀",
+            "milepost": 26.96,
+            "bound": "상행선",
+            "lat": 37.590595,
+            "lng": 127.156194,
+            "section": "강일IC-남양주IC"
+          },
+          {
+            "name": "66M",
+            "code": "M-1001-02637S-P-H",
+            "category": "인공",
+            "type": "통과맨홀",
+            "milepost": 26.37,
+            "bound": "상행선",
+            "lat": 37.585037,
+            "lng": 127.156294,
+            "section": "강일IC-남양주IC"
+          },
+          {
+            "name": "65M",
+            "code": "",
+            "category": "맨홀",
+            "type": "일반",
+            "milepost": 0,
+            "bound": "상행선",
+            "lat": null,
+            "lng": null,
+            "section": ""
+          },
+          {
+            "name": "64M",
+            "code": "M-1001-02487S-B-H",
+            "category": "인공",
+            "type": "접속맨홀",
+            "milepost": 24.87,
+            "bound": "상행선",
+            "lat": 37.573441,
+            "lng": 127.164525,
+            "section": "상일IC-강일IC"
+          }
+        ],
+        "bridge": "강동대교",
+        "joint_box_h": "2",
+        "joint_box_q": "",
+        "cycle": "맨홀 분기(Q) · 접속함체 반기(H)"
+      }
+    },
+    "2026-08-21": {
+      "day": 21,
+      "date": "2026-08-21",
+      "type": "LINE",
+      "title": "구리남양주TG ~ 토평IC (구리IC 남측 구간) 선로점검",
+      "office_name": "",
+      "office_match": null,
+      "transmission": [],
+      "wired": [],
+      "line": {
+        "route": "수도권제1순환선",
+        "milepost_range": "27.30~ 24.65",
+        "section_label": "구리남양주TG ~ 토평IC (구리IC 남측 구간)",
+        "manhole_names": [
+          "62M",
+          "61M",
+          "60M",
+          "59-1M",
+          "59M"
+        ],
+        "manholes": [
+          {
+            "name": "62M",
+            "code": "M-1001-02465S-P-H",
+            "category": "인공",
+            "type": "통과맨홀",
+            "milepost": 24.65,
+            "bound": "상행선",
+            "lat": 37.570606,
+            "lng": 127.16697,
+            "section": "상일IC-강일IC"
+          },
+          {
+            "name": "61M",
+            "code": "M-1001-02422S-P-H",
+            "category": "인공",
+            "type": "통과맨홀",
+            "milepost": 24.25,
+            "bound": "상행선",
+            "lat": 37.567301,
+            "lng": 127.169972,
+            "section": "상일IC-강일IC"
+          },
+          {
+            "name": "60M",
+            "code": "M-1001-02386S-B-H",
+            "category": "인공",
+            "type": "접속맨홀",
+            "milepost": 23.9,
+            "bound": "상행선",
+            "lat": 37.564824,
+            "lng": 127.17204,
+            "section": "상일IC-강일IC"
+          },
+          {
+            "name": "59-1M",
+            "code": "식별번호 없음(이정표 관리 노드)",
+            "category": "인공",
+            "type": "접속맨홀",
+            "milepost": 23.21,
+            "bound": "상행선",
+            "lat": 37.571439399999996,
+            "lng": 127.1663484,
+            "section": "강일IC-남양주IC"
+          },
+          {
+            "name": "59M",
+            "code": "M-1001-02340S-P-H",
+            "category": "인공",
+            "type": "통과맨홀",
+            "milepost": 23.7,
+            "bound": "상행선",
+            "lat": 37.563005,
+            "lng": 127.173366,
+            "section": "상일IC-강일IC"
+          }
+        ],
+        "bridge": "",
+        "joint_box_h": "1",
+        "joint_box_q": "",
+        "cycle": "맨홀 분기(Q) · 접속함체 반기(H)"
+      }
+    },
+    "2026-08-25": {
+      "day": 25,
+      "date": "2026-08-25",
+      "type": "LINE",
+      "title": "하남JCT ~ 상일IC ~ 강일IC (초이동 구간) 선로점검",
+      "office_name": "",
+      "office_match": null,
+      "transmission": [],
+      "wired": [],
+      "line": {
+        "route": "수도권제1순환선",
+        "milepost_range": "22.99~ 21.62",
+        "section_label": "하남JCT ~ 상일IC ~ 강일IC (초이동 구간)",
+        "manhole_names": [
+          "58M",
+          "57M",
+          "56M",
+          "55M",
+          "54M"
+        ],
+        "manholes": [
+          {
+            "name": "58M",
+            "code": "M-1001-02285S-B-H",
+            "category": "인공",
+            "type": "통과맨홀",
+            "milepost": 22.99,
+            "bound": "상행선",
+            "lat": 37.557225,
+            "lng": 127.175527,
+            "section": "상일IC-강일IC"
+          },
+          {
+            "name": "57M",
+            "code": "M-1001-02243S-P-H",
+            "category": "인공",
+            "type": "통과맨홀",
+            "milepost": 22.43,
+            "bound": "상행선",
+            "lat": 37.553013,
+            "lng": 127.177225,
+            "section": "하남JCT-상일IC"
+          },
+          {
+            "name": "56M",
+            "code": "M-1001-02242S-B-H",
+            "category": "인공",
+            "type": "접속맨홀",
+            "milepost": 22.42,
+            "bound": "상행선",
+            "lat": 37.552861,
+            "lng": 127.177456,
+            "section": "하남JCT-상일IC"
+          },
+          {
+            "name": "55M",
+            "code": "M-1001-02202S-P-H",
+            "category": "인공",
+            "type": "통과맨홀",
+            "milepost": 22.02,
+            "bound": "상행선",
+            "lat": 37.549617,
+            "lng": 127.178957,
+            "section": "하남JCT-상일IC"
+          },
+          {
+            "name": "54M",
+            "code": "M-1001-02162S-P-H",
+            "category": "인공",
+            "type": "접속맨홀",
+            "milepost": 21.62,
+            "bound": "상행선",
+            "lat": 37.545513,
+            "lng": 127.180754,
+            "section": "하남JCT-상일IC"
+          }
+        ],
+        "bridge": "",
+        "joint_box_h": "1",
+        "joint_box_q": "",
+        "cycle": "맨홀 분기(Q) · 접속함체 반기(H)"
+      }
+    },
+    "2026-08-27": {
+      "day": 27,
+      "date": "2026-08-27",
+      "type": "LINE",
+      "title": "서하남JCT ~ 하남JCT ~ 상일IC (하남분기점 일대) 선로점검",
+      "office_name": "",
+      "office_match": null,
+      "transmission": [],
+      "wired": [],
+      "line": {
+        "route": "수도권제1순환선",
+        "milepost_range": "21.61~ 19.62",
+        "section_label": "서하남JCT ~ 하남JCT ~ 상일IC (하남분기점 일대)",
+        "manhole_names": [
+          "53M",
+          "52M",
+          "51M",
+          "50M",
+          "49M"
+        ],
+        "manholes": [
+          {
+            "name": "53M",
+            "code": "",
+            "category": "맨홀",
+            "type": "일반",
+            "milepost": 0,
+            "bound": "상행선",
+            "lat": null,
+            "lng": null,
+            "section": ""
+          },
+          {
+            "name": "52M",
+            "code": "M-1001-02105S-B-H",
+            "category": "인공",
+            "type": "접속맨홀",
+            "milepost": 21.11,
+            "bound": "상행선",
+            "lat": 37.541381,
+            "lng": 127.182699,
+            "section": "하남JCT-상일IC"
+          },
+          {
+            "name": "51M",
+            "code": "M-1001-02060S-P-H",
+            "category": "인공",
+            "type": "통과맨홀",
+            "milepost": 20.6,
+            "bound": "상행선",
+            "lat": 37.536868,
+            "lng": 127.185376,
+            "section": "하남JCT-상일IC"
+          },
+          {
+            "name": "50M",
+            "code": "M-1001-02021S-B-H",
+            "category": "인공",
+            "type": "접속맨홀",
+            "milepost": 20.21,
+            "bound": "상행선",
+            "lat": 37.534426,
+            "lng": 127.188173,
+            "section": "하남JCT-상일IC"
+          },
+          {
+            "name": "49M",
+            "code": "M-1001-01962S-B-H",
+            "category": "인공",
+            "type": "통과맨홀",
+            "milepost": 19.62,
+            "bound": "상행선",
+            "lat": 37.531984,
+            "lng": 127.193722,
+            "section": "서하남JCT-하남JCT"
+          }
+        ],
+        "bridge": "",
+        "joint_box_h": "4",
+        "joint_box_q": "",
+        "cycle": "맨홀 분기(Q) · 접속함체 반기(H)"
+      }
+    },
+    "2026-08-31": {
+      "day": 31,
+      "date": "2026-08-31",
+      "type": "LINE",
+      "title": "서하남IC ~ 서하남JCT (감북동 / 동서울지사 본선) 선로점검",
+      "office_name": "",
+      "office_match": null,
+      "transmission": [],
+      "wired": [],
+      "line": {
+        "route": "수도권제1순환선",
+        "milepost_range": "19.63~ 18.81",
+        "section_label": "서하남IC ~ 서하남JCT (감북동 / 동서울지사 본선)",
+        "manhole_names": [
+          "49-1H",
+          "49-1M",
+          "49-2M",
+          "48M",
+          "47M"
+        ],
+        "manholes": [
+          {
+            "name": "49-1H",
+            "code": "식별번호 없음(이정표 관리 노드)",
+            "category": "수공",
+            "type": "통과맨홀",
+            "milepost": 19.63,
+            "bound": "상행선",
+            "lat": 37.5373193,
+            "lng": 127.18510830000001,
+            "section": "하남JCT-상일IC"
+          },
+          {
+            "name": "49-1M",
+            "code": "",
+            "category": "맨홀",
+            "type": "일반",
+            "milepost": 0,
+            "bound": "상행선",
+            "lat": null,
+            "lng": null,
+            "section": ""
+          },
+          {
+            "name": "49-2M",
+            "code": "",
+            "category": "맨홀",
+            "type": "일반",
+            "milepost": 0,
+            "bound": "상행선",
+            "lat": null,
+            "lng": null,
+            "section": ""
+          },
+          {
+            "name": "48M",
+            "code": "M-1001-01913S-B-H",
+            "category": "인공",
+            "type": "접속맨홀",
+            "milepost": 19.13,
+            "bound": "상행선",
+            "lat": 37.530501,
+            "lng": 127.195296,
+            "section": "서하남JCT-하남JCT"
+          },
+          {
+            "name": "47M",
+            "code": "M-1001-01882S-B-H",
+            "category": "인공",
+            "type": "통과맨홀",
+            "milepost": 18.82,
+            "bound": "상행선",
+            "lat": 37.528048,
+            "lng": 127.194698,
+            "section": "서하남JCT-하남JCT"
+          }
+        ],
+        "bridge": "",
+        "joint_box_h": "1",
+        "joint_box_q": "",
+        "cycle": "맨홀 분기(Q) · 접속함체 반기(H)"
+      }
+    }
+  }
 }
