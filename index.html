@@ -265,7 +265,7 @@
           <i data-lucide="layers" class="w-3.5 h-3.5"></i> <span>레이어</span>
         </button>
         <button id="tab-list-btn" class="py-2.5 text-slate-400 hover:text-slate-200 flex flex-col sm:flex-row items-center justify-center gap-1 transition">
-          <i data-lucide="list-filter" class="w-3.5 h-3.5"></i> <span>시설물</span>
+          <i data-lucide="list-filter" class="w-3.5 h-3.5"></i> <span>시설물 (<span id="filtered-count">0</span>)</span>
         </button>
         <button id="tab-plan-btn" class="py-2.5 text-slate-400 hover:text-slate-200 flex flex-col sm:flex-row items-center justify-center gap-1 transition">
           <i data-lucide="calendar" class="w-3.5 h-3.5 text-indigo-400"></i> <span class="text-indigo-300 font-bold">점검일정</span>
@@ -1303,7 +1303,8 @@
         });
       }
 
-      document.getElementById('filtered-count').innerText = filteredTotal;
+      const countEl = document.getElementById('filtered-count');
+      if (countEl) countEl.innerText = filteredTotal;
       lucide.createIcons();
     }
 
