@@ -254,9 +254,15 @@
         <span>거리/면적 측정</span>
       </button>
 
-      <button id="btn-upload-modal" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-xs font-medium text-white border border-cyan-400/30 transition">
-        <i data-lucide="upload-cloud" class="w-3.5 h-3.5"></i>
-        <span>데이터 업로드</span>
+      <button id="btn-datapack-header" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-xs font-bold text-white border border-emerald-400/40 shadow-sm transition">
+        <i data-lucide="folder-open" class="w-3.5 h-3.5"></i>
+        <span>지사 데이터팩(.json)</span>
+      </button>
+      <input type="file" id="input-datapack-file" accept=".json" class="hidden" />
+
+      <button id="btn-upload-modal" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
+        <i data-lucide="upload-cloud" class="w-3.5 h-3.5 text-cyan-400"></i>
+        <span>개별 엑셀</span>
       </button>
 
       <button id="btn-export-menu" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
@@ -2413,6 +2419,39 @@
       });
     }
 
+    function loadDataPack(jsonData) {
+      if (!jsonData || typeof jsonData !== 'object') {
+        alert('유효하지 않은 데이터팩 JSON 파일입니다.');
+        return;
+      }
+      AppState.data = jsonData;
+      const countOffices = document.getElementById('count-offices');
+      if (countOffices) countOffices.innerText = `${(jsonData.offices || []).length}개소`;
+      const countInterchanges = document.getElementById('count-interchanges');
+      if (countInterchanges) countInterchanges.innerText = `${(jsonData.interchanges || []).length}개소`;
+      const countManholes = document.getElementById('count-manholes');
+      if (countManholes) countManholes.innerText = `${(jsonData.manholes || []).length}`;
+      const countConduits = document.getElementById('count-conduits');
+      if (countConduits) countConduits.innerText = `${(jsonData.conduits || []).length}`;
+      const countCables = document.getElementById('count-cables');
+      if (countCables) countCables.innerText = `${(jsonData.cables || []).length}`;
+      const countPoles = document.getElementById('count-poles');
+      if (countPoles) countPoles.innerText = `${(jsonData.poles || []).length}`;
+
+      renderInspectionCalendar();
+      renderAllLayers();
+
+      const allPts = [];
+      (jsonData.offices || []).forEach(o => { if (o.lat && o.lng) allPts.push([o.lat, o.lng]); });
+      (jsonData.manholes || []).forEach(m => { if (m.lat && m.lng) allPts.push([m.lat, m.lng]); });
+      if (allPts.length >= 2) {
+        AppState.map.fitBounds(L.latLngBounds(allPts), { padding: [50, 50] });
+      }
+      alert(`[로컬 데이터팩 로드 성공!]\n- 관제 거점: ${(jsonData.offices || []).length}개소\n- 맨홀/수공: ${(jsonData.manholes || []).length}개소\n- 통신관로: ${(jsonData.conduits || []).length}구간\n- 광케이블: ${(jsonData.cables || []).length}회선\n- 점검계획: ${Object.keys(jsonData.inspection_schedule || {}).length}일분`);
+    }
+
+    window.loadDataPack = loadDataPack;
+
     function setupEventListeners() {
       // Base map switcher buttons
       document.querySelectorAll('.basemap-btn').forEach(btn => {
@@ -2515,8 +2554,13 @@
             const targetContent = document.getElementById(t.content);
             if (targetContent) targetContent.classList.remove('hidden');
 
-            if (t.content === 'tab-plan' && !AppState.activeInspectionDate) {
-              selectInspectionDate(getClosestOrTodayInspectionDate());
+            if (t.content === 'tab-plan') {
+              selectInspectionDate(AppState.activeInspectionDate || getClosestOrTodayInspectionDate());
+            } else {
+              // When leaving tab-plan, automatically exit inspection focus mode and restore all layers!
+              if (AppState.activeInspectionDate) {
+                clearInspectionDate();
+              }
             }
           });
         }
@@ -2556,6 +2600,50 @@
       });
 
       renderInspectionCalendar();
+
+      // Data Pack (.json) Load Action
+      const btnDataPack = document.getElementById('btn-datapack-header');
+      const inputDataPack = document.getElementById('input-datapack-file');
+
+      if (btnDataPack && inputDataPack) {
+        btnDataPack.addEventListener('click', () => inputDataPack.click());
+        inputDataPack.addEventListener('change', (e) => {
+          const file = e.target.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = (evt) => {
+            try {
+              const parsed = JSON.parse(evt.target.result);
+              loadDataPack(parsed);
+            } catch (err) {
+              alert('JSON 파싱 오류: ' + err.message);
+            }
+          };
+          reader.readAsText(file);
+          inputDataPack.value = '';
+        });
+      }
+
+      // Drag and Drop JSON Data Pack Support on Window
+      window.addEventListener('dragover', (e) => e.preventDefault());
+      window.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const file = e.dataTransfer?.files[0];
+        if (file && (file.name.endsWith('.json') || file.name.endsWith('.geojson'))) {
+          const reader = new FileReader();
+          reader.onload = (evt) => {
+            try {
+              const parsed = JSON.parse(evt.target.result);
+              if (parsed.manholes || parsed.offices || parsed.conduits) {
+                loadDataPack(parsed);
+              }
+            } catch (err) {
+              console.error('Drag drop parse error:', err);
+            }
+          };
+          reader.readAsText(file);
+        }
+      });
 
       // Search & Autocomplete
       const searchInput = document.getElementById('search-input');
