@@ -228,12 +228,15 @@
       </div>
       <div class="truncate">
         <div class="flex items-center space-x-1.5 md:space-x-2">
-          <h1 class="text-xs md:text-base font-bold tracking-tight text-white truncate flex items-center gap-1.5">
-            <span class="truncate">고속도로 지하 통신 인프라 관제</span>
-            <span class="text-[9px] md:text-[10px] bg-cyan-500/20 text-cyan-400 font-semibold px-1.5 py-0.2 md:py-0.5 rounded-full border border-cyan-500/30 shrink-0">동서울지사</span>
+          <h1 class="text-xs md:text-sm font-bold tracking-tight text-white truncate flex items-center gap-1.5">
+            <span class="hidden sm:inline truncate">고속도로 지하 통신 인프라 관제</span>
           </h1>
+          <select id="select-branch" class="bg-slate-800 border border-cyan-500/50 text-cyan-300 text-xs rounded-lg px-2 py-1 font-bold focus:outline-none focus:ring-1 focus:ring-cyan-400 cursor-pointer shadow">
+            <option value="DONGSEOUL" selected>🏢 동서울지사 (수도권제1순환선)</option>
+            <option value="GWANGJU">🏢 경기광주지사 (제2중부선·중부선)</option>
+          </select>
         </div>
-        <p class="text-[10px] md:text-[11px] text-slate-400 hidden lg:block truncate">수도권 제1순환선 통신관로 · 맨홀(67M, 62-1H) · 지사/영업소 방범망 · 광케이블</p>
+        <p id="header-branch-subtitle" class="text-[10px] md:text-[11px] text-slate-400 hidden lg:block truncate">수도권 제1순환선 통신관로 · 맨홀(126개소) · 지사/영업소(9개소) 방범망 · 광케이블</p>
       </div>
     </div>
 
@@ -2600,6 +2603,21 @@
       });
 
       renderInspectionCalendar();
+
+      // Branch selector switcher
+      const selectBranch = document.getElementById('select-branch');
+      if (selectBranch) {
+        selectBranch.addEventListener('change', (e) => {
+          const branchKey = e.target.value;
+          if (window.BRANCH_DATA_PACKS && window.BRANCH_DATA_PACKS[branchKey]) {
+            loadDataPack(window.BRANCH_DATA_PACKS[branchKey]);
+            const sub = document.getElementById('header-branch-subtitle');
+            if (sub) {
+              sub.innerText = window.BRANCH_DATA_PACKS[branchKey].subtitle || '';
+            }
+          }
+        });
+      }
 
       // Data Pack (.json) Load Action
       const btnDataPack = document.getElementById('btn-datapack-header');
