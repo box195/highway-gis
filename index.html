@@ -229,7 +229,9 @@
       <div class="truncate">
         <div class="flex items-center space-x-1.5 md:space-x-2">
           <h1 class="text-xs md:text-sm font-bold tracking-tight text-white truncate flex items-center gap-1.5">
-            <span class="hidden sm:inline truncate">고속도로 지하 통신 인프라 관제</span>
+            <span class="hidden sm:inline truncate font-mono text-cyan-400">HIGHWAY GIS</span>
+            <span class="text-slate-500 hidden sm:inline">|</span>
+            <span class="truncate">통신망 인프라 통합관제</span>
           </h1>
           <select id="select-branch" class="bg-slate-800 border border-cyan-500/50 text-cyan-300 text-xs rounded-lg px-2 py-1 font-bold focus:outline-none focus:ring-1 focus:ring-cyan-400 cursor-pointer shadow">
             <option value="DONGSEOUL" selected>🏢 동서울지사 (수도권제1순환선)</option>
@@ -324,7 +326,7 @@
       <div class="p-3 border-b border-slate-800 bg-slate-900">
         <div class="relative">
           <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
-          <input id="search-input" type="text" placeholder="거점(동서울지사, 성남영), 맨홀(67M), 설비명..." class="w-full bg-slate-950 border border-slate-700 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition" />
+          <input id="search-input" type="text" placeholder="거점(지사, 영업소), 맨홀(1M, 54M), 설비명..." class="w-full bg-slate-950 border border-slate-700 rounded-lg pl-9 pr-8 py-2 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition" />
           <button id="btn-clear-search" class="hidden absolute right-2.5 top-2 text-slate-400 hover:text-slate-200">
             <i data-lucide="x" class="w-3.5 h-3.5"></i>
           </button>
@@ -391,7 +393,7 @@
                   <input type="checkbox" id="layer-offices" checked class="rounded border-slate-700 text-blue-500 focus:ring-blue-500 w-4 h-4 bg-slate-900">
                   <div class="flex items-center space-x-2">
                     <span class="w-3 h-3 rounded-full bg-blue-500 flex items-center justify-center text-[9px] text-white font-bold">🏢</span>
-                    <span class="font-bold text-white text-xs">동서울지사 관내 거점 (지사·영업소·터널)</span>
+                    <span id="label-layer-offices" class="font-bold text-white text-xs">관제 거점 (지사 · 영업소 · 터널)</span>
                   </div>
                 </div>
                 <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-cyan-300 font-bold border border-blue-500/30" id="count-offices">9개소</span>
@@ -403,7 +405,7 @@
                   <input type="checkbox" id="layer-interchanges" checked class="rounded border-slate-700 text-emerald-500 focus:ring-emerald-500 w-4 h-4 bg-slate-900">
                   <div class="flex items-center space-x-2">
                     <span class="w-3 h-3 rounded-full bg-emerald-500 flex items-center justify-center text-[9px] text-white font-bold">🛣️</span>
-                    <span class="font-bold text-white text-xs">고속도로 IC · JCT · TG (15개소)</span>
+                    <span class="font-bold text-white text-xs">고속도로 IC · JCT · TG</span>
                   </div>
                 </div>
                 <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30" id="count-interchanges">15개소</span>
@@ -458,8 +460,17 @@
               <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
                 <input type="checkbox" id="layer-vms" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
                 <div class="flex items-center space-x-1.5">
-                  <i data-lucide="tv" class="w-3 h-3 text-amber-400"></i>
+                  <i data-lucide="monitor" class="w-3 h-3 text-amber-400"></i>
                   <span class="text-slate-200">VMS 전광판</span>
+                </div>
+              </label>
+
+              <!-- DSRC Layer -->
+              <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
+                <input type="checkbox" id="layer-dsrc" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="wifi" class="w-3 h-3 text-purple-400"></i>
+                  <span class="text-slate-200">DSRC 기지국</span>
                 </div>
               </label>
 
@@ -483,23 +494,11 @@
             </div>
           </div>
 
-          <!-- Section Filter -->
+          <!-- Section Filter (Dynamically Populated) -->
           <div class="space-y-1.5">
-            <label class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider">구간별 필터</label>
+            <label class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider">구간별 선로 필터</label>
             <select id="filter-section" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-2.5 py-2 text-xs text-slate-100 focus:outline-none focus:border-cyan-500">
-              <option value="ALL">전체 구간 (판교 ~ 퇴계원 & 학의 ~ 평촌 & 거점)</option>
-              <option value="판교JCT-성남IC">판교JCT - 성남IC</option>
-              <option value="성남IC-송파IC">성남IC - 송파IC</option>
-              <option value="송파IC-서하남JCT">송파IC - 서하남JCT</option>
-              <option value="서하남JCT-하남JCT">서하남JCT - 하남JCT</option>
-              <option value="하남JCT-상일IC">하남JCT - 상일IC</option>
-              <option value="상일IC-강일IC">상일IC - 강일IC</option>
-              <option value="강일IC-남양주IC">강일IC - 남양주IC</option>
-              <option value="남양주IC-구리IC">남양주IC - 구리IC</option>
-              <option value="구리IC-퇴계원IC">구리IC - 퇴계원IC</option>
-              <option value="판교JCT-청계TG">판교JCT - 청계TG</option>
-              <option value="청계TG-학의JCT">청계TG - 학의JCT</option>
-              <option value="학의JCT-평촌IC">학의JCT - 평촌IC</option>
+              <option value="ALL">전체 선로 구간</option>
             </select>
           </div>
 
@@ -508,8 +507,8 @@
             <label class="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider">상/하행 구분</label>
             <div class="grid grid-cols-3 gap-1.5 text-xs">
               <button data-bound="ALL" class="bound-btn py-2 rounded-lg bg-cyan-600 text-white font-medium text-center transition">전체</button>
-              <button data-bound="상행선" class="bound-btn py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center transition">상행선 (판교)</button>
-              <button data-bound="하행선" class="bound-btn py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center transition">하행선 (일산/퇴계원)</button>
+              <button data-bound="상행선" class="bound-btn py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center transition">상행선 (주선로)</button>
+              <button data-bound="하행선" class="bound-btn py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center transition">하행선</button>
             </div>
           </div>
 
@@ -2441,6 +2440,26 @@
       const countPoles = document.getElementById('count-poles');
       if (countPoles) countPoles.innerText = `${(jsonData.poles || []).length}`;
 
+      const lblOff = document.getElementById('label-layer-offices');
+      if (lblOff) {
+        lblOff.innerText = `${jsonData.branch_name || '관제'} 관내 거점 (지사·영업소)`;
+      }
+
+      // Dynamic Section Options
+      const filterSec = document.getElementById('filter-section');
+      if (filterSec) {
+        const uniqueSecs = new Set();
+        (jsonData.manholes || []).forEach(m => { if (m.section) uniqueSecs.add(m.section); });
+        (jsonData.conduits || []).forEach(c => { if (c.section) uniqueSecs.add(c.section); });
+        filterSec.innerHTML = '<option value="ALL">전체 선로 구간</option>';
+        uniqueSecs.forEach(sec => {
+          const opt = document.createElement('option');
+          opt.value = sec;
+          opt.innerText = sec;
+          filterSec.appendChild(opt);
+        });
+      }
+
       renderInspectionCalendar();
       renderAllLayers();
 
@@ -2456,7 +2475,7 @@
       }
 
       if (isManualUpload) {
-        alert(`[로컬 데이터팩 로드 성공!]\n- 관제 거점: ${(jsonData.offices || []).length}개소\n- 맨홀/수공: ${(jsonData.manholes || []).length}개소\n- 통신관로: ${(jsonData.conduits || []).length}구간\n- 광케이블: ${(jsonData.cables || []).length}회선\n- 점검계획: ${Object.keys(jsonData.inspection_schedule || {}).length}일분`);
+        alert(`[로컬 데이터팩 로드 성공!]\n- 지사명: ${jsonData.branch_name || '지사'}\n- 관제 거점: ${(jsonData.offices || []).length}개소\n- 맨홀/수공: ${(jsonData.manholes || []).length}개소\n- 통신관로: ${(jsonData.conduits || []).length}구간\n- 광케이블: ${(jsonData.cables || []).length}회선\n- 점검계획: ${Object.keys(jsonData.inspection_schedule || {}).length}일분`);
       }
     }
 
