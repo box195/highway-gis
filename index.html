@@ -70,7 +70,7 @@
   <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
 
   <!-- Master Data Bundle (Relative path for GitHub Pages compatibility with cache bust) -->
-  <script src="./data/master_data.js?v=20260825_final"></script>
+  <script src="./data/master_data.js?v=20260826_v5"></script>
 
   <style>
     /* Custom Scrollbars */
@@ -2503,7 +2503,12 @@
       document.querySelectorAll('.basemap-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
           const type = e.currentTarget.getAttribute('data-basemap');
-          Object.values(AppState.baseLayers).forEach(layer => AppState.map.removeLayer(layer));
+          if (!AppState.baseLayers[type]) return;
+          Object.values(AppState.baseLayers).forEach(layer => {
+            if (layer && AppState.map.hasLayer(layer)) {
+              AppState.map.removeLayer(layer);
+            }
+          });
           AppState.baseLayers[type].addTo(AppState.map);
           AppState.currentBaseMap = type;
 
@@ -2650,8 +2655,23 @@
       // Branch selector switcher
       const selectBranch = document.getElementById('select-branch');
       if (selectBranch) {
-        selectBranch.addEventListener('change', (e) => {
+        selectBranch.addEventListener('change', async (e) => {
           const branchKey = e.target.value;
+          const jsonFile = branchKey === 'GWANGJU' ? './data/datapack_gyeonggwangju.json' : './data/datapack_dongseoul.json';
+          try {
+            const res = await fetch(`${jsonFile}?t=${Date.now()}`);
+            if (res.ok) {
+              const freshData = await res.json();
+              window.BRANCH_DATA_PACKS = window.BRANCH_DATA_PACKS || {};
+              window.BRANCH_DATA_PACKS[branchKey] = freshData;
+              loadDataPack(freshData);
+              const sub = document.getElementById('header-branch-subtitle');
+              if (sub) sub.innerText = freshData.subtitle || '';
+              return;
+            }
+          } catch (err) {
+            console.warn('Direct fetch fallback:', err);
+          }
           if (window.BRANCH_DATA_PACKS && window.BRANCH_DATA_PACKS[branchKey]) {
             loadDataPack(window.BRANCH_DATA_PACKS[branchKey]);
             const sub = document.getElementById('header-branch-subtitle');
@@ -3168,10 +3188,36 @@
       });
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('DOMContentLoaded', async () => {
       initMap();
       setupEventListeners();
       lucide.createIcons();
+
+      // Proactively fetch latest fresh branch data packs to bypass any browser/CDN caching
+      try {
+        const [resDs, resGw] = await Promise.all([
+          fetch(`./data/datapack_dongseoul.json?t=${Date.now()}`),
+          fetch(`./data/datapack_gyeonggwangju.json?t=${Date.now()}`)
+        ]);
+        if (resDs.ok) {
+          const dsData = await resDs.json();
+          window.BRANCH_DATA_PACKS = window.BRANCH_DATA_PACKS || {};
+          window.BRANCH_DATA_PACKS['DONGSEOUL'] = dsData;
+          if (document.getElementById('select-branch').value === 'DONGSEOUL') {
+            loadDataPack(dsData);
+          }
+        }
+        if (resGw.ok) {
+          const gwData = await resGw.json();
+          window.BRANCH_DATA_PACKS = window.BRANCH_DATA_PACKS || {};
+          window.BRANCH_DATA_PACKS['GWANGJU'] = gwData;
+          if (document.getElementById('select-branch').value === 'GWANGJU') {
+            loadDataPack(gwData);
+          }
+        }
+      } catch (err) {
+        console.warn('Initial fresh data sync fallback to bundle:', err);
+      }
     });
   </script>
 </body>
