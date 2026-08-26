@@ -13144,6 +13144,74 @@ window.MASTER_GIS_DATA = {
     }
   ],
   "poles": [],
+  "straight_map": [
+    {
+      "name": "판교JCT",
+      "type": "JCT",
+      "mile": 0.0,
+      "desc": "경부선 분기점 (수도권 제1순환선 시점)"
+    },
+    {
+      "name": "성남IC",
+      "type": "IC",
+      "mile": 4.18,
+      "desc": "국도 3호선 성남/광주 방면 연계"
+    },
+    {
+      "name": "가천대정류장",
+      "type": "BUS",
+      "mile": 5.4,
+      "desc": "고속도로 대중교통 환승정류장"
+    },
+    {
+      "name": "송파IC",
+      "type": "IC",
+      "mile": 9.4,
+      "desc": "위례신도시 및 송파대로 연계"
+    },
+    {
+      "name": "서하남JCT",
+      "type": "JCT",
+      "mile": 14.55,
+      "desc": "세종포천선 분기점"
+    },
+    {
+      "name": "하남JCT",
+      "type": "JCT",
+      "mile": 19.62,
+      "desc": "중부고속도로 분기점 (49M-50M 사이)"
+    },
+    {
+      "name": "상일IC",
+      "type": "IC",
+      "mile": 22.4,
+      "desc": "서울 강동 고덕/상일 연계"
+    },
+    {
+      "name": "강일IC",
+      "type": "IC",
+      "mile": 25.1,
+      "desc": "올림픽대로 및 서울양양선 연계"
+    },
+    {
+      "name": "토평IC",
+      "type": "IC",
+      "mile": 28.2,
+      "desc": "강변북로 연계"
+    },
+    {
+      "name": "구리IC",
+      "type": "IC",
+      "mile": 30.5,
+      "desc": "북부간선도로 연계"
+    },
+    {
+      "name": "퇴계원IC",
+      "type": "IC",
+      "mile": 33.7,
+      "desc": "국도 43/46/47호선 연계 (동서울 관내 종점)"
+    }
+  ],
   "inspection_schedule": {
     "2026-08-04": {
       "day": 4,
@@ -13792,75 +13860,7 @@ window.MASTER_GIS_DATA = {
         "cycle": "맨홀 분기(Q) · 접속함체 반기(H)"
       }
     }
-  },
-  "straight_map": [
-    {
-      "name": "판교JCT",
-      "type": "JCT",
-      "mile": 0.0,
-      "desc": "경부선 분기점 (수도권 제1순환선 시점)"
-    },
-    {
-      "name": "성남IC",
-      "type": "IC",
-      "mile": 4.18,
-      "desc": "국도 3호선 성남/광주 방면 연계"
-    },
-    {
-      "name": "가천대정류장",
-      "type": "BUS",
-      "mile": 5.4,
-      "desc": "고속도로 대중교통 환승정류장"
-    },
-    {
-      "name": "송파IC",
-      "type": "IC",
-      "mile": 9.4,
-      "desc": "위례신도시 및 송파대로 연계"
-    },
-    {
-      "name": "서하남JCT",
-      "type": "JCT",
-      "mile": 14.55,
-      "desc": "세종포천선 분기점"
-    },
-    {
-      "name": "하남JCT",
-      "type": "JCT",
-      "mile": 19.62,
-      "desc": "중부고속도로 분기점 (49M-50M 사이)"
-    },
-    {
-      "name": "상일IC",
-      "type": "IC",
-      "mile": 22.4,
-      "desc": "서울 강동 고덕/상일 연계"
-    },
-    {
-      "name": "강일IC",
-      "type": "IC",
-      "mile": 25.1,
-      "desc": "올림픽대로 및 서울양양선 연계"
-    },
-    {
-      "name": "토평IC",
-      "type": "IC",
-      "mile": 28.2,
-      "desc": "강변북로 연계"
-    },
-    {
-      "name": "구리IC",
-      "type": "IC",
-      "mile": 30.5,
-      "desc": "북부간선도로 연계"
-    },
-    {
-      "name": "퇴계원IC",
-      "type": "IC",
-      "mile": 33.7,
-      "desc": "국도 43/46/47호선 연계 (동서울 관내 종점)"
-    }
-  ]
+  }
 };
 window.BRANCH_DATA_PACKS = {
   "DONGSEOUL": {
@@ -27008,6 +27008,74 @@ window.BRANCH_DATA_PACKS = {
       }
     ],
     "poles": [],
+    "straight_map": [
+      {
+        "name": "판교JCT",
+        "type": "JCT",
+        "mile": 0.0,
+        "desc": "경부선 분기점 (수도권 제1순환선 시점)"
+      },
+      {
+        "name": "성남IC",
+        "type": "IC",
+        "mile": 4.18,
+        "desc": "국도 3호선 성남/광주 방면 연계"
+      },
+      {
+        "name": "가천대정류장",
+        "type": "BUS",
+        "mile": 5.4,
+        "desc": "고속도로 대중교통 환승정류장"
+      },
+      {
+        "name": "송파IC",
+        "type": "IC",
+        "mile": 9.4,
+        "desc": "위례신도시 및 송파대로 연계"
+      },
+      {
+        "name": "서하남JCT",
+        "type": "JCT",
+        "mile": 14.55,
+        "desc": "세종포천선 분기점"
+      },
+      {
+        "name": "하남JCT",
+        "type": "JCT",
+        "mile": 19.62,
+        "desc": "중부고속도로 분기점 (49M-50M 사이)"
+      },
+      {
+        "name": "상일IC",
+        "type": "IC",
+        "mile": 22.4,
+        "desc": "서울 강동 고덕/상일 연계"
+      },
+      {
+        "name": "강일IC",
+        "type": "IC",
+        "mile": 25.1,
+        "desc": "올림픽대로 및 서울양양선 연계"
+      },
+      {
+        "name": "토평IC",
+        "type": "IC",
+        "mile": 28.2,
+        "desc": "강변북로 연계"
+      },
+      {
+        "name": "구리IC",
+        "type": "IC",
+        "mile": 30.5,
+        "desc": "북부간선도로 연계"
+      },
+      {
+        "name": "퇴계원IC",
+        "type": "IC",
+        "mile": 33.7,
+        "desc": "국도 43/46/47호선 연계 (동서울 관내 종점)"
+      }
+    ],
     "inspection_schedule": {
       "2026-08-04": {
         "day": 4,
@@ -27656,75 +27724,7 @@ window.BRANCH_DATA_PACKS = {
           "cycle": "맨홀 분기(Q) · 접속함체 반기(H)"
         }
       }
-    },
-    "straight_map": [
-      {
-        "name": "판교JCT",
-        "type": "JCT",
-        "mile": 0.0,
-        "desc": "경부선 분기점 (수도권 제1순환선 시점)"
-      },
-      {
-        "name": "성남IC",
-        "type": "IC",
-        "mile": 4.18,
-        "desc": "국도 3호선 성남/광주 방면 연계"
-      },
-      {
-        "name": "가천대정류장",
-        "type": "BUS",
-        "mile": 5.4,
-        "desc": "고속도로 대중교통 환승정류장"
-      },
-      {
-        "name": "송파IC",
-        "type": "IC",
-        "mile": 9.4,
-        "desc": "위례신도시 및 송파대로 연계"
-      },
-      {
-        "name": "서하남JCT",
-        "type": "JCT",
-        "mile": 14.55,
-        "desc": "세종포천선 분기점"
-      },
-      {
-        "name": "하남JCT",
-        "type": "JCT",
-        "mile": 19.62,
-        "desc": "중부고속도로 분기점 (49M-50M 사이)"
-      },
-      {
-        "name": "상일IC",
-        "type": "IC",
-        "mile": 22.4,
-        "desc": "서울 강동 고덕/상일 연계"
-      },
-      {
-        "name": "강일IC",
-        "type": "IC",
-        "mile": 25.1,
-        "desc": "올림픽대로 및 서울양양선 연계"
-      },
-      {
-        "name": "토평IC",
-        "type": "IC",
-        "mile": 28.2,
-        "desc": "강변북로 연계"
-      },
-      {
-        "name": "구리IC",
-        "type": "IC",
-        "mile": 30.5,
-        "desc": "북부간선도로 연계"
-      },
-      {
-        "name": "퇴계원IC",
-        "type": "IC",
-        "mile": 33.7,
-        "desc": "국도 43/46/47호선 연계 (동서울 관내 종점)"
-      }
-    ]
+    }
   },
   "GWANGJU": {
     "branch_name": "경기광주지사",
@@ -36533,56 +36533,36 @@ window.BRANCH_DATA_PACKS = {
         "title": "[월간 M] 경기광주지사 통신·전송 및 방범설비 정기점검",
         "transmission": [
           {
-            "facility": "PTN 전송장치",
-            "name": "PTN 전송장치",
-            "cycle": "M"
+            "facility": "PTN",
+            "name": "PTN",
+            "cycle": "M",
+            "office": "경기광주지사"
           },
           {
             "facility": "부대시설",
             "name": "부대시설",
-            "cycle": "M"
+            "cycle": "M",
+            "office": "경기광주지사"
           },
           {
-            "facility": "출입통제 및 환경감시장치",
-            "name": "출입통제 및 환경감시장치",
-            "cycle": "M"
-          },
-          {
-            "facility": "PTN 정류기/축전지",
-            "name": "PTN 정류기/축전지",
-            "cycle": "M"
+            "facility": "출입통제 및  환경감시장치",
+            "name": "출입통제 및  환경감시장치",
+            "cycle": "M",
+            "office": "경기광주지사"
           }
         ],
         "wired": [
           {
             "facility": "부대시설",
             "name": "부대시설",
-            "cycle": "M"
+            "cycle": "M",
+            "office": "경기광주지사"
           },
           {
             "facility": "저장분배서버",
             "name": "저장분배서버",
-            "cycle": "M"
-          },
-          {
-            "facility": "운영PC",
-            "name": "운영PC",
-            "cycle": "M"
-          },
-          {
-            "facility": "L2 백본스위치",
-            "name": "L2 백본스위치",
-            "cycle": "M"
-          },
-          {
-            "facility": "보안CCTV",
-            "name": "보안CCTV",
-            "cycle": "M"
-          },
-          {
-            "facility": "방송설비",
-            "name": "방송설비",
-            "cycle": "M"
+            "cycle": "M",
+            "office": "경기광주지사"
           }
         ],
         "office_match": {
@@ -37375,41 +37355,24 @@ window.BRANCH_DATA_PACKS = {
         "title": "[월간 M] 곤지암영업소 통신·전송 및 방범설비 정기점검",
         "transmission": [
           {
-            "facility": "PTN 전송장치",
-            "name": "PTN 전송장치",
-            "cycle": "M"
+            "facility": "PTN",
+            "name": "PTN",
+            "cycle": "M",
+            "office": "곤지암영업소"
           },
           {
             "facility": "부대시설",
             "name": "부대시설",
-            "cycle": "M"
+            "cycle": "M",
+            "office": "곤지암영업소"
           }
         ],
         "wired": [
           {
             "facility": "부대시설",
             "name": "부대시설",
-            "cycle": "M"
-          },
-          {
-            "facility": "운영PC",
-            "name": "운영PC",
-            "cycle": "M"
-          },
-          {
-            "facility": "L2 스위치",
-            "name": "L2 스위치",
-            "cycle": "M"
-          },
-          {
-            "facility": "보안CCTV",
-            "name": "보안CCTV",
-            "cycle": "M"
-          },
-          {
-            "facility": "방송설비",
-            "name": "방송설비",
-            "cycle": "M"
+            "cycle": "M",
+            "office": "곤지암영업소"
           }
         ],
         "office_match": {
@@ -37552,41 +37515,24 @@ window.BRANCH_DATA_PACKS = {
         "title": "[월간 M] 경기광주영업소 통신·전송 및 방범설비 정기점검",
         "transmission": [
           {
-            "facility": "PTN 전송장치",
-            "name": "PTN 전송장치",
-            "cycle": "M"
+            "facility": "PTN",
+            "name": "PTN",
+            "cycle": "M",
+            "office": "경기광주영업소"
           },
           {
             "facility": "부대시설",
             "name": "부대시설",
-            "cycle": "M"
+            "cycle": "M",
+            "office": "경기광주영업소"
           }
         ],
         "wired": [
           {
             "facility": "부대시설",
             "name": "부대시설",
-            "cycle": "M"
-          },
-          {
-            "facility": "운영PC",
-            "name": "운영PC",
-            "cycle": "M"
-          },
-          {
-            "facility": "L2 스위치",
-            "name": "L2 스위치",
-            "cycle": "M"
-          },
-          {
-            "facility": "보안CCTV",
-            "name": "보안CCTV",
-            "cycle": "M"
-          },
-          {
-            "facility": "방송설비",
-            "name": "방송설비",
-            "cycle": "M"
+            "cycle": "M",
+            "office": "경기광주영업소"
           }
         ],
         "office_match": {
@@ -38379,41 +38325,24 @@ window.BRANCH_DATA_PACKS = {
         "title": "[월간 M] 서이천영업소 통신·전송 및 방범설비 정기점검",
         "transmission": [
           {
-            "facility": "PTN 전송장치",
-            "name": "PTN 전송장치",
-            "cycle": "M"
+            "facility": "PTN",
+            "name": "PTN",
+            "cycle": "M",
+            "office": "서이천영업소"
           },
           {
             "facility": "부대시설",
             "name": "부대시설",
-            "cycle": "M"
+            "cycle": "M",
+            "office": "서이천영업소"
           }
         ],
         "wired": [
           {
             "facility": "부대시설",
             "name": "부대시설",
-            "cycle": "M"
-          },
-          {
-            "facility": "운영PC",
-            "name": "운영PC",
-            "cycle": "M"
-          },
-          {
-            "facility": "L2 스위치",
-            "name": "L2 스위치",
-            "cycle": "M"
-          },
-          {
-            "facility": "보안CCTV",
-            "name": "보안CCTV",
-            "cycle": "M"
-          },
-          {
-            "facility": "방송설비",
-            "name": "방송설비",
-            "cycle": "M"
+            "cycle": "M",
+            "office": "서이천영업소"
           }
         ],
         "office_match": {
@@ -38526,41 +38455,24 @@ window.BRANCH_DATA_PACKS = {
         "title": "[월간 M] 동서울영업소 통신·전송 및 방범설비 정기점검",
         "transmission": [
           {
-            "facility": "PTN 전송장치",
-            "name": "PTN 전송장치",
-            "cycle": "M"
+            "facility": "PTN",
+            "name": "PTN",
+            "cycle": "M",
+            "office": "동서울영업소"
           },
           {
             "facility": "부대시설",
             "name": "부대시설",
-            "cycle": "M"
+            "cycle": "M",
+            "office": "동서울영업소"
           }
         ],
         "wired": [
           {
             "facility": "부대시설",
             "name": "부대시설",
-            "cycle": "M"
-          },
-          {
-            "facility": "운영PC",
-            "name": "운영PC",
-            "cycle": "M"
-          },
-          {
-            "facility": "L2 스위치",
-            "name": "L2 스위치",
-            "cycle": "M"
-          },
-          {
-            "facility": "보안CCTV",
-            "name": "보안CCTV",
-            "cycle": "M"
-          },
-          {
-            "facility": "방송설비",
-            "name": "방송설비",
-            "cycle": "M"
+            "cycle": "M",
+            "office": "동서울영업소"
           }
         ],
         "office_match": {
@@ -39533,41 +39445,24 @@ window.BRANCH_DATA_PACKS = {
         "title": "[월간 M] 하남영업소 통신·전송 및 방범설비 정기점검",
         "transmission": [
           {
-            "facility": "PTN 전송장치",
-            "name": "PTN 전송장치",
-            "cycle": "M"
+            "facility": "PTN",
+            "name": "PTN",
+            "cycle": "M",
+            "office": "하남영업소"
           },
           {
             "facility": "부대시설",
             "name": "부대시설",
-            "cycle": "M"
+            "cycle": "M",
+            "office": "하남영업소"
           }
         ],
         "wired": [
           {
             "facility": "부대시설",
             "name": "부대시설",
-            "cycle": "M"
-          },
-          {
-            "facility": "운영PC",
-            "name": "운영PC",
-            "cycle": "M"
-          },
-          {
-            "facility": "L2 스위치",
-            "name": "L2 스위치",
-            "cycle": "M"
-          },
-          {
-            "facility": "보안CCTV",
-            "name": "보안CCTV",
-            "cycle": "M"
-          },
-          {
-            "facility": "방송설비",
-            "name": "방송설비",
-            "cycle": "M"
+            "cycle": "M",
+            "office": "하남영업소"
           }
         ],
         "office_match": {
@@ -39706,9 +39601,9 @@ window.BRANCH_DATA_PACKS = {
         "date": "2026-08-20",
         "day": 20,
         "type": "LINE",
-        "title": "[분기 Q] 제2중부선 (도척~곤지암) 선로 및 맨홀 점검",
+        "title": "[분기 Q] 제2중부선 (곤지암영업소 ~ 서이천영업소) 선로 및 맨홀 점검",
         "line": {
-          "section_label": "제2중부선 (도척~곤지암)",
+          "section_label": "제2중부선 (곤지암영업소 ~ 서이천영업소)",
           "milepost_range": "340.02 ~ 337.31",
           "cycle": "분기점검 (Q)",
           "manhole_names": [
@@ -39799,9 +39694,9 @@ window.BRANCH_DATA_PACKS = {
         "date": "2026-08-24",
         "day": 24,
         "type": "LINE",
-        "title": "[분기 Q] 제2중부선 (곤지암~열미) 선로 및 맨홀 점검",
+        "title": "[분기 Q] 제2중부선 (곤지암영업소 ~ 서이천영업소) 선로 및 맨홀 점검",
         "line": {
-          "section_label": "제2중부선 (곤지암~열미)",
+          "section_label": "제2중부선 (곤지암영업소 ~ 서이천영업소)",
           "milepost_range": "336.42 ~ 332.81",
           "cycle": "분기점검 (Q)",
           "manhole_names": [
@@ -39878,9 +39773,9 @@ window.BRANCH_DATA_PACKS = {
         "date": "2026-08-26",
         "day": 26,
         "type": "LINE",
-        "title": "[분기 Q] 제2중부선 (신둔~마장) 선로 및 맨홀 점검",
+        "title": "[분기 Q] 제2중부선 (서이천영업소 ~ 마장JCT) 선로 및 맨홀 점검",
         "line": {
-          "section_label": "제2중부선 (신둔~마장)",
+          "section_label": "제2중부선 (서이천영업소 ~ 마장JCT)",
           "milepost_range": "329.58 ~ 329.09",
           "cycle": "분기점검 (Q)",
           "manhole_names": [
@@ -39971,9 +39866,9 @@ window.BRANCH_DATA_PACKS = {
         "date": "2026-08-28",
         "day": 28,
         "type": "LINE",
-        "title": "[분기 Q] 제2중부선 (마장~서이천) 선로 및 맨홀 점검",
+        "title": "[분기 Q] 제2중부선 (서이천영업소 ~ 호법JCT) 선로 및 맨홀 점검",
         "line": {
-          "section_label": "제2중부선 (마장~서이천)",
+          "section_label": "제2중부선 (서이천영업소 ~ 호법JCT)",
           "milepost_range": "328.57 ~ 324.31",
           "cycle": "분기점검 (Q)",
           "manhole_names": [
