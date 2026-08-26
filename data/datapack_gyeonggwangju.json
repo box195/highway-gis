@@ -8805,56 +8805,36 @@
       "title": "[월간 M] 경기광주지사 통신·전송 및 방범설비 정기점검",
       "transmission": [
         {
-          "facility": "PTN 전송장치",
-          "name": "PTN 전송장치",
-          "cycle": "M"
+          "facility": "PTN",
+          "name": "PTN",
+          "cycle": "M",
+          "office": "경기광주지사"
         },
         {
           "facility": "부대시설",
           "name": "부대시설",
-          "cycle": "M"
+          "cycle": "M",
+          "office": "경기광주지사"
         },
         {
-          "facility": "출입통제 및 환경감시장치",
-          "name": "출입통제 및 환경감시장치",
-          "cycle": "M"
-        },
-        {
-          "facility": "PTN 정류기/축전지",
-          "name": "PTN 정류기/축전지",
-          "cycle": "M"
+          "facility": "출입통제 및  환경감시장치",
+          "name": "출입통제 및  환경감시장치",
+          "cycle": "M",
+          "office": "경기광주지사"
         }
       ],
       "wired": [
         {
           "facility": "부대시설",
           "name": "부대시설",
-          "cycle": "M"
+          "cycle": "M",
+          "office": "경기광주지사"
         },
         {
           "facility": "저장분배서버",
           "name": "저장분배서버",
-          "cycle": "M"
-        },
-        {
-          "facility": "운영PC",
-          "name": "운영PC",
-          "cycle": "M"
-        },
-        {
-          "facility": "L2 백본스위치",
-          "name": "L2 백본스위치",
-          "cycle": "M"
-        },
-        {
-          "facility": "보안CCTV",
-          "name": "보안CCTV",
-          "cycle": "M"
-        },
-        {
-          "facility": "방송설비",
-          "name": "방송설비",
-          "cycle": "M"
+          "cycle": "M",
+          "office": "경기광주지사"
         }
       ],
       "office_match": {
@@ -9647,41 +9627,24 @@
       "title": "[월간 M] 곤지암영업소 통신·전송 및 방범설비 정기점검",
       "transmission": [
         {
-          "facility": "PTN 전송장치",
-          "name": "PTN 전송장치",
-          "cycle": "M"
+          "facility": "PTN",
+          "name": "PTN",
+          "cycle": "M",
+          "office": "곤지암영업소"
         },
         {
           "facility": "부대시설",
           "name": "부대시설",
-          "cycle": "M"
+          "cycle": "M",
+          "office": "곤지암영업소"
         }
       ],
       "wired": [
         {
           "facility": "부대시설",
           "name": "부대시설",
-          "cycle": "M"
-        },
-        {
-          "facility": "운영PC",
-          "name": "운영PC",
-          "cycle": "M"
-        },
-        {
-          "facility": "L2 스위치",
-          "name": "L2 스위치",
-          "cycle": "M"
-        },
-        {
-          "facility": "보안CCTV",
-          "name": "보안CCTV",
-          "cycle": "M"
-        },
-        {
-          "facility": "방송설비",
-          "name": "방송설비",
-          "cycle": "M"
+          "cycle": "M",
+          "office": "곤지암영업소"
         }
       ],
       "office_match": {
@@ -9824,41 +9787,24 @@
       "title": "[월간 M] 경기광주영업소 통신·전송 및 방범설비 정기점검",
       "transmission": [
         {
-          "facility": "PTN 전송장치",
-          "name": "PTN 전송장치",
-          "cycle": "M"
+          "facility": "PTN",
+          "name": "PTN",
+          "cycle": "M",
+          "office": "경기광주영업소"
         },
         {
           "facility": "부대시설",
           "name": "부대시설",
-          "cycle": "M"
+          "cycle": "M",
+          "office": "경기광주영업소"
         }
       ],
       "wired": [
         {
           "facility": "부대시설",
           "name": "부대시설",
-          "cycle": "M"
-        },
-        {
-          "facility": "운영PC",
-          "name": "운영PC",
-          "cycle": "M"
-        },
-        {
-          "facility": "L2 스위치",
-          "name": "L2 스위치",
-          "cycle": "M"
-        },
-        {
-          "facility": "보안CCTV",
-          "name": "보안CCTV",
-          "cycle": "M"
-        },
-        {
-          "facility": "방송설비",
-          "name": "방송설비",
-          "cycle": "M"
+          "cycle": "M",
+          "office": "경기광주영업소"
         }
       ],
       "office_match": {
@@ -10651,41 +10597,24 @@
       "title": "[월간 M] 서이천영업소 통신·전송 및 방범설비 정기점검",
       "transmission": [
         {
-          "facility": "PTN 전송장치",
-          "name": "PTN 전송장치",
-          "cycle": "M"
+          "facility": "PTN",
+          "name": "PTN",
+          "cycle": "M",
+          "office": "서이천영업소"
         },
         {
           "facility": "부대시설",
           "name": "부대시설",
-          "cycle": "M"
+          "cycle": "M",
+          "office": "서이천영업소"
         }
       ],
       "wired": [
         {
           "facility": "부대시설",
           "name": "부대시설",
-          "cycle": "M"
-        },
-        {
-          "facility": "운영PC",
-          "name": "운영PC",
-          "cycle": "M"
-        },
-        {
-          "facility": "L2 스위치",
-          "name": "L2 스위치",
-          "cycle": "M"
-        },
-        {
-          "facility": "보안CCTV",
-          "name": "보안CCTV",
-          "cycle": "M"
-        },
-        {
-          "facility": "방송설비",
-          "name": "방송설비",
-          "cycle": "M"
+          "cycle": "M",
+          "office": "서이천영업소"
         }
       ],
       "office_match": {
@@ -10798,41 +10727,24 @@
       "title": "[월간 M] 동서울영업소 통신·전송 및 방범설비 정기점검",
       "transmission": [
         {
-          "facility": "PTN 전송장치",
-          "name": "PTN 전송장치",
-          "cycle": "M"
+          "facility": "PTN",
+          "name": "PTN",
+          "cycle": "M",
+          "office": "동서울영업소"
         },
         {
           "facility": "부대시설",
           "name": "부대시설",
-          "cycle": "M"
+          "cycle": "M",
+          "office": "동서울영업소"
         }
       ],
       "wired": [
         {
           "facility": "부대시설",
           "name": "부대시설",
-          "cycle": "M"
-        },
-        {
-          "facility": "운영PC",
-          "name": "운영PC",
-          "cycle": "M"
-        },
-        {
-          "facility": "L2 스위치",
-          "name": "L2 스위치",
-          "cycle": "M"
-        },
-        {
-          "facility": "보안CCTV",
-          "name": "보안CCTV",
-          "cycle": "M"
-        },
-        {
-          "facility": "방송설비",
-          "name": "방송설비",
-          "cycle": "M"
+          "cycle": "M",
+          "office": "동서울영업소"
         }
       ],
       "office_match": {
@@ -11805,41 +11717,24 @@
       "title": "[월간 M] 하남영업소 통신·전송 및 방범설비 정기점검",
       "transmission": [
         {
-          "facility": "PTN 전송장치",
-          "name": "PTN 전송장치",
-          "cycle": "M"
+          "facility": "PTN",
+          "name": "PTN",
+          "cycle": "M",
+          "office": "하남영업소"
         },
         {
           "facility": "부대시설",
           "name": "부대시설",
-          "cycle": "M"
+          "cycle": "M",
+          "office": "하남영업소"
         }
       ],
       "wired": [
         {
           "facility": "부대시설",
           "name": "부대시설",
-          "cycle": "M"
-        },
-        {
-          "facility": "운영PC",
-          "name": "운영PC",
-          "cycle": "M"
-        },
-        {
-          "facility": "L2 스위치",
-          "name": "L2 스위치",
-          "cycle": "M"
-        },
-        {
-          "facility": "보안CCTV",
-          "name": "보안CCTV",
-          "cycle": "M"
-        },
-        {
-          "facility": "방송설비",
-          "name": "방송설비",
-          "cycle": "M"
+          "cycle": "M",
+          "office": "하남영업소"
         }
       ],
       "office_match": {
@@ -11978,9 +11873,9 @@
       "date": "2026-08-20",
       "day": 20,
       "type": "LINE",
-      "title": "[분기 Q] 제2중부선 (도척~곤지암) 선로 및 맨홀 점검",
+      "title": "[분기 Q] 제2중부선 (곤지암영업소 ~ 서이천영업소) 선로 및 맨홀 점검",
       "line": {
-        "section_label": "제2중부선 (도척~곤지암)",
+        "section_label": "제2중부선 (곤지암영업소 ~ 서이천영업소)",
         "milepost_range": "340.02 ~ 337.31",
         "cycle": "분기점검 (Q)",
         "manhole_names": [
@@ -12071,9 +11966,9 @@
       "date": "2026-08-24",
       "day": 24,
       "type": "LINE",
-      "title": "[분기 Q] 제2중부선 (곤지암~열미) 선로 및 맨홀 점검",
+      "title": "[분기 Q] 제2중부선 (곤지암영업소 ~ 서이천영업소) 선로 및 맨홀 점검",
       "line": {
-        "section_label": "제2중부선 (곤지암~열미)",
+        "section_label": "제2중부선 (곤지암영업소 ~ 서이천영업소)",
         "milepost_range": "336.42 ~ 332.81",
         "cycle": "분기점검 (Q)",
         "manhole_names": [
@@ -12150,9 +12045,9 @@
       "date": "2026-08-26",
       "day": 26,
       "type": "LINE",
-      "title": "[분기 Q] 제2중부선 (신둔~마장) 선로 및 맨홀 점검",
+      "title": "[분기 Q] 제2중부선 (서이천영업소 ~ 마장JCT) 선로 및 맨홀 점검",
       "line": {
-        "section_label": "제2중부선 (신둔~마장)",
+        "section_label": "제2중부선 (서이천영업소 ~ 마장JCT)",
         "milepost_range": "329.58 ~ 329.09",
         "cycle": "분기점검 (Q)",
         "manhole_names": [
@@ -12243,9 +12138,9 @@
       "date": "2026-08-28",
       "day": 28,
       "type": "LINE",
-      "title": "[분기 Q] 제2중부선 (마장~서이천) 선로 및 맨홀 점검",
+      "title": "[분기 Q] 제2중부선 (서이천영업소 ~ 호법JCT) 선로 및 맨홀 점검",
       "line": {
-        "section_label": "제2중부선 (마장~서이천)",
+        "section_label": "제2중부선 (서이천영업소 ~ 호법JCT)",
         "milepost_range": "328.57 ~ 324.31",
         "cycle": "분기점검 (Q)",
         "manhole_names": [
