@@ -234,11 +234,10 @@
             <span class="truncate">통신망 인프라 통합관제</span>
           </h1>
           <select id="select-branch" class="bg-slate-800 border border-cyan-500/50 text-cyan-300 text-xs rounded-lg px-2 py-1 font-bold focus:outline-none focus:ring-1 focus:ring-cyan-400 cursor-pointer shadow">
-            <option value="DONGSEOUL" selected>🏢 동서울지사 (수도권제1순환선)</option>
-            <option value="GWANGJU">🏢 경기광주지사 (제2중부선·중부선)</option>
+            <option value="" disabled selected>📂 지사 데이터팩을 로드하세요</option>
           </select>
         </div>
-        <p id="header-branch-subtitle" class="text-[10px] md:text-[11px] text-slate-400 hidden lg:block truncate">수도권 제1순환선 통신관로 · 맨홀(126개소) · 지사/영업소(9개소) 방범망 · 광케이블</p>
+        <p id="header-branch-subtitle" class="text-[10px] md:text-[11px] text-slate-400 hidden lg:block truncate">상단의 [지사 데이터팩(.json)] 버튼을 눌러 로컬 데이터팩을 불러오세요.</p>
       </div>
     </div>
 
@@ -2438,11 +2437,108 @@
       });
     }
 
-    function loadDataPack(jsonData, isManualUpload = false) {
+    AppState.loadedDataPacks = {};
+
+    function updateBranchDropdown(activeCode) {
+      const selectBranch = document.getElementById('select-branch');
+      if (!selectBranch) return;
+
+      const keys = Object.keys(AppState.loadedDataPacks);
+      if (keys.length === 0) {
+        selectBranch.innerHTML = '<option value="" disabled selected>📂 지사 데이터팩을 로드하세요</option>';
+        const sub = document.getElementById('header-branch-subtitle');
+        if (sub) sub.innerText = '상단의 [지사 데이터팩(.json)] 버튼을 눌러 로컬 데이터팩을 불러오세요.';
+        return;
+      }
+
+      selectBranch.innerHTML = '';
+
+      // If 2 or more branches loaded, add Combined All-in-One option at top!
+      if (keys.length >= 2) {
+        const optComb = document.createElement('option');
+        optComb.value = 'COMBINED';
+        optComb.innerText = '🌐 전체 지사 통합 관제 (동서울 + 경기광주 동시 표시)';
+        selectBranch.appendChild(optComb);
+      }
+
+      keys.forEach(k => {
+        const p = AppState.loadedDataPacks[k];
+        const opt = document.createElement('option');
+        opt.value = k;
+        const subShort = p.subtitle ? ` (${p.subtitle.split('·')[0].trim()})` : '';
+        opt.innerText = `🏢 ${p.branch_name || k}${subShort}`;
+        selectBranch.appendChild(opt);
+      });
+
+      if (activeCode && (AppState.loadedDataPacks[activeCode] || activeCode === 'COMBINED')) {
+        selectBranch.value = activeCode;
+      } else {
+        selectBranch.value = keys[0];
+      }
+
+      const activePack = selectBranch.value === 'COMBINED' ? getCombinedDataPack() : AppState.loadedDataPacks[selectBranch.value];
+      const sub = document.getElementById('header-branch-subtitle');
+      if (sub && activePack) {
+        sub.innerText = activePack.subtitle || '';
+      }
+    }
+
+    function getCombinedDataPack() {
+      const combined = {
+        branch_name: '수도권 전체 지사 통합 관제',
+        branch_code: 'COMBINED',
+        subtitle: '동서울지사(수도권제1순환선) + 경기광주지사(제2중부선·중부선) 통합 인프라망',
+        offices: [],
+        interchanges: [],
+        manholes: [],
+        conduits: [],
+        cables: [],
+        poles: [],
+        inspection_schedule: {},
+        straight_map: []
+      };
+
+      const officeIds = new Set();
+      const icIds = new Set();
+      const mhIds = new Set();
+
+      Object.values(AppState.loadedDataPacks).forEach(pack => {
+        (pack.offices || []).forEach(o => {
+          const key = o.id || o.name;
+          if (!officeIds.has(key)) { officeIds.add(key); combined.offices.push(o); }
+        });
+        (pack.interchanges || []).forEach(ic => {
+          const key = ic.id || ic.name;
+          if (!icIds.has(key)) { icIds.add(key); combined.interchanges.push(ic); }
+        });
+        (pack.manholes || []).forEach(m => {
+          const key = m.id || m.name;
+          if (!mhIds.has(key)) { mhIds.add(key); combined.manholes.push(m); }
+        });
+        combined.conduits.push(...(pack.conduits || []));
+        combined.cables.push(...(pack.cables || []));
+        combined.poles.push(...(pack.poles || []));
+        Object.assign(combined.inspection_schedule, pack.inspection_schedule || {});
+        combined.straight_map.push(...(pack.straight_map || []));
+      });
+
+      return combined;
+    }
+
+    function loadDataPack(jsonData, isManualUpload = false, isInternalSwitch = false) {
       if (!jsonData || typeof jsonData !== 'object') {
         alert('유효하지 않은 데이터팩 JSON 파일입니다.');
         return;
       }
+
+      const bCode = jsonData.branch_code || (jsonData.branch_name ? (jsonData.branch_name.includes('동서울') ? 'DONGSEOUL' : (jsonData.branch_name.includes('광주') ? 'GWANGJU' : 'BRANCH_' + Date.now())) : 'BRANCH_' + Date.now());
+
+      if (!isInternalSwitch && bCode !== 'COMBINED') {
+        AppState.loadedDataPacks = AppState.loadedDataPacks || {};
+        AppState.loadedDataPacks[bCode] = jsonData;
+        updateBranchDropdown(bCode);
+      }
+
       AppState.data = jsonData;
       const countOffices = document.getElementById('count-offices');
       if (countOffices) countOffices.innerText = `${(jsonData.offices || []).length}개소`;
@@ -2480,7 +2576,7 @@
       renderInspectionCalendar();
       renderAllLayers();
 
-      if (jsonData.center && jsonData.zoom) {
+      if (jsonData.center && jsonData.zoom && bCode !== 'COMBINED') {
         AppState.map.flyTo(jsonData.center, jsonData.zoom, { animate: true, duration: 1.0 });
       } else {
         const allPts = [];
@@ -2492,7 +2588,9 @@
       }
 
       if (isManualUpload) {
-        alert(`[로컬 데이터팩 로드 성공!]\n- 지사명: ${jsonData.branch_name || '지사'}\n- 관제 거점: ${(jsonData.offices || []).length}개소\n- 맨홀/수공: ${(jsonData.manholes || []).length}개소\n- 통신관로: ${(jsonData.conduits || []).length}구간\n- 광케이블: ${(jsonData.cables || []).length}회선\n- 점검계획: ${Object.keys(jsonData.inspection_schedule || {}).length}일분`);
+        const totalLoaded = Object.keys(AppState.loadedDataPacks).length;
+        const combMsg = totalLoaded >= 2 ? '\n\n💡 2개 이상의 지사가 로드되어 상단 메뉴에서 [전체 지사 통합 관제]를 선택하여 동시에 관제하실 수 있습니다!' : '';
+        alert(`[로컬 데이터팩 로드 성공!]\n- 지사명: ${jsonData.branch_name || '지사'}\n- 관제 거점: ${(jsonData.offices || []).length}개소\n- 맨홀/수공: ${(jsonData.manholes || []).length}개소\n- 통신관로: ${(jsonData.conduits || []).length}구간\n- 광케이블: ${(jsonData.cables || []).length}회선\n- 점검계획: ${Object.keys(jsonData.inspection_schedule || {}).length}일분${combMsg}`);
       }
     }
 
@@ -2661,29 +2759,17 @@
       // Branch selector switcher
       const selectBranch = document.getElementById('select-branch');
       if (selectBranch) {
-        selectBranch.addEventListener('change', async (e) => {
-          const branchKey = e.target.value;
-          const jsonFile = branchKey === 'GWANGJU' ? './data/datapack_gyeonggwangju.json' : './data/datapack_dongseoul.json';
-          try {
-            const res = await fetch(`${jsonFile}?t=${Date.now()}`);
-            if (res.ok) {
-              const freshData = await res.json();
-              window.BRANCH_DATA_PACKS = window.BRANCH_DATA_PACKS || {};
-              window.BRANCH_DATA_PACKS[branchKey] = freshData;
-              loadDataPack(freshData);
-              const sub = document.getElementById('header-branch-subtitle');
-              if (sub) sub.innerText = freshData.subtitle || '';
-              return;
-            }
-          } catch (err) {
-            console.warn('Direct fetch fallback:', err);
-          }
-          if (window.BRANCH_DATA_PACKS && window.BRANCH_DATA_PACKS[branchKey]) {
-            loadDataPack(window.BRANCH_DATA_PACKS[branchKey]);
+        selectBranch.addEventListener('change', (e) => {
+          const val = e.target.value;
+          if (val === 'COMBINED') {
+            const combData = getCombinedDataPack();
+            loadDataPack(combData, false, true);
             const sub = document.getElementById('header-branch-subtitle');
-            if (sub) {
-              sub.innerText = window.BRANCH_DATA_PACKS[branchKey].subtitle || '';
-            }
+            if (sub) sub.innerText = combData.subtitle;
+          } else if (AppState.loadedDataPacks && AppState.loadedDataPacks[val]) {
+            loadDataPack(AppState.loadedDataPacks[val], false, true);
+            const sub = document.getElementById('header-branch-subtitle');
+            if (sub) sub.innerText = AppState.loadedDataPacks[val].subtitle || '';
           }
         });
       }
@@ -3224,35 +3310,22 @@
       });
     }
 
-    window.addEventListener('DOMContentLoaded', async () => {
+    window.addEventListener('DOMContentLoaded', () => {
       initMap();
       setupEventListeners();
       lucide.createIcons();
 
-      // Proactively fetch latest fresh branch data packs to bypass any browser/CDN caching
-      try {
-        const [resDs, resGw] = await Promise.all([
-          fetch(`./data/datapack_dongseoul.json?t=${Date.now()}`),
-          fetch(`./data/datapack_gyeonggwangju.json?t=${Date.now()}`)
-        ]);
-        if (resDs.ok) {
-          const dsData = await resDs.json();
-          window.BRANCH_DATA_PACKS = window.BRANCH_DATA_PACKS || {};
-          window.BRANCH_DATA_PACKS['DONGSEOUL'] = dsData;
-          if (document.getElementById('select-branch').value === 'DONGSEOUL') {
-            loadDataPack(dsData);
-          }
-        }
-        if (resGw.ok) {
-          const gwData = await resGw.json();
-          window.BRANCH_DATA_PACKS = window.BRANCH_DATA_PACKS || {};
-          window.BRANCH_DATA_PACKS['GWANGJU'] = gwData;
-          if (document.getElementById('select-branch').value === 'GWANGJU') {
-            loadDataPack(gwData);
-          }
-        }
-      } catch (err) {
-        console.warn('Initial fresh data sync fallback to bundle:', err);
+      // If running with pre-loaded local bundle (e.g. local offline server)
+      if (window.BRANCH_DATA_PACKS && Object.keys(window.BRANCH_DATA_PACKS).length > 0) {
+        Object.keys(window.BRANCH_DATA_PACKS).forEach(k => {
+          AppState.loadedDataPacks[k] = window.BRANCH_DATA_PACKS[k];
+        });
+        updateBranchDropdown('DONGSEOUL');
+        loadDataPack(window.BRANCH_DATA_PACKS['DONGSEOUL'] || Object.values(window.BRANCH_DATA_PACKS)[0]);
+      } else if (window.MASTER_GIS_DATA) {
+        loadDataPack(window.MASTER_GIS_DATA);
+      } else {
+        updateBranchDropdown();
       }
     });
   </script>
