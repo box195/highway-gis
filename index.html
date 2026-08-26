@@ -2422,7 +2422,7 @@
       });
     }
 
-    function loadDataPack(jsonData) {
+    function loadDataPack(jsonData, isManualUpload = false) {
       if (!jsonData || typeof jsonData !== 'object') {
         alert('유효하지 않은 데이터팩 JSON 파일입니다.');
         return;
@@ -2444,13 +2444,20 @@
       renderInspectionCalendar();
       renderAllLayers();
 
-      const allPts = [];
-      (jsonData.offices || []).forEach(o => { if (o.lat && o.lng) allPts.push([o.lat, o.lng]); });
-      (jsonData.manholes || []).forEach(m => { if (m.lat && m.lng) allPts.push([m.lat, m.lng]); });
-      if (allPts.length >= 2) {
-        AppState.map.fitBounds(L.latLngBounds(allPts), { padding: [50, 50] });
+      if (jsonData.center && jsonData.zoom) {
+        AppState.map.flyTo(jsonData.center, jsonData.zoom, { animate: true, duration: 1.0 });
+      } else {
+        const allPts = [];
+        (jsonData.offices || []).forEach(o => { if (o.lat && o.lng) allPts.push([o.lat, o.lng]); });
+        (jsonData.manholes || []).forEach(m => { if (m.lat && m.lng) allPts.push([m.lat, m.lng]); });
+        if (allPts.length >= 2) {
+          AppState.map.fitBounds(L.latLngBounds(allPts), { padding: [50, 50] });
+        }
       }
-      alert(`[로컬 데이터팩 로드 성공!]\n- 관제 거점: ${(jsonData.offices || []).length}개소\n- 맨홀/수공: ${(jsonData.manholes || []).length}개소\n- 통신관로: ${(jsonData.conduits || []).length}구간\n- 광케이블: ${(jsonData.cables || []).length}회선\n- 점검계획: ${Object.keys(jsonData.inspection_schedule || {}).length}일분`);
+
+      if (isManualUpload) {
+        alert(`[로컬 데이터팩 로드 성공!]\n- 관제 거점: ${(jsonData.offices || []).length}개소\n- 맨홀/수공: ${(jsonData.manholes || []).length}개소\n- 통신관로: ${(jsonData.conduits || []).length}구간\n- 광케이블: ${(jsonData.cables || []).length}회선\n- 점검계획: ${Object.keys(jsonData.inspection_schedule || {}).length}일분`);
+      }
     }
 
     window.loadDataPack = loadDataPack;
@@ -2632,7 +2639,7 @@
           reader.onload = (evt) => {
             try {
               const parsed = JSON.parse(evt.target.result);
-              loadDataPack(parsed);
+              loadDataPack(parsed, true);
             } catch (err) {
               alert('JSON 파싱 오류: ' + err.message);
             }
@@ -2653,7 +2660,7 @@
             try {
               const parsed = JSON.parse(evt.target.result);
               if (parsed.manholes || parsed.offices || parsed.conduits) {
-                loadDataPack(parsed);
+                loadDataPack(parsed, true);
               }
             } catch (err) {
               console.error('Drag drop parse error:', err);
