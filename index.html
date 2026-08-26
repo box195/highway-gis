@@ -262,7 +262,7 @@
         <i data-lucide="folder-open" class="w-3.5 h-3.5"></i>
         <span>지사 데이터팩(.json)</span>
       </button>
-      <input type="file" id="input-datapack-file" accept=".json" class="hidden" />
+      <input type="file" id="input-datapack-file" accept=".json" multiple class="hidden" />
 
       <button id="btn-upload-modal" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
         <i data-lucide="upload-cloud" class="w-3.5 h-3.5 text-cyan-400"></i>
@@ -2774,26 +2774,60 @@
         });
       }
 
-      // Data Pack (.json) Load Action
+      // Data Pack (.json) Load Action (Supports single or multi-file selection!)
       const btnDataPack = document.getElementById('btn-datapack-header');
       const inputDataPack = document.getElementById('input-datapack-file');
 
+      async function handleLoadedJsonFiles(fileList) {
+        const files = Array.from(fileList || []).filter(f => f.name.endsWith('.json') || f.name.endsWith('.geojson'));
+        if (!files.length) return;
+
+        const readPromises = files.map(file => {
+          return new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onload = (evt) => {
+              try {
+                const parsed = JSON.parse(evt.target.result);
+                resolve(parsed);
+              } catch (err) {
+                alert(`[${file.name}] JSON 파싱 오류: ` + err.message);
+                resolve(null);
+              }
+            };
+            reader.readAsText(file, 'utf-8');
+          });
+        });
+
+        const results = await Promise.all(readPromises);
+        const validPacks = results.filter(p => p && typeof p === 'object' && (p.manholes || p.offices || p.conduits));
+
+        if (validPacks.length === 0) return;
+
+        validPacks.forEach(p => {
+          const bCode = p.branch_code || (p.branch_name ? (p.branch_name.includes('동서울') ? 'DONGSEOUL' : (p.branch_name.includes('광주') ? 'GWANGJU' : 'BRANCH_' + Date.now())) : 'BRANCH_' + Date.now());
+          AppState.loadedDataPacks[bCode] = p;
+        });
+
+        if (validPacks.length >= 2 || Object.keys(AppState.loadedDataPacks).length >= 2) {
+          updateBranchDropdown('COMBINED');
+          const combData = getCombinedDataPack();
+          loadDataPack(combData, false, true);
+          alert(`[총 ${validPacks.length}개 지사 데이터팩 동시 로드 완료!]\n- 등록된 지사: ${Object.values(AppState.loadedDataPacks).map(p => p.branch_name).join(', ')}\n- [전체 지사 통합 관제] 모드로 지도에 동시 표시됩니다.`);
+        } else {
+          const single = validPacks[0];
+          const bCode = single.branch_code || (single.branch_name ? (single.branch_name.includes('동서울') ? 'DONGSEOUL' : 'GWANGJU') : 'BRANCH_1');
+          updateBranchDropdown(bCode);
+          loadDataPack(single, true);
+        }
+      }
+
       if (btnDataPack && inputDataPack) {
-        btnDataPack.addEventListener('click', () => inputDataPack.click());
-        inputDataPack.addEventListener('change', (e) => {
-          const file = e.target.files[0];
-          if (!file) return;
-          const reader = new FileReader();
-          reader.onload = (evt) => {
-            try {
-              const parsed = JSON.parse(evt.target.result);
-              loadDataPack(parsed, true);
-            } catch (err) {
-              alert('JSON 파싱 오류: ' + err.message);
-            }
-          };
-          reader.readAsText(file);
+        btnDataPack.addEventListener('click', () => {
           inputDataPack.value = '';
+          inputDataPack.click();
+        });
+        inputDataPack.addEventListener('change', (e) => {
+          handleLoadedJsonFiles(e.target.files);
         });
       }
 
@@ -2801,20 +2835,8 @@
       window.addEventListener('dragover', (e) => e.preventDefault());
       window.addEventListener('drop', (e) => {
         e.preventDefault();
-        const file = e.dataTransfer?.files[0];
-        if (file && (file.name.endsWith('.json') || file.name.endsWith('.geojson'))) {
-          const reader = new FileReader();
-          reader.onload = (evt) => {
-            try {
-              const parsed = JSON.parse(evt.target.result);
-              if (parsed.manholes || parsed.offices || parsed.conduits) {
-                loadDataPack(parsed, true);
-              }
-            } catch (err) {
-              console.error('Drag drop parse error:', err);
-            }
-          };
-          reader.readAsText(file);
+        if (e.dataTransfer?.files?.length) {
+          handleLoadedJsonFiles(e.dataTransfer.files);
         }
       });
 
