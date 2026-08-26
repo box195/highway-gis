@@ -2,7 +2,7 @@
 window.MASTER_GIS_DATA = {
   "branch_name": "동서울지사",
   "branch_code": "DONGSEOUL",
-  "subtitle": "수도권 제1순환선 통신관로 · 맨홀(67M, 62-1H) · 지사/영업소 방범망 · 광케이블",
+  "subtitle": "수도권 제1순환선 통신관로 · 맨홀(126개소) · 지사/영업소(9개소) 방범망 · 광케이블",
   "center": [
     37.545,
     127.165
@@ -10,231 +10,1555 @@ window.MASTER_GIS_DATA = {
   "zoom": 12,
   "offices": [
     {
-      "id": "OFF_DONGSEOUL_HQ",
-      "name": "동서울지사",
-      "category": "지사",
-      "section": "판교-퇴계원",
-      "lat": 37.550125,
-      "lng": 127.168542,
-      "address": "경기 하남시 서하남로 47-1",
+      "id": "OFFICE-DONGSEOUL",
+      "name": "한국도로공사 동서울지사",
+      "category": "지사 청사",
+      "org": "한국도로공사 동서울지사",
+      "address": "경기 하남시 서하남로 88",
+      "jibun_address": "경기 하남시 감일동 168-2",
+      "section": "수도권 제1순환선 서하남IC 인근",
+      "lat": 37.51413,
+      "lng": 127.15375,
+      "desc": "한국도로공사 동서울지사 본관 사옥 (관내 통신망 총괄)",
+      "devices": [
+        {
+          "seq": 12,
+          "name": "ITS시스템실",
+          "install_loc": "ITS시스템실",
+          "equip_name": "R740",
+          "dev_no": "통합관리서버",
+          "maker": "DELL",
+          "model_sn": "DELL",
+          "mac": "-",
+          "ip": "172.19.192.12",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "서버",
+          "sys_name": "통합관리서버"
+        },
+        {
+          "seq": 13,
+          "name": "ITS시스템실",
+          "install_loc": "ITS시스템실",
+          "equip_name": "R740",
+          "dev_no": "저장분배서버-01",
+          "maker": "DELL",
+          "model_sn": "DELL",
+          "mac": "-",
+          "ip": "172.19.192.11",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "서버",
+          "sys_name": "저장분배서버"
+        },
+        {
+          "seq": 14,
+          "name": "ITS시스템실",
+          "install_loc": "ITS시스템실",
+          "equip_name": "24포트 POE 스위치",
+          "dev_no": "24PoE허브-01",
+          "maker": "SOLTEC",
+          "model_sn": "SOLTEC",
+          "mac": "-",
+          "ip": "172.19.192.26",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "스위치",
+          "sys_name": "스위치"
+        },
+        {
+          "seq": 15,
+          "name": "상황실",
+          "install_loc": "상황실",
+          "equip_name": "Precision 3630",
+          "dev_no": "운용/표출PC",
+          "maker": "DELL",
+          "model_sn": "DELL",
+          "mac": "-",
+          "ip": "172.19.22.4",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.22.1",
+          "sys_type": "PC",
+          "sys_name": "운영PC"
+        },
+        {
+          "seq": 16,
+          "name": "건물외부",
+          "install_loc": "건물외부",
+          "equip_name": "RFK-5N-15",
+          "dev_no": "무선브릿지-Rx",
+          "maker": "RF KOREA",
+          "model_sn": "08241836000005D1",
+          "mac": "00:19:3B:18:4C:50",
+          "ip": "172.19.192.19",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.30",
+          "sys_type": "현장단말",
+          "sys_name": "AP"
+        },
+        {
+          "seq": 17,
+          "name": "건물외부",
+          "install_loc": "건물외부",
+          "equip_name": "RFK-5N-15",
+          "dev_no": "무선브릿지-Tx",
+          "maker": "RF KOREA",
+          "model_sn": "08241836000005D4",
+          "mac": "00:19:3B:18:4C:56",
+          "ip": "172.19.192.20",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.30",
+          "sys_type": "현장단말",
+          "sys_name": "AP"
+        },
+        {
+          "seq": 18,
+          "name": "현관",
+          "install_loc": "현관",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205395",
+          "mac": "00:50:C2:7C:AF:D6",
+          "ip": "172.19.192.1",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.30",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 19,
+          "name": "소모품창고",
+          "install_loc": "소모품창고",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-02",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205392",
+          "mac": "00:50:C2:7C:AF:B2",
+          "ip": "172.19.192.2",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.30",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 20,
+          "name": "침실",
+          "install_loc": "침실",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-03",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205444",
+          "mac": "00:50:C2:7C:B0:59",
+          "ip": "172.19.192.3",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.30",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 21,
+          "name": "부장실",
+          "install_loc": "부장실",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-04",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205393",
+          "mac": "00:50:C2:7C:B0:9C",
+          "ip": "172.19.192.4",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.30",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 22,
+          "name": "2F 복도",
+          "install_loc": "2F 복도",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-05",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205399",
+          "mac": "00:50:C2:7C:B0:1E",
+          "ip": "172.19.192.5",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.30",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 23,
+          "name": "옥상-주차장",
+          "install_loc": "옥상-주차장",
+          "equip_name": "블렛카메라",
+          "dev_no": "불렛카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205218",
+          "mac": "00:50:C2:7C:AF:3A",
+          "ip": "172.19.192.6",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.30",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 24,
+          "name": "건물뒤",
+          "install_loc": "건물뒤",
+          "equip_name": "블렛카메라",
+          "dev_no": "불렛카메라-02",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205217",
+          "mac": "00:50:C2:80:07:E7",
+          "ip": "172.19.192.7",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.30",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 25,
+          "name": "정문 방향",
+          "install_loc": "정문 방향",
+          "equip_name": "블렛카메라",
+          "dev_no": "불렛카메라-03",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205164",
+          "mac": "00:50:C2:7E:8E:25",
+          "ip": "172.19.192.8",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.30",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 26,
+          "name": "주유기",
+          "install_loc": "주유기",
+          "equip_name": "블렛카메라",
+          "dev_no": "불렛카메라-04",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20191118801",
+          "mac": "00:50:C2:80:07:C7",
+          "ip": "172.19.192.9",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.30",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 27,
+          "name": "ITS시스템실",
+          "install_loc": "ITS시스템실",
+          "equip_name": "환경감시 카메라",
+          "dev_no": "",
+          "maker": "",
+          "model_sn": "",
+          "mac": "-",
+          "ip": "172.19.4.246",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.4.1",
+          "sys_type": "보안장비",
+          "sys_name": "환경감시_카메라"
+        },
+        {
+          "seq": 28,
+          "name": "ITS시스템실",
+          "install_loc": "ITS시스템실",
+          "equip_name": "환경감시 정류기",
+          "dev_no": "",
+          "maker": "",
+          "model_sn": "",
+          "mac": "-",
+          "ip": "172.19.4.248",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.4.1",
+          "sys_type": "기타",
+          "sys_name": "환경감시 정류기"
+        },
+        {
+          "seq": 29,
+          "name": "ITS시스템실",
+          "install_loc": "ITS시스템실",
+          "equip_name": "환경감시 출입통제",
+          "dev_no": "",
+          "maker": "",
+          "model_sn": "",
+          "mac": "-",
+          "ip": "172.19.4.249",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.4.1",
+          "sys_type": "기타",
+          "sys_name": "환경감시_출입통제"
+        },
+        {
+          "seq": 30,
+          "name": "ITS시스템실",
+          "install_loc": "ITS시스템실",
+          "equip_name": "환경감시 RTU",
+          "dev_no": "",
+          "maker": "",
+          "model_sn": "",
+          "mac": "-",
+          "ip": "172.19.4.250",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.4.1",
+          "sys_type": "서버",
+          "sys_name": "환경감시_RTU"
+        }
+      ]
+    },
+    {
+      "id": "OFFICE-HQ",
+      "name": "한국도로공사 서울경기본부",
+      "category": "본부 청사",
+      "org": "한국도로공사 서울경기본부",
+      "address": "경기 하남시 서하남로 88",
+      "jibun_address": "경기 하남시 감일동 168-2",
+      "section": "수도권 제1순환선 서하남IC 인근",
+      "lat": 37.51445,
+      "lng": 127.1541,
+      "desc": "한국도로공사 서울경기본부(수도권본부) 본청 청사",
+      "devices": [
+        {
+          "seq": 3,
+          "name": "상황실",
+          "install_loc": "상황실",
+          "equip_name": "RFK-5N-15",
+          "dev_no": "무선브릿지-Rx",
+          "maker": "RF KOREA",
+          "model_sn": "0824181000001087",
+          "mac": "00:19:3B:15:F8:F0",
+          "ip": "172.19.4.112",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.4.254",
+          "sys_type": "현장단말",
+          "sys_name": "AP"
+        },
+        {
+          "seq": 4,
+          "name": "상황실",
+          "install_loc": "상황실",
+          "equip_name": "RFK-5N-15",
+          "dev_no": "무선브릿지-Tx",
+          "maker": "RF KOREA",
+          "model_sn": "0824181000001055",
+          "mac": "00:19:3B:15:F8:8C",
+          "ip": "172.19.4.113",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.4.254",
+          "sys_type": "현장단말",
+          "sys_name": "AP"
+        },
+        {
+          "seq": 5,
+          "name": "정보시스템실1",
+          "install_loc": "정보시스템실1",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20190111101",
+          "mac": "00:50:C2:80:CC:4E",
+          "ip": "172.19.4.114",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.4.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 6,
+          "name": "정보시스템실2",
+          "install_loc": "정보시스템실2",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-02",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205438",
+          "mac": "00:50:C2:7C:B0:49",
+          "ip": "172.19.4.115",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.4.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 7,
+          "name": "정보시스템실 앞",
+          "install_loc": "정보시스템실 앞",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-03",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205391",
+          "mac": "00:50:C2:7C:B0:01",
+          "ip": "172.19.4.116",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.4.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 8,
+          "name": "현관",
+          "install_loc": "현관",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-04",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205383",
+          "mac": "00:50:C2:7C:B0:03",
+          "ip": "172.19.4.117",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.4.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 9,
+          "name": "정문 방향",
+          "install_loc": "정문 방향",
+          "equip_name": "블렛카메라",
+          "dev_no": "불렛카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205214",
+          "mac": "00:50:C2:80:07:DD",
+          "ip": "172.19.4.118",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.4.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 10,
+          "name": "본부 옥상",
+          "install_loc": "본부 옥상",
+          "equip_name": "스피드돔카메라",
+          "dev_no": "",
+          "maker": "한국씨텍",
+          "model_sn": "한국씨텍",
+          "mac": "-",
+          "ip": "172.19.4.119",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.4.1",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 11,
+          "name": "현관 입구케노피",
+          "install_loc": "현관 입구케노피",
+          "equip_name": "스피드돔카메라",
+          "dev_no": "",
+          "maker": "한국씨텍",
+          "model_sn": "한국씨텍",
+          "mac": "-",
+          "ip": "172.19.4.120",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.4.1",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        }
+      ]
+    },
+    {
+      "id": "OFFICE-CONTROL-CENTER",
+      "name": "교통관제센터 (수도권 교통센터)",
+      "category": "교통 관제센터",
+      "org": "한국도로공사 수도권 교통정보센터",
+      "address": "경기 성남시 분당구 대왕판교로 246",
+      "jibun_address": "경기 성남시 분당구 궁내동 193-6",
+      "section": "경부선 서울TG 본관 사옥 옆",
+      "lat": 37.36585,
+      "lng": 127.10208,
+      "desc": "수도권 고속도로 전 구간 실시간 교통 관제 및 정보 분석 센터 (위치 전용)",
       "devices": []
     },
     {
-      "id": "OFF_SEONGNAM_TG",
-      "name": "성남영업소",
-      "category": "영업소",
-      "section": "판교-퇴계원 5.2k",
-      "lat": 37.447512,
-      "lng": 127.14251,
-      "address": "경기 성남시 중원구 희망로 115",
-      "devices": []
+      "id": "OFFICE-GWANGAM",
+      "name": "광암터널 관리동 (TTMS 방재)",
+      "category": "터널 관리동",
+      "org": "한국도로공사 동서울지사 광암터널",
+      "address": "경기 하남시 수도권제1순환고속도로 17",
+      "jibun_address": "경기 하남시 춘궁동 / 광암동 373-1",
+      "section": "수도권 제1순환선 광암터널 북단 입구",
+      "lat": 37.51936,
+      "lng": 127.18769,
+      "desc": "광암터널 방재설비, 제연팬, 변전실 및 TTMS 통합 관리동",
+      "devices": [
+        {
+          "seq": 318,
+          "name": "광암터널_변전실",
+          "install_loc": "광암터널_변전실",
+          "equip_name": "8포트 POE 스위치",
+          "dev_no": "8PoE허브-01",
+          "maker": "SOLTEC",
+          "model_sn": "SOLTEC",
+          "mac": "-",
+          "ip": "172.20.88.191",
+          "subnet": "255.255.255.0",
+          "gw": "172.20.88.1",
+          "sys_type": "스위치",
+          "sys_name": "스위치"
+        },
+        {
+          "seq": 319,
+          "name": "광암터널_사무실",
+          "install_loc": "광암터널_사무실",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205387",
+          "mac": "00:50:C2:7C:AF:CC",
+          "ip": "172.20.88.192",
+          "subnet": "255.255.254.0",
+          "gw": "172.20.88.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 320,
+          "name": "광암터널_정문 입구",
+          "install_loc": "광암터널_정문 입구",
+          "equip_name": "스피드돔카메라",
+          "dev_no": "(외)스피드돔카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "IRD20181205009",
+          "mac": "00:50:C2:79:2A:77",
+          "ip": "172.20.88.193",
+          "subnet": "255.255.254.0",
+          "gw": "172.20.88.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        }
+      ]
     },
     {
-      "id": "OFF_CHEONGGYE_TG",
-      "name": "청계영업소",
-      "category": "영업소",
-      "section": "판교-일산 126.8k",
-      "lat": 37.398512,
-      "lng": 127.02151,
-      "address": "경기 의왕시 안양판교로 366",
-      "devices": []
+      "id": "OFFICE-CHEONGGYE",
+      "name": "청계영업소 (청계TG)",
+      "category": "영업소/톨게이트",
+      "org": "한국도로공사 청계영업소",
+      "address": "경기 의왕시 안양판교로 500",
+      "jibun_address": "경기 의왕시 청계동 154",
+      "section": "수도권 제1순환선 청계TG (123.4km)",
+      "lat": 37.39358,
+      "lng": 127.02497,
+      "desc": "수도권 제1순환선 청계톨게이트 본관 영업소",
+      "devices": [
+        {
+          "seq": 115,
+          "name": "청계영_소회의실",
+          "install_loc": "청계영_소회의실",
+          "equip_name": "24포트 POE 스위치",
+          "dev_no": "24PoE허브-01",
+          "maker": "SOLTEC",
+          "model_sn": "SOLTEC",
+          "mac": "-",
+          "ip": "172.19.192.249",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "스위치",
+          "sys_name": "스위치"
+        },
+        {
+          "seq": 116,
+          "name": "청계영_지하통로",
+          "install_loc": "청계영_지하통로",
+          "equip_name": "8포트 POE 스위치",
+          "dev_no": "8PoE허브-01(확장)",
+          "maker": "SOLTEC",
+          "model_sn": "SOLTEC",
+          "mac": "-",
+          "ip": "172.19.192.248",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "스위치",
+          "sys_name": "스위치"
+        },
+        {
+          "seq": 117,
+          "name": "청계영_사무실",
+          "install_loc": "청계영_사무실",
+          "equip_name": "OptiPlex 5060",
+          "dev_no": "운용/표출PC",
+          "maker": "DELL",
+          "model_sn": "DELL",
+          "mac": "-",
+          "ip": "172.19.192.237",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "PC",
+          "sys_name": "운영PC"
+        },
+        {
+          "seq": 118,
+          "name": "청계영_현관",
+          "install_loc": "청계영_현관",
+          "equip_name": "C1004-E",
+          "dev_no": "네트워크스피커(실내)",
+          "maker": "AXIS",
+          "model_sn": "AXIS",
+          "mac": "-",
+          "ip": "172.19.192.240",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "현장단말",
+          "sys_name": "내부스피커"
+        },
+        {
+          "seq": 119,
+          "name": "청계영_현관",
+          "install_loc": "청계영_현관",
+          "equip_name": "C3003-E",
+          "dev_no": "네트워크스피커(실외)",
+          "maker": "AXIS",
+          "model_sn": "AXIS",
+          "mac": "-",
+          "ip": "172.19.192.241",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "현장단말",
+          "sys_name": "외부스피커"
+        },
+        {
+          "seq": 120,
+          "name": "청계영_금고실",
+          "install_loc": "청계영_금고실",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205433",
+          "mac": "00:50:C2:7C:B0:62",
+          "ip": "172.19.192.193",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 121,
+          "name": "청계영_사무실",
+          "install_loc": "청계영_사무실",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-02",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205431",
+          "mac": "00:50:C2:7C:B0:1C",
+          "ip": "172.19.192.194",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 122,
+          "name": "청계영_지하통로",
+          "install_loc": "청계영_지하통로",
+          "equip_name": "블렛카메라",
+          "dev_no": "(지)불렛카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205162",
+          "mac": "00:50:C2:7E:8E:81",
+          "ip": "172.19.192.196",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 123,
+          "name": "청계영_지하통로",
+          "install_loc": "청계영_지하통로",
+          "equip_name": "블렛카메라",
+          "dev_no": "(지)불렛카메라-02",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205216",
+          "mac": "00:50:C2:80:07:8B",
+          "ip": "172.19.192.197",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 124,
+          "name": "청계영_지하통로",
+          "install_loc": "청계영_지하통로",
+          "equip_name": "블렛카메라",
+          "dev_no": "(지)불렛카메라-03",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205167",
+          "mac": "00:50:C2:7E:8E:24",
+          "ip": "172.19.192.198",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 125,
+          "name": "청계영_현관",
+          "install_loc": "청계영_현관",
+          "equip_name": "스피드돔카메라",
+          "dev_no": "(외)스피드돔카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "IRD20181205028",
+          "mac": "00:50:C2:74:FA:12",
+          "ip": "172.19.192.199",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 126,
+          "name": "청계영_옥상-뒷길",
+          "install_loc": "청계영_옥상-뒷길",
+          "equip_name": "블렛카메라",
+          "dev_no": "(외)불렛카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205168",
+          "mac": "00:50:C2:7E:8E:30",
+          "ip": "172.19.192.200",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 127,
+          "name": "청계영_옥상-광장측면",
+          "install_loc": "청계영_옥상-광장측면",
+          "equip_name": "블렛카메라",
+          "dev_no": "(외)불렛카메라-02",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205178",
+          "mac": "00:50:C2:80:07:FF",
+          "ip": "172.19.192.201",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 128,
+          "name": "청계영_광장상(캐노피)",
+          "install_loc": "청계영_광장상(캐노피)",
+          "equip_name": "블렛카메라",
+          "dev_no": "(외)불렛카메라-03",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205177",
+          "mac": "00:50:C2:80:07:9A",
+          "ip": "172.19.192.202",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 129,
+          "name": "청계영_광장하(캐노피)",
+          "install_loc": "청계영_광장하(캐노피)",
+          "equip_name": "블렛카메라",
+          "dev_no": "(외)불렛카메라-04",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205161",
+          "mac": "00:50:C2:7E:8E:17",
+          "ip": "172.19.192.203",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 130,
+          "name": "청계영_하단주차장",
+          "install_loc": "청계영_하단주차장",
+          "equip_name": "블렛카메라",
+          "dev_no": "(외)불렛카메라-05",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205165",
+          "mac": "00:50:C2:80:07:CC",
+          "ip": "172.19.192.204",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.254",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        }
+      ]
     },
     {
-      "id": "OFF_GURI_TG",
-      "name": "구리영업소",
-      "category": "영업소",
-      "section": "판교-퇴계원 27.0k",
+      "id": "OFFICE-SEONGNAM",
+      "name": "성남영업소 (성남TG)",
+      "category": "영업소/톨게이트",
+      "org": "한국도로공사 성남영업소",
+      "address": "경기 성남시 수정구 수도권제1순환고속도로 4",
+      "jibun_address": "경기 성남시 수정구 수진동 4709",
+      "section": "수도권 제1순환선 성남IC (4.4km)",
+      "lat": 37.43554,
+      "lng": 127.12427,
+      "desc": "수도권 제1순환선 성남IC 및 성남영업소 사옥",
+      "devices": [
+        {
+          "seq": 75,
+          "name": "성남영_ITS시스템실",
+          "install_loc": "성남영_ITS시스템실",
+          "equip_name": "24포트 POE 스위치",
+          "dev_no": "24PoE허브-01",
+          "maker": "SOLTEC",
+          "model_sn": "SOLTEC",
+          "mac": "-",
+          "ip": "172.19.192.57",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "스위치",
+          "sys_name": "스위치"
+        },
+        {
+          "seq": 76,
+          "name": "성남영_지하통로",
+          "install_loc": "성남영_지하통로",
+          "equip_name": "8포트 POE 스위치",
+          "dev_no": "8PoE허브-01(확장)",
+          "maker": "SOLTEC",
+          "model_sn": "SOLTEC",
+          "mac": "-",
+          "ip": "172.19.192.56",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "스위치",
+          "sys_name": "스위치"
+        },
+        {
+          "seq": 77,
+          "name": "성남영_사무실",
+          "install_loc": "성남영_사무실",
+          "equip_name": "OptiPlex 5060",
+          "dev_no": "운용/표출PC",
+          "maker": "DELL",
+          "model_sn": "DELL",
+          "mac": "-",
+          "ip": "172.19.192.45",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "PC",
+          "sys_name": "운영PC"
+        },
+        {
+          "seq": 78,
+          "name": "성남영_1F 복도",
+          "install_loc": "성남영_1F 복도",
+          "equip_name": "C1004-E",
+          "dev_no": "네트워크스피커(실내)",
+          "maker": "AXIS",
+          "model_sn": "AXIS",
+          "mac": "-",
+          "ip": "172.19.192.48",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "현장단말",
+          "sys_name": "내부스피커"
+        },
+        {
+          "seq": 79,
+          "name": "성남영_현관 옥상",
+          "install_loc": "성남영_현관 옥상",
+          "equip_name": "C3003-E",
+          "dev_no": "네트워크스피커(실외)",
+          "maker": "AXIS",
+          "model_sn": "AXIS",
+          "mac": "-",
+          "ip": "172.19.192.49",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "현장단말",
+          "sys_name": "외부스피커"
+        },
+        {
+          "seq": 80,
+          "name": "성남영_금고실",
+          "install_loc": "성남영_금고실",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205378",
+          "mac": "00:50:C2:7C:AF:F3",
+          "ip": "172.19.192.33",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.62",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 81,
+          "name": "성남영_1F 사무실",
+          "install_loc": "성남영_1F 사무실",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-02",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205435",
+          "mac": "00:50:C2:7C:B0:66",
+          "ip": "172.19.192.34",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.62",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 82,
+          "name": "성남영_지하통로",
+          "install_loc": "성남영_지하통로",
+          "equip_name": "블렛카메라",
+          "dev_no": "(지)불렛카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205181",
+          "mac": "00:50:C2:7E:8E:37",
+          "ip": "172.19.192.36",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.62",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 83,
+          "name": "성남영_지하통로",
+          "install_loc": "성남영_지하통로",
+          "equip_name": "블렛카메라",
+          "dev_no": "(지)불렛카메라-02",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205183",
+          "mac": "00:50:C2:80:07:F3",
+          "ip": "172.19.192.37",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.62",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 84,
+          "name": "성남영_지하통로",
+          "install_loc": "성남영_지하통로",
+          "equip_name": "블렛카메라",
+          "dev_no": "(지)불렛카메라-03",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205182",
+          "mac": "00:50:C2:80:07:CF",
+          "ip": "172.19.192.38",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.62",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 85,
+          "name": "성남영_현관 옥상",
+          "install_loc": "성남영_현관 옥상",
+          "equip_name": "스피드돔카메라",
+          "dev_no": "(외)스피드돔카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "IRD20181205029",
+          "mac": "00:50:C2:78:8E:8B",
+          "ip": "172.19.192.39",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.62",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 86,
+          "name": "성남영_현관 옥상",
+          "install_loc": "성남영_현관 옥상",
+          "equip_name": "블렛카메라",
+          "dev_no": "(외)불렛카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205187",
+          "mac": "00:50:C2:7E:8E:58",
+          "ip": "172.19.192.40",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.62",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 87,
+          "name": "성남영_건물측면취부",
+          "install_loc": "성남영_건물측면취부",
+          "equip_name": "블렛카메라",
+          "dev_no": "(외)불렛카메라-02",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205219",
+          "mac": "00:50:C2:7E:8E:51",
+          "ip": "172.19.192.41",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.62",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 88,
+          "name": "성남영_지하통로",
+          "install_loc": "성남영_지하통로",
+          "equip_name": "블렛카메라",
+          "dev_no": "(지)불렛카메라-04",
+          "maker": "한국씨텍",
+          "model_sn": "한국씨텍",
+          "mac": "-",
+          "ip": "172.19.192.42",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        }
+      ]
+    },
+    {
+      "id": "OFFICE-GURI",
+      "name": "구리남양주영업소 (구리영)",
+      "category": "영업소/톨게이트",
+      "org": "한국도로공사 구리남양주영업소",
+      "address": "경기 구리시 수도권제1순환고속도로 27",
+      "jibun_address": "경기 구리시 토평동 86",
+      "section": "수도권 제1순환선 구리남양주TG (28km 부근)",
       "lat": 37.5896968,
       "lng": 127.1559062,
-      "address": "경기 구리시 수도권제1순환고속도로 27",
-      "devices": []
+      "desc": "수도권 제1순환선 구리남양주 본선 톨게이트 및 영업소 본관 사옥",
+      "devices": [
+        {
+          "seq": 100,
+          "name": "구리남양주영_UPS실",
+          "install_loc": "구리남양주영_UPS실",
+          "equip_name": "24포트 POE 스위치",
+          "dev_no": "24PoE허브-01",
+          "maker": "SOLTEC",
+          "model_sn": "SOLTEC",
+          "mac": "-",
+          "ip": "172.19.192.185",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "스위치",
+          "sys_name": "스위치"
+        },
+        {
+          "seq": 101,
+          "name": "구리남양주영_지하통로",
+          "install_loc": "구리남양주영_지하통로",
+          "equip_name": "8포트 POE 스위치",
+          "dev_no": "8PoE허브-01(확장)",
+          "maker": "SOLTEC",
+          "model_sn": "SOLTEC",
+          "mac": "-",
+          "ip": "172.19.192.184",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "스위치",
+          "sys_name": "스위치"
+        },
+        {
+          "seq": 102,
+          "name": "구리남양주영_사무실",
+          "install_loc": "구리남양주영_사무실",
+          "equip_name": "OptiPlex 5060",
+          "dev_no": "운용/표출PC",
+          "maker": "DELL",
+          "model_sn": "DELL",
+          "mac": "-",
+          "ip": "172.19.192.173",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "PC",
+          "sys_name": "운영PC"
+        },
+        {
+          "seq": 103,
+          "name": "구리남양주영_현관",
+          "install_loc": "구리남양주영_현관",
+          "equip_name": "C1004-E",
+          "dev_no": "네트워크스피커(실내)",
+          "maker": "AXIS",
+          "model_sn": "AXIS",
+          "mac": "-",
+          "ip": "172.19.192.176",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "현장단말",
+          "sys_name": "내부스피커"
+        },
+        {
+          "seq": 104,
+          "name": "구리남양주영_침실(여) 밖",
+          "install_loc": "구리남양주영_침실(여) 밖",
+          "equip_name": "C3003-E",
+          "dev_no": "네트워크스피커(실외)",
+          "maker": "AXIS",
+          "model_sn": "AXIS",
+          "mac": "-",
+          "ip": "172.19.192.177",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "현장단말",
+          "sys_name": "외부스피커"
+        },
+        {
+          "seq": 105,
+          "name": "구리남양주영_현관",
+          "install_loc": "구리남양주영_현관",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205390",
+          "mac": "00:50:C2:7C:B0:2D",
+          "ip": "172.19.192.129",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.190",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 106,
+          "name": "구리남양주영_통행권보관실",
+          "install_loc": "구리남양주영_통행권보관실",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-02",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205388",
+          "mac": "00:50:C2:7C:AF:CF",
+          "ip": "172.19.192.130",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.190",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 107,
+          "name": "구리남양주영_1F 사무실",
+          "install_loc": "구리남양주영_1F 사무실",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-03",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205373",
+          "mac": "00:50:C2:7C:AF:D5",
+          "ip": "172.19.192.131",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.190",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 108,
+          "name": "구리남양주영_1F 계단 앞",
+          "install_loc": "구리남양주영_1F 계단 앞",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-04",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205394",
+          "mac": "00:50:C2:7C:AF:EB",
+          "ip": "172.19.192.132",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.190",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 109,
+          "name": "구리남양주영_회의 및 휴게실",
+          "install_loc": "구리남양주영_회의 및 휴게실",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-05",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205380",
+          "mac": "00:50:C2:7C:AF:F7",
+          "ip": "172.19.192.133",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.190",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 110,
+          "name": "구리남양주영_지하통로",
+          "install_loc": "구리남양주영_지하통로",
+          "equip_name": "블렛카메라",
+          "dev_no": "(지)불렛카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205211",
+          "mac": "00:50:C2:80:07:D1",
+          "ip": "172.19.192.135",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.190",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 111,
+          "name": "구리남양주영_지하통로",
+          "install_loc": "구리남양주영_지하통로",
+          "equip_name": "블렛카메라",
+          "dev_no": "(지)불렛카메라-02",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205215",
+          "mac": "00:50:C2:80:07:EF",
+          "ip": "172.19.192.136",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.190",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 112,
+          "name": "구리남양주영_지하통로",
+          "install_loc": "구리남양주영_지하통로",
+          "equip_name": "블렛카메라",
+          "dev_no": "(지)불렛카메라-03",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205185",
+          "mac": "00:50:C2:80:08:05",
+          "ip": "172.19.192.137",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.190",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 113,
+          "name": "구리남양주영_침실(여) 밖",
+          "install_loc": "구리남양주영_침실(여) 밖",
+          "equip_name": "스피드돔카메라",
+          "dev_no": "(외)스피드돔카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "IRD20181205011",
+          "mac": "00:50:C2:79:2A:94",
+          "ip": "172.19.192.138",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.190",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 114,
+          "name": "구리남양주영_측면-주유소화단",
+          "install_loc": "구리남양주영_측면-주유소화단",
+          "equip_name": "블렛카메라",
+          "dev_no": "(외)불렛카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205188",
+          "mac": "00:50:C2:7E:8E:75",
+          "ip": "172.19.192.139",
+          "subnet": "255.255.255.192",
+          "gw": "172.19.192.190",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        }
+      ]
     },
     {
-      "id": "OFF_TOPYEONG_TG",
-      "name": "토평영업소",
-      "category": "영업소",
-      "section": "판교-퇴계원 25.5k",
+      "id": "OFFICE-TOPYEONG",
+      "name": "토평영업소 (토평TG)",
+      "category": "영업소/톨게이트",
+      "org": "한국도로공사 토평영업소",
+      "address": "경기 구리시 수도권제1순환고속도로 26",
+      "jibun_address": "경기 구리시 토평동 48-99",
+      "section": "수도권 제1순환선 토평IC (26.9km)",
       "lat": 37.5822469,
       "lng": 127.1587224,
-      "address": "경기 구리시 수도권제1순환고속도로 26",
-      "devices": []
+      "desc": "수도권 제1순환선 토평IC 진출입 톨게이트 요금소 영업소",
+      "devices": [
+        {
+          "seq": 89,
+          "name": "토평영_ITS시스템실",
+          "install_loc": "토평영_ITS시스템실",
+          "equip_name": "24포트 POE 스위치",
+          "dev_no": "24PoE허브-01",
+          "maker": "SOLTEC",
+          "model_sn": "SOLTEC",
+          "mac": "-",
+          "ip": "172.19.192.89",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "스위치",
+          "sys_name": "스위치"
+        },
+        {
+          "seq": 90,
+          "name": "토평영_사무실",
+          "install_loc": "토평영_사무실",
+          "equip_name": "OptiPlex 5060",
+          "dev_no": "운용/표출PC",
+          "maker": "DELL",
+          "model_sn": "DELL",
+          "mac": "-",
+          "ip": "172.19.192.77",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "PC",
+          "sys_name": "운영PC"
+        },
+        {
+          "seq": 91,
+          "name": "토평영_건물외부",
+          "install_loc": "토평영_건물외부",
+          "equip_name": "C1004-E",
+          "dev_no": "네트워크스피커(실내)",
+          "maker": "AXIS",
+          "model_sn": "AXIS",
+          "mac": "-",
+          "ip": "172.19.192.80",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "현장단말",
+          "sys_name": "내부스피커"
+        },
+        {
+          "seq": 92,
+          "name": "토평영_1층내부",
+          "install_loc": "토평영_1층내부",
+          "equip_name": "C3003-E",
+          "dev_no": "네트워크스피커(실외)",
+          "maker": "AXIS",
+          "model_sn": "AXIS",
+          "mac": "-",
+          "ip": "172.19.192.81",
+          "subnet": "255.255.255.0",
+          "gw": "172.19.192.1",
+          "sys_type": "현장단말",
+          "sys_name": "외부스피커"
+        },
+        {
+          "seq": 93,
+          "name": "토평영_현관",
+          "install_loc": "토평영_현관",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205350",
+          "mac": "00:50:C2:7C:AF:E3",
+          "ip": "172.19.192.65",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.94",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 94,
+          "name": "토평영_금고실",
+          "install_loc": "토평영_금고실",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-02",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205348",
+          "mac": "00:50:C2:7C:AF:E8",
+          "ip": "172.19.192.66",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.94",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 95,
+          "name": "토평영_사무실",
+          "install_loc": "토평영_사무실",
+          "equip_name": "돔카메라",
+          "dev_no": "돔카메라-03",
+          "maker": "한국씨텍",
+          "model_sn": "DOM20181205334",
+          "mac": "00:50:C2:7C:B0:6C",
+          "ip": "172.19.192.67",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.94",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 96,
+          "name": "토평영_현관",
+          "install_loc": "토평영_현관",
+          "equip_name": "스피드돔카메라",
+          "dev_no": "(외)스피드돔카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "IRD20181205026",
+          "mac": "00:50:C2:74:FA:09",
+          "ip": "172.19.192.68",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.94",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 97,
+          "name": "토평영_상행통행로1",
+          "install_loc": "토평영_상행통행로1",
+          "equip_name": "블렛카메라",
+          "dev_no": "(외)불렛카메라-01",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205135",
+          "mac": "00:50:C2:7E:8E:31",
+          "ip": "172.19.192.69",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.94",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 98,
+          "name": "토평영_상행통행로2",
+          "install_loc": "토평영_상행통행로2",
+          "equip_name": "블렛카메라",
+          "dev_no": "(외)불렛카메라-02",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205134",
+          "mac": "00:50:C2:80:07:B8",
+          "ip": "172.19.192.70",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.94",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        },
+        {
+          "seq": 99,
+          "name": "토평영_상행광장",
+          "install_loc": "토평영_상행광장",
+          "equip_name": "블렛카메라",
+          "dev_no": "(외)불렛카메라-03",
+          "maker": "한국씨텍",
+          "model_sn": "BUL20181205128",
+          "mac": "00:50:C2:7E:8E:47",
+          "ip": "172.19.192.71",
+          "subnet": "255.255.255.224",
+          "gw": "172.19.192.94",
+          "sys_type": "현장단말",
+          "sys_name": "CCTV"
+        }
+      ]
     },
     {
-      "id": "OFF_SUWON_SHINGAL",
+      "id": "OFFICE-SUWON-SINGAL",
       "name": "수원신갈영업소",
-      "category": "영업소",
-      "section": "경부선",
-      "lat": 37.265476,
-      "lng": 127.103009,
+      "category": "영업소 (위치표시)",
+      "org": "한국도로공사 수원신갈영업소",
       "address": "경기 용인시 기흥구 하갈로 240",
-      "devices": []
-    },
-    {
-      "id": "OFF_SEOUL_HQ",
-      "name": "서울경기본부",
-      "category": "본부",
-      "section": "하남",
-      "lat": 37.545102,
-      "lng": 127.195201,
-      "address": "경기 하남시 하남대로 541",
-      "devices": []
-    },
-    {
-      "id": "OFF_TRAFFIC_CENTER",
-      "name": "교통센터",
-      "category": "교통센터",
-      "section": "성남",
-      "lat": 37.408512,
-      "lng": 127.10851,
-      "address": "경기 성남시 분당구 대왕판교로",
-      "devices": []
-    },
-    {
-      "id": "OFF_BURAMSAN_TUNNEL",
-      "name": "불암산터널관리소",
-      "category": "터널",
-      "section": "퇴계원",
-      "lat": 37.645102,
-      "lng": 127.105201,
-      "address": "경기 남양주시 별내동",
+      "jibun_address": "경기 용인시 기흥구 상갈동 191-4",
+      "section": "경부고속도로 수원신갈IC/TG",
+      "lat": 37.26694,
+      "lng": 127.10244,
+      "desc": "경부고속도로 수원신갈톨게이트 본관 및 요금소 (위치 전용)",
       "devices": []
     }
   ],
   "interchanges": [
     {
-      "id": "IC_PANGYO_JCT",
       "name": "판교JCT",
       "type": "JCT",
-      "lat": 37.4025,
-      "lng": 127.1085,
       "milepost": 0.0,
-      "desc": "경부선-수도권제1순환 분기"
+      "desc": "경부고속도로 분기점",
+      "lat": 37.40682,
+      "lng": 127.09734
     },
     {
-      "id": "IC_SEONGNAM",
       "name": "성남IC",
       "type": "IC",
-      "lat": 37.4385,
-      "lng": 127.135,
-      "milepost": 4.2,
-      "desc": "성남시 중원구/분당구 진출입"
+      "milepost": 4.4,
+      "desc": "성남IC 요금소/나들목",
+      "lat": 37.43554,
+      "lng": 127.12427
     },
     {
-      "id": "IC_SONGPA",
       "name": "송파IC",
       "type": "IC",
-      "lat": 37.485,
-      "lng": 127.142,
-      "milepost": 9.8,
-      "desc": "서울 송파/위례신도시 진출입"
+      "milepost": 9.5,
+      "desc": "송파IC 나들목",
+      "lat": 37.47451,
+      "lng": 127.12788
     },
     {
-      "id": "IC_SEOHANAM_JCT",
       "name": "서하남JCT",
       "type": "JCT",
-      "lat": 37.518,
-      "lng": 127.165,
-      "milepost": 14.5,
-      "desc": "세종포천선 연계 예정 분기점"
+      "milepost": 13.4,
+      "desc": "서하남IC/JCT",
+      "lat": 37.50649,
+      "lng": 127.14535
     },
     {
-      "id": "IC_SEOHANAM",
-      "name": "서하남IC",
-      "type": "IC",
-      "lat": 37.525,
-      "lng": 127.172,
-      "milepost": 15.6,
-      "desc": "하남시 감북동/서하남 진출입"
-    },
-    {
-      "id": "IC_HANAM_JCT",
       "name": "하남JCT",
       "type": "JCT",
-      "lat": 37.5373,
-      "lng": 127.1851,
-      "milepost": 18.2,
-      "desc": "중부고속도로 분기"
+      "milepost": 17.3,
+      "desc": "중부고속도로 분기점",
+      "lat": 37.51853,
+      "lng": 127.18412
     },
     {
-      "id": "IC_SANGIL",
       "name": "상일IC",
       "type": "IC",
-      "lat": 37.552,
-      "lng": 127.178,
-      "milepost": 20.8,
-      "desc": "서울 강동구/상일동 진출입"
+      "milepost": 22.0,
+      "desc": "천호대로 연계 나들목",
+      "lat": 37.54962,
+      "lng": 127.17896
     },
     {
-      "id": "IC_GANGIL",
       "name": "강일IC",
       "type": "IC",
-      "lat": 37.568,
-      "lng": 127.172,
-      "milepost": 22.9,
-      "desc": "서울양양고속도로/올림픽대로 분기"
+      "milepost": 24.8,
+      "desc": "올림픽대로/서울양양선 분기",
+      "lat": 37.57122,
+      "lng": 127.16655
     },
     {
-      "id": "IC_TOPYEONG",
       "name": "토평IC",
       "type": "IC",
-      "lat": 37.5822,
-      "lng": 127.1587,
-      "milepost": 25.5,
-      "desc": "강변북로/구리시 토평동 진출입"
+      "milepost": 26.9,
+      "desc": "토평IC 나들목",
+      "lat": 37.58225,
+      "lng": 127.15872
     },
     {
-      "id": "IC_GURI_TG",
       "name": "구리남양주TG",
       "type": "TG",
+      "milepost": 28.0,
+      "desc": "구리남양주 본선요금소",
       "lat": 37.5897,
-      "lng": 127.1559,
-      "milepost": 26.8,
-      "desc": "수도권제1순환 본선 요금소"
+      "lng": 127.15591
     },
     {
-      "id": "IC_NAMYANGJU",
       "name": "남양주IC",
       "type": "IC",
-      "lat": 37.605,
-      "lng": 127.152,
       "milepost": 28.5,
-      "desc": "남양주시 다산동/도농동 진출입"
+      "desc": "경춘국도 46호선 연계",
+      "lat": 37.6042,
+      "lng": 127.1504
     },
     {
-      "id": "IC_GURI",
       "name": "구리IC",
       "type": "IC",
+      "milepost": 30.8,
+      "desc": "북부간선도로 연계",
       "lat": 37.618,
-      "lng": 127.142,
-      "milepost": 30.2,
-      "desc": "북부간선도로 분기"
+      "lng": 127.142
     },
     {
-      "id": "IC_TOEGYEWON",
       "name": "퇴계원IC",
       "type": "IC",
-      "lat": 37.645,
-      "lng": 127.135,
-      "milepost": 34.0,
-      "desc": "구리포천선/경춘국도 분기"
+      "milepost": 33.7,
+      "desc": "동서울지사 관내 종점",
+      "lat": 37.64377,
+      "lng": 127.13017
     },
     {
-      "id": "IC_CHEONGGYE_TG",
       "name": "청계TG",
       "type": "TG",
-      "lat": 37.3985,
-      "lng": 127.0215,
-      "milepost": 126.8,
-      "desc": "안양판교로 청계 요금소"
+      "milepost": 10.2,
+      "desc": "외곽선 본선 요금소",
+      "lat": 37.39358,
+      "lng": 127.02497
     },
     {
-      "id": "IC_HAKUI_JCT",
       "name": "학의JCT",
       "type": "JCT",
+      "milepost": 14.8,
+      "desc": "과천봉담선 분기",
       "lat": 37.388,
-      "lng": 126.995,
-      "milepost": 129.5,
-      "desc": "과천봉담간도시고속화도로 분기"
+      "lng": 126.995
+    },
+    {
+      "name": "평촌IC",
+      "type": "IC",
+      "milepost": 18.5,
+      "desc": "안양 평촌 나들목",
+      "lat": 37.38165,
+      "lng": 126.96293
     }
   ],
   "manholes": [
@@ -5124,10 +6448,13 @@ window.MASTER_GIS_DATA = {
   "conduits": [
     {
       "no": 1,
+      "section": "판교JCT-성남IC",
       "source_manhole_id": "2M",
       "target_manhole_id": "3M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-00021S-B-H",
+      "target_code": "M-1001-00062S-B-H",
+      "source_no": 1,
+      "target_no": 2,
       "coordinates": [
         [
           37.406823,
@@ -5137,14 +6464,33 @@ window.MASTER_GIS_DATA = {
           37.407726,
           127.101357
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 2,
+      "section": "판교JCT-성남IC",
       "source_manhole_id": "3M",
       "target_manhole_id": "4M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00062S-B-H",
+      "target_code": "M-1001-00125S-P-H",
+      "source_no": 2,
+      "target_no": 3,
       "coordinates": [
         [
           37.407726,
@@ -5154,14 +6500,33 @@ window.MASTER_GIS_DATA = {
           37.407856,
           127.10839
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 3,
+      "section": "판교JCT-성남IC",
       "source_manhole_id": "4M",
       "target_manhole_id": "5M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00125S-P-H",
+      "target_code": "M-1001-00162S-B-H",
+      "source_no": 3,
+      "target_no": 4,
       "coordinates": [
         [
           37.407856,
@@ -5171,14 +6536,33 @@ window.MASTER_GIS_DATA = {
           37.409206,
           127.115537
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2018"
     },
     {
       "no": 4,
+      "section": "판교JCT-성남IC",
       "source_manhole_id": "5M",
       "target_manhole_id": "6M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-00162S-B-H",
+      "target_code": "M-1001-00208S-B-H",
+      "source_no": 4,
+      "target_no": 5,
       "coordinates": [
         [
           37.409206,
@@ -5188,14 +6572,33 @@ window.MASTER_GIS_DATA = {
           37.410498,
           127.117402
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "터널",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 5,
+      "section": "판교JCT-성남IC",
       "source_manhole_id": "6M",
       "target_manhole_id": "7M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00208S-B-H",
+      "target_code": "M-1001-00253S-B-H",
+      "source_no": 5,
+      "target_no": 6,
       "coordinates": [
         [
           37.410498,
@@ -5205,14 +6608,33 @@ window.MASTER_GIS_DATA = {
           37.413172,
           127.119508
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 6,
+      "section": "판교JCT-성남IC",
       "source_manhole_id": "7M",
       "target_manhole_id": "8M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00253S-B-H",
+      "target_code": "M-1001-00310S-B-H",
+      "source_no": 6,
+      "target_no": 7,
       "coordinates": [
         [
           37.413172,
@@ -5222,14 +6644,33 @@ window.MASTER_GIS_DATA = {
           37.417347,
           127.122412
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 7,
+      "section": "판교JCT-성남IC",
       "source_manhole_id": "8M",
       "target_manhole_id": "9M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-00310S-B-H",
+      "target_code": "M-1001-00359S-P-H",
+      "source_no": 7,
+      "target_no": 8,
       "coordinates": [
         [
           37.417347,
@@ -5239,14 +6680,33 @@ window.MASTER_GIS_DATA = {
           37.42114,
           127.123095
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 8,
+      "section": "판교JCT-성남IC",
       "source_manhole_id": "9M",
       "target_manhole_id": "10M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00359S-P-H",
+      "target_code": "M-1001-00395S-P-H",
+      "source_no": 8,
+      "target_no": 9,
       "coordinates": [
         [
           37.42114,
@@ -5256,14 +6716,33 @@ window.MASTER_GIS_DATA = {
           37.424991,
           127.123087
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 9,
+      "section": "판교JCT-성남IC",
       "source_manhole_id": "10M",
       "target_manhole_id": "11M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00395S-P-H",
+      "target_code": "M-1001-00442S-B-H",
+      "source_no": 9,
+      "target_no": 10,
       "coordinates": [
         [
           37.424991,
@@ -5273,14 +6752,33 @@ window.MASTER_GIS_DATA = {
           37.428721,
           127.123225
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 10,
+      "section": "판교JCT-성남IC",
       "source_manhole_id": "11M",
       "target_manhole_id": "12M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-00442S-B-H",
+      "target_code": "M-1001-00443S-P-H",
+      "source_no": 10,
+      "target_no": 11,
       "coordinates": [
         [
           37.428721,
@@ -5290,14 +6788,33 @@ window.MASTER_GIS_DATA = {
           37.4294,
           127.123034
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 11,
+      "section": "판교JCT-성남IC",
       "source_manhole_id": "12M",
       "target_manhole_id": "13M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00443S-P-H",
+      "target_code": "M-1001-00501S-P-H",
+      "source_no": 11,
+      "target_no": 12,
       "coordinates": [
         [
           37.4294,
@@ -5307,14 +6824,33 @@ window.MASTER_GIS_DATA = {
           37.433212,
           127.123177
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 12,
+      "section": "판교JCT-성남IC",
       "source_manhole_id": "13M",
       "target_manhole_id": "14M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00501S-P-H",
+      "target_code": "M-1001-00508E-B-H",
+      "source_no": 12,
+      "target_no": 13,
       "coordinates": [
         [
           37.433212,
@@ -5324,14 +6860,33 @@ window.MASTER_GIS_DATA = {
           37.435587,
           127.123847
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 13,
+      "section": "성남IC-서하남JCT",
       "source_manhole_id": "14M",
       "target_manhole_id": "15M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-00508E-B-H",
+      "target_code": "M-1001-00540E-B-H",
+      "source_no": 13,
+      "target_no": 14,
       "coordinates": [
         [
           37.435587,
@@ -5341,14 +6896,33 @@ window.MASTER_GIS_DATA = {
           37.437811,
           127.122972
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "영업소",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 14,
+      "section": "성남IC-송파IC",
       "source_manhole_id": "15M",
       "target_manhole_id": "16-1H",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00540E-B-H",
+      "target_code": "H-1001-00565E-P-H",
+      "source_no": 14,
+      "target_no": 15,
       "coordinates": [
         [
           37.437811,
@@ -5358,14 +6932,33 @@ window.MASTER_GIS_DATA = {
           37.44082,
           127.123088
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 15,
+      "section": "성남IC-송파IC",
       "source_manhole_id": "16-1H",
       "target_manhole_id": "17M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "H-1001-00565E-P-H",
+      "target_code": "M-1001-00618E-P-H",
+      "source_no": 15,
+      "target_no": 16,
       "coordinates": [
         [
           37.44082,
@@ -5375,14 +6968,33 @@ window.MASTER_GIS_DATA = {
           37.443839,
           127.124351
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 16,
+      "section": "성남IC-송파IC",
       "source_manhole_id": "17M",
       "target_manhole_id": "18M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-00618E-P-H",
+      "target_code": "M-1001-00657E-B-H",
+      "source_no": 16,
+      "target_no": 17,
       "coordinates": [
         [
           37.443839,
@@ -5392,14 +7004,33 @@ window.MASTER_GIS_DATA = {
           37.446892,
           127.125621
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 17,
+      "section": "성남IC-송파IC",
       "source_manhole_id": "18M",
       "target_manhole_id": "19-1H",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00657E-B-H",
+      "target_code": "M-1001-00695E-P-H",
+      "source_no": 17,
+      "target_no": 18,
       "coordinates": [
         [
           37.446892,
@@ -5409,14 +7040,33 @@ window.MASTER_GIS_DATA = {
           37.450525,
           127.126259
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 18,
+      "section": "성남IC-송파IC",
       "source_manhole_id": "19-1H",
       "target_manhole_id": "20M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00695E-P-H",
+      "target_code": "M-1001-00696S-P-H",
+      "source_no": 18,
+      "target_no": 19,
       "coordinates": [
         [
           37.450525,
@@ -5426,14 +7076,33 @@ window.MASTER_GIS_DATA = {
           37.450529,
           127.125678
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 19,
+      "section": "성남IC-송파IC",
       "source_manhole_id": "20M",
       "target_manhole_id": "21M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-00696S-P-H",
+      "target_code": "M-1001-00727S-B-H",
+      "source_no": 19,
+      "target_no": 20,
       "coordinates": [
         [
           37.450529,
@@ -5443,14 +7112,33 @@ window.MASTER_GIS_DATA = {
           37.453784,
           127.125639
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 20,
+      "section": "성남IC-송파IC",
       "source_manhole_id": "21M",
       "target_manhole_id": "22M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00727S-B-H",
+      "target_code": "M-1001-00781S-P-H",
+      "source_no": 20,
+      "target_no": 21,
       "coordinates": [
         [
           37.453784,
@@ -5460,14 +7148,33 @@ window.MASTER_GIS_DATA = {
           37.457222,
           127.125195
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 21,
+      "section": "성남IC-송파IC",
       "source_manhole_id": "22M",
       "target_manhole_id": "23M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00781S-P-H",
+      "target_code": "M-1001-00801S-B-H",
+      "source_no": 21,
+      "target_no": 22,
       "coordinates": [
         [
           37.457222,
@@ -5477,14 +7184,33 @@ window.MASTER_GIS_DATA = {
           37.459745,
           127.125099
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 22,
+      "section": "성남IC-송파IC",
       "source_manhole_id": "23M",
       "target_manhole_id": "24M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-00801S-B-H",
+      "target_code": "M-1001-00870S-P-H",
+      "source_no": 22,
+      "target_no": 23,
       "coordinates": [
         [
           37.459745,
@@ -5494,14 +7220,33 @@ window.MASTER_GIS_DATA = {
           37.465845,
           127.125407
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 23,
+      "section": "성남IC-송파IC",
       "source_manhole_id": "24M",
       "target_manhole_id": "25M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00870S-P-H",
+      "target_code": "M-1001-00896S-B-H",
+      "source_no": 23,
+      "target_no": 24,
       "coordinates": [
         [
           37.465845,
@@ -5511,14 +7256,33 @@ window.MASTER_GIS_DATA = {
           37.469056,
           127.124826
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 24,
+      "section": "성남IC-송파IC",
       "source_manhole_id": "25M",
       "target_manhole_id": "26M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00896S-B-H",
+      "target_code": "M-1001-00925S-P-H",
+      "source_no": 24,
+      "target_no": 25,
       "coordinates": [
         [
           37.469056,
@@ -5528,14 +7292,33 @@ window.MASTER_GIS_DATA = {
           37.472551,
           127.125835
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "직매",
+      "outer_spec1": 28,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 25,
+      "section": "성남IC-송파IC",
       "source_manhole_id": "26M",
       "target_manhole_id": "27M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-00925S-P-H",
+      "target_code": "M-1001-00950S-B-H",
+      "source_no": 25,
+      "target_no": 26,
       "coordinates": [
         [
           37.472551,
@@ -5545,14 +7328,33 @@ window.MASTER_GIS_DATA = {
           37.474509,
           127.127877
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "직매",
+      "outer_spec1": 28,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 26,
+      "section": "성남IC-송파IC",
       "source_manhole_id": "27M",
       "target_manhole_id": "28M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-00950S-B-H",
+      "target_code": "M-1001-01002S-P-H",
+      "source_no": 26,
+      "target_no": 27,
       "coordinates": [
         [
           37.474509,
@@ -5562,14 +7364,33 @@ window.MASTER_GIS_DATA = {
           37.477532,
           127.132344
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 27,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "28M",
       "target_manhole_id": "29M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-01002S-P-H",
+      "target_code": "M-1001-01050S-B-H",
+      "source_no": 27,
+      "target_no": 28,
       "coordinates": [
         [
           37.477532,
@@ -5579,14 +7400,33 @@ window.MASTER_GIS_DATA = {
           37.481026,
           127.134972
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 28,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "29M",
       "target_manhole_id": "30M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-01050S-B-H",
+      "target_code": "M-1001-01093S-B-H",
+      "source_no": 28,
+      "target_no": 29,
       "coordinates": [
         [
           37.481026,
@@ -5596,14 +7436,33 @@ window.MASTER_GIS_DATA = {
           37.483153,
           127.135391
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 29,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "30M",
       "target_manhole_id": "31M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-01093S-B-H",
+      "target_code": "M-1001-01131S-B-H",
+      "source_no": 29,
+      "target_no": 30,
       "coordinates": [
         [
           37.483153,
@@ -5613,14 +7472,33 @@ window.MASTER_GIS_DATA = {
           37.487652,
           127.136187
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 30,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "31M",
       "target_manhole_id": "32M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-01131S-B-H",
+      "target_code": "M-1001-01165S-P-H",
+      "source_no": 30,
+      "target_no": 31,
       "coordinates": [
         [
           37.487652,
@@ -5630,14 +7508,33 @@ window.MASTER_GIS_DATA = {
           37.489901,
           127.136881
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 31,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "32M",
       "target_manhole_id": "33M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-01165S-P-H",
+      "target_code": "M-1001-01202S-B-H",
+      "source_no": 31,
+      "target_no": 32,
       "coordinates": [
         [
           37.489901,
@@ -5647,14 +7544,33 @@ window.MASTER_GIS_DATA = {
           37.494765,
           127.139192
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 32,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "33M",
       "target_manhole_id": "34M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-01202S-B-H",
+      "target_code": "M-1001-01308S-B-H",
+      "source_no": 32,
+      "target_no": 33,
       "coordinates": [
         [
           37.494765,
@@ -5664,14 +7580,33 @@ window.MASTER_GIS_DATA = {
           37.503279,
           127.143384
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 33,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "34M",
       "target_manhole_id": "35M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-01308S-B-H",
+      "target_code": "M-1001-01337S-B-H",
+      "source_no": 33,
+      "target_no": 34,
       "coordinates": [
         [
           37.503279,
@@ -5681,14 +7616,33 @@ window.MASTER_GIS_DATA = {
           37.506489,
           127.145351
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 34,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "35M",
       "target_manhole_id": "36M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-01337S-B-H",
+      "target_code": "M-1001-01379S-P-H",
+      "source_no": 34,
+      "target_no": 35,
       "coordinates": [
         [
           37.506489,
@@ -5698,14 +7652,33 @@ window.MASTER_GIS_DATA = {
           37.509158,
           127.147083
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 35,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "36M",
       "target_manhole_id": "37M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-01379S-P-H",
+      "target_code": "M-1001-01412S-P-H",
+      "source_no": 35,
+      "target_no": 36,
       "coordinates": [
         [
           37.509158,
@@ -5715,14 +7688,33 @@ window.MASTER_GIS_DATA = {
           37.511496,
           127.149364
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 36,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "37M",
       "target_manhole_id": "38M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-01412S-P-H",
+      "target_code": "M-1001-01454S-B-H",
+      "source_no": 36,
+      "target_no": 37,
       "coordinates": [
         [
           37.511496,
@@ -5732,14 +7724,33 @@ window.MASTER_GIS_DATA = {
           37.513205762230214,
           127.15388348606811
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 37,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "38M",
       "target_manhole_id": "39M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-01454S-B-H",
+      "target_code": "M-1001-01455S-P-H",
+      "source_no": 37,
+      "target_no": 38,
       "coordinates": [
         [
           37.513205762230214,
@@ -5749,14 +7760,33 @@ window.MASTER_GIS_DATA = {
           37.51324536888914,
           127.15399109287927
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 38,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "39M",
       "target_manhole_id": "39-1H",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-01455S-P-H",
+      "target_code": "H-1001-01456S-P-R",
+      "source_no": 38,
+      "target_no": 39,
       "coordinates": [
         [
           37.51324536888914,
@@ -5766,14 +7796,33 @@ window.MASTER_GIS_DATA = {
           37.51328489870555,
           127.15409869969041
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 39,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "39-1H",
       "target_manhole_id": "40M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "H-1001-01456S-P-R",
+      "target_code": "M-1001-01495S-B-H",
+      "source_no": 39,
+      "target_no": 40,
       "coordinates": [
         [
           37.51328489870555,
@@ -5783,14 +7832,33 @@ window.MASTER_GIS_DATA = {
           37.51474960461726,
           127.15829536532509
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 40,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "40M",
       "target_manhole_id": "41M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-01495S-B-H",
+      "target_code": "M-1001-01602S-B-H",
+      "source_no": 40,
+      "target_no": 41,
       "coordinates": [
         [
           37.51474960461726,
@@ -5800,14 +7868,33 @@ window.MASTER_GIS_DATA = {
           37.51756023952164,
           127.16980929411766
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2025"
     },
     {
       "no": 41,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "41M",
       "target_manhole_id": "41M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-01602S-B-H",
+      "target_code": "M-1001-01603S-B-H",
+      "source_no": 41,
+      "target_no": 42,
       "coordinates": [
         [
           37.51756023952164,
@@ -5817,14 +7904,33 @@ window.MASTER_GIS_DATA = {
           37.517576617733624,
           127.1699169009288
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 5,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2025"
     },
     {
       "no": 42,
+      "section": "송파IC-서하남JCT",
       "source_manhole_id": "41M",
       "target_manhole_id": "42M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-01603S-B-H",
+      "target_code": "M-1001-01648S-B-H",
+      "source_no": 42,
+      "target_no": 43,
       "coordinates": [
         [
           37.517576617733624,
@@ -5834,14 +7940,33 @@ window.MASTER_GIS_DATA = {
           37.51813656396393,
           127.17475920743034
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2025"
     },
     {
       "no": 43,
+      "section": "서하남JCT-하남JCT",
       "source_manhole_id": "42M",
       "target_manhole_id": "43M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-01648S-B-H",
+      "target_code": "M-1001-01735S-B-H",
+      "source_no": 43,
+      "target_no": 44,
       "coordinates": [
         [
           37.51813656396393,
@@ -5851,14 +7976,33 @@ window.MASTER_GIS_DATA = {
           37.518535,
           127.184121
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "직매",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2025"
     },
     {
       "no": 44,
+      "section": "서하남JCT-하남JCT",
       "source_manhole_id": "43M",
       "target_manhole_id": "44M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-01735S-B-H",
+      "target_code": "M-1001-01771S-B-H",
+      "source_no": 44,
+      "target_no": 45,
       "coordinates": [
         [
           37.518535,
@@ -5868,14 +8012,33 @@ window.MASTER_GIS_DATA = {
           37.519871,
           127.188155
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 45,
+      "section": "서하남JCT-하남JCT",
       "source_manhole_id": "44M",
       "target_manhole_id": "45M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-01771S-B-H",
+      "target_code": "M-1001-01807S-B-H",
+      "source_no": 45,
+      "target_no": 46,
       "coordinates": [
         [
           37.519871,
@@ -5885,14 +8048,33 @@ window.MASTER_GIS_DATA = {
           37.522219,
           127.191133
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 46,
+      "section": "서하남JCT-하남JCT",
       "source_manhole_id": "45M",
       "target_manhole_id": "46M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-01807S-B-H",
+      "target_code": "M-1001-01851S-P-H",
+      "source_no": 46,
+      "target_no": 47,
       "coordinates": [
         [
           37.522219,
@@ -5902,14 +8084,33 @@ window.MASTER_GIS_DATA = {
           37.52485,
           127.192828
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 47,
+      "section": "서하남JCT-하남JCT",
       "source_manhole_id": "46M",
       "target_manhole_id": "47M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-01851S-P-H",
+      "target_code": "M-1001-01882S-B-H",
+      "source_no": 47,
+      "target_no": 48,
       "coordinates": [
         [
           37.52485,
@@ -5919,14 +8120,33 @@ window.MASTER_GIS_DATA = {
           37.528048,
           127.194698
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 48,
+      "section": "서하남JCT-하남JCT",
       "source_manhole_id": "47M",
       "target_manhole_id": "48M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-01882S-B-H",
+      "target_code": "M-1001-01913S-B-H",
+      "source_no": 48,
+      "target_no": 49,
       "coordinates": [
         [
           37.528048,
@@ -5936,14 +8156,33 @@ window.MASTER_GIS_DATA = {
           37.530501,
           127.195296
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 49,
+      "section": "서하남JCT-하남JCT",
       "source_manhole_id": "48M",
       "target_manhole_id": "49M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-01913S-B-H",
+      "target_code": "M-1001-01962S-B-H",
+      "source_no": 49,
+      "target_no": 50,
       "coordinates": [
         [
           37.530501,
@@ -5953,14 +8192,33 @@ window.MASTER_GIS_DATA = {
           37.531984,
           127.193722
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 50,
+      "section": "서하남JCT-하남JCT",
       "source_manhole_id": "49M",
       "target_manhole_id": "50M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-01962S-B-H",
+      "target_code": "M-1001-02021S-B-H",
+      "source_no": 50,
+      "target_no": 51,
       "coordinates": [
         [
           37.531984,
@@ -5970,14 +8228,33 @@ window.MASTER_GIS_DATA = {
           37.534426,
           127.188173
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 51,
+      "section": "하남JCT-상일IC",
       "source_manhole_id": "50M",
       "target_manhole_id": "51M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02021S-B-H",
+      "target_code": "M-1001-02060S-P-H",
+      "source_no": 51,
+      "target_no": 52,
       "coordinates": [
         [
           37.534426,
@@ -5987,14 +8264,33 @@ window.MASTER_GIS_DATA = {
           37.536868,
           127.185376
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 52,
+      "section": "하남JCT-상일IC",
       "source_manhole_id": "51M",
       "target_manhole_id": "52M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-02060S-P-H",
+      "target_code": "M-1001-02105S-B-H",
+      "source_no": 52,
+      "target_no": 53,
       "coordinates": [
         [
           37.536868,
@@ -6004,14 +8300,33 @@ window.MASTER_GIS_DATA = {
           37.541381,
           127.182699
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 53,
+      "section": "하남JCT-상일IC",
       "source_manhole_id": "52M",
       "target_manhole_id": "53M(배)",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02105S-B-H",
+      "target_code": "M-1001-02161S-B-H",
+      "source_no": 53,
+      "target_no": 54,
       "coordinates": [
         [
           37.541381,
@@ -6021,14 +8336,33 @@ window.MASTER_GIS_DATA = {
           37.545485,
           127.180598
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 54,
+      "section": "하남JCT-상일IC",
       "source_manhole_id": "53M(배)",
       "target_manhole_id": "54M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02161S-B-H",
+      "target_code": "M-1001-02162S-P-H",
+      "source_no": 54,
+      "target_no": 55,
       "coordinates": [
         [
           37.545485,
@@ -6038,14 +8372,33 @@ window.MASTER_GIS_DATA = {
           37.545513,
           127.180754
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 55,
+      "section": "하남JCT-상일IC",
       "source_manhole_id": "54M",
       "target_manhole_id": "55M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-02162S-P-H",
+      "target_code": "M-1001-02202S-P-H",
+      "source_no": 55,
+      "target_no": 56,
       "coordinates": [
         [
           37.545513,
@@ -6055,14 +8408,33 @@ window.MASTER_GIS_DATA = {
           37.549617,
           127.178957
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 56,
+      "section": "하남JCT-상일IC",
       "source_manhole_id": "55M",
       "target_manhole_id": "56M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02202S-P-H",
+      "target_code": "M-1001-02242S-B-H",
+      "source_no": 56,
+      "target_no": 57,
       "coordinates": [
         [
           37.549617,
@@ -6072,14 +8444,33 @@ window.MASTER_GIS_DATA = {
           37.552861,
           127.177456
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 57,
+      "section": "하남JCT-상일IC",
       "source_manhole_id": "56M",
       "target_manhole_id": "57M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02242S-B-H",
+      "target_code": "M-1001-02243S-P-H",
+      "source_no": 57,
+      "target_no": 58,
       "coordinates": [
         [
           37.552861,
@@ -6089,14 +8480,33 @@ window.MASTER_GIS_DATA = {
           37.553013,
           127.177225
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 58,
+      "section": "하남JCT-상일IC",
       "source_manhole_id": "57M",
       "target_manhole_id": "58M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-02243S-P-H",
+      "target_code": "M-1001-02285S-B-H",
+      "source_no": 58,
+      "target_no": 59,
       "coordinates": [
         [
           37.553013,
@@ -6106,14 +8516,33 @@ window.MASTER_GIS_DATA = {
           37.557225,
           127.175527
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 59,
+      "section": "상일IC-강일IC",
       "source_manhole_id": "58M",
       "target_manhole_id": "59-1M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02285S-B-H",
+      "target_code": "M-1001-02321S-B-H",
+      "source_no": 59,
+      "target_no": 60,
       "coordinates": [
         [
           37.557225,
@@ -6123,14 +8552,33 @@ window.MASTER_GIS_DATA = {
           37.559098,
           127.174878
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 60,
+      "section": "상일IC-강일IC",
       "source_manhole_id": "59-1M",
       "target_manhole_id": "59M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02321S-B-H",
+      "target_code": "M-1001-02340S-P-H",
+      "source_no": 60,
+      "target_no": 61,
       "coordinates": [
         [
           37.559098,
@@ -6140,14 +8588,33 @@ window.MASTER_GIS_DATA = {
           37.563005,
           127.173366
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 61,
+      "section": "상일IC-강일IC",
       "source_manhole_id": "59M",
       "target_manhole_id": "60M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-02340S-P-H",
+      "target_code": "M-1001-02386S-B-H",
+      "source_no": 61,
+      "target_no": 62,
       "coordinates": [
         [
           37.563005,
@@ -6157,14 +8624,33 @@ window.MASTER_GIS_DATA = {
           37.564824,
           127.17204
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 62,
+      "section": "상일IC-강일IC",
       "source_manhole_id": "60M",
       "target_manhole_id": "61M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02386S-B-H",
+      "target_code": "M-1001-02422S-P-H",
+      "source_no": 62,
+      "target_no": 63,
       "coordinates": [
         [
           37.564824,
@@ -6174,14 +8660,33 @@ window.MASTER_GIS_DATA = {
           37.567301,
           127.169972
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 63,
+      "section": "상일IC-강일IC",
       "source_manhole_id": "61M",
       "target_manhole_id": "62M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02422S-P-H",
+      "target_code": "M-1001-02465S-P-H",
+      "source_no": 63,
+      "target_no": 64,
       "coordinates": [
         [
           37.567301,
@@ -6191,14 +8696,33 @@ window.MASTER_GIS_DATA = {
           37.570606,
           127.16697
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "스틸배관",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 1,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 64,
+      "section": "상일IC-강일IC",
       "source_manhole_id": "62M",
       "target_manhole_id": "63M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-02465S-P-H",
+      "target_code": "M-1001-02481S-P-H",
+      "source_no": 64,
+      "target_no": 65,
       "coordinates": [
         [
           37.570606,
@@ -6208,14 +8732,33 @@ window.MASTER_GIS_DATA = {
           37.571217,
           127.166551
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 65,
+      "section": "상일IC-강일IC",
       "source_manhole_id": "63M",
       "target_manhole_id": "64M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02481S-P-H",
+      "target_code": "M-1001-02487S-B-H",
+      "source_no": 65,
+      "target_no": 66,
       "coordinates": [
         [
           37.571217,
@@ -6225,14 +8768,33 @@ window.MASTER_GIS_DATA = {
           37.573441,
           127.164525
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 66,
+      "section": "상일IC-강일IC",
       "source_manhole_id": "64M",
       "target_manhole_id": "65M(배)",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02487S-B-H",
+      "target_code": "M-1001-02598S-B-H",
+      "source_no": 66,
+      "target_no": 67,
       "coordinates": [
         [
           37.573441,
@@ -6242,14 +8804,33 @@ window.MASTER_GIS_DATA = {
           37.581754,
           127.157797
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 67,
+      "section": "강일IC-남양주IC",
       "source_manhole_id": "65M(배)",
       "target_manhole_id": "66M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-02598S-B-H",
+      "target_code": "M-1001-02637S-P-H",
+      "source_no": 67,
+      "target_no": 68,
       "coordinates": [
         [
           37.581754,
@@ -6259,14 +8840,33 @@ window.MASTER_GIS_DATA = {
           37.585037,
           127.156294
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 68,
+      "section": "강일IC-남양주IC",
       "source_manhole_id": "66M",
       "target_manhole_id": "66-1H",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02637S-P-H",
+      "target_code": "H-1001-02647S-P-H",
+      "source_no": 68,
+      "target_no": 69,
       "coordinates": [
         [
           37.585037,
@@ -6276,14 +8876,33 @@ window.MASTER_GIS_DATA = {
           37.588187,
           127.156103
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 69,
+      "section": "강일IC-남양주IC",
       "source_manhole_id": "66-1H",
       "target_manhole_id": "66-2H",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "H-1001-02647S-P-H",
+      "target_code": "H-1001-02652S-P-H",
+      "source_no": 69,
+      "target_no": 70,
       "coordinates": [
         [
           37.588187,
@@ -6293,14 +8912,33 @@ window.MASTER_GIS_DATA = {
           37.589229,
           127.155586
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 70,
+      "section": "강일IC-남양주IC",
       "source_manhole_id": "66-2H",
       "target_manhole_id": "66-3H",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "H-1001-02652S-P-H",
+      "target_code": "H-1001-02689S-P-H",
+      "source_no": 70,
+      "target_no": 71,
       "coordinates": [
         [
           37.589229,
@@ -6310,14 +8948,33 @@ window.MASTER_GIS_DATA = {
           37.589905,
           127.155612
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 71,
+      "section": "강일IC-남양주IC",
       "source_manhole_id": "66-3H",
       "target_manhole_id": "66-4H",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "H-1001-02689S-P-H",
+      "target_code": "H-1001-02696S-P-H",
+      "source_no": 71,
+      "target_no": 72,
       "coordinates": [
         [
           37.589905,
@@ -6327,14 +8984,33 @@ window.MASTER_GIS_DATA = {
           37.590595,
           127.156194
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 72,
+      "section": "강일IC-남양주IC",
       "source_manhole_id": "66-4H",
       "target_manhole_id": "67M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "H-1001-02696S-P-H",
+      "target_code": "M-1001-02690S-P-H",
+      "source_no": 72,
+      "target_no": 73,
       "coordinates": [
         [
           37.590595,
@@ -6344,14 +9020,33 @@ window.MASTER_GIS_DATA = {
           37.5899394,
           127.155583
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 73,
+      "section": "강일IC-남양주IC",
       "source_manhole_id": "67M",
       "target_manhole_id": "68M(배)",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-02690S-P-H",
+      "target_code": "M-1001-02721S-B-H",
+      "source_no": 73,
+      "target_no": 74,
       "coordinates": [
         [
           37.5899394,
@@ -6361,14 +9056,33 @@ window.MASTER_GIS_DATA = {
           37.592171,
           127.156503
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 74,
+      "section": "강일IC-남양주IC",
       "source_manhole_id": "68M(배)",
       "target_manhole_id": "69M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02721S-B-H",
+      "target_code": "M-1001-02784S-B-H",
+      "source_no": 74,
+      "target_no": 75,
       "coordinates": [
         [
           37.592171,
@@ -6378,14 +9092,33 @@ window.MASTER_GIS_DATA = {
           37.597473,
           127.155824
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 75,
+      "section": "강일IC-남양주IC",
       "source_manhole_id": "69M",
       "target_manhole_id": "70M(배)",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02784S-B-H",
+      "target_code": "M-1001-02822S-B-H",
+      "source_no": 75,
+      "target_no": 76,
       "coordinates": [
         [
           37.597473,
@@ -6395,14 +9128,33 @@ window.MASTER_GIS_DATA = {
           37.60069,
           127.153933
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 76,
+      "section": "강일IC-남양주IC",
       "source_manhole_id": "70M(배)",
       "target_manhole_id": "71M(배)",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-02822S-B-H",
+      "target_code": "M-1001-02855S-P-H",
+      "source_no": 76,
+      "target_no": 77,
       "coordinates": [
         [
           37.60069,
@@ -6412,14 +9164,33 @@ window.MASTER_GIS_DATA = {
           37.602962,
           127.151618
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 77,
+      "section": "강일IC-남양주IC",
       "source_manhole_id": "71M(배)",
       "target_manhole_id": "72M(배)",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02855S-P-H",
+      "target_code": "M-1001-02920S-B-H",
+      "source_no": 77,
+      "target_no": 78,
       "coordinates": [
         [
           37.602962,
@@ -6429,14 +9200,33 @@ window.MASTER_GIS_DATA = {
           37.607338,
           127.146304
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망,임대",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 78,
+      "section": "남양주IC-구리IC",
       "source_manhole_id": "72M(배)",
       "target_manhole_id": "73M(배)",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-02920S-B-H",
+      "target_code": "M-1001-02974S-P-H",
+      "source_no": 78,
+      "target_no": 79,
       "coordinates": [
         [
           37.607338,
@@ -6446,14 +9236,33 @@ window.MASTER_GIS_DATA = {
           37.611002,
           127.142892
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 79,
+      "section": "남양주IC-구리IC",
       "source_manhole_id": "73M(배)",
       "target_manhole_id": "74M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-02974S-P-H",
+      "target_code": "M-1001-03005S-B-H",
+      "source_no": 79,
+      "target_no": 80,
       "coordinates": [
         [
           37.611002,
@@ -6463,14 +9272,33 @@ window.MASTER_GIS_DATA = {
           37.6140365,
           127.1417495
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 80,
+      "section": "남양주IC-구리IC",
       "source_manhole_id": "74M",
       "target_manhole_id": "75M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-03005S-B-H",
+      "target_code": "M-1001-03042S-B-H",
+      "source_no": 80,
+      "target_no": 81,
       "coordinates": [
         [
           37.6140365,
@@ -6480,14 +9308,33 @@ window.MASTER_GIS_DATA = {
           37.6172261,
           127.1409174
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 81,
+      "section": "남양주IC구리IC",
       "source_manhole_id": "75M",
       "target_manhole_id": "76M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-03042S-B-H",
+      "target_code": "M-1001-03088S-B-H",
+      "source_no": 81,
+      "target_no": 82,
       "coordinates": [
         [
           37.6172261,
@@ -6497,14 +9344,33 @@ window.MASTER_GIS_DATA = {
           37.621453,
           127.139953
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 82,
+      "section": "구리IC-퇴계원IC",
       "source_manhole_id": "76M",
       "target_manhole_id": "77M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-03088S-B-H",
+      "target_code": "M-1001-03121S-P-H",
+      "source_no": 82,
+      "target_no": 83,
       "coordinates": [
         [
           37.621453,
@@ -6514,14 +9380,33 @@ window.MASTER_GIS_DATA = {
           37.62539,
           127.13905
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 83,
+      "section": "구리IC-퇴계원IC",
       "source_manhole_id": "77M",
       "target_manhole_id": "78M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-03121S-P-H",
+      "target_code": "M-1001-03179S-B-H",
+      "source_no": 83,
+      "target_no": 84,
       "coordinates": [
         [
           37.62539,
@@ -6531,14 +9416,33 @@ window.MASTER_GIS_DATA = {
           37.629335,
           127.137431
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 84,
+      "section": "구리IC-퇴계원IC",
       "source_manhole_id": "78M",
       "target_manhole_id": "79M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-03179S-B-H",
+      "target_code": "M-1001-03224S-P-H",
+      "source_no": 84,
+      "target_no": 85,
       "coordinates": [
         [
           37.629335,
@@ -6548,14 +9452,33 @@ window.MASTER_GIS_DATA = {
           37.632664,
           127.134764
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 85,
+      "section": "구리IC-퇴계원IC",
       "source_manhole_id": "79M",
       "target_manhole_id": "80M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1001-03224S-P-H",
+      "target_code": "M-1001-03280S-B-H",
+      "source_no": 85,
+      "target_no": 86,
       "coordinates": [
         [
           37.632664,
@@ -6565,14 +9488,33 @@ window.MASTER_GIS_DATA = {
           37.636601,
           127.133627
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 86,
+      "section": "구리IC-퇴계원IC",
       "source_manhole_id": "80M",
       "target_manhole_id": "81M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-03280S-B-H",
+      "target_code": "M-1001-03315S-P-H",
+      "source_no": 86,
+      "target_no": 87,
       "coordinates": [
         [
           37.636601,
@@ -6582,14 +9524,33 @@ window.MASTER_GIS_DATA = {
           37.640112,
           127.132663
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 87,
+      "section": "퇴계원IC-종점",
       "source_manhole_id": "81M",
       "target_manhole_id": "82M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1001-03315S-P-H",
+      "target_code": "M-1001-03369S-P-H",
+      "source_no": 87,
+      "target_no": 88,
       "coordinates": [
         [
           37.640112,
@@ -6599,31 +9560,33 @@ window.MASTER_GIS_DATA = {
           37.643775,
           127.130165
         ]
-      ]
-    },
-    {
-      "no": 88,
-      "source_manhole_id": "82M",
-      "target_manhole_id": "1M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
-      "coordinates": [
-        [
-          37.643775,
-          127.130165
-        ],
-        [
-          37.406264,
-          127.095579
-        ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1993"
     },
     {
       "no": 89,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "1M",
       "target_manhole_id": "2M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-12820S-B-H",
+      "target_code": "M-1003-12770S-P-H",
+      "source_no": 89,
+      "target_no": 90,
       "coordinates": [
         [
           37.406264,
@@ -6633,14 +9596,33 @@ window.MASTER_GIS_DATA = {
           37.405031,
           127.091826
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 90,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "2M",
       "target_manhole_id": "3M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-12770S-P-H",
+      "target_code": "M-1003-12724S-B-H",
+      "source_no": 90,
+      "target_no": 91,
       "coordinates": [
         [
           37.405031,
@@ -6650,14 +9632,33 @@ window.MASTER_GIS_DATA = {
           37.403166,
           127.087003
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 91,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "3M",
       "target_manhole_id": "4M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1003-12724S-B-H",
+      "target_code": "M-1003-12681S-B-H",
+      "source_no": 91,
+      "target_no": 92,
       "coordinates": [
         [
           37.403166,
@@ -6667,14 +9668,33 @@ window.MASTER_GIS_DATA = {
           37.400378,
           127.082726
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 122,
+      "outer_qty1": 2,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 9,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 92,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "4M",
       "target_manhole_id": "5M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-12681S-B-H",
+      "target_code": "M-1003-12625S-B-H",
+      "source_no": 92,
+      "target_no": 93,
       "coordinates": [
         [
           37.400378,
@@ -6684,14 +9704,33 @@ window.MASTER_GIS_DATA = {
           37.397473,
           127.078364
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2017"
     },
     {
       "no": 93,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "5M",
       "target_manhole_id": "6M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-12625S-B-H",
+      "target_code": "M-1003-12582S-P-H",
+      "source_no": 93,
+      "target_no": 94,
       "coordinates": [
         [
           37.397473,
@@ -6701,14 +9740,33 @@ window.MASTER_GIS_DATA = {
           37.395869,
           127.073134
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2017"
     },
     {
       "no": 94,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "6M",
       "target_manhole_id": "7M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1003-12582S-P-H",
+      "target_code": "M-1003-12530S-B-H",
+      "source_no": 94,
+      "target_no": 95,
       "coordinates": [
         [
           37.395869,
@@ -6718,14 +9776,33 @@ window.MASTER_GIS_DATA = {
           37.395588,
           127.069172
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2017"
     },
     {
       "no": 95,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "7M",
       "target_manhole_id": "8M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-12530S-B-H",
+      "target_code": "M-1003-12490S-P-H",
+      "source_no": 95,
+      "target_no": 96,
       "coordinates": [
         [
           37.395588,
@@ -6735,14 +9812,33 @@ window.MASTER_GIS_DATA = {
           37.395514,
           127.064835
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 122,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2017"
     },
     {
       "no": 96,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "8M",
       "target_manhole_id": "9M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-12490S-P-H",
+      "target_code": "M-1003-12442S-B-H",
+      "source_no": 96,
+      "target_no": 97,
       "coordinates": [
         [
           37.395514,
@@ -6752,14 +9848,33 @@ window.MASTER_GIS_DATA = {
           37.395871,
           127.059087
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2017"
     },
     {
       "no": 97,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "9M",
       "target_manhole_id": "10M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1003-12442S-B-H",
+      "target_code": "M-1003-12408S-B-H",
+      "source_no": 97,
+      "target_no": 98,
       "coordinates": [
         [
           37.395871,
@@ -6769,14 +9884,33 @@ window.MASTER_GIS_DATA = {
           37.396437,
           127.055475
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 98,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "10M",
       "target_manhole_id": "11M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-12408S-B-H",
+      "target_code": "M-1003-12358S-P-H",
+      "source_no": 98,
+      "target_no": 99,
       "coordinates": [
         [
           37.396437,
@@ -6786,14 +9920,33 @@ window.MASTER_GIS_DATA = {
           37.396438,
           127.04996
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 3,
+      "use_desc1": "자가망,FTMS",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 99,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "11M",
       "target_manhole_id": "12M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-12358S-P-H",
+      "target_code": "M-1003-12318S-P-H",
+      "source_no": 99,
+      "target_no": 100,
       "coordinates": [
         [
           37.396438,
@@ -6803,14 +9956,33 @@ window.MASTER_GIS_DATA = {
           37.39576,
           127.045788
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 100,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "12M",
       "target_manhole_id": "13M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1003-12318S-P-H",
+      "target_code": "M-1003-12286S-B-H",
+      "source_no": 100,
+      "target_no": 101,
       "coordinates": [
         [
           37.39576,
@@ -6820,14 +9992,33 @@ window.MASTER_GIS_DATA = {
           37.395122,
           127.040621
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 101,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "13M",
       "target_manhole_id": "14M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-12286S-B-H",
+      "target_code": "M-1003-12215S-P-H",
+      "source_no": 101,
+      "target_no": 102,
       "coordinates": [
         [
           37.395122,
@@ -6837,14 +10028,33 @@ window.MASTER_GIS_DATA = {
           37.394351,
           127.034554
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 102,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "14M",
       "target_manhole_id": "15M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-12215S-P-H",
+      "target_code": "M-1003-12185S-B-H",
+      "source_no": 102,
+      "target_no": 103,
       "coordinates": [
         [
           37.394351,
@@ -6854,14 +10064,33 @@ window.MASTER_GIS_DATA = {
           37.393535,
           127.030302
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 103,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "15M",
       "target_manhole_id": "16M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1003-12185S-B-H",
+      "target_code": "M-1003-12135S-P-H",
+      "source_no": 103,
+      "target_no": 104,
       "coordinates": [
         [
           37.393535,
@@ -6871,14 +10100,33 @@ window.MASTER_GIS_DATA = {
           37.393488,
           127.025445
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 104,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "16M",
       "target_manhole_id": "17M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-12135S-P-H",
+      "target_code": "M-1003-12134S-B-H",
+      "source_no": 104,
+      "target_no": 105,
       "coordinates": [
         [
           37.393488,
@@ -6888,14 +10136,33 @@ window.MASTER_GIS_DATA = {
           37.393623,
           127.025429
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 105,
+      "section": "판교JCT-청계TG",
       "source_manhole_id": "17M",
       "target_manhole_id": "18M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-12134S-B-H",
+      "target_code": "M-1003-12126S-P-H",
+      "source_no": 105,
+      "target_no": 106,
       "coordinates": [
         [
           37.393623,
@@ -6905,14 +10172,33 @@ window.MASTER_GIS_DATA = {
           37.393538,
           127.024567
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 106,
+      "section": "청계TG-학의JCT",
       "source_manhole_id": "18M",
       "target_manhole_id": "19M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1003-12126S-P-H",
+      "target_code": "M-1003-12125S-P-H",
+      "source_no": 106,
+      "target_no": 107,
       "coordinates": [
         [
           37.393538,
@@ -6922,14 +10208,33 @@ window.MASTER_GIS_DATA = {
           37.39354,
           127.02455
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 107,
+      "section": "청계TG-학의JCT",
       "source_manhole_id": "19M",
       "target_manhole_id": "20M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-12125S-P-H",
+      "target_code": "M-1003-12085S-P-H",
+      "source_no": 107,
+      "target_no": 108,
       "coordinates": [
         [
           37.39354,
@@ -6939,14 +10244,33 @@ window.MASTER_GIS_DATA = {
           37.393114,
           127.021744
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 108,
+      "section": "청계TG-학의JCT",
       "source_manhole_id": "20M",
       "target_manhole_id": "21M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-12085S-P-H",
+      "target_code": "M-1003-12035S-B-H",
+      "source_no": 108,
+      "target_no": 109,
       "coordinates": [
         [
           37.393114,
@@ -6956,14 +10280,33 @@ window.MASTER_GIS_DATA = {
           37.392433,
           127.014132
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 109,
+      "section": "청계TG-학의JCT",
       "source_manhole_id": "21M",
       "target_manhole_id": "22M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1003-12035S-B-H",
+      "target_code": "M-1003-11992S-P-H",
+      "source_no": 109,
+      "target_no": 110,
       "coordinates": [
         [
           37.392433,
@@ -6973,14 +10316,33 @@ window.MASTER_GIS_DATA = {
           37.389705,
           127.007837
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 110,
+      "section": "학의JCT-평촌IC",
       "source_manhole_id": "22M",
       "target_manhole_id": "23M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-11992S-P-H",
+      "target_code": "M-1003-11950S-B-H",
+      "source_no": 110,
+      "target_no": 111,
       "coordinates": [
         [
           37.389705,
@@ -6990,14 +10352,33 @@ window.MASTER_GIS_DATA = {
           37.388243,
           127.004452
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 111,
+      "section": "학의JCT-평촌IC",
       "source_manhole_id": "23M",
       "target_manhole_id": "24M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-11950S-B-H",
+      "target_code": "M-1003-11930S-P-H",
+      "source_no": 111,
+      "target_no": 112,
       "coordinates": [
         [
           37.388243,
@@ -7007,14 +10388,33 @@ window.MASTER_GIS_DATA = {
           37.387747,
           127.002723
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 112,
+      "section": "학의JCT-평촌IC",
       "source_manhole_id": "24M",
       "target_manhole_id": "25M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1003-11930S-P-H",
+      "target_code": "M-1003-11885S-P-H",
+      "source_no": 112,
+      "target_no": 113,
       "coordinates": [
         [
           37.387747,
@@ -7024,14 +10424,33 @@ window.MASTER_GIS_DATA = {
           37.386601,
           126.99805
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "교량",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 113,
+      "section": "학의JCT-평촌IC",
       "source_manhole_id": "25M",
       "target_manhole_id": "26M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-11885S-P-H",
+      "target_code": "M-1003-11815S-B-H",
+      "source_no": 113,
+      "target_no": 114,
       "coordinates": [
         [
           37.386601,
@@ -7041,14 +10460,33 @@ window.MASTER_GIS_DATA = {
           37.384511,
           126.990919
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "교량",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 114,
+      "section": "학의JCT-평촌IC",
       "source_manhole_id": "26M",
       "target_manhole_id": "27M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-11815S-B-H",
+      "target_code": "M-1003-11782S-P-H",
+      "source_no": 114,
+      "target_no": 115,
       "coordinates": [
         [
           37.384511,
@@ -7058,14 +10496,33 @@ window.MASTER_GIS_DATA = {
           37.383011,
           126.986948
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2025"
     },
     {
       "no": 115,
+      "section": "학의JCT-평촌IC",
       "source_manhole_id": "27M",
       "target_manhole_id": "28M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1003-11782S-P-H",
+      "target_code": "M-1003-11746S-P-H",
+      "source_no": 115,
+      "target_no": 116,
       "coordinates": [
         [
           37.383011,
@@ -7075,14 +10532,33 @@ window.MASTER_GIS_DATA = {
           37.381661,
           126.983366
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2025"
     },
     {
       "no": 116,
+      "section": "학의JCT-평촌IC",
       "source_manhole_id": "28M",
       "target_manhole_id": "29M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-11746S-P-H",
+      "target_code": "M-1003-11703S-B-H",
+      "source_no": 116,
+      "target_no": 117,
       "coordinates": [
         [
           37.381661,
@@ -7092,14 +10568,33 @@ window.MASTER_GIS_DATA = {
           37.379845,
           126.97802
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "COD",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "2025"
     },
     {
       "no": 117,
+      "section": "학의JCT-평촌IC",
       "source_manhole_id": "29M",
       "target_manhole_id": "30M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-11703S-B-H",
+      "target_code": "M-1003-11632S-P-H",
+      "source_no": 117,
+      "target_no": 118,
       "coordinates": [
         [
           37.379845,
@@ -7109,14 +10604,33 @@ window.MASTER_GIS_DATA = {
           37.381552,
           126.968254
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 118,
+      "section": "학의JCT-평촌IC",
       "source_manhole_id": "30M",
       "target_manhole_id": "31M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
+      "source_code": "M-1003-11632S-P-H",
+      "target_code": "M-1003-11576S-B-H",
+      "source_no": 118,
+      "target_no": 119,
       "coordinates": [
         [
           37.381552,
@@ -7126,14 +10640,33 @@ window.MASTER_GIS_DATA = {
           37.382046,
           126.96624
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "교량",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 119,
+      "section": "학의JCT-평촌IC",
       "source_manhole_id": "31M",
       "target_manhole_id": "32M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "source_code": "M-1003-11576S-B-H",
+      "target_code": "M-1003-11515S-P-H",
+      "source_no": 119,
+      "target_no": 120,
       "coordinates": [
         [
           37.382046,
@@ -7143,136 +10676,243 @@ window.MASTER_GIS_DATA = {
           37.38165,
           126.962927
         ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "교량",
+      "pipe_type": "PVC",
+      "outer_spec1": 100,
+      "outer_qty1": 1,
+      "outer_spec2": 150,
+      "outer_qty2": 1,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 1,
+      "use_desc1": "자가망",
+      "completion_year": "",
+      "warranty_year": "1995"
     },
     {
       "no": 120,
-      "source_manhole_id": "32M",
-      "target_manhole_id": "49-1H",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
+      "section": "판교JCT 분기선",
+      "source_manhole_id": "2M",
+      "target_manhole_id": "1M",
+      "source_code": "M-1001-00021S-B-H",
+      "target_code": "M-1003-12820S-B-H",
+      "source_no": 1,
+      "target_no": 89,
       "coordinates": [
         [
-          37.38165,
-          126.962927
+          37.406823,
+          127.097339
         ],
         [
-          37.5373193,
-          127.18510830000001
+          37.406264,
+          127.095579
         ]
-      ]
-    },
-    {
-      "no": 121,
-      "source_manhole_id": "49-1H",
-      "target_manhole_id": "49-1M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
-      "coordinates": [
-        [
-          37.5373193,
-          127.18510830000001
-        ],
-        [
-          37.5373193,
-          127.18510830000001
-        ]
-      ]
-    },
-    {
-      "no": 122,
-      "source_manhole_id": "49-1M",
-      "target_manhole_id": "49-2M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
-      "coordinates": [
-        [
-          37.5373193,
-          127.18510830000001
-        ],
-        [
-          37.5373193,
-          127.18510830000001
-        ]
-      ]
-    },
-    {
-      "no": 123,
-      "source_manhole_id": "49-2M",
-      "target_manhole_id": "53M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
-      "coordinates": [
-        [
-          37.5373193,
-          127.18510830000001
-        ],
-        [
-          37.549941399999994,
-          127.1788069
-        ]
-      ]
-    },
-    {
-      "no": 124,
-      "source_manhole_id": "53M",
-      "target_manhole_id": "59-1M",
-      "section": "판교-퇴계원",
-      "pipe_type": "스틸관(100mm)",
-      "coordinates": [
-        [
-          37.549941399999994,
-          127.1788069
-        ],
-        [
-          37.571439399999996,
-          127.1663484
-        ]
-      ]
-    },
-    {
-      "no": 125,
-      "source_manhole_id": "59-1M",
-      "target_manhole_id": "65M",
-      "section": "판교-퇴계원",
-      "pipe_type": "COD관(100mm)",
-      "coordinates": [
-        [
-          37.571439399999996,
-          127.1663484
-        ],
-        [
-          37.589974,
-          127.1556702
-        ]
-      ]
+      ],
+      "hq": "서울경기본부",
+      "branch": "동서울지사",
+      "route": "수도권제1순환선",
+      "category": "도로(분기점)",
+      "pipe_type": "PVC (강관보호)",
+      "outer_spec1": 150,
+      "outer_qty1": 1,
+      "outer_spec2": null,
+      "outer_qty2": null,
+      "inner_spec1": 28,
+      "inner_qty1": 3,
+      "use_spec1": 28,
+      "use_qty1": 2,
+      "use_desc1": "자가망 (분기연결)",
+      "completion_year": "1995",
+      "warranty_year": "1995"
     }
   ],
   "cables": [
     {
-      "id": "CB_DS_TRUNK_1",
-      "section": "판교~퇴계원 광간선망 (72Core)",
-      "expansion_round": "4단계",
-      "total_cores": 72,
-      "node_count": 126,
+      "no": 1,
+      "section": "판교JCT-성남TG",
+      "total_cores": 30,
+      "expansion_round": "3차",
+      "length_km": 1993.0,
+      "start_point": "",
+      "end_point": "2001",
+      "coordinates": [
+        [
+          37.406823,
+          127.097339
+        ],
+        [
+          37.407726,
+          127.101357
+        ],
+        [
+          37.407856,
+          127.10839
+        ],
+        [
+          37.409206,
+          127.115537
+        ],
+        [
+          37.410498,
+          127.117402
+        ],
+        [
+          37.413172,
+          127.119508
+        ],
+        [
+          37.417347,
+          127.122412
+        ],
+        [
+          37.42114,
+          127.123095
+        ],
+        [
+          37.424991,
+          127.123087
+        ],
+        [
+          37.428721,
+          127.123225
+        ],
+        [
+          37.4294,
+          127.123034
+        ],
+        [
+          37.433212,
+          127.123177
+        ],
+        [
+          37.435587,
+          127.123847
+        ]
+      ],
+      "node_count": 13,
       "node_path": [
         "2M",
-        "10M",
-        "18M",
-        "26M",
-        "34M",
-        "41M",
-        "48M",
-        "56M",
-        "63M",
-        "67M",
-        "75M",
-        "1M",
+        "3M",
+        "4M",
+        "5M",
+        "6M",
+        "7M",
+        "8M",
         "9M",
-        "17M",
-        "25M",
-        "49-1H"
+        "10M",
+        "11M",
+        "12M",
+        "13M",
+        "14M"
+      ]
+    },
+    {
+      "no": 2,
+      "section": "성남TG-송파IC",
+      "total_cores": 72,
+      "expansion_round": "3차",
+      "length_km": 0.0,
+      "start_point": "",
+      "end_point": "2002",
+      "coordinates": [
+        [
+          37.435587,
+          127.123847
+        ],
+        [
+          37.437811,
+          127.122972
+        ],
+        [
+          37.44082,
+          127.123088
+        ],
+        [
+          37.443839,
+          127.124351
+        ],
+        [
+          37.446892,
+          127.125621
+        ],
+        [
+          37.450525,
+          127.126259
+        ],
+        [
+          37.450529,
+          127.125678
+        ],
+        [
+          37.453784,
+          127.125639
+        ],
+        [
+          37.457222,
+          127.125195
+        ],
+        [
+          37.459745,
+          127.125099
+        ],
+        [
+          37.465845,
+          127.125407
+        ],
+        [
+          37.469056,
+          127.124826
+        ],
+        [
+          37.472551,
+          127.125835
+        ],
+        [
+          37.474509,
+          127.127877
+        ],
+        [
+          37.477532,
+          127.132344
+        ],
+        [
+          37.481026,
+          127.134972
+        ]
       ],
+      "node_count": 16,
+      "node_path": [
+        "14M",
+        "15M",
+        "16-1H",
+        "17M",
+        "18M",
+        "19-1H",
+        "20M",
+        "21M",
+        "22M",
+        "23M",
+        "24M",
+        "25M",
+        "26M",
+        "27M",
+        "28M",
+        "29M"
+      ]
+    },
+    {
+      "no": 3,
+      "section": "송파IC-동서울지사",
+      "total_cores": 72,
+      "expansion_round": "24",
+      "length_km": 0.0,
+      "start_point": "",
+      "end_point": "2002",
       "coordinates": [
         [
           37.406823,
@@ -7625,7 +11265,1370 @@ window.MASTER_GIS_DATA = {
         [
           37.643775,
           127.130165
+        ]
+      ],
+      "node_count": 88,
+      "node_path": [
+        "2M",
+        "3M",
+        "4M",
+        "5M",
+        "6M",
+        "7M",
+        "8M",
+        "9M",
+        "10M",
+        "11M",
+        "12M",
+        "13M",
+        "14M",
+        "15M",
+        "16-1H",
+        "17M",
+        "18M",
+        "19-1H",
+        "20M",
+        "21M",
+        "22M",
+        "23M",
+        "24M",
+        "25M",
+        "26M",
+        "27M",
+        "28M",
+        "29M",
+        "30M",
+        "31M",
+        "32M",
+        "33M",
+        "34M",
+        "35M",
+        "36M",
+        "37M",
+        "38M",
+        "39M",
+        "39-1H",
+        "40M",
+        "41M",
+        "41M",
+        "42M",
+        "43M",
+        "44M",
+        "45M",
+        "46M",
+        "47M",
+        "48M",
+        "49M",
+        "50M",
+        "51M",
+        "52M",
+        "53M(배)",
+        "54M",
+        "55M",
+        "56M",
+        "57M",
+        "58M",
+        "59-1M",
+        "59M",
+        "60M",
+        "61M",
+        "62M",
+        "63M",
+        "64M",
+        "65M(배)",
+        "66M",
+        "66-1H",
+        "66-2H",
+        "66-3H",
+        "66-4H",
+        "67M",
+        "68M(배)",
+        "69M",
+        "70M(배)",
+        "71M(배)",
+        "72M(배)",
+        "73M(배)",
+        "74M",
+        "75M",
+        "76M",
+        "77M",
+        "78M",
+        "79M",
+        "80M",
+        "81M",
+        "82M"
+      ]
+    },
+    {
+      "no": 4,
+      "section": "동서울지사-하남JCT",
+      "total_cores": 72,
+      "expansion_round": "96",
+      "length_km": 1993.0,
+      "start_point": "",
+      "end_point": "",
+      "coordinates": [
+        [
+          37.406823,
+          127.097339
         ],
+        [
+          37.407726,
+          127.101357
+        ],
+        [
+          37.407856,
+          127.10839
+        ],
+        [
+          37.409206,
+          127.115537
+        ],
+        [
+          37.410498,
+          127.117402
+        ],
+        [
+          37.413172,
+          127.119508
+        ],
+        [
+          37.417347,
+          127.122412
+        ],
+        [
+          37.42114,
+          127.123095
+        ],
+        [
+          37.424991,
+          127.123087
+        ],
+        [
+          37.428721,
+          127.123225
+        ],
+        [
+          37.4294,
+          127.123034
+        ],
+        [
+          37.433212,
+          127.123177
+        ],
+        [
+          37.435587,
+          127.123847
+        ],
+        [
+          37.437811,
+          127.122972
+        ],
+        [
+          37.44082,
+          127.123088
+        ],
+        [
+          37.443839,
+          127.124351
+        ],
+        [
+          37.446892,
+          127.125621
+        ],
+        [
+          37.450525,
+          127.126259
+        ],
+        [
+          37.450529,
+          127.125678
+        ],
+        [
+          37.453784,
+          127.125639
+        ],
+        [
+          37.457222,
+          127.125195
+        ],
+        [
+          37.459745,
+          127.125099
+        ],
+        [
+          37.465845,
+          127.125407
+        ],
+        [
+          37.469056,
+          127.124826
+        ],
+        [
+          37.472551,
+          127.125835
+        ],
+        [
+          37.474509,
+          127.127877
+        ],
+        [
+          37.477532,
+          127.132344
+        ],
+        [
+          37.481026,
+          127.134972
+        ],
+        [
+          37.483153,
+          127.135391
+        ],
+        [
+          37.487652,
+          127.136187
+        ],
+        [
+          37.489901,
+          127.136881
+        ],
+        [
+          37.494765,
+          127.139192
+        ],
+        [
+          37.503279,
+          127.143384
+        ],
+        [
+          37.506489,
+          127.145351
+        ],
+        [
+          37.509158,
+          127.147083
+        ],
+        [
+          37.511496,
+          127.149364
+        ],
+        [
+          37.513205762230214,
+          127.15388348606811
+        ],
+        [
+          37.51324536888914,
+          127.15399109287927
+        ],
+        [
+          37.51328489870555,
+          127.15409869969041
+        ],
+        [
+          37.51474960461726,
+          127.15829536532509
+        ],
+        [
+          37.51756023952164,
+          127.16980929411766
+        ],
+        [
+          37.517576617733624,
+          127.1699169009288
+        ],
+        [
+          37.51813656396393,
+          127.17475920743034
+        ],
+        [
+          37.518535,
+          127.184121
+        ],
+        [
+          37.519871,
+          127.188155
+        ],
+        [
+          37.522219,
+          127.191133
+        ],
+        [
+          37.52485,
+          127.192828
+        ],
+        [
+          37.528048,
+          127.194698
+        ],
+        [
+          37.530501,
+          127.195296
+        ],
+        [
+          37.531984,
+          127.193722
+        ],
+        [
+          37.534426,
+          127.188173
+        ],
+        [
+          37.536868,
+          127.185376
+        ],
+        [
+          37.541381,
+          127.182699
+        ],
+        [
+          37.545485,
+          127.180598
+        ],
+        [
+          37.545513,
+          127.180754
+        ],
+        [
+          37.549617,
+          127.178957
+        ],
+        [
+          37.552861,
+          127.177456
+        ],
+        [
+          37.553013,
+          127.177225
+        ],
+        [
+          37.557225,
+          127.175527
+        ],
+        [
+          37.559098,
+          127.174878
+        ],
+        [
+          37.563005,
+          127.173366
+        ],
+        [
+          37.564824,
+          127.17204
+        ],
+        [
+          37.567301,
+          127.169972
+        ],
+        [
+          37.570606,
+          127.16697
+        ],
+        [
+          37.571217,
+          127.166551
+        ],
+        [
+          37.573441,
+          127.164525
+        ],
+        [
+          37.581754,
+          127.157797
+        ],
+        [
+          37.585037,
+          127.156294
+        ],
+        [
+          37.588187,
+          127.156103
+        ],
+        [
+          37.589229,
+          127.155586
+        ],
+        [
+          37.589905,
+          127.155612
+        ],
+        [
+          37.590595,
+          127.156194
+        ],
+        [
+          37.5899394,
+          127.155583
+        ],
+        [
+          37.592171,
+          127.156503
+        ],
+        [
+          37.597473,
+          127.155824
+        ],
+        [
+          37.60069,
+          127.153933
+        ],
+        [
+          37.602962,
+          127.151618
+        ],
+        [
+          37.607338,
+          127.146304
+        ],
+        [
+          37.611002,
+          127.142892
+        ],
+        [
+          37.6140365,
+          127.1417495
+        ],
+        [
+          37.6172261,
+          127.1409174
+        ],
+        [
+          37.621453,
+          127.139953
+        ],
+        [
+          37.62539,
+          127.13905
+        ],
+        [
+          37.629335,
+          127.137431
+        ],
+        [
+          37.632664,
+          127.134764
+        ],
+        [
+          37.636601,
+          127.133627
+        ],
+        [
+          37.640112,
+          127.132663
+        ],
+        [
+          37.643775,
+          127.130165
+        ]
+      ],
+      "node_count": 88,
+      "node_path": [
+        "2M",
+        "3M",
+        "4M",
+        "5M",
+        "6M",
+        "7M",
+        "8M",
+        "9M",
+        "10M",
+        "11M",
+        "12M",
+        "13M",
+        "14M",
+        "15M",
+        "16-1H",
+        "17M",
+        "18M",
+        "19-1H",
+        "20M",
+        "21M",
+        "22M",
+        "23M",
+        "24M",
+        "25M",
+        "26M",
+        "27M",
+        "28M",
+        "29M",
+        "30M",
+        "31M",
+        "32M",
+        "33M",
+        "34M",
+        "35M",
+        "36M",
+        "37M",
+        "38M",
+        "39M",
+        "39-1H",
+        "40M",
+        "41M",
+        "41M",
+        "42M",
+        "43M",
+        "44M",
+        "45M",
+        "46M",
+        "47M",
+        "48M",
+        "49M",
+        "50M",
+        "51M",
+        "52M",
+        "53M(배)",
+        "54M",
+        "55M",
+        "56M",
+        "57M",
+        "58M",
+        "59-1M",
+        "59M",
+        "60M",
+        "61M",
+        "62M",
+        "63M",
+        "64M",
+        "65M(배)",
+        "66M",
+        "66-1H",
+        "66-2H",
+        "66-3H",
+        "66-4H",
+        "67M",
+        "68M(배)",
+        "69M",
+        "70M(배)",
+        "71M(배)",
+        "72M(배)",
+        "73M(배)",
+        "74M",
+        "75M",
+        "76M",
+        "77M",
+        "78M",
+        "79M",
+        "80M",
+        "81M",
+        "82M"
+      ]
+    },
+    {
+      "no": 5,
+      "section": "하남JCT-상일IC",
+      "total_cores": 24,
+      "expansion_round": "3차",
+      "length_km": 1993.0,
+      "start_point": "",
+      "end_point": "2001",
+      "coordinates": [
+        [
+          37.531984,
+          127.193722
+        ],
+        [
+          37.534426,
+          127.188173
+        ],
+        [
+          37.536868,
+          127.185376
+        ],
+        [
+          37.541381,
+          127.182699
+        ],
+        [
+          37.545485,
+          127.180598
+        ],
+        [
+          37.545513,
+          127.180754
+        ],
+        [
+          37.549617,
+          127.178957
+        ],
+        [
+          37.552861,
+          127.177456
+        ],
+        [
+          37.553013,
+          127.177225
+        ],
+        [
+          37.557225,
+          127.175527
+        ]
+      ],
+      "node_count": 10,
+      "node_path": [
+        "49M",
+        "50M",
+        "51M",
+        "52M",
+        "53M(배)",
+        "54M",
+        "55M",
+        "56M",
+        "57M",
+        "58M"
+      ]
+    },
+    {
+      "no": 6,
+      "section": "상일IC-강일IC",
+      "total_cores": 24,
+      "expansion_round": "3차",
+      "length_km": 1993.0,
+      "start_point": "",
+      "end_point": "2001",
+      "coordinates": [
+        [
+          37.553013,
+          127.177225
+        ],
+        [
+          37.557225,
+          127.175527
+        ],
+        [
+          37.559098,
+          127.174878
+        ],
+        [
+          37.563005,
+          127.173366
+        ],
+        [
+          37.564824,
+          127.17204
+        ],
+        [
+          37.567301,
+          127.169972
+        ],
+        [
+          37.570606,
+          127.16697
+        ],
+        [
+          37.571217,
+          127.166551
+        ],
+        [
+          37.573441,
+          127.164525
+        ],
+        [
+          37.581754,
+          127.157797
+        ]
+      ],
+      "node_count": 10,
+      "node_path": [
+        "57M",
+        "58M",
+        "59-1M",
+        "59M",
+        "60M",
+        "61M",
+        "62M",
+        "63M",
+        "64M",
+        "65M(배)"
+      ]
+    },
+    {
+      "no": 7,
+      "section": "강일IC-토평IC",
+      "total_cores": 24,
+      "expansion_round": "3차",
+      "length_km": 1993.0,
+      "start_point": "",
+      "end_point": "2001",
+      "coordinates": [
+        [
+          37.406823,
+          127.097339
+        ],
+        [
+          37.407726,
+          127.101357
+        ],
+        [
+          37.407856,
+          127.10839
+        ],
+        [
+          37.409206,
+          127.115537
+        ],
+        [
+          37.410498,
+          127.117402
+        ],
+        [
+          37.413172,
+          127.119508
+        ],
+        [
+          37.417347,
+          127.122412
+        ],
+        [
+          37.42114,
+          127.123095
+        ],
+        [
+          37.424991,
+          127.123087
+        ],
+        [
+          37.428721,
+          127.123225
+        ],
+        [
+          37.4294,
+          127.123034
+        ],
+        [
+          37.433212,
+          127.123177
+        ],
+        [
+          37.435587,
+          127.123847
+        ],
+        [
+          37.437811,
+          127.122972
+        ],
+        [
+          37.44082,
+          127.123088
+        ],
+        [
+          37.443839,
+          127.124351
+        ],
+        [
+          37.446892,
+          127.125621
+        ],
+        [
+          37.450525,
+          127.126259
+        ],
+        [
+          37.450529,
+          127.125678
+        ],
+        [
+          37.453784,
+          127.125639
+        ],
+        [
+          37.457222,
+          127.125195
+        ],
+        [
+          37.459745,
+          127.125099
+        ],
+        [
+          37.465845,
+          127.125407
+        ],
+        [
+          37.469056,
+          127.124826
+        ],
+        [
+          37.472551,
+          127.125835
+        ],
+        [
+          37.474509,
+          127.127877
+        ],
+        [
+          37.477532,
+          127.132344
+        ],
+        [
+          37.481026,
+          127.134972
+        ],
+        [
+          37.483153,
+          127.135391
+        ],
+        [
+          37.487652,
+          127.136187
+        ],
+        [
+          37.489901,
+          127.136881
+        ],
+        [
+          37.494765,
+          127.139192
+        ],
+        [
+          37.503279,
+          127.143384
+        ],
+        [
+          37.506489,
+          127.145351
+        ],
+        [
+          37.509158,
+          127.147083
+        ],
+        [
+          37.511496,
+          127.149364
+        ],
+        [
+          37.513205762230214,
+          127.15388348606811
+        ],
+        [
+          37.51324536888914,
+          127.15399109287927
+        ],
+        [
+          37.51328489870555,
+          127.15409869969041
+        ],
+        [
+          37.51474960461726,
+          127.15829536532509
+        ],
+        [
+          37.51756023952164,
+          127.16980929411766
+        ],
+        [
+          37.517576617733624,
+          127.1699169009288
+        ],
+        [
+          37.51813656396393,
+          127.17475920743034
+        ],
+        [
+          37.518535,
+          127.184121
+        ],
+        [
+          37.519871,
+          127.188155
+        ],
+        [
+          37.522219,
+          127.191133
+        ],
+        [
+          37.52485,
+          127.192828
+        ],
+        [
+          37.528048,
+          127.194698
+        ],
+        [
+          37.530501,
+          127.195296
+        ],
+        [
+          37.531984,
+          127.193722
+        ],
+        [
+          37.534426,
+          127.188173
+        ],
+        [
+          37.536868,
+          127.185376
+        ],
+        [
+          37.541381,
+          127.182699
+        ],
+        [
+          37.545485,
+          127.180598
+        ],
+        [
+          37.545513,
+          127.180754
+        ],
+        [
+          37.549617,
+          127.178957
+        ],
+        [
+          37.552861,
+          127.177456
+        ],
+        [
+          37.553013,
+          127.177225
+        ],
+        [
+          37.557225,
+          127.175527
+        ],
+        [
+          37.559098,
+          127.174878
+        ],
+        [
+          37.563005,
+          127.173366
+        ],
+        [
+          37.564824,
+          127.17204
+        ],
+        [
+          37.567301,
+          127.169972
+        ],
+        [
+          37.570606,
+          127.16697
+        ],
+        [
+          37.571217,
+          127.166551
+        ],
+        [
+          37.573441,
+          127.164525
+        ],
+        [
+          37.581754,
+          127.157797
+        ],
+        [
+          37.585037,
+          127.156294
+        ],
+        [
+          37.588187,
+          127.156103
+        ],
+        [
+          37.589229,
+          127.155586
+        ],
+        [
+          37.589905,
+          127.155612
+        ],
+        [
+          37.590595,
+          127.156194
+        ],
+        [
+          37.5899394,
+          127.155583
+        ],
+        [
+          37.592171,
+          127.156503
+        ],
+        [
+          37.597473,
+          127.155824
+        ],
+        [
+          37.60069,
+          127.153933
+        ],
+        [
+          37.602962,
+          127.151618
+        ],
+        [
+          37.607338,
+          127.146304
+        ],
+        [
+          37.611002,
+          127.142892
+        ],
+        [
+          37.6140365,
+          127.1417495
+        ],
+        [
+          37.6172261,
+          127.1409174
+        ],
+        [
+          37.621453,
+          127.139953
+        ],
+        [
+          37.62539,
+          127.13905
+        ],
+        [
+          37.629335,
+          127.137431
+        ],
+        [
+          37.632664,
+          127.134764
+        ],
+        [
+          37.636601,
+          127.133627
+        ],
+        [
+          37.640112,
+          127.132663
+        ],
+        [
+          37.643775,
+          127.130165
+        ]
+      ],
+      "node_count": 88,
+      "node_path": [
+        "2M",
+        "3M",
+        "4M",
+        "5M",
+        "6M",
+        "7M",
+        "8M",
+        "9M",
+        "10M",
+        "11M",
+        "12M",
+        "13M",
+        "14M",
+        "15M",
+        "16-1H",
+        "17M",
+        "18M",
+        "19-1H",
+        "20M",
+        "21M",
+        "22M",
+        "23M",
+        "24M",
+        "25M",
+        "26M",
+        "27M",
+        "28M",
+        "29M",
+        "30M",
+        "31M",
+        "32M",
+        "33M",
+        "34M",
+        "35M",
+        "36M",
+        "37M",
+        "38M",
+        "39M",
+        "39-1H",
+        "40M",
+        "41M",
+        "41M",
+        "42M",
+        "43M",
+        "44M",
+        "45M",
+        "46M",
+        "47M",
+        "48M",
+        "49M",
+        "50M",
+        "51M",
+        "52M",
+        "53M(배)",
+        "54M",
+        "55M",
+        "56M",
+        "57M",
+        "58M",
+        "59-1M",
+        "59M",
+        "60M",
+        "61M",
+        "62M",
+        "63M",
+        "64M",
+        "65M(배)",
+        "66M",
+        "66-1H",
+        "66-2H",
+        "66-3H",
+        "66-4H",
+        "67M",
+        "68M(배)",
+        "69M",
+        "70M(배)",
+        "71M(배)",
+        "72M(배)",
+        "73M(배)",
+        "74M",
+        "75M",
+        "76M",
+        "77M",
+        "78M",
+        "79M",
+        "80M",
+        "81M",
+        "82M"
+      ]
+    },
+    {
+      "no": 8,
+      "section": "토평IC-구리남양주영업소",
+      "total_cores": 50,
+      "expansion_round": "3차",
+      "length_km": 0.0,
+      "start_point": "",
+      "end_point": "2002",
+      "coordinates": [
+        [
+          37.589229,
+          127.155586
+        ],
+        [
+          37.589905,
+          127.155612
+        ],
+        [
+          37.590595,
+          127.156194
+        ],
+        [
+          37.5899394,
+          127.155583
+        ],
+        [
+          37.592171,
+          127.156503
+        ],
+        [
+          37.597473,
+          127.155824
+        ],
+        [
+          37.60069,
+          127.153933
+        ],
+        [
+          37.602962,
+          127.151618
+        ]
+      ],
+      "node_count": 8,
+      "node_path": [
+        "66-2H",
+        "66-3H",
+        "66-4H",
+        "67M",
+        "68M(배)",
+        "69M",
+        "70M(배)",
+        "71M(배)"
+      ]
+    },
+    {
+      "no": 9,
+      "section": "구리남양주영업소-남양주IC",
+      "total_cores": 54,
+      "expansion_round": "3차",
+      "length_km": 0.0,
+      "start_point": "",
+      "end_point": "2002",
+      "coordinates": [
+        [
+          37.589229,
+          127.155586
+        ],
+        [
+          37.589905,
+          127.155612
+        ],
+        [
+          37.590595,
+          127.156194
+        ],
+        [
+          37.5899394,
+          127.155583
+        ],
+        [
+          37.592171,
+          127.156503
+        ],
+        [
+          37.597473,
+          127.155824
+        ],
+        [
+          37.60069,
+          127.153933
+        ],
+        [
+          37.602962,
+          127.151618
+        ]
+      ],
+      "node_count": 8,
+      "node_path": [
+        "66-2H",
+        "66-3H",
+        "66-4H",
+        "67M",
+        "68M(배)",
+        "69M",
+        "70M(배)",
+        "71M(배)"
+      ]
+    },
+    {
+      "no": 10,
+      "section": "남양주IC-구리IC",
+      "total_cores": 54,
+      "expansion_round": "3차",
+      "length_km": 0.0,
+      "start_point": "",
+      "end_point": "2002",
+      "coordinates": [
+        [
+          37.602962,
+          127.151618
+        ],
+        [
+          37.607338,
+          127.146304
+        ],
+        [
+          37.611002,
+          127.142892
+        ],
+        [
+          37.6140365,
+          127.1417495
+        ],
+        [
+          37.6172261,
+          127.1409174
+        ]
+      ],
+      "node_count": 5,
+      "node_path": [
+        "71M(배)",
+        "72M(배)",
+        "73M(배)",
+        "74M",
+        "75M"
+      ]
+    },
+    {
+      "no": 11,
+      "section": "구리IC-퇴계원IC",
+      "total_cores": 54,
+      "expansion_round": "3차",
+      "length_km": 0.0,
+      "start_point": "",
+      "end_point": "2002",
+      "coordinates": [
+        [
+          37.6172261,
+          127.1409174
+        ],
+        [
+          37.621453,
+          127.139953
+        ],
+        [
+          37.62539,
+          127.13905
+        ],
+        [
+          37.629335,
+          127.137431
+        ],
+        [
+          37.632664,
+          127.134764
+        ],
+        [
+          37.636601,
+          127.133627
+        ],
+        [
+          37.640112,
+          127.132663
+        ]
+      ],
+      "node_count": 7,
+      "node_path": [
+        "75M",
+        "76M",
+        "77M",
+        "78M",
+        "79M",
+        "80M",
+        "81M"
+      ]
+    },
+    {
+      "no": 12,
+      "section": "퇴계원IC-종점",
+      "total_cores": 54,
+      "expansion_round": "3차",
+      "length_km": 0.0,
+      "start_point": "",
+      "end_point": "2002",
+      "coordinates": [
+        [
+          37.636601,
+          127.133627
+        ],
+        [
+          37.640112,
+          127.132663
+        ],
+        [
+          37.643775,
+          127.130165
+        ]
+      ],
+      "node_count": 3,
+      "node_path": [
+        "80M",
+        "81M",
+        "82M"
+      ]
+    },
+    {
+      "no": 13,
+      "section": "판교JCT(19-1H)-청계영업소",
+      "total_cores": 72,
+      "expansion_round": "3차",
+      "length_km": 1995.0,
+      "start_point": "",
+      "end_point": "",
+      "coordinates": [
         [
           37.406264,
           127.095579
@@ -7753,31 +12756,390 @@ window.MASTER_GIS_DATA = {
         [
           37.38165,
           126.962927
-        ],
-        [
-          37.5373193,
-          127.18510830000001
-        ],
-        [
-          37.5373193,
-          127.18510830000001
-        ],
-        [
-          37.5373193,
-          127.18510830000001
-        ],
-        [
-          37.549941399999994,
-          127.1788069
-        ],
-        [
-          37.571439399999996,
-          127.1663484
-        ],
-        [
-          37.589974,
-          127.1556702
         ]
+      ],
+      "node_count": 32,
+      "node_path": [
+        "1M",
+        "2M",
+        "3M",
+        "4M",
+        "5M",
+        "6M",
+        "7M",
+        "8M",
+        "9M",
+        "10M",
+        "11M",
+        "12M",
+        "13M",
+        "14M",
+        "15M",
+        "16M",
+        "17M",
+        "18M",
+        "19M",
+        "20M",
+        "21M",
+        "22M",
+        "23M",
+        "24M",
+        "25M",
+        "26M",
+        "27M",
+        "28M",
+        "29M",
+        "30M",
+        "31M",
+        "32M"
+      ]
+    },
+    {
+      "no": 14,
+      "section": "청계영업소-학의JCT",
+      "total_cores": 72,
+      "expansion_round": "3차",
+      "length_km": 1995.0,
+      "start_point": "",
+      "end_point": "",
+      "coordinates": [
+        [
+          37.406264,
+          127.095579
+        ],
+        [
+          37.405031,
+          127.091826
+        ],
+        [
+          37.403166,
+          127.087003
+        ],
+        [
+          37.400378,
+          127.082726
+        ],
+        [
+          37.397473,
+          127.078364
+        ],
+        [
+          37.395869,
+          127.073134
+        ],
+        [
+          37.395588,
+          127.069172
+        ],
+        [
+          37.395514,
+          127.064835
+        ],
+        [
+          37.395871,
+          127.059087
+        ],
+        [
+          37.396437,
+          127.055475
+        ],
+        [
+          37.396438,
+          127.04996
+        ],
+        [
+          37.39576,
+          127.045788
+        ],
+        [
+          37.395122,
+          127.040621
+        ],
+        [
+          37.394351,
+          127.034554
+        ],
+        [
+          37.393535,
+          127.030302
+        ],
+        [
+          37.393488,
+          127.025445
+        ],
+        [
+          37.393623,
+          127.025429
+        ],
+        [
+          37.393538,
+          127.024567
+        ],
+        [
+          37.39354,
+          127.02455
+        ],
+        [
+          37.393114,
+          127.021744
+        ],
+        [
+          37.392433,
+          127.014132
+        ],
+        [
+          37.389705,
+          127.007837
+        ],
+        [
+          37.388243,
+          127.004452
+        ],
+        [
+          37.387747,
+          127.002723
+        ],
+        [
+          37.386601,
+          126.99805
+        ],
+        [
+          37.384511,
+          126.990919
+        ],
+        [
+          37.383011,
+          126.986948
+        ],
+        [
+          37.381661,
+          126.983366
+        ],
+        [
+          37.379845,
+          126.97802
+        ],
+        [
+          37.381552,
+          126.968254
+        ],
+        [
+          37.382046,
+          126.96624
+        ],
+        [
+          37.38165,
+          126.962927
+        ]
+      ],
+      "node_count": 32,
+      "node_path": [
+        "1M",
+        "2M",
+        "3M",
+        "4M",
+        "5M",
+        "6M",
+        "7M",
+        "8M",
+        "9M",
+        "10M",
+        "11M",
+        "12M",
+        "13M",
+        "14M",
+        "15M",
+        "16M",
+        "17M",
+        "18M",
+        "19M",
+        "20M",
+        "21M",
+        "22M",
+        "23M",
+        "24M",
+        "25M",
+        "26M",
+        "27M",
+        "28M",
+        "29M",
+        "30M",
+        "31M",
+        "32M"
+      ]
+    },
+    {
+      "no": 15,
+      "section": "학의JCT-평촌IC",
+      "total_cores": 72,
+      "expansion_round": "3차",
+      "length_km": 1995.0,
+      "start_point": "",
+      "end_point": "",
+      "coordinates": [
+        [
+          37.406264,
+          127.095579
+        ],
+        [
+          37.405031,
+          127.091826
+        ],
+        [
+          37.403166,
+          127.087003
+        ],
+        [
+          37.400378,
+          127.082726
+        ],
+        [
+          37.397473,
+          127.078364
+        ],
+        [
+          37.395869,
+          127.073134
+        ],
+        [
+          37.395588,
+          127.069172
+        ],
+        [
+          37.395514,
+          127.064835
+        ],
+        [
+          37.395871,
+          127.059087
+        ],
+        [
+          37.396437,
+          127.055475
+        ],
+        [
+          37.396438,
+          127.04996
+        ],
+        [
+          37.39576,
+          127.045788
+        ],
+        [
+          37.395122,
+          127.040621
+        ],
+        [
+          37.394351,
+          127.034554
+        ],
+        [
+          37.393535,
+          127.030302
+        ],
+        [
+          37.393488,
+          127.025445
+        ],
+        [
+          37.393623,
+          127.025429
+        ],
+        [
+          37.393538,
+          127.024567
+        ],
+        [
+          37.39354,
+          127.02455
+        ],
+        [
+          37.393114,
+          127.021744
+        ],
+        [
+          37.392433,
+          127.014132
+        ],
+        [
+          37.389705,
+          127.007837
+        ],
+        [
+          37.388243,
+          127.004452
+        ],
+        [
+          37.387747,
+          127.002723
+        ],
+        [
+          37.386601,
+          126.99805
+        ],
+        [
+          37.384511,
+          126.990919
+        ],
+        [
+          37.383011,
+          126.986948
+        ],
+        [
+          37.381661,
+          126.983366
+        ],
+        [
+          37.379845,
+          126.97802
+        ],
+        [
+          37.381552,
+          126.968254
+        ],
+        [
+          37.382046,
+          126.96624
+        ],
+        [
+          37.38165,
+          126.962927
+        ]
+      ],
+      "node_count": 32,
+      "node_path": [
+        "1M",
+        "2M",
+        "3M",
+        "4M",
+        "5M",
+        "6M",
+        "7M",
+        "8M",
+        "9M",
+        "10M",
+        "11M",
+        "12M",
+        "13M",
+        "14M",
+        "15M",
+        "16M",
+        "17M",
+        "18M",
+        "19M",
+        "20M",
+        "21M",
+        "22M",
+        "23M",
+        "24M",
+        "25M",
+        "26M",
+        "27M",
+        "28M",
+        "29M",
+        "30M",
+        "31M",
+        "32M"
       ]
     }
   ],
@@ -8436,7 +13798,7 @@ window.BRANCH_DATA_PACKS = {
   "DONGSEOUL": {
     "branch_name": "동서울지사",
     "branch_code": "DONGSEOUL",
-    "subtitle": "수도권 제1순환선 통신관로 · 맨홀(67M, 62-1H) · 지사/영업소 방범망 · 광케이블",
+    "subtitle": "수도권 제1순환선 통신관로 · 맨홀(126개소) · 지사/영업소(9개소) 방범망 · 광케이블",
     "center": [
       37.545,
       127.165
@@ -8444,231 +13806,1555 @@ window.BRANCH_DATA_PACKS = {
     "zoom": 12,
     "offices": [
       {
-        "id": "OFF_DONGSEOUL_HQ",
-        "name": "동서울지사",
-        "category": "지사",
-        "section": "판교-퇴계원",
-        "lat": 37.550125,
-        "lng": 127.168542,
-        "address": "경기 하남시 서하남로 47-1",
+        "id": "OFFICE-DONGSEOUL",
+        "name": "한국도로공사 동서울지사",
+        "category": "지사 청사",
+        "org": "한국도로공사 동서울지사",
+        "address": "경기 하남시 서하남로 88",
+        "jibun_address": "경기 하남시 감일동 168-2",
+        "section": "수도권 제1순환선 서하남IC 인근",
+        "lat": 37.51413,
+        "lng": 127.15375,
+        "desc": "한국도로공사 동서울지사 본관 사옥 (관내 통신망 총괄)",
+        "devices": [
+          {
+            "seq": 12,
+            "name": "ITS시스템실",
+            "install_loc": "ITS시스템실",
+            "equip_name": "R740",
+            "dev_no": "통합관리서버",
+            "maker": "DELL",
+            "model_sn": "DELL",
+            "mac": "-",
+            "ip": "172.19.192.12",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "서버",
+            "sys_name": "통합관리서버"
+          },
+          {
+            "seq": 13,
+            "name": "ITS시스템실",
+            "install_loc": "ITS시스템실",
+            "equip_name": "R740",
+            "dev_no": "저장분배서버-01",
+            "maker": "DELL",
+            "model_sn": "DELL",
+            "mac": "-",
+            "ip": "172.19.192.11",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "서버",
+            "sys_name": "저장분배서버"
+          },
+          {
+            "seq": 14,
+            "name": "ITS시스템실",
+            "install_loc": "ITS시스템실",
+            "equip_name": "24포트 POE 스위치",
+            "dev_no": "24PoE허브-01",
+            "maker": "SOLTEC",
+            "model_sn": "SOLTEC",
+            "mac": "-",
+            "ip": "172.19.192.26",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "스위치",
+            "sys_name": "스위치"
+          },
+          {
+            "seq": 15,
+            "name": "상황실",
+            "install_loc": "상황실",
+            "equip_name": "Precision 3630",
+            "dev_no": "운용/표출PC",
+            "maker": "DELL",
+            "model_sn": "DELL",
+            "mac": "-",
+            "ip": "172.19.22.4",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.22.1",
+            "sys_type": "PC",
+            "sys_name": "운영PC"
+          },
+          {
+            "seq": 16,
+            "name": "건물외부",
+            "install_loc": "건물외부",
+            "equip_name": "RFK-5N-15",
+            "dev_no": "무선브릿지-Rx",
+            "maker": "RF KOREA",
+            "model_sn": "08241836000005D1",
+            "mac": "00:19:3B:18:4C:50",
+            "ip": "172.19.192.19",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.30",
+            "sys_type": "현장단말",
+            "sys_name": "AP"
+          },
+          {
+            "seq": 17,
+            "name": "건물외부",
+            "install_loc": "건물외부",
+            "equip_name": "RFK-5N-15",
+            "dev_no": "무선브릿지-Tx",
+            "maker": "RF KOREA",
+            "model_sn": "08241836000005D4",
+            "mac": "00:19:3B:18:4C:56",
+            "ip": "172.19.192.20",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.30",
+            "sys_type": "현장단말",
+            "sys_name": "AP"
+          },
+          {
+            "seq": 18,
+            "name": "현관",
+            "install_loc": "현관",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205395",
+            "mac": "00:50:C2:7C:AF:D6",
+            "ip": "172.19.192.1",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.30",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 19,
+            "name": "소모품창고",
+            "install_loc": "소모품창고",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-02",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205392",
+            "mac": "00:50:C2:7C:AF:B2",
+            "ip": "172.19.192.2",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.30",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 20,
+            "name": "침실",
+            "install_loc": "침실",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-03",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205444",
+            "mac": "00:50:C2:7C:B0:59",
+            "ip": "172.19.192.3",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.30",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 21,
+            "name": "부장실",
+            "install_loc": "부장실",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-04",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205393",
+            "mac": "00:50:C2:7C:B0:9C",
+            "ip": "172.19.192.4",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.30",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 22,
+            "name": "2F 복도",
+            "install_loc": "2F 복도",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-05",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205399",
+            "mac": "00:50:C2:7C:B0:1E",
+            "ip": "172.19.192.5",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.30",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 23,
+            "name": "옥상-주차장",
+            "install_loc": "옥상-주차장",
+            "equip_name": "블렛카메라",
+            "dev_no": "불렛카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205218",
+            "mac": "00:50:C2:7C:AF:3A",
+            "ip": "172.19.192.6",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.30",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 24,
+            "name": "건물뒤",
+            "install_loc": "건물뒤",
+            "equip_name": "블렛카메라",
+            "dev_no": "불렛카메라-02",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205217",
+            "mac": "00:50:C2:80:07:E7",
+            "ip": "172.19.192.7",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.30",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 25,
+            "name": "정문 방향",
+            "install_loc": "정문 방향",
+            "equip_name": "블렛카메라",
+            "dev_no": "불렛카메라-03",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205164",
+            "mac": "00:50:C2:7E:8E:25",
+            "ip": "172.19.192.8",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.30",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 26,
+            "name": "주유기",
+            "install_loc": "주유기",
+            "equip_name": "블렛카메라",
+            "dev_no": "불렛카메라-04",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20191118801",
+            "mac": "00:50:C2:80:07:C7",
+            "ip": "172.19.192.9",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.30",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 27,
+            "name": "ITS시스템실",
+            "install_loc": "ITS시스템실",
+            "equip_name": "환경감시 카메라",
+            "dev_no": "",
+            "maker": "",
+            "model_sn": "",
+            "mac": "-",
+            "ip": "172.19.4.246",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.4.1",
+            "sys_type": "보안장비",
+            "sys_name": "환경감시_카메라"
+          },
+          {
+            "seq": 28,
+            "name": "ITS시스템실",
+            "install_loc": "ITS시스템실",
+            "equip_name": "환경감시 정류기",
+            "dev_no": "",
+            "maker": "",
+            "model_sn": "",
+            "mac": "-",
+            "ip": "172.19.4.248",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.4.1",
+            "sys_type": "기타",
+            "sys_name": "환경감시 정류기"
+          },
+          {
+            "seq": 29,
+            "name": "ITS시스템실",
+            "install_loc": "ITS시스템실",
+            "equip_name": "환경감시 출입통제",
+            "dev_no": "",
+            "maker": "",
+            "model_sn": "",
+            "mac": "-",
+            "ip": "172.19.4.249",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.4.1",
+            "sys_type": "기타",
+            "sys_name": "환경감시_출입통제"
+          },
+          {
+            "seq": 30,
+            "name": "ITS시스템실",
+            "install_loc": "ITS시스템실",
+            "equip_name": "환경감시 RTU",
+            "dev_no": "",
+            "maker": "",
+            "model_sn": "",
+            "mac": "-",
+            "ip": "172.19.4.250",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.4.1",
+            "sys_type": "서버",
+            "sys_name": "환경감시_RTU"
+          }
+        ]
+      },
+      {
+        "id": "OFFICE-HQ",
+        "name": "한국도로공사 서울경기본부",
+        "category": "본부 청사",
+        "org": "한국도로공사 서울경기본부",
+        "address": "경기 하남시 서하남로 88",
+        "jibun_address": "경기 하남시 감일동 168-2",
+        "section": "수도권 제1순환선 서하남IC 인근",
+        "lat": 37.51445,
+        "lng": 127.1541,
+        "desc": "한국도로공사 서울경기본부(수도권본부) 본청 청사",
+        "devices": [
+          {
+            "seq": 3,
+            "name": "상황실",
+            "install_loc": "상황실",
+            "equip_name": "RFK-5N-15",
+            "dev_no": "무선브릿지-Rx",
+            "maker": "RF KOREA",
+            "model_sn": "0824181000001087",
+            "mac": "00:19:3B:15:F8:F0",
+            "ip": "172.19.4.112",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.4.254",
+            "sys_type": "현장단말",
+            "sys_name": "AP"
+          },
+          {
+            "seq": 4,
+            "name": "상황실",
+            "install_loc": "상황실",
+            "equip_name": "RFK-5N-15",
+            "dev_no": "무선브릿지-Tx",
+            "maker": "RF KOREA",
+            "model_sn": "0824181000001055",
+            "mac": "00:19:3B:15:F8:8C",
+            "ip": "172.19.4.113",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.4.254",
+            "sys_type": "현장단말",
+            "sys_name": "AP"
+          },
+          {
+            "seq": 5,
+            "name": "정보시스템실1",
+            "install_loc": "정보시스템실1",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20190111101",
+            "mac": "00:50:C2:80:CC:4E",
+            "ip": "172.19.4.114",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.4.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 6,
+            "name": "정보시스템실2",
+            "install_loc": "정보시스템실2",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-02",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205438",
+            "mac": "00:50:C2:7C:B0:49",
+            "ip": "172.19.4.115",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.4.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 7,
+            "name": "정보시스템실 앞",
+            "install_loc": "정보시스템실 앞",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-03",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205391",
+            "mac": "00:50:C2:7C:B0:01",
+            "ip": "172.19.4.116",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.4.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 8,
+            "name": "현관",
+            "install_loc": "현관",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-04",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205383",
+            "mac": "00:50:C2:7C:B0:03",
+            "ip": "172.19.4.117",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.4.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 9,
+            "name": "정문 방향",
+            "install_loc": "정문 방향",
+            "equip_name": "블렛카메라",
+            "dev_no": "불렛카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205214",
+            "mac": "00:50:C2:80:07:DD",
+            "ip": "172.19.4.118",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.4.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 10,
+            "name": "본부 옥상",
+            "install_loc": "본부 옥상",
+            "equip_name": "스피드돔카메라",
+            "dev_no": "",
+            "maker": "한국씨텍",
+            "model_sn": "한국씨텍",
+            "mac": "-",
+            "ip": "172.19.4.119",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.4.1",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 11,
+            "name": "현관 입구케노피",
+            "install_loc": "현관 입구케노피",
+            "equip_name": "스피드돔카메라",
+            "dev_no": "",
+            "maker": "한국씨텍",
+            "model_sn": "한국씨텍",
+            "mac": "-",
+            "ip": "172.19.4.120",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.4.1",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          }
+        ]
+      },
+      {
+        "id": "OFFICE-CONTROL-CENTER",
+        "name": "교통관제센터 (수도권 교통센터)",
+        "category": "교통 관제센터",
+        "org": "한국도로공사 수도권 교통정보센터",
+        "address": "경기 성남시 분당구 대왕판교로 246",
+        "jibun_address": "경기 성남시 분당구 궁내동 193-6",
+        "section": "경부선 서울TG 본관 사옥 옆",
+        "lat": 37.36585,
+        "lng": 127.10208,
+        "desc": "수도권 고속도로 전 구간 실시간 교통 관제 및 정보 분석 센터 (위치 전용)",
         "devices": []
       },
       {
-        "id": "OFF_SEONGNAM_TG",
-        "name": "성남영업소",
-        "category": "영업소",
-        "section": "판교-퇴계원 5.2k",
-        "lat": 37.447512,
-        "lng": 127.14251,
-        "address": "경기 성남시 중원구 희망로 115",
-        "devices": []
+        "id": "OFFICE-GWANGAM",
+        "name": "광암터널 관리동 (TTMS 방재)",
+        "category": "터널 관리동",
+        "org": "한국도로공사 동서울지사 광암터널",
+        "address": "경기 하남시 수도권제1순환고속도로 17",
+        "jibun_address": "경기 하남시 춘궁동 / 광암동 373-1",
+        "section": "수도권 제1순환선 광암터널 북단 입구",
+        "lat": 37.51936,
+        "lng": 127.18769,
+        "desc": "광암터널 방재설비, 제연팬, 변전실 및 TTMS 통합 관리동",
+        "devices": [
+          {
+            "seq": 318,
+            "name": "광암터널_변전실",
+            "install_loc": "광암터널_변전실",
+            "equip_name": "8포트 POE 스위치",
+            "dev_no": "8PoE허브-01",
+            "maker": "SOLTEC",
+            "model_sn": "SOLTEC",
+            "mac": "-",
+            "ip": "172.20.88.191",
+            "subnet": "255.255.255.0",
+            "gw": "172.20.88.1",
+            "sys_type": "스위치",
+            "sys_name": "스위치"
+          },
+          {
+            "seq": 319,
+            "name": "광암터널_사무실",
+            "install_loc": "광암터널_사무실",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205387",
+            "mac": "00:50:C2:7C:AF:CC",
+            "ip": "172.20.88.192",
+            "subnet": "255.255.254.0",
+            "gw": "172.20.88.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 320,
+            "name": "광암터널_정문 입구",
+            "install_loc": "광암터널_정문 입구",
+            "equip_name": "스피드돔카메라",
+            "dev_no": "(외)스피드돔카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "IRD20181205009",
+            "mac": "00:50:C2:79:2A:77",
+            "ip": "172.20.88.193",
+            "subnet": "255.255.254.0",
+            "gw": "172.20.88.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          }
+        ]
       },
       {
-        "id": "OFF_CHEONGGYE_TG",
-        "name": "청계영업소",
-        "category": "영업소",
-        "section": "판교-일산 126.8k",
-        "lat": 37.398512,
-        "lng": 127.02151,
-        "address": "경기 의왕시 안양판교로 366",
-        "devices": []
+        "id": "OFFICE-CHEONGGYE",
+        "name": "청계영업소 (청계TG)",
+        "category": "영업소/톨게이트",
+        "org": "한국도로공사 청계영업소",
+        "address": "경기 의왕시 안양판교로 500",
+        "jibun_address": "경기 의왕시 청계동 154",
+        "section": "수도권 제1순환선 청계TG (123.4km)",
+        "lat": 37.39358,
+        "lng": 127.02497,
+        "desc": "수도권 제1순환선 청계톨게이트 본관 영업소",
+        "devices": [
+          {
+            "seq": 115,
+            "name": "청계영_소회의실",
+            "install_loc": "청계영_소회의실",
+            "equip_name": "24포트 POE 스위치",
+            "dev_no": "24PoE허브-01",
+            "maker": "SOLTEC",
+            "model_sn": "SOLTEC",
+            "mac": "-",
+            "ip": "172.19.192.249",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "스위치",
+            "sys_name": "스위치"
+          },
+          {
+            "seq": 116,
+            "name": "청계영_지하통로",
+            "install_loc": "청계영_지하통로",
+            "equip_name": "8포트 POE 스위치",
+            "dev_no": "8PoE허브-01(확장)",
+            "maker": "SOLTEC",
+            "model_sn": "SOLTEC",
+            "mac": "-",
+            "ip": "172.19.192.248",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "스위치",
+            "sys_name": "스위치"
+          },
+          {
+            "seq": 117,
+            "name": "청계영_사무실",
+            "install_loc": "청계영_사무실",
+            "equip_name": "OptiPlex 5060",
+            "dev_no": "운용/표출PC",
+            "maker": "DELL",
+            "model_sn": "DELL",
+            "mac": "-",
+            "ip": "172.19.192.237",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "PC",
+            "sys_name": "운영PC"
+          },
+          {
+            "seq": 118,
+            "name": "청계영_현관",
+            "install_loc": "청계영_현관",
+            "equip_name": "C1004-E",
+            "dev_no": "네트워크스피커(실내)",
+            "maker": "AXIS",
+            "model_sn": "AXIS",
+            "mac": "-",
+            "ip": "172.19.192.240",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "현장단말",
+            "sys_name": "내부스피커"
+          },
+          {
+            "seq": 119,
+            "name": "청계영_현관",
+            "install_loc": "청계영_현관",
+            "equip_name": "C3003-E",
+            "dev_no": "네트워크스피커(실외)",
+            "maker": "AXIS",
+            "model_sn": "AXIS",
+            "mac": "-",
+            "ip": "172.19.192.241",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "현장단말",
+            "sys_name": "외부스피커"
+          },
+          {
+            "seq": 120,
+            "name": "청계영_금고실",
+            "install_loc": "청계영_금고실",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205433",
+            "mac": "00:50:C2:7C:B0:62",
+            "ip": "172.19.192.193",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 121,
+            "name": "청계영_사무실",
+            "install_loc": "청계영_사무실",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-02",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205431",
+            "mac": "00:50:C2:7C:B0:1C",
+            "ip": "172.19.192.194",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 122,
+            "name": "청계영_지하통로",
+            "install_loc": "청계영_지하통로",
+            "equip_name": "블렛카메라",
+            "dev_no": "(지)불렛카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205162",
+            "mac": "00:50:C2:7E:8E:81",
+            "ip": "172.19.192.196",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 123,
+            "name": "청계영_지하통로",
+            "install_loc": "청계영_지하통로",
+            "equip_name": "블렛카메라",
+            "dev_no": "(지)불렛카메라-02",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205216",
+            "mac": "00:50:C2:80:07:8B",
+            "ip": "172.19.192.197",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 124,
+            "name": "청계영_지하통로",
+            "install_loc": "청계영_지하통로",
+            "equip_name": "블렛카메라",
+            "dev_no": "(지)불렛카메라-03",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205167",
+            "mac": "00:50:C2:7E:8E:24",
+            "ip": "172.19.192.198",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 125,
+            "name": "청계영_현관",
+            "install_loc": "청계영_현관",
+            "equip_name": "스피드돔카메라",
+            "dev_no": "(외)스피드돔카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "IRD20181205028",
+            "mac": "00:50:C2:74:FA:12",
+            "ip": "172.19.192.199",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 126,
+            "name": "청계영_옥상-뒷길",
+            "install_loc": "청계영_옥상-뒷길",
+            "equip_name": "블렛카메라",
+            "dev_no": "(외)불렛카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205168",
+            "mac": "00:50:C2:7E:8E:30",
+            "ip": "172.19.192.200",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 127,
+            "name": "청계영_옥상-광장측면",
+            "install_loc": "청계영_옥상-광장측면",
+            "equip_name": "블렛카메라",
+            "dev_no": "(외)불렛카메라-02",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205178",
+            "mac": "00:50:C2:80:07:FF",
+            "ip": "172.19.192.201",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 128,
+            "name": "청계영_광장상(캐노피)",
+            "install_loc": "청계영_광장상(캐노피)",
+            "equip_name": "블렛카메라",
+            "dev_no": "(외)불렛카메라-03",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205177",
+            "mac": "00:50:C2:80:07:9A",
+            "ip": "172.19.192.202",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 129,
+            "name": "청계영_광장하(캐노피)",
+            "install_loc": "청계영_광장하(캐노피)",
+            "equip_name": "블렛카메라",
+            "dev_no": "(외)불렛카메라-04",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205161",
+            "mac": "00:50:C2:7E:8E:17",
+            "ip": "172.19.192.203",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 130,
+            "name": "청계영_하단주차장",
+            "install_loc": "청계영_하단주차장",
+            "equip_name": "블렛카메라",
+            "dev_no": "(외)불렛카메라-05",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205165",
+            "mac": "00:50:C2:80:07:CC",
+            "ip": "172.19.192.204",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.254",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          }
+        ]
       },
       {
-        "id": "OFF_GURI_TG",
-        "name": "구리영업소",
-        "category": "영업소",
-        "section": "판교-퇴계원 27.0k",
+        "id": "OFFICE-SEONGNAM",
+        "name": "성남영업소 (성남TG)",
+        "category": "영업소/톨게이트",
+        "org": "한국도로공사 성남영업소",
+        "address": "경기 성남시 수정구 수도권제1순환고속도로 4",
+        "jibun_address": "경기 성남시 수정구 수진동 4709",
+        "section": "수도권 제1순환선 성남IC (4.4km)",
+        "lat": 37.43554,
+        "lng": 127.12427,
+        "desc": "수도권 제1순환선 성남IC 및 성남영업소 사옥",
+        "devices": [
+          {
+            "seq": 75,
+            "name": "성남영_ITS시스템실",
+            "install_loc": "성남영_ITS시스템실",
+            "equip_name": "24포트 POE 스위치",
+            "dev_no": "24PoE허브-01",
+            "maker": "SOLTEC",
+            "model_sn": "SOLTEC",
+            "mac": "-",
+            "ip": "172.19.192.57",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "스위치",
+            "sys_name": "스위치"
+          },
+          {
+            "seq": 76,
+            "name": "성남영_지하통로",
+            "install_loc": "성남영_지하통로",
+            "equip_name": "8포트 POE 스위치",
+            "dev_no": "8PoE허브-01(확장)",
+            "maker": "SOLTEC",
+            "model_sn": "SOLTEC",
+            "mac": "-",
+            "ip": "172.19.192.56",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "스위치",
+            "sys_name": "스위치"
+          },
+          {
+            "seq": 77,
+            "name": "성남영_사무실",
+            "install_loc": "성남영_사무실",
+            "equip_name": "OptiPlex 5060",
+            "dev_no": "운용/표출PC",
+            "maker": "DELL",
+            "model_sn": "DELL",
+            "mac": "-",
+            "ip": "172.19.192.45",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "PC",
+            "sys_name": "운영PC"
+          },
+          {
+            "seq": 78,
+            "name": "성남영_1F 복도",
+            "install_loc": "성남영_1F 복도",
+            "equip_name": "C1004-E",
+            "dev_no": "네트워크스피커(실내)",
+            "maker": "AXIS",
+            "model_sn": "AXIS",
+            "mac": "-",
+            "ip": "172.19.192.48",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "현장단말",
+            "sys_name": "내부스피커"
+          },
+          {
+            "seq": 79,
+            "name": "성남영_현관 옥상",
+            "install_loc": "성남영_현관 옥상",
+            "equip_name": "C3003-E",
+            "dev_no": "네트워크스피커(실외)",
+            "maker": "AXIS",
+            "model_sn": "AXIS",
+            "mac": "-",
+            "ip": "172.19.192.49",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "현장단말",
+            "sys_name": "외부스피커"
+          },
+          {
+            "seq": 80,
+            "name": "성남영_금고실",
+            "install_loc": "성남영_금고실",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205378",
+            "mac": "00:50:C2:7C:AF:F3",
+            "ip": "172.19.192.33",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.62",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 81,
+            "name": "성남영_1F 사무실",
+            "install_loc": "성남영_1F 사무실",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-02",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205435",
+            "mac": "00:50:C2:7C:B0:66",
+            "ip": "172.19.192.34",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.62",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 82,
+            "name": "성남영_지하통로",
+            "install_loc": "성남영_지하통로",
+            "equip_name": "블렛카메라",
+            "dev_no": "(지)불렛카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205181",
+            "mac": "00:50:C2:7E:8E:37",
+            "ip": "172.19.192.36",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.62",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 83,
+            "name": "성남영_지하통로",
+            "install_loc": "성남영_지하통로",
+            "equip_name": "블렛카메라",
+            "dev_no": "(지)불렛카메라-02",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205183",
+            "mac": "00:50:C2:80:07:F3",
+            "ip": "172.19.192.37",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.62",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 84,
+            "name": "성남영_지하통로",
+            "install_loc": "성남영_지하통로",
+            "equip_name": "블렛카메라",
+            "dev_no": "(지)불렛카메라-03",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205182",
+            "mac": "00:50:C2:80:07:CF",
+            "ip": "172.19.192.38",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.62",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 85,
+            "name": "성남영_현관 옥상",
+            "install_loc": "성남영_현관 옥상",
+            "equip_name": "스피드돔카메라",
+            "dev_no": "(외)스피드돔카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "IRD20181205029",
+            "mac": "00:50:C2:78:8E:8B",
+            "ip": "172.19.192.39",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.62",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 86,
+            "name": "성남영_현관 옥상",
+            "install_loc": "성남영_현관 옥상",
+            "equip_name": "블렛카메라",
+            "dev_no": "(외)불렛카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205187",
+            "mac": "00:50:C2:7E:8E:58",
+            "ip": "172.19.192.40",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.62",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 87,
+            "name": "성남영_건물측면취부",
+            "install_loc": "성남영_건물측면취부",
+            "equip_name": "블렛카메라",
+            "dev_no": "(외)불렛카메라-02",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205219",
+            "mac": "00:50:C2:7E:8E:51",
+            "ip": "172.19.192.41",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.62",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 88,
+            "name": "성남영_지하통로",
+            "install_loc": "성남영_지하통로",
+            "equip_name": "블렛카메라",
+            "dev_no": "(지)불렛카메라-04",
+            "maker": "한국씨텍",
+            "model_sn": "한국씨텍",
+            "mac": "-",
+            "ip": "172.19.192.42",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          }
+        ]
+      },
+      {
+        "id": "OFFICE-GURI",
+        "name": "구리남양주영업소 (구리영)",
+        "category": "영업소/톨게이트",
+        "org": "한국도로공사 구리남양주영업소",
+        "address": "경기 구리시 수도권제1순환고속도로 27",
+        "jibun_address": "경기 구리시 토평동 86",
+        "section": "수도권 제1순환선 구리남양주TG (28km 부근)",
         "lat": 37.5896968,
         "lng": 127.1559062,
-        "address": "경기 구리시 수도권제1순환고속도로 27",
-        "devices": []
+        "desc": "수도권 제1순환선 구리남양주 본선 톨게이트 및 영업소 본관 사옥",
+        "devices": [
+          {
+            "seq": 100,
+            "name": "구리남양주영_UPS실",
+            "install_loc": "구리남양주영_UPS실",
+            "equip_name": "24포트 POE 스위치",
+            "dev_no": "24PoE허브-01",
+            "maker": "SOLTEC",
+            "model_sn": "SOLTEC",
+            "mac": "-",
+            "ip": "172.19.192.185",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "스위치",
+            "sys_name": "스위치"
+          },
+          {
+            "seq": 101,
+            "name": "구리남양주영_지하통로",
+            "install_loc": "구리남양주영_지하통로",
+            "equip_name": "8포트 POE 스위치",
+            "dev_no": "8PoE허브-01(확장)",
+            "maker": "SOLTEC",
+            "model_sn": "SOLTEC",
+            "mac": "-",
+            "ip": "172.19.192.184",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "스위치",
+            "sys_name": "스위치"
+          },
+          {
+            "seq": 102,
+            "name": "구리남양주영_사무실",
+            "install_loc": "구리남양주영_사무실",
+            "equip_name": "OptiPlex 5060",
+            "dev_no": "운용/표출PC",
+            "maker": "DELL",
+            "model_sn": "DELL",
+            "mac": "-",
+            "ip": "172.19.192.173",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "PC",
+            "sys_name": "운영PC"
+          },
+          {
+            "seq": 103,
+            "name": "구리남양주영_현관",
+            "install_loc": "구리남양주영_현관",
+            "equip_name": "C1004-E",
+            "dev_no": "네트워크스피커(실내)",
+            "maker": "AXIS",
+            "model_sn": "AXIS",
+            "mac": "-",
+            "ip": "172.19.192.176",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "현장단말",
+            "sys_name": "내부스피커"
+          },
+          {
+            "seq": 104,
+            "name": "구리남양주영_침실(여) 밖",
+            "install_loc": "구리남양주영_침실(여) 밖",
+            "equip_name": "C3003-E",
+            "dev_no": "네트워크스피커(실외)",
+            "maker": "AXIS",
+            "model_sn": "AXIS",
+            "mac": "-",
+            "ip": "172.19.192.177",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "현장단말",
+            "sys_name": "외부스피커"
+          },
+          {
+            "seq": 105,
+            "name": "구리남양주영_현관",
+            "install_loc": "구리남양주영_현관",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205390",
+            "mac": "00:50:C2:7C:B0:2D",
+            "ip": "172.19.192.129",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.190",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 106,
+            "name": "구리남양주영_통행권보관실",
+            "install_loc": "구리남양주영_통행권보관실",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-02",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205388",
+            "mac": "00:50:C2:7C:AF:CF",
+            "ip": "172.19.192.130",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.190",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 107,
+            "name": "구리남양주영_1F 사무실",
+            "install_loc": "구리남양주영_1F 사무실",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-03",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205373",
+            "mac": "00:50:C2:7C:AF:D5",
+            "ip": "172.19.192.131",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.190",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 108,
+            "name": "구리남양주영_1F 계단 앞",
+            "install_loc": "구리남양주영_1F 계단 앞",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-04",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205394",
+            "mac": "00:50:C2:7C:AF:EB",
+            "ip": "172.19.192.132",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.190",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 109,
+            "name": "구리남양주영_회의 및 휴게실",
+            "install_loc": "구리남양주영_회의 및 휴게실",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-05",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205380",
+            "mac": "00:50:C2:7C:AF:F7",
+            "ip": "172.19.192.133",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.190",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 110,
+            "name": "구리남양주영_지하통로",
+            "install_loc": "구리남양주영_지하통로",
+            "equip_name": "블렛카메라",
+            "dev_no": "(지)불렛카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205211",
+            "mac": "00:50:C2:80:07:D1",
+            "ip": "172.19.192.135",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.190",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 111,
+            "name": "구리남양주영_지하통로",
+            "install_loc": "구리남양주영_지하통로",
+            "equip_name": "블렛카메라",
+            "dev_no": "(지)불렛카메라-02",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205215",
+            "mac": "00:50:C2:80:07:EF",
+            "ip": "172.19.192.136",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.190",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 112,
+            "name": "구리남양주영_지하통로",
+            "install_loc": "구리남양주영_지하통로",
+            "equip_name": "블렛카메라",
+            "dev_no": "(지)불렛카메라-03",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205185",
+            "mac": "00:50:C2:80:08:05",
+            "ip": "172.19.192.137",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.190",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 113,
+            "name": "구리남양주영_침실(여) 밖",
+            "install_loc": "구리남양주영_침실(여) 밖",
+            "equip_name": "스피드돔카메라",
+            "dev_no": "(외)스피드돔카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "IRD20181205011",
+            "mac": "00:50:C2:79:2A:94",
+            "ip": "172.19.192.138",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.190",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 114,
+            "name": "구리남양주영_측면-주유소화단",
+            "install_loc": "구리남양주영_측면-주유소화단",
+            "equip_name": "블렛카메라",
+            "dev_no": "(외)불렛카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205188",
+            "mac": "00:50:C2:7E:8E:75",
+            "ip": "172.19.192.139",
+            "subnet": "255.255.255.192",
+            "gw": "172.19.192.190",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          }
+        ]
       },
       {
-        "id": "OFF_TOPYEONG_TG",
-        "name": "토평영업소",
-        "category": "영업소",
-        "section": "판교-퇴계원 25.5k",
+        "id": "OFFICE-TOPYEONG",
+        "name": "토평영업소 (토평TG)",
+        "category": "영업소/톨게이트",
+        "org": "한국도로공사 토평영업소",
+        "address": "경기 구리시 수도권제1순환고속도로 26",
+        "jibun_address": "경기 구리시 토평동 48-99",
+        "section": "수도권 제1순환선 토평IC (26.9km)",
         "lat": 37.5822469,
         "lng": 127.1587224,
-        "address": "경기 구리시 수도권제1순환고속도로 26",
-        "devices": []
+        "desc": "수도권 제1순환선 토평IC 진출입 톨게이트 요금소 영업소",
+        "devices": [
+          {
+            "seq": 89,
+            "name": "토평영_ITS시스템실",
+            "install_loc": "토평영_ITS시스템실",
+            "equip_name": "24포트 POE 스위치",
+            "dev_no": "24PoE허브-01",
+            "maker": "SOLTEC",
+            "model_sn": "SOLTEC",
+            "mac": "-",
+            "ip": "172.19.192.89",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "스위치",
+            "sys_name": "스위치"
+          },
+          {
+            "seq": 90,
+            "name": "토평영_사무실",
+            "install_loc": "토평영_사무실",
+            "equip_name": "OptiPlex 5060",
+            "dev_no": "운용/표출PC",
+            "maker": "DELL",
+            "model_sn": "DELL",
+            "mac": "-",
+            "ip": "172.19.192.77",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "PC",
+            "sys_name": "운영PC"
+          },
+          {
+            "seq": 91,
+            "name": "토평영_건물외부",
+            "install_loc": "토평영_건물외부",
+            "equip_name": "C1004-E",
+            "dev_no": "네트워크스피커(실내)",
+            "maker": "AXIS",
+            "model_sn": "AXIS",
+            "mac": "-",
+            "ip": "172.19.192.80",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "현장단말",
+            "sys_name": "내부스피커"
+          },
+          {
+            "seq": 92,
+            "name": "토평영_1층내부",
+            "install_loc": "토평영_1층내부",
+            "equip_name": "C3003-E",
+            "dev_no": "네트워크스피커(실외)",
+            "maker": "AXIS",
+            "model_sn": "AXIS",
+            "mac": "-",
+            "ip": "172.19.192.81",
+            "subnet": "255.255.255.0",
+            "gw": "172.19.192.1",
+            "sys_type": "현장단말",
+            "sys_name": "외부스피커"
+          },
+          {
+            "seq": 93,
+            "name": "토평영_현관",
+            "install_loc": "토평영_현관",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205350",
+            "mac": "00:50:C2:7C:AF:E3",
+            "ip": "172.19.192.65",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.94",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 94,
+            "name": "토평영_금고실",
+            "install_loc": "토평영_금고실",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-02",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205348",
+            "mac": "00:50:C2:7C:AF:E8",
+            "ip": "172.19.192.66",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.94",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 95,
+            "name": "토평영_사무실",
+            "install_loc": "토평영_사무실",
+            "equip_name": "돔카메라",
+            "dev_no": "돔카메라-03",
+            "maker": "한국씨텍",
+            "model_sn": "DOM20181205334",
+            "mac": "00:50:C2:7C:B0:6C",
+            "ip": "172.19.192.67",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.94",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 96,
+            "name": "토평영_현관",
+            "install_loc": "토평영_현관",
+            "equip_name": "스피드돔카메라",
+            "dev_no": "(외)스피드돔카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "IRD20181205026",
+            "mac": "00:50:C2:74:FA:09",
+            "ip": "172.19.192.68",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.94",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 97,
+            "name": "토평영_상행통행로1",
+            "install_loc": "토평영_상행통행로1",
+            "equip_name": "블렛카메라",
+            "dev_no": "(외)불렛카메라-01",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205135",
+            "mac": "00:50:C2:7E:8E:31",
+            "ip": "172.19.192.69",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.94",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 98,
+            "name": "토평영_상행통행로2",
+            "install_loc": "토평영_상행통행로2",
+            "equip_name": "블렛카메라",
+            "dev_no": "(외)불렛카메라-02",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205134",
+            "mac": "00:50:C2:80:07:B8",
+            "ip": "172.19.192.70",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.94",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          },
+          {
+            "seq": 99,
+            "name": "토평영_상행광장",
+            "install_loc": "토평영_상행광장",
+            "equip_name": "블렛카메라",
+            "dev_no": "(외)불렛카메라-03",
+            "maker": "한국씨텍",
+            "model_sn": "BUL20181205128",
+            "mac": "00:50:C2:7E:8E:47",
+            "ip": "172.19.192.71",
+            "subnet": "255.255.255.224",
+            "gw": "172.19.192.94",
+            "sys_type": "현장단말",
+            "sys_name": "CCTV"
+          }
+        ]
       },
       {
-        "id": "OFF_SUWON_SHINGAL",
+        "id": "OFFICE-SUWON-SINGAL",
         "name": "수원신갈영업소",
-        "category": "영업소",
-        "section": "경부선",
-        "lat": 37.265476,
-        "lng": 127.103009,
+        "category": "영업소 (위치표시)",
+        "org": "한국도로공사 수원신갈영업소",
         "address": "경기 용인시 기흥구 하갈로 240",
-        "devices": []
-      },
-      {
-        "id": "OFF_SEOUL_HQ",
-        "name": "서울경기본부",
-        "category": "본부",
-        "section": "하남",
-        "lat": 37.545102,
-        "lng": 127.195201,
-        "address": "경기 하남시 하남대로 541",
-        "devices": []
-      },
-      {
-        "id": "OFF_TRAFFIC_CENTER",
-        "name": "교통센터",
-        "category": "교통센터",
-        "section": "성남",
-        "lat": 37.408512,
-        "lng": 127.10851,
-        "address": "경기 성남시 분당구 대왕판교로",
-        "devices": []
-      },
-      {
-        "id": "OFF_BURAMSAN_TUNNEL",
-        "name": "불암산터널관리소",
-        "category": "터널",
-        "section": "퇴계원",
-        "lat": 37.645102,
-        "lng": 127.105201,
-        "address": "경기 남양주시 별내동",
+        "jibun_address": "경기 용인시 기흥구 상갈동 191-4",
+        "section": "경부고속도로 수원신갈IC/TG",
+        "lat": 37.26694,
+        "lng": 127.10244,
+        "desc": "경부고속도로 수원신갈톨게이트 본관 및 요금소 (위치 전용)",
         "devices": []
       }
     ],
     "interchanges": [
       {
-        "id": "IC_PANGYO_JCT",
         "name": "판교JCT",
         "type": "JCT",
-        "lat": 37.4025,
-        "lng": 127.1085,
         "milepost": 0.0,
-        "desc": "경부선-수도권제1순환 분기"
+        "desc": "경부고속도로 분기점",
+        "lat": 37.40682,
+        "lng": 127.09734
       },
       {
-        "id": "IC_SEONGNAM",
         "name": "성남IC",
         "type": "IC",
-        "lat": 37.4385,
-        "lng": 127.135,
-        "milepost": 4.2,
-        "desc": "성남시 중원구/분당구 진출입"
+        "milepost": 4.4,
+        "desc": "성남IC 요금소/나들목",
+        "lat": 37.43554,
+        "lng": 127.12427
       },
       {
-        "id": "IC_SONGPA",
         "name": "송파IC",
         "type": "IC",
-        "lat": 37.485,
-        "lng": 127.142,
-        "milepost": 9.8,
-        "desc": "서울 송파/위례신도시 진출입"
+        "milepost": 9.5,
+        "desc": "송파IC 나들목",
+        "lat": 37.47451,
+        "lng": 127.12788
       },
       {
-        "id": "IC_SEOHANAM_JCT",
         "name": "서하남JCT",
         "type": "JCT",
-        "lat": 37.518,
-        "lng": 127.165,
-        "milepost": 14.5,
-        "desc": "세종포천선 연계 예정 분기점"
+        "milepost": 13.4,
+        "desc": "서하남IC/JCT",
+        "lat": 37.50649,
+        "lng": 127.14535
       },
       {
-        "id": "IC_SEOHANAM",
-        "name": "서하남IC",
-        "type": "IC",
-        "lat": 37.525,
-        "lng": 127.172,
-        "milepost": 15.6,
-        "desc": "하남시 감북동/서하남 진출입"
-      },
-      {
-        "id": "IC_HANAM_JCT",
         "name": "하남JCT",
         "type": "JCT",
-        "lat": 37.5373,
-        "lng": 127.1851,
-        "milepost": 18.2,
-        "desc": "중부고속도로 분기"
+        "milepost": 17.3,
+        "desc": "중부고속도로 분기점",
+        "lat": 37.51853,
+        "lng": 127.18412
       },
       {
-        "id": "IC_SANGIL",
         "name": "상일IC",
         "type": "IC",
-        "lat": 37.552,
-        "lng": 127.178,
-        "milepost": 20.8,
-        "desc": "서울 강동구/상일동 진출입"
+        "milepost": 22.0,
+        "desc": "천호대로 연계 나들목",
+        "lat": 37.54962,
+        "lng": 127.17896
       },
       {
-        "id": "IC_GANGIL",
         "name": "강일IC",
         "type": "IC",
-        "lat": 37.568,
-        "lng": 127.172,
-        "milepost": 22.9,
-        "desc": "서울양양고속도로/올림픽대로 분기"
+        "milepost": 24.8,
+        "desc": "올림픽대로/서울양양선 분기",
+        "lat": 37.57122,
+        "lng": 127.16655
       },
       {
-        "id": "IC_TOPYEONG",
         "name": "토평IC",
         "type": "IC",
-        "lat": 37.5822,
-        "lng": 127.1587,
-        "milepost": 25.5,
-        "desc": "강변북로/구리시 토평동 진출입"
+        "milepost": 26.9,
+        "desc": "토평IC 나들목",
+        "lat": 37.58225,
+        "lng": 127.15872
       },
       {
-        "id": "IC_GURI_TG",
         "name": "구리남양주TG",
         "type": "TG",
+        "milepost": 28.0,
+        "desc": "구리남양주 본선요금소",
         "lat": 37.5897,
-        "lng": 127.1559,
-        "milepost": 26.8,
-        "desc": "수도권제1순환 본선 요금소"
+        "lng": 127.15591
       },
       {
-        "id": "IC_NAMYANGJU",
         "name": "남양주IC",
         "type": "IC",
-        "lat": 37.605,
-        "lng": 127.152,
         "milepost": 28.5,
-        "desc": "남양주시 다산동/도농동 진출입"
+        "desc": "경춘국도 46호선 연계",
+        "lat": 37.6042,
+        "lng": 127.1504
       },
       {
-        "id": "IC_GURI",
         "name": "구리IC",
         "type": "IC",
+        "milepost": 30.8,
+        "desc": "북부간선도로 연계",
         "lat": 37.618,
-        "lng": 127.142,
-        "milepost": 30.2,
-        "desc": "북부간선도로 분기"
+        "lng": 127.142
       },
       {
-        "id": "IC_TOEGYEWON",
         "name": "퇴계원IC",
         "type": "IC",
-        "lat": 37.645,
-        "lng": 127.135,
-        "milepost": 34.0,
-        "desc": "구리포천선/경춘국도 분기"
+        "milepost": 33.7,
+        "desc": "동서울지사 관내 종점",
+        "lat": 37.64377,
+        "lng": 127.13017
       },
       {
-        "id": "IC_CHEONGGYE_TG",
         "name": "청계TG",
         "type": "TG",
-        "lat": 37.3985,
-        "lng": 127.0215,
-        "milepost": 126.8,
-        "desc": "안양판교로 청계 요금소"
+        "milepost": 10.2,
+        "desc": "외곽선 본선 요금소",
+        "lat": 37.39358,
+        "lng": 127.02497
       },
       {
-        "id": "IC_HAKUI_JCT",
         "name": "학의JCT",
         "type": "JCT",
+        "milepost": 14.8,
+        "desc": "과천봉담선 분기",
         "lat": 37.388,
-        "lng": 126.995,
-        "milepost": 129.5,
-        "desc": "과천봉담간도시고속화도로 분기"
+        "lng": 126.995
+      },
+      {
+        "name": "평촌IC",
+        "type": "IC",
+        "milepost": 18.5,
+        "desc": "안양 평촌 나들목",
+        "lat": 37.38165,
+        "lng": 126.96293
       }
     ],
     "manholes": [
@@ -13558,10 +20244,13 @@ window.BRANCH_DATA_PACKS = {
     "conduits": [
       {
         "no": 1,
+        "section": "판교JCT-성남IC",
         "source_manhole_id": "2M",
         "target_manhole_id": "3M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-00021S-B-H",
+        "target_code": "M-1001-00062S-B-H",
+        "source_no": 1,
+        "target_no": 2,
         "coordinates": [
           [
             37.406823,
@@ -13571,14 +20260,33 @@ window.BRANCH_DATA_PACKS = {
             37.407726,
             127.101357
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 2,
+        "section": "판교JCT-성남IC",
         "source_manhole_id": "3M",
         "target_manhole_id": "4M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00062S-B-H",
+        "target_code": "M-1001-00125S-P-H",
+        "source_no": 2,
+        "target_no": 3,
         "coordinates": [
           [
             37.407726,
@@ -13588,14 +20296,33 @@ window.BRANCH_DATA_PACKS = {
             37.407856,
             127.10839
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 3,
+        "section": "판교JCT-성남IC",
         "source_manhole_id": "4M",
         "target_manhole_id": "5M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00125S-P-H",
+        "target_code": "M-1001-00162S-B-H",
+        "source_no": 3,
+        "target_no": 4,
         "coordinates": [
           [
             37.407856,
@@ -13605,14 +20332,33 @@ window.BRANCH_DATA_PACKS = {
             37.409206,
             127.115537
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "2018"
       },
       {
         "no": 4,
+        "section": "판교JCT-성남IC",
         "source_manhole_id": "5M",
         "target_manhole_id": "6M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-00162S-B-H",
+        "target_code": "M-1001-00208S-B-H",
+        "source_no": 4,
+        "target_no": 5,
         "coordinates": [
           [
             37.409206,
@@ -13622,14 +20368,33 @@ window.BRANCH_DATA_PACKS = {
             37.410498,
             127.117402
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "터널",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 5,
+        "section": "판교JCT-성남IC",
         "source_manhole_id": "6M",
         "target_manhole_id": "7M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00208S-B-H",
+        "target_code": "M-1001-00253S-B-H",
+        "source_no": 5,
+        "target_no": 6,
         "coordinates": [
           [
             37.410498,
@@ -13639,14 +20404,33 @@ window.BRANCH_DATA_PACKS = {
             37.413172,
             127.119508
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 6,
+        "section": "판교JCT-성남IC",
         "source_manhole_id": "7M",
         "target_manhole_id": "8M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00253S-B-H",
+        "target_code": "M-1001-00310S-B-H",
+        "source_no": 6,
+        "target_no": 7,
         "coordinates": [
           [
             37.413172,
@@ -13656,14 +20440,33 @@ window.BRANCH_DATA_PACKS = {
             37.417347,
             127.122412
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망,FTMS",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 7,
+        "section": "판교JCT-성남IC",
         "source_manhole_id": "8M",
         "target_manhole_id": "9M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-00310S-B-H",
+        "target_code": "M-1001-00359S-P-H",
+        "source_no": 7,
+        "target_no": 8,
         "coordinates": [
           [
             37.417347,
@@ -13673,14 +20476,33 @@ window.BRANCH_DATA_PACKS = {
             37.42114,
             127.123095
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망,FTMS",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 8,
+        "section": "판교JCT-성남IC",
         "source_manhole_id": "9M",
         "target_manhole_id": "10M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00359S-P-H",
+        "target_code": "M-1001-00395S-P-H",
+        "source_no": 8,
+        "target_no": 9,
         "coordinates": [
           [
             37.42114,
@@ -13690,14 +20512,33 @@ window.BRANCH_DATA_PACKS = {
             37.424991,
             127.123087
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망,FTMS",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 9,
+        "section": "판교JCT-성남IC",
         "source_manhole_id": "10M",
         "target_manhole_id": "11M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00395S-P-H",
+        "target_code": "M-1001-00442S-B-H",
+        "source_no": 9,
+        "target_no": 10,
         "coordinates": [
           [
             37.424991,
@@ -13707,14 +20548,33 @@ window.BRANCH_DATA_PACKS = {
             37.428721,
             127.123225
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망,FTMS",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 10,
+        "section": "판교JCT-성남IC",
         "source_manhole_id": "11M",
         "target_manhole_id": "12M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-00442S-B-H",
+        "target_code": "M-1001-00443S-P-H",
+        "source_no": 10,
+        "target_no": 11,
         "coordinates": [
           [
             37.428721,
@@ -13724,14 +20584,33 @@ window.BRANCH_DATA_PACKS = {
             37.4294,
             127.123034
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 11,
+        "section": "판교JCT-성남IC",
         "source_manhole_id": "12M",
         "target_manhole_id": "13M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00443S-P-H",
+        "target_code": "M-1001-00501S-P-H",
+        "source_no": 11,
+        "target_no": 12,
         "coordinates": [
           [
             37.4294,
@@ -13741,14 +20620,33 @@ window.BRANCH_DATA_PACKS = {
             37.433212,
             127.123177
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 12,
+        "section": "판교JCT-성남IC",
         "source_manhole_id": "13M",
         "target_manhole_id": "14M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00501S-P-H",
+        "target_code": "M-1001-00508E-B-H",
+        "source_no": 12,
+        "target_no": 13,
         "coordinates": [
           [
             37.433212,
@@ -13758,14 +20656,33 @@ window.BRANCH_DATA_PACKS = {
             37.435587,
             127.123847
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 13,
+        "section": "성남IC-서하남JCT",
         "source_manhole_id": "14M",
         "target_manhole_id": "15M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-00508E-B-H",
+        "target_code": "M-1001-00540E-B-H",
+        "source_no": 13,
+        "target_no": 14,
         "coordinates": [
           [
             37.435587,
@@ -13775,14 +20692,33 @@ window.BRANCH_DATA_PACKS = {
             37.437811,
             127.122972
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "영업소",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망,FTMS",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 14,
+        "section": "성남IC-송파IC",
         "source_manhole_id": "15M",
         "target_manhole_id": "16-1H",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00540E-B-H",
+        "target_code": "H-1001-00565E-P-H",
+        "source_no": 14,
+        "target_no": 15,
         "coordinates": [
           [
             37.437811,
@@ -13792,14 +20728,33 @@ window.BRANCH_DATA_PACKS = {
             37.44082,
             127.123088
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 15,
+        "section": "성남IC-송파IC",
         "source_manhole_id": "16-1H",
         "target_manhole_id": "17M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "H-1001-00565E-P-H",
+        "target_code": "M-1001-00618E-P-H",
+        "source_no": 15,
+        "target_no": 16,
         "coordinates": [
           [
             37.44082,
@@ -13809,14 +20764,33 @@ window.BRANCH_DATA_PACKS = {
             37.443839,
             127.124351
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 16,
+        "section": "성남IC-송파IC",
         "source_manhole_id": "17M",
         "target_manhole_id": "18M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-00618E-P-H",
+        "target_code": "M-1001-00657E-B-H",
+        "source_no": 16,
+        "target_no": 17,
         "coordinates": [
           [
             37.443839,
@@ -13826,14 +20800,33 @@ window.BRANCH_DATA_PACKS = {
             37.446892,
             127.125621
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 17,
+        "section": "성남IC-송파IC",
         "source_manhole_id": "18M",
         "target_manhole_id": "19-1H",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00657E-B-H",
+        "target_code": "M-1001-00695E-P-H",
+        "source_no": 17,
+        "target_no": 18,
         "coordinates": [
           [
             37.446892,
@@ -13843,14 +20836,33 @@ window.BRANCH_DATA_PACKS = {
             37.450525,
             127.126259
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 18,
+        "section": "성남IC-송파IC",
         "source_manhole_id": "19-1H",
         "target_manhole_id": "20M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00695E-P-H",
+        "target_code": "M-1001-00696S-P-H",
+        "source_no": 18,
+        "target_no": 19,
         "coordinates": [
           [
             37.450525,
@@ -13860,14 +20872,33 @@ window.BRANCH_DATA_PACKS = {
             37.450529,
             127.125678
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 19,
+        "section": "성남IC-송파IC",
         "source_manhole_id": "20M",
         "target_manhole_id": "21M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-00696S-P-H",
+        "target_code": "M-1001-00727S-B-H",
+        "source_no": 19,
+        "target_no": 20,
         "coordinates": [
           [
             37.450529,
@@ -13877,14 +20908,33 @@ window.BRANCH_DATA_PACKS = {
             37.453784,
             127.125639
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 20,
+        "section": "성남IC-송파IC",
         "source_manhole_id": "21M",
         "target_manhole_id": "22M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00727S-B-H",
+        "target_code": "M-1001-00781S-P-H",
+        "source_no": 20,
+        "target_no": 21,
         "coordinates": [
           [
             37.453784,
@@ -13894,14 +20944,33 @@ window.BRANCH_DATA_PACKS = {
             37.457222,
             127.125195
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 21,
+        "section": "성남IC-송파IC",
         "source_manhole_id": "22M",
         "target_manhole_id": "23M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00781S-P-H",
+        "target_code": "M-1001-00801S-B-H",
+        "source_no": 21,
+        "target_no": 22,
         "coordinates": [
           [
             37.457222,
@@ -13911,14 +20980,33 @@ window.BRANCH_DATA_PACKS = {
             37.459745,
             127.125099
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 22,
+        "section": "성남IC-송파IC",
         "source_manhole_id": "23M",
         "target_manhole_id": "24M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-00801S-B-H",
+        "target_code": "M-1001-00870S-P-H",
+        "source_no": 22,
+        "target_no": 23,
         "coordinates": [
           [
             37.459745,
@@ -13928,14 +21016,33 @@ window.BRANCH_DATA_PACKS = {
             37.465845,
             127.125407
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망,FTMS",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 23,
+        "section": "성남IC-송파IC",
         "source_manhole_id": "24M",
         "target_manhole_id": "25M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00870S-P-H",
+        "target_code": "M-1001-00896S-B-H",
+        "source_no": 23,
+        "target_no": 24,
         "coordinates": [
           [
             37.465845,
@@ -13945,14 +21052,33 @@ window.BRANCH_DATA_PACKS = {
             37.469056,
             127.124826
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망,FTMS",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 24,
+        "section": "성남IC-송파IC",
         "source_manhole_id": "25M",
         "target_manhole_id": "26M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00896S-B-H",
+        "target_code": "M-1001-00925S-P-H",
+        "source_no": 24,
+        "target_no": 25,
         "coordinates": [
           [
             37.469056,
@@ -13962,14 +21088,33 @@ window.BRANCH_DATA_PACKS = {
             37.472551,
             127.125835
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "직매",
+        "outer_spec1": 28,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 1,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망,FTMS",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 25,
+        "section": "성남IC-송파IC",
         "source_manhole_id": "26M",
         "target_manhole_id": "27M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-00925S-P-H",
+        "target_code": "M-1001-00950S-B-H",
+        "source_no": 25,
+        "target_no": 26,
         "coordinates": [
           [
             37.472551,
@@ -13979,14 +21124,33 @@ window.BRANCH_DATA_PACKS = {
             37.474509,
             127.127877
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "직매",
+        "outer_spec1": 28,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 1,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망,FTMS",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 26,
+        "section": "성남IC-송파IC",
         "source_manhole_id": "27M",
         "target_manhole_id": "28M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-00950S-B-H",
+        "target_code": "M-1001-01002S-P-H",
+        "source_no": 26,
+        "target_no": 27,
         "coordinates": [
           [
             37.474509,
@@ -13996,14 +21160,33 @@ window.BRANCH_DATA_PACKS = {
             37.477532,
             127.132344
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "스틸배관",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 1,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 27,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "28M",
         "target_manhole_id": "29M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-01002S-P-H",
+        "target_code": "M-1001-01050S-B-H",
+        "source_no": 27,
+        "target_no": 28,
         "coordinates": [
           [
             37.477532,
@@ -14013,14 +21196,33 @@ window.BRANCH_DATA_PACKS = {
             37.481026,
             127.134972
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 28,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "29M",
         "target_manhole_id": "30M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-01050S-B-H",
+        "target_code": "M-1001-01093S-B-H",
+        "source_no": 28,
+        "target_no": 29,
         "coordinates": [
           [
             37.481026,
@@ -14030,14 +21232,33 @@ window.BRANCH_DATA_PACKS = {
             37.483153,
             127.135391
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 29,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "30M",
         "target_manhole_id": "31M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-01093S-B-H",
+        "target_code": "M-1001-01131S-B-H",
+        "source_no": 29,
+        "target_no": 30,
         "coordinates": [
           [
             37.483153,
@@ -14047,14 +21268,33 @@ window.BRANCH_DATA_PACKS = {
             37.487652,
             127.136187
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 30,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "31M",
         "target_manhole_id": "32M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-01131S-B-H",
+        "target_code": "M-1001-01165S-P-H",
+        "source_no": 30,
+        "target_no": 31,
         "coordinates": [
           [
             37.487652,
@@ -14064,14 +21304,33 @@ window.BRANCH_DATA_PACKS = {
             37.489901,
             127.136881
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 31,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "32M",
         "target_manhole_id": "33M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-01165S-P-H",
+        "target_code": "M-1001-01202S-B-H",
+        "source_no": 31,
+        "target_no": 32,
         "coordinates": [
           [
             37.489901,
@@ -14081,14 +21340,33 @@ window.BRANCH_DATA_PACKS = {
             37.494765,
             127.139192
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 32,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "33M",
         "target_manhole_id": "34M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-01202S-B-H",
+        "target_code": "M-1001-01308S-B-H",
+        "source_no": 32,
+        "target_no": 33,
         "coordinates": [
           [
             37.494765,
@@ -14098,14 +21376,33 @@ window.BRANCH_DATA_PACKS = {
             37.503279,
             127.143384
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 33,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "34M",
         "target_manhole_id": "35M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-01308S-B-H",
+        "target_code": "M-1001-01337S-B-H",
+        "source_no": 33,
+        "target_no": 34,
         "coordinates": [
           [
             37.503279,
@@ -14115,14 +21412,33 @@ window.BRANCH_DATA_PACKS = {
             37.506489,
             127.145351
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 34,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "35M",
         "target_manhole_id": "36M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-01337S-B-H",
+        "target_code": "M-1001-01379S-P-H",
+        "source_no": 34,
+        "target_no": 35,
         "coordinates": [
           [
             37.506489,
@@ -14132,14 +21448,33 @@ window.BRANCH_DATA_PACKS = {
             37.509158,
             127.147083
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 35,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "36M",
         "target_manhole_id": "37M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-01379S-P-H",
+        "target_code": "M-1001-01412S-P-H",
+        "source_no": 35,
+        "target_no": 36,
         "coordinates": [
           [
             37.509158,
@@ -14149,14 +21484,33 @@ window.BRANCH_DATA_PACKS = {
             37.511496,
             127.149364
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 36,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "37M",
         "target_manhole_id": "38M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-01412S-P-H",
+        "target_code": "M-1001-01454S-B-H",
+        "source_no": 36,
+        "target_no": 37,
         "coordinates": [
           [
             37.511496,
@@ -14166,14 +21520,33 @@ window.BRANCH_DATA_PACKS = {
             37.513205762230214,
             127.15388348606811
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 37,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "38M",
         "target_manhole_id": "39M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-01454S-B-H",
+        "target_code": "M-1001-01455S-P-H",
+        "source_no": 37,
+        "target_no": 38,
         "coordinates": [
           [
             37.513205762230214,
@@ -14183,14 +21556,33 @@ window.BRANCH_DATA_PACKS = {
             37.51324536888914,
             127.15399109287927
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 38,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "39M",
         "target_manhole_id": "39-1H",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-01455S-P-H",
+        "target_code": "H-1001-01456S-P-R",
+        "source_no": 38,
+        "target_no": 39,
         "coordinates": [
           [
             37.51324536888914,
@@ -14200,14 +21592,33 @@ window.BRANCH_DATA_PACKS = {
             37.51328489870555,
             127.15409869969041
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "스틸배관",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 39,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "39-1H",
         "target_manhole_id": "40M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "H-1001-01456S-P-R",
+        "target_code": "M-1001-01495S-B-H",
+        "source_no": 39,
+        "target_no": 40,
         "coordinates": [
           [
             37.51328489870555,
@@ -14217,14 +21628,33 @@ window.BRANCH_DATA_PACKS = {
             37.51474960461726,
             127.15829536532509
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 40,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "40M",
         "target_manhole_id": "41M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-01495S-B-H",
+        "target_code": "M-1001-01602S-B-H",
+        "source_no": 40,
+        "target_no": 41,
         "coordinates": [
           [
             37.51474960461726,
@@ -14234,14 +21664,33 @@ window.BRANCH_DATA_PACKS = {
             37.51756023952164,
             127.16980929411766
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "2025"
       },
       {
         "no": 41,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "41M",
         "target_manhole_id": "41M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-01602S-B-H",
+        "target_code": "M-1001-01603S-B-H",
+        "source_no": 41,
+        "target_no": 42,
         "coordinates": [
           [
             37.51756023952164,
@@ -14251,14 +21700,33 @@ window.BRANCH_DATA_PACKS = {
             37.517576617733624,
             127.1699169009288
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 5,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "2025"
       },
       {
         "no": 42,
+        "section": "송파IC-서하남JCT",
         "source_manhole_id": "41M",
         "target_manhole_id": "42M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-01603S-B-H",
+        "target_code": "M-1001-01648S-B-H",
+        "source_no": 42,
+        "target_no": 43,
         "coordinates": [
           [
             37.517576617733624,
@@ -14268,14 +21736,33 @@ window.BRANCH_DATA_PACKS = {
             37.51813656396393,
             127.17475920743034
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "스틸배관",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "2025"
       },
       {
         "no": 43,
+        "section": "서하남JCT-하남JCT",
         "source_manhole_id": "42M",
         "target_manhole_id": "43M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-01648S-B-H",
+        "target_code": "M-1001-01735S-B-H",
+        "source_no": 43,
+        "target_no": 44,
         "coordinates": [
           [
             37.51813656396393,
@@ -14285,14 +21772,33 @@ window.BRANCH_DATA_PACKS = {
             37.518535,
             127.184121
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "직매",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 1,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "2025"
       },
       {
         "no": 44,
+        "section": "서하남JCT-하남JCT",
         "source_manhole_id": "43M",
         "target_manhole_id": "44M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-01735S-B-H",
+        "target_code": "M-1001-01771S-B-H",
+        "source_no": 44,
+        "target_no": 45,
         "coordinates": [
           [
             37.518535,
@@ -14302,14 +21808,33 @@ window.BRANCH_DATA_PACKS = {
             37.519871,
             127.188155
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망,FTMS",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 45,
+        "section": "서하남JCT-하남JCT",
         "source_manhole_id": "44M",
         "target_manhole_id": "45M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-01771S-B-H",
+        "target_code": "M-1001-01807S-B-H",
+        "source_no": 45,
+        "target_no": 46,
         "coordinates": [
           [
             37.519871,
@@ -14319,14 +21844,33 @@ window.BRANCH_DATA_PACKS = {
             37.522219,
             127.191133
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망,FTMS",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 46,
+        "section": "서하남JCT-하남JCT",
         "source_manhole_id": "45M",
         "target_manhole_id": "46M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-01807S-B-H",
+        "target_code": "M-1001-01851S-P-H",
+        "source_no": 46,
+        "target_no": 47,
         "coordinates": [
           [
             37.522219,
@@ -14336,14 +21880,33 @@ window.BRANCH_DATA_PACKS = {
             37.52485,
             127.192828
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망,FTMS",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 47,
+        "section": "서하남JCT-하남JCT",
         "source_manhole_id": "46M",
         "target_manhole_id": "47M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-01851S-P-H",
+        "target_code": "M-1001-01882S-B-H",
+        "source_no": 47,
+        "target_no": 48,
         "coordinates": [
           [
             37.52485,
@@ -14353,14 +21916,33 @@ window.BRANCH_DATA_PACKS = {
             37.528048,
             127.194698
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 48,
+        "section": "서하남JCT-하남JCT",
         "source_manhole_id": "47M",
         "target_manhole_id": "48M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-01882S-B-H",
+        "target_code": "M-1001-01913S-B-H",
+        "source_no": 48,
+        "target_no": 49,
         "coordinates": [
           [
             37.528048,
@@ -14370,14 +21952,33 @@ window.BRANCH_DATA_PACKS = {
             37.530501,
             127.195296
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 49,
+        "section": "서하남JCT-하남JCT",
         "source_manhole_id": "48M",
         "target_manhole_id": "49M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-01913S-B-H",
+        "target_code": "M-1001-01962S-B-H",
+        "source_no": 49,
+        "target_no": 50,
         "coordinates": [
           [
             37.530501,
@@ -14387,14 +21988,33 @@ window.BRANCH_DATA_PACKS = {
             37.531984,
             127.193722
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망,FTMS",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 50,
+        "section": "서하남JCT-하남JCT",
         "source_manhole_id": "49M",
         "target_manhole_id": "50M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-01962S-B-H",
+        "target_code": "M-1001-02021S-B-H",
+        "source_no": 50,
+        "target_no": 51,
         "coordinates": [
           [
             37.531984,
@@ -14404,14 +22024,33 @@ window.BRANCH_DATA_PACKS = {
             37.534426,
             127.188173
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 51,
+        "section": "하남JCT-상일IC",
         "source_manhole_id": "50M",
         "target_manhole_id": "51M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02021S-B-H",
+        "target_code": "M-1001-02060S-P-H",
+        "source_no": 51,
+        "target_no": 52,
         "coordinates": [
           [
             37.534426,
@@ -14421,14 +22060,33 @@ window.BRANCH_DATA_PACKS = {
             37.536868,
             127.185376
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 52,
+        "section": "하남JCT-상일IC",
         "source_manhole_id": "51M",
         "target_manhole_id": "52M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-02060S-P-H",
+        "target_code": "M-1001-02105S-B-H",
+        "source_no": 52,
+        "target_no": 53,
         "coordinates": [
           [
             37.536868,
@@ -14438,14 +22096,33 @@ window.BRANCH_DATA_PACKS = {
             37.541381,
             127.182699
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 53,
+        "section": "하남JCT-상일IC",
         "source_manhole_id": "52M",
         "target_manhole_id": "53M(배)",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02105S-B-H",
+        "target_code": "M-1001-02161S-B-H",
+        "source_no": 53,
+        "target_no": 54,
         "coordinates": [
           [
             37.541381,
@@ -14455,14 +22132,33 @@ window.BRANCH_DATA_PACKS = {
             37.545485,
             127.180598
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 54,
+        "section": "하남JCT-상일IC",
         "source_manhole_id": "53M(배)",
         "target_manhole_id": "54M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02161S-B-H",
+        "target_code": "M-1001-02162S-P-H",
+        "source_no": 54,
+        "target_no": 55,
         "coordinates": [
           [
             37.545485,
@@ -14472,14 +22168,33 @@ window.BRANCH_DATA_PACKS = {
             37.545513,
             127.180754
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 55,
+        "section": "하남JCT-상일IC",
         "source_manhole_id": "54M",
         "target_manhole_id": "55M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-02162S-P-H",
+        "target_code": "M-1001-02202S-P-H",
+        "source_no": 55,
+        "target_no": 56,
         "coordinates": [
           [
             37.545513,
@@ -14489,14 +22204,33 @@ window.BRANCH_DATA_PACKS = {
             37.549617,
             127.178957
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "스틸배관",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 1,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 56,
+        "section": "하남JCT-상일IC",
         "source_manhole_id": "55M",
         "target_manhole_id": "56M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02202S-P-H",
+        "target_code": "M-1001-02242S-B-H",
+        "source_no": 56,
+        "target_no": 57,
         "coordinates": [
           [
             37.549617,
@@ -14506,14 +22240,33 @@ window.BRANCH_DATA_PACKS = {
             37.552861,
             127.177456
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "스틸배관",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 1,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 57,
+        "section": "하남JCT-상일IC",
         "source_manhole_id": "56M",
         "target_manhole_id": "57M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02242S-B-H",
+        "target_code": "M-1001-02243S-P-H",
+        "source_no": 57,
+        "target_no": 58,
         "coordinates": [
           [
             37.552861,
@@ -14523,14 +22276,33 @@ window.BRANCH_DATA_PACKS = {
             37.553013,
             127.177225
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "스틸배관",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 1,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 58,
+        "section": "하남JCT-상일IC",
         "source_manhole_id": "57M",
         "target_manhole_id": "58M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-02243S-P-H",
+        "target_code": "M-1001-02285S-B-H",
+        "source_no": 58,
+        "target_no": 59,
         "coordinates": [
           [
             37.553013,
@@ -14540,14 +22312,33 @@ window.BRANCH_DATA_PACKS = {
             37.557225,
             127.175527
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "스틸배관",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 1,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 59,
+        "section": "상일IC-강일IC",
         "source_manhole_id": "58M",
         "target_manhole_id": "59-1M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02285S-B-H",
+        "target_code": "M-1001-02321S-B-H",
+        "source_no": 59,
+        "target_no": 60,
         "coordinates": [
           [
             37.557225,
@@ -14557,14 +22348,33 @@ window.BRANCH_DATA_PACKS = {
             37.559098,
             127.174878
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "스틸배관",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 1,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 60,
+        "section": "상일IC-강일IC",
         "source_manhole_id": "59-1M",
         "target_manhole_id": "59M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02321S-B-H",
+        "target_code": "M-1001-02340S-P-H",
+        "source_no": 60,
+        "target_no": 61,
         "coordinates": [
           [
             37.559098,
@@ -14574,14 +22384,33 @@ window.BRANCH_DATA_PACKS = {
             37.563005,
             127.173366
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "스틸배관",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 1,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 61,
+        "section": "상일IC-강일IC",
         "source_manhole_id": "59M",
         "target_manhole_id": "60M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-02340S-P-H",
+        "target_code": "M-1001-02386S-B-H",
+        "source_no": 61,
+        "target_no": 62,
         "coordinates": [
           [
             37.563005,
@@ -14591,14 +22420,33 @@ window.BRANCH_DATA_PACKS = {
             37.564824,
             127.17204
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "스틸배관",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 1,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 62,
+        "section": "상일IC-강일IC",
         "source_manhole_id": "60M",
         "target_manhole_id": "61M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02386S-B-H",
+        "target_code": "M-1001-02422S-P-H",
+        "source_no": 62,
+        "target_no": 63,
         "coordinates": [
           [
             37.564824,
@@ -14608,14 +22456,33 @@ window.BRANCH_DATA_PACKS = {
             37.567301,
             127.169972
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "스틸배관",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 1,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 63,
+        "section": "상일IC-강일IC",
         "source_manhole_id": "61M",
         "target_manhole_id": "62M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02422S-P-H",
+        "target_code": "M-1001-02465S-P-H",
+        "source_no": 63,
+        "target_no": 64,
         "coordinates": [
           [
             37.567301,
@@ -14625,14 +22492,33 @@ window.BRANCH_DATA_PACKS = {
             37.570606,
             127.16697
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "스틸배관",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 1,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 64,
+        "section": "상일IC-강일IC",
         "source_manhole_id": "62M",
         "target_manhole_id": "63M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-02465S-P-H",
+        "target_code": "M-1001-02481S-P-H",
+        "source_no": 64,
+        "target_no": 65,
         "coordinates": [
           [
             37.570606,
@@ -14642,14 +22528,33 @@ window.BRANCH_DATA_PACKS = {
             37.571217,
             127.166551
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 65,
+        "section": "상일IC-강일IC",
         "source_manhole_id": "63M",
         "target_manhole_id": "64M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02481S-P-H",
+        "target_code": "M-1001-02487S-B-H",
+        "source_no": 65,
+        "target_no": 66,
         "coordinates": [
           [
             37.571217,
@@ -14659,14 +22564,33 @@ window.BRANCH_DATA_PACKS = {
             37.573441,
             127.164525
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 66,
+        "section": "상일IC-강일IC",
         "source_manhole_id": "64M",
         "target_manhole_id": "65M(배)",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02487S-B-H",
+        "target_code": "M-1001-02598S-B-H",
+        "source_no": 66,
+        "target_no": 67,
         "coordinates": [
           [
             37.573441,
@@ -14676,14 +22600,33 @@ window.BRANCH_DATA_PACKS = {
             37.581754,
             127.157797
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 67,
+        "section": "강일IC-남양주IC",
         "source_manhole_id": "65M(배)",
         "target_manhole_id": "66M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-02598S-B-H",
+        "target_code": "M-1001-02637S-P-H",
+        "source_no": 67,
+        "target_no": 68,
         "coordinates": [
           [
             37.581754,
@@ -14693,14 +22636,33 @@ window.BRANCH_DATA_PACKS = {
             37.585037,
             127.156294
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 68,
+        "section": "강일IC-남양주IC",
         "source_manhole_id": "66M",
         "target_manhole_id": "66-1H",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02637S-P-H",
+        "target_code": "H-1001-02647S-P-H",
+        "source_no": 68,
+        "target_no": 69,
         "coordinates": [
           [
             37.585037,
@@ -14710,14 +22672,33 @@ window.BRANCH_DATA_PACKS = {
             37.588187,
             127.156103
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 69,
+        "section": "강일IC-남양주IC",
         "source_manhole_id": "66-1H",
         "target_manhole_id": "66-2H",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "H-1001-02647S-P-H",
+        "target_code": "H-1001-02652S-P-H",
+        "source_no": 69,
+        "target_no": 70,
         "coordinates": [
           [
             37.588187,
@@ -14727,14 +22708,33 @@ window.BRANCH_DATA_PACKS = {
             37.589229,
             127.155586
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 70,
+        "section": "강일IC-남양주IC",
         "source_manhole_id": "66-2H",
         "target_manhole_id": "66-3H",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "H-1001-02652S-P-H",
+        "target_code": "H-1001-02689S-P-H",
+        "source_no": 70,
+        "target_no": 71,
         "coordinates": [
           [
             37.589229,
@@ -14744,14 +22744,33 @@ window.BRANCH_DATA_PACKS = {
             37.589905,
             127.155612
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 71,
+        "section": "강일IC-남양주IC",
         "source_manhole_id": "66-3H",
         "target_manhole_id": "66-4H",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "H-1001-02689S-P-H",
+        "target_code": "H-1001-02696S-P-H",
+        "source_no": 71,
+        "target_no": 72,
         "coordinates": [
           [
             37.589905,
@@ -14761,14 +22780,33 @@ window.BRANCH_DATA_PACKS = {
             37.590595,
             127.156194
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 72,
+        "section": "강일IC-남양주IC",
         "source_manhole_id": "66-4H",
         "target_manhole_id": "67M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "H-1001-02696S-P-H",
+        "target_code": "M-1001-02690S-P-H",
+        "source_no": 72,
+        "target_no": 73,
         "coordinates": [
           [
             37.590595,
@@ -14778,14 +22816,33 @@ window.BRANCH_DATA_PACKS = {
             37.5899394,
             127.155583
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 73,
+        "section": "강일IC-남양주IC",
         "source_manhole_id": "67M",
         "target_manhole_id": "68M(배)",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-02690S-P-H",
+        "target_code": "M-1001-02721S-B-H",
+        "source_no": 73,
+        "target_no": 74,
         "coordinates": [
           [
             37.5899394,
@@ -14795,14 +22852,33 @@ window.BRANCH_DATA_PACKS = {
             37.592171,
             127.156503
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 74,
+        "section": "강일IC-남양주IC",
         "source_manhole_id": "68M(배)",
         "target_manhole_id": "69M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02721S-B-H",
+        "target_code": "M-1001-02784S-B-H",
+        "source_no": 74,
+        "target_no": 75,
         "coordinates": [
           [
             37.592171,
@@ -14812,14 +22888,33 @@ window.BRANCH_DATA_PACKS = {
             37.597473,
             127.155824
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 75,
+        "section": "강일IC-남양주IC",
         "source_manhole_id": "69M",
         "target_manhole_id": "70M(배)",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02784S-B-H",
+        "target_code": "M-1001-02822S-B-H",
+        "source_no": 75,
+        "target_no": 76,
         "coordinates": [
           [
             37.597473,
@@ -14829,14 +22924,33 @@ window.BRANCH_DATA_PACKS = {
             37.60069,
             127.153933
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 76,
+        "section": "강일IC-남양주IC",
         "source_manhole_id": "70M(배)",
         "target_manhole_id": "71M(배)",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-02822S-B-H",
+        "target_code": "M-1001-02855S-P-H",
+        "source_no": 76,
+        "target_no": 77,
         "coordinates": [
           [
             37.60069,
@@ -14846,14 +22960,33 @@ window.BRANCH_DATA_PACKS = {
             37.602962,
             127.151618
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 77,
+        "section": "강일IC-남양주IC",
         "source_manhole_id": "71M(배)",
         "target_manhole_id": "72M(배)",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02855S-P-H",
+        "target_code": "M-1001-02920S-B-H",
+        "source_no": 77,
+        "target_no": 78,
         "coordinates": [
           [
             37.602962,
@@ -14863,14 +22996,33 @@ window.BRANCH_DATA_PACKS = {
             37.607338,
             127.146304
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망,임대",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 78,
+        "section": "남양주IC-구리IC",
         "source_manhole_id": "72M(배)",
         "target_manhole_id": "73M(배)",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-02920S-B-H",
+        "target_code": "M-1001-02974S-P-H",
+        "source_no": 78,
+        "target_no": 79,
         "coordinates": [
           [
             37.607338,
@@ -14880,14 +23032,33 @@ window.BRANCH_DATA_PACKS = {
             37.611002,
             127.142892
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 79,
+        "section": "남양주IC-구리IC",
         "source_manhole_id": "73M(배)",
         "target_manhole_id": "74M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-02974S-P-H",
+        "target_code": "M-1001-03005S-B-H",
+        "source_no": 79,
+        "target_no": 80,
         "coordinates": [
           [
             37.611002,
@@ -14897,14 +23068,33 @@ window.BRANCH_DATA_PACKS = {
             37.6140365,
             127.1417495
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 80,
+        "section": "남양주IC-구리IC",
         "source_manhole_id": "74M",
         "target_manhole_id": "75M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-03005S-B-H",
+        "target_code": "M-1001-03042S-B-H",
+        "source_no": 80,
+        "target_no": 81,
         "coordinates": [
           [
             37.6140365,
@@ -14914,14 +23104,33 @@ window.BRANCH_DATA_PACKS = {
             37.6172261,
             127.1409174
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 81,
+        "section": "남양주IC구리IC",
         "source_manhole_id": "75M",
         "target_manhole_id": "76M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-03042S-B-H",
+        "target_code": "M-1001-03088S-B-H",
+        "source_no": 81,
+        "target_no": 82,
         "coordinates": [
           [
             37.6172261,
@@ -14931,14 +23140,33 @@ window.BRANCH_DATA_PACKS = {
             37.621453,
             127.139953
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 82,
+        "section": "구리IC-퇴계원IC",
         "source_manhole_id": "76M",
         "target_manhole_id": "77M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-03088S-B-H",
+        "target_code": "M-1001-03121S-P-H",
+        "source_no": 82,
+        "target_no": 83,
         "coordinates": [
           [
             37.621453,
@@ -14948,14 +23176,33 @@ window.BRANCH_DATA_PACKS = {
             37.62539,
             127.13905
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 83,
+        "section": "구리IC-퇴계원IC",
         "source_manhole_id": "77M",
         "target_manhole_id": "78M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-03121S-P-H",
+        "target_code": "M-1001-03179S-B-H",
+        "source_no": 83,
+        "target_no": 84,
         "coordinates": [
           [
             37.62539,
@@ -14965,14 +23212,33 @@ window.BRANCH_DATA_PACKS = {
             37.629335,
             127.137431
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 84,
+        "section": "구리IC-퇴계원IC",
         "source_manhole_id": "78M",
         "target_manhole_id": "79M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-03179S-B-H",
+        "target_code": "M-1001-03224S-P-H",
+        "source_no": 84,
+        "target_no": 85,
         "coordinates": [
           [
             37.629335,
@@ -14982,14 +23248,33 @@ window.BRANCH_DATA_PACKS = {
             37.632664,
             127.134764
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 85,
+        "section": "구리IC-퇴계원IC",
         "source_manhole_id": "79M",
         "target_manhole_id": "80M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1001-03224S-P-H",
+        "target_code": "M-1001-03280S-B-H",
+        "source_no": 85,
+        "target_no": 86,
         "coordinates": [
           [
             37.632664,
@@ -14999,14 +23284,33 @@ window.BRANCH_DATA_PACKS = {
             37.636601,
             127.133627
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 86,
+        "section": "구리IC-퇴계원IC",
         "source_manhole_id": "80M",
         "target_manhole_id": "81M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-03280S-B-H",
+        "target_code": "M-1001-03315S-P-H",
+        "source_no": 86,
+        "target_no": 87,
         "coordinates": [
           [
             37.636601,
@@ -15016,14 +23320,33 @@ window.BRANCH_DATA_PACKS = {
             37.640112,
             127.132663
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 87,
+        "section": "퇴계원IC-종점",
         "source_manhole_id": "81M",
         "target_manhole_id": "82M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1001-03315S-P-H",
+        "target_code": "M-1001-03369S-P-H",
+        "source_no": 87,
+        "target_no": 88,
         "coordinates": [
           [
             37.640112,
@@ -15033,31 +23356,33 @@ window.BRANCH_DATA_PACKS = {
             37.643775,
             127.130165
           ]
-        ]
-      },
-      {
-        "no": 88,
-        "source_manhole_id": "82M",
-        "target_manhole_id": "1M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
-        "coordinates": [
-          [
-            37.643775,
-            127.130165
-          ],
-          [
-            37.406264,
-            127.095579
-          ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1993"
       },
       {
         "no": 89,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "1M",
         "target_manhole_id": "2M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-12820S-B-H",
+        "target_code": "M-1003-12770S-P-H",
+        "source_no": 89,
+        "target_no": 90,
         "coordinates": [
           [
             37.406264,
@@ -15067,14 +23392,33 @@ window.BRANCH_DATA_PACKS = {
             37.405031,
             127.091826
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 90,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "2M",
         "target_manhole_id": "3M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-12770S-P-H",
+        "target_code": "M-1003-12724S-B-H",
+        "source_no": 90,
+        "target_no": 91,
         "coordinates": [
           [
             37.405031,
@@ -15084,14 +23428,33 @@ window.BRANCH_DATA_PACKS = {
             37.403166,
             127.087003
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 91,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "3M",
         "target_manhole_id": "4M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1003-12724S-B-H",
+        "target_code": "M-1003-12681S-B-H",
+        "source_no": 91,
+        "target_no": 92,
         "coordinates": [
           [
             37.403166,
@@ -15101,14 +23464,33 @@ window.BRANCH_DATA_PACKS = {
             37.400378,
             127.082726
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 122,
+        "outer_qty1": 2,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 9,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 92,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "4M",
         "target_manhole_id": "5M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-12681S-B-H",
+        "target_code": "M-1003-12625S-B-H",
+        "source_no": 92,
+        "target_no": 93,
         "coordinates": [
           [
             37.400378,
@@ -15118,14 +23500,33 @@ window.BRANCH_DATA_PACKS = {
             37.397473,
             127.078364
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "2017"
       },
       {
         "no": 93,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "5M",
         "target_manhole_id": "6M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-12625S-B-H",
+        "target_code": "M-1003-12582S-P-H",
+        "source_no": 93,
+        "target_no": 94,
         "coordinates": [
           [
             37.397473,
@@ -15135,14 +23536,33 @@ window.BRANCH_DATA_PACKS = {
             37.395869,
             127.073134
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "2017"
       },
       {
         "no": 94,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "6M",
         "target_manhole_id": "7M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1003-12582S-P-H",
+        "target_code": "M-1003-12530S-B-H",
+        "source_no": 94,
+        "target_no": 95,
         "coordinates": [
           [
             37.395869,
@@ -15152,14 +23572,33 @@ window.BRANCH_DATA_PACKS = {
             37.395588,
             127.069172
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "2017"
       },
       {
         "no": 95,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "7M",
         "target_manhole_id": "8M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-12530S-B-H",
+        "target_code": "M-1003-12490S-P-H",
+        "source_no": 95,
+        "target_no": 96,
         "coordinates": [
           [
             37.395588,
@@ -15169,14 +23608,33 @@ window.BRANCH_DATA_PACKS = {
             37.395514,
             127.064835
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 122,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "2017"
       },
       {
         "no": 96,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "8M",
         "target_manhole_id": "9M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-12490S-P-H",
+        "target_code": "M-1003-12442S-B-H",
+        "source_no": 96,
+        "target_no": 97,
         "coordinates": [
           [
             37.395514,
@@ -15186,14 +23644,33 @@ window.BRANCH_DATA_PACKS = {
             37.395871,
             127.059087
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "2017"
       },
       {
         "no": 97,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "9M",
         "target_manhole_id": "10M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1003-12442S-B-H",
+        "target_code": "M-1003-12408S-B-H",
+        "source_no": 97,
+        "target_no": 98,
         "coordinates": [
           [
             37.395871,
@@ -15203,14 +23680,33 @@ window.BRANCH_DATA_PACKS = {
             37.396437,
             127.055475
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망,FTMS",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 98,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "10M",
         "target_manhole_id": "11M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-12408S-B-H",
+        "target_code": "M-1003-12358S-P-H",
+        "source_no": 98,
+        "target_no": 99,
         "coordinates": [
           [
             37.396437,
@@ -15220,14 +23716,33 @@ window.BRANCH_DATA_PACKS = {
             37.396438,
             127.04996
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 3,
+        "use_desc1": "자가망,FTMS",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 99,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "11M",
         "target_manhole_id": "12M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-12358S-P-H",
+        "target_code": "M-1003-12318S-P-H",
+        "source_no": 99,
+        "target_no": 100,
         "coordinates": [
           [
             37.396438,
@@ -15237,14 +23752,33 @@ window.BRANCH_DATA_PACKS = {
             37.39576,
             127.045788
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 100,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "12M",
         "target_manhole_id": "13M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1003-12318S-P-H",
+        "target_code": "M-1003-12286S-B-H",
+        "source_no": 100,
+        "target_no": 101,
         "coordinates": [
           [
             37.39576,
@@ -15254,14 +23788,33 @@ window.BRANCH_DATA_PACKS = {
             37.395122,
             127.040621
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 101,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "13M",
         "target_manhole_id": "14M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-12286S-B-H",
+        "target_code": "M-1003-12215S-P-H",
+        "source_no": 101,
+        "target_no": 102,
         "coordinates": [
           [
             37.395122,
@@ -15271,14 +23824,33 @@ window.BRANCH_DATA_PACKS = {
             37.394351,
             127.034554
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 102,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "14M",
         "target_manhole_id": "15M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-12215S-P-H",
+        "target_code": "M-1003-12185S-B-H",
+        "source_no": 102,
+        "target_no": 103,
         "coordinates": [
           [
             37.394351,
@@ -15288,14 +23860,33 @@ window.BRANCH_DATA_PACKS = {
             37.393535,
             127.030302
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 103,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "15M",
         "target_manhole_id": "16M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1003-12185S-B-H",
+        "target_code": "M-1003-12135S-P-H",
+        "source_no": 103,
+        "target_no": 104,
         "coordinates": [
           [
             37.393535,
@@ -15305,14 +23896,33 @@ window.BRANCH_DATA_PACKS = {
             37.393488,
             127.025445
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 104,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "16M",
         "target_manhole_id": "17M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-12135S-P-H",
+        "target_code": "M-1003-12134S-B-H",
+        "source_no": 104,
+        "target_no": 105,
         "coordinates": [
           [
             37.393488,
@@ -15322,14 +23932,33 @@ window.BRANCH_DATA_PACKS = {
             37.393623,
             127.025429
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 105,
+        "section": "판교JCT-청계TG",
         "source_manhole_id": "17M",
         "target_manhole_id": "18M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-12134S-B-H",
+        "target_code": "M-1003-12126S-P-H",
+        "source_no": 105,
+        "target_no": 106,
         "coordinates": [
           [
             37.393623,
@@ -15339,14 +23968,33 @@ window.BRANCH_DATA_PACKS = {
             37.393538,
             127.024567
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 106,
+        "section": "청계TG-학의JCT",
         "source_manhole_id": "18M",
         "target_manhole_id": "19M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1003-12126S-P-H",
+        "target_code": "M-1003-12125S-P-H",
+        "source_no": 106,
+        "target_no": 107,
         "coordinates": [
           [
             37.393538,
@@ -15356,14 +24004,33 @@ window.BRANCH_DATA_PACKS = {
             37.39354,
             127.02455
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 107,
+        "section": "청계TG-학의JCT",
         "source_manhole_id": "19M",
         "target_manhole_id": "20M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-12125S-P-H",
+        "target_code": "M-1003-12085S-P-H",
+        "source_no": 107,
+        "target_no": 108,
         "coordinates": [
           [
             37.39354,
@@ -15373,14 +24040,33 @@ window.BRANCH_DATA_PACKS = {
             37.393114,
             127.021744
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 108,
+        "section": "청계TG-학의JCT",
         "source_manhole_id": "20M",
         "target_manhole_id": "21M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-12085S-P-H",
+        "target_code": "M-1003-12035S-B-H",
+        "source_no": 108,
+        "target_no": 109,
         "coordinates": [
           [
             37.393114,
@@ -15390,14 +24076,33 @@ window.BRANCH_DATA_PACKS = {
             37.392433,
             127.014132
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 109,
+        "section": "청계TG-학의JCT",
         "source_manhole_id": "21M",
         "target_manhole_id": "22M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1003-12035S-B-H",
+        "target_code": "M-1003-11992S-P-H",
+        "source_no": 109,
+        "target_no": 110,
         "coordinates": [
           [
             37.392433,
@@ -15407,14 +24112,33 @@ window.BRANCH_DATA_PACKS = {
             37.389705,
             127.007837
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 110,
+        "section": "학의JCT-평촌IC",
         "source_manhole_id": "22M",
         "target_manhole_id": "23M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-11992S-P-H",
+        "target_code": "M-1003-11950S-B-H",
+        "source_no": 110,
+        "target_no": 111,
         "coordinates": [
           [
             37.389705,
@@ -15424,14 +24148,33 @@ window.BRANCH_DATA_PACKS = {
             37.388243,
             127.004452
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 111,
+        "section": "학의JCT-평촌IC",
         "source_manhole_id": "23M",
         "target_manhole_id": "24M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-11950S-B-H",
+        "target_code": "M-1003-11930S-P-H",
+        "source_no": 111,
+        "target_no": 112,
         "coordinates": [
           [
             37.388243,
@@ -15441,14 +24184,33 @@ window.BRANCH_DATA_PACKS = {
             37.387747,
             127.002723
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 112,
+        "section": "학의JCT-평촌IC",
         "source_manhole_id": "24M",
         "target_manhole_id": "25M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1003-11930S-P-H",
+        "target_code": "M-1003-11885S-P-H",
+        "source_no": 112,
+        "target_no": 113,
         "coordinates": [
           [
             37.387747,
@@ -15458,14 +24220,33 @@ window.BRANCH_DATA_PACKS = {
             37.386601,
             126.99805
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "교량",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 113,
+        "section": "학의JCT-평촌IC",
         "source_manhole_id": "25M",
         "target_manhole_id": "26M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-11885S-P-H",
+        "target_code": "M-1003-11815S-B-H",
+        "source_no": 113,
+        "target_no": 114,
         "coordinates": [
           [
             37.386601,
@@ -15475,14 +24256,33 @@ window.BRANCH_DATA_PACKS = {
             37.384511,
             126.990919
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "교량",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 114,
+        "section": "학의JCT-평촌IC",
         "source_manhole_id": "26M",
         "target_manhole_id": "27M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-11815S-B-H",
+        "target_code": "M-1003-11782S-P-H",
+        "source_no": 114,
+        "target_no": 115,
         "coordinates": [
           [
             37.384511,
@@ -15492,14 +24292,33 @@ window.BRANCH_DATA_PACKS = {
             37.383011,
             126.986948
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "2025"
       },
       {
         "no": 115,
+        "section": "학의JCT-평촌IC",
         "source_manhole_id": "27M",
         "target_manhole_id": "28M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1003-11782S-P-H",
+        "target_code": "M-1003-11746S-P-H",
+        "source_no": 115,
+        "target_no": 116,
         "coordinates": [
           [
             37.383011,
@@ -15509,14 +24328,33 @@ window.BRANCH_DATA_PACKS = {
             37.381661,
             126.983366
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "2025"
       },
       {
         "no": 116,
+        "section": "학의JCT-평촌IC",
         "source_manhole_id": "28M",
         "target_manhole_id": "29M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-11746S-P-H",
+        "target_code": "M-1003-11703S-B-H",
+        "source_no": 116,
+        "target_no": 117,
         "coordinates": [
           [
             37.381661,
@@ -15526,14 +24364,33 @@ window.BRANCH_DATA_PACKS = {
             37.379845,
             126.97802
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "COD",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "2025"
       },
       {
         "no": 117,
+        "section": "학의JCT-평촌IC",
         "source_manhole_id": "29M",
         "target_manhole_id": "30M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-11703S-B-H",
+        "target_code": "M-1003-11632S-P-H",
+        "source_no": 117,
+        "target_no": 118,
         "coordinates": [
           [
             37.379845,
@@ -15543,14 +24400,33 @@ window.BRANCH_DATA_PACKS = {
             37.381552,
             126.968254
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 118,
+        "section": "학의JCT-평촌IC",
         "source_manhole_id": "30M",
         "target_manhole_id": "31M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
+        "source_code": "M-1003-11632S-P-H",
+        "target_code": "M-1003-11576S-B-H",
+        "source_no": 118,
+        "target_no": 119,
         "coordinates": [
           [
             37.381552,
@@ -15560,14 +24436,33 @@ window.BRANCH_DATA_PACKS = {
             37.382046,
             126.96624
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "교량",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 119,
+        "section": "학의JCT-평촌IC",
         "source_manhole_id": "31M",
         "target_manhole_id": "32M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "source_code": "M-1003-11576S-B-H",
+        "target_code": "M-1003-11515S-P-H",
+        "source_no": 119,
+        "target_no": 120,
         "coordinates": [
           [
             37.382046,
@@ -15577,136 +24472,243 @@ window.BRANCH_DATA_PACKS = {
             37.38165,
             126.962927
           ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "교량",
+        "pipe_type": "PVC",
+        "outer_spec1": 100,
+        "outer_qty1": 1,
+        "outer_spec2": 150,
+        "outer_qty2": 1,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 1,
+        "use_desc1": "자가망",
+        "completion_year": "",
+        "warranty_year": "1995"
       },
       {
         "no": 120,
-        "source_manhole_id": "32M",
-        "target_manhole_id": "49-1H",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
+        "section": "판교JCT 분기선",
+        "source_manhole_id": "2M",
+        "target_manhole_id": "1M",
+        "source_code": "M-1001-00021S-B-H",
+        "target_code": "M-1003-12820S-B-H",
+        "source_no": 1,
+        "target_no": 89,
         "coordinates": [
           [
-            37.38165,
-            126.962927
+            37.406823,
+            127.097339
           ],
           [
-            37.5373193,
-            127.18510830000001
+            37.406264,
+            127.095579
           ]
-        ]
-      },
-      {
-        "no": 121,
-        "source_manhole_id": "49-1H",
-        "target_manhole_id": "49-1M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
-        "coordinates": [
-          [
-            37.5373193,
-            127.18510830000001
-          ],
-          [
-            37.5373193,
-            127.18510830000001
-          ]
-        ]
-      },
-      {
-        "no": 122,
-        "source_manhole_id": "49-1M",
-        "target_manhole_id": "49-2M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
-        "coordinates": [
-          [
-            37.5373193,
-            127.18510830000001
-          ],
-          [
-            37.5373193,
-            127.18510830000001
-          ]
-        ]
-      },
-      {
-        "no": 123,
-        "source_manhole_id": "49-2M",
-        "target_manhole_id": "53M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
-        "coordinates": [
-          [
-            37.5373193,
-            127.18510830000001
-          ],
-          [
-            37.549941399999994,
-            127.1788069
-          ]
-        ]
-      },
-      {
-        "no": 124,
-        "source_manhole_id": "53M",
-        "target_manhole_id": "59-1M",
-        "section": "판교-퇴계원",
-        "pipe_type": "스틸관(100mm)",
-        "coordinates": [
-          [
-            37.549941399999994,
-            127.1788069
-          ],
-          [
-            37.571439399999996,
-            127.1663484
-          ]
-        ]
-      },
-      {
-        "no": 125,
-        "source_manhole_id": "59-1M",
-        "target_manhole_id": "65M",
-        "section": "판교-퇴계원",
-        "pipe_type": "COD관(100mm)",
-        "coordinates": [
-          [
-            37.571439399999996,
-            127.1663484
-          ],
-          [
-            37.589974,
-            127.1556702
-          ]
-        ]
+        ],
+        "hq": "서울경기본부",
+        "branch": "동서울지사",
+        "route": "수도권제1순환선",
+        "category": "도로(분기점)",
+        "pipe_type": "PVC (강관보호)",
+        "outer_spec1": 150,
+        "outer_qty1": 1,
+        "outer_spec2": null,
+        "outer_qty2": null,
+        "inner_spec1": 28,
+        "inner_qty1": 3,
+        "use_spec1": 28,
+        "use_qty1": 2,
+        "use_desc1": "자가망 (분기연결)",
+        "completion_year": "1995",
+        "warranty_year": "1995"
       }
     ],
     "cables": [
       {
-        "id": "CB_DS_TRUNK_1",
-        "section": "판교~퇴계원 광간선망 (72Core)",
-        "expansion_round": "4단계",
-        "total_cores": 72,
-        "node_count": 126,
+        "no": 1,
+        "section": "판교JCT-성남TG",
+        "total_cores": 30,
+        "expansion_round": "3차",
+        "length_km": 1993.0,
+        "start_point": "",
+        "end_point": "2001",
+        "coordinates": [
+          [
+            37.406823,
+            127.097339
+          ],
+          [
+            37.407726,
+            127.101357
+          ],
+          [
+            37.407856,
+            127.10839
+          ],
+          [
+            37.409206,
+            127.115537
+          ],
+          [
+            37.410498,
+            127.117402
+          ],
+          [
+            37.413172,
+            127.119508
+          ],
+          [
+            37.417347,
+            127.122412
+          ],
+          [
+            37.42114,
+            127.123095
+          ],
+          [
+            37.424991,
+            127.123087
+          ],
+          [
+            37.428721,
+            127.123225
+          ],
+          [
+            37.4294,
+            127.123034
+          ],
+          [
+            37.433212,
+            127.123177
+          ],
+          [
+            37.435587,
+            127.123847
+          ]
+        ],
+        "node_count": 13,
         "node_path": [
           "2M",
-          "10M",
-          "18M",
-          "26M",
-          "34M",
-          "41M",
-          "48M",
-          "56M",
-          "63M",
-          "67M",
-          "75M",
-          "1M",
+          "3M",
+          "4M",
+          "5M",
+          "6M",
+          "7M",
+          "8M",
           "9M",
-          "17M",
-          "25M",
-          "49-1H"
+          "10M",
+          "11M",
+          "12M",
+          "13M",
+          "14M"
+        ]
+      },
+      {
+        "no": 2,
+        "section": "성남TG-송파IC",
+        "total_cores": 72,
+        "expansion_round": "3차",
+        "length_km": 0.0,
+        "start_point": "",
+        "end_point": "2002",
+        "coordinates": [
+          [
+            37.435587,
+            127.123847
+          ],
+          [
+            37.437811,
+            127.122972
+          ],
+          [
+            37.44082,
+            127.123088
+          ],
+          [
+            37.443839,
+            127.124351
+          ],
+          [
+            37.446892,
+            127.125621
+          ],
+          [
+            37.450525,
+            127.126259
+          ],
+          [
+            37.450529,
+            127.125678
+          ],
+          [
+            37.453784,
+            127.125639
+          ],
+          [
+            37.457222,
+            127.125195
+          ],
+          [
+            37.459745,
+            127.125099
+          ],
+          [
+            37.465845,
+            127.125407
+          ],
+          [
+            37.469056,
+            127.124826
+          ],
+          [
+            37.472551,
+            127.125835
+          ],
+          [
+            37.474509,
+            127.127877
+          ],
+          [
+            37.477532,
+            127.132344
+          ],
+          [
+            37.481026,
+            127.134972
+          ]
         ],
+        "node_count": 16,
+        "node_path": [
+          "14M",
+          "15M",
+          "16-1H",
+          "17M",
+          "18M",
+          "19-1H",
+          "20M",
+          "21M",
+          "22M",
+          "23M",
+          "24M",
+          "25M",
+          "26M",
+          "27M",
+          "28M",
+          "29M"
+        ]
+      },
+      {
+        "no": 3,
+        "section": "송파IC-동서울지사",
+        "total_cores": 72,
+        "expansion_round": "24",
+        "length_km": 0.0,
+        "start_point": "",
+        "end_point": "2002",
         "coordinates": [
           [
             37.406823,
@@ -16059,7 +25061,1370 @@ window.BRANCH_DATA_PACKS = {
           [
             37.643775,
             127.130165
+          ]
+        ],
+        "node_count": 88,
+        "node_path": [
+          "2M",
+          "3M",
+          "4M",
+          "5M",
+          "6M",
+          "7M",
+          "8M",
+          "9M",
+          "10M",
+          "11M",
+          "12M",
+          "13M",
+          "14M",
+          "15M",
+          "16-1H",
+          "17M",
+          "18M",
+          "19-1H",
+          "20M",
+          "21M",
+          "22M",
+          "23M",
+          "24M",
+          "25M",
+          "26M",
+          "27M",
+          "28M",
+          "29M",
+          "30M",
+          "31M",
+          "32M",
+          "33M",
+          "34M",
+          "35M",
+          "36M",
+          "37M",
+          "38M",
+          "39M",
+          "39-1H",
+          "40M",
+          "41M",
+          "41M",
+          "42M",
+          "43M",
+          "44M",
+          "45M",
+          "46M",
+          "47M",
+          "48M",
+          "49M",
+          "50M",
+          "51M",
+          "52M",
+          "53M(배)",
+          "54M",
+          "55M",
+          "56M",
+          "57M",
+          "58M",
+          "59-1M",
+          "59M",
+          "60M",
+          "61M",
+          "62M",
+          "63M",
+          "64M",
+          "65M(배)",
+          "66M",
+          "66-1H",
+          "66-2H",
+          "66-3H",
+          "66-4H",
+          "67M",
+          "68M(배)",
+          "69M",
+          "70M(배)",
+          "71M(배)",
+          "72M(배)",
+          "73M(배)",
+          "74M",
+          "75M",
+          "76M",
+          "77M",
+          "78M",
+          "79M",
+          "80M",
+          "81M",
+          "82M"
+        ]
+      },
+      {
+        "no": 4,
+        "section": "동서울지사-하남JCT",
+        "total_cores": 72,
+        "expansion_round": "96",
+        "length_km": 1993.0,
+        "start_point": "",
+        "end_point": "",
+        "coordinates": [
+          [
+            37.406823,
+            127.097339
           ],
+          [
+            37.407726,
+            127.101357
+          ],
+          [
+            37.407856,
+            127.10839
+          ],
+          [
+            37.409206,
+            127.115537
+          ],
+          [
+            37.410498,
+            127.117402
+          ],
+          [
+            37.413172,
+            127.119508
+          ],
+          [
+            37.417347,
+            127.122412
+          ],
+          [
+            37.42114,
+            127.123095
+          ],
+          [
+            37.424991,
+            127.123087
+          ],
+          [
+            37.428721,
+            127.123225
+          ],
+          [
+            37.4294,
+            127.123034
+          ],
+          [
+            37.433212,
+            127.123177
+          ],
+          [
+            37.435587,
+            127.123847
+          ],
+          [
+            37.437811,
+            127.122972
+          ],
+          [
+            37.44082,
+            127.123088
+          ],
+          [
+            37.443839,
+            127.124351
+          ],
+          [
+            37.446892,
+            127.125621
+          ],
+          [
+            37.450525,
+            127.126259
+          ],
+          [
+            37.450529,
+            127.125678
+          ],
+          [
+            37.453784,
+            127.125639
+          ],
+          [
+            37.457222,
+            127.125195
+          ],
+          [
+            37.459745,
+            127.125099
+          ],
+          [
+            37.465845,
+            127.125407
+          ],
+          [
+            37.469056,
+            127.124826
+          ],
+          [
+            37.472551,
+            127.125835
+          ],
+          [
+            37.474509,
+            127.127877
+          ],
+          [
+            37.477532,
+            127.132344
+          ],
+          [
+            37.481026,
+            127.134972
+          ],
+          [
+            37.483153,
+            127.135391
+          ],
+          [
+            37.487652,
+            127.136187
+          ],
+          [
+            37.489901,
+            127.136881
+          ],
+          [
+            37.494765,
+            127.139192
+          ],
+          [
+            37.503279,
+            127.143384
+          ],
+          [
+            37.506489,
+            127.145351
+          ],
+          [
+            37.509158,
+            127.147083
+          ],
+          [
+            37.511496,
+            127.149364
+          ],
+          [
+            37.513205762230214,
+            127.15388348606811
+          ],
+          [
+            37.51324536888914,
+            127.15399109287927
+          ],
+          [
+            37.51328489870555,
+            127.15409869969041
+          ],
+          [
+            37.51474960461726,
+            127.15829536532509
+          ],
+          [
+            37.51756023952164,
+            127.16980929411766
+          ],
+          [
+            37.517576617733624,
+            127.1699169009288
+          ],
+          [
+            37.51813656396393,
+            127.17475920743034
+          ],
+          [
+            37.518535,
+            127.184121
+          ],
+          [
+            37.519871,
+            127.188155
+          ],
+          [
+            37.522219,
+            127.191133
+          ],
+          [
+            37.52485,
+            127.192828
+          ],
+          [
+            37.528048,
+            127.194698
+          ],
+          [
+            37.530501,
+            127.195296
+          ],
+          [
+            37.531984,
+            127.193722
+          ],
+          [
+            37.534426,
+            127.188173
+          ],
+          [
+            37.536868,
+            127.185376
+          ],
+          [
+            37.541381,
+            127.182699
+          ],
+          [
+            37.545485,
+            127.180598
+          ],
+          [
+            37.545513,
+            127.180754
+          ],
+          [
+            37.549617,
+            127.178957
+          ],
+          [
+            37.552861,
+            127.177456
+          ],
+          [
+            37.553013,
+            127.177225
+          ],
+          [
+            37.557225,
+            127.175527
+          ],
+          [
+            37.559098,
+            127.174878
+          ],
+          [
+            37.563005,
+            127.173366
+          ],
+          [
+            37.564824,
+            127.17204
+          ],
+          [
+            37.567301,
+            127.169972
+          ],
+          [
+            37.570606,
+            127.16697
+          ],
+          [
+            37.571217,
+            127.166551
+          ],
+          [
+            37.573441,
+            127.164525
+          ],
+          [
+            37.581754,
+            127.157797
+          ],
+          [
+            37.585037,
+            127.156294
+          ],
+          [
+            37.588187,
+            127.156103
+          ],
+          [
+            37.589229,
+            127.155586
+          ],
+          [
+            37.589905,
+            127.155612
+          ],
+          [
+            37.590595,
+            127.156194
+          ],
+          [
+            37.5899394,
+            127.155583
+          ],
+          [
+            37.592171,
+            127.156503
+          ],
+          [
+            37.597473,
+            127.155824
+          ],
+          [
+            37.60069,
+            127.153933
+          ],
+          [
+            37.602962,
+            127.151618
+          ],
+          [
+            37.607338,
+            127.146304
+          ],
+          [
+            37.611002,
+            127.142892
+          ],
+          [
+            37.6140365,
+            127.1417495
+          ],
+          [
+            37.6172261,
+            127.1409174
+          ],
+          [
+            37.621453,
+            127.139953
+          ],
+          [
+            37.62539,
+            127.13905
+          ],
+          [
+            37.629335,
+            127.137431
+          ],
+          [
+            37.632664,
+            127.134764
+          ],
+          [
+            37.636601,
+            127.133627
+          ],
+          [
+            37.640112,
+            127.132663
+          ],
+          [
+            37.643775,
+            127.130165
+          ]
+        ],
+        "node_count": 88,
+        "node_path": [
+          "2M",
+          "3M",
+          "4M",
+          "5M",
+          "6M",
+          "7M",
+          "8M",
+          "9M",
+          "10M",
+          "11M",
+          "12M",
+          "13M",
+          "14M",
+          "15M",
+          "16-1H",
+          "17M",
+          "18M",
+          "19-1H",
+          "20M",
+          "21M",
+          "22M",
+          "23M",
+          "24M",
+          "25M",
+          "26M",
+          "27M",
+          "28M",
+          "29M",
+          "30M",
+          "31M",
+          "32M",
+          "33M",
+          "34M",
+          "35M",
+          "36M",
+          "37M",
+          "38M",
+          "39M",
+          "39-1H",
+          "40M",
+          "41M",
+          "41M",
+          "42M",
+          "43M",
+          "44M",
+          "45M",
+          "46M",
+          "47M",
+          "48M",
+          "49M",
+          "50M",
+          "51M",
+          "52M",
+          "53M(배)",
+          "54M",
+          "55M",
+          "56M",
+          "57M",
+          "58M",
+          "59-1M",
+          "59M",
+          "60M",
+          "61M",
+          "62M",
+          "63M",
+          "64M",
+          "65M(배)",
+          "66M",
+          "66-1H",
+          "66-2H",
+          "66-3H",
+          "66-4H",
+          "67M",
+          "68M(배)",
+          "69M",
+          "70M(배)",
+          "71M(배)",
+          "72M(배)",
+          "73M(배)",
+          "74M",
+          "75M",
+          "76M",
+          "77M",
+          "78M",
+          "79M",
+          "80M",
+          "81M",
+          "82M"
+        ]
+      },
+      {
+        "no": 5,
+        "section": "하남JCT-상일IC",
+        "total_cores": 24,
+        "expansion_round": "3차",
+        "length_km": 1993.0,
+        "start_point": "",
+        "end_point": "2001",
+        "coordinates": [
+          [
+            37.531984,
+            127.193722
+          ],
+          [
+            37.534426,
+            127.188173
+          ],
+          [
+            37.536868,
+            127.185376
+          ],
+          [
+            37.541381,
+            127.182699
+          ],
+          [
+            37.545485,
+            127.180598
+          ],
+          [
+            37.545513,
+            127.180754
+          ],
+          [
+            37.549617,
+            127.178957
+          ],
+          [
+            37.552861,
+            127.177456
+          ],
+          [
+            37.553013,
+            127.177225
+          ],
+          [
+            37.557225,
+            127.175527
+          ]
+        ],
+        "node_count": 10,
+        "node_path": [
+          "49M",
+          "50M",
+          "51M",
+          "52M",
+          "53M(배)",
+          "54M",
+          "55M",
+          "56M",
+          "57M",
+          "58M"
+        ]
+      },
+      {
+        "no": 6,
+        "section": "상일IC-강일IC",
+        "total_cores": 24,
+        "expansion_round": "3차",
+        "length_km": 1993.0,
+        "start_point": "",
+        "end_point": "2001",
+        "coordinates": [
+          [
+            37.553013,
+            127.177225
+          ],
+          [
+            37.557225,
+            127.175527
+          ],
+          [
+            37.559098,
+            127.174878
+          ],
+          [
+            37.563005,
+            127.173366
+          ],
+          [
+            37.564824,
+            127.17204
+          ],
+          [
+            37.567301,
+            127.169972
+          ],
+          [
+            37.570606,
+            127.16697
+          ],
+          [
+            37.571217,
+            127.166551
+          ],
+          [
+            37.573441,
+            127.164525
+          ],
+          [
+            37.581754,
+            127.157797
+          ]
+        ],
+        "node_count": 10,
+        "node_path": [
+          "57M",
+          "58M",
+          "59-1M",
+          "59M",
+          "60M",
+          "61M",
+          "62M",
+          "63M",
+          "64M",
+          "65M(배)"
+        ]
+      },
+      {
+        "no": 7,
+        "section": "강일IC-토평IC",
+        "total_cores": 24,
+        "expansion_round": "3차",
+        "length_km": 1993.0,
+        "start_point": "",
+        "end_point": "2001",
+        "coordinates": [
+          [
+            37.406823,
+            127.097339
+          ],
+          [
+            37.407726,
+            127.101357
+          ],
+          [
+            37.407856,
+            127.10839
+          ],
+          [
+            37.409206,
+            127.115537
+          ],
+          [
+            37.410498,
+            127.117402
+          ],
+          [
+            37.413172,
+            127.119508
+          ],
+          [
+            37.417347,
+            127.122412
+          ],
+          [
+            37.42114,
+            127.123095
+          ],
+          [
+            37.424991,
+            127.123087
+          ],
+          [
+            37.428721,
+            127.123225
+          ],
+          [
+            37.4294,
+            127.123034
+          ],
+          [
+            37.433212,
+            127.123177
+          ],
+          [
+            37.435587,
+            127.123847
+          ],
+          [
+            37.437811,
+            127.122972
+          ],
+          [
+            37.44082,
+            127.123088
+          ],
+          [
+            37.443839,
+            127.124351
+          ],
+          [
+            37.446892,
+            127.125621
+          ],
+          [
+            37.450525,
+            127.126259
+          ],
+          [
+            37.450529,
+            127.125678
+          ],
+          [
+            37.453784,
+            127.125639
+          ],
+          [
+            37.457222,
+            127.125195
+          ],
+          [
+            37.459745,
+            127.125099
+          ],
+          [
+            37.465845,
+            127.125407
+          ],
+          [
+            37.469056,
+            127.124826
+          ],
+          [
+            37.472551,
+            127.125835
+          ],
+          [
+            37.474509,
+            127.127877
+          ],
+          [
+            37.477532,
+            127.132344
+          ],
+          [
+            37.481026,
+            127.134972
+          ],
+          [
+            37.483153,
+            127.135391
+          ],
+          [
+            37.487652,
+            127.136187
+          ],
+          [
+            37.489901,
+            127.136881
+          ],
+          [
+            37.494765,
+            127.139192
+          ],
+          [
+            37.503279,
+            127.143384
+          ],
+          [
+            37.506489,
+            127.145351
+          ],
+          [
+            37.509158,
+            127.147083
+          ],
+          [
+            37.511496,
+            127.149364
+          ],
+          [
+            37.513205762230214,
+            127.15388348606811
+          ],
+          [
+            37.51324536888914,
+            127.15399109287927
+          ],
+          [
+            37.51328489870555,
+            127.15409869969041
+          ],
+          [
+            37.51474960461726,
+            127.15829536532509
+          ],
+          [
+            37.51756023952164,
+            127.16980929411766
+          ],
+          [
+            37.517576617733624,
+            127.1699169009288
+          ],
+          [
+            37.51813656396393,
+            127.17475920743034
+          ],
+          [
+            37.518535,
+            127.184121
+          ],
+          [
+            37.519871,
+            127.188155
+          ],
+          [
+            37.522219,
+            127.191133
+          ],
+          [
+            37.52485,
+            127.192828
+          ],
+          [
+            37.528048,
+            127.194698
+          ],
+          [
+            37.530501,
+            127.195296
+          ],
+          [
+            37.531984,
+            127.193722
+          ],
+          [
+            37.534426,
+            127.188173
+          ],
+          [
+            37.536868,
+            127.185376
+          ],
+          [
+            37.541381,
+            127.182699
+          ],
+          [
+            37.545485,
+            127.180598
+          ],
+          [
+            37.545513,
+            127.180754
+          ],
+          [
+            37.549617,
+            127.178957
+          ],
+          [
+            37.552861,
+            127.177456
+          ],
+          [
+            37.553013,
+            127.177225
+          ],
+          [
+            37.557225,
+            127.175527
+          ],
+          [
+            37.559098,
+            127.174878
+          ],
+          [
+            37.563005,
+            127.173366
+          ],
+          [
+            37.564824,
+            127.17204
+          ],
+          [
+            37.567301,
+            127.169972
+          ],
+          [
+            37.570606,
+            127.16697
+          ],
+          [
+            37.571217,
+            127.166551
+          ],
+          [
+            37.573441,
+            127.164525
+          ],
+          [
+            37.581754,
+            127.157797
+          ],
+          [
+            37.585037,
+            127.156294
+          ],
+          [
+            37.588187,
+            127.156103
+          ],
+          [
+            37.589229,
+            127.155586
+          ],
+          [
+            37.589905,
+            127.155612
+          ],
+          [
+            37.590595,
+            127.156194
+          ],
+          [
+            37.5899394,
+            127.155583
+          ],
+          [
+            37.592171,
+            127.156503
+          ],
+          [
+            37.597473,
+            127.155824
+          ],
+          [
+            37.60069,
+            127.153933
+          ],
+          [
+            37.602962,
+            127.151618
+          ],
+          [
+            37.607338,
+            127.146304
+          ],
+          [
+            37.611002,
+            127.142892
+          ],
+          [
+            37.6140365,
+            127.1417495
+          ],
+          [
+            37.6172261,
+            127.1409174
+          ],
+          [
+            37.621453,
+            127.139953
+          ],
+          [
+            37.62539,
+            127.13905
+          ],
+          [
+            37.629335,
+            127.137431
+          ],
+          [
+            37.632664,
+            127.134764
+          ],
+          [
+            37.636601,
+            127.133627
+          ],
+          [
+            37.640112,
+            127.132663
+          ],
+          [
+            37.643775,
+            127.130165
+          ]
+        ],
+        "node_count": 88,
+        "node_path": [
+          "2M",
+          "3M",
+          "4M",
+          "5M",
+          "6M",
+          "7M",
+          "8M",
+          "9M",
+          "10M",
+          "11M",
+          "12M",
+          "13M",
+          "14M",
+          "15M",
+          "16-1H",
+          "17M",
+          "18M",
+          "19-1H",
+          "20M",
+          "21M",
+          "22M",
+          "23M",
+          "24M",
+          "25M",
+          "26M",
+          "27M",
+          "28M",
+          "29M",
+          "30M",
+          "31M",
+          "32M",
+          "33M",
+          "34M",
+          "35M",
+          "36M",
+          "37M",
+          "38M",
+          "39M",
+          "39-1H",
+          "40M",
+          "41M",
+          "41M",
+          "42M",
+          "43M",
+          "44M",
+          "45M",
+          "46M",
+          "47M",
+          "48M",
+          "49M",
+          "50M",
+          "51M",
+          "52M",
+          "53M(배)",
+          "54M",
+          "55M",
+          "56M",
+          "57M",
+          "58M",
+          "59-1M",
+          "59M",
+          "60M",
+          "61M",
+          "62M",
+          "63M",
+          "64M",
+          "65M(배)",
+          "66M",
+          "66-1H",
+          "66-2H",
+          "66-3H",
+          "66-4H",
+          "67M",
+          "68M(배)",
+          "69M",
+          "70M(배)",
+          "71M(배)",
+          "72M(배)",
+          "73M(배)",
+          "74M",
+          "75M",
+          "76M",
+          "77M",
+          "78M",
+          "79M",
+          "80M",
+          "81M",
+          "82M"
+        ]
+      },
+      {
+        "no": 8,
+        "section": "토평IC-구리남양주영업소",
+        "total_cores": 50,
+        "expansion_round": "3차",
+        "length_km": 0.0,
+        "start_point": "",
+        "end_point": "2002",
+        "coordinates": [
+          [
+            37.589229,
+            127.155586
+          ],
+          [
+            37.589905,
+            127.155612
+          ],
+          [
+            37.590595,
+            127.156194
+          ],
+          [
+            37.5899394,
+            127.155583
+          ],
+          [
+            37.592171,
+            127.156503
+          ],
+          [
+            37.597473,
+            127.155824
+          ],
+          [
+            37.60069,
+            127.153933
+          ],
+          [
+            37.602962,
+            127.151618
+          ]
+        ],
+        "node_count": 8,
+        "node_path": [
+          "66-2H",
+          "66-3H",
+          "66-4H",
+          "67M",
+          "68M(배)",
+          "69M",
+          "70M(배)",
+          "71M(배)"
+        ]
+      },
+      {
+        "no": 9,
+        "section": "구리남양주영업소-남양주IC",
+        "total_cores": 54,
+        "expansion_round": "3차",
+        "length_km": 0.0,
+        "start_point": "",
+        "end_point": "2002",
+        "coordinates": [
+          [
+            37.589229,
+            127.155586
+          ],
+          [
+            37.589905,
+            127.155612
+          ],
+          [
+            37.590595,
+            127.156194
+          ],
+          [
+            37.5899394,
+            127.155583
+          ],
+          [
+            37.592171,
+            127.156503
+          ],
+          [
+            37.597473,
+            127.155824
+          ],
+          [
+            37.60069,
+            127.153933
+          ],
+          [
+            37.602962,
+            127.151618
+          ]
+        ],
+        "node_count": 8,
+        "node_path": [
+          "66-2H",
+          "66-3H",
+          "66-4H",
+          "67M",
+          "68M(배)",
+          "69M",
+          "70M(배)",
+          "71M(배)"
+        ]
+      },
+      {
+        "no": 10,
+        "section": "남양주IC-구리IC",
+        "total_cores": 54,
+        "expansion_round": "3차",
+        "length_km": 0.0,
+        "start_point": "",
+        "end_point": "2002",
+        "coordinates": [
+          [
+            37.602962,
+            127.151618
+          ],
+          [
+            37.607338,
+            127.146304
+          ],
+          [
+            37.611002,
+            127.142892
+          ],
+          [
+            37.6140365,
+            127.1417495
+          ],
+          [
+            37.6172261,
+            127.1409174
+          ]
+        ],
+        "node_count": 5,
+        "node_path": [
+          "71M(배)",
+          "72M(배)",
+          "73M(배)",
+          "74M",
+          "75M"
+        ]
+      },
+      {
+        "no": 11,
+        "section": "구리IC-퇴계원IC",
+        "total_cores": 54,
+        "expansion_round": "3차",
+        "length_km": 0.0,
+        "start_point": "",
+        "end_point": "2002",
+        "coordinates": [
+          [
+            37.6172261,
+            127.1409174
+          ],
+          [
+            37.621453,
+            127.139953
+          ],
+          [
+            37.62539,
+            127.13905
+          ],
+          [
+            37.629335,
+            127.137431
+          ],
+          [
+            37.632664,
+            127.134764
+          ],
+          [
+            37.636601,
+            127.133627
+          ],
+          [
+            37.640112,
+            127.132663
+          ]
+        ],
+        "node_count": 7,
+        "node_path": [
+          "75M",
+          "76M",
+          "77M",
+          "78M",
+          "79M",
+          "80M",
+          "81M"
+        ]
+      },
+      {
+        "no": 12,
+        "section": "퇴계원IC-종점",
+        "total_cores": 54,
+        "expansion_round": "3차",
+        "length_km": 0.0,
+        "start_point": "",
+        "end_point": "2002",
+        "coordinates": [
+          [
+            37.636601,
+            127.133627
+          ],
+          [
+            37.640112,
+            127.132663
+          ],
+          [
+            37.643775,
+            127.130165
+          ]
+        ],
+        "node_count": 3,
+        "node_path": [
+          "80M",
+          "81M",
+          "82M"
+        ]
+      },
+      {
+        "no": 13,
+        "section": "판교JCT(19-1H)-청계영업소",
+        "total_cores": 72,
+        "expansion_round": "3차",
+        "length_km": 1995.0,
+        "start_point": "",
+        "end_point": "",
+        "coordinates": [
           [
             37.406264,
             127.095579
@@ -16187,31 +26552,390 @@ window.BRANCH_DATA_PACKS = {
           [
             37.38165,
             126.962927
-          ],
-          [
-            37.5373193,
-            127.18510830000001
-          ],
-          [
-            37.5373193,
-            127.18510830000001
-          ],
-          [
-            37.5373193,
-            127.18510830000001
-          ],
-          [
-            37.549941399999994,
-            127.1788069
-          ],
-          [
-            37.571439399999996,
-            127.1663484
-          ],
-          [
-            37.589974,
-            127.1556702
           ]
+        ],
+        "node_count": 32,
+        "node_path": [
+          "1M",
+          "2M",
+          "3M",
+          "4M",
+          "5M",
+          "6M",
+          "7M",
+          "8M",
+          "9M",
+          "10M",
+          "11M",
+          "12M",
+          "13M",
+          "14M",
+          "15M",
+          "16M",
+          "17M",
+          "18M",
+          "19M",
+          "20M",
+          "21M",
+          "22M",
+          "23M",
+          "24M",
+          "25M",
+          "26M",
+          "27M",
+          "28M",
+          "29M",
+          "30M",
+          "31M",
+          "32M"
+        ]
+      },
+      {
+        "no": 14,
+        "section": "청계영업소-학의JCT",
+        "total_cores": 72,
+        "expansion_round": "3차",
+        "length_km": 1995.0,
+        "start_point": "",
+        "end_point": "",
+        "coordinates": [
+          [
+            37.406264,
+            127.095579
+          ],
+          [
+            37.405031,
+            127.091826
+          ],
+          [
+            37.403166,
+            127.087003
+          ],
+          [
+            37.400378,
+            127.082726
+          ],
+          [
+            37.397473,
+            127.078364
+          ],
+          [
+            37.395869,
+            127.073134
+          ],
+          [
+            37.395588,
+            127.069172
+          ],
+          [
+            37.395514,
+            127.064835
+          ],
+          [
+            37.395871,
+            127.059087
+          ],
+          [
+            37.396437,
+            127.055475
+          ],
+          [
+            37.396438,
+            127.04996
+          ],
+          [
+            37.39576,
+            127.045788
+          ],
+          [
+            37.395122,
+            127.040621
+          ],
+          [
+            37.394351,
+            127.034554
+          ],
+          [
+            37.393535,
+            127.030302
+          ],
+          [
+            37.393488,
+            127.025445
+          ],
+          [
+            37.393623,
+            127.025429
+          ],
+          [
+            37.393538,
+            127.024567
+          ],
+          [
+            37.39354,
+            127.02455
+          ],
+          [
+            37.393114,
+            127.021744
+          ],
+          [
+            37.392433,
+            127.014132
+          ],
+          [
+            37.389705,
+            127.007837
+          ],
+          [
+            37.388243,
+            127.004452
+          ],
+          [
+            37.387747,
+            127.002723
+          ],
+          [
+            37.386601,
+            126.99805
+          ],
+          [
+            37.384511,
+            126.990919
+          ],
+          [
+            37.383011,
+            126.986948
+          ],
+          [
+            37.381661,
+            126.983366
+          ],
+          [
+            37.379845,
+            126.97802
+          ],
+          [
+            37.381552,
+            126.968254
+          ],
+          [
+            37.382046,
+            126.96624
+          ],
+          [
+            37.38165,
+            126.962927
+          ]
+        ],
+        "node_count": 32,
+        "node_path": [
+          "1M",
+          "2M",
+          "3M",
+          "4M",
+          "5M",
+          "6M",
+          "7M",
+          "8M",
+          "9M",
+          "10M",
+          "11M",
+          "12M",
+          "13M",
+          "14M",
+          "15M",
+          "16M",
+          "17M",
+          "18M",
+          "19M",
+          "20M",
+          "21M",
+          "22M",
+          "23M",
+          "24M",
+          "25M",
+          "26M",
+          "27M",
+          "28M",
+          "29M",
+          "30M",
+          "31M",
+          "32M"
+        ]
+      },
+      {
+        "no": 15,
+        "section": "학의JCT-평촌IC",
+        "total_cores": 72,
+        "expansion_round": "3차",
+        "length_km": 1995.0,
+        "start_point": "",
+        "end_point": "",
+        "coordinates": [
+          [
+            37.406264,
+            127.095579
+          ],
+          [
+            37.405031,
+            127.091826
+          ],
+          [
+            37.403166,
+            127.087003
+          ],
+          [
+            37.400378,
+            127.082726
+          ],
+          [
+            37.397473,
+            127.078364
+          ],
+          [
+            37.395869,
+            127.073134
+          ],
+          [
+            37.395588,
+            127.069172
+          ],
+          [
+            37.395514,
+            127.064835
+          ],
+          [
+            37.395871,
+            127.059087
+          ],
+          [
+            37.396437,
+            127.055475
+          ],
+          [
+            37.396438,
+            127.04996
+          ],
+          [
+            37.39576,
+            127.045788
+          ],
+          [
+            37.395122,
+            127.040621
+          ],
+          [
+            37.394351,
+            127.034554
+          ],
+          [
+            37.393535,
+            127.030302
+          ],
+          [
+            37.393488,
+            127.025445
+          ],
+          [
+            37.393623,
+            127.025429
+          ],
+          [
+            37.393538,
+            127.024567
+          ],
+          [
+            37.39354,
+            127.02455
+          ],
+          [
+            37.393114,
+            127.021744
+          ],
+          [
+            37.392433,
+            127.014132
+          ],
+          [
+            37.389705,
+            127.007837
+          ],
+          [
+            37.388243,
+            127.004452
+          ],
+          [
+            37.387747,
+            127.002723
+          ],
+          [
+            37.386601,
+            126.99805
+          ],
+          [
+            37.384511,
+            126.990919
+          ],
+          [
+            37.383011,
+            126.986948
+          ],
+          [
+            37.381661,
+            126.983366
+          ],
+          [
+            37.379845,
+            126.97802
+          ],
+          [
+            37.381552,
+            126.968254
+          ],
+          [
+            37.382046,
+            126.96624
+          ],
+          [
+            37.38165,
+            126.962927
+          ]
+        ],
+        "node_count": 32,
+        "node_path": [
+          "1M",
+          "2M",
+          "3M",
+          "4M",
+          "5M",
+          "6M",
+          "7M",
+          "8M",
+          "9M",
+          "10M",
+          "11M",
+          "12M",
+          "13M",
+          "14M",
+          "15M",
+          "16M",
+          "17M",
+          "18M",
+          "19M",
+          "20M",
+          "21M",
+          "22M",
+          "23M",
+          "24M",
+          "25M",
+          "26M",
+          "27M",
+          "28M",
+          "29M",
+          "30M",
+          "31M",
+          "32M"
         ]
       }
     ],
@@ -16871,16 +27595,16 @@ window.BRANCH_DATA_PACKS = {
     "branch_code": "GWANGJU",
     "subtitle": "제2중부고속도로 통신관로 · 맨홀(137개소) · 지사/영업소(6개소) 방범망 · 광케이블",
     "center": [
-      37.4085,
-      127.258
+      37.38,
+      127.3
     ],
-    "zoom": 12,
+    "zoom": 11,
     "offices": [
       {
         "id": "OFF_GWANGJU_MAIN",
         "name": "경기광주지사",
         "category": "지사",
-        "section": "중부선 346.8k",
+        "section": "중부선 도척/유정",
         "lat": 37.35911,
         "lng": 127.316736,
         "address": "경기 광주시 도척면 유정리 (한국도로공사 경기광주지사)",
@@ -17662,9 +28386,9 @@ window.BRANCH_DATA_PACKS = {
         "name": "동서울영업소",
         "category": "영업소",
         "section": "중부선 361.5k",
-        "lat": 37.530594,
-        "lng": 127.215114,
-        "address": "경기 하남시 중부고속도로 26 (춘궁동 138-1)",
+        "lat": 37.516454,
+        "lng": 127.220218,
+        "address": "경기 하남시 중부고속도로 115 (하산곡동)",
         "devices": [
           {
             "dev_no": "",
@@ -18623,9 +29347,9 @@ window.BRANCH_DATA_PACKS = {
         "name": "하남영업소",
         "category": "영업소",
         "section": "수도권제1순환선/중부선",
-        "lat": 37.545102,
-        "lng": 127.195201,
-        "address": "경기 하남시 하남대로 541 (덕풍동 171-1)",
+        "lat": 37.541774,
+        "lng": 127.206704,
+        "address": "경기 하남시 하남대로 541 (덕풍동)",
         "devices": [
           {
             "dev_no": "",
@@ -18756,7 +29480,7 @@ window.BRANCH_DATA_PACKS = {
         "section": "중부선 352.0k",
         "lat": 37.443516,
         "lng": 127.280737,
-        "address": "경기 광주시 송정동 (경기광주TG)",
+        "address": "경기 광주시 남한산성면 상번천리 (광주IC 요금소)",
         "devices": [
           {
             "dev_no": "",
@@ -19537,7 +30261,7 @@ window.BRANCH_DATA_PACKS = {
         "section": "중부선 337.5k",
         "lat": 37.339005,
         "lng": 127.326569,
-        "address": "경기 광주시 곤지암읍 삼리 (곤지암TG)",
+        "address": "경기 광주시 곤지암읍 삼리 (곤지암IC 요금소)",
         "devices": [
           {
             "dev_no": "",
@@ -19668,7 +30392,7 @@ window.BRANCH_DATA_PACKS = {
         "section": "중부선 326.0k",
         "lat": 37.277385,
         "lng": 127.391002,
-        "address": "경기 이천시 마장면 오천리 (서이천TG)",
+        "address": "경기 이천시 마장면 오천리 (서이천IC 요금소)",
         "devices": [
           {
             "dev_no": "",
@@ -19786,8 +30510,8 @@ window.BRANCH_DATA_PACKS = {
         "id": "IC_DONGSEOUL_TG",
         "name": "동서울TG",
         "type": "TG",
-        "lat": 37.530594,
-        "lng": 127.215114,
+        "lat": 37.516454,
+        "lng": 127.220218,
         "milepost": 361.5,
         "desc": "중부고속도로 본선 요금소"
       },
@@ -19901,8 +30625,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 363.66,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.532421,
-        "lng": 127.197984,
+        "lat": 37.53204,
+        "lng": 127.196073,
         "code": "M-0370-36366E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -19915,8 +30639,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 363.28,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.531734,
-        "lng": 127.20372,
+        "lat": 37.531786,
+        "lng": 127.200367,
         "code": "M-0370-36328E-B-H",
         "splice_point": "F(레이켐)",
         "cctv": ""
@@ -19929,8 +30653,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 362.84,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.530938,
-        "lng": 127.210361,
+        "lat": 37.531578,
+        "lng": 127.20535,
         "code": "M-0370-36284E-B-H",
         "splice_point": "F",
         "cctv": "하남IC"
@@ -19943,8 +30667,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 362.85,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.530956,
-        "lng": 127.21021,
+        "lat": 37.531583,
+        "lng": 127.205236,
         "code": "M-0370-36285S-P-H",
         "splice_point": "",
         "cctv": ""
@@ -19957,8 +30681,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 362.86,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.530975,
-        "lng": 127.210059,
+        "lat": 37.531589,
+        "lng": 127.205123,
         "code": "H-0370-36286S-H-H",
         "splice_point": "",
         "cctv": ""
@@ -19971,8 +30695,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 362.87,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.530993,
-        "lng": 127.209908,
+        "lat": 37.531594,
+        "lng": 127.20501,
         "code": "M-0370-36287S-P-H",
         "splice_point": "",
         "cctv": ""
@@ -19985,8 +30709,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 362.44,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.530215,
-        "lng": 127.216399,
+        "lat": 37.531379,
+        "lng": 127.209879,
         "code": "M-0370-36244E-B-H",
         "splice_point": "F(50_레이켐)",
         "cctv": ""
@@ -19999,8 +30723,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 361.95,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.530413,
-        "lng": 127.215729,
+        "lat": 37.530666,
+        "lng": 127.215325,
         "code": "M-0370-36195E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20013,8 +30737,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 361.62,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.530546,
-        "lng": 127.215278,
+        "lat": 37.5289,
+        "lng": 127.21829,
         "code": "M-0370-36162E-B-H",
         "splice_point": "F(50_삼진)",
         "cctv": "동서울TG"
@@ -20027,8 +30751,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 360.83,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.526174,
-        "lng": 127.217455,
+        "lat": 37.522189,
+        "lng": 127.220561,
         "code": "M-0370-36083E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20041,8 +30765,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 360.59,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.524591,
-        "lng": 127.218294,
+        "lat": 37.520037,
+        "lng": 127.220754,
         "code": "M-0370-36050E-B-H",
         "splice_point": "F(50_레이켐)",
         "cctv": "하산곡"
@@ -20055,8 +30779,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 360.51,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.524063,
-        "lng": 127.218573,
+        "lat": 37.519325,
+        "lng": 127.220877,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -20069,8 +30793,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 360.17,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.52182,
-        "lng": 127.219761,
+        "lat": 37.516448,
+        "lng": 127.222141,
         "code": "M-0370-36017E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20083,8 +30807,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 359.71,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.518786,
-        "lng": 127.221369,
+        "lat": 37.512765,
+        "lng": 127.224511,
         "code": "M-0370-35971E-B-H",
         "splice_point": "F(레이켐)",
         "cctv": ""
@@ -20097,8 +30821,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 359.61,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.518126,
-        "lng": 127.221718,
+        "lat": 37.511941,
+        "lng": 127.224965,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -20111,8 +30835,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 359.3,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.516081,
-        "lng": 127.222802,
+        "lat": 37.509395,
+        "lng": 127.226394,
         "code": "M-0370-35914E-B-H",
         "splice_point": "F(50)\n(레이켐)",
         "cctv": ""
@@ -20125,8 +30849,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 358.78,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.512651,
-        "lng": 127.224619,
+        "lat": 37.505248,
+        "lng": 127.229114,
         "code": "M-0370-35878E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -20139,8 +30863,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 358.66,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.511859,
-        "lng": 127.225038,
+        "lat": 37.504315,
+        "lng": 127.229796,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -20153,8 +30877,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 358.28,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.509228,
-        "lng": 127.226695,
+        "lat": 37.501357,
+        "lng": 127.231954,
         "code": "M-0370-35828E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20167,8 +30891,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 357.85,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.506146,
-        "lng": 127.228842,
+        "lat": 37.497997,
+        "lng": 127.234365,
         "code": "M-0370-35785E-P-H",
         "splice_point": "",
         "cctv": "-상산곡교\n(인입14M)\n-산곡터널\n(인입17M)\n-영상VMS(산곡CCTV함체)"
@@ -20181,8 +30905,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 357.781,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.505652,
-        "lng": 127.229186,
+        "lat": 37.497459,
+        "lng": 127.234755,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -20195,8 +30919,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 357.42,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.503065,
-        "lng": 127.230988,
+        "lat": 37.494666,
+        "lng": 127.236841,
         "code": "M-0370-35742E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -20209,8 +30933,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 356.91,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.49941,
-        "lng": 127.233534,
+        "lat": 37.490526,
+        "lng": 127.239275,
         "code": "M-0370-35691E-B-H",
         "splice_point": "",
         "cctv": "상산곡"
@@ -20223,8 +30947,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 356.55,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.496831,
-        "lng": 127.235331,
+        "lat": 37.487356,
+        "lng": 127.240095,
         "code": "M-0370-35655E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20237,8 +30961,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 355.84,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.490772,
-        "lng": 127.239398,
+        "lat": 37.481259,
+        "lng": 127.242377,
         "code": "M-0370-35584E-B-H",
         "splice_point": "F(만공)",
         "cctv": "TTMS산곡터널"
@@ -20251,8 +30975,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 355.85,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.490932,
-        "lng": 127.239301,
+        "lat": 37.48134,
+        "lng": 127.242329,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -20265,8 +30989,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 355.56,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.486295,
-        "lng": 127.242127,
+        "lat": 37.479066,
+        "lng": 127.243933,
         "code": "M-0370-35556E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -20279,8 +31003,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 355.1,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.478939,
-        "lng": 127.246611,
+        "lat": 37.475719,
+        "lng": 127.246994,
         "code": "M-0370-35510E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20293,8 +31017,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 354.45,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.468545,
-        "lng": 127.252947,
+        "lat": 37.470931,
+        "lng": 127.251199,
         "code": "M-0370-35445E-B-H",
         "splice_point": "F(만공)",
         "cctv": ""
@@ -20307,8 +31031,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 354.0,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.459757,
-        "lng": 127.259852,
+        "lat": 37.467196,
+        "lng": 127.253122,
         "code": "M-0370-35400E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20321,8 +31045,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 353.45,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.450774,
-        "lng": 127.26746,
+        "lat": 37.46242,
+        "lng": 127.254701,
         "code": "M-0370-35341E-B-H",
         "splice_point": "F(만공)",
         "cctv": "광지원\n하번천"
@@ -20335,8 +31059,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 353.19,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.449375,
-        "lng": 127.269249,
+        "lat": 37.460092,
+        "lng": 127.254961,
         "code": "M-0370-35317E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -20349,8 +31073,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 352.8,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.447278,
-        "lng": 127.271933,
+        "lat": 37.456702,
+        "lng": 127.255963,
         "code": "M-0370-35280E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20363,8 +31087,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 352.81,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.447331,
-        "lng": 127.271865,
+        "lat": 37.456783,
+        "lng": 127.255914,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -20377,8 +31101,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 352.41,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.445437,
-        "lng": 127.276182,
+        "lat": 37.453907,
+        "lng": 127.258558,
         "code": "M-0370-35241E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20391,8 +31115,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 351.83,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.441969,
-        "lng": 127.28196,
+        "lat": 37.451796,
+        "lng": 127.26445,
         "code": "M-0370-35183E-B-H",
         "splice_point": "F(삼-만)\n50C_AJ월드",
         "cctv": "천진암교\n상번천졸음쉼터"
@@ -20405,8 +31129,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 351.84,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.44206,
-        "lng": 127.281888,
+        "lat": 37.451817,
+        "lng": 127.26434,
         "code": "H-0370-35184S-H-C",
         "splice_point": "",
         "cctv": ""
@@ -20419,8 +31143,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 351.85,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.442151,
-        "lng": 127.281816,
+        "lat": 37.451838,
+        "lng": 127.26423,
         "code": "M-0370-35185S-P-R1",
         "splice_point": "",
         "cctv": ""
@@ -20433,8 +31157,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 351.86,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.442242,
-        "lng": 127.281744,
+        "lat": 37.451859,
+        "lng": 127.264119,
         "code": "M-0370-35186S-P-R2",
         "splice_point": "",
         "cctv": ""
@@ -20447,8 +31171,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 351.87,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.442333,
-        "lng": 127.281672,
+        "lat": 37.451879,
+        "lng": 127.264009,
         "code": "없음",
         "splice_point": "F",
         "cctv": ""
@@ -20461,8 +31185,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 351.42,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.438237,
-        "lng": 127.28491,
+        "lat": 37.450804,
+        "lng": 127.268921,
         "code": "M-0370-35142E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20475,8 +31199,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 350.95,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.433958,
-        "lng": 127.288292,
+        "lat": 37.448702,
+        "lng": 127.273504,
         "code": "M-0370-35095E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -20489,8 +31213,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 350.43,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.429225,
-        "lng": 127.292033,
+        "lat": 37.445894,
+        "lng": 127.278214,
         "code": "M-0370-35043E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20503,8 +31227,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 350.21,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.427223,
-        "lng": 127.293616,
+        "lat": 37.444714,
+        "lng": 127.280214,
         "code": "M-0370-35021E-B-H",
         "splice_point": "F(삼진)",
         "cctv": ""
@@ -20517,8 +31241,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 349.75,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.423036,
-        "lng": 127.296926,
+        "lat": 37.442232,
+        "lng": 127.284382,
         "code": "M-0370-34975E-B-H",
         "splice_point": "",
         "cctv": "TTMS하번천"
@@ -20531,8 +31255,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 349.15,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.41983,
-        "lng": 127.299243,
+        "lat": 37.438911,
+        "lng": 127.289734,
         "code": "M-0370-34915E-B-H",
         "splice_point": "F(신설)\n09.12.13",
         "cctv": ""
@@ -20545,8 +31269,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 348.75,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.418768,
-        "lng": 127.299835,
+        "lat": 37.436177,
+        "lng": 127.292669,
         "code": "M-0370-34865E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -20559,8 +31283,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 348.17,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.417227,
-        "lng": 127.300693,
+        "lat": 37.431594,
+        "lng": 127.295784,
         "code": "M-0370-34814E-B-H",
         "splice_point": "F",
         "cctv": ""
@@ -20573,8 +31297,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 348.15,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.417174,
-        "lng": 127.300723,
+        "lat": 37.431426,
+        "lng": 127.295867,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -20587,8 +31311,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 347.5,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.415448,
-        "lng": 127.301685,
+        "lat": 37.425769,
+        "lng": 127.29771,
         "code": "M-0370-34759E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -20601,8 +31325,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 347.0,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.41412,
-        "lng": 127.302425,
+        "lat": 37.421429,
+        "lng": 127.29918,
         "code": "M-0370-34703E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20615,8 +31339,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 346.7,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.412954,
-        "lng": 127.303031,
+        "lat": 37.418927,
+        "lng": 127.300447,
         "code": "M-0370-34670E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -20629,8 +31353,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 346.71,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.413014,
-        "lng": 127.303002,
+        "lat": 37.419009,
+        "lng": 127.3004,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -20643,8 +31367,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 346.36,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.410912,
-        "lng": 127.304036,
+        "lat": 37.416139,
+        "lng": 127.302028,
         "code": "M-0370-34636E-B-H",
         "splice_point": "F(50+36)25.6",
         "cctv": "신월천교\n(인입39M)"
@@ -20657,8 +31381,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 345.88,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.408028,
-        "lng": 127.305455,
+        "lat": 37.412196,
+        "lng": 127.30424,
         "code": "M-0370-34588E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -20671,8 +31395,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 345.89,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.408088,
-        "lng": 127.305425,
+        "lat": 37.412278,
+        "lng": 127.304194,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -20685,8 +31409,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 345.32,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.404664,
-        "lng": 127.30711,
+        "lat": 37.407588,
+        "lng": 127.306798,
         "code": "M-0370-34532E-P-H",
         "splice_point": "F(50+36)25.6",
         "cctv": ""
@@ -20699,8 +31423,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 344.79,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.40148,
-        "lng": 127.308677,
+        "lat": 37.403138,
+        "lng": 127.30894,
         "code": "M-0370-34479E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -20713,8 +31437,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 344.8,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.40154,
-        "lng": 127.308647,
+        "lat": 37.403223,
+        "lng": 127.308904,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -20727,8 +31451,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 344.33,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.398716,
-        "lng": 127.310037,
+        "lat": 37.399207,
+        "lng": 127.310559,
         "code": "M-0370-34433E-B-H",
         "splice_point": "F(50)",
         "cctv": "초월"
@@ -20741,8 +31465,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 343.9,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.396133,
-        "lng": 127.311308,
+        "lat": 37.39554,
+        "lng": 127.312103,
         "code": "M-0370-34390E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -20755,8 +31479,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 343.91,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.396193,
-        "lng": 127.311278,
+        "lat": 37.395625,
+        "lng": 127.312066,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -20769,8 +31493,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 343.37,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.392663,
-        "lng": 127.312682,
+        "lat": 37.391076,
+        "lng": 127.314205,
         "code": "M-0370-34335E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20783,8 +31507,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 342.9,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.388804,
-        "lng": 127.313374,
+        "lat": 37.386981,
+        "lng": 127.315401,
         "code": "M-0370-34290E-B-H",
         "splice_point": "F(36+50)",
         "cctv": ""
@@ -20797,8 +31521,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 342.91,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.388886,
-        "lng": 127.31336,
+        "lat": 37.387071,
+        "lng": 127.315391,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -20811,8 +31535,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 342.55,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.385931,
-        "lng": 127.31389,
+        "lat": 37.383846,
+        "lng": 127.315759,
         "code": "M-0370-34236E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20825,8 +31549,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 342.15,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.382647,
-        "lng": 127.31448,
+        "lat": 37.380264,
+        "lng": 127.316169,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -20839,8 +31563,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 341.85,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.380184,
-        "lng": 127.314922,
+        "lat": 37.377579,
+        "lng": 127.316497,
         "code": "M-0370-34185E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20853,8 +31577,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 341.48,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.377146,
-        "lng": 127.315468,
+        "lat": 37.374266,
+        "lng": 127.316896,
         "code": "M-0370-34145E-B-H",
         "splice_point": "F(36+50)",
         "cctv": "늦현육교"
@@ -20867,8 +31591,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 341.04,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.373534,
-        "lng": 127.316116,
+        "lat": 37.370327,
+        "lng": 127.317363,
         "code": "M-0370-34104E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20881,8 +31605,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 341.05,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.373616,
-        "lng": 127.316102,
+        "lat": 37.370416,
+        "lng": 127.317353,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -20895,8 +31619,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.7,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.370743,
-        "lng": 127.316618,
+        "lat": 37.367283,
+        "lng": 127.317735,
         "code": "M-0370-34070E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20909,8 +31633,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.5,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.369101,
-        "lng": 127.316912,
+        "lat": 37.365492,
+        "lng": 127.317944,
         "code": "M-0370-34050E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -20923,8 +31647,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.51,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.369183,
-        "lng": 127.316898,
+        "lat": 37.365582,
+        "lng": 127.317933,
         "code": "M-0370-34051S-P-C",
         "splice_point": "",
         "cctv": ""
@@ -20937,8 +31661,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.52,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.369265,
-        "lng": 127.316883,
+        "lat": 37.365671,
+        "lng": 127.317922,
         "code": "M-0370-34052S-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20951,8 +31675,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.53,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.369347,
-        "lng": 127.316868,
+        "lat": 37.365761,
+        "lng": 127.317911,
         "code": "M-0370-34053S-P-C",
         "splice_point": "",
         "cctv": ""
@@ -20965,8 +31689,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.54,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.369429,
-        "lng": 127.316853,
+        "lat": 37.36585,
+        "lng": 127.317901,
         "code": "M-0370-34054S-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20979,8 +31703,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.55,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.369511,
-        "lng": 127.316839,
+        "lat": 37.36594,
+        "lng": 127.31789,
         "code": "M-0370-34055S-P-H",
         "splice_point": "",
         "cctv": ""
@@ -20993,8 +31717,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.0,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.364952,
-        "lng": 127.317691,
+        "lat": 37.361019,
+        "lng": 127.318514,
         "code": "M-0370-34000E-B-H",
         "splice_point": "F(뢰이켐)",
         "cctv": "곤지암IC"
@@ -21007,8 +31731,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.01,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.365056,
-        "lng": 127.317656,
+        "lat": 37.361108,
+        "lng": 127.318498,
         "code": "H-0370-34001S-H-R1",
         "splice_point": "",
         "cctv": ""
@@ -21021,8 +31745,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.02,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.36516,
-        "lng": 127.31762,
+        "lat": 37.361197,
+        "lng": 127.318482,
         "code": "M-0370-34002S-P-R2",
         "splice_point": "",
         "cctv": ""
@@ -21035,8 +31759,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.03,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.365242,
-        "lng": 127.317605,
+        "lat": 37.361286,
+        "lng": 127.318466,
         "code": "H-0370-34003S-H-R3",
         "splice_point": "",
         "cctv": ""
@@ -21049,8 +31773,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.04,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.365324,
-        "lng": 127.317591,
+        "lat": 37.361375,
+        "lng": 127.31845,
         "code": "H-0370-34004S-H-R4",
         "splice_point": "",
         "cctv": ""
@@ -21063,8 +31787,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 339.52,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.359971,
-        "lng": 127.319396,
+        "lat": 37.356811,
+        "lng": 127.319699,
         "code": "M-0370-33952E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -21077,8 +31801,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 339.1,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.355611,
-        "lng": 127.320887,
+        "lat": 37.35322,
+        "lng": 127.321172,
         "code": "M-0370-33910E-B-H",
         "splice_point": "F(44)",
         "cctv": ""
@@ -21091,8 +31815,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 338.63,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.350733,
-        "lng": 127.322556,
+        "lat": 37.349179,
+        "lng": 127.322728,
         "code": "M-0370-33863E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -21105,8 +31829,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 338.2,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.34627,
-        "lng": 127.324083,
+        "lat": 37.345456,
+        "lng": 127.324044,
         "code": "M-0370-33820E-B-H",
         "splice_point": "F(44만공)",
         "cctv": "궁평1교"
@@ -21119,8 +31843,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 338.21,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.346374,
-        "lng": 127.324048,
+        "lat": 37.345543,
+        "lng": 127.324013,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -21133,8 +31857,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 337.79,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.342015,
-        "lng": 127.325539,
+        "lat": 37.341911,
+        "lng": 127.32532,
         "code": "M-0370-33779E-B-H",
         "splice_point": "F(22.6신규)",
         "cctv": ""
@@ -21147,8 +31871,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 337.3,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.337777,
-        "lng": 127.327561,
+        "lat": 37.337731,
+        "lng": 127.327052,
         "code": "M-0370-33730E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -21161,8 +31885,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 337.31,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.337838,
-        "lng": 127.327511,
+        "lat": 37.337813,
+        "lng": 127.327005,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -21175,8 +31899,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 336.9,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.33532,
-        "lng": 127.329545,
+        "lat": 37.33465,
+        "lng": 127.329356,
         "code": "M-0370-33694E-B-H",
         "splice_point": "F(22.6신규)",
         "cctv": ""
@@ -21189,8 +31913,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 336.42,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.332372,
-        "lng": 127.331926,
+        "lat": 37.331345,
+        "lng": 127.332847,
         "code": "M-0370-33642E-B-H",
         "splice_point": "F(44)",
         "cctv": "진우1육교"
@@ -21203,8 +31927,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 335.98,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.32967,
-        "lng": 127.334109,
+        "lat": 37.328225,
+        "lng": 127.335895,
         "code": "M-0370-33598E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -21217,8 +31941,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 335.48,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.326599,
-        "lng": 127.336589,
+        "lat": 37.324195,
+        "lng": 127.3384,
         "code": "M-0370-33548E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -21231,8 +31955,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 335.49,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.326661,
-        "lng": 127.336539,
+        "lat": 37.324276,
+        "lng": 127.338349,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -21245,8 +31969,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 335.01,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.323713,
-        "lng": 127.33892,
+        "lat": 37.320423,
+        "lng": 127.340796,
         "code": "M-0370-33601E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -21259,8 +31983,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 334.59,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.321133,
-        "lng": 127.341003,
+        "lat": 37.317486,
+        "lng": 127.343763,
         "code": "M-0370-33460E-B-H",
         "splice_point": "F(44)",
         "cctv": "용면,\n용면교"
@@ -21273,8 +31997,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 334.61,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.321256,
-        "lng": 127.340904,
+        "lat": 37.317617,
+        "lng": 127.343609,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -21287,8 +32011,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 334.12,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.318247,
-        "lng": 127.343335,
+        "lat": 37.314871,
+        "lng": 127.347934,
         "code": "M-0370-33412E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -21301,8 +32025,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 333.83,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.3168,
-        "lng": 127.344641,
+        "lat": 37.313285,
+        "lng": 127.350537,
         "code": "M-0370-33383E-B-H",
         "splice_point": "F(44+36)2025.06.11신설",
         "cctv": "CCTV"
@@ -21315,8 +32039,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 333.84,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.316841,
-        "lng": 127.344599,
+        "lat": 37.31334,
+        "lng": 127.350447,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -21329,8 +32053,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 333.31,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.314627,
-        "lng": 127.346815,
+        "lat": 37.310053,
+        "lng": 127.354773,
         "code": "M-0370-33335E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -21343,8 +32067,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 332.8,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.312496,
-        "lng": 127.348948,
+        "lat": 37.306415,
+        "lng": 127.358271,
         "code": "M-0370-33280E-B-H",
         "splice_point": "F(44)",
         "cctv": "신둔"
@@ -21357,8 +32081,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 332.81,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.312538,
-        "lng": 127.348906,
+        "lat": 37.30649,
+        "lng": 127.35821,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -21371,8 +32095,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 332.34,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.310574,
-        "lng": 127.350872,
+        "lat": 37.302857,
+        "lng": 127.360923,
         "code": "M-0370-33260E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -21385,8 +32109,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 332.796,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.312479,
-        "lng": 127.348965,
+        "lat": 37.306385,
+        "lng": 127.358296,
         "code": "M-0370-33234E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -21399,8 +32123,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 331.47,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.306938,
-        "lng": 127.35451,
+        "lat": 37.297678,
+        "lng": 127.368123,
         "code": "M-0370-33147E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -21413,8 +32137,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 331.04,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.305142,
-        "lng": 127.356308,
+        "lat": 37.295512,
+        "lng": 127.37215,
         "code": "M-0370-33104E-B-H",
         "splice_point": "F(만공)",
         "cctv": ""
@@ -21427,8 +32151,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 330.61,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.303345,
-        "lng": 127.358106,
+        "lat": 37.293283,
+        "lng": 127.376121,
         "code": "M-0370-33061E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -21441,8 +32165,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 330.12,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.301297,
-        "lng": 127.360155,
+        "lat": 37.289865,
+        "lng": 127.379589,
         "code": "M-0370-33061E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -21455,8 +32179,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 329.57,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.298981,
-        "lng": 127.362493,
+        "lat": 37.28581,
+        "lng": 127.383149,
         "code": "M-0370-329572E-B-H",
         "splice_point": "",
         "cctv": "이천SA"
@@ -21469,8 +32193,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 329.58,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.299041,
-        "lng": 127.362413,
+        "lat": 37.285884,
+        "lng": 127.383085,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -21483,8 +32207,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 329.05,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.295835,
-        "lng": 127.366645,
+        "lat": 37.282012,
+        "lng": 127.386578,
         "code": "M-0370-32905E-B-H",
         "splice_point": "F(만공)",
         "cctv": "서이천IC"
@@ -21497,8 +32221,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 329.06,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.295895,
-        "lng": 127.366566,
+        "lat": 37.282083,
+        "lng": 127.386508,
         "code": "M-0370-32906S-P-R1",
         "splice_point": "",
         "cctv": ""
@@ -21511,8 +32235,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 329.07,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.295956,
-        "lng": 127.366486,
+        "lat": 37.282154,
+        "lng": 127.386438,
         "code": "M-0370-32907S-P-R2",
         "splice_point": "",
         "cctv": ""
@@ -21525,8 +32249,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 329.08,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.296016,
-        "lng": 127.366406,
+        "lat": 37.282225,
+        "lng": 127.386369,
         "code": "H-0370-32908S-H-R3",
         "splice_point": "",
         "cctv": ""
@@ -21539,8 +32263,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 329.09,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.296077,
-        "lng": 127.366326,
+        "lat": 37.282296,
+        "lng": 127.386299,
         "code": "H-0370-32909S-H-R4",
         "splice_point": "",
         "cctv": ""
@@ -21553,8 +32277,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 328.56,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.292871,
-        "lng": 127.370558,
+        "lat": 37.278673,
+        "lng": 127.390191,
         "code": "M-0370-32856E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -21567,8 +32291,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 328.57,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.292931,
-        "lng": 127.370479,
+        "lat": 37.278741,
+        "lng": 127.390117,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -21581,8 +32305,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 328.1,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.290088,
-        "lng": 127.374232,
+        "lat": 37.275555,
+        "lng": 127.393607,
         "code": "M-0370-32810E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -21595,8 +32319,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 327.7,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.287669,
-        "lng": 127.377426,
+        "lat": 37.272851,
+        "lng": 127.396588,
         "code": "M-0370-32770E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -21609,8 +32333,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 327.31,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.285309,
-        "lng": 127.380541,
+        "lat": 37.270282,
+        "lng": 127.399586,
         "code": "M-0370-32731E-B-H",
         "splice_point": "F",
         "cctv": "마장JC"
@@ -21623,8 +32347,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 326.9,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.282829,
-        "lng": 127.383815,
+        "lat": 37.267827,
+        "lng": 127.403042,
         "code": "M-0370-32690E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -21637,8 +32361,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 326.91,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.28289,
-        "lng": 127.383735,
+        "lat": 37.267887,
+        "lng": 127.402958,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -21651,8 +32375,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 326.54,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.280652,
-        "lng": 127.38669,
+        "lat": 37.265708,
+        "lng": 127.406118,
         "code": "M-0370-32654E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -21665,8 +32389,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 326.14,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.278232,
-        "lng": 127.389884,
+        "lat": 37.262878,
+        "lng": 127.408827,
         "code": "M-0370-32614E-B-H",
         "splice_point": "F(44)",
         "cctv": "마장갈림목\n마장사각지대"
@@ -21679,8 +32403,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 326.15,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.278292,
-        "lng": 127.389804,
+        "lat": 37.262961,
+        "lng": 127.408786,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -21693,8 +32417,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 325.61,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.272742,
-        "lng": 127.395558,
+        "lat": 37.258248,
+        "lng": 127.410142,
         "code": "M-0370-32563E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -21707,8 +32431,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 325.2,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.267862,
-        "lng": 127.400348,
+        "lat": 37.255329,
+        "lng": 127.412905,
         "code": "M-0370-32520E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -21721,8 +32445,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 325.21,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.267981,
-        "lng": 127.400232,
+        "lat": 37.255392,
+        "lng": 127.412824,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -21735,8 +32459,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 324.72,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.262148,
-        "lng": 127.405956,
+        "lat": 37.252365,
+        "lng": 127.416845,
         "code": "M-0370-32472E-B-H",
         "splice_point": "F",
         "cctv": ""
@@ -21749,8 +32473,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 324.3,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.257148,
-        "lng": 127.410863,
+        "lat": 37.249823,
+        "lng": 127.420349,
         "code": "M-0370-32430E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -21763,8 +32487,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 324.31,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.257267,
-        "lng": 127.410746,
+        "lat": 37.249889,
+        "lng": 127.420273,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -21777,8 +32501,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 323.8,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.253409,
-        "lng": 127.4154,
+        "lat": 37.246101,
+        "lng": 127.423478,
         "code": "M-0370-32380E-B-H",
         "splice_point": "F",
         "cctv": ""
@@ -21814,8 +32538,8 @@ window.BRANCH_DATA_PACKS = {
             127.191342
           ],
           [
-            37.532421,
-            127.197984
+            37.53204,
+            127.196073
           ]
         ]
       },
@@ -21827,12 +32551,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.532421,
-            127.197984
+            37.53204,
+            127.196073
           ],
           [
-            37.531734,
-            127.20372
+            37.531786,
+            127.200367
           ]
         ]
       },
@@ -21844,12 +32568,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.531734,
-            127.20372
+            37.531786,
+            127.200367
           ],
           [
-            37.530938,
-            127.210361
+            37.531578,
+            127.20535
           ]
         ]
       },
@@ -21861,12 +32585,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.530938,
-            127.210361
+            37.531578,
+            127.20535
           ],
           [
-            37.530956,
-            127.21021
+            37.531583,
+            127.205236
           ]
         ]
       },
@@ -21878,12 +32602,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.530956,
-            127.21021
+            37.531583,
+            127.205236
           ],
           [
-            37.530975,
-            127.210059
+            37.531589,
+            127.205123
           ]
         ]
       },
@@ -21895,12 +32619,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.530975,
-            127.210059
+            37.531589,
+            127.205123
           ],
           [
-            37.530993,
-            127.209908
+            37.531594,
+            127.20501
           ]
         ]
       },
@@ -21912,12 +32636,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.530993,
-            127.209908
+            37.531594,
+            127.20501
           ],
           [
-            37.530215,
-            127.216399
+            37.531379,
+            127.209879
           ]
         ]
       },
@@ -21929,12 +32653,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.530215,
-            127.216399
+            37.531379,
+            127.209879
           ],
           [
-            37.530413,
-            127.215729
+            37.530666,
+            127.215325
           ]
         ]
       },
@@ -21946,12 +32670,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.530413,
-            127.215729
+            37.530666,
+            127.215325
           ],
           [
-            37.530546,
-            127.215278
+            37.5289,
+            127.21829
           ]
         ]
       },
@@ -21963,12 +32687,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.530546,
-            127.215278
+            37.5289,
+            127.21829
           ],
           [
-            37.526174,
-            127.217455
+            37.522189,
+            127.220561
           ]
         ]
       },
@@ -21980,12 +32704,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.526174,
-            127.217455
+            37.522189,
+            127.220561
           ],
           [
-            37.524591,
-            127.218294
+            37.520037,
+            127.220754
           ]
         ]
       },
@@ -21997,12 +32721,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.524591,
-            127.218294
+            37.520037,
+            127.220754
           ],
           [
-            37.524063,
-            127.218573
+            37.519325,
+            127.220877
           ]
         ]
       },
@@ -22014,12 +32738,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.524063,
-            127.218573
+            37.519325,
+            127.220877
           ],
           [
-            37.52182,
-            127.219761
+            37.516448,
+            127.222141
           ]
         ]
       },
@@ -22031,12 +32755,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.52182,
-            127.219761
+            37.516448,
+            127.222141
           ],
           [
-            37.518786,
-            127.221369
+            37.512765,
+            127.224511
           ]
         ]
       },
@@ -22048,12 +32772,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.518786,
-            127.221369
+            37.512765,
+            127.224511
           ],
           [
-            37.518126,
-            127.221718
+            37.511941,
+            127.224965
           ]
         ]
       },
@@ -22065,12 +32789,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.518126,
-            127.221718
+            37.511941,
+            127.224965
           ],
           [
-            37.516081,
-            127.222802
+            37.509395,
+            127.226394
           ]
         ]
       },
@@ -22082,12 +32806,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.516081,
-            127.222802
+            37.509395,
+            127.226394
           ],
           [
-            37.512651,
-            127.224619
+            37.505248,
+            127.229114
           ]
         ]
       },
@@ -22099,12 +32823,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.512651,
-            127.224619
+            37.505248,
+            127.229114
           ],
           [
-            37.511859,
-            127.225038
+            37.504315,
+            127.229796
           ]
         ]
       },
@@ -22116,12 +32840,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.511859,
-            127.225038
+            37.504315,
+            127.229796
           ],
           [
-            37.509228,
-            127.226695
+            37.501357,
+            127.231954
           ]
         ]
       },
@@ -22133,12 +32857,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.509228,
-            127.226695
+            37.501357,
+            127.231954
           ],
           [
-            37.506146,
-            127.228842
+            37.497997,
+            127.234365
           ]
         ]
       },
@@ -22150,12 +32874,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.506146,
-            127.228842
+            37.497997,
+            127.234365
           ],
           [
-            37.505652,
-            127.229186
+            37.497459,
+            127.234755
           ]
         ]
       },
@@ -22167,12 +32891,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.505652,
-            127.229186
+            37.497459,
+            127.234755
           ],
           [
-            37.503065,
-            127.230988
+            37.494666,
+            127.236841
           ]
         ]
       },
@@ -22184,12 +32908,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.503065,
-            127.230988
+            37.494666,
+            127.236841
           ],
           [
-            37.49941,
-            127.233534
+            37.490526,
+            127.239275
           ]
         ]
       },
@@ -22201,12 +32925,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.49941,
-            127.233534
+            37.490526,
+            127.239275
           ],
           [
-            37.496831,
-            127.235331
+            37.487356,
+            127.240095
           ]
         ]
       },
@@ -22218,12 +32942,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.496831,
-            127.235331
+            37.487356,
+            127.240095
           ],
           [
-            37.490772,
-            127.239398
+            37.481259,
+            127.242377
           ]
         ]
       },
@@ -22235,12 +32959,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.490772,
-            127.239398
+            37.481259,
+            127.242377
           ],
           [
-            37.490932,
-            127.239301
+            37.48134,
+            127.242329
           ]
         ]
       },
@@ -22252,12 +32976,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.490932,
-            127.239301
+            37.48134,
+            127.242329
           ],
           [
-            37.486295,
-            127.242127
+            37.479066,
+            127.243933
           ]
         ]
       },
@@ -22269,12 +32993,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.486295,
-            127.242127
+            37.479066,
+            127.243933
           ],
           [
-            37.478939,
-            127.246611
+            37.475719,
+            127.246994
           ]
         ]
       },
@@ -22286,12 +33010,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.478939,
-            127.246611
+            37.475719,
+            127.246994
           ],
           [
-            37.468545,
-            127.252947
+            37.470931,
+            127.251199
           ]
         ]
       },
@@ -22303,12 +33027,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.468545,
-            127.252947
+            37.470931,
+            127.251199
           ],
           [
-            37.459757,
-            127.259852
+            37.467196,
+            127.253122
           ]
         ]
       },
@@ -22320,12 +33044,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.459757,
-            127.259852
+            37.467196,
+            127.253122
           ],
           [
-            37.450774,
-            127.26746
+            37.46242,
+            127.254701
           ]
         ]
       },
@@ -22337,12 +33061,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.450774,
-            127.26746
+            37.46242,
+            127.254701
           ],
           [
-            37.449375,
-            127.269249
+            37.460092,
+            127.254961
           ]
         ]
       },
@@ -22354,12 +33078,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.449375,
-            127.269249
+            37.460092,
+            127.254961
           ],
           [
-            37.447278,
-            127.271933
+            37.456702,
+            127.255963
           ]
         ]
       },
@@ -22371,12 +33095,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.447278,
-            127.271933
+            37.456702,
+            127.255963
           ],
           [
-            37.447331,
-            127.271865
+            37.456783,
+            127.255914
           ]
         ]
       },
@@ -22388,12 +33112,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.447331,
-            127.271865
+            37.456783,
+            127.255914
           ],
           [
-            37.445437,
-            127.276182
+            37.453907,
+            127.258558
           ]
         ]
       },
@@ -22405,12 +33129,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.445437,
-            127.276182
+            37.453907,
+            127.258558
           ],
           [
-            37.441969,
-            127.28196
+            37.451796,
+            127.26445
           ]
         ]
       },
@@ -22422,12 +33146,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.441969,
-            127.28196
+            37.451796,
+            127.26445
           ],
           [
-            37.44206,
-            127.281888
+            37.451817,
+            127.26434
           ]
         ]
       },
@@ -22439,12 +33163,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.44206,
-            127.281888
+            37.451817,
+            127.26434
           ],
           [
-            37.442151,
-            127.281816
+            37.451838,
+            127.26423
           ]
         ]
       },
@@ -22456,12 +33180,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.442151,
-            127.281816
+            37.451838,
+            127.26423
           ],
           [
-            37.442242,
-            127.281744
+            37.451859,
+            127.264119
           ]
         ]
       },
@@ -22473,12 +33197,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.442242,
-            127.281744
+            37.451859,
+            127.264119
           ],
           [
-            37.442333,
-            127.281672
+            37.451879,
+            127.264009
           ]
         ]
       },
@@ -22490,12 +33214,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.442333,
-            127.281672
+            37.451879,
+            127.264009
           ],
           [
-            37.438237,
-            127.28491
+            37.450804,
+            127.268921
           ]
         ]
       },
@@ -22507,12 +33231,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.438237,
-            127.28491
+            37.450804,
+            127.268921
           ],
           [
-            37.433958,
-            127.288292
+            37.448702,
+            127.273504
           ]
         ]
       },
@@ -22524,12 +33248,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.433958,
-            127.288292
+            37.448702,
+            127.273504
           ],
           [
-            37.429225,
-            127.292033
+            37.445894,
+            127.278214
           ]
         ]
       },
@@ -22541,12 +33265,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.429225,
-            127.292033
+            37.445894,
+            127.278214
           ],
           [
-            37.427223,
-            127.293616
+            37.444714,
+            127.280214
           ]
         ]
       },
@@ -22558,12 +33282,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.427223,
-            127.293616
+            37.444714,
+            127.280214
           ],
           [
-            37.423036,
-            127.296926
+            37.442232,
+            127.284382
           ]
         ]
       },
@@ -22575,12 +33299,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.423036,
-            127.296926
+            37.442232,
+            127.284382
           ],
           [
-            37.41983,
-            127.299243
+            37.438911,
+            127.289734
           ]
         ]
       },
@@ -22592,12 +33316,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.41983,
-            127.299243
+            37.438911,
+            127.289734
           ],
           [
-            37.418768,
-            127.299835
+            37.436177,
+            127.292669
           ]
         ]
       },
@@ -22609,12 +33333,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.418768,
-            127.299835
+            37.436177,
+            127.292669
           ],
           [
-            37.417227,
-            127.300693
+            37.431594,
+            127.295784
           ]
         ]
       },
@@ -22626,12 +33350,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.417227,
-            127.300693
+            37.431594,
+            127.295784
           ],
           [
-            37.417174,
-            127.300723
+            37.431426,
+            127.295867
           ]
         ]
       },
@@ -22643,12 +33367,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.417174,
-            127.300723
+            37.431426,
+            127.295867
           ],
           [
-            37.415448,
-            127.301685
+            37.425769,
+            127.29771
           ]
         ]
       },
@@ -22660,12 +33384,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.415448,
-            127.301685
+            37.425769,
+            127.29771
           ],
           [
-            37.41412,
-            127.302425
+            37.421429,
+            127.29918
           ]
         ]
       },
@@ -22677,12 +33401,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.41412,
-            127.302425
+            37.421429,
+            127.29918
           ],
           [
-            37.412954,
-            127.303031
+            37.418927,
+            127.300447
           ]
         ]
       },
@@ -22694,12 +33418,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.412954,
-            127.303031
+            37.418927,
+            127.300447
           ],
           [
-            37.413014,
-            127.303002
+            37.419009,
+            127.3004
           ]
         ]
       },
@@ -22711,12 +33435,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.413014,
-            127.303002
+            37.419009,
+            127.3004
           ],
           [
-            37.410912,
-            127.304036
+            37.416139,
+            127.302028
           ]
         ]
       },
@@ -22728,12 +33452,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.410912,
-            127.304036
+            37.416139,
+            127.302028
           ],
           [
-            37.408028,
-            127.305455
+            37.412196,
+            127.30424
           ]
         ]
       },
@@ -22745,12 +33469,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.408028,
-            127.305455
+            37.412196,
+            127.30424
           ],
           [
-            37.408088,
-            127.305425
+            37.412278,
+            127.304194
           ]
         ]
       },
@@ -22762,12 +33486,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.408088,
-            127.305425
+            37.412278,
+            127.304194
           ],
           [
-            37.404664,
-            127.30711
+            37.407588,
+            127.306798
           ]
         ]
       },
@@ -22779,12 +33503,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.404664,
-            127.30711
+            37.407588,
+            127.306798
           ],
           [
-            37.40148,
-            127.308677
+            37.403138,
+            127.30894
           ]
         ]
       },
@@ -22796,12 +33520,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.40148,
-            127.308677
+            37.403138,
+            127.30894
           ],
           [
-            37.40154,
-            127.308647
+            37.403223,
+            127.308904
           ]
         ]
       },
@@ -22813,12 +33537,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.40154,
-            127.308647
+            37.403223,
+            127.308904
           ],
           [
-            37.398716,
-            127.310037
+            37.399207,
+            127.310559
           ]
         ]
       },
@@ -22830,12 +33554,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.398716,
-            127.310037
+            37.399207,
+            127.310559
           ],
           [
-            37.396133,
-            127.311308
+            37.39554,
+            127.312103
           ]
         ]
       },
@@ -22847,12 +33571,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.396133,
-            127.311308
+            37.39554,
+            127.312103
           ],
           [
-            37.396193,
-            127.311278
+            37.395625,
+            127.312066
           ]
         ]
       },
@@ -22864,12 +33588,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.396193,
-            127.311278
+            37.395625,
+            127.312066
           ],
           [
-            37.392663,
-            127.312682
+            37.391076,
+            127.314205
           ]
         ]
       },
@@ -22881,12 +33605,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.392663,
-            127.312682
+            37.391076,
+            127.314205
           ],
           [
-            37.388804,
-            127.313374
+            37.386981,
+            127.315401
           ]
         ]
       },
@@ -22898,12 +33622,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.388804,
-            127.313374
+            37.386981,
+            127.315401
           ],
           [
-            37.388886,
-            127.31336
+            37.387071,
+            127.315391
           ]
         ]
       },
@@ -22915,12 +33639,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.388886,
-            127.31336
+            37.387071,
+            127.315391
           ],
           [
-            37.385931,
-            127.31389
+            37.383846,
+            127.315759
           ]
         ]
       },
@@ -22932,12 +33656,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.385931,
-            127.31389
+            37.383846,
+            127.315759
           ],
           [
-            37.382647,
-            127.31448
+            37.380264,
+            127.316169
           ]
         ]
       },
@@ -22949,12 +33673,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.382647,
-            127.31448
+            37.380264,
+            127.316169
           ],
           [
-            37.380184,
-            127.314922
+            37.377579,
+            127.316497
           ]
         ]
       },
@@ -22966,12 +33690,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.380184,
-            127.314922
+            37.377579,
+            127.316497
           ],
           [
-            37.377146,
-            127.315468
+            37.374266,
+            127.316896
           ]
         ]
       },
@@ -22983,12 +33707,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.377146,
-            127.315468
+            37.374266,
+            127.316896
           ],
           [
-            37.373534,
-            127.316116
+            37.370327,
+            127.317363
           ]
         ]
       },
@@ -23000,12 +33724,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.373534,
-            127.316116
+            37.370327,
+            127.317363
           ],
           [
-            37.373616,
-            127.316102
+            37.370416,
+            127.317353
           ]
         ]
       },
@@ -23017,12 +33741,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.373616,
-            127.316102
+            37.370416,
+            127.317353
           ],
           [
-            37.370743,
-            127.316618
+            37.367283,
+            127.317735
           ]
         ]
       },
@@ -23034,12 +33758,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.370743,
-            127.316618
+            37.367283,
+            127.317735
           ],
           [
-            37.369101,
-            127.316912
+            37.365492,
+            127.317944
           ]
         ]
       },
@@ -23051,12 +33775,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.369101,
-            127.316912
+            37.365492,
+            127.317944
           ],
           [
-            37.369183,
-            127.316898
+            37.365582,
+            127.317933
           ]
         ]
       },
@@ -23068,12 +33792,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.369183,
-            127.316898
+            37.365582,
+            127.317933
           ],
           [
-            37.369265,
-            127.316883
+            37.365671,
+            127.317922
           ]
         ]
       },
@@ -23085,12 +33809,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.369265,
-            127.316883
+            37.365671,
+            127.317922
           ],
           [
-            37.369347,
-            127.316868
+            37.365761,
+            127.317911
           ]
         ]
       },
@@ -23102,12 +33826,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.369347,
-            127.316868
+            37.365761,
+            127.317911
           ],
           [
-            37.369429,
-            127.316853
+            37.36585,
+            127.317901
           ]
         ]
       },
@@ -23119,12 +33843,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.369429,
-            127.316853
+            37.36585,
+            127.317901
           ],
           [
-            37.369511,
-            127.316839
+            37.36594,
+            127.31789
           ]
         ]
       },
@@ -23136,12 +33860,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.369511,
-            127.316839
+            37.36594,
+            127.31789
           ],
           [
-            37.364952,
-            127.317691
+            37.361019,
+            127.318514
           ]
         ]
       },
@@ -23153,12 +33877,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.364952,
-            127.317691
+            37.361019,
+            127.318514
           ],
           [
-            37.365056,
-            127.317656
+            37.361108,
+            127.318498
           ]
         ]
       },
@@ -23170,12 +33894,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.365056,
-            127.317656
+            37.361108,
+            127.318498
           ],
           [
-            37.36516,
-            127.31762
+            37.361197,
+            127.318482
           ]
         ]
       },
@@ -23187,12 +33911,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.36516,
-            127.31762
+            37.361197,
+            127.318482
           ],
           [
-            37.365242,
-            127.317605
+            37.361286,
+            127.318466
           ]
         ]
       },
@@ -23204,12 +33928,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.365242,
-            127.317605
+            37.361286,
+            127.318466
           ],
           [
-            37.365324,
-            127.317591
+            37.361375,
+            127.31845
           ]
         ]
       },
@@ -23221,12 +33945,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.365324,
-            127.317591
+            37.361375,
+            127.31845
           ],
           [
-            37.359971,
-            127.319396
+            37.356811,
+            127.319699
           ]
         ]
       },
@@ -23238,12 +33962,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.359971,
-            127.319396
+            37.356811,
+            127.319699
           ],
           [
-            37.355611,
-            127.320887
+            37.35322,
+            127.321172
           ]
         ]
       },
@@ -23255,12 +33979,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.355611,
-            127.320887
+            37.35322,
+            127.321172
           ],
           [
-            37.350733,
-            127.322556
+            37.349179,
+            127.322728
           ]
         ]
       },
@@ -23272,12 +33996,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.350733,
-            127.322556
+            37.349179,
+            127.322728
           ],
           [
-            37.34627,
-            127.324083
+            37.345456,
+            127.324044
           ]
         ]
       },
@@ -23289,12 +34013,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.34627,
-            127.324083
+            37.345456,
+            127.324044
           ],
           [
-            37.346374,
-            127.324048
+            37.345543,
+            127.324013
           ]
         ]
       },
@@ -23306,12 +34030,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.346374,
-            127.324048
+            37.345543,
+            127.324013
           ],
           [
-            37.342015,
-            127.325539
+            37.341911,
+            127.32532
           ]
         ]
       },
@@ -23323,12 +34047,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.342015,
-            127.325539
+            37.341911,
+            127.32532
           ],
           [
-            37.337777,
-            127.327561
+            37.337731,
+            127.327052
           ]
         ]
       },
@@ -23340,12 +34064,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.337777,
-            127.327561
+            37.337731,
+            127.327052
           ],
           [
-            37.337838,
-            127.327511
+            37.337813,
+            127.327005
           ]
         ]
       },
@@ -23357,12 +34081,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.337838,
-            127.327511
+            37.337813,
+            127.327005
           ],
           [
-            37.33532,
-            127.329545
+            37.33465,
+            127.329356
           ]
         ]
       },
@@ -23374,12 +34098,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.33532,
-            127.329545
+            37.33465,
+            127.329356
           ],
           [
-            37.332372,
-            127.331926
+            37.331345,
+            127.332847
           ]
         ]
       },
@@ -23391,12 +34115,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.332372,
-            127.331926
+            37.331345,
+            127.332847
           ],
           [
-            37.32967,
-            127.334109
+            37.328225,
+            127.335895
           ]
         ]
       },
@@ -23408,12 +34132,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.32967,
-            127.334109
+            37.328225,
+            127.335895
           ],
           [
-            37.326599,
-            127.336589
+            37.324195,
+            127.3384
           ]
         ]
       },
@@ -23425,12 +34149,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.326599,
-            127.336589
+            37.324195,
+            127.3384
           ],
           [
-            37.326661,
-            127.336539
+            37.324276,
+            127.338349
           ]
         ]
       },
@@ -23442,12 +34166,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.326661,
-            127.336539
+            37.324276,
+            127.338349
           ],
           [
-            37.323713,
-            127.33892
+            37.320423,
+            127.340796
           ]
         ]
       },
@@ -23459,12 +34183,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.323713,
-            127.33892
+            37.320423,
+            127.340796
           ],
           [
-            37.321133,
-            127.341003
+            37.317486,
+            127.343763
           ]
         ]
       },
@@ -23476,12 +34200,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.321133,
-            127.341003
+            37.317486,
+            127.343763
           ],
           [
-            37.321256,
-            127.340904
+            37.317617,
+            127.343609
           ]
         ]
       },
@@ -23493,12 +34217,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.321256,
-            127.340904
+            37.317617,
+            127.343609
           ],
           [
-            37.318247,
-            127.343335
+            37.314871,
+            127.347934
           ]
         ]
       },
@@ -23510,12 +34234,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.318247,
-            127.343335
+            37.314871,
+            127.347934
           ],
           [
-            37.3168,
-            127.344641
+            37.313285,
+            127.350537
           ]
         ]
       },
@@ -23527,12 +34251,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.3168,
-            127.344641
+            37.313285,
+            127.350537
           ],
           [
-            37.316841,
-            127.344599
+            37.31334,
+            127.350447
           ]
         ]
       },
@@ -23544,12 +34268,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.316841,
-            127.344599
+            37.31334,
+            127.350447
           ],
           [
-            37.314627,
-            127.346815
+            37.310053,
+            127.354773
           ]
         ]
       },
@@ -23561,12 +34285,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.314627,
-            127.346815
+            37.310053,
+            127.354773
           ],
           [
-            37.312496,
-            127.348948
+            37.306415,
+            127.358271
           ]
         ]
       },
@@ -23578,12 +34302,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.312496,
-            127.348948
+            37.306415,
+            127.358271
           ],
           [
-            37.312538,
-            127.348906
+            37.30649,
+            127.35821
           ]
         ]
       },
@@ -23595,12 +34319,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.312538,
-            127.348906
+            37.30649,
+            127.35821
           ],
           [
-            37.310574,
-            127.350872
+            37.302857,
+            127.360923
           ]
         ]
       },
@@ -23612,12 +34336,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.310574,
-            127.350872
+            37.302857,
+            127.360923
           ],
           [
-            37.312479,
-            127.348965
+            37.306385,
+            127.358296
           ]
         ]
       },
@@ -23629,12 +34353,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.312479,
-            127.348965
+            37.306385,
+            127.358296
           ],
           [
-            37.306938,
-            127.35451
+            37.297678,
+            127.368123
           ]
         ]
       },
@@ -23646,12 +34370,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.306938,
-            127.35451
+            37.297678,
+            127.368123
           ],
           [
-            37.305142,
-            127.356308
+            37.295512,
+            127.37215
           ]
         ]
       },
@@ -23663,12 +34387,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.305142,
-            127.356308
+            37.295512,
+            127.37215
           ],
           [
-            37.303345,
-            127.358106
+            37.293283,
+            127.376121
           ]
         ]
       },
@@ -23680,12 +34404,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.303345,
-            127.358106
+            37.293283,
+            127.376121
           ],
           [
-            37.301297,
-            127.360155
+            37.289865,
+            127.379589
           ]
         ]
       },
@@ -23697,12 +34421,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.301297,
-            127.360155
+            37.289865,
+            127.379589
           ],
           [
-            37.298981,
-            127.362493
+            37.28581,
+            127.383149
           ]
         ]
       },
@@ -23714,12 +34438,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.298981,
-            127.362493
+            37.28581,
+            127.383149
           ],
           [
-            37.299041,
-            127.362413
+            37.285884,
+            127.383085
           ]
         ]
       },
@@ -23731,12 +34455,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.299041,
-            127.362413
+            37.285884,
+            127.383085
           ],
           [
-            37.295835,
-            127.366645
+            37.282012,
+            127.386578
           ]
         ]
       },
@@ -23748,12 +34472,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.295835,
-            127.366645
+            37.282012,
+            127.386578
           ],
           [
-            37.295895,
-            127.366566
+            37.282083,
+            127.386508
           ]
         ]
       },
@@ -23765,12 +34489,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.295895,
-            127.366566
+            37.282083,
+            127.386508
           ],
           [
-            37.295956,
-            127.366486
+            37.282154,
+            127.386438
           ]
         ]
       },
@@ -23782,12 +34506,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.295956,
-            127.366486
+            37.282154,
+            127.386438
           ],
           [
-            37.296016,
-            127.366406
+            37.282225,
+            127.386369
           ]
         ]
       },
@@ -23799,12 +34523,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.296016,
-            127.366406
+            37.282225,
+            127.386369
           ],
           [
-            37.296077,
-            127.366326
+            37.282296,
+            127.386299
           ]
         ]
       },
@@ -23816,12 +34540,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.296077,
-            127.366326
+            37.282296,
+            127.386299
           ],
           [
-            37.292871,
-            127.370558
+            37.278673,
+            127.390191
           ]
         ]
       },
@@ -23833,12 +34557,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.292871,
-            127.370558
+            37.278673,
+            127.390191
           ],
           [
-            37.292931,
-            127.370479
+            37.278741,
+            127.390117
           ]
         ]
       },
@@ -23850,12 +34574,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.292931,
-            127.370479
+            37.278741,
+            127.390117
           ],
           [
-            37.290088,
-            127.374232
+            37.275555,
+            127.393607
           ]
         ]
       },
@@ -23867,12 +34591,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.290088,
-            127.374232
+            37.275555,
+            127.393607
           ],
           [
-            37.287669,
-            127.377426
+            37.272851,
+            127.396588
           ]
         ]
       },
@@ -23884,12 +34608,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.287669,
-            127.377426
+            37.272851,
+            127.396588
           ],
           [
-            37.285309,
-            127.380541
+            37.270282,
+            127.399586
           ]
         ]
       },
@@ -23901,12 +34625,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.285309,
-            127.380541
+            37.270282,
+            127.399586
           ],
           [
-            37.282829,
-            127.383815
+            37.267827,
+            127.403042
           ]
         ]
       },
@@ -23918,12 +34642,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.282829,
-            127.383815
+            37.267827,
+            127.403042
           ],
           [
-            37.28289,
-            127.383735
+            37.267887,
+            127.402958
           ]
         ]
       },
@@ -23935,12 +34659,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.28289,
-            127.383735
+            37.267887,
+            127.402958
           ],
           [
-            37.280652,
-            127.38669
+            37.265708,
+            127.406118
           ]
         ]
       },
@@ -23952,12 +34676,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.280652,
-            127.38669
+            37.265708,
+            127.406118
           ],
           [
-            37.278232,
-            127.389884
+            37.262878,
+            127.408827
           ]
         ]
       },
@@ -23969,12 +34693,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.278232,
-            127.389884
+            37.262878,
+            127.408827
           ],
           [
-            37.278292,
-            127.389804
+            37.262961,
+            127.408786
           ]
         ]
       },
@@ -23986,12 +34710,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.278292,
-            127.389804
+            37.262961,
+            127.408786
           ],
           [
-            37.272742,
-            127.395558
+            37.258248,
+            127.410142
           ]
         ]
       },
@@ -24003,12 +34727,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.272742,
-            127.395558
+            37.258248,
+            127.410142
           ],
           [
-            37.267862,
-            127.400348
+            37.255329,
+            127.412905
           ]
         ]
       },
@@ -24020,12 +34744,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.267862,
-            127.400348
+            37.255329,
+            127.412905
           ],
           [
-            37.267981,
-            127.400232
+            37.255392,
+            127.412824
           ]
         ]
       },
@@ -24037,12 +34761,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.267981,
-            127.400232
+            37.255392,
+            127.412824
           ],
           [
-            37.262148,
-            127.405956
+            37.252365,
+            127.416845
           ]
         ]
       },
@@ -24054,12 +34778,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.262148,
-            127.405956
+            37.252365,
+            127.416845
           ],
           [
-            37.257148,
-            127.410863
+            37.249823,
+            127.420349
           ]
         ]
       },
@@ -24071,12 +34795,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.257148,
-            127.410863
+            37.249823,
+            127.420349
           ],
           [
-            37.257267,
-            127.410746
+            37.249889,
+            127.420273
           ]
         ]
       },
@@ -24088,12 +34812,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.257267,
-            127.410746
+            37.249889,
+            127.420273
           ],
           [
-            37.253409,
-            127.4154
+            37.246101,
+            127.423478
           ]
         ]
       }
@@ -24131,544 +34855,544 @@ window.BRANCH_DATA_PACKS = {
             127.191342
           ],
           [
-            37.532421,
-            127.197984
+            37.53204,
+            127.196073
           ],
           [
-            37.531734,
-            127.20372
+            37.531786,
+            127.200367
           ],
           [
-            37.530938,
-            127.210361
+            37.531578,
+            127.20535
           ],
           [
-            37.530956,
-            127.21021
+            37.531583,
+            127.205236
           ],
           [
-            37.530975,
-            127.210059
+            37.531589,
+            127.205123
           ],
           [
-            37.530993,
-            127.209908
+            37.531594,
+            127.20501
           ],
           [
-            37.530215,
-            127.216399
+            37.531379,
+            127.209879
           ],
           [
-            37.530413,
-            127.215729
+            37.530666,
+            127.215325
           ],
           [
-            37.530546,
-            127.215278
+            37.5289,
+            127.21829
           ],
           [
-            37.526174,
-            127.217455
+            37.522189,
+            127.220561
           ],
           [
-            37.524591,
-            127.218294
+            37.520037,
+            127.220754
           ],
           [
-            37.524063,
-            127.218573
+            37.519325,
+            127.220877
           ],
           [
-            37.52182,
-            127.219761
+            37.516448,
+            127.222141
           ],
           [
-            37.518786,
-            127.221369
+            37.512765,
+            127.224511
           ],
           [
-            37.518126,
-            127.221718
+            37.511941,
+            127.224965
           ],
           [
-            37.516081,
-            127.222802
+            37.509395,
+            127.226394
           ],
           [
-            37.512651,
-            127.224619
+            37.505248,
+            127.229114
           ],
           [
-            37.511859,
-            127.225038
+            37.504315,
+            127.229796
           ],
           [
-            37.509228,
-            127.226695
+            37.501357,
+            127.231954
           ],
           [
-            37.506146,
-            127.228842
+            37.497997,
+            127.234365
           ],
           [
-            37.505652,
-            127.229186
+            37.497459,
+            127.234755
           ],
           [
-            37.503065,
-            127.230988
+            37.494666,
+            127.236841
           ],
           [
-            37.49941,
-            127.233534
+            37.490526,
+            127.239275
           ],
           [
-            37.496831,
-            127.235331
+            37.487356,
+            127.240095
           ],
           [
-            37.490772,
-            127.239398
+            37.481259,
+            127.242377
           ],
           [
-            37.490932,
-            127.239301
+            37.48134,
+            127.242329
           ],
           [
-            37.486295,
-            127.242127
+            37.479066,
+            127.243933
           ],
           [
-            37.478939,
-            127.246611
+            37.475719,
+            127.246994
           ],
           [
-            37.468545,
-            127.252947
+            37.470931,
+            127.251199
           ],
           [
-            37.459757,
-            127.259852
+            37.467196,
+            127.253122
           ],
           [
-            37.450774,
-            127.26746
+            37.46242,
+            127.254701
           ],
           [
-            37.449375,
-            127.269249
+            37.460092,
+            127.254961
           ],
           [
-            37.447278,
-            127.271933
+            37.456702,
+            127.255963
           ],
           [
-            37.447331,
-            127.271865
+            37.456783,
+            127.255914
           ],
           [
-            37.445437,
-            127.276182
+            37.453907,
+            127.258558
           ],
           [
-            37.441969,
-            127.28196
+            37.451796,
+            127.26445
           ],
           [
-            37.44206,
-            127.281888
+            37.451817,
+            127.26434
           ],
           [
-            37.442151,
-            127.281816
+            37.451838,
+            127.26423
           ],
           [
-            37.442242,
-            127.281744
+            37.451859,
+            127.264119
           ],
           [
-            37.442333,
-            127.281672
+            37.451879,
+            127.264009
           ],
           [
-            37.438237,
-            127.28491
+            37.450804,
+            127.268921
           ],
           [
-            37.433958,
-            127.288292
+            37.448702,
+            127.273504
           ],
           [
-            37.429225,
-            127.292033
+            37.445894,
+            127.278214
           ],
           [
-            37.427223,
-            127.293616
+            37.444714,
+            127.280214
           ],
           [
-            37.423036,
-            127.296926
+            37.442232,
+            127.284382
           ],
           [
-            37.41983,
-            127.299243
+            37.438911,
+            127.289734
           ],
           [
-            37.418768,
-            127.299835
+            37.436177,
+            127.292669
           ],
           [
-            37.417227,
-            127.300693
+            37.431594,
+            127.295784
           ],
           [
-            37.417174,
-            127.300723
+            37.431426,
+            127.295867
           ],
           [
-            37.415448,
-            127.301685
+            37.425769,
+            127.29771
           ],
           [
-            37.41412,
-            127.302425
+            37.421429,
+            127.29918
           ],
           [
-            37.412954,
-            127.303031
+            37.418927,
+            127.300447
           ],
           [
-            37.413014,
-            127.303002
+            37.419009,
+            127.3004
           ],
           [
-            37.410912,
-            127.304036
+            37.416139,
+            127.302028
           ],
           [
-            37.408028,
-            127.305455
+            37.412196,
+            127.30424
           ],
           [
-            37.408088,
-            127.305425
+            37.412278,
+            127.304194
           ],
           [
-            37.404664,
-            127.30711
+            37.407588,
+            127.306798
           ],
           [
-            37.40148,
-            127.308677
+            37.403138,
+            127.30894
           ],
           [
-            37.40154,
-            127.308647
+            37.403223,
+            127.308904
           ],
           [
-            37.398716,
-            127.310037
+            37.399207,
+            127.310559
           ],
           [
-            37.396133,
-            127.311308
+            37.39554,
+            127.312103
           ],
           [
-            37.396193,
-            127.311278
+            37.395625,
+            127.312066
           ],
           [
-            37.392663,
-            127.312682
+            37.391076,
+            127.314205
           ],
           [
-            37.388804,
-            127.313374
+            37.386981,
+            127.315401
           ],
           [
-            37.388886,
-            127.31336
+            37.387071,
+            127.315391
           ],
           [
-            37.385931,
-            127.31389
+            37.383846,
+            127.315759
           ],
           [
-            37.382647,
-            127.31448
+            37.380264,
+            127.316169
           ],
           [
-            37.380184,
-            127.314922
+            37.377579,
+            127.316497
           ],
           [
-            37.377146,
-            127.315468
+            37.374266,
+            127.316896
           ],
           [
-            37.373534,
-            127.316116
+            37.370327,
+            127.317363
           ],
           [
-            37.373616,
-            127.316102
+            37.370416,
+            127.317353
           ],
           [
-            37.370743,
-            127.316618
+            37.367283,
+            127.317735
           ],
           [
-            37.369101,
-            127.316912
+            37.365492,
+            127.317944
           ],
           [
-            37.369183,
-            127.316898
+            37.365582,
+            127.317933
           ],
           [
-            37.369265,
-            127.316883
+            37.365671,
+            127.317922
           ],
           [
-            37.369347,
-            127.316868
+            37.365761,
+            127.317911
           ],
           [
-            37.369429,
-            127.316853
+            37.36585,
+            127.317901
           ],
           [
-            37.369511,
-            127.316839
+            37.36594,
+            127.31789
           ],
           [
-            37.364952,
-            127.317691
+            37.361019,
+            127.318514
           ],
           [
-            37.365056,
-            127.317656
+            37.361108,
+            127.318498
           ],
           [
-            37.36516,
-            127.31762
+            37.361197,
+            127.318482
           ],
           [
-            37.365242,
-            127.317605
+            37.361286,
+            127.318466
           ],
           [
-            37.365324,
-            127.317591
+            37.361375,
+            127.31845
           ],
           [
-            37.359971,
-            127.319396
+            37.356811,
+            127.319699
           ],
           [
-            37.355611,
-            127.320887
+            37.35322,
+            127.321172
           ],
           [
-            37.350733,
-            127.322556
+            37.349179,
+            127.322728
           ],
           [
-            37.34627,
-            127.324083
+            37.345456,
+            127.324044
           ],
           [
-            37.346374,
-            127.324048
+            37.345543,
+            127.324013
           ],
           [
-            37.342015,
-            127.325539
+            37.341911,
+            127.32532
           ],
           [
-            37.337777,
-            127.327561
+            37.337731,
+            127.327052
           ],
           [
-            37.337838,
-            127.327511
+            37.337813,
+            127.327005
           ],
           [
-            37.33532,
-            127.329545
+            37.33465,
+            127.329356
           ],
           [
-            37.332372,
-            127.331926
+            37.331345,
+            127.332847
           ],
           [
-            37.32967,
-            127.334109
+            37.328225,
+            127.335895
           ],
           [
-            37.326599,
-            127.336589
+            37.324195,
+            127.3384
           ],
           [
-            37.326661,
-            127.336539
+            37.324276,
+            127.338349
           ],
           [
-            37.323713,
-            127.33892
+            37.320423,
+            127.340796
           ],
           [
-            37.321133,
-            127.341003
+            37.317486,
+            127.343763
           ],
           [
-            37.321256,
-            127.340904
+            37.317617,
+            127.343609
           ],
           [
-            37.318247,
-            127.343335
+            37.314871,
+            127.347934
           ],
           [
-            37.3168,
-            127.344641
+            37.313285,
+            127.350537
           ],
           [
-            37.316841,
-            127.344599
+            37.31334,
+            127.350447
           ],
           [
-            37.314627,
-            127.346815
+            37.310053,
+            127.354773
           ],
           [
-            37.312496,
-            127.348948
+            37.306415,
+            127.358271
           ],
           [
-            37.312538,
-            127.348906
+            37.30649,
+            127.35821
           ],
           [
-            37.310574,
-            127.350872
+            37.302857,
+            127.360923
           ],
           [
-            37.312479,
-            127.348965
+            37.306385,
+            127.358296
           ],
           [
-            37.306938,
-            127.35451
+            37.297678,
+            127.368123
           ],
           [
-            37.305142,
-            127.356308
+            37.295512,
+            127.37215
           ],
           [
-            37.303345,
-            127.358106
+            37.293283,
+            127.376121
           ],
           [
-            37.301297,
-            127.360155
+            37.289865,
+            127.379589
           ],
           [
-            37.298981,
-            127.362493
+            37.28581,
+            127.383149
           ],
           [
-            37.299041,
-            127.362413
+            37.285884,
+            127.383085
           ],
           [
-            37.295835,
-            127.366645
+            37.282012,
+            127.386578
           ],
           [
-            37.295895,
-            127.366566
+            37.282083,
+            127.386508
           ],
           [
-            37.295956,
-            127.366486
+            37.282154,
+            127.386438
           ],
           [
-            37.296016,
-            127.366406
+            37.282225,
+            127.386369
           ],
           [
-            37.296077,
-            127.366326
+            37.282296,
+            127.386299
           ],
           [
-            37.292871,
-            127.370558
+            37.278673,
+            127.390191
           ],
           [
-            37.292931,
-            127.370479
+            37.278741,
+            127.390117
           ],
           [
-            37.290088,
-            127.374232
+            37.275555,
+            127.393607
           ],
           [
-            37.287669,
-            127.377426
+            37.272851,
+            127.396588
           ],
           [
-            37.285309,
-            127.380541
+            37.270282,
+            127.399586
           ],
           [
-            37.282829,
-            127.383815
+            37.267827,
+            127.403042
           ],
           [
-            37.28289,
-            127.383735
+            37.267887,
+            127.402958
           ],
           [
-            37.280652,
-            127.38669
+            37.265708,
+            127.406118
           ],
           [
-            37.278232,
-            127.389884
+            37.262878,
+            127.408827
           ],
           [
-            37.278292,
-            127.389804
+            37.262961,
+            127.408786
           ],
           [
-            37.272742,
-            127.395558
+            37.258248,
+            127.410142
           ],
           [
-            37.267862,
-            127.400348
+            37.255329,
+            127.412905
           ],
           [
-            37.267981,
-            127.400232
+            37.255392,
+            127.412824
           ],
           [
-            37.262148,
-            127.405956
+            37.252365,
+            127.416845
           ],
           [
-            37.257148,
-            127.410863
+            37.249823,
+            127.420349
           ],
           [
-            37.257267,
-            127.410746
+            37.249889,
+            127.420273
           ],
           [
-            37.253409,
-            127.4154
+            37.246101,
+            127.423478
           ]
         ]
       }
@@ -24713,7 +35437,7 @@ window.BRANCH_DATA_PACKS = {
           "id": "OFF_GWANGJU_MAIN",
           "name": "경기광주지사",
           "category": "지사",
-          "section": "중부선 346.8k",
+          "section": "중부선 도척/유정",
           "lat": 37.35911,
           "lng": 127.316736,
           "address": "경기 광주시 도척면 유정리 (한국도로공사 경기광주지사)",
@@ -25532,7 +36256,7 @@ window.BRANCH_DATA_PACKS = {
           "section": "중부선 337.5k",
           "lat": 37.339005,
           "lng": 127.326569,
-          "address": "경기 광주시 곤지암읍 삼리 (곤지암TG)",
+          "address": "경기 광주시 곤지암읍 삼리 (곤지암IC 요금소)",
           "devices": [
             {
               "dev_no": "",
@@ -25698,7 +36422,7 @@ window.BRANCH_DATA_PACKS = {
           "section": "중부선 352.0k",
           "lat": 37.443516,
           "lng": 127.280737,
-          "address": "경기 광주시 송정동 (경기광주TG)",
+          "address": "경기 광주시 남한산성면 상번천리 (광주IC 요금소)",
           "devices": [
             {
               "dev_no": "",
@@ -26514,7 +37238,7 @@ window.BRANCH_DATA_PACKS = {
           "section": "중부선 326.0k",
           "lat": 37.277385,
           "lng": 127.391002,
-          "address": "경기 이천시 마장면 오천리 (서이천TG)",
+          "address": "경기 이천시 마장면 오천리 (서이천IC 요금소)",
           "devices": [
             {
               "dev_no": "",
@@ -26648,9 +37372,9 @@ window.BRANCH_DATA_PACKS = {
           "name": "동서울영업소",
           "category": "영업소",
           "section": "중부선 361.5k",
-          "lat": 37.530594,
-          "lng": 127.215114,
-          "address": "경기 하남시 중부고속도로 26 (춘궁동 138-1)",
+          "lat": 37.516454,
+          "lng": 127.220218,
+          "address": "경기 하남시 중부고속도로 115 (하산곡동)",
           "devices": [
             {
               "dev_no": "",
@@ -27644,9 +38368,9 @@ window.BRANCH_DATA_PACKS = {
           "name": "하남영업소",
           "category": "영업소",
           "section": "수도권제1순환선/중부선",
-          "lat": 37.545102,
-          "lng": 127.195201,
-          "address": "경기 하남시 하남대로 541 (덕풍동 171-1)",
+          "lat": 37.541774,
+          "lng": 127.206704,
+          "address": "경기 하남시 하남대로 541 (덕풍동)",
           "devices": [
             {
               "dev_no": "",
@@ -27796,8 +38520,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 340.02,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.36516,
-              "lng": 127.31762,
+              "lat": 37.361197,
+              "lng": 127.318482,
               "code": "M-0370-34002S-P-R2",
               "splice_point": "",
               "cctv": ""
@@ -27810,8 +38534,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 340.03,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.365242,
-              "lng": 127.317605,
+              "lat": 37.361286,
+              "lng": 127.318466,
               "code": "H-0370-34003S-H-R3",
               "splice_point": "",
               "cctv": ""
@@ -27824,8 +38548,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 340.04,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.365324,
-              "lng": 127.317591,
+              "lat": 37.361375,
+              "lng": 127.31845,
               "code": "H-0370-34004S-H-R4",
               "splice_point": "",
               "cctv": ""
@@ -27838,8 +38562,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 338.21,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.346374,
-              "lng": 127.324048,
+              "lat": 37.345543,
+              "lng": 127.324013,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -27852,8 +38576,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 337.31,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.337838,
-              "lng": 127.327511,
+              "lat": 37.337813,
+              "lng": 127.327005,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -27889,8 +38613,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 335.49,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.326661,
-              "lng": 127.336539,
+              "lat": 37.324276,
+              "lng": 127.338349,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -27903,8 +38627,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 334.61,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.321256,
-              "lng": 127.340904,
+              "lat": 37.317617,
+              "lng": 127.343609,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -27917,8 +38641,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 333.84,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.316841,
-              "lng": 127.344599,
+              "lat": 37.31334,
+              "lng": 127.350447,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -27931,8 +38655,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 332.81,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.312538,
-              "lng": 127.348906,
+              "lat": 37.30649,
+              "lng": 127.35821,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -27968,8 +38692,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 329.58,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.299041,
-              "lng": 127.362413,
+              "lat": 37.285884,
+              "lng": 127.383085,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -27982,8 +38706,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 329.06,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.295895,
-              "lng": 127.366566,
+              "lat": 37.282083,
+              "lng": 127.386508,
               "code": "M-0370-32906S-P-R1",
               "splice_point": "",
               "cctv": ""
@@ -27996,8 +38720,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 329.07,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.295956,
-              "lng": 127.366486,
+              "lat": 37.282154,
+              "lng": 127.386438,
               "code": "M-0370-32907S-P-R2",
               "splice_point": "",
               "cctv": ""
@@ -28010,8 +38734,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 329.08,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.296016,
-              "lng": 127.366406,
+              "lat": 37.282225,
+              "lng": 127.386369,
               "code": "H-0370-32908S-H-R3",
               "splice_point": "",
               "cctv": ""
@@ -28024,8 +38748,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 329.09,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.296077,
-              "lng": 127.366326,
+              "lat": 37.282296,
+              "lng": 127.386299,
               "code": "H-0370-32909S-H-R4",
               "splice_point": "",
               "cctv": ""
@@ -28061,8 +38785,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 328.57,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.292931,
-              "lng": 127.370479,
+              "lat": 37.278741,
+              "lng": 127.390117,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -28075,8 +38799,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 326.15,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.278292,
-              "lng": 127.389804,
+              "lat": 37.262961,
+              "lng": 127.408786,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -28089,8 +38813,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 325.21,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.267981,
-              "lng": 127.400232,
+              "lat": 37.255392,
+              "lng": 127.412824,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -28103,8 +38827,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 324.31,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.257267,
-              "lng": 127.410746,
+              "lat": 37.249889,
+              "lng": 127.420273,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -28117,8 +38841,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 323.8,
               "section": "제2중부선 (하남-호법)",
               "bound": "하행선",
-              "lat": 37.253409,
-              "lng": 127.4154,
+              "lat": 37.246101,
+              "lng": 127.423478,
               "code": "M-0370-32380E-B-H",
               "splice_point": "F",
               "cctv": ""
