@@ -27593,7 +27593,7 @@ window.BRANCH_DATA_PACKS = {
   "GWANGJU": {
     "branch_name": "경기광주지사",
     "branch_code": "GWANGJU",
-    "subtitle": "제2중부고속도로 통신관로 · 맨홀(137개소) · 지사/영업소(6개소) 방범망 · 광케이블",
+    "subtitle": "제2중부선(137개소) · 중부선(18개소) 통신관로 · 지사/영업소(6개소) 방범망 · 광케이블",
     "center": [
       37.38,
       127.3
@@ -30522,7 +30522,7 @@ window.BRANCH_DATA_PACKS = {
         "lat": 37.492531,
         "lng": 127.238326,
         "milepost": 355.95,
-        "desc": "제1/제2중부선 분기점"
+        "desc": "제1/제2중부선 분기점 (케이블 분기)"
       },
       {
         "id": "IC_GWANGJU",
@@ -30581,7 +30581,7 @@ window.BRANCH_DATA_PACKS = {
     ],
     "manholes": [
       {
-        "id": "MH_GWANGJU_1",
+        "id": "MH_J2_1",
         "name": "1M",
         "category": "인공",
         "type": "접속",
@@ -30595,7 +30595,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_2",
+        "id": "MH_J2_2",
         "name": "1-1H",
         "category": "수공",
         "type": "통과",
@@ -30609,7 +30609,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_3",
+        "id": "MH_J2_3",
         "name": "2M",
         "category": "인공",
         "type": "통과",
@@ -30623,7 +30623,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_4",
+        "id": "MH_J2_4",
         "name": "3M",
         "category": "인공",
         "type": "접속",
@@ -30637,7 +30637,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_5",
+        "id": "MH_J2_5",
         "name": "4M",
         "category": "인공",
         "type": "접속",
@@ -30651,7 +30651,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "하남IC"
       },
       {
-        "id": "MH_GWANGJU_6",
+        "id": "MH_J2_6",
         "name": "4-1M",
         "category": "인공",
         "type": "통과",
@@ -30665,7 +30665,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_7",
+        "id": "MH_J2_7",
         "name": "4-2H",
         "category": "수공",
         "type": "통과",
@@ -30679,7 +30679,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_8",
+        "id": "MH_J2_8",
         "name": "4-3M",
         "category": "인공",
         "type": "통과",
@@ -30693,7 +30693,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_9",
+        "id": "MH_J2_9",
         "name": "5M",
         "category": "인공",
         "type": "접속",
@@ -30707,7 +30707,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_10",
+        "id": "MH_J2_10",
         "name": "6M",
         "category": "인공",
         "type": "통과",
@@ -30721,7 +30721,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_11",
+        "id": "MH_J2_11",
         "name": "7M",
         "category": "인공",
         "type": "접속",
@@ -30735,7 +30735,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "동서울TG"
       },
       {
-        "id": "MH_GWANGJU_12",
+        "id": "MH_J2_12",
         "name": "8M",
         "category": "인공",
         "type": "통과",
@@ -30749,7 +30749,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_13",
+        "id": "MH_J2_13",
         "name": "9M",
         "category": "인공",
         "type": "접속",
@@ -30763,7 +30763,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "하산곡"
       },
       {
-        "id": "MH_GWANGJU_14",
+        "id": "MH_J2_14",
         "name": "9-1H",
         "category": "수공",
         "type": "통과",
@@ -30777,7 +30777,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_15",
+        "id": "MH_J2_15",
         "name": "10M",
         "category": "인공",
         "type": "통과",
@@ -30791,7 +30791,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_16",
+        "id": "MH_J2_16",
         "name": "11M",
         "category": "인공",
         "type": "접속",
@@ -30805,7 +30805,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_17",
+        "id": "MH_J2_17",
         "name": "11-1H",
         "category": "수공",
         "type": "통과",
@@ -30819,7 +30819,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_18",
+        "id": "MH_J2_18",
         "name": "12M",
         "category": "인공",
         "type": "접속",
@@ -30833,7 +30833,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_19",
+        "id": "MH_J2_19",
         "name": "13M",
         "category": "인공",
         "type": "통과",
@@ -30847,7 +30847,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_20",
+        "id": "MH_J2_20",
         "name": "13-1H",
         "category": "수공",
         "type": "통과",
@@ -30861,7 +30861,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_21",
+        "id": "MH_J2_21",
         "name": "14M",
         "category": "인공",
         "type": "통과",
@@ -30875,7 +30875,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_22",
+        "id": "MH_J2_22",
         "name": "15M",
         "category": "인공",
         "type": "통과",
@@ -30889,7 +30889,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "-상산곡교\n(인입14M)\n-산곡터널\n(인입17M)\n-영상VMS(산곡CCTV함체)"
       },
       {
-        "id": "MH_GWANGJU_23",
+        "id": "MH_J2_23",
         "name": "15-1H",
         "category": "수공",
         "type": "통과",
@@ -30903,7 +30903,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_24",
+        "id": "MH_J2_24",
         "name": "16M",
         "category": "인공",
         "type": "통과",
@@ -30917,7 +30917,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_25",
+        "id": "MH_J2_25",
         "name": "17M",
         "category": "인공",
         "type": "통과",
@@ -30931,7 +30931,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "상산곡"
       },
       {
-        "id": "MH_GWANGJU_26",
+        "id": "MH_J2_26",
         "name": "18M",
         "category": "인공",
         "type": "통과",
@@ -30945,7 +30945,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_27",
+        "id": "MH_J2_27",
         "name": "19M",
         "category": "인공",
         "type": "접속",
@@ -30959,7 +30959,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "TTMS산곡터널"
       },
       {
-        "id": "MH_GWANGJU_28",
+        "id": "MH_J2_28",
         "name": "19-1H",
         "category": "수공",
         "type": "통과",
@@ -30973,7 +30973,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_29",
+        "id": "MH_J2_29",
         "name": "20M",
         "category": "인공",
         "type": "통과",
@@ -30987,7 +30987,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_30",
+        "id": "MH_J2_30",
         "name": "21M",
         "category": "인공",
         "type": "통과",
@@ -31001,7 +31001,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_31",
+        "id": "MH_J2_31",
         "name": "22M",
         "category": "인공",
         "type": "접속",
@@ -31015,7 +31015,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_32",
+        "id": "MH_J2_32",
         "name": "23M",
         "category": "인공",
         "type": "통과",
@@ -31029,7 +31029,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_33",
+        "id": "MH_J2_33",
         "name": "24M",
         "category": "인공",
         "type": "접속",
@@ -31043,7 +31043,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "광지원\n하번천"
       },
       {
-        "id": "MH_GWANGJU_34",
+        "id": "MH_J2_34",
         "name": "25M",
         "category": "인공",
         "type": "통과",
@@ -31057,7 +31057,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_35",
+        "id": "MH_J2_35",
         "name": "26M",
         "category": "인공",
         "type": "통과",
@@ -31071,7 +31071,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_36",
+        "id": "MH_J2_36",
         "name": "26-1H",
         "category": "수공",
         "type": "통과",
@@ -31085,7 +31085,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_37",
+        "id": "MH_J2_37",
         "name": "27M",
         "category": "인공",
         "type": "통과",
@@ -31099,7 +31099,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_38",
+        "id": "MH_J2_38",
         "name": "28M",
         "category": "인공",
         "type": "접속",
@@ -31113,7 +31113,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "천진암교\n상번천졸음쉼터"
       },
       {
-        "id": "MH_GWANGJU_39",
+        "id": "MH_J2_39",
         "name": "28-1H",
         "category": "수공",
         "type": "통과",
@@ -31127,7 +31127,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_40",
+        "id": "MH_J2_40",
         "name": "28-2M",
         "category": "인공",
         "type": "통과",
@@ -31141,7 +31141,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_41",
+        "id": "MH_J2_41",
         "name": "28-3M",
         "category": "인공",
         "type": "통과",
@@ -31155,7 +31155,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_42",
+        "id": "MH_J2_42",
         "name": "28-4M\n(중부선18M)",
         "category": "인공",
         "type": "접속",
@@ -31169,7 +31169,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_43",
+        "id": "MH_J2_43",
         "name": "29M",
         "category": "인공",
         "type": "통과",
@@ -31183,7 +31183,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_44",
+        "id": "MH_J2_44",
         "name": "30M",
         "category": "인공",
         "type": "통과",
@@ -31197,7 +31197,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_45",
+        "id": "MH_J2_45",
         "name": "31M",
         "category": "인공",
         "type": "통과",
@@ -31211,7 +31211,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_46",
+        "id": "MH_J2_46",
         "name": "32M",
         "category": "인공",
         "type": "접속",
@@ -31225,7 +31225,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_47",
+        "id": "MH_J2_47",
         "name": "33M",
         "category": "인공",
         "type": "통과",
@@ -31239,7 +31239,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "TTMS하번천"
       },
       {
-        "id": "MH_GWANGJU_48",
+        "id": "MH_J2_48",
         "name": "34M",
         "category": "인공",
         "type": "접속",
@@ -31253,7 +31253,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_49",
+        "id": "MH_J2_49",
         "name": "35M",
         "category": "인공",
         "type": "통과",
@@ -31267,7 +31267,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_50",
+        "id": "MH_J2_50",
         "name": "36M",
         "category": "인공",
         "type": "접속",
@@ -31281,7 +31281,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_51",
+        "id": "MH_J2_51",
         "name": "36-1H",
         "category": "수공",
         "type": "통과",
@@ -31295,7 +31295,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_52",
+        "id": "MH_J2_52",
         "name": "37M",
         "category": "인공",
         "type": "통과",
@@ -31309,7 +31309,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_53",
+        "id": "MH_J2_53",
         "name": "38M",
         "category": "인공",
         "type": "통과",
@@ -31323,7 +31323,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_54",
+        "id": "MH_J2_54",
         "name": "39M",
         "category": "인공",
         "type": "통과",
@@ -31337,7 +31337,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_55",
+        "id": "MH_J2_55",
         "name": "39-1H",
         "category": "수공",
         "type": "통과",
@@ -31351,7 +31351,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_56",
+        "id": "MH_J2_56",
         "name": "40M",
         "category": "인공",
         "type": "접속",
@@ -31365,7 +31365,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "신월천교\n(인입39M)"
       },
       {
-        "id": "MH_GWANGJU_57",
+        "id": "MH_J2_57",
         "name": "41M",
         "category": "인공",
         "type": "통과",
@@ -31379,7 +31379,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_58",
+        "id": "MH_J2_58",
         "name": "41-1H",
         "category": "수공",
         "type": "통과",
@@ -31393,7 +31393,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_59",
+        "id": "MH_J2_59",
         "name": "42M",
         "category": "인공",
         "type": "접속",
@@ -31407,7 +31407,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_60",
+        "id": "MH_J2_60",
         "name": "43M",
         "category": "인공",
         "type": "통과",
@@ -31421,7 +31421,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_61",
+        "id": "MH_J2_61",
         "name": "43-1H",
         "category": "수공",
         "type": "통과",
@@ -31435,7 +31435,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_62",
+        "id": "MH_J2_62",
         "name": "44M",
         "category": "인공",
         "type": "접속",
@@ -31449,7 +31449,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "초월"
       },
       {
-        "id": "MH_GWANGJU_63",
+        "id": "MH_J2_63",
         "name": "45M",
         "category": "인공",
         "type": "통과",
@@ -31463,7 +31463,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_64",
+        "id": "MH_J2_64",
         "name": "45-1H",
         "category": "수공",
         "type": "통과",
@@ -31477,7 +31477,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_65",
+        "id": "MH_J2_65",
         "name": "46M",
         "category": "인공",
         "type": "통과",
@@ -31491,7 +31491,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_66",
+        "id": "MH_J2_66",
         "name": "47M",
         "category": "인공",
         "type": "접속",
@@ -31505,7 +31505,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_67",
+        "id": "MH_J2_67",
         "name": "47-1H",
         "category": "수공",
         "type": "통과",
@@ -31519,7 +31519,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_68",
+        "id": "MH_J2_68",
         "name": "48M",
         "category": "인공",
         "type": "통과",
@@ -31533,7 +31533,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_69",
+        "id": "MH_J2_69",
         "name": "48-1H",
         "category": "수공",
         "type": "통과",
@@ -31547,7 +31547,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_70",
+        "id": "MH_J2_70",
         "name": "49M",
         "category": "인공",
         "type": "통과",
@@ -31561,7 +31561,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_71",
+        "id": "MH_J2_71",
         "name": "50M",
         "category": "인공",
         "type": "접속",
@@ -31575,7 +31575,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "늦현육교"
       },
       {
-        "id": "MH_GWANGJU_72",
+        "id": "MH_J2_72",
         "name": "51M",
         "category": "인공",
         "type": "통과",
@@ -31589,7 +31589,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_73",
+        "id": "MH_J2_73",
         "name": "51-1H",
         "category": "수공",
         "type": "통과",
@@ -31603,7 +31603,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_74",
+        "id": "MH_J2_74",
         "name": "52M",
         "category": "인공",
         "type": "통과",
@@ -31617,7 +31617,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_75",
+        "id": "MH_J2_75",
         "name": "53M",
         "category": "인공",
         "type": "통과",
@@ -31631,7 +31631,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_76",
+        "id": "MH_J2_76",
         "name": "53-1M",
         "category": "인공",
         "type": "통과",
@@ -31645,7 +31645,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_77",
+        "id": "MH_J2_77",
         "name": "53-2H",
         "category": "수공",
         "type": "통과",
@@ -31659,7 +31659,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_78",
+        "id": "MH_J2_78",
         "name": "53-3H",
         "category": "수공",
         "type": "통과",
@@ -31673,7 +31673,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_79",
+        "id": "MH_J2_79",
         "name": "53-4M",
         "category": "인공",
         "type": "통과",
@@ -31687,7 +31687,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_80",
+        "id": "MH_J2_80",
         "name": "53-5M",
         "category": "인공",
         "type": "통과",
@@ -31701,7 +31701,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_81",
+        "id": "MH_J2_81",
         "name": "54M",
         "category": "인공",
         "type": "접속",
@@ -31715,7 +31715,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "곤지암IC"
       },
       {
-        "id": "MH_GWANGJU_82",
+        "id": "MH_J2_82",
         "name": "54-1H",
         "category": "수공",
         "type": "통과",
@@ -31729,7 +31729,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_83",
+        "id": "MH_J2_83",
         "name": "54-2M",
         "category": "인공",
         "type": "통과",
@@ -31743,7 +31743,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_84",
+        "id": "MH_J2_84",
         "name": "54-3H",
         "category": "수공",
         "type": "통과",
@@ -31757,7 +31757,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_85",
+        "id": "MH_J2_85",
         "name": "54-4H",
         "category": "수공",
         "type": "통과",
@@ -31771,7 +31771,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_86",
+        "id": "MH_J2_86",
         "name": "55M",
         "category": "인공",
         "type": "통과",
@@ -31785,7 +31785,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_87",
+        "id": "MH_J2_87",
         "name": "56M",
         "category": "인공",
         "type": "접속",
@@ -31799,7 +31799,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_88",
+        "id": "MH_J2_88",
         "name": "57M",
         "category": "인공",
         "type": "통과",
@@ -31813,7 +31813,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_89",
+        "id": "MH_J2_89",
         "name": "58M",
         "category": "인공",
         "type": "접속",
@@ -31827,7 +31827,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "궁평1교"
       },
       {
-        "id": "MH_GWANGJU_90",
+        "id": "MH_J2_90",
         "name": "58-1H",
         "category": "수공",
         "type": "통과",
@@ -31841,7 +31841,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_91",
+        "id": "MH_J2_91",
         "name": "59M",
         "category": "인공",
         "type": "접속",
@@ -31855,7 +31855,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_92",
+        "id": "MH_J2_92",
         "name": "60M",
         "category": "인공",
         "type": "통과",
@@ -31869,7 +31869,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_93",
+        "id": "MH_J2_93",
         "name": "60-1H",
         "category": "수공",
         "type": "통과",
@@ -31883,7 +31883,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_94",
+        "id": "MH_J2_94",
         "name": "61M",
         "category": "인공",
         "type": "접속",
@@ -31897,7 +31897,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_95",
+        "id": "MH_J2_95",
         "name": "62M",
         "category": "인공",
         "type": "접속",
@@ -31911,7 +31911,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "진우1육교"
       },
       {
-        "id": "MH_GWANGJU_96",
+        "id": "MH_J2_96",
         "name": "63M",
         "category": "인공",
         "type": "통과",
@@ -31925,7 +31925,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_97",
+        "id": "MH_J2_97",
         "name": "64M",
         "category": "인공",
         "type": "통과",
@@ -31939,7 +31939,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_98",
+        "id": "MH_J2_98",
         "name": "64-1H",
         "category": "수공",
         "type": "통과",
@@ -31953,7 +31953,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_99",
+        "id": "MH_J2_99",
         "name": "65M",
         "category": "인공",
         "type": "통과",
@@ -31967,7 +31967,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_100",
+        "id": "MH_J2_100",
         "name": "66M",
         "category": "인공",
         "type": "접속",
@@ -31981,7 +31981,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "용면,\n용면교"
       },
       {
-        "id": "MH_GWANGJU_101",
+        "id": "MH_J2_101",
         "name": "66-1H",
         "category": "수공",
         "type": "통과",
@@ -31995,7 +31995,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_102",
+        "id": "MH_J2_102",
         "name": "67M",
         "category": "인공",
         "type": "통과",
@@ -32009,7 +32009,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_103",
+        "id": "MH_J2_103",
         "name": "68M",
         "category": "인공",
         "type": "접속",
@@ -32023,7 +32023,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "CCTV"
       },
       {
-        "id": "MH_GWANGJU_104",
+        "id": "MH_J2_104",
         "name": "68-1H",
         "category": "수공",
         "type": "통과",
@@ -32037,7 +32037,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_105",
+        "id": "MH_J2_105",
         "name": "69M",
         "category": "인공",
         "type": "통과",
@@ -32051,7 +32051,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_106",
+        "id": "MH_J2_106",
         "name": "70M",
         "category": "인공",
         "type": "접속",
@@ -32065,7 +32065,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "신둔"
       },
       {
-        "id": "MH_GWANGJU_107",
+        "id": "MH_J2_107",
         "name": "70-1H",
         "category": "수공",
         "type": "통과",
@@ -32079,7 +32079,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_108",
+        "id": "MH_J2_108",
         "name": "71M",
         "category": "인공",
         "type": "통과",
@@ -32093,7 +32093,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_109",
+        "id": "MH_J2_109",
         "name": "72M",
         "category": "인공",
         "type": "통과",
@@ -32107,7 +32107,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_110",
+        "id": "MH_J2_110",
         "name": "73M",
         "category": "인공",
         "type": "통과",
@@ -32121,7 +32121,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_111",
+        "id": "MH_J2_111",
         "name": "74M",
         "category": "인공",
         "type": "접속",
@@ -32135,7 +32135,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_112",
+        "id": "MH_J2_112",
         "name": "75M",
         "category": "인공",
         "type": "통과",
@@ -32149,7 +32149,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_113",
+        "id": "MH_J2_113",
         "name": "76M",
         "category": "인공",
         "type": "통과",
@@ -32163,7 +32163,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_114",
+        "id": "MH_J2_114",
         "name": "77M",
         "category": "인공",
         "type": "통과",
@@ -32177,7 +32177,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "이천SA"
       },
       {
-        "id": "MH_GWANGJU_115",
+        "id": "MH_J2_115",
         "name": "77-1H",
         "category": "수공",
         "type": "통과",
@@ -32191,7 +32191,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_116",
+        "id": "MH_J2_116",
         "name": "78M",
         "category": "인공",
         "type": "접속",
@@ -32205,7 +32205,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "서이천IC"
       },
       {
-        "id": "MH_GWANGJU_117",
+        "id": "MH_J2_117",
         "name": "78-1M",
         "category": "인공",
         "type": "통과",
@@ -32219,7 +32219,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_118",
+        "id": "MH_J2_118",
         "name": "78-2M",
         "category": "인공",
         "type": "통과",
@@ -32233,7 +32233,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_119",
+        "id": "MH_J2_119",
         "name": "78-3H",
         "category": "수공",
         "type": "통과",
@@ -32247,7 +32247,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_120",
+        "id": "MH_J2_120",
         "name": "78-4H",
         "category": "수공",
         "type": "통과",
@@ -32261,7 +32261,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_121",
+        "id": "MH_J2_121",
         "name": "79M",
         "category": "인공",
         "type": "통과",
@@ -32275,7 +32275,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_122",
+        "id": "MH_J2_122",
         "name": "79-1H",
         "category": "수공",
         "type": "통과",
@@ -32289,7 +32289,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_123",
+        "id": "MH_J2_123",
         "name": "80M",
         "category": "인공",
         "type": "통과",
@@ -32303,7 +32303,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_124",
+        "id": "MH_J2_124",
         "name": "81M",
         "category": "인공",
         "type": "통과",
@@ -32317,7 +32317,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_125",
+        "id": "MH_J2_125",
         "name": "82M",
         "category": "인공",
         "type": "접속",
@@ -32331,7 +32331,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "마장JC"
       },
       {
-        "id": "MH_GWANGJU_126",
+        "id": "MH_J2_126",
         "name": "83M",
         "category": "인공",
         "type": "통과",
@@ -32345,7 +32345,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_127",
+        "id": "MH_J2_127",
         "name": "83-1H",
         "category": "수공",
         "type": "통과",
@@ -32359,7 +32359,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_128",
+        "id": "MH_J2_128",
         "name": "84M",
         "category": "인공",
         "type": "통과",
@@ -32373,7 +32373,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_129",
+        "id": "MH_J2_129",
         "name": "85M",
         "category": "인공",
         "type": "접속",
@@ -32387,7 +32387,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": "마장갈림목\n마장사각지대"
       },
       {
-        "id": "MH_GWANGJU_130",
+        "id": "MH_J2_130",
         "name": "85-1H",
         "category": "수공",
         "type": "통과",
@@ -32401,7 +32401,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_131",
+        "id": "MH_J2_131",
         "name": "86M",
         "category": "인공",
         "type": "통과",
@@ -32415,7 +32415,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_132",
+        "id": "MH_J2_132",
         "name": "87M",
         "category": "인공",
         "type": "통과",
@@ -32429,7 +32429,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_133",
+        "id": "MH_J2_133",
         "name": "87-1H",
         "category": "수공",
         "type": "통과",
@@ -32443,7 +32443,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_134",
+        "id": "MH_J2_134",
         "name": "88M",
         "category": "인공",
         "type": "접속",
@@ -32457,7 +32457,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_135",
+        "id": "MH_J2_135",
         "name": "89M",
         "category": "인공",
         "type": "통과",
@@ -32471,7 +32471,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_136",
+        "id": "MH_J2_136",
         "name": "89-1H",
         "category": "수공",
         "type": "통과",
@@ -32485,7 +32485,7 @@ window.BRANCH_DATA_PACKS = {
         "cctv": ""
       },
       {
-        "id": "MH_GWANGJU_137",
+        "id": "MH_J2_137",
         "name": "90M",
         "category": "인공",
         "type": "접속",
@@ -32497,6 +32497,258 @@ window.BRANCH_DATA_PACKS = {
         "code": "M-0370-32380E-B-H",
         "splice_point": "F",
         "cctv": ""
+      },
+      {
+        "id": "MH_JB_1",
+        "name": "[중부] 12M",
+        "category": "인공",
+        "type": "접속",
+        "milepost": 355.95,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.492531,
+        "lng": 127.238326,
+        "code": "M-0352-35601E-B-H",
+        "splice_point": "F",
+        "cctv": "CCTV--(UTP케이블)--> AVC\n/중부1터널 TTMS링(산곡터널 72C->\n12M 30C->중부1터널 전기실)"
+      },
+      {
+        "id": "MH_JB_2",
+        "name": "[중부] 13M",
+        "category": "인공",
+        "type": "접속",
+        "milepost": 355.4,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.487506,
+        "lng": 127.23996,
+        "code": "M-0352-35540E-B-H",
+        "splice_point": "F",
+        "cctv": " 중부1터널"
+      },
+      {
+        "id": "MH_JB_3",
+        "name": "[중부] 14M",
+        "category": "인공",
+        "type": "접속",
+        "milepost": 354.82,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.482244,
+        "lng": 127.241831,
+        "code": "M-0352-35482E-B-H",
+        "splice_point": "F",
+        "cctv": " 광지원1교"
+      },
+      {
+        "id": "MH_JB_4",
+        "name": "[중부] 15M",
+        "category": "인공",
+        "type": "접속",
+        "milepost": 354.39,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.478685,
+        "lng": 127.24427,
+        "code": "M-0352-35439E-B-H",
+        "splice_point": "F",
+        "cctv": " 광지원2교"
+      },
+      {
+        "id": "MH_JB_5",
+        "name": "[중부] 16M",
+        "category": "인공",
+        "type": "접속",
+        "milepost": 353.59,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.472622,
+        "lng": 127.249946,
+        "code": "M-0352-35359E-B-H",
+        "splice_point": "F",
+        "cctv": ""
+      },
+      {
+        "id": "MH_JB_6",
+        "name": "[중부] 17M",
+        "category": "인공",
+        "type": "접속",
+        "milepost": 352.78,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.465629,
+        "lng": 127.253727,
+        "code": "M-0352-35278E-B-H",
+        "splice_point": "F",
+        "cctv": " 천진암육교,열수축관->RD로 변경"
+      },
+      {
+        "id": "MH_JB_7",
+        "name": "[중부] 18M",
+        "category": "인공",
+        "type": "접속",
+        "milepost": 352.0,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.458389,
+        "lng": 127.255249,
+        "code": "M-0352-35198E-B-H",
+        "splice_point": "F",
+        "cctv": " 번천1교(제2중부선 28-4M과 동일)"
+      },
+      {
+        "id": "MH_JB_8",
+        "name": "[중부] 18-1M",
+        "category": "인공",
+        "type": "접속",
+        "milepost": 352.01,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.458481,
+        "lng": 127.255223,
+        "code": "M-0352-35201E-B-R",
+        "splice_point": "F",
+        "cctv": " 경안영업소 분기"
+      },
+      {
+        "id": "MH_JB_9",
+        "name": "[중부] 18-1H",
+        "category": "수공",
+        "type": "통과",
+        "milepost": 352.02,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.458573,
+        "lng": 127.255198,
+        "code": "H-0352-35202E-H-R",
+        "splice_point": "",
+        "cctv": " 경안영업소 분기(툴박스_회차로)"
+      },
+      {
+        "id": "MH_JB_10",
+        "name": "[중부] 18-2H",
+        "category": "수공",
+        "type": "통과",
+        "milepost": 352.03,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.458665,
+        "lng": 127.255172,
+        "code": "H-0352-35203E-H-R",
+        "splice_point": "",
+        "cctv": " 경안영업소 분기(툴박스_전송실뒷편)"
+      },
+      {
+        "id": "MH_JB_11",
+        "name": "[중부] 19M",
+        "category": "인공",
+        "type": "접속",
+        "milepost": 351.05,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.452154,
+        "lng": 127.262564,
+        "code": "M-0352-35105E-B-H",
+        "splice_point": "F(PSI)",
+        "cctv": " 중부2터널,번천2교 351k,\n 번천1교 351.4k"
+      },
+      {
+        "id": "MH_JB_12",
+        "name": "[중부] 19-1M",
+        "category": "인공",
+        "type": "접속",
+        "milepost": 350.63,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.451181,
+        "lng": 127.267405,
+        "code": "M-0352-35065E-B-H",
+        "splice_point": "F",
+        "cctv": " 여공2"
+      },
+      {
+        "id": "MH_JB_13",
+        "name": "[중부] 20M",
+        "category": "인공",
+        "type": "접속",
+        "milepost": 350.41,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.450519,
+        "lng": 127.269884,
+        "code": "M-0352-35041E-B-H",
+        "splice_point": "F(PSI)",
+        "cctv": " 망공,방호벽뒤, 번천3교 349.8k"
+      },
+      {
+        "id": "MH_JB_14",
+        "name": "[중부] 21M",
+        "category": "인공",
+        "type": "접속",
+        "milepost": 349.67,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.44655,
+        "lng": 127.277103,
+        "code": "M-0352-34966E-B-H",
+        "splice_point": "F(PSI)",
+        "cctv": " 여공1,중부3터널, 서하교 348.8k"
+      },
+      {
+        "id": "MH_JB_15",
+        "name": "[중부] 22M",
+        "category": "인공",
+        "type": "접속",
+        "milepost": 348.79,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.441573,
+        "lng": 127.285484,
+        "code": "M-0352-34879E-B-H",
+        "splice_point": "F(PSI)",
+        "cctv": " 망공,지월교(PSI만공_레이켐 추가)\n 신월천교 347.1k /지월교 348k"
+      },
+      {
+        "id": "MH_JB_16",
+        "name": "[중부] 23M",
+        "category": "인공",
+        "type": "접속",
+        "milepost": 347.81,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.435016,
+        "lng": 127.293549,
+        "code": "M-0352-34785E-B-H",
+        "splice_point": "F(PSI)",
+        "cctv": " 여공2 "
+      },
+      {
+        "id": "MH_JB_17",
+        "name": "[중부] 23-1H",
+        "category": "수공",
+        "type": "접속",
+        "milepost": 346.84,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.426473,
+        "lng": 127.297488,
+        "code": "H-0352-34684E-B-H",
+        "splice_point": "F(레이켐)",
+        "cctv": " 여공4"
+      },
+      {
+        "id": "MH_JB_18",
+        "name": "[중부] 24M",
+        "category": "인공",
+        "type": "접속",
+        "milepost": 346.81,
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "bound": "하행선",
+        "lat": 37.426198,
+        "lng": 127.297575,
+        "code": "M-0352-34681E-B-H",
+        "splice_point": "F(PSI)",
+        "cctv": "V-36-70--(FDF 패치)-->AVC"
       }
     ],
     "conduits": [
@@ -34811,12 +35063,301 @@ window.BRANCH_DATA_PACKS = {
             127.423246
           ]
         ]
+      },
+      {
+        "no": 137,
+        "source_manhole_id": "[중부] 12M",
+        "target_manhole_id": "[중부] 13M",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.492531,
+            127.238326
+          ],
+          [
+            37.487506,
+            127.23996
+          ]
+        ]
+      },
+      {
+        "no": 138,
+        "source_manhole_id": "[중부] 13M",
+        "target_manhole_id": "[중부] 14M",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.487506,
+            127.23996
+          ],
+          [
+            37.482244,
+            127.241831
+          ]
+        ]
+      },
+      {
+        "no": 139,
+        "source_manhole_id": "[중부] 14M",
+        "target_manhole_id": "[중부] 15M",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.482244,
+            127.241831
+          ],
+          [
+            37.478685,
+            127.24427
+          ]
+        ]
+      },
+      {
+        "no": 140,
+        "source_manhole_id": "[중부] 15M",
+        "target_manhole_id": "[중부] 16M",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.478685,
+            127.24427
+          ],
+          [
+            37.472622,
+            127.249946
+          ]
+        ]
+      },
+      {
+        "no": 141,
+        "source_manhole_id": "[중부] 16M",
+        "target_manhole_id": "[중부] 17M",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.472622,
+            127.249946
+          ],
+          [
+            37.465629,
+            127.253727
+          ]
+        ]
+      },
+      {
+        "no": 142,
+        "source_manhole_id": "[중부] 17M",
+        "target_manhole_id": "[중부] 18M",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.465629,
+            127.253727
+          ],
+          [
+            37.458389,
+            127.255249
+          ]
+        ]
+      },
+      {
+        "no": 143,
+        "source_manhole_id": "[중부] 18M",
+        "target_manhole_id": "[중부] 18-1M",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.458389,
+            127.255249
+          ],
+          [
+            37.458481,
+            127.255223
+          ]
+        ]
+      },
+      {
+        "no": 144,
+        "source_manhole_id": "[중부] 18-1M",
+        "target_manhole_id": "[중부] 18-1H",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.458481,
+            127.255223
+          ],
+          [
+            37.458573,
+            127.255198
+          ]
+        ]
+      },
+      {
+        "no": 145,
+        "source_manhole_id": "[중부] 18-1H",
+        "target_manhole_id": "[중부] 18-2H",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.458573,
+            127.255198
+          ],
+          [
+            37.458665,
+            127.255172
+          ]
+        ]
+      },
+      {
+        "no": 146,
+        "source_manhole_id": "[중부] 18-2H",
+        "target_manhole_id": "[중부] 19M",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.458665,
+            127.255172
+          ],
+          [
+            37.452154,
+            127.262564
+          ]
+        ]
+      },
+      {
+        "no": 147,
+        "source_manhole_id": "[중부] 19M",
+        "target_manhole_id": "[중부] 19-1M",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.452154,
+            127.262564
+          ],
+          [
+            37.451181,
+            127.267405
+          ]
+        ]
+      },
+      {
+        "no": 148,
+        "source_manhole_id": "[중부] 19-1M",
+        "target_manhole_id": "[중부] 20M",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.451181,
+            127.267405
+          ],
+          [
+            37.450519,
+            127.269884
+          ]
+        ]
+      },
+      {
+        "no": 149,
+        "source_manhole_id": "[중부] 20M",
+        "target_manhole_id": "[중부] 21M",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.450519,
+            127.269884
+          ],
+          [
+            37.44655,
+            127.277103
+          ]
+        ]
+      },
+      {
+        "no": 150,
+        "source_manhole_id": "[중부] 21M",
+        "target_manhole_id": "[중부] 22M",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.44655,
+            127.277103
+          ],
+          [
+            37.441573,
+            127.285484
+          ]
+        ]
+      },
+      {
+        "no": 151,
+        "source_manhole_id": "[중부] 22M",
+        "target_manhole_id": "[중부] 23M",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.441573,
+            127.285484
+          ],
+          [
+            37.435016,
+            127.293549
+          ]
+        ]
+      },
+      {
+        "no": 152,
+        "source_manhole_id": "[중부] 23M",
+        "target_manhole_id": "[중부] 23-1H",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.435016,
+            127.293549
+          ],
+          [
+            37.426473,
+            127.297488
+          ]
+        ]
+      },
+      {
+        "no": 153,
+        "source_manhole_id": "[중부] 23-1H",
+        "target_manhole_id": "[중부] 24M",
+        "section": "중부선 (산곡-광주IC-경안지사)",
+        "pipe_type": "스틸관(100mm)",
+        "coordinates": [
+          [
+            37.426473,
+            127.297488
+          ],
+          [
+            37.426198,
+            127.297575
+          ]
+        ]
       }
     ],
     "cables": [
       {
-        "id": "CB_GWANGJU_TRUNK_1",
-        "section": "제2중부선 광간선 (하남-곤지암-호법)",
+        "id": "CB_GW_J2_MAIN",
+        "section": "제2중부선 광간선 (하남-곤지암-마장)",
         "expansion_round": "4단계",
         "total_cores": 72,
         "node_count": 137,
@@ -35384,6 +35925,94 @@ window.BRANCH_DATA_PACKS = {
           [
             37.246511,
             127.423246
+          ]
+        ]
+      },
+      {
+        "id": "CB_GW_JB_BRANCH",
+        "section": "중부선 광간선 (산곡JCT-광주IC-경안지사)",
+        "expansion_round": "기설",
+        "total_cores": 24,
+        "node_count": 18,
+        "node_path": [
+          "[중부] 12M",
+          "[중부] 16M",
+          "[중부] 18-1H",
+          "[중부] 20M",
+          "[중부] 23-1H"
+        ],
+        "coordinates": [
+          [
+            37.492531,
+            127.238326
+          ],
+          [
+            37.487506,
+            127.23996
+          ],
+          [
+            37.482244,
+            127.241831
+          ],
+          [
+            37.478685,
+            127.24427
+          ],
+          [
+            37.472622,
+            127.249946
+          ],
+          [
+            37.465629,
+            127.253727
+          ],
+          [
+            37.458389,
+            127.255249
+          ],
+          [
+            37.458481,
+            127.255223
+          ],
+          [
+            37.458573,
+            127.255198
+          ],
+          [
+            37.458665,
+            127.255172
+          ],
+          [
+            37.452154,
+            127.262564
+          ],
+          [
+            37.451181,
+            127.267405
+          ],
+          [
+            37.450519,
+            127.269884
+          ],
+          [
+            37.44655,
+            127.277103
+          ],
+          [
+            37.441573,
+            127.285484
+          ],
+          [
+            37.435016,
+            127.293549
+          ],
+          [
+            37.426473,
+            127.297488
+          ],
+          [
+            37.426198,
+            127.297575
           ]
         ]
       }
@@ -38504,7 +39133,7 @@ window.BRANCH_DATA_PACKS = {
           ],
           "manholes": [
             {
-              "id": "MH_GWANGJU_83",
+              "id": "MH_J2_83",
               "name": "54-2M",
               "category": "인공",
               "type": "통과",
@@ -38518,7 +39147,7 @@ window.BRANCH_DATA_PACKS = {
               "cctv": ""
             },
             {
-              "id": "MH_GWANGJU_84",
+              "id": "MH_J2_84",
               "name": "54-3H",
               "category": "수공",
               "type": "통과",
@@ -38532,7 +39161,7 @@ window.BRANCH_DATA_PACKS = {
               "cctv": ""
             },
             {
-              "id": "MH_GWANGJU_85",
+              "id": "MH_J2_85",
               "name": "54-4H",
               "category": "수공",
               "type": "통과",
@@ -38546,7 +39175,7 @@ window.BRANCH_DATA_PACKS = {
               "cctv": ""
             },
             {
-              "id": "MH_GWANGJU_90",
+              "id": "MH_J2_90",
               "name": "58-1H",
               "category": "수공",
               "type": "통과",
@@ -38560,7 +39189,7 @@ window.BRANCH_DATA_PACKS = {
               "cctv": ""
             },
             {
-              "id": "MH_GWANGJU_93",
+              "id": "MH_J2_93",
               "name": "60-1H",
               "category": "수공",
               "type": "통과",
@@ -38597,7 +39226,7 @@ window.BRANCH_DATA_PACKS = {
           ],
           "manholes": [
             {
-              "id": "MH_GWANGJU_98",
+              "id": "MH_J2_98",
               "name": "64-1H",
               "category": "수공",
               "type": "통과",
@@ -38611,7 +39240,7 @@ window.BRANCH_DATA_PACKS = {
               "cctv": ""
             },
             {
-              "id": "MH_GWANGJU_101",
+              "id": "MH_J2_101",
               "name": "66-1H",
               "category": "수공",
               "type": "통과",
@@ -38625,7 +39254,7 @@ window.BRANCH_DATA_PACKS = {
               "cctv": ""
             },
             {
-              "id": "MH_GWANGJU_104",
+              "id": "MH_J2_104",
               "name": "68-1H",
               "category": "수공",
               "type": "통과",
@@ -38639,7 +39268,7 @@ window.BRANCH_DATA_PACKS = {
               "cctv": ""
             },
             {
-              "id": "MH_GWANGJU_107",
+              "id": "MH_J2_107",
               "name": "70-1H",
               "category": "수공",
               "type": "통과",
@@ -38676,7 +39305,7 @@ window.BRANCH_DATA_PACKS = {
           ],
           "manholes": [
             {
-              "id": "MH_GWANGJU_115",
+              "id": "MH_J2_115",
               "name": "77-1H",
               "category": "수공",
               "type": "통과",
@@ -38690,7 +39319,7 @@ window.BRANCH_DATA_PACKS = {
               "cctv": ""
             },
             {
-              "id": "MH_GWANGJU_117",
+              "id": "MH_J2_117",
               "name": "78-1M",
               "category": "인공",
               "type": "통과",
@@ -38704,7 +39333,7 @@ window.BRANCH_DATA_PACKS = {
               "cctv": ""
             },
             {
-              "id": "MH_GWANGJU_118",
+              "id": "MH_J2_118",
               "name": "78-2M",
               "category": "인공",
               "type": "통과",
@@ -38718,7 +39347,7 @@ window.BRANCH_DATA_PACKS = {
               "cctv": ""
             },
             {
-              "id": "MH_GWANGJU_119",
+              "id": "MH_J2_119",
               "name": "78-3H",
               "category": "수공",
               "type": "통과",
@@ -38732,7 +39361,7 @@ window.BRANCH_DATA_PACKS = {
               "cctv": ""
             },
             {
-              "id": "MH_GWANGJU_120",
+              "id": "MH_J2_120",
               "name": "78-4H",
               "category": "수공",
               "type": "통과",
@@ -38769,7 +39398,7 @@ window.BRANCH_DATA_PACKS = {
           ],
           "manholes": [
             {
-              "id": "MH_GWANGJU_122",
+              "id": "MH_J2_122",
               "name": "79-1H",
               "category": "수공",
               "type": "통과",
@@ -38783,7 +39412,7 @@ window.BRANCH_DATA_PACKS = {
               "cctv": ""
             },
             {
-              "id": "MH_GWANGJU_130",
+              "id": "MH_J2_130",
               "name": "85-1H",
               "category": "수공",
               "type": "통과",
@@ -38797,7 +39426,7 @@ window.BRANCH_DATA_PACKS = {
               "cctv": ""
             },
             {
-              "id": "MH_GWANGJU_133",
+              "id": "MH_J2_133",
               "name": "87-1H",
               "category": "수공",
               "type": "통과",
@@ -38811,7 +39440,7 @@ window.BRANCH_DATA_PACKS = {
               "cctv": ""
             },
             {
-              "id": "MH_GWANGJU_136",
+              "id": "MH_J2_136",
               "name": "89-1H",
               "category": "수공",
               "type": "통과",
@@ -38825,7 +39454,7 @@ window.BRANCH_DATA_PACKS = {
               "cctv": ""
             },
             {
-              "id": "MH_GWANGJU_137",
+              "id": "MH_J2_137",
               "name": "90M",
               "category": "인공",
               "type": "접속",
