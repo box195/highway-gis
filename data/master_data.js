@@ -30492,10 +30492,10 @@ window.BRANCH_DATA_PACKS = {
         "id": "IC_HANAM_JCT",
         "name": "하남JCT",
         "type": "JCT",
-        "lat": 37.53732,
-        "lng": 127.18511,
+        "lat": 37.5318125,
+        "lng": 127.2008125,
         "milepost": 364.1,
-        "desc": "중부선-수도권제1순환 분기점"
+        "desc": "중부선-수도권제1순환 분기점 (1M)"
       },
       {
         "id": "IC_HANAM",
@@ -30504,7 +30504,7 @@ window.BRANCH_DATA_PACKS = {
         "lat": 37.5290415,
         "lng": 127.2192231,
         "milepost": 362.84,
-        "desc": "하남IC (하남영업소)"
+        "desc": "하남IC (하남영업소 4M)"
       },
       {
         "id": "IC_DONGSEOUL_TG",
@@ -30513,7 +30513,7 @@ window.BRANCH_DATA_PACKS = {
         "lat": 37.516454,
         "lng": 127.220218,
         "milepost": 361.62,
-        "desc": "중부고속도로 본선 톨게이트"
+        "desc": "중부고속도로 본선 톨게이트 (7M-8M)"
       },
       {
         "id": "IC_SANGOK_JCT",
@@ -30522,7 +30522,7 @@ window.BRANCH_DATA_PACKS = {
         "lat": 37.492531,
         "lng": 127.238326,
         "milepost": 355.95,
-        "desc": "제1/제2중부선 분기점 (광케이블 분기)"
+        "desc": "제1/제2중부선 분기점 (17M-18M)"
       },
       {
         "id": "IC_GWANGJU",
@@ -30531,7 +30531,7 @@ window.BRANCH_DATA_PACKS = {
         "lat": 37.4459816,
         "lng": 127.266225,
         "milepost": 351.83,
-        "desc": "광주IC (경기광주영업소)"
+        "desc": "광주IC (경기광주영업소 28M / 중부 18M)"
       },
       {
         "id": "IC_GONJIAM",
@@ -30540,7 +30540,7 @@ window.BRANCH_DATA_PACKS = {
         "lat": 37.3551927,
         "lng": 127.3220781,
         "milepost": 340.0,
-        "desc": "곤지암IC (곤지암영업소)"
+        "desc": "곤지암IC (곤지암영업소 54M)"
       },
       {
         "id": "IC_GONJIAM_JCT",
@@ -30558,7 +30558,7 @@ window.BRANCH_DATA_PACKS = {
         "lat": 37.278705,
         "lng": 127.3966831,
         "milepost": 329.05,
-        "desc": "서이천IC (서이천영업소)"
+        "desc": "서이천IC (서이천영업소 78M)"
       },
       {
         "id": "IC_MAJANG_JCT",
@@ -30566,8 +30566,8 @@ window.BRANCH_DATA_PACKS = {
         "type": "JCT",
         "lat": 37.2564132,
         "lng": 127.4127636,
-        "milepost": 325.6,
-        "desc": "마장분기점 상행선 (85M 바로위)"
+        "milepost": 326.14,
+        "desc": "마장분기점 상행선 (84M-85M)"
       },
       {
         "id": "IC_HOBEOP_JCT",
@@ -30588,8 +30588,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 364.1,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.53732,
-        "lng": 127.18511,
+        "lat": 37.531759,
+        "lng": 127.20127,
         "code": "M-0370-36410E-B-H",
         "splice_point": "F(50)",
         "cctv": ""
@@ -30602,8 +30602,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 364.11,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.53732,
-        "lng": 127.18511,
+        "lat": 37.531759,
+        "lng": 127.20127,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -30616,8 +30616,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 363.66,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.53422,
-        "lng": 127.196861,
+        "lat": 37.531469,
+        "lng": 127.207778,
         "code": "M-0370-36366E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -30630,8 +30630,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 363.28,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.531542,
-        "lng": 127.207009,
+        "lat": 37.531138,
+        "lng": 127.213389,
         "code": "M-0370-36328E-B-H",
         "splice_point": "F(레이켐)",
         "cctv": ""
@@ -30658,8 +30658,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 362.85,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.528512,
-        "lng": 127.218493,
+        "lat": 37.528533,
+        "lng": 127.218667,
         "code": "M-0370-36285S-P-H",
         "splice_point": "",
         "cctv": ""
@@ -30672,8 +30672,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 362.86,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.528583,
-        "lng": 127.218226,
+        "lat": 37.528624,
+        "lng": 127.218573,
         "code": "H-0370-36286S-H-H",
         "splice_point": "",
         "cctv": ""
@@ -30686,8 +30686,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 362.87,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.528653,
-        "lng": 127.217959,
+        "lat": 37.528715,
+        "lng": 127.21848,
         "code": "M-0370-36287S-P-H",
         "splice_point": "",
         "cctv": ""
@@ -30700,8 +30700,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 362.44,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.524859,
-        "lng": 127.219604,
+        "lat": 37.525125,
+        "lng": 127.220289,
         "code": "M-0370-36244E-B-H",
         "splice_point": "F(50_레이켐)",
         "cctv": ""
@@ -30714,8 +30714,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 361.95,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.520471,
-        "lng": 127.220638,
+        "lat": 37.520765,
+        "lng": 127.220688,
         "code": "M-0370-36195E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -30728,8 +30728,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 361.62,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.517515,
-        "lng": 127.221334,
+        "lat": 37.517881,
+        "lng": 127.221357,
         "code": "M-0370-36162E-B-H",
         "splice_point": "F(50_삼진)",
         "cctv": "동서울TG"
@@ -30742,8 +30742,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 360.83,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.514034,
-        "lng": 127.223701,
+        "lat": 37.514261,
+        "lng": 127.223503,
         "code": "M-0370-36083E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -30756,8 +30756,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 360.59,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.512976,
-        "lng": 127.224421,
+        "lat": 37.513188,
+        "lng": 127.224226,
         "code": "M-0370-36050E-B-H",
         "splice_point": "F(50_레이켐)",
         "cctv": "하산곡"
@@ -30770,8 +30770,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 360.51,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.512624,
-        "lng": 127.22466,
+        "lat": 37.51283,
+        "lng": 127.224467,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -30784,8 +30784,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 360.17,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.511126,
-        "lng": 127.225679,
+        "lat": 37.511255,
+        "lng": 127.225346,
         "code": "M-0370-36017E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -30798,8 +30798,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 359.71,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.509099,
-        "lng": 127.227058,
+        "lat": 37.509128,
+        "lng": 127.226548,
         "code": "M-0370-35971E-B-H",
         "splice_point": "F(레이켐)",
         "cctv": ""
@@ -30812,8 +30812,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 359.61,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.508658,
-        "lng": 127.227358,
+        "lat": 37.508667,
+        "lng": 127.226812,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -30826,8 +30826,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 359.3,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.507292,
-        "lng": 127.228287,
+        "lat": 37.507264,
+        "lng": 127.227704,
         "code": "M-0370-35914E-B-H",
         "splice_point": "F(50)\n(레이켐)",
         "cctv": ""
@@ -30840,8 +30840,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 358.78,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.505001,
-        "lng": 127.229845,
+        "lat": 37.504961,
+        "lng": 127.229318,
         "code": "M-0370-35878E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -30854,8 +30854,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 358.66,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.504472,
-        "lng": 127.230205,
+        "lat": 37.504437,
+        "lng": 127.229706,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -30868,8 +30868,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 358.28,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.502798,
-        "lng": 127.231343,
+        "lat": 37.502775,
+        "lng": 127.230934,
         "code": "M-0370-35828E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -30882,8 +30882,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 357.85,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.500903,
-        "lng": 127.232632,
+        "lat": 37.500879,
+        "lng": 127.232286,
         "code": "M-0370-35785E-P-H",
         "splice_point": "",
         "cctv": "-상산곡교\n(인입14M)\n-산곡터널\n(인입17M)\n-영상VMS(산곡CCTV함체)"
@@ -30896,8 +30896,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 357.781,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.500599,
-        "lng": 127.232839,
+        "lat": 37.500573,
+        "lng": 127.232499,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -30910,8 +30910,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 357.42,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.499008,
-        "lng": 127.233921,
+        "lat": 37.498986,
+        "lng": 127.233646,
         "code": "M-0370-35742E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -30924,8 +30924,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 356.91,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.496761,
-        "lng": 127.235449,
+        "lat": 37.49675,
+        "lng": 127.235281,
         "code": "M-0370-35691E-B-H",
         "splice_point": "",
         "cctv": "상산곡"
@@ -30938,8 +30938,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 356.55,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.495175,
-        "lng": 127.236528,
+        "lat": 37.495181,
+        "lng": 127.236453,
         "code": "M-0370-35655E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -30952,8 +30952,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 355.84,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.49132,
-        "lng": 127.239227,
+        "lat": 37.491178,
+        "lng": 127.239033,
         "code": "M-0370-35584E-B-H",
         "splice_point": "F(만공)",
         "cctv": "TTMS산곡터널"
@@ -30966,8 +30966,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 355.85,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.49143,
-        "lng": 127.239145,
+        "lat": 37.491303,
+        "lng": 127.238975,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -30980,8 +30980,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 355.56,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.488237,
-        "lng": 127.24152,
+        "lat": 37.487539,
+        "lng": 127.240051,
         "code": "M-0370-35556E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -30994,8 +30994,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 355.1,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.483173,
-        "lng": 127.245288,
+        "lat": 37.481661,
+        "lng": 127.242145,
         "code": "M-0370-35510E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31008,8 +31008,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 354.45,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.476016,
-        "lng": 127.250612,
+        "lat": 37.474462,
+        "lng": 127.248167,
         "code": "M-0370-35445E-B-H",
         "splice_point": "F(만공)",
         "cctv": ""
@@ -31022,8 +31022,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 354.0,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.471062,
-        "lng": 127.254298,
+        "lat": 37.469398,
+        "lng": 127.252166,
         "code": "M-0370-35400E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31036,8 +31036,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 353.45,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.465006,
-        "lng": 127.258802,
+        "lat": 37.46237,
+        "lng": 127.25471,
         "code": "M-0370-35341E-B-H",
         "splice_point": "F(만공)",
         "cctv": "광지원\n하번천"
@@ -31050,8 +31050,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 353.19,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.462144,
-        "lng": 127.260932,
+        "lat": 37.458922,
+        "lng": 127.255121,
         "code": "M-0370-35317E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -31064,8 +31064,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 352.8,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.45785,
-        "lng": 127.264126,
+        "lat": 37.454345,
+        "lng": 127.25797,
         "code": "M-0370-35280E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31078,8 +31078,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 352.81,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.45796,
-        "lng": 127.264044,
+        "lat": 37.454442,
+        "lng": 127.257855,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -31092,8 +31092,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 352.41,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.453556,
-        "lng": 127.26732,
+        "lat": 37.451949,
+        "lng": 127.263641,
         "code": "M-0370-35241E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31106,8 +31106,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 351.83,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.44717,
-        "lng": 127.272071,
+        "lat": 37.449208,
+        "lng": 127.272651,
         "code": "M-0370-35183E-B-H",
         "splice_point": "F(삼-만)\n50C_AJ월드",
         "cctv": "천진암교\n상번천졸음쉼터"
@@ -31120,8 +31120,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 351.84,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.44728,
-        "lng": 127.271989,
+        "lat": 37.449286,
+        "lng": 127.272514,
         "code": "H-0370-35184S-H-C",
         "splice_point": "",
         "cctv": ""
@@ -31134,8 +31134,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 351.85,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.44739,
-        "lng": 127.271907,
+        "lat": 37.449363,
+        "lng": 127.272378,
         "code": "M-0370-35185S-P-R1",
         "splice_point": "",
         "cctv": ""
@@ -31148,8 +31148,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 351.86,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.4475,
-        "lng": 127.271825,
+        "lat": 37.449441,
+        "lng": 127.272241,
         "code": "M-0370-35186S-P-R2",
         "splice_point": "",
         "cctv": ""
@@ -31162,8 +31162,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 351.87,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.44761,
-        "lng": 127.271743,
+        "lat": 37.449518,
+        "lng": 127.272105,
         "code": "없음",
         "splice_point": "F",
         "cctv": ""
@@ -31176,8 +31176,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 351.42,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.443998,
-        "lng": 127.273748,
+        "lat": 37.44702,
+        "lng": 127.27632,
         "code": "M-0370-35142E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31190,8 +31190,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 350.95,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.440363,
-        "lng": 127.275671,
+        "lat": 37.444524,
+        "lng": 127.280538,
         "code": "M-0370-35095E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -31204,8 +31204,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 350.43,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.43634,
-        "lng": 127.277798,
+        "lat": 37.441748,
+        "lng": 127.285191,
         "code": "M-0370-35043E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31218,8 +31218,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 350.21,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.434638,
-        "lng": 127.278698,
+        "lat": 37.440572,
+        "lng": 127.287159,
         "code": "M-0370-35021E-B-H",
         "splice_point": "F(삼진)",
         "cctv": ""
@@ -31232,8 +31232,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 349.75,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.43108,
-        "lng": 127.28058,
+        "lat": 37.437862,
+        "lng": 127.290995,
         "code": "M-0370-34975E-B-H",
         "splice_point": "",
         "cctv": "TTMS하번천"
@@ -31246,8 +31246,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 349.15,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.426438,
-        "lng": 127.283034,
+        "lat": 37.433421,
+        "lng": 127.294677,
         "code": "M-0370-34915E-B-H",
         "splice_point": "F(신설)\n09.12.13",
         "cctv": ""
@@ -31260,8 +31260,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 348.75,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.423344,
-        "lng": 127.28467,
+        "lat": 37.430139,
+        "lng": 127.296352,
         "code": "M-0370-34865E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -31274,8 +31274,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 348.17,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.418857,
-        "lng": 127.287043,
+        "lat": 37.425136,
+        "lng": 127.29791,
         "code": "M-0370-34814E-B-H",
         "splice_point": "F",
         "cctv": ""
@@ -31288,8 +31288,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 348.15,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.418702,
-        "lng": 127.287125,
+        "lat": 37.424963,
+        "lng": 127.297964,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -31302,8 +31302,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 347.5,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.413674,
-        "lng": 127.289783,
+        "lat": 37.419464,
+        "lng": 127.300148,
         "code": "M-0370-34759E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -31316,8 +31316,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 347.0,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.409806,
-        "lng": 127.291829,
+        "lat": 37.415409,
+        "lng": 127.302433,
         "code": "M-0370-34703E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31330,8 +31330,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 346.7,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.407486,
-        "lng": 127.293056,
+        "lat": 37.412974,
+        "lng": 127.3038,
         "code": "M-0370-34670E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -31344,8 +31344,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 346.71,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.407563,
-        "lng": 127.293015,
+        "lat": 37.413055,
+        "lng": 127.303754,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -31358,8 +31358,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 346.36,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.404855,
-        "lng": 127.294447,
+        "lat": 37.410218,
+        "lng": 127.30536,
         "code": "M-0370-34636E-B-H",
         "splice_point": "F(50+36)25.6",
         "cctv": "신월천교\n(인입39M)"
@@ -31372,8 +31372,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 345.88,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.401142,
-        "lng": 127.29641,
+        "lat": 37.406302,
+        "lng": 127.30749,
         "code": "M-0370-34588E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -31386,8 +31386,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 345.89,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.40122,
-        "lng": 127.296369,
+        "lat": 37.406384,
+        "lng": 127.307446,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -31400,8 +31400,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 345.32,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.39681,
-        "lng": 127.298701,
+        "lat": 37.401617,
+        "lng": 127.309596,
         "code": "M-0370-34532E-P-H",
         "splice_point": "F(50+36)25.6",
         "cctv": ""
@@ -31414,8 +31414,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 344.79,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.39271,
-        "lng": 127.300869,
+        "lat": 37.397132,
+        "lng": 127.311408,
         "code": "M-0370-34479E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -31428,8 +31428,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 344.8,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.392788,
-        "lng": 127.300828,
+        "lat": 37.397216,
+        "lng": 127.311371,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -31442,8 +31442,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 344.33,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.389152,
-        "lng": 127.302751,
+        "lat": 37.393284,
+        "lng": 127.313141,
         "code": "M-0370-34433E-B-H",
         "splice_point": "F(50)",
         "cctv": "초월"
@@ -31456,8 +31456,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 343.9,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.385826,
-        "lng": 127.30451,
+        "lat": 37.389704,
+        "lng": 127.314821,
         "code": "M-0370-34390E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -31470,8 +31470,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 343.91,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.385903,
-        "lng": 127.304469,
+        "lat": 37.389789,
+        "lng": 127.314788,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -31484,8 +31484,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 343.37,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.381726,
-        "lng": 127.306678,
+        "lat": 37.385049,
+        "lng": 127.315622,
         "code": "M-0370-34335E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31498,8 +31498,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 342.9,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.37809,
-        "lng": 127.3086,
+        "lat": 37.38089,
+        "lng": 127.316097,
         "code": "M-0370-34290E-B-H",
         "splice_point": "F(36+50)",
         "cctv": ""
@@ -31512,8 +31512,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 342.91,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.378167,
-        "lng": 127.30856,
+        "lat": 37.380978,
+        "lng": 127.316087,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -31526,8 +31526,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 342.55,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.375382,
-        "lng": 127.310032,
+        "lat": 37.377794,
+        "lng": 127.31647,
         "code": "M-0370-34236E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31540,8 +31540,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 342.15,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.372288,
-        "lng": 127.311668,
+        "lat": 37.374255,
+        "lng": 127.316898,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -31554,8 +31554,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 341.85,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.369967,
-        "lng": 127.312896,
+        "lat": 37.371601,
+        "lng": 127.317212,
         "code": "M-0370-34185E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31568,8 +31568,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 341.48,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.367105,
-        "lng": 127.314409,
+        "lat": 37.368328,
+        "lng": 127.317607,
         "code": "M-0370-34145E-B-H",
         "splice_point": "F(36+50)",
         "cctv": "늦현육교"
@@ -31582,8 +31582,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 341.04,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.363701,
-        "lng": 127.316209,
+        "lat": 37.364435,
+        "lng": 127.31807,
         "code": "M-0370-34104E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31596,8 +31596,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 341.05,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.363779,
-        "lng": 127.316168,
+        "lat": 37.364524,
+        "lng": 127.31806,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -31610,8 +31610,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.7,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.361071,
-        "lng": 127.3176,
+        "lat": 37.361428,
+        "lng": 127.318441,
         "code": "M-0370-34070E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31624,8 +31624,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.5,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.359524,
-        "lng": 127.318418,
+        "lat": 37.359673,
+        "lng": 127.31879,
         "code": "M-0370-34050E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -31638,8 +31638,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.51,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.359601,
-        "lng": 127.318377,
+        "lat": 37.359761,
+        "lng": 127.318771,
         "code": "M-0370-34051S-P-C",
         "splice_point": "",
         "cctv": ""
@@ -31652,8 +31652,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.52,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.359679,
-        "lng": 127.318336,
+        "lat": 37.359848,
+        "lng": 127.318751,
         "code": "M-0370-34052S-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31666,8 +31666,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.53,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.359756,
-        "lng": 127.318295,
+        "lat": 37.359936,
+        "lng": 127.318731,
         "code": "M-0370-34053S-P-C",
         "splice_point": "",
         "cctv": ""
@@ -31680,8 +31680,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.54,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.359833,
-        "lng": 127.318254,
+        "lat": 37.360023,
+        "lng": 127.318712,
         "code": "M-0370-34054S-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31694,8 +31694,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.55,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.359911,
-        "lng": 127.318213,
+        "lat": 37.360111,
+        "lng": 127.318692,
         "code": "M-0370-34055S-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31708,8 +31708,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.0,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.355189,
-        "lng": 127.32048,
+        "lat": 37.353881,
+        "lng": 127.320896,
         "code": "M-0370-34000E-B-H",
         "splice_point": "F(뢰이켐)",
         "cctv": "곤지암IC"
@@ -31722,8 +31722,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.01,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.355276,
-        "lng": 127.320439,
+        "lat": 37.353996,
+        "lng": 127.320849,
         "code": "H-0370-34001S-H-R1",
         "splice_point": "",
         "cctv": ""
@@ -31736,8 +31736,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.02,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.355362,
-        "lng": 127.320398,
+        "lat": 37.354111,
+        "lng": 127.320802,
         "code": "M-0370-34002S-P-R2",
         "splice_point": "",
         "cctv": ""
@@ -31750,8 +31750,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.03,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.355449,
-        "lng": 127.320356,
+        "lat": 37.354226,
+        "lng": 127.320755,
         "code": "H-0370-34003S-H-R3",
         "splice_point": "",
         "cctv": ""
@@ -31764,8 +31764,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 340.04,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.355536,
-        "lng": 127.320315,
+        "lat": 37.35434,
+        "lng": 127.320708,
         "code": "H-0370-34004S-H-R4",
         "splice_point": "",
         "cctv": ""
@@ -31778,8 +31778,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 339.52,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.353291,
-        "lng": 127.321489,
+        "lat": 37.351996,
+        "lng": 127.321682,
         "code": "M-0370-33952E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -31792,8 +31792,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 339.1,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.35163,
-        "lng": 127.322372,
+        "lat": 37.350332,
+        "lng": 127.322311,
         "code": "M-0370-33910E-B-H",
         "splice_point": "F(44)",
         "cctv": ""
@@ -31806,8 +31806,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 338.63,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.349771,
-        "lng": 127.32336,
+        "lat": 37.348462,
+        "lng": 127.322983,
         "code": "M-0370-33863E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -31820,8 +31820,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 338.2,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.348071,
-        "lng": 127.324264,
+        "lat": 37.346748,
+        "lng": 127.323587,
         "code": "M-0370-33820E-B-H",
         "splice_point": "F(44만공)",
         "cctv": "궁평1교"
@@ -31834,8 +31834,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 338.21,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.348111,
-        "lng": 127.324243,
+        "lat": 37.346788,
+        "lng": 127.323573,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -31848,8 +31848,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 337.79,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.34645,
-        "lng": 127.325126,
+        "lat": 37.345116,
+        "lng": 127.324167,
         "code": "M-0370-33779E-B-H",
         "splice_point": "F(22.6신규)",
         "cctv": ""
@@ -31862,8 +31862,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 337.3,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.344512,
-        "lng": 127.326156,
+        "lat": 37.343166,
+        "lng": 127.324868,
         "code": "M-0370-33730E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31876,8 +31876,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 337.31,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.344552,
-        "lng": 127.326135,
+        "lat": 37.343206,
+        "lng": 127.324854,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -31890,8 +31890,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 336.9,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.34293,
-        "lng": 127.326997,
+        "lat": 37.341575,
+        "lng": 127.325441,
         "code": "M-0370-33694E-B-H",
         "splice_point": "F(22.6신규)",
         "cctv": ""
@@ -31904,8 +31904,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 336.42,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.341032,
-        "lng": 127.328006,
+        "lat": 37.339667,
+        "lng": 127.326138,
         "code": "M-0370-33642E-B-H",
         "splice_point": "F(44)",
         "cctv": "진우1육교"
@@ -31918,8 +31918,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 335.98,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.339292,
-        "lng": 127.32893,
+        "lat": 37.337958,
+        "lng": 127.326923,
         "code": "M-0370-33598E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -31932,8 +31932,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 335.48,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.337315,
-        "lng": 127.329982,
+        "lat": 37.336111,
+        "lng": 127.328087,
         "code": "M-0370-33548E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -31946,8 +31946,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 335.49,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.337354,
-        "lng": 127.329961,
+        "lat": 37.336147,
+        "lng": 127.32806,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -31960,8 +31960,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 335.01,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.335456,
-        "lng": 127.33097,
+        "lat": 37.334518,
+        "lng": 127.329485,
         "code": "M-0370-33601E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -31974,8 +31974,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 334.59,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.333795,
-        "lng": 127.331852,
+        "lat": 37.33317,
+        "lng": 127.330864,
         "code": "M-0370-33460E-B-H",
         "splice_point": "F(44)",
         "cctv": "용면,\n용면교"
@@ -31988,8 +31988,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 334.61,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.333874,
-        "lng": 127.33181,
+        "lat": 37.333233,
+        "lng": 127.330796,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -32002,8 +32002,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 334.12,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.331937,
-        "lng": 127.33284,
+        "lat": 37.331698,
+        "lng": 127.332463,
         "code": "M-0370-33412E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -32030,8 +32030,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 333.84,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.33083,
-        "lng": 127.333429,
+        "lat": 37.330821,
+        "lng": 127.333416,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -32044,8 +32044,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 333.31,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.324679,
-        "lng": 127.340052,
+        "lat": 37.324142,
+        "lng": 127.338433,
         "code": "M-0370-33335E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -32058,8 +32058,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 332.8,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.318686,
-        "lng": 127.346526,
+        "lat": 37.317715,
+        "lng": 127.343495,
         "code": "M-0370-33280E-B-H",
         "splice_point": "F(44)",
         "cctv": "신둔"
@@ -32072,8 +32072,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 332.81,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.318803,
-        "lng": 127.346399,
+        "lat": 37.317824,
+        "lng": 127.343366,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -32086,8 +32086,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 332.34,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.31328,
-        "lng": 127.352366,
+        "lat": 37.313446,
+        "lng": 127.350272,
         "code": "M-0370-33260E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -32100,8 +32100,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 332.796,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.318639,
-        "lng": 127.346577,
+        "lat": 37.317671,
+        "lng": 127.343546,
         "code": "M-0370-33234E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -32114,8 +32114,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 331.47,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.303056,
-        "lng": 127.363411,
+        "lat": 37.303415,
+        "lng": 127.360508,
         "code": "M-0370-33147E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -32128,8 +32128,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 331.04,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.298002,
-        "lng": 127.36887,
+        "lat": 37.29882,
+        "lng": 127.366,
         "code": "M-0370-33104E-B-H",
         "splice_point": "F(만공)",
         "cctv": ""
@@ -32142,8 +32142,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 330.61,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.292949,
-        "lng": 127.374329,
+        "lat": 37.295211,
+        "lng": 127.372695,
         "code": "M-0370-33061E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -32156,8 +32156,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 330.12,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.287191,
-        "lng": 127.38055,
+        "lat": 37.290204,
+        "lng": 127.37929,
         "code": "M-0370-33061E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -32170,8 +32170,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 329.57,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.280727,
-        "lng": 127.387532,
+        "lat": 37.283462,
+        "lng": 127.38522,
         "code": "M-0370-329572E-B-H",
         "splice_point": "",
         "cctv": "이천SA"
@@ -32184,8 +32184,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 329.58,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.280844,
-        "lng": 127.387405,
+        "lat": 37.283583,
+        "lng": 127.385109,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -32198,8 +32198,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 329.05,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.274616,
-        "lng": 127.394134,
+        "lat": 37.277488,
+        "lng": 127.391476,
         "code": "M-0370-32905E-B-H",
         "splice_point": "F(만공)",
         "cctv": "서이천IC"
@@ -32212,8 +32212,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 329.06,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.274734,
-        "lng": 127.394007,
+        "lat": 37.277603,
+        "lng": 127.391356,
         "code": "M-0370-32906S-P-R1",
         "splice_point": "",
         "cctv": ""
@@ -32226,8 +32226,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 329.07,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.274851,
-        "lng": 127.39388,
+        "lat": 37.277718,
+        "lng": 127.391235,
         "code": "M-0370-32907S-P-R2",
         "splice_point": "",
         "cctv": ""
@@ -32240,8 +32240,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 329.08,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.274969,
-        "lng": 127.393753,
+        "lat": 37.277831,
+        "lng": 127.391111,
         "code": "H-0370-32908S-H-R3",
         "splice_point": "",
         "cctv": ""
@@ -32254,8 +32254,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 329.09,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.275086,
-        "lng": 127.393626,
+        "lat": 37.277943,
+        "lng": 127.390988,
         "code": "H-0370-32909S-H-R4",
         "splice_point": "",
         "cctv": ""
@@ -32268,8 +32268,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 328.56,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.271961,
-        "lng": 127.396828,
+        "lat": 37.273949,
+        "lng": 127.395378,
         "code": "M-0370-32856E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -32282,8 +32282,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 328.57,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.272015,
-        "lng": 127.396773,
+        "lat": 37.274021,
+        "lng": 127.395298,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -32296,8 +32296,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 328.1,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.269468,
-        "lng": 127.399357,
+        "lat": 37.270665,
+        "lng": 127.399094,
         "code": "M-0370-32810E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -32310,8 +32310,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 327.7,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.267301,
-        "lng": 127.401556,
+        "lat": 37.268089,
+        "lng": 127.402677,
         "code": "M-0370-32770E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -32324,8 +32324,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 327.31,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.265188,
-        "lng": 127.4037,
+        "lat": 37.26563,
+        "lng": 127.40623,
         "code": "M-0370-32731E-B-H",
         "splice_point": "F",
         "cctv": "마장JC"
@@ -32338,8 +32338,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 326.9,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.262966,
-        "lng": 127.405955,
+        "lat": 37.262443,
+        "lng": 127.40902,
         "code": "M-0370-32690E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -32352,8 +32352,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 326.91,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.26302,
-        "lng": 127.4059,
+        "lat": 37.262535,
+        "lng": 127.408983,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -32366,8 +32366,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 326.54,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.261015,
-        "lng": 127.407934,
+        "lat": 37.259045,
+        "lng": 127.409786,
         "code": "M-0370-32654E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -32380,8 +32380,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 326.14,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.258848,
-        "lng": 127.410133,
+        "lat": 37.255811,
+        "lng": 127.412284,
         "code": "M-0370-32614E-B-H",
         "splice_point": "F(44)",
         "cctv": "마장갈림목\n마장사각지대"
@@ -32394,8 +32394,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 326.15,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.258902,
-        "lng": 127.410078,
+        "lat": 37.255881,
+        "lng": 127.412201,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -32408,8 +32408,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 325.61,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.255976,
-        "lng": 127.413047,
+        "lat": 37.252422,
+        "lng": 127.416764,
         "code": "M-0370-32563E-P-H",
         "splice_point": "",
         "cctv": ""
@@ -32422,8 +32422,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 325.2,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.253638,
-        "lng": 127.415071,
+        "lat": 37.249864,
+        "lng": 127.420302,
         "code": "M-0370-32520E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -32436,8 +32436,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 325.21,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.253695,
-        "lng": 127.415021,
+        "lat": 37.249933,
+        "lng": 127.420224,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -32450,8 +32450,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 324.72,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.250898,
-        "lng": 127.417433,
+        "lat": 37.246188,
+        "lng": 127.423428,
         "code": "M-0370-32472E-B-H",
         "splice_point": "F",
         "cctv": ""
@@ -32464,8 +32464,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 324.3,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.2485,
-        "lng": 127.4195,
+        "lat": 37.242472,
+        "lng": 127.42488,
         "code": "M-0370-32430E-B-H",
         "splice_point": "",
         "cctv": ""
@@ -32478,8 +32478,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 324.31,
         "section": "제2중부선 (하남-호법)",
         "bound": "상행선",
-        "lat": 37.248557,
-        "lng": 127.419451,
+        "lat": 37.242562,
+        "lng": 127.424853,
         "code": "없음",
         "splice_point": "",
         "cctv": ""
@@ -32492,8 +32492,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 323.8,
         "section": "제2중부선 (하남-호법)",
         "bound": "하행선",
-        "lat": 37.239661,
-        "lng": 127.42586,
+        "lat": 37.240215,
+        "lng": 127.425539,
         "code": "M-0370-32380E-B-H",
         "splice_point": "F",
         "cctv": ""
@@ -32520,8 +32520,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 355.4,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.483736,
-        "lng": 127.243687,
+        "lat": 37.483444,
+        "lng": 127.241266,
         "code": "M-0352-35540E-B-H",
         "splice_point": "F",
         "cctv": " 중부1터널"
@@ -32534,8 +32534,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 354.82,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.474462,
-        "lng": 127.249341,
+        "lat": 37.475003,
+        "lng": 127.247657,
         "code": "M-0352-35482E-B-H",
         "splice_point": "F",
         "cctv": " 광지원1교"
@@ -32548,8 +32548,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 354.39,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.467586,
-        "lng": 127.253532,
+        "lat": 37.468787,
+        "lng": 127.252507,
         "code": "M-0352-35439E-B-H",
         "splice_point": "F",
         "cctv": " 광지원2교"
@@ -32562,8 +32562,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 353.59,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.459606,
-        "lng": 127.259974,
+        "lat": 37.457733,
+        "lng": 127.255431,
         "code": "M-0352-35359E-B-H",
         "splice_point": "F",
         "cctv": ""
@@ -32576,8 +32576,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 352.78,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.451527,
-        "lng": 127.266496,
+        "lat": 37.451414,
+        "lng": 127.266463,
         "code": "M-0352-35278E-B-H",
         "splice_point": "F",
         "cctv": " 천진암육교,열수축관->RD로 변경"
@@ -32590,8 +32590,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 352.0,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.44853,
-        "lng": 127.26773,
+        "lat": 37.450725,
+        "lng": 127.269236,
         "code": "M-0352-35198E-B-H",
         "splice_point": "F",
         "cctv": " 번천1교(제2중부선 28-4M과 동일)"
@@ -32604,8 +32604,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 352.01,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.448568,
-        "lng": 127.267714,
+        "lat": 37.450734,
+        "lng": 127.269201,
         "code": "M-0352-35201E-B-R",
         "splice_point": "F",
         "cctv": " 경안영업소 분기"
@@ -32618,8 +32618,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 352.02,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.448607,
-        "lng": 127.267698,
+        "lat": 37.450743,
+        "lng": 127.269165,
         "code": "H-0352-35202E-H-R",
         "splice_point": "",
         "cctv": " 경안영업소 분기(툴박스_회차로)"
@@ -32632,8 +32632,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 352.03,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.448645,
-        "lng": 127.267683,
+        "lat": 37.450752,
+        "lng": 127.26913,
         "code": "H-0352-35203E-H-R",
         "splice_point": "",
         "cctv": " 경안영업소 분기(툴박스_전송실뒷편)"
@@ -32646,8 +32646,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 351.05,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.44702,
-        "lng": 127.272374,
+        "lat": 37.448499,
+        "lng": 127.273846,
         "code": "M-0352-35105E-B-H",
         "splice_point": "F(PSI)",
         "cctv": " 중부2터널,번천2교 351k,\n 번천1교 351.4k"
@@ -32660,8 +32660,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 350.63,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.446353,
-        "lng": 127.274427,
+        "lat": 37.447358,
+        "lng": 127.275764,
         "code": "M-0352-35065E-B-H",
         "splice_point": "F",
         "cctv": " 여공2"
@@ -32674,8 +32674,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 350.41,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.446003,
-        "lng": 127.275502,
+        "lat": 37.446752,
+        "lng": 127.27676,
         "code": "M-0352-35041E-B-H",
         "splice_point": "F(PSI)",
         "cctv": " 망공,방호벽뒤, 번천3교 349.8k"
@@ -32688,8 +32688,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 349.67,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.437712,
-        "lng": 127.285058,
+        "lat": 37.439434,
+        "lng": 127.289007,
         "code": "M-0352-34966E-B-H",
         "splice_point": "F(PSI)",
         "cctv": " 여공1,중부3터널, 서하교 348.8k"
@@ -32702,8 +32702,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 348.79,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.427853,
-        "lng": 127.296421,
+        "lat": 37.42688,
+        "lng": 127.29736,
         "code": "M-0352-34879E-B-H",
         "splice_point": "F(PSI)",
         "cctv": " 망공,지월교(PSI만공_레이켐 추가)\n 신월천교 347.1k /지월교 348k"
@@ -32716,8 +32716,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 347.81,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.420806,
-        "lng": 127.299532,
+        "lat": 37.420132,
+        "lng": 127.299794,
         "code": "M-0352-34785E-B-H",
         "splice_point": "F(PSI)",
         "cctv": " 여공2 "
@@ -32730,8 +32730,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 346.84,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.413831,
-        "lng": 127.302611,
+        "lat": 37.413774,
+        "lng": 127.303347,
         "code": "H-0352-34684E-B-H",
         "splice_point": "F(레이켐)",
         "cctv": " 여공4"
@@ -32744,8 +32744,8 @@ window.BRANCH_DATA_PACKS = {
         "milepost": 346.81,
         "section": "중부선 (산곡-광주IC-경안지사)",
         "bound": "하행선",
-        "lat": 37.413615,
-        "lng": 127.302706,
+        "lat": 37.413578,
+        "lng": 127.303457,
         "code": "M-0352-34681E-B-H",
         "splice_point": "F(PSI)",
         "cctv": "V-36-70--(FDF 패치)-->AVC"
@@ -32760,12 +32760,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.53732,
-            127.18511
+            37.531759,
+            127.20127
           ],
           [
-            37.53732,
-            127.18511
+            37.531759,
+            127.20127
           ]
         ]
       },
@@ -32777,12 +32777,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.53732,
-            127.18511
+            37.531759,
+            127.20127
           ],
           [
-            37.53422,
-            127.196861
+            37.531469,
+            127.207778
           ]
         ]
       },
@@ -32794,12 +32794,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.53422,
-            127.196861
+            37.531469,
+            127.207778
           ],
           [
-            37.531542,
-            127.207009
+            37.531138,
+            127.213389
           ]
         ]
       },
@@ -32811,8 +32811,8 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.531542,
-            127.207009
+            37.531138,
+            127.213389
           ],
           [
             37.528442,
@@ -32832,8 +32832,8 @@ window.BRANCH_DATA_PACKS = {
             127.21876
           ],
           [
-            37.528512,
-            127.218493
+            37.528533,
+            127.218667
           ]
         ]
       },
@@ -32845,12 +32845,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.528512,
-            127.218493
+            37.528533,
+            127.218667
           ],
           [
-            37.528583,
-            127.218226
+            37.528624,
+            127.218573
           ]
         ]
       },
@@ -32862,12 +32862,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.528583,
-            127.218226
+            37.528624,
+            127.218573
           ],
           [
-            37.528653,
-            127.217959
+            37.528715,
+            127.21848
           ]
         ]
       },
@@ -32879,12 +32879,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.528653,
-            127.217959
+            37.528715,
+            127.21848
           ],
           [
-            37.524859,
-            127.219604
+            37.525125,
+            127.220289
           ]
         ]
       },
@@ -32896,12 +32896,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.524859,
-            127.219604
+            37.525125,
+            127.220289
           ],
           [
-            37.520471,
-            127.220638
+            37.520765,
+            127.220688
           ]
         ]
       },
@@ -32913,12 +32913,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.520471,
-            127.220638
+            37.520765,
+            127.220688
           ],
           [
-            37.517515,
-            127.221334
+            37.517881,
+            127.221357
           ]
         ]
       },
@@ -32930,12 +32930,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.517515,
-            127.221334
+            37.517881,
+            127.221357
           ],
           [
-            37.514034,
-            127.223701
+            37.514261,
+            127.223503
           ]
         ]
       },
@@ -32947,12 +32947,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.514034,
-            127.223701
+            37.514261,
+            127.223503
           ],
           [
-            37.512976,
-            127.224421
+            37.513188,
+            127.224226
           ]
         ]
       },
@@ -32964,12 +32964,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.512976,
-            127.224421
+            37.513188,
+            127.224226
           ],
           [
-            37.512624,
-            127.22466
+            37.51283,
+            127.224467
           ]
         ]
       },
@@ -32981,12 +32981,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.512624,
-            127.22466
+            37.51283,
+            127.224467
           ],
           [
-            37.511126,
-            127.225679
+            37.511255,
+            127.225346
           ]
         ]
       },
@@ -32998,12 +32998,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.511126,
-            127.225679
+            37.511255,
+            127.225346
           ],
           [
-            37.509099,
-            127.227058
+            37.509128,
+            127.226548
           ]
         ]
       },
@@ -33015,12 +33015,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.509099,
-            127.227058
+            37.509128,
+            127.226548
           ],
           [
-            37.508658,
-            127.227358
+            37.508667,
+            127.226812
           ]
         ]
       },
@@ -33032,12 +33032,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.508658,
-            127.227358
+            37.508667,
+            127.226812
           ],
           [
-            37.507292,
-            127.228287
+            37.507264,
+            127.227704
           ]
         ]
       },
@@ -33049,12 +33049,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.507292,
-            127.228287
+            37.507264,
+            127.227704
           ],
           [
-            37.505001,
-            127.229845
+            37.504961,
+            127.229318
           ]
         ]
       },
@@ -33066,12 +33066,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.505001,
-            127.229845
+            37.504961,
+            127.229318
           ],
           [
-            37.504472,
-            127.230205
+            37.504437,
+            127.229706
           ]
         ]
       },
@@ -33083,12 +33083,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.504472,
-            127.230205
+            37.504437,
+            127.229706
           ],
           [
-            37.502798,
-            127.231343
+            37.502775,
+            127.230934
           ]
         ]
       },
@@ -33100,12 +33100,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.502798,
-            127.231343
+            37.502775,
+            127.230934
           ],
           [
-            37.500903,
-            127.232632
+            37.500879,
+            127.232286
           ]
         ]
       },
@@ -33117,12 +33117,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.500903,
-            127.232632
+            37.500879,
+            127.232286
           ],
           [
-            37.500599,
-            127.232839
+            37.500573,
+            127.232499
           ]
         ]
       },
@@ -33134,12 +33134,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.500599,
-            127.232839
+            37.500573,
+            127.232499
           ],
           [
-            37.499008,
-            127.233921
+            37.498986,
+            127.233646
           ]
         ]
       },
@@ -33151,12 +33151,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.499008,
-            127.233921
+            37.498986,
+            127.233646
           ],
           [
-            37.496761,
-            127.235449
+            37.49675,
+            127.235281
           ]
         ]
       },
@@ -33168,12 +33168,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.496761,
-            127.235449
+            37.49675,
+            127.235281
           ],
           [
-            37.495175,
-            127.236528
+            37.495181,
+            127.236453
           ]
         ]
       },
@@ -33185,12 +33185,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.495175,
-            127.236528
+            37.495181,
+            127.236453
           ],
           [
-            37.49132,
-            127.239227
+            37.491178,
+            127.239033
           ]
         ]
       },
@@ -33202,12 +33202,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.49132,
-            127.239227
+            37.491178,
+            127.239033
           ],
           [
-            37.49143,
-            127.239145
+            37.491303,
+            127.238975
           ]
         ]
       },
@@ -33219,12 +33219,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.49143,
-            127.239145
+            37.491303,
+            127.238975
           ],
           [
-            37.488237,
-            127.24152
+            37.487539,
+            127.240051
           ]
         ]
       },
@@ -33236,12 +33236,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.488237,
-            127.24152
+            37.487539,
+            127.240051
           ],
           [
-            37.483173,
-            127.245288
+            37.481661,
+            127.242145
           ]
         ]
       },
@@ -33253,12 +33253,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.483173,
-            127.245288
+            37.481661,
+            127.242145
           ],
           [
-            37.476016,
-            127.250612
+            37.474462,
+            127.248167
           ]
         ]
       },
@@ -33270,12 +33270,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.476016,
-            127.250612
+            37.474462,
+            127.248167
           ],
           [
-            37.471062,
-            127.254298
+            37.469398,
+            127.252166
           ]
         ]
       },
@@ -33287,12 +33287,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.471062,
-            127.254298
+            37.469398,
+            127.252166
           ],
           [
-            37.465006,
-            127.258802
+            37.46237,
+            127.25471
           ]
         ]
       },
@@ -33304,12 +33304,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.465006,
-            127.258802
+            37.46237,
+            127.25471
           ],
           [
-            37.462144,
-            127.260932
+            37.458922,
+            127.255121
           ]
         ]
       },
@@ -33321,12 +33321,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.462144,
-            127.260932
+            37.458922,
+            127.255121
           ],
           [
-            37.45785,
-            127.264126
+            37.454345,
+            127.25797
           ]
         ]
       },
@@ -33338,12 +33338,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.45785,
-            127.264126
+            37.454345,
+            127.25797
           ],
           [
-            37.45796,
-            127.264044
+            37.454442,
+            127.257855
           ]
         ]
       },
@@ -33355,12 +33355,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.45796,
-            127.264044
+            37.454442,
+            127.257855
           ],
           [
-            37.453556,
-            127.26732
+            37.451949,
+            127.263641
           ]
         ]
       },
@@ -33372,12 +33372,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.453556,
-            127.26732
+            37.451949,
+            127.263641
           ],
           [
-            37.44717,
-            127.272071
+            37.449208,
+            127.272651
           ]
         ]
       },
@@ -33389,12 +33389,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.44717,
-            127.272071
+            37.449208,
+            127.272651
           ],
           [
-            37.44728,
-            127.271989
+            37.449286,
+            127.272514
           ]
         ]
       },
@@ -33406,12 +33406,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.44728,
-            127.271989
+            37.449286,
+            127.272514
           ],
           [
-            37.44739,
-            127.271907
+            37.449363,
+            127.272378
           ]
         ]
       },
@@ -33423,12 +33423,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.44739,
-            127.271907
+            37.449363,
+            127.272378
           ],
           [
-            37.4475,
-            127.271825
+            37.449441,
+            127.272241
           ]
         ]
       },
@@ -33440,12 +33440,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.4475,
-            127.271825
+            37.449441,
+            127.272241
           ],
           [
-            37.44761,
-            127.271743
+            37.449518,
+            127.272105
           ]
         ]
       },
@@ -33457,12 +33457,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.44761,
-            127.271743
+            37.449518,
+            127.272105
           ],
           [
-            37.443998,
-            127.273748
+            37.44702,
+            127.27632
           ]
         ]
       },
@@ -33474,12 +33474,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.443998,
-            127.273748
+            37.44702,
+            127.27632
           ],
           [
-            37.440363,
-            127.275671
+            37.444524,
+            127.280538
           ]
         ]
       },
@@ -33491,12 +33491,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.440363,
-            127.275671
+            37.444524,
+            127.280538
           ],
           [
-            37.43634,
-            127.277798
+            37.441748,
+            127.285191
           ]
         ]
       },
@@ -33508,12 +33508,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.43634,
-            127.277798
+            37.441748,
+            127.285191
           ],
           [
-            37.434638,
-            127.278698
+            37.440572,
+            127.287159
           ]
         ]
       },
@@ -33525,12 +33525,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.434638,
-            127.278698
+            37.440572,
+            127.287159
           ],
           [
-            37.43108,
-            127.28058
+            37.437862,
+            127.290995
           ]
         ]
       },
@@ -33542,12 +33542,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.43108,
-            127.28058
+            37.437862,
+            127.290995
           ],
           [
-            37.426438,
-            127.283034
+            37.433421,
+            127.294677
           ]
         ]
       },
@@ -33559,12 +33559,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.426438,
-            127.283034
+            37.433421,
+            127.294677
           ],
           [
-            37.423344,
-            127.28467
+            37.430139,
+            127.296352
           ]
         ]
       },
@@ -33576,12 +33576,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.423344,
-            127.28467
+            37.430139,
+            127.296352
           ],
           [
-            37.418857,
-            127.287043
+            37.425136,
+            127.29791
           ]
         ]
       },
@@ -33593,12 +33593,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.418857,
-            127.287043
+            37.425136,
+            127.29791
           ],
           [
-            37.418702,
-            127.287125
+            37.424963,
+            127.297964
           ]
         ]
       },
@@ -33610,12 +33610,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.418702,
-            127.287125
+            37.424963,
+            127.297964
           ],
           [
-            37.413674,
-            127.289783
+            37.419464,
+            127.300148
           ]
         ]
       },
@@ -33627,12 +33627,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.413674,
-            127.289783
+            37.419464,
+            127.300148
           ],
           [
-            37.409806,
-            127.291829
+            37.415409,
+            127.302433
           ]
         ]
       },
@@ -33644,12 +33644,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.409806,
-            127.291829
+            37.415409,
+            127.302433
           ],
           [
-            37.407486,
-            127.293056
+            37.412974,
+            127.3038
           ]
         ]
       },
@@ -33661,12 +33661,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.407486,
-            127.293056
+            37.412974,
+            127.3038
           ],
           [
-            37.407563,
-            127.293015
+            37.413055,
+            127.303754
           ]
         ]
       },
@@ -33678,12 +33678,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.407563,
-            127.293015
+            37.413055,
+            127.303754
           ],
           [
-            37.404855,
-            127.294447
+            37.410218,
+            127.30536
           ]
         ]
       },
@@ -33695,12 +33695,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.404855,
-            127.294447
+            37.410218,
+            127.30536
           ],
           [
-            37.401142,
-            127.29641
+            37.406302,
+            127.30749
           ]
         ]
       },
@@ -33712,12 +33712,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.401142,
-            127.29641
+            37.406302,
+            127.30749
           ],
           [
-            37.40122,
-            127.296369
+            37.406384,
+            127.307446
           ]
         ]
       },
@@ -33729,12 +33729,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.40122,
-            127.296369
+            37.406384,
+            127.307446
           ],
           [
-            37.39681,
-            127.298701
+            37.401617,
+            127.309596
           ]
         ]
       },
@@ -33746,12 +33746,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.39681,
-            127.298701
+            37.401617,
+            127.309596
           ],
           [
-            37.39271,
-            127.300869
+            37.397132,
+            127.311408
           ]
         ]
       },
@@ -33763,12 +33763,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.39271,
-            127.300869
+            37.397132,
+            127.311408
           ],
           [
-            37.392788,
-            127.300828
+            37.397216,
+            127.311371
           ]
         ]
       },
@@ -33780,12 +33780,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.392788,
-            127.300828
+            37.397216,
+            127.311371
           ],
           [
-            37.389152,
-            127.302751
+            37.393284,
+            127.313141
           ]
         ]
       },
@@ -33797,12 +33797,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.389152,
-            127.302751
+            37.393284,
+            127.313141
           ],
           [
-            37.385826,
-            127.30451
+            37.389704,
+            127.314821
           ]
         ]
       },
@@ -33814,12 +33814,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.385826,
-            127.30451
+            37.389704,
+            127.314821
           ],
           [
-            37.385903,
-            127.304469
+            37.389789,
+            127.314788
           ]
         ]
       },
@@ -33831,12 +33831,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.385903,
-            127.304469
+            37.389789,
+            127.314788
           ],
           [
-            37.381726,
-            127.306678
+            37.385049,
+            127.315622
           ]
         ]
       },
@@ -33848,12 +33848,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.381726,
-            127.306678
+            37.385049,
+            127.315622
           ],
           [
-            37.37809,
-            127.3086
+            37.38089,
+            127.316097
           ]
         ]
       },
@@ -33865,12 +33865,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.37809,
-            127.3086
+            37.38089,
+            127.316097
           ],
           [
-            37.378167,
-            127.30856
+            37.380978,
+            127.316087
           ]
         ]
       },
@@ -33882,12 +33882,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.378167,
-            127.30856
+            37.380978,
+            127.316087
           ],
           [
-            37.375382,
-            127.310032
+            37.377794,
+            127.31647
           ]
         ]
       },
@@ -33899,12 +33899,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.375382,
-            127.310032
+            37.377794,
+            127.31647
           ],
           [
-            37.372288,
-            127.311668
+            37.374255,
+            127.316898
           ]
         ]
       },
@@ -33916,12 +33916,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.372288,
-            127.311668
+            37.374255,
+            127.316898
           ],
           [
-            37.369967,
-            127.312896
+            37.371601,
+            127.317212
           ]
         ]
       },
@@ -33933,12 +33933,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.369967,
-            127.312896
+            37.371601,
+            127.317212
           ],
           [
-            37.367105,
-            127.314409
+            37.368328,
+            127.317607
           ]
         ]
       },
@@ -33950,12 +33950,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.367105,
-            127.314409
+            37.368328,
+            127.317607
           ],
           [
-            37.363701,
-            127.316209
+            37.364435,
+            127.31807
           ]
         ]
       },
@@ -33967,12 +33967,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.363701,
-            127.316209
+            37.364435,
+            127.31807
           ],
           [
-            37.363779,
-            127.316168
+            37.364524,
+            127.31806
           ]
         ]
       },
@@ -33984,12 +33984,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.363779,
-            127.316168
+            37.364524,
+            127.31806
           ],
           [
-            37.361071,
-            127.3176
+            37.361428,
+            127.318441
           ]
         ]
       },
@@ -34001,12 +34001,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.361071,
-            127.3176
+            37.361428,
+            127.318441
           ],
           [
-            37.359524,
-            127.318418
+            37.359673,
+            127.31879
           ]
         ]
       },
@@ -34018,12 +34018,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.359524,
-            127.318418
+            37.359673,
+            127.31879
           ],
           [
-            37.359601,
-            127.318377
+            37.359761,
+            127.318771
           ]
         ]
       },
@@ -34035,12 +34035,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.359601,
-            127.318377
+            37.359761,
+            127.318771
           ],
           [
-            37.359679,
-            127.318336
+            37.359848,
+            127.318751
           ]
         ]
       },
@@ -34052,12 +34052,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.359679,
-            127.318336
+            37.359848,
+            127.318751
           ],
           [
-            37.359756,
-            127.318295
+            37.359936,
+            127.318731
           ]
         ]
       },
@@ -34069,12 +34069,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.359756,
-            127.318295
+            37.359936,
+            127.318731
           ],
           [
-            37.359833,
-            127.318254
+            37.360023,
+            127.318712
           ]
         ]
       },
@@ -34086,12 +34086,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.359833,
-            127.318254
+            37.360023,
+            127.318712
           ],
           [
-            37.359911,
-            127.318213
+            37.360111,
+            127.318692
           ]
         ]
       },
@@ -34103,12 +34103,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.359911,
-            127.318213
+            37.360111,
+            127.318692
           ],
           [
-            37.355189,
-            127.32048
+            37.353881,
+            127.320896
           ]
         ]
       },
@@ -34120,12 +34120,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.355189,
-            127.32048
+            37.353881,
+            127.320896
           ],
           [
-            37.355276,
-            127.320439
+            37.353996,
+            127.320849
           ]
         ]
       },
@@ -34137,12 +34137,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.355276,
-            127.320439
+            37.353996,
+            127.320849
           ],
           [
-            37.355362,
-            127.320398
+            37.354111,
+            127.320802
           ]
         ]
       },
@@ -34154,12 +34154,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.355362,
-            127.320398
+            37.354111,
+            127.320802
           ],
           [
-            37.355449,
-            127.320356
+            37.354226,
+            127.320755
           ]
         ]
       },
@@ -34171,12 +34171,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.355449,
-            127.320356
+            37.354226,
+            127.320755
           ],
           [
-            37.355536,
-            127.320315
+            37.35434,
+            127.320708
           ]
         ]
       },
@@ -34188,12 +34188,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.355536,
-            127.320315
+            37.35434,
+            127.320708
           ],
           [
-            37.353291,
-            127.321489
+            37.351996,
+            127.321682
           ]
         ]
       },
@@ -34205,12 +34205,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.353291,
-            127.321489
+            37.351996,
+            127.321682
           ],
           [
-            37.35163,
-            127.322372
+            37.350332,
+            127.322311
           ]
         ]
       },
@@ -34222,12 +34222,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.35163,
-            127.322372
+            37.350332,
+            127.322311
           ],
           [
-            37.349771,
-            127.32336
+            37.348462,
+            127.322983
           ]
         ]
       },
@@ -34239,12 +34239,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.349771,
-            127.32336
+            37.348462,
+            127.322983
           ],
           [
-            37.348071,
-            127.324264
+            37.346748,
+            127.323587
           ]
         ]
       },
@@ -34256,12 +34256,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.348071,
-            127.324264
+            37.346748,
+            127.323587
           ],
           [
-            37.348111,
-            127.324243
+            37.346788,
+            127.323573
           ]
         ]
       },
@@ -34273,12 +34273,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.348111,
-            127.324243
+            37.346788,
+            127.323573
           ],
           [
-            37.34645,
-            127.325126
+            37.345116,
+            127.324167
           ]
         ]
       },
@@ -34290,12 +34290,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.34645,
-            127.325126
+            37.345116,
+            127.324167
           ],
           [
-            37.344512,
-            127.326156
+            37.343166,
+            127.324868
           ]
         ]
       },
@@ -34307,12 +34307,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.344512,
-            127.326156
+            37.343166,
+            127.324868
           ],
           [
-            37.344552,
-            127.326135
+            37.343206,
+            127.324854
           ]
         ]
       },
@@ -34324,12 +34324,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.344552,
-            127.326135
+            37.343206,
+            127.324854
           ],
           [
-            37.34293,
-            127.326997
+            37.341575,
+            127.325441
           ]
         ]
       },
@@ -34341,12 +34341,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.34293,
-            127.326997
+            37.341575,
+            127.325441
           ],
           [
-            37.341032,
-            127.328006
+            37.339667,
+            127.326138
           ]
         ]
       },
@@ -34358,12 +34358,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.341032,
-            127.328006
+            37.339667,
+            127.326138
           ],
           [
-            37.339292,
-            127.32893
+            37.337958,
+            127.326923
           ]
         ]
       },
@@ -34375,12 +34375,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.339292,
-            127.32893
+            37.337958,
+            127.326923
           ],
           [
-            37.337315,
-            127.329982
+            37.336111,
+            127.328087
           ]
         ]
       },
@@ -34392,12 +34392,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.337315,
-            127.329982
+            37.336111,
+            127.328087
           ],
           [
-            37.337354,
-            127.329961
+            37.336147,
+            127.32806
           ]
         ]
       },
@@ -34409,12 +34409,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.337354,
-            127.329961
+            37.336147,
+            127.32806
           ],
           [
-            37.335456,
-            127.33097
+            37.334518,
+            127.329485
           ]
         ]
       },
@@ -34426,12 +34426,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.335456,
-            127.33097
+            37.334518,
+            127.329485
           ],
           [
-            37.333795,
-            127.331852
+            37.33317,
+            127.330864
           ]
         ]
       },
@@ -34443,12 +34443,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.333795,
-            127.331852
+            37.33317,
+            127.330864
           ],
           [
-            37.333874,
-            127.33181
+            37.333233,
+            127.330796
           ]
         ]
       },
@@ -34460,12 +34460,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.333874,
-            127.33181
+            37.333233,
+            127.330796
           ],
           [
-            37.331937,
-            127.33284
+            37.331698,
+            127.332463
           ]
         ]
       },
@@ -34477,8 +34477,8 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.331937,
-            127.33284
+            37.331698,
+            127.332463
           ],
           [
             37.33079,
@@ -34498,8 +34498,8 @@ window.BRANCH_DATA_PACKS = {
             127.33345
           ],
           [
-            37.33083,
-            127.333429
+            37.330821,
+            127.333416
           ]
         ]
       },
@@ -34511,12 +34511,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.33083,
-            127.333429
+            37.330821,
+            127.333416
           ],
           [
-            37.324679,
-            127.340052
+            37.324142,
+            127.338433
           ]
         ]
       },
@@ -34528,12 +34528,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.324679,
-            127.340052
+            37.324142,
+            127.338433
           ],
           [
-            37.318686,
-            127.346526
+            37.317715,
+            127.343495
           ]
         ]
       },
@@ -34545,12 +34545,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.318686,
-            127.346526
+            37.317715,
+            127.343495
           ],
           [
-            37.318803,
-            127.346399
+            37.317824,
+            127.343366
           ]
         ]
       },
@@ -34562,12 +34562,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.318803,
-            127.346399
+            37.317824,
+            127.343366
           ],
           [
-            37.31328,
-            127.352366
+            37.313446,
+            127.350272
           ]
         ]
       },
@@ -34579,12 +34579,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.31328,
-            127.352366
+            37.313446,
+            127.350272
           ],
           [
-            37.318639,
-            127.346577
+            37.317671,
+            127.343546
           ]
         ]
       },
@@ -34596,12 +34596,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.318639,
-            127.346577
+            37.317671,
+            127.343546
           ],
           [
-            37.303056,
-            127.363411
+            37.303415,
+            127.360508
           ]
         ]
       },
@@ -34613,12 +34613,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.303056,
-            127.363411
+            37.303415,
+            127.360508
           ],
           [
-            37.298002,
-            127.36887
+            37.29882,
+            127.366
           ]
         ]
       },
@@ -34630,12 +34630,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.298002,
-            127.36887
+            37.29882,
+            127.366
           ],
           [
-            37.292949,
-            127.374329
+            37.295211,
+            127.372695
           ]
         ]
       },
@@ -34647,12 +34647,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.292949,
-            127.374329
+            37.295211,
+            127.372695
           ],
           [
-            37.287191,
-            127.38055
+            37.290204,
+            127.37929
           ]
         ]
       },
@@ -34664,12 +34664,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.287191,
-            127.38055
+            37.290204,
+            127.37929
           ],
           [
-            37.280727,
-            127.387532
+            37.283462,
+            127.38522
           ]
         ]
       },
@@ -34681,12 +34681,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.280727,
-            127.387532
+            37.283462,
+            127.38522
           ],
           [
-            37.280844,
-            127.387405
+            37.283583,
+            127.385109
           ]
         ]
       },
@@ -34698,12 +34698,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.280844,
-            127.387405
+            37.283583,
+            127.385109
           ],
           [
-            37.274616,
-            127.394134
+            37.277488,
+            127.391476
           ]
         ]
       },
@@ -34715,12 +34715,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.274616,
-            127.394134
+            37.277488,
+            127.391476
           ],
           [
-            37.274734,
-            127.394007
+            37.277603,
+            127.391356
           ]
         ]
       },
@@ -34732,12 +34732,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.274734,
-            127.394007
+            37.277603,
+            127.391356
           ],
           [
-            37.274851,
-            127.39388
+            37.277718,
+            127.391235
           ]
         ]
       },
@@ -34749,12 +34749,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.274851,
-            127.39388
+            37.277718,
+            127.391235
           ],
           [
-            37.274969,
-            127.393753
+            37.277831,
+            127.391111
           ]
         ]
       },
@@ -34766,12 +34766,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.274969,
-            127.393753
+            37.277831,
+            127.391111
           ],
           [
-            37.275086,
-            127.393626
+            37.277943,
+            127.390988
           ]
         ]
       },
@@ -34783,12 +34783,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.275086,
-            127.393626
+            37.277943,
+            127.390988
           ],
           [
-            37.271961,
-            127.396828
+            37.273949,
+            127.395378
           ]
         ]
       },
@@ -34800,12 +34800,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.271961,
-            127.396828
+            37.273949,
+            127.395378
           ],
           [
-            37.272015,
-            127.396773
+            37.274021,
+            127.395298
           ]
         ]
       },
@@ -34817,12 +34817,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.272015,
-            127.396773
+            37.274021,
+            127.395298
           ],
           [
-            37.269468,
-            127.399357
+            37.270665,
+            127.399094
           ]
         ]
       },
@@ -34834,12 +34834,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.269468,
-            127.399357
+            37.270665,
+            127.399094
           ],
           [
-            37.267301,
-            127.401556
+            37.268089,
+            127.402677
           ]
         ]
       },
@@ -34851,12 +34851,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.267301,
-            127.401556
+            37.268089,
+            127.402677
           ],
           [
-            37.265188,
-            127.4037
+            37.26563,
+            127.40623
           ]
         ]
       },
@@ -34868,12 +34868,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.265188,
-            127.4037
+            37.26563,
+            127.40623
           ],
           [
-            37.262966,
-            127.405955
+            37.262443,
+            127.40902
           ]
         ]
       },
@@ -34885,12 +34885,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.262966,
-            127.405955
+            37.262443,
+            127.40902
           ],
           [
-            37.26302,
-            127.4059
+            37.262535,
+            127.408983
           ]
         ]
       },
@@ -34902,12 +34902,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.26302,
-            127.4059
+            37.262535,
+            127.408983
           ],
           [
-            37.261015,
-            127.407934
+            37.259045,
+            127.409786
           ]
         ]
       },
@@ -34919,12 +34919,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.261015,
-            127.407934
+            37.259045,
+            127.409786
           ],
           [
-            37.258848,
-            127.410133
+            37.255811,
+            127.412284
           ]
         ]
       },
@@ -34936,12 +34936,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.258848,
-            127.410133
+            37.255811,
+            127.412284
           ],
           [
-            37.258902,
-            127.410078
+            37.255881,
+            127.412201
           ]
         ]
       },
@@ -34953,12 +34953,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.258902,
-            127.410078
+            37.255881,
+            127.412201
           ],
           [
-            37.255976,
-            127.413047
+            37.252422,
+            127.416764
           ]
         ]
       },
@@ -34970,12 +34970,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.255976,
-            127.413047
+            37.252422,
+            127.416764
           ],
           [
-            37.253638,
-            127.415071
+            37.249864,
+            127.420302
           ]
         ]
       },
@@ -34987,12 +34987,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.253638,
-            127.415071
+            37.249864,
+            127.420302
           ],
           [
-            37.253695,
-            127.415021
+            37.249933,
+            127.420224
           ]
         ]
       },
@@ -35004,12 +35004,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.253695,
-            127.415021
+            37.249933,
+            127.420224
           ],
           [
-            37.250898,
-            127.417433
+            37.246188,
+            127.423428
           ]
         ]
       },
@@ -35021,12 +35021,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.250898,
-            127.417433
+            37.246188,
+            127.423428
           ],
           [
-            37.2485,
-            127.4195
+            37.242472,
+            127.42488
           ]
         ]
       },
@@ -35038,12 +35038,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.2485,
-            127.4195
+            37.242472,
+            127.42488
           ],
           [
-            37.248557,
-            127.419451
+            37.242562,
+            127.424853
           ]
         ]
       },
@@ -35055,12 +35055,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "COD관(100mm)",
         "coordinates": [
           [
-            37.248557,
-            127.419451
+            37.242562,
+            127.424853
           ],
           [
-            37.239661,
-            127.42586
+            37.240215,
+            127.425539
           ]
         ]
       },
@@ -35076,8 +35076,8 @@ window.BRANCH_DATA_PACKS = {
             127.238326
           ],
           [
-            37.483736,
-            127.243687
+            37.483444,
+            127.241266
           ]
         ]
       },
@@ -35089,12 +35089,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.483736,
-            127.243687
+            37.483444,
+            127.241266
           ],
           [
-            37.474462,
-            127.249341
+            37.475003,
+            127.247657
           ]
         ]
       },
@@ -35106,12 +35106,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.474462,
-            127.249341
+            37.475003,
+            127.247657
           ],
           [
-            37.467586,
-            127.253532
+            37.468787,
+            127.252507
           ]
         ]
       },
@@ -35123,12 +35123,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.467586,
-            127.253532
+            37.468787,
+            127.252507
           ],
           [
-            37.459606,
-            127.259974
+            37.457733,
+            127.255431
           ]
         ]
       },
@@ -35140,12 +35140,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.459606,
-            127.259974
+            37.457733,
+            127.255431
           ],
           [
-            37.451527,
-            127.266496
+            37.451414,
+            127.266463
           ]
         ]
       },
@@ -35157,12 +35157,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.451527,
-            127.266496
+            37.451414,
+            127.266463
           ],
           [
-            37.44853,
-            127.26773
+            37.450725,
+            127.269236
           ]
         ]
       },
@@ -35174,12 +35174,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.44853,
-            127.26773
+            37.450725,
+            127.269236
           ],
           [
-            37.448568,
-            127.267714
+            37.450734,
+            127.269201
           ]
         ]
       },
@@ -35191,12 +35191,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.448568,
-            127.267714
+            37.450734,
+            127.269201
           ],
           [
-            37.448607,
-            127.267698
+            37.450743,
+            127.269165
           ]
         ]
       },
@@ -35208,12 +35208,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.448607,
-            127.267698
+            37.450743,
+            127.269165
           ],
           [
-            37.448645,
-            127.267683
+            37.450752,
+            127.26913
           ]
         ]
       },
@@ -35225,12 +35225,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.448645,
-            127.267683
+            37.450752,
+            127.26913
           ],
           [
-            37.44702,
-            127.272374
+            37.448499,
+            127.273846
           ]
         ]
       },
@@ -35242,12 +35242,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.44702,
-            127.272374
+            37.448499,
+            127.273846
           ],
           [
-            37.446353,
-            127.274427
+            37.447358,
+            127.275764
           ]
         ]
       },
@@ -35259,12 +35259,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.446353,
-            127.274427
+            37.447358,
+            127.275764
           ],
           [
-            37.446003,
-            127.275502
+            37.446752,
+            127.27676
           ]
         ]
       },
@@ -35276,12 +35276,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.446003,
-            127.275502
+            37.446752,
+            127.27676
           ],
           [
-            37.437712,
-            127.285058
+            37.439434,
+            127.289007
           ]
         ]
       },
@@ -35293,12 +35293,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.437712,
-            127.285058
+            37.439434,
+            127.289007
           ],
           [
-            37.427853,
-            127.296421
+            37.42688,
+            127.29736
           ]
         ]
       },
@@ -35310,12 +35310,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.427853,
-            127.296421
+            37.42688,
+            127.29736
           ],
           [
-            37.420806,
-            127.299532
+            37.420132,
+            127.299794
           ]
         ]
       },
@@ -35327,12 +35327,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.420806,
-            127.299532
+            37.420132,
+            127.299794
           ],
           [
-            37.413831,
-            127.302611
+            37.413774,
+            127.303347
           ]
         ]
       },
@@ -35344,12 +35344,12 @@ window.BRANCH_DATA_PACKS = {
         "pipe_type": "스틸관(100mm)",
         "coordinates": [
           [
-            37.413831,
-            127.302611
+            37.413774,
+            127.303347
           ],
           [
-            37.413615,
-            127.302706
+            37.413578,
+            127.303457
           ]
         ]
       }
@@ -35379,552 +35379,552 @@ window.BRANCH_DATA_PACKS = {
         ],
         "coordinates": [
           [
-            37.53732,
-            127.18511
+            37.531759,
+            127.20127
           ],
           [
-            37.53732,
-            127.18511
+            37.531759,
+            127.20127
           ],
           [
-            37.53422,
-            127.196861
+            37.531469,
+            127.207778
           ],
           [
-            37.531542,
-            127.207009
+            37.531138,
+            127.213389
           ],
           [
             37.528442,
             127.21876
           ],
           [
-            37.528512,
-            127.218493
+            37.528533,
+            127.218667
           ],
           [
-            37.528583,
-            127.218226
+            37.528624,
+            127.218573
           ],
           [
-            37.528653,
-            127.217959
+            37.528715,
+            127.21848
           ],
           [
-            37.524859,
-            127.219604
+            37.525125,
+            127.220289
           ],
           [
-            37.520471,
-            127.220638
+            37.520765,
+            127.220688
           ],
           [
-            37.517515,
-            127.221334
+            37.517881,
+            127.221357
           ],
           [
-            37.514034,
-            127.223701
+            37.514261,
+            127.223503
           ],
           [
-            37.512976,
-            127.224421
+            37.513188,
+            127.224226
           ],
           [
-            37.512624,
-            127.22466
+            37.51283,
+            127.224467
           ],
           [
-            37.511126,
-            127.225679
+            37.511255,
+            127.225346
           ],
           [
-            37.509099,
-            127.227058
+            37.509128,
+            127.226548
           ],
           [
-            37.508658,
-            127.227358
+            37.508667,
+            127.226812
           ],
           [
-            37.507292,
-            127.228287
+            37.507264,
+            127.227704
           ],
           [
-            37.505001,
-            127.229845
+            37.504961,
+            127.229318
           ],
           [
-            37.504472,
-            127.230205
+            37.504437,
+            127.229706
           ],
           [
-            37.502798,
-            127.231343
+            37.502775,
+            127.230934
           ],
           [
-            37.500903,
-            127.232632
+            37.500879,
+            127.232286
           ],
           [
-            37.500599,
-            127.232839
+            37.500573,
+            127.232499
           ],
           [
-            37.499008,
-            127.233921
+            37.498986,
+            127.233646
           ],
           [
-            37.496761,
-            127.235449
+            37.49675,
+            127.235281
           ],
           [
-            37.495175,
-            127.236528
+            37.495181,
+            127.236453
           ],
           [
-            37.49132,
-            127.239227
+            37.491178,
+            127.239033
           ],
           [
-            37.49143,
-            127.239145
+            37.491303,
+            127.238975
           ],
           [
-            37.488237,
-            127.24152
+            37.487539,
+            127.240051
           ],
           [
-            37.483173,
-            127.245288
+            37.481661,
+            127.242145
           ],
           [
-            37.476016,
-            127.250612
+            37.474462,
+            127.248167
           ],
           [
-            37.471062,
-            127.254298
+            37.469398,
+            127.252166
           ],
           [
-            37.465006,
-            127.258802
+            37.46237,
+            127.25471
           ],
           [
-            37.462144,
-            127.260932
+            37.458922,
+            127.255121
           ],
           [
-            37.45785,
-            127.264126
+            37.454345,
+            127.25797
           ],
           [
-            37.45796,
-            127.264044
+            37.454442,
+            127.257855
           ],
           [
-            37.453556,
-            127.26732
+            37.451949,
+            127.263641
           ],
           [
-            37.44717,
-            127.272071
+            37.449208,
+            127.272651
           ],
           [
-            37.44728,
-            127.271989
+            37.449286,
+            127.272514
           ],
           [
-            37.44739,
-            127.271907
+            37.449363,
+            127.272378
           ],
           [
-            37.4475,
-            127.271825
+            37.449441,
+            127.272241
           ],
           [
-            37.44761,
-            127.271743
+            37.449518,
+            127.272105
           ],
           [
-            37.443998,
-            127.273748
+            37.44702,
+            127.27632
           ],
           [
-            37.440363,
-            127.275671
+            37.444524,
+            127.280538
           ],
           [
-            37.43634,
-            127.277798
+            37.441748,
+            127.285191
           ],
           [
-            37.434638,
-            127.278698
+            37.440572,
+            127.287159
           ],
           [
-            37.43108,
-            127.28058
+            37.437862,
+            127.290995
           ],
           [
-            37.426438,
-            127.283034
+            37.433421,
+            127.294677
           ],
           [
-            37.423344,
-            127.28467
+            37.430139,
+            127.296352
           ],
           [
-            37.418857,
-            127.287043
+            37.425136,
+            127.29791
           ],
           [
-            37.418702,
-            127.287125
+            37.424963,
+            127.297964
           ],
           [
-            37.413674,
-            127.289783
+            37.419464,
+            127.300148
           ],
           [
-            37.409806,
-            127.291829
+            37.415409,
+            127.302433
           ],
           [
-            37.407486,
-            127.293056
+            37.412974,
+            127.3038
           ],
           [
-            37.407563,
-            127.293015
+            37.413055,
+            127.303754
           ],
           [
-            37.404855,
-            127.294447
+            37.410218,
+            127.30536
           ],
           [
-            37.401142,
-            127.29641
+            37.406302,
+            127.30749
           ],
           [
-            37.40122,
-            127.296369
+            37.406384,
+            127.307446
           ],
           [
-            37.39681,
-            127.298701
+            37.401617,
+            127.309596
           ],
           [
-            37.39271,
-            127.300869
+            37.397132,
+            127.311408
           ],
           [
-            37.392788,
-            127.300828
+            37.397216,
+            127.311371
           ],
           [
-            37.389152,
-            127.302751
+            37.393284,
+            127.313141
           ],
           [
-            37.385826,
-            127.30451
+            37.389704,
+            127.314821
           ],
           [
-            37.385903,
-            127.304469
+            37.389789,
+            127.314788
           ],
           [
-            37.381726,
-            127.306678
+            37.385049,
+            127.315622
           ],
           [
-            37.37809,
-            127.3086
+            37.38089,
+            127.316097
           ],
           [
-            37.378167,
-            127.30856
+            37.380978,
+            127.316087
           ],
           [
-            37.375382,
-            127.310032
+            37.377794,
+            127.31647
           ],
           [
-            37.372288,
-            127.311668
+            37.374255,
+            127.316898
           ],
           [
-            37.369967,
-            127.312896
+            37.371601,
+            127.317212
           ],
           [
-            37.367105,
-            127.314409
+            37.368328,
+            127.317607
           ],
           [
-            37.363701,
-            127.316209
+            37.364435,
+            127.31807
           ],
           [
-            37.363779,
-            127.316168
+            37.364524,
+            127.31806
           ],
           [
-            37.361071,
-            127.3176
+            37.361428,
+            127.318441
           ],
           [
-            37.359524,
-            127.318418
+            37.359673,
+            127.31879
           ],
           [
-            37.359601,
-            127.318377
+            37.359761,
+            127.318771
           ],
           [
-            37.359679,
-            127.318336
+            37.359848,
+            127.318751
           ],
           [
-            37.359756,
-            127.318295
+            37.359936,
+            127.318731
           ],
           [
-            37.359833,
-            127.318254
+            37.360023,
+            127.318712
           ],
           [
-            37.359911,
-            127.318213
+            37.360111,
+            127.318692
           ],
           [
-            37.355189,
-            127.32048
+            37.353881,
+            127.320896
           ],
           [
-            37.355276,
-            127.320439
+            37.353996,
+            127.320849
           ],
           [
-            37.355362,
-            127.320398
+            37.354111,
+            127.320802
           ],
           [
-            37.355449,
-            127.320356
+            37.354226,
+            127.320755
           ],
           [
-            37.355536,
-            127.320315
+            37.35434,
+            127.320708
           ],
           [
-            37.353291,
-            127.321489
+            37.351996,
+            127.321682
           ],
           [
-            37.35163,
-            127.322372
+            37.350332,
+            127.322311
           ],
           [
-            37.349771,
-            127.32336
+            37.348462,
+            127.322983
           ],
           [
-            37.348071,
-            127.324264
+            37.346748,
+            127.323587
           ],
           [
-            37.348111,
-            127.324243
+            37.346788,
+            127.323573
           ],
           [
-            37.34645,
-            127.325126
+            37.345116,
+            127.324167
           ],
           [
-            37.344512,
-            127.326156
+            37.343166,
+            127.324868
           ],
           [
-            37.344552,
-            127.326135
+            37.343206,
+            127.324854
           ],
           [
-            37.34293,
-            127.326997
+            37.341575,
+            127.325441
           ],
           [
-            37.341032,
-            127.328006
+            37.339667,
+            127.326138
           ],
           [
-            37.339292,
-            127.32893
+            37.337958,
+            127.326923
           ],
           [
-            37.337315,
-            127.329982
+            37.336111,
+            127.328087
           ],
           [
-            37.337354,
-            127.329961
+            37.336147,
+            127.32806
           ],
           [
-            37.335456,
-            127.33097
+            37.334518,
+            127.329485
           ],
           [
-            37.333795,
-            127.331852
+            37.33317,
+            127.330864
           ],
           [
-            37.333874,
-            127.33181
+            37.333233,
+            127.330796
           ],
           [
-            37.331937,
-            127.33284
+            37.331698,
+            127.332463
           ],
           [
             37.33079,
             127.33345
           ],
           [
-            37.33083,
-            127.333429
+            37.330821,
+            127.333416
           ],
           [
-            37.324679,
-            127.340052
+            37.324142,
+            127.338433
           ],
           [
-            37.318686,
-            127.346526
+            37.317715,
+            127.343495
           ],
           [
-            37.318803,
-            127.346399
+            37.317824,
+            127.343366
           ],
           [
-            37.31328,
-            127.352366
+            37.313446,
+            127.350272
           ],
           [
-            37.318639,
-            127.346577
+            37.317671,
+            127.343546
           ],
           [
-            37.303056,
-            127.363411
+            37.303415,
+            127.360508
           ],
           [
-            37.298002,
-            127.36887
+            37.29882,
+            127.366
           ],
           [
-            37.292949,
-            127.374329
+            37.295211,
+            127.372695
           ],
           [
-            37.287191,
-            127.38055
+            37.290204,
+            127.37929
           ],
           [
-            37.280727,
-            127.387532
+            37.283462,
+            127.38522
           ],
           [
-            37.280844,
-            127.387405
+            37.283583,
+            127.385109
           ],
           [
-            37.274616,
-            127.394134
+            37.277488,
+            127.391476
           ],
           [
-            37.274734,
-            127.394007
+            37.277603,
+            127.391356
           ],
           [
-            37.274851,
-            127.39388
+            37.277718,
+            127.391235
           ],
           [
-            37.274969,
-            127.393753
+            37.277831,
+            127.391111
           ],
           [
-            37.275086,
-            127.393626
+            37.277943,
+            127.390988
           ],
           [
-            37.271961,
-            127.396828
+            37.273949,
+            127.395378
           ],
           [
-            37.272015,
-            127.396773
+            37.274021,
+            127.395298
           ],
           [
-            37.269468,
-            127.399357
+            37.270665,
+            127.399094
           ],
           [
-            37.267301,
-            127.401556
+            37.268089,
+            127.402677
           ],
           [
-            37.265188,
-            127.4037
+            37.26563,
+            127.40623
           ],
           [
-            37.262966,
-            127.405955
+            37.262443,
+            127.40902
           ],
           [
-            37.26302,
-            127.4059
+            37.262535,
+            127.408983
           ],
           [
-            37.261015,
-            127.407934
+            37.259045,
+            127.409786
           ],
           [
-            37.258848,
-            127.410133
+            37.255811,
+            127.412284
           ],
           [
-            37.258902,
-            127.410078
+            37.255881,
+            127.412201
           ],
           [
-            37.255976,
-            127.413047
+            37.252422,
+            127.416764
           ],
           [
-            37.253638,
-            127.415071
+            37.249864,
+            127.420302
           ],
           [
-            37.253695,
-            127.415021
+            37.249933,
+            127.420224
           ],
           [
-            37.250898,
-            127.417433
+            37.246188,
+            127.423428
           ],
           [
-            37.2485,
-            127.4195
+            37.242472,
+            127.42488
           ],
           [
-            37.248557,
-            127.419451
+            37.242562,
+            127.424853
           ],
           [
-            37.239661,
-            127.42586
+            37.240215,
+            127.425539
           ]
         ]
       },
@@ -35947,72 +35947,72 @@ window.BRANCH_DATA_PACKS = {
             127.238326
           ],
           [
-            37.483736,
-            127.243687
+            37.483444,
+            127.241266
           ],
           [
-            37.474462,
-            127.249341
+            37.475003,
+            127.247657
           ],
           [
-            37.467586,
-            127.253532
+            37.468787,
+            127.252507
           ],
           [
-            37.459606,
-            127.259974
+            37.457733,
+            127.255431
           ],
           [
-            37.451527,
-            127.266496
+            37.451414,
+            127.266463
           ],
           [
-            37.44853,
-            127.26773
+            37.450725,
+            127.269236
           ],
           [
-            37.448568,
-            127.267714
+            37.450734,
+            127.269201
           ],
           [
-            37.448607,
-            127.267698
+            37.450743,
+            127.269165
           ],
           [
-            37.448645,
-            127.267683
+            37.450752,
+            127.26913
           ],
           [
-            37.44702,
-            127.272374
+            37.448499,
+            127.273846
           ],
           [
-            37.446353,
-            127.274427
+            37.447358,
+            127.275764
           ],
           [
-            37.446003,
-            127.275502
+            37.446752,
+            127.27676
           ],
           [
-            37.437712,
-            127.285058
+            37.439434,
+            127.289007
           ],
           [
-            37.427853,
-            127.296421
+            37.42688,
+            127.29736
           ],
           [
-            37.420806,
-            127.299532
+            37.420132,
+            127.299794
           ],
           [
-            37.413831,
-            127.302611
+            37.413774,
+            127.303347
           ],
           [
-            37.413615,
-            127.302706
+            37.413578,
+            127.303457
           ]
         ]
       }
@@ -39140,8 +39140,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 340.02,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.355362,
-              "lng": 127.320398,
+              "lat": 37.354111,
+              "lng": 127.320802,
               "code": "M-0370-34002S-P-R2",
               "splice_point": "",
               "cctv": ""
@@ -39154,8 +39154,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 340.03,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.355449,
-              "lng": 127.320356,
+              "lat": 37.354226,
+              "lng": 127.320755,
               "code": "H-0370-34003S-H-R3",
               "splice_point": "",
               "cctv": ""
@@ -39168,8 +39168,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 340.04,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.355536,
-              "lng": 127.320315,
+              "lat": 37.35434,
+              "lng": 127.320708,
               "code": "H-0370-34004S-H-R4",
               "splice_point": "",
               "cctv": ""
@@ -39182,8 +39182,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 338.21,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.348111,
-              "lng": 127.324243,
+              "lat": 37.346788,
+              "lng": 127.323573,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -39196,8 +39196,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 337.31,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.344552,
-              "lng": 127.326135,
+              "lat": 37.343206,
+              "lng": 127.324854,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -39233,8 +39233,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 335.49,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.337354,
-              "lng": 127.329961,
+              "lat": 37.336147,
+              "lng": 127.32806,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -39247,8 +39247,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 334.61,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.333874,
-              "lng": 127.33181,
+              "lat": 37.333233,
+              "lng": 127.330796,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -39261,8 +39261,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 333.84,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.33083,
-              "lng": 127.333429,
+              "lat": 37.330821,
+              "lng": 127.333416,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -39275,8 +39275,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 332.81,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.318803,
-              "lng": 127.346399,
+              "lat": 37.317824,
+              "lng": 127.343366,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -39312,8 +39312,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 329.58,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.280844,
-              "lng": 127.387405,
+              "lat": 37.283583,
+              "lng": 127.385109,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -39326,8 +39326,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 329.06,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.274734,
-              "lng": 127.394007,
+              "lat": 37.277603,
+              "lng": 127.391356,
               "code": "M-0370-32906S-P-R1",
               "splice_point": "",
               "cctv": ""
@@ -39340,8 +39340,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 329.07,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.274851,
-              "lng": 127.39388,
+              "lat": 37.277718,
+              "lng": 127.391235,
               "code": "M-0370-32907S-P-R2",
               "splice_point": "",
               "cctv": ""
@@ -39354,8 +39354,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 329.08,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.274969,
-              "lng": 127.393753,
+              "lat": 37.277831,
+              "lng": 127.391111,
               "code": "H-0370-32908S-H-R3",
               "splice_point": "",
               "cctv": ""
@@ -39368,8 +39368,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 329.09,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.275086,
-              "lng": 127.393626,
+              "lat": 37.277943,
+              "lng": 127.390988,
               "code": "H-0370-32909S-H-R4",
               "splice_point": "",
               "cctv": ""
@@ -39405,8 +39405,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 328.57,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.272015,
-              "lng": 127.396773,
+              "lat": 37.274021,
+              "lng": 127.395298,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -39419,8 +39419,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 326.15,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.258902,
-              "lng": 127.410078,
+              "lat": 37.255881,
+              "lng": 127.412201,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -39433,8 +39433,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 325.21,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.253695,
-              "lng": 127.415021,
+              "lat": 37.249933,
+              "lng": 127.420224,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -39447,8 +39447,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 324.31,
               "section": "제2중부선 (하남-호법)",
               "bound": "상행선",
-              "lat": 37.248557,
-              "lng": 127.419451,
+              "lat": 37.242562,
+              "lng": 127.424853,
               "code": "없음",
               "splice_point": "",
               "cctv": ""
@@ -39461,8 +39461,8 @@ window.BRANCH_DATA_PACKS = {
               "milepost": 323.8,
               "section": "제2중부선 (하남-호법)",
               "bound": "하행선",
-              "lat": 37.239661,
-              "lng": 127.42586,
+              "lat": 37.240215,
+              "lng": 127.425539,
               "code": "M-0370-32380E-B-H",
               "splice_point": "F",
               "cctv": ""
