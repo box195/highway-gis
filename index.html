@@ -683,10 +683,11 @@
       </div>
 
       <!-- Base Map Switcher Floating Toolbar (Top-Right) -->
-      <div class="absolute top-3 right-3 z-20 flex bg-slate-900 rounded-lg border border-slate-700 p-0.5 shadow-lg text-[11px] md:text-xs space-x-0.5">
-        <button data-basemap="dark" class="basemap-btn px-2 md:px-2.5 py-1 rounded-md bg-cyan-600 text-white font-medium transition">야간</button>
-        <button data-basemap="standard" class="basemap-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition">일반</button>
-        <button data-basemap="satellite" class="basemap-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition">위성</button>
+      <div class="absolute top-3 right-3 z-20 flex bg-slate-900/90 backdrop-blur rounded-lg border border-slate-700 p-0.5 shadow-xl text-[11px] md:text-xs space-x-0.5">
+        <button data-basemap="vworld" class="basemap-btn px-2 md:px-2.5 py-1 rounded-md bg-cyan-600 text-white font-medium transition" title="국토교통부 브이월드 고해상도 전자지도">국토부 표준</button>
+        <button data-basemap="vworld_sat" class="basemap-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition" title="국토교통부 최신 항공영상 및 도로망">국토부 항공</button>
+        <button data-basemap="google_sat" class="basemap-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition" title="구글 고화질 위성 및 한글 고속도로망">구글 위성</button>
+        <button data-basemap="dark" class="basemap-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition" title="야간 및 관제실 전용 고대비 다크맵">관제 다크</button>
       </div>
 
       <!-- Map Overlay Status / Quick Coordinates Pill (Hidden on tiny screens) -->
@@ -989,6 +990,25 @@
 
       L.control.zoom({ position: 'bottomright' }).addTo(map);
 
+      // 1. 국토교통부 브이월드 국가표준 전자지도
+      AppState.baseLayers.vworld = L.tileLayer('https://xdworld.vworld.kr/2d/Base/service/{z}/{x}/{y}.png', {
+        attribution: '&copy; 국토교통부 브이월드 (VWorld)',
+        maxZoom: 19
+      });
+
+      // 2. 국토교통부 브이월드 최신 항공영상 + 도로/지명 하이브리드
+      AppState.baseLayers.vworld_sat = L.layerGroup([
+        L.tileLayer('https://xdworld.vworld.kr/2d/Satellite/service/{z}/{x}/{y}.jpeg', { maxZoom: 19 }),
+        L.tileLayer('https://xdworld.vworld.kr/2d/Hybrid/service/{z}/{x}/{y}.png', { maxZoom: 19 })
+      ]);
+
+      // 3. 구글 고해상도 위성 하이브리드 (한글 고속도로망 표기)
+      AppState.baseLayers.google_sat = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+        attribution: '&copy; Google Maps Hybrid',
+        maxZoom: 20
+      });
+
+      // 4. 관제실 전용 고대비 다크맵
       AppState.baseLayers.dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; CartoDB &copy; OpenStreetMap',
         maxZoom: 19
@@ -999,12 +1019,9 @@
         maxZoom: 19
       });
 
-      AppState.baseLayers.satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-        attribution: '&copy; Esri World Imagery',
-        maxZoom: 19
-      });
-
-      AppState.baseLayers.dark.addTo(map);
+      // Set default base map to VWorld
+      AppState.baseLayers.vworld.addTo(map);
+      AppState.currentBaseMap = 'vworld';
       AppState.map = map;
 
       Object.values(AppState.layerGroups).forEach(lg => lg.addTo(map));
