@@ -608,38 +608,7 @@
         </div>
 
         <!-- [TAB 4: STATS] -->
-        <div id="tab-stats" class="hidden space-y-4">
-          <div class="grid grid-cols-2 gap-2">
-            <div class="p-2.5 rounded-lg bg-blue-950/60 border border-blue-500/40">
-              <div class="text-[10px] text-blue-300">동서울 관내 거점</div>
-              <div class="text-base md:text-lg font-bold text-white mt-0.5">9 <span class="text-xs font-normal text-slate-400">개소</span></div>
-            </div>
-
-            <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
-              <div class="text-[10px] text-slate-400">총 맨홀/수공</div>
-              <div class="text-base md:text-lg font-bold text-emerald-400 mt-0.5">122 <span class="text-xs font-normal text-slate-400">개소</span></div>
-              <div class="text-[10px] text-slate-500 mt-0.5">인공 119 / 수공 3</div>
-            </div>
-
-            <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
-              <div class="text-[10px] text-slate-400">통신관로 구간</div>
-              <div class="text-base md:text-lg font-bold text-cyan-400 mt-0.5">119 <span class="text-xs font-normal text-slate-400">구간</span></div>
-              <div class="text-[10px] text-slate-500 mt-0.5">노드 간 순차 연결</div>
-            </div>
-
-            <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
-              <div class="text-[10px] text-slate-400">광케이블 간선</div>
-              <div class="text-base md:text-lg font-bold text-purple-400 mt-0.5">15 <span class="text-xs font-normal text-slate-400">구간</span></div>
-              <div class="text-[10px] text-slate-500 mt-0.5">최대 96C / 평균 54C</div>
-            </div>
-
-            <div class="col-span-2 p-2.5 rounded-lg bg-slate-950 border border-slate-800">
-              <div class="text-[10px] text-slate-400">구내 방범 및 통신 설비 자산 (대장 기준)</div>
-              <div class="text-base md:text-lg font-bold text-amber-400 mt-0.5">84 <span class="text-xs font-normal text-slate-400">대</span></div>
-              <div class="text-[10px] text-slate-400 mt-0.5">동서울지사 관내 7개 거점 방범CCTV, 무선AP, 스위치, 표출PC</div>
-            </div>
-          </div>
-        </div>
+        <div id="tab-stats" class="hidden space-y-3"></div>
 
       </div>
 
@@ -673,13 +642,6 @@
     <!-- --------------------------------------------------------------------- -->
     <main class="flex-1 relative h-full">
       <div id="map"></div>
-
-      <!-- Quick Layer Focus Toolbar (Floating Top-Left) -->
-      <div class="absolute top-3 left-3 z-20 flex bg-slate-900 rounded-lg border border-slate-700 p-0.5 shadow-lg text-[11px] md:text-xs space-x-0.5">
-        <button id="focus-all" class="focus-btn px-2 md:px-2.5 py-1 rounded-md bg-cyan-600 text-white font-medium transition">전체 동시</button>
-        <button id="focus-conduit" class="focus-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition">관로만</button>
-        <button id="focus-cable" class="focus-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition">광케이블만</button>
-      </div>
 
       <!-- Base Map Switcher Floating Toolbar (Top-Right) -->
       <div class="absolute top-3 right-3 z-20 flex bg-slate-900/90 backdrop-blur rounded-lg border border-slate-700 p-0.5 shadow-xl text-[11px] md:text-xs space-x-0.5">
@@ -810,7 +772,7 @@
             <p id="modal-straight-desc" class="text-[10px] md:text-[11px] text-slate-400">판교JCT (0.0km) ~ 퇴계원IC (33.7km) 및 청계 ~ 평촌</p>
           </div>
         </div>
-        <button class="modal-close p-1.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-white">
+        <button id="btn-close-straight-modal" class="modal-close p-1.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-white cursor-pointer transition">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
@@ -2603,6 +2565,7 @@
       }
 
       renderInspectionCalendar();
+      renderStatsTab();
       renderAllLayers();
 
       if (jsonData.center && jsonData.zoom && bCode !== 'COMBINED') {
@@ -2661,22 +2624,6 @@
         renderAllLayers();
       });
 
-      // Quick Focus Toolbar Buttons
-      const focusBtns = [
-        { id: 'focus-all', mode: 'all' },
-        { id: 'focus-conduit', mode: 'conduit' },
-        { id: 'focus-cable', mode: 'cable' }
-      ];
-      focusBtns.forEach(fb => {
-        document.getElementById(fb.id).addEventListener('click', () => {
-          AppState.focusMode = fb.mode;
-          focusBtns.forEach(o => {
-            document.getElementById(o.id).className = 'focus-btn px-2 md:px-2.5 py-1 rounded-md hover:bg-slate-800 text-slate-300 font-medium transition';
-          });
-          document.getElementById(fb.id).className = 'focus-btn px-2 md:px-2.5 py-1 rounded-md bg-cyan-600 text-white font-medium transition';
-          renderAllLayers();
-        });
-      });
 
       // Toggle All Layers Button
       document.getElementById('btn-toggle-all-layers')?.addEventListener('click', () => {
@@ -2734,6 +2681,8 @@
 
             if (t.content === 'tab-plan') {
               selectInspectionDate(AppState.activeInspectionDate || getClosestOrTodayInspectionDate());
+            } else if (t.content === 'tab-stats') {
+              renderStatsTab();
             } else {
               // When leaving tab-plan, automatically exit inspection focus mode and restore all layers!
               if (AppState.activeInspectionDate) {
@@ -3120,16 +3069,173 @@
         }
       });
 
-      // Modal Close
+      // Explicit Straight Modal Close Button
+      document.getElementById('btn-close-straight-modal')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.getElementById('modal-straight')?.classList.add('hidden');
+      });
+
+      // All Modal Close Buttons
       document.querySelectorAll('.modal-close').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.getElementById('modal-straight').classList.add('hidden');
-          document.getElementById('modal-upload').classList.add('hidden');
-          document.getElementById('modal-more-tools').classList.add('hidden');
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          document.querySelectorAll('#modal-straight, #modal-upload, #modal-more-tools').forEach(m => m.classList.add('hidden'));
         });
       });
 
+      // Close on Backdrop Click
+      ['modal-straight', 'modal-upload', 'modal-more-tools'].forEach(mId => {
+        const modalEl = document.getElementById(mId);
+        if (modalEl) {
+          modalEl.addEventListener('click', (e) => {
+            if (e.target === modalEl) modalEl.classList.add('hidden');
+          });
+        }
+      });
+
+      // Close on ESC key
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('#modal-straight, #modal-upload, #modal-more-tools').forEach(m => m.classList.add('hidden'));
+          closeDetailDrawer();
+        }
+      });
+
       setupFileUpload();
+    }
+
+    function renderStatsTab() {
+      const statsContainer = document.getElementById('tab-stats');
+      if (!statsContainer) return;
+
+      const data = AppState.data || {};
+      const offices = data.offices || [];
+      const manholes = data.manholes || [];
+      const conduits = data.conduits || [];
+      const cables = data.cables || [];
+      const schedule = data.inspection_schedule || {};
+      const isCombined = data.branch_code === 'COMBINED' || (AppState.loadedDataPacks && Object.keys(AppState.loadedDataPacks).length >= 2 && (data.branch_name?.includes('통합') || data.branch_name?.includes('전체')));
+
+      // 1. Offices Breakdown
+      const hqCount = offices.filter(o => (o.category || '').includes('지사')).length;
+      const tgCount = offices.filter(o => (o.category || '').includes('영업소')).length;
+      const tnCount = offices.filter(o => (o.category || '').includes('터널') || (o.category || '').includes('관리동')).length;
+
+      // 2. Manholes Breakdown
+      const inCount = manholes.filter(m => m.category === '인공' || (m.name && m.name.endsWith('M'))).length;
+      const suCount = manholes.filter(m => m.category === '수공' || (m.name && m.name.endsWith('H'))).length;
+
+      // 3. Conduits Breakdown
+      const codCount = conduits.filter(c => (c.pipe_type || '').includes('COD')).length;
+      const steelCount = conduits.filter(c => (c.pipe_type || '').includes('스틸') || (c.pipe_type || '').includes('강관')).length;
+
+      // 4. Equipment Devices Count
+      let totalDevices = 0;
+      let cctvCount = 0;
+      let netCount = 0;
+      offices.forEach(o => {
+        (o.devices || []).forEach(d => {
+          totalDevices++;
+          const dName = (d.name || '') + (d.type || '');
+          if (dName.includes('CCTV') || dName.includes('카메라')) cctvCount++;
+          else netCount++;
+        });
+      });
+
+      // 5. If Combined, compute branch breakdown
+      let branchBreakdownHtml = '';
+      if (isCombined && AppState.loadedDataPacks && Object.keys(AppState.loadedDataPacks).length >= 2) {
+        const packs = Object.values(AppState.loadedDataPacks);
+        branchBreakdownHtml = `
+          <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2 mt-2">
+            <div class="text-[11px] font-bold text-cyan-300 flex items-center gap-1.5">
+              <span>🌐</span>
+              <span>지사별 세부 인프라 현황</span>
+            </div>
+            <div class="grid grid-cols-1 gap-2">
+              ${packs.map(p => `
+                <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-xs text-white">${p.branch_name || '지사'}</span>
+                    <span class="text-[10px] px-1.5 py-0.2 rounded bg-cyan-500/20 text-cyan-300 font-mono">${(p.offices || []).length}개소</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 grid grid-cols-3 gap-1 pt-0.5">
+                    <div>맨홀 <b class="text-emerald-400">${(p.manholes || []).length}</b>개</div>
+                    <div>관로 <b class="text-cyan-400">${(p.conduits || []).length}</b>구간</div>
+                    <div>케이블 <b class="text-purple-400">${(p.cables || []).length}</b>회선</div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      statsContainer.innerHTML = `
+        <div class="space-y-3">
+          <!-- Active Branch Header Card -->
+          <div class="p-3 rounded-xl bg-gradient-to-r from-blue-950/80 to-slate-900 border border-blue-500/40 space-y-1">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                ${isCombined ? '통합 관제 모드' : '단일 지사 관제'}
+              </span>
+              <span class="text-[10px] text-slate-400 font-mono">실시간 통계</span>
+            </div>
+            <h3 class="text-sm font-black text-white pt-0.5">${data.branch_name || '지사 통신망 인프라'}</h3>
+            <p class="text-[10px] text-slate-300 leading-snug">${data.subtitle || '통신관로 및 광케이블 자산 관리'}</p>
+          </div>
+
+          <!-- Main KPI Grid -->
+          <div class="grid grid-cols-2 gap-2">
+            <div class="p-2.5 rounded-xl bg-blue-950/50 border border-blue-500/30 space-y-0.5">
+              <div class="text-[10px] text-blue-300 font-medium">관제 주요 거점</div>
+              <div class="text-base md:text-lg font-black text-white">${offices.length} <span class="text-xs font-normal text-slate-400">개소</span></div>
+              <div class="text-[10px] text-slate-400">지사 ${hqCount} · 영업소 ${tgCount} · 관리동 ${tnCount}</div>
+            </div>
+
+            <div class="p-2.5 rounded-xl bg-emerald-950/50 border border-emerald-500/30 space-y-0.5">
+              <div class="text-[10px] text-emerald-300 font-medium">맨홀 및 수공</div>
+              <div class="text-base md:text-lg font-black text-emerald-400">${manholes.length} <span class="text-xs font-normal text-slate-400">개소</span></div>
+              <div class="text-[10px] text-slate-400">인공(M) ${inCount} · 수공(H) ${suCount}</div>
+            </div>
+
+            <div class="p-2.5 rounded-xl bg-cyan-950/50 border border-cyan-500/30 space-y-0.5">
+              <div class="text-[10px] text-cyan-300 font-medium">통신관로 구간</div>
+              <div class="text-base md:text-lg font-black text-cyan-400">${conduits.length} <span class="text-xs font-normal text-slate-400">구간</span></div>
+              <div class="text-[10px] text-slate-400">COD ${codCount} · 스틸/강관 ${steelCount}</div>
+            </div>
+
+            <div class="p-2.5 rounded-xl bg-purple-950/50 border border-purple-500/30 space-y-0.5">
+              <div class="text-[10px] text-purple-300 font-medium">광케이블 간선</div>
+              <div class="text-base md:text-lg font-black text-purple-400">${cables.length} <span class="text-xs font-normal text-slate-400">회선</span></div>
+              <div class="text-[10px] text-slate-400">${cables.map(c => c.core_count || '72C').slice(0, 2).join(' · ')} 간선망</div>
+            </div>
+
+            <div class="col-span-2 p-2.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] text-amber-300 font-medium">🛡️ 구내 방범 및 통신 장비 자산</span>
+                <span class="text-xs font-bold text-amber-400">${totalDevices > 0 ? totalDevices + ' 대' : '위치 관제 등록'}</span>
+              </div>
+              <div class="text-[10px] text-slate-400">
+                ${totalDevices > 0 ? `방범CCTV ${cctvCount}대 · 무선AP/네트워크 스위치 ${netCount}대 등록 완료` : '현장 관제 거점 위치 및 이정 기반 연동'}
+              </div>
+            </div>
+
+            <div class="col-span-2 p-2.5 rounded-xl bg-indigo-950/40 border border-indigo-500/30 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] text-indigo-300 font-medium">8월 정기 점검 일정</div>
+                <div class="text-[11px] text-slate-300">월간 M / 분기 Q / 반기 H 점검 계획</div>
+              </div>
+              <div class="text-base font-black text-indigo-300 font-mono">
+                ${Object.keys(schedule).length} <span class="text-xs font-normal text-slate-400">일정</span>
+              </div>
+            </div>
+          </div>
+
+          ${branchBreakdownHtml}
+        </div>
+      `;
+      lucide.createIcons();
     }
 
     function renderStraightMapNodes() {
