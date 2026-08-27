@@ -276,10 +276,6 @@
       <button id="btn-gps" title="내 위치 찾기" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
         <i data-lucide="crosshair" class="w-4 h-4 text-cyan-400"></i>
       </button>
-
-      <button id="btn-toggle-sidebar" title="사이드바 토글" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
-        <i data-lucide="sidebar" class="w-4 h-4 text-slate-300"></i>
-      </button>
     </div>
 
     <!-- Mobile Header Quick Actions -->
@@ -531,7 +527,7 @@
                 <i data-lucide="calendar" class="w-4 h-4 text-indigo-400"></i>
                 <span>2026년 8월 ITS 점검계획표</span>
               </div>
-              <span class="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-mono font-bold border border-indigo-500/30">
+              <span id="plan-total-badge" class="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-mono font-bold border border-indigo-500/30">
                 총 10개 일정
               </span>
             </div>
@@ -2176,6 +2172,10 @@
 
       // Render Cards List
       const planKeys = Object.keys(schedule).sort();
+      const planBadge = document.getElementById('plan-total-badge');
+      if (planBadge) {
+        planBadge.innerText = `총 ${planKeys.length}개 일정`;
+      }
       const listTitle = document.getElementById('inspection-list-title');
       if (listTitle) {
         listTitle.innerText = `8월 전체 점검 일정 리스트 (${planKeys.length}건)`;
@@ -2951,10 +2951,6 @@
       document.getElementById('sidebar-backdrop')?.addEventListener('click', closeMobileSidebar);
       document.getElementById('btn-close-drawer')?.addEventListener('click', closeDetailDrawer);
 
-      // Desktop Sidebar Toggle
-      document.getElementById('btn-toggle-sidebar')?.addEventListener('click', () => {
-        document.getElementById('sidebar')?.classList.toggle('md:hidden');
-      });
 
       // GPS Location Triggers
       document.getElementById('btn-gps')?.addEventListener('click', triggerGPS);
@@ -3045,23 +3041,73 @@
       });
       document.getElementById('btn-clear-measure')?.addEventListener('click', clearMeasurement);
 
-      // Copy Coordinates to Clipboard (Works on all browsers & HTTP/HTTPS)
+      // Copy Coordinates to Clipboard (Works on all PC/Mac/Mobile browsers & HTTP/HTTPS)
       document.getElementById('btn-copy-coords')?.addEventListener('click', () => {
-        if (!AppState.selectedFacility || !AppState.selectedFacility.item) return;
+        if (!AppState.selectedFacility || !AppState.selectedFacility.item) {
+          alert('복사할 시설물을 먼저 지도 또는 목록에서 선택하세요.');
+          return;
+        }
         const item = AppState.selectedFacility.item;
-        if (!item.lat || !item.lng) return;
-        const coordText = `${item.lat.toFixed(6)}, ${item.lng.toFixed(6)}`;
+        let lat = null, lng = null;
 
-        // Safe copy fallback
+        if (item.lat != null && item.lng != null) {
+          lat = parseFloat(item.lat);
+          lng = parseFloat(item.lng);
+        } else if (item.office_name) {
+          const off = (AppState.data?.offices || []).find(o => o.name === item.office_name || (o.name && o.name.includes(item.office_name.replace('영업소', ''))));
+          if (off && off.lat != null && off.lng != null) {
+            lat = parseFloat(off.lat);
+            lng = parseFloat(off.lng);
+          }
+        } else if (item.line && (item.line.manholes || item.line.manhole_names)) {
+          const names = item.line.manhole_names || item.line.manholes || [];
+          const firstMh = (AppState.data?.manholes || []).find(m => names.includes(m.name));
+          if (firstMh && firstMh.lat != null && firstMh.lng != null) {
+            lat = parseFloat(firstMh.lat);
+            lng = parseFloat(firstMh.lng);
+          }
+        } else if (item.coordinates && item.coordinates.length > 0) {
+          const firstPt = item.coordinates[0];
+          if (Array.isArray(firstPt) && firstPt.length >= 2) {
+            lat = parseFloat(firstPt[0]);
+            lng = parseFloat(firstPt[1]);
+          }
+        }
+
+        if (lat == null || lng == null || isNaN(lat) || isNaN(lng)) {
+          alert('선택된 항목의 좌표 정보를 찾을 수 없습니다.');
+          return;
+        }
+
+        const coordText = `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+
         let copySuccess = false;
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(coordText).then(() => {
-            copySuccess = true;
-          }).catch(() => {
-            fallbackCopy(coordText);
-          });
-        } else {
-          fallbackCopy(coordText);
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = coordText;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.top = '0';
+          ta.style.left = '0';
+          ta.style.width = '2em';
+          ta.style.height = '2em';
+          ta.style.padding = '0';
+          ta.style.border = 'none';
+          ta.style.outline = 'none';
+          ta.style.boxShadow = 'none';
+          ta.style.background = 'transparent';
+          document.body.appendChild(ta);
+          ta.focus();
+          ta.select();
+          ta.setSelectionRange(0, 99999);
+          copySuccess = document.execCommand('copy');
+          document.body.removeChild(ta);
+        } catch (e) {
+          copySuccess = false;
+        }
+
+        if (!copySuccess && navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(coordText).catch(() => {});
         }
 
         const btnText = document.getElementById('btn-copy-coords-text');
@@ -3072,19 +3118,6 @@
           }, 2500);
         }
       });
-
-      function fallbackCopy(text) {
-        const ta = document.createElement('textarea');
-        ta.value = text;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        try {
-          document.execCommand('copy');
-        } catch (e) {}
-        document.body.removeChild(ta);
-      }
 
       // Explicit Straight Modal Close Button
       document.getElementById('btn-close-straight-modal')?.addEventListener('click', (e) => {
