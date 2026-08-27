@@ -599,10 +599,10 @@
 
           <!-- Inspection Schedule Cards List -->
           <div class="space-y-1.5">
-            <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider px-1">
-              8월 전체 점검 일정 리스트 (10건)
+            <div id="inspection-list-title" class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider px-1">
+              8월 전체 점검 일정 리스트
             </div>
-            <div id="inspection-cards-list" class="space-y-1.5 max-h-72 overflow-y-auto pr-0.5"></div>
+            <div id="inspection-cards-list" class="space-y-1.5 max-h-[380px] overflow-y-auto pr-0.5"></div>
           </div>
 
         </div>
@@ -716,13 +716,9 @@
 
       <!-- Drawer Footer Actions -->
       <div class="p-2.5 md:p-3 bg-slate-950 border-t border-slate-800 flex space-x-2 shrink-0">
-        <button id="btn-copy-coords" class="flex-1 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center justify-center gap-1.5 transition text-xs">
-          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-          <span>좌표 복사</span>
-        </button>
-        <button id="btn-download-json" class="flex-1 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-medium flex items-center justify-center gap-1.5 transition text-xs">
-          <i data-lucide="file-json" class="w-3.5 h-3.5"></i>
-          <span>JSON 저장</span>
+        <button id="btn-copy-coords" class="w-full py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold flex items-center justify-center gap-2 transition text-xs shadow-md cursor-pointer">
+          <i data-lucide="copy" class="w-4 h-4"></i>
+          <span id="btn-copy-coords-text">위도·경도 좌표 복사</span>
         </button>
       </div>
     </aside>
@@ -2180,6 +2176,10 @@
 
       // Render Cards List
       const planKeys = Object.keys(schedule).sort();
+      const listTitle = document.getElementById('inspection-list-title');
+      if (listTitle) {
+        listTitle.innerText = `8월 전체 점검 일정 리스트 (${planKeys.length}건)`;
+      }
       cardsList.innerHTML = planKeys.map(k => {
         const p = schedule[k];
         const isSelected = AppState.activeInspectionDate === k;
@@ -2443,7 +2443,7 @@
       if (keys.length >= 2) {
         const optComb = document.createElement('option');
         optComb.value = 'COMBINED';
-        optComb.innerText = '🌐 전체 지사 통합 관제 (동서울 + 경기광주 동시 표시)';
+        optComb.innerText = '🌐 전체 지사 통합 관제';
         selectBranch.appendChild(optComb);
       }
 
@@ -2451,8 +2451,7 @@
         const p = AppState.loadedDataPacks[k];
         const opt = document.createElement('option');
         opt.value = k;
-        const subShort = p.subtitle ? ` (${p.subtitle.split('·')[0].trim()})` : '';
-        opt.innerText = `🏢 ${p.branch_name || k}${subShort}`;
+        opt.innerText = `🏢 ${p.branch_name || k}`;
         selectBranch.appendChild(opt);
       });
 
@@ -2470,10 +2469,11 @@
     }
 
     function getCombinedDataPack() {
+      const packCount = Object.keys(AppState.loadedDataPacks || {}).length;
       const combined = {
-        branch_name: '수도권 전체 지사 통합 관제',
+        branch_name: '전체 지사 통합 관제',
         branch_code: 'COMBINED',
-        subtitle: '동서울지사(수도권제1순환선) + 경기광주지사(제2중부선·중부선) 통합 인프라망',
+        subtitle: `등록된 ${packCount}개 지사 인프라망 통합 관제 모드`,
         offices: [],
         interchanges: [],
         manholes: [],
@@ -2490,15 +2490,15 @@
 
       Object.values(AppState.loadedDataPacks).forEach(pack => {
         (pack.offices || []).forEach(o => {
-          const key = o.id || o.name;
+          const key = (o.id || o.name) + '_' + (o.branch_code || pack.branch_code || '');
           if (!officeIds.has(key)) { officeIds.add(key); combined.offices.push(o); }
         });
         (pack.interchanges || []).forEach(ic => {
-          const key = ic.id || ic.name;
+          const key = (ic.id || ic.name);
           if (!icIds.has(key)) { icIds.add(key); combined.interchanges.push(ic); }
         });
         (pack.manholes || []).forEach(m => {
-          const key = m.id || m.name;
+          const key = (m.id || m.name) + '_' + (m.branch_code || pack.branch_code || '');
           if (!mhIds.has(key)) { mhIds.add(key); combined.manholes.push(m); }
         });
         combined.conduits.push(...(pack.conduits || []));
@@ -2506,8 +2506,8 @@
         Object.entries(pack.inspection_schedule || {}).forEach(([k, plan]) => {
           combined.inspection_schedule[k] = {
             ...plan,
-            branch_code: plan.branch_code || pack.branch_code || (pack.branch_name?.includes('동서울') ? 'DONGSEOUL' : 'GWANGJU'),
-            branch_name: plan.branch_name || pack.branch_name || (pack.branch_code === 'DONGSEOUL' ? '동서울지사' : '경기광주지사')
+            branch_code: plan.branch_code || pack.branch_code,
+            branch_name: plan.branch_name || pack.branch_name || pack.branch_code
           };
         });
         combined.straight_map.push(...(pack.straight_map || []));
@@ -2946,128 +2946,145 @@
       });
 
       // Mobile Drawer & Sidebar Triggers
-      document.getElementById('btn-toggle-sidebar-mobile').addEventListener('click', openMobileSidebar);
-      document.getElementById('btn-close-sidebar-mobile').addEventListener('click', closeMobileSidebar);
-      document.getElementById('sidebar-backdrop').addEventListener('click', closeMobileSidebar);
-
-      document.getElementById('btn-close-drawer').addEventListener('click', closeDetailDrawer);
+      document.getElementById('btn-toggle-sidebar-mobile')?.addEventListener('click', openMobileSidebar);
+      document.getElementById('btn-close-sidebar-mobile')?.addEventListener('click', closeMobileSidebar);
+      document.getElementById('sidebar-backdrop')?.addEventListener('click', closeMobileSidebar);
+      document.getElementById('btn-close-drawer')?.addEventListener('click', closeDetailDrawer);
 
       // Desktop Sidebar Toggle
-      document.getElementById('btn-toggle-sidebar').addEventListener('click', () => {
-        document.getElementById('sidebar').classList.toggle('md:hidden');
+      document.getElementById('btn-toggle-sidebar')?.addEventListener('click', () => {
+        document.getElementById('sidebar')?.classList.toggle('md:hidden');
       });
 
-      // GPS
-      document.getElementById('btn-gps').addEventListener('click', triggerGPS);
-      document.getElementById('btn-gps-mobile').addEventListener('click', triggerGPS);
+      // GPS Location Triggers
+      document.getElementById('btn-gps')?.addEventListener('click', triggerGPS);
+      document.getElementById('btn-gps-mobile')?.addEventListener('click', triggerGPS);
 
       // Mobile Bottom Nav Triggers
-      document.getElementById('nav-btn-layers').addEventListener('click', () => {
+      document.getElementById('nav-btn-layers')?.addEventListener('click', () => {
         openMobileSidebar();
-        document.getElementById('tab-layers-btn').click();
+        document.getElementById('tab-layers-btn')?.click();
       });
-      document.getElementById('nav-btn-search').addEventListener('click', () => {
+      document.getElementById('nav-btn-search')?.addEventListener('click', () => {
         openMobileSidebar();
-        document.getElementById('search-input').focus();
+        document.getElementById('search-input')?.focus();
       });
-      document.getElementById('nav-btn-straight').addEventListener('click', () => {
+      document.getElementById('nav-btn-straight')?.addEventListener('click', () => {
         renderStraightMapNodes();
-        document.getElementById('modal-straight').classList.remove('hidden');
+        document.getElementById('modal-straight')?.classList.remove('hidden');
       });
-      document.getElementById('nav-btn-measure').addEventListener('click', () => {
+      document.getElementById('nav-btn-measure')?.addEventListener('click', () => {
         AppState.measuring = !AppState.measuring;
         if (AppState.measuring) {
-          document.getElementById('measure-toolbar').classList.remove('hidden');
+          document.getElementById('measure-toolbar')?.classList.remove('hidden');
         } else {
-          document.getElementById('measure-toolbar').classList.add('hidden');
+          document.getElementById('measure-toolbar')?.classList.add('hidden');
           clearMeasurement();
         }
       });
-      document.getElementById('nav-btn-more').addEventListener('click', () => {
-        document.getElementById('modal-more-tools').classList.remove('hidden');
-      });
-      document.getElementById('btn-more-mobile').addEventListener('click', () => {
-        document.getElementById('modal-more-tools').classList.remove('hidden');
+      document.getElementById('nav-btn-more')?.addEventListener('click', () => {
+        document.getElementById('modal-more-tools')?.classList.remove('hidden');
       });
 
       // Desktop Modals
-      document.getElementById('btn-straight-map').addEventListener('click', () => {
+      document.getElementById('btn-straight-map')?.addEventListener('click', () => {
         renderStraightMapNodes();
-        document.getElementById('modal-straight').classList.remove('hidden');
+        document.getElementById('modal-straight')?.classList.remove('hidden');
       });
-      document.getElementById('btn-upload-modal').addEventListener('click', () => {
-        document.getElementById('modal-upload').classList.remove('hidden');
+      document.getElementById('btn-upload-modal')?.addEventListener('click', () => {
+        document.getElementById('modal-upload')?.classList.remove('hidden');
       });
-      document.getElementById('btn-mobile-upload').addEventListener('click', () => {
-        document.getElementById('modal-more-tools').classList.add('hidden');
-        document.getElementById('modal-upload').classList.remove('hidden');
+      document.getElementById('btn-mobile-upload')?.addEventListener('click', () => {
+        document.getElementById('modal-more-tools')?.classList.add('hidden');
+        document.getElementById('modal-upload')?.classList.remove('hidden');
       });
 
       // Export
       const handleExport = () => {
+        const branchTitle = (AppState.data && AppState.data.branch_name) ? AppState.data.branch_name.replace(/\s+/g, '_') : 'highway_gis';
         const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(AppState.data, null, 2));
         const dlAnchor = document.createElement('a');
         dlAnchor.setAttribute("href", dataStr);
-        dlAnchor.setAttribute("download", `dongseoul_highway_facilities_${new Date().toISOString().slice(0, 10)}.json`);
+        dlAnchor.setAttribute("download", `${branchTitle}_facilities_${new Date().toISOString().slice(0, 10)}.json`);
         dlAnchor.click();
       };
-      document.getElementById('btn-export-menu').addEventListener('click', handleExport);
-      document.getElementById('btn-mobile-export').addEventListener('click', () => {
-        document.getElementById('modal-more-tools').classList.add('hidden');
+      document.getElementById('btn-export-menu')?.addEventListener('click', handleExport);
+      document.getElementById('btn-mobile-export')?.addEventListener('click', () => {
+        document.getElementById('modal-more-tools')?.classList.add('hidden');
         handleExport();
       });
 
-      // Measurement
-      document.getElementById('btn-measure').addEventListener('click', () => {
+      // Distance & Area Measurement
+      document.getElementById('btn-measure')?.addEventListener('click', () => {
         AppState.measuring = !AppState.measuring;
         if (AppState.measuring) {
-          document.getElementById('measure-toolbar').classList.remove('hidden');
+          document.getElementById('measure-toolbar')?.classList.remove('hidden');
         } else {
-          document.getElementById('measure-toolbar').classList.add('hidden');
+          document.getElementById('measure-toolbar')?.classList.add('hidden');
           clearMeasurement();
         }
       });
-      document.getElementById('btn-close-measure').addEventListener('click', () => {
+      document.getElementById('btn-close-measure')?.addEventListener('click', () => {
         AppState.measuring = false;
-        document.getElementById('measure-toolbar').classList.add('hidden');
+        document.getElementById('measure-toolbar')?.classList.add('hidden');
         clearMeasurement();
       });
-      document.getElementById('btn-measure-dist').addEventListener('click', (e) => {
+      document.getElementById('btn-measure-dist')?.addEventListener('click', (e) => {
         AppState.measureMode = 'dist';
         e.currentTarget.className = 'py-1.5 rounded-lg bg-cyan-600 text-white font-medium text-center';
-        document.getElementById('btn-measure-area').className = 'py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center';
+        const areaBtn = document.getElementById('btn-measure-area');
+        if (areaBtn) areaBtn.className = 'py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center';
         clearMeasurement();
       });
-      document.getElementById('btn-measure-area').addEventListener('click', (e) => {
+      document.getElementById('btn-measure-area')?.addEventListener('click', (e) => {
         AppState.measureMode = 'area';
         e.currentTarget.className = 'py-1.5 rounded-lg bg-cyan-600 text-white font-medium text-center';
-        document.getElementById('btn-measure-dist').className = 'py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center';
+        const distBtn = document.getElementById('btn-measure-dist');
+        if (distBtn) distBtn.className = 'py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-center';
         clearMeasurement();
       });
-      document.getElementById('btn-clear-measure').addEventListener('click', clearMeasurement);
+      document.getElementById('btn-clear-measure')?.addEventListener('click', clearMeasurement);
 
-      // Copy & JSON Download
-      document.getElementById('btn-copy-coords').addEventListener('click', () => {
-        if (AppState.selectedFacility && AppState.selectedFacility.item) {
-          const item = AppState.selectedFacility.item;
-          if (item.lat && item.lng) {
-            const text = `${item.lat.toFixed(6)}, ${item.lng.toFixed(6)}`;
-            navigator.clipboard.writeText(text).then(() => {
-              alert(`좌표가 복사되었습니다:\n${text}`);
-            });
-          }
+      // Copy Coordinates to Clipboard (Works on all browsers & HTTP/HTTPS)
+      document.getElementById('btn-copy-coords')?.addEventListener('click', () => {
+        if (!AppState.selectedFacility || !AppState.selectedFacility.item) return;
+        const item = AppState.selectedFacility.item;
+        if (!item.lat || !item.lng) return;
+        const coordText = `${item.lat.toFixed(6)}, ${item.lng.toFixed(6)}`;
+
+        // Safe copy fallback
+        let copySuccess = false;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(coordText).then(() => {
+            copySuccess = true;
+          }).catch(() => {
+            fallbackCopy(coordText);
+          });
+        } else {
+          fallbackCopy(coordText);
+        }
+
+        const btnText = document.getElementById('btn-copy-coords-text');
+        if (btnText) {
+          btnText.innerText = `✅ 복사 완료 (${coordText})`;
+          setTimeout(() => {
+            btnText.innerText = '위도·경도 좌표 복사';
+          }, 2500);
         }
       });
 
-      document.getElementById('btn-download-json').addEventListener('click', () => {
-        if (AppState.selectedFacility) {
-          const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(AppState.selectedFacility.item, null, 2));
-          const dlAnchor = document.createElement('a');
-          dlAnchor.setAttribute("href", dataStr);
-          dlAnchor.setAttribute("download", `${AppState.selectedFacility.item.name || 'facility'}.json`);
-          dlAnchor.click();
-        }
-      });
+      function fallbackCopy(text) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand('copy');
+        } catch (e) {}
+        document.body.removeChild(ta);
+      }
 
       // Explicit Straight Modal Close Button
       document.getElementById('btn-close-straight-modal')?.addEventListener('click', (e) => {
