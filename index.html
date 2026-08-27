@@ -217,23 +217,22 @@
   <!-- TOP HEADER BAR (Mobile & Desktop Optimized)                              -->
   <!-- ========================================================================= -->
   <header class="h-12 md:h-14 bg-slate-900 border-b border-slate-800 px-3 md:px-4 flex items-center justify-between z-30 shadow-md shrink-0">
-    <div class="flex items-center space-x-2 md:space-x-3 truncate">
+    <div class="flex items-center space-x-1.5 md:space-x-3 min-w-0 flex-1">
       <!-- Mobile Menu / Sidebar Trigger -->
-      <button id="btn-toggle-sidebar-mobile" class="md:hidden p-1.5 rounded-lg bg-slate-800 text-slate-200 hover:bg-slate-700 transition">
+      <button id="btn-toggle-sidebar-mobile" class="md:hidden p-1.5 rounded-lg bg-slate-800 text-slate-200 hover:bg-slate-700 transition shrink-0">
         <i data-lucide="menu" class="w-5 h-5"></i>
       </button>
 
       <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-cyan-600 flex items-center justify-center border border-cyan-400/40 shrink-0">
         <i data-lucide="network" class="w-4 h-4 md:w-5 md:h-5 text-white"></i>
       </div>
-      <div class="truncate">
-        <div class="flex items-center space-x-1.5 md:space-x-2">
-          <h1 class="text-xs md:text-sm font-bold tracking-tight text-white truncate flex items-center gap-1.5">
-            <span class="hidden sm:inline truncate font-mono text-cyan-400">HIGHWAY GIS</span>
-            <span class="text-slate-500 hidden sm:inline">|</span>
-            <span class="truncate">통신망 인프라 통합관제</span>
+      <div class="min-w-0 flex-1 truncate">
+        <div class="flex items-center space-x-1.5 md:space-x-2 min-w-0">
+          <h1 class="text-xs md:text-sm font-bold tracking-tight text-white truncate hidden sm:flex items-center gap-1.5 shrink-0">
+            <span class="font-mono text-cyan-400">HIGHWAY GIS</span>
+            <span class="text-slate-500">|</span>
           </h1>
-          <select id="select-branch" class="bg-slate-800 border border-cyan-500/50 text-cyan-300 text-xs rounded-lg px-2 py-1 font-bold focus:outline-none focus:ring-1 focus:ring-cyan-400 cursor-pointer shadow">
+          <select id="select-branch" class="bg-slate-800 border border-cyan-500/50 text-cyan-300 text-[11px] md:text-xs rounded-lg px-2 py-1 font-bold focus:outline-none focus:ring-1 focus:ring-cyan-400 cursor-pointer shadow max-w-[140px] xs:max-w-[180px] sm:max-w-[240px] md:max-w-none truncate">
             <option value="" disabled selected>📂 지사 데이터팩을 로드하세요</option>
           </select>
         </div>
@@ -242,7 +241,7 @@
     </div>
 
     <!-- Desktop Tool Buttons -->
-    <div class="hidden md:flex items-center space-x-2">
+    <div class="hidden md:flex items-center space-x-2 shrink-0">
       <button id="btn-plan-header" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/30 hover:bg-indigo-600 text-xs font-bold text-indigo-200 hover:text-white border border-indigo-500/50 transition">
         <i data-lucide="calendar" class="w-3.5 h-3.5 text-indigo-300"></i>
         <span>8월 점검계획</span>
@@ -283,16 +282,17 @@
       </button>
     </div>
 
-    <!-- Mobile Header Quick GPS & More -->
-    <div class="flex md:hidden items-center space-x-1">
-      <button id="btn-plan-mobile" title="점검계획" class="p-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/50 transition">
+    <!-- Mobile Header Quick Actions -->
+    <div class="flex md:hidden items-center space-x-1 shrink-0">
+      <button id="btn-datapack-mobile" class="px-2 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold flex items-center gap-1 shadow-sm transition">
+        <i data-lucide="folder-open" class="w-3.5 h-3.5"></i>
+        <span class="hidden xs:inline">데이터팩</span>
+      </button>
+      <button id="btn-plan-mobile" title="8월 점검계획" class="p-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/50 transition">
         <i data-lucide="calendar" class="w-4 h-4"></i>
       </button>
       <button id="btn-gps-mobile" title="내 위치" class="p-1.5 rounded-lg bg-slate-800 text-cyan-400 border border-slate-700 transition">
         <i data-lucide="crosshair" class="w-4 h-4"></i>
-      </button>
-      <button id="btn-more-mobile" title="메뉴" class="p-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 transition">
-        <i data-lucide="more-vertical" class="w-4 h-4"></i>
       </button>
     </div>
   </header>
@@ -729,7 +729,7 @@
     <!-- --------------------------------------------------------------------- -->
     <!-- RIGHT DETAIL DRAWER / MOBILE BOTTOM SHEET                             -->
     <!-- --------------------------------------------------------------------- -->
-    <aside id="detail-drawer" class="fixed md:absolute inset-x-0 bottom-0 md:inset-y-0 md:right-0 md:left-auto w-full md:w-96 max-h-[88vh] md:max-h-full bg-slate-900 z-40 md:z-20 flex flex-col border-t md:border-t-0 md:border-l border-slate-800 shadow-2xl rounded-t-2xl md:rounded-none overflow-hidden">
+    <aside id="detail-drawer" class="fixed md:absolute inset-x-0 bottom-0 md:inset-y-0 md:right-0 md:left-auto w-full md:w-96 max-h-[85vh] md:max-h-full bg-slate-900 z-[1050] md:z-20 flex flex-col border-t md:border-t-0 md:border-l border-slate-800 shadow-2xl rounded-t-2xl md:rounded-none overflow-hidden">
       
       <!-- Mobile Grabber handle -->
       <div class="md:hidden w-12 h-1 bg-slate-600 rounded-full mx-auto mt-2 mb-1 shrink-0"></div>
@@ -2850,11 +2850,20 @@
         }
       }
 
-      if (btnDataPack && inputDataPack) {
-        btnDataPack.addEventListener('click', () => {
-          inputDataPack.value = '';
-          inputDataPack.click();
-        });
+      const btnDataPackMobile = document.getElementById('btn-datapack-mobile');
+      if (inputDataPack) {
+        if (btnDataPack) {
+          btnDataPack.addEventListener('click', () => {
+            inputDataPack.value = '';
+            inputDataPack.click();
+          });
+        }
+        if (btnDataPackMobile) {
+          btnDataPackMobile.addEventListener('click', () => {
+            inputDataPack.value = '';
+            inputDataPack.click();
+          });
+        }
         inputDataPack.addEventListener('change', (e) => {
           handleLoadedJsonFiles(e.target.files);
         });
