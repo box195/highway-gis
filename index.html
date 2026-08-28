@@ -242,60 +242,42 @@
 
     <!-- Desktop Tool Buttons -->
     <div class="hidden md:flex items-center space-x-2 shrink-0">
-      <button id="btn-plan-header" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/30 hover:bg-indigo-600 text-xs font-bold text-indigo-200 hover:text-white border border-indigo-500/50 transition">
+      <button id="btn-plan-header" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/30 hover:bg-indigo-600 text-xs font-bold text-indigo-200 hover:text-white border border-indigo-500/50 transition cursor-pointer">
         <i data-lucide="calendar" class="w-3.5 h-3.5 text-indigo-300"></i>
         <span>8월 점검계획</span>
       </button>
 
-      <button id="btn-straight-map" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
+      <button id="btn-straight-map" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition cursor-pointer">
         <i data-lucide="git-commit" class="w-3.5 h-3.5 text-cyan-400"></i>
         <span>직선도 스키마</span>
       </button>
 
-      <button id="btn-measure" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
+      <button id="btn-measure" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition cursor-pointer">
         <i data-lucide="ruler" class="w-3.5 h-3.5 text-amber-400"></i>
         <span>거리/면적 측정</span>
       </button>
 
-      <button id="btn-storage-manage" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-cyan-300 border border-slate-700 transition cursor-pointer">
-        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-cyan-400"></i>
-        <span>암호화 저장소</span>
+      <button id="btn-storage-manage" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-xs font-bold text-white border border-emerald-400/40 shadow-sm transition cursor-pointer">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+        <span>🔒 관제 데이터팩 관리</span>
       </button>
+      <input type="file" id="input-datapack-file" accept=".json,.geojson,.enc" multiple class="hidden" />
 
-      <button id="btn-datapack-header" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-xs font-bold text-white border border-emerald-400/40 shadow-sm transition">
-        <i data-lucide="folder-open" class="w-3.5 h-3.5"></i>
-        <span>지사 데이터팩(.json)</span>
-      </button>
-      <input type="file" id="input-datapack-file" accept=".json" multiple class="hidden" />
-
-      <button id="btn-upload-modal" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
-        <i data-lucide="upload-cloud" class="w-3.5 h-3.5 text-cyan-400"></i>
-        <span>개별 엑셀</span>
-      </button>
-
-      <button id="btn-export-menu" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">
-        <i data-lucide="download" class="w-3.5 h-3.5 text-emerald-400"></i>
-        <span>내보내기</span>
-      </button>
-
-      <button id="btn-gps" title="내 위치 찾기" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+      <button id="btn-gps" title="내 위치 찾기" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition cursor-pointer">
         <i data-lucide="crosshair" class="w-4 h-4 text-cyan-400"></i>
       </button>
     </div>
 
     <!-- Mobile Header Quick Actions -->
-    <div class="flex md:hidden items-center space-x-1 shrink-0">
-      <button id="btn-storage-mobile" title="암호화 저장소" class="p-1.5 rounded-lg bg-slate-800 text-cyan-300 border border-slate-700 transition">
-        <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i>
+    <div class="flex md:hidden items-center space-x-1.5 shrink-0">
+      <button id="btn-storage-mobile" class="px-2.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold flex items-center gap-1 shadow-sm transition cursor-pointer">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+        <span>데이터팩</span>
       </button>
-      <button id="btn-datapack-mobile" class="px-2 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold flex items-center gap-1 shadow-sm transition">
-        <i data-lucide="folder-open" class="w-3.5 h-3.5"></i>
-        <span class="hidden xs:inline">데이터팩</span>
-      </button>
-      <button id="btn-plan-mobile" title="8월 점검계획" class="p-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/50 transition">
+      <button id="btn-plan-mobile" title="8월 점검계획" class="p-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/50 transition cursor-pointer">
         <i data-lucide="calendar" class="w-4 h-4"></i>
       </button>
-      <button id="btn-gps-mobile" title="내 위치" class="p-1.5 rounded-lg bg-slate-800 text-cyan-400 border border-slate-700 transition">
+      <button id="btn-gps-mobile" title="내 위치" class="p-1.5 rounded-lg bg-slate-800 text-cyan-400 border border-slate-700 transition cursor-pointer">
         <i data-lucide="crosshair" class="w-4 h-4"></i>
       </button>
     </div>
@@ -840,16 +822,16 @@
       <div class="w-12 h-1 bg-slate-600 rounded-full mx-auto mb-2"></div>
       <div class="font-bold text-sm text-white mb-2">관제 지도 확장 도구</div>
       <div class="grid grid-cols-2 gap-2 text-xs">
-        <button id="btn-mobile-upload" class="p-3 rounded-xl bg-slate-800 border border-slate-700 text-left flex items-center gap-2">
-          <i data-lucide="upload-cloud" class="w-4 h-4 text-cyan-400"></i>
-          <span>데이터 업로드</span>
+        <button id="btn-mobile-storage-open" class="p-3 rounded-xl bg-slate-800 border border-slate-700 text-left flex items-center gap-2 cursor-pointer">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+          <span>데이터팩 관리</span>
         </button>
-        <button id="btn-mobile-export" class="p-3 rounded-xl bg-slate-800 border border-slate-700 text-left flex items-center gap-2">
-          <i data-lucide="download" class="w-4 h-4 text-emerald-400"></i>
-          <span>데이터 내보내기</span>
+        <button id="btn-mobile-straight-open" class="p-3 rounded-xl bg-slate-800 border border-slate-700 text-left flex items-center gap-2 cursor-pointer">
+          <i data-lucide="git-commit" class="w-4 h-4 text-cyan-400"></i>
+          <span>직선도 스키마</span>
         </button>
       </div>
-      <button class="modal-close w-full py-2.5 rounded-xl bg-slate-800 text-slate-300 font-medium mt-2">닫기</button>
+      <button class="modal-close w-full py-2.5 rounded-xl bg-slate-800 text-slate-300 font-medium mt-2 cursor-pointer">닫기</button>
     </div>
   </div>
 
@@ -2704,6 +2686,35 @@
             resolve(false);
           }
         });
+      },
+
+      async decryptFilePayload(fileObj) {
+        if (!fileObj) return null;
+        if (!fileObj.encrypted) return fileObj; // Plain JSON backward compatibility
+        try {
+          const encoder = new TextEncoder();
+          const MASTER_KEY_SEED = "HIGHWAY_GIS_SECURE_AES256_V1_MASTER_KEY_2026";
+          const keyHash = await crypto.subtle.digest('SHA-256', encoder.encode(MASTER_KEY_SEED));
+          const cryptoKey = await crypto.subtle.importKey(
+            'raw',
+            keyHash,
+            { name: 'AES-GCM' },
+            false,
+            ['encrypt', 'decrypt']
+          );
+          const iv = new Uint8Array(fileObj.iv);
+          const ciphertext = new Uint8Array(fileObj.ciphertext);
+          const decrypted = await crypto.subtle.decrypt(
+            { name: 'AES-GCM', iv: iv },
+            cryptoKey,
+            ciphertext
+          );
+          const decoder = new TextDecoder('utf-8');
+          return JSON.parse(decoder.decode(decrypted));
+        } catch (err) {
+          console.error('[SecureDB] Decrypt file payload error:', err);
+          throw new Error('암호화 데이터팩 해독 실패: 올바른 암호화 데이터팩인지 확인하세요.');
+        }
       }
     };
 
@@ -2716,7 +2727,7 @@
 
       const keys = Object.keys(AppState.loadedDataPacks || {});
       if (keys.length === 0) {
-        listEl.innerHTML = `<div class="text-slate-500 text-center py-4 text-xs">보관 중인 지사 데이터팩이 없습니다.<br><span class="text-[10px] text-slate-600">상단의 [지사 데이터팩(.json)] 버튼을 눌러 추가하세요.</span></div>`;
+        listEl.innerHTML = `<div class="text-slate-500 text-center py-4 text-xs">보관 중인 지사 데이터팩이 없습니다.<br><span class="text-[10px] text-slate-600">[새 데이터팩 추가] 버튼을 눌러 암호화 데이터팩(.json)을 등록하세요.</span></div>`;
         if (tagEl) {
           tagEl.innerText = '저장소 비어있음';
           tagEl.className = 'text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 font-mono border border-slate-700';
@@ -2789,9 +2800,9 @@
 
       const keys = Object.keys(AppState.loadedDataPacks);
       if (keys.length === 0) {
-        selectBranch.innerHTML = '<option value="" disabled selected>📂 지사 데이터팩을 로드하세요</option>';
+        selectBranch.innerHTML = '<option value="" disabled selected>🔒 암호화 데이터팩을 등록하세요</option>';
         const sub = document.getElementById('header-branch-subtitle');
-        if (sub) sub.innerText = '상단의 [지사 데이터팩(.json)] 버튼을 눌러 로컬 데이터팩을 불러오세요.';
+        if (sub) sub.innerText = '상단의 [🔒 관제 데이터팩 관리] 버튼을 눌러 암호화 데이터팩을 등록하세요.';
         return;
       }
 
@@ -3111,22 +3122,26 @@
       }
 
       // Data Pack (.json) Load Action (Supports single or multi-file selection!)
-      const btnDataPack = document.getElementById('btn-datapack-header');
       const inputDataPack = document.getElementById('input-datapack-file');
 
       async function handleLoadedJsonFiles(fileList) {
-        const files = Array.from(fileList || []).filter(f => f.name.endsWith('.json') || f.name.endsWith('.geojson'));
+        const files = Array.from(fileList || []).filter(f => f.name.endsWith('.json') || f.name.endsWith('.geojson') || f.name.endsWith('.enc'));
         if (!files.length) return;
 
         const readPromises = files.map(file => {
           return new Promise((resolve) => {
             const reader = new FileReader();
-            reader.onload = (evt) => {
+            reader.onload = async (evt) => {
               try {
                 const parsed = JSON.parse(evt.target.result);
-                resolve(parsed);
+                if (parsed && parsed.encrypted) {
+                  const decrypted = await SecureDB.decryptFilePayload(parsed);
+                  resolve(decrypted);
+                } else {
+                  resolve(parsed);
+                }
               } catch (err) {
-                alert(`[${file.name}] JSON 파싱 오류: ` + err.message);
+                alert(`[${file.name}] 데이터팩 해독/파싱 오류: ` + err.message);
                 resolve(null);
               }
             };
@@ -3149,32 +3164,19 @@
           updateBranchDropdown('COMBINED');
           const combData = getCombinedDataPack();
           loadDataPack(combData, false, true);
-          alert(`🔒 [총 ${validPacks.length}개 지사 데이터팩 로컬 암호화 저장 완료!]\n- 등록된 지사: ${Object.values(AppState.loadedDataPacks).map(p => p.branch_name).join(', ')}\n- 브라우저 IndexedDB에 AES-256 암호화되어 안전하게 보관되며, 다음 접속 시 자동 로드됩니다.`);
+          alert(`🔒 [총 ${validPacks.length}개 지사 암호화 데이터팩 로드 및 로컬 DB 저장 완료!]\n- 등록된 지사: ${Object.values(AppState.loadedDataPacks).map(p => p.branch_name).join(', ')}\n- [전체 지사 통합 관제] 모드로 가동되며 브라우저 IndexedDB에 영구 암호화 보관됩니다.`);
         } else {
           const single = validPacks[0];
           const bCode = single.branch_code || (single.branch_name ? ('BRANCH_' + single.branch_name.replace(/[^a-zA-Z0-9가-힣]/g, '_')) : 'BRANCH_1');
           updateBranchDropdown(bCode);
           loadDataPack(single, true);
-          alert(`🔒 [${single.branch_name || '지사'} 데이터팩 로컬 암호화 저장 완료!]\n- 브라우저 IndexedDB에 AES-256 암호화되어 안전하게 보관되며, 다음 접속 시 자동 로드됩니다.`);
+          alert(`🔒 [${single.branch_name || '지사'} 암호화 데이터팩 로드 완료!]\n- 브라우저 IndexedDB에 영구 암호화 보관되어 다음 접속 시 자동 로드됩니다.`);
         }
 
         updateStorageModalUI();
       }
 
-      const btnDataPackMobile = document.getElementById('btn-datapack-mobile');
       if (inputDataPack) {
-        if (btnDataPack) {
-          btnDataPack.addEventListener('click', () => {
-            inputDataPack.value = '';
-            inputDataPack.click();
-          });
-        }
-        if (btnDataPackMobile) {
-          btnDataPackMobile.addEventListener('click', () => {
-            inputDataPack.value = '';
-            inputDataPack.click();
-          });
-        }
         inputDataPack.addEventListener('change', (e) => {
           handleLoadedJsonFiles(e.target.files);
         });
@@ -3344,32 +3346,19 @@
         document.getElementById('modal-more-tools')?.classList.remove('hidden');
       });
 
-      // Desktop Modals
+      // Desktop Modals & Mobile Tools
       document.getElementById('btn-straight-map')?.addEventListener('click', () => {
         renderStraightMapNodes();
         document.getElementById('modal-straight')?.classList.remove('hidden');
       });
-      document.getElementById('btn-upload-modal')?.addEventListener('click', () => {
-        document.getElementById('modal-upload')?.classList.remove('hidden');
-      });
-      document.getElementById('btn-mobile-upload')?.addEventListener('click', () => {
+      document.getElementById('btn-mobile-storage-open')?.addEventListener('click', () => {
         document.getElementById('modal-more-tools')?.classList.add('hidden');
-        document.getElementById('modal-upload')?.classList.remove('hidden');
+        openStorageModal();
       });
-
-      // Export
-      const handleExport = () => {
-        const branchTitle = (AppState.data && AppState.data.branch_name) ? AppState.data.branch_name.replace(/\s+/g, '_') : 'highway_gis';
-        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(AppState.data, null, 2));
-        const dlAnchor = document.createElement('a');
-        dlAnchor.setAttribute("href", dataStr);
-        dlAnchor.setAttribute("download", `${branchTitle}_facilities_${new Date().toISOString().slice(0, 10)}.json`);
-        dlAnchor.click();
-      };
-      document.getElementById('btn-export-menu')?.addEventListener('click', handleExport);
-      document.getElementById('btn-mobile-export')?.addEventListener('click', () => {
+      document.getElementById('btn-mobile-straight-open')?.addEventListener('click', () => {
         document.getElementById('modal-more-tools')?.classList.add('hidden');
-        handleExport();
+        renderStraightMapNodes();
+        document.getElementById('modal-straight')?.classList.remove('hidden');
       });
 
       // Distance & Area Measurement
