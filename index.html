@@ -219,24 +219,26 @@
   <header class="h-12 md:h-14 bg-slate-900 border-b border-slate-800 px-3 md:px-4 flex items-center justify-between z-30 shadow-md shrink-0">
     <div class="flex items-center space-x-1.5 md:space-x-3 min-w-0 flex-1">
       <!-- Mobile Menu / Sidebar Trigger -->
-      <button id="btn-toggle-sidebar-mobile" class="md:hidden p-1.5 rounded-lg bg-slate-800 text-slate-200 hover:bg-slate-700 transition shrink-0">
+      <button id="btn-toggle-sidebar-mobile" class="md:hidden p-1.5 rounded-lg bg-slate-800 text-slate-200 hover:bg-slate-700 transition shrink-0 cursor-pointer">
         <i data-lucide="menu" class="w-5 h-5"></i>
       </button>
 
-      <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-cyan-600 flex items-center justify-center border border-cyan-400/40 shrink-0">
+      <!-- Logo Icon (Hidden on mobile for clean space) -->
+      <div class="hidden sm:flex w-7 h-7 md:w-9 md:h-9 rounded-lg bg-cyan-600 items-center justify-center border border-cyan-400/40 shrink-0">
         <i data-lucide="network" class="w-4 h-4 md:w-5 md:h-5 text-white"></i>
       </div>
+
       <div class="min-w-0 flex-1 truncate">
         <div class="flex items-center space-x-1.5 md:space-x-2 min-w-0">
           <h1 class="text-xs md:text-sm font-bold tracking-tight text-white truncate hidden sm:flex items-center gap-1.5 shrink-0">
             <span class="font-mono text-cyan-400">HIGHWAY GIS</span>
             <span class="text-slate-500">|</span>
           </h1>
-          <select id="select-branch" class="bg-slate-800 border border-cyan-500/50 text-cyan-300 text-[11px] md:text-xs rounded-lg px-2 py-1 font-bold focus:outline-none focus:ring-1 focus:ring-cyan-400 cursor-pointer shadow max-w-[140px] xs:max-w-[180px] sm:max-w-[240px] md:max-w-none truncate">
-            <option value="" disabled selected>📂 지사 데이터팩을 로드하세요</option>
+          <select id="select-branch" class="bg-slate-800 border border-cyan-500/50 text-cyan-300 text-[11px] md:text-xs rounded-lg px-2 py-1 font-bold focus:outline-none focus:ring-1 focus:ring-cyan-400 cursor-pointer shadow max-w-[130px] xs:max-w-[170px] sm:max-w-[240px] md:max-w-none truncate">
+            <option value="" disabled selected>🔒 암호화 데이터팩을 등록하세요</option>
           </select>
         </div>
-        <p id="header-branch-subtitle" class="text-[10px] md:text-[11px] text-slate-400 hidden lg:block truncate">상단의 [지사 데이터팩(.json)] 버튼을 눌러 로컬 데이터팩을 불러오세요.</p>
+        <p id="header-branch-subtitle" class="text-[10px] md:text-[11px] text-slate-400 hidden lg:block truncate">상단의 [🔒 관제 데이터팩 관리] 버튼을 눌러 암호화 데이터팩을 등록하세요.</p>
       </div>
     </div>
 
@@ -268,16 +270,21 @@
       </button>
     </div>
 
-    <!-- Mobile Header Quick Actions -->
-    <div class="flex md:hidden items-center space-x-1.5 shrink-0">
-      <button id="btn-storage-mobile" class="px-2.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold flex items-center gap-1 shadow-sm transition cursor-pointer">
-        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
-        <span>데이터팩</span>
+    <!-- Mobile Header Quick Actions (Icon-only) -->
+    <div class="flex md:hidden items-center space-x-1 shrink-0">
+      <button id="btn-straight-mobile" title="직선도 스키마" class="p-1.5 rounded-lg bg-slate-800 text-cyan-400 border border-slate-700 transition cursor-pointer">
+        <i data-lucide="git-commit" class="w-4 h-4"></i>
+      </button>
+      <button id="btn-measure-mobile" title="거리/면적 측정" class="p-1.5 rounded-lg bg-slate-800 text-amber-400 border border-slate-700 transition cursor-pointer">
+        <i data-lucide="ruler" class="w-4 h-4"></i>
       </button>
       <button id="btn-plan-mobile" title="8월 점검계획" class="p-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/50 transition cursor-pointer">
         <i data-lucide="calendar" class="w-4 h-4"></i>
       </button>
-      <button id="btn-gps-mobile" title="내 위치" class="p-1.5 rounded-lg bg-slate-800 text-cyan-400 border border-slate-700 transition cursor-pointer">
+      <button id="btn-storage-mobile" title="관제 데이터팩 관리" class="p-1.5 rounded-lg bg-emerald-600/80 hover:bg-emerald-600 text-emerald-200 hover:text-white border border-emerald-500/50 transition cursor-pointer">
+        <i data-lucide="shield-check" class="w-4 h-4"></i>
+      </button>
+      <button id="btn-gps-mobile" title="내 위치 찾기" class="p-1.5 rounded-lg bg-slate-800 text-cyan-400 border border-slate-700 transition cursor-pointer">
         <i data-lucide="crosshair" class="w-4 h-4"></i>
       </button>
     </div>
@@ -2287,7 +2294,7 @@
       return dates[dates.length - 1];
     }
 
-    function selectInspectionDate(dateKey) {
+    function selectInspectionDate(dateKey, shouldOpenDrawer = false) {
       if (!dateKey) {
         dateKey = getClosestOrTodayInspectionDate();
       }
@@ -2347,7 +2354,14 @@
         }
       }
 
-      showDetailDrawer('inspection', plan);
+      // Close mobile sidebar to provide clean, unobstructed map view
+      closeMobileSidebar();
+
+      if (shouldOpenDrawer) {
+        showDetailDrawer('inspection', plan);
+      } else {
+        closeDetailDrawer();
+      }
     }
 
     function clearInspectionDate() {
@@ -3063,28 +3077,25 @@
       });
 
       // Quick header buttons for Inspection Plan
-      const btnPlanHeader = document.getElementById('btn-plan-header');
-      if (btnPlanHeader) {
-        btnPlanHeader.addEventListener('click', () => {
-          document.getElementById('tab-plan-btn')?.click();
+      const handlePlanHeaderClick = () => {
+        const targetDate = AppState.activeInspectionDate || getClosestOrTodayInspectionDate();
+        if (targetDate) {
+          selectInspectionDate(targetDate, false);
+        } else {
           openMobileSidebar();
-          selectInspectionDate(AppState.activeInspectionDate || getClosestOrTodayInspectionDate());
-        });
-      }
-      const btnPlanMobile = document.getElementById('btn-plan-mobile');
-      if (btnPlanMobile) {
-        btnPlanMobile.addEventListener('click', () => {
           document.getElementById('tab-plan-btn')?.click();
-          openMobileSidebar();
-          selectInspectionDate(AppState.activeInspectionDate || getClosestOrTodayInspectionDate());
-        });
-      }
+        }
+      };
+      document.getElementById('btn-plan-header')?.addEventListener('click', handlePlanHeaderClick);
+      document.getElementById('btn-plan-mobile')?.addEventListener('click', handlePlanHeaderClick);
 
       // Straight Route Schema Trigger
-      document.getElementById('btn-straight-map')?.addEventListener('click', () => {
+      const openStraightModal = () => {
         renderStraightMapNodes();
-        document.getElementById('modal-straight').classList.remove('hidden');
-      });
+        document.getElementById('modal-straight')?.classList.remove('hidden');
+      };
+      document.getElementById('btn-straight-map')?.addEventListener('click', openStraightModal);
+      document.getElementById('btn-straight-mobile')?.addEventListener('click', openStraightModal);
 
       // Inspection Banner Actions
       document.getElementById('btn-clear-plan-date')?.addEventListener('click', clearInspectionDate);
@@ -3347,22 +3358,17 @@
       });
 
       // Desktop Modals & Mobile Tools
-      document.getElementById('btn-straight-map')?.addEventListener('click', () => {
-        renderStraightMapNodes();
-        document.getElementById('modal-straight')?.classList.remove('hidden');
-      });
       document.getElementById('btn-mobile-storage-open')?.addEventListener('click', () => {
         document.getElementById('modal-more-tools')?.classList.add('hidden');
         openStorageModal();
       });
       document.getElementById('btn-mobile-straight-open')?.addEventListener('click', () => {
         document.getElementById('modal-more-tools')?.classList.add('hidden');
-        renderStraightMapNodes();
-        document.getElementById('modal-straight')?.classList.remove('hidden');
+        openStraightModal();
       });
 
       // Distance & Area Measurement
-      document.getElementById('btn-measure')?.addEventListener('click', () => {
+      const toggleMeasure = () => {
         AppState.measuring = !AppState.measuring;
         if (AppState.measuring) {
           document.getElementById('measure-toolbar')?.classList.remove('hidden');
@@ -3370,7 +3376,10 @@
           document.getElementById('measure-toolbar')?.classList.add('hidden');
           clearMeasurement();
         }
-      });
+      };
+      document.getElementById('btn-measure')?.addEventListener('click', toggleMeasure);
+      document.getElementById('btn-measure-mobile')?.addEventListener('click', toggleMeasure);
+      document.getElementById('nav-btn-measure')?.addEventListener('click', toggleMeasure);
       document.getElementById('btn-close-measure')?.addEventListener('click', () => {
         AppState.measuring = false;
         document.getElementById('measure-toolbar')?.classList.add('hidden');
