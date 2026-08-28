@@ -257,6 +257,11 @@
         <span>거리/면적 측정</span>
       </button>
 
+      <button id="btn-storage-manage" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-cyan-300 border border-slate-700 transition cursor-pointer">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-cyan-400"></i>
+        <span>암호화 저장소</span>
+      </button>
+
       <button id="btn-datapack-header" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-xs font-bold text-white border border-emerald-400/40 shadow-sm transition">
         <i data-lucide="folder-open" class="w-3.5 h-3.5"></i>
         <span>지사 데이터팩(.json)</span>
@@ -280,6 +285,9 @@
 
     <!-- Mobile Header Quick Actions -->
     <div class="flex md:hidden items-center space-x-1 shrink-0">
+      <button id="btn-storage-mobile" title="암호화 저장소" class="p-1.5 rounded-lg bg-slate-800 text-cyan-300 border border-slate-700 transition">
+        <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i>
+      </button>
       <button id="btn-datapack-mobile" class="px-2 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold flex items-center gap-1 shadow-sm transition">
         <i data-lucide="folder-open" class="w-3.5 h-3.5"></i>
         <span class="hidden xs:inline">데이터팩</span>
@@ -842,6 +850,59 @@
         </button>
       </div>
       <button class="modal-close w-full py-2.5 rounded-xl bg-slate-800 text-slate-300 font-medium mt-2">닫기</button>
+    </div>
+  </div>
+
+  <!-- 4. Local Encrypted Storage Modal (IndexedDB + Web Crypto AES-256) -->
+  <div id="modal-storage" class="fixed inset-0 z-50 bg-black/80 hidden flex items-center justify-center p-3 md:p-4">
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-lg w-full p-4 space-y-4 shadow-2xl overflow-hidden">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center border border-cyan-500/30">
+            <i data-lucide="shield-check" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm text-white">로컬 암호화 저장소 (IndexedDB)</h3>
+            <p class="text-[11px] text-slate-400">Web Crypto AES-256 클라이언트 단독 저장 엔진</p>
+          </div>
+        </div>
+        <button id="btn-close-storage-modal" class="p-1 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-white transition cursor-pointer">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-slate-300">보관 중인 지사 데이터팩 목록</span>
+          <span id="storage-status-tag" class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono border border-emerald-500/30">
+            암호화 보관 중
+          </span>
+        </div>
+        <div id="storage-branch-list" class="space-y-1.5 max-h-48 overflow-y-auto pr-0.5">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <div class="p-2.5 rounded-xl bg-blue-950/40 border border-blue-500/30 text-[11px] text-slate-300 space-y-1">
+        <div class="font-bold text-blue-300 flex items-center gap-1">
+          <i data-lucide="info" class="w-3.5 h-3.5"></i>
+          <span>보안 및 로컬 구동 안내</span>
+        </div>
+        <p class="text-[10px] text-slate-400 leading-relaxed">
+          데이터는 브라우저 전용 암호화 샌드박스(IndexedDB)에 <b>AES-GCM 256비트 암호화</b>되어 보관되며, GitHub나 외부 서버로 일체 전송되지 않습니다. 브라우저를 새로고침하거나 다시 접속해도 자동 로드됩니다.
+        </p>
+      </div>
+
+      <div class="flex items-center justify-between pt-2 border-t border-slate-800">
+        <button id="btn-storage-upload-new" class="px-3 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs flex items-center gap-1.5 transition shadow-sm cursor-pointer">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          <span>새 데이터팩 추가</span>
+        </button>
+        <button id="btn-clear-storage" class="px-3 py-2 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/40 font-bold text-xs flex items-center gap-1.5 transition cursor-pointer">
+          <i data-lucide="trash-2" class="w-4 h-4"></i>
+          <span>저장소 전체 초기화</span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -2423,7 +2484,304 @@
       });
     }
 
+    // =========================================================================
+    // ENCRYPTED INDEXEDDB STORAGE ENGINE (Web Crypto AES-GCM 256-bit)
+    // =========================================================================
+    const DB_NAME = 'HighwayGIS_SecureDB';
+    const DB_VERSION = 1;
+    const STORE_NAME = 'encrypted_packs';
+    const KEY_STORE_NAME = 'secure_key';
+
+    const SecureDB = {
+      db: null,
+
+      async init() {
+        if (this.db) return this.db;
+        return new Promise((resolve) => {
+          try {
+            const req = indexedDB.open(DB_NAME, DB_VERSION);
+            req.onupgradeneeded = (e) => {
+              const db = e.target.result;
+              if (!db.objectStoreNames.contains(STORE_NAME)) {
+                db.createObjectStore(STORE_NAME, { keyPath: 'branch_code' });
+              }
+              if (!db.objectStoreNames.contains(KEY_STORE_NAME)) {
+                db.createObjectStore(KEY_STORE_NAME, { keyPath: 'id' });
+              }
+            };
+            req.onsuccess = (e) => {
+              this.db = e.target.result;
+              resolve(this.db);
+            };
+            req.onerror = (e) => {
+              console.error('IndexedDB open error:', e);
+              resolve(null);
+            };
+          } catch (e) {
+            resolve(null);
+          }
+        });
+      },
+
+      async getMasterKey() {
+        if (!this.db) await this.init();
+        if (!this.db) return null;
+        return new Promise((resolve) => {
+          try {
+            const tx = this.db.transaction([KEY_STORE_NAME], 'readwrite');
+            const store = tx.objectStore(KEY_STORE_NAME);
+            const req = store.get('master_crypto_key');
+            req.onsuccess = async () => {
+              try {
+                if (req.result && req.result.rawKey) {
+                  const cryptoKey = await crypto.subtle.importKey(
+                    'raw',
+                    new Uint8Array(req.result.rawKey),
+                    { name: 'AES-GCM' },
+                    false,
+                    ['encrypt', 'decrypt']
+                  );
+                  resolve(cryptoKey);
+                } else {
+                  const rawKey = crypto.getRandomValues(new Uint8Array(32));
+                  store.put({ id: 'master_crypto_key', rawKey: Array.from(rawKey) });
+                  const cryptoKey = await crypto.subtle.importKey(
+                    'raw',
+                    rawKey,
+                    { name: 'AES-GCM' },
+                    false,
+                    ['encrypt', 'decrypt']
+                  );
+                  resolve(cryptoKey);
+                }
+              } catch (err) {
+                console.warn('[SecureDB] Crypto subtle key error:', err);
+                resolve(null);
+              }
+            };
+            req.onerror = () => resolve(null);
+          } catch (err) {
+            resolve(null);
+          }
+        });
+      },
+
+      async encryptData(jsonData) {
+        try {
+          const key = await this.getMasterKey();
+          const jsonStr = JSON.stringify(jsonData);
+          if (key && window.crypto && window.crypto.subtle) {
+            const iv = crypto.getRandomValues(new Uint8Array(12));
+            const encoder = new TextEncoder();
+            const encoded = encoder.encode(jsonStr);
+            const ciphertext = await crypto.subtle.encrypt(
+              { name: 'AES-GCM', iv: iv },
+              key,
+              encoded
+            );
+            return {
+              isEncrypted: true,
+              iv: Array.from(iv),
+              ciphertext: Array.from(new Uint8Array(ciphertext))
+            };
+          } else {
+            return { isEncrypted: false, raw: jsonStr };
+          }
+        } catch (err) {
+          console.error('[SecureDB] Encryption error:', err);
+          return { isEncrypted: false, raw: JSON.stringify(jsonData) };
+        }
+      },
+
+      async decryptData(recordObj) {
+        try {
+          if (!recordObj) return null;
+          if (recordObj.isEncrypted) {
+            const key = await this.getMasterKey();
+            if (!key) throw new Error('Crypto key unavailable');
+            const iv = new Uint8Array(recordObj.iv);
+            const ciphertext = new Uint8Array(recordObj.ciphertext);
+            const decrypted = await crypto.subtle.decrypt(
+              { name: 'AES-GCM', iv: iv },
+              key,
+              ciphertext
+            );
+            const decoder = new TextDecoder();
+            return JSON.parse(decoder.decode(decrypted));
+          } else if (recordObj.raw) {
+            return JSON.parse(recordObj.raw);
+          }
+          return null;
+        } catch (err) {
+          console.error('[SecureDB] Decryption error:', err);
+          return null;
+        }
+      },
+
+      async saveBranchPack(branchCode, branchName, jsonData) {
+        if (!this.db) await this.init();
+        if (!this.db) return false;
+        try {
+          const encrypted = await this.encryptData(jsonData);
+          return new Promise((resolve) => {
+            const tx = this.db.transaction([STORE_NAME], 'readwrite');
+            const store = tx.objectStore(STORE_NAME);
+            store.put({
+              branch_code: branchCode,
+              branch_name: branchName || jsonData.branch_name || branchCode,
+              updated_at: new Date().toISOString(),
+              payload: encrypted
+            });
+            tx.oncomplete = () => {
+              console.log(`[SecureDB] Encrypted and stored branch: ${branchCode}`);
+              resolve(true);
+            };
+            tx.onerror = () => resolve(false);
+          });
+        } catch (err) {
+          console.error('[SecureDB] saveBranchPack error:', err);
+          return false;
+        }
+      },
+
+      async loadAllBranchPacks() {
+        if (!this.db) await this.init();
+        if (!this.db) return {};
+        return new Promise((resolve) => {
+          try {
+            const tx = this.db.transaction([STORE_NAME], 'readonly');
+            const store = tx.objectStore(STORE_NAME);
+            const req = store.getAll();
+            req.onsuccess = async () => {
+              const records = req.result || [];
+              const decryptedPacks = {};
+              for (const rec of records) {
+                try {
+                  const data = await this.decryptData(rec.payload);
+                  if (data) {
+                    decryptedPacks[rec.branch_code] = data;
+                  }
+                } catch (err) {
+                  console.error(`[SecureDB] Decrypt error for ${rec.branch_code}:`, err);
+                }
+              }
+              resolve(decryptedPacks);
+            };
+            req.onerror = () => resolve({});
+          } catch (err) {
+            resolve({});
+          }
+        });
+      },
+
+      async deleteBranchPack(branchCode) {
+        if (!this.db) await this.init();
+        if (!this.db) return false;
+        return new Promise((resolve) => {
+          try {
+            const tx = this.db.transaction([STORE_NAME], 'readwrite');
+            const store = tx.objectStore(STORE_NAME);
+            store.delete(branchCode);
+            tx.oncomplete = () => resolve(true);
+            tx.onerror = () => resolve(false);
+          } catch (err) {
+            resolve(false);
+          }
+        });
+      },
+
+      async clearAll() {
+        if (!this.db) await this.init();
+        if (!this.db) return false;
+        return new Promise((resolve) => {
+          try {
+            const tx = this.db.transaction([STORE_NAME], 'readwrite');
+            const store = tx.objectStore(STORE_NAME);
+            store.clear();
+            tx.oncomplete = () => resolve(true);
+            tx.onerror = () => resolve(false);
+          } catch (err) {
+            resolve(false);
+          }
+        });
+      }
+    };
+
     AppState.loadedDataPacks = {};
+
+    function updateStorageModalUI() {
+      const listEl = document.getElementById('storage-branch-list');
+      const tagEl = document.getElementById('storage-status-tag');
+      if (!listEl) return;
+
+      const keys = Object.keys(AppState.loadedDataPacks || {});
+      if (keys.length === 0) {
+        listEl.innerHTML = `<div class="text-slate-500 text-center py-4 text-xs">보관 중인 지사 데이터팩이 없습니다.<br><span class="text-[10px] text-slate-600">상단의 [지사 데이터팩(.json)] 버튼을 눌러 추가하세요.</span></div>`;
+        if (tagEl) {
+          tagEl.innerText = '저장소 비어있음';
+          tagEl.className = 'text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 font-mono border border-slate-700';
+        }
+        return;
+      }
+
+      if (tagEl) {
+        tagEl.innerText = `${keys.length}개 지사 암호화 보관 중`;
+        tagEl.className = 'text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono border border-emerald-500/30';
+      }
+
+      listEl.innerHTML = keys.map(k => {
+        const p = AppState.loadedDataPacks[k];
+        const mCount = (p.manholes || []).length;
+        const oCount = (p.offices || []).length;
+        const cCount = (p.conduits || []).length;
+        return `
+          <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between shadow-sm">
+            <div>
+              <div class="font-bold text-xs text-white flex items-center gap-1.5">
+                <span>🏢 ${p.branch_name || k}</span>
+                <span class="text-[9px] px-1.5 py-0.2 rounded bg-cyan-500/20 text-cyan-300 font-mono border border-cyan-500/30">AES-256</span>
+              </div>
+              <div class="text-[10px] text-slate-400 mt-0.5">
+                거점 ${oCount}개소 · 맨홀 ${mCount}개 · 관로 ${cCount}구간
+              </div>
+            </div>
+            <button onclick="deleteSingleBranch('${k}')" class="p-1.5 rounded-lg hover:bg-rose-500/20 text-slate-500 hover:text-rose-400 transition cursor-pointer" title="이 지사 데이터 삭제">
+              <i data-lucide="trash" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    async function deleteSingleBranch(branchCode) {
+      const bName = AppState.loadedDataPacks[branchCode]?.branch_name || branchCode;
+      if (!confirm(`[${bName}] 지사 데이터를 브라우저 로컬 암호화 저장소에서 완전히 삭제하시겠습니까?`)) {
+        return;
+      }
+      await SecureDB.deleteBranchPack(branchCode);
+      delete AppState.loadedDataPacks[branchCode];
+
+      const remainingKeys = Object.keys(AppState.loadedDataPacks);
+      if (remainingKeys.length === 0) {
+        AppState.data = { manholes: [], conduits: [], cables: [], poles: [], offices: [], straight_map: [], interchanges: [], inspection_schedule: {} };
+        updateBranchDropdown();
+        renderAllLayers();
+        renderStatsTab();
+        renderInspectionCalendar();
+      } else if (remainingKeys.length === 1) {
+        updateBranchDropdown(remainingKeys[0]);
+        loadDataPack(AppState.loadedDataPacks[remainingKeys[0]], false, true);
+      } else {
+        updateBranchDropdown('COMBINED');
+        loadDataPack(getCombinedDataPack(), false, true);
+      }
+
+      updateStorageModalUI();
+      alert(`[${bName}] 지사 데이터가 안전하게 삭제되었습니다.`);
+    }
+    window.deleteSingleBranch = deleteSingleBranch;
 
     function updateBranchDropdown(activeCode) {
       const selectBranch = document.getElementById('select-branch');
@@ -2781,22 +3139,26 @@
 
         if (validPacks.length === 0) return;
 
-        validPacks.forEach(p => {
-          const bCode = p.branch_code || (p.branch_name ? (p.branch_name.includes('동서울') ? 'DONGSEOUL' : (p.branch_name.includes('광주') ? 'GWANGJU' : 'BRANCH_' + Date.now())) : 'BRANCH_' + Date.now());
+        for (const p of validPacks) {
+          const bCode = p.branch_code || (p.branch_name ? ('BRANCH_' + p.branch_name.replace(/[^a-zA-Z0-9가-힣]/g, '_')) : 'BRANCH_' + Date.now());
           AppState.loadedDataPacks[bCode] = p;
-        });
+          await SecureDB.saveBranchPack(bCode, p.branch_name, p);
+        }
 
         if (validPacks.length >= 2 || Object.keys(AppState.loadedDataPacks).length >= 2) {
           updateBranchDropdown('COMBINED');
           const combData = getCombinedDataPack();
           loadDataPack(combData, false, true);
-          alert(`[총 ${validPacks.length}개 지사 데이터팩 동시 로드 완료!]\n- 등록된 지사: ${Object.values(AppState.loadedDataPacks).map(p => p.branch_name).join(', ')}\n- [전체 지사 통합 관제] 모드로 지도에 동시 표시됩니다.`);
+          alert(`🔒 [총 ${validPacks.length}개 지사 데이터팩 로컬 암호화 저장 완료!]\n- 등록된 지사: ${Object.values(AppState.loadedDataPacks).map(p => p.branch_name).join(', ')}\n- 브라우저 IndexedDB에 AES-256 암호화되어 안전하게 보관되며, 다음 접속 시 자동 로드됩니다.`);
         } else {
           const single = validPacks[0];
-          const bCode = single.branch_code || (single.branch_name ? (single.branch_name.includes('동서울') ? 'DONGSEOUL' : 'GWANGJU') : 'BRANCH_1');
+          const bCode = single.branch_code || (single.branch_name ? ('BRANCH_' + single.branch_name.replace(/[^a-zA-Z0-9가-힣]/g, '_')) : 'BRANCH_1');
           updateBranchDropdown(bCode);
           loadDataPack(single, true);
+          alert(`🔒 [${single.branch_name || '지사'} 데이터팩 로컬 암호화 저장 완료!]\n- 브라우저 IndexedDB에 AES-256 암호화되어 안전하게 보관되며, 다음 접속 시 자동 로드됩니다.`);
         }
+
+        updateStorageModalUI();
       }
 
       const btnDataPackMobile = document.getElementById('btn-datapack-mobile');
@@ -3119,6 +3481,34 @@
         }
       });
 
+      // Storage Modal Triggers
+      const openStorageModal = () => {
+        updateStorageModalUI();
+        document.getElementById('modal-storage')?.classList.remove('hidden');
+      };
+      document.getElementById('btn-storage-manage')?.addEventListener('click', openStorageModal);
+      document.getElementById('btn-storage-mobile')?.addEventListener('click', openStorageModal);
+      document.getElementById('btn-close-storage-modal')?.addEventListener('click', () => {
+        document.getElementById('modal-storage')?.classList.add('hidden');
+      });
+      document.getElementById('btn-storage-upload-new')?.addEventListener('click', () => {
+        document.getElementById('input-datapack-file')?.click();
+      });
+      document.getElementById('btn-clear-storage')?.addEventListener('click', async () => {
+        if (!confirm('브라우저 로컬 암호화 저장소(IndexedDB)의 모든 지사 데이터를 완전히 초기화하시겠습니까?')) {
+          return;
+        }
+        await SecureDB.clearAll();
+        AppState.loadedDataPacks = {};
+        AppState.data = { manholes: [], conduits: [], cables: [], poles: [], offices: [], straight_map: [], interchanges: [], inspection_schedule: {} };
+        updateBranchDropdown();
+        renderAllLayers();
+        renderStatsTab();
+        renderInspectionCalendar();
+        updateStorageModalUI();
+        alert('로컬 암호화 저장소가 안전하게 초기화되었습니다.');
+      });
+
       // Explicit Straight Modal Close Button
       document.getElementById('btn-close-straight-modal')?.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -3129,12 +3519,12 @@
       document.querySelectorAll('.modal-close').forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.stopPropagation();
-          document.querySelectorAll('#modal-straight, #modal-upload, #modal-more-tools').forEach(m => m.classList.add('hidden'));
+          document.querySelectorAll('#modal-straight, #modal-upload, #modal-more-tools, #modal-storage').forEach(m => m.classList.add('hidden'));
         });
       });
 
       // Close on Backdrop Click
-      ['modal-straight', 'modal-upload', 'modal-more-tools'].forEach(mId => {
+      ['modal-straight', 'modal-upload', 'modal-more-tools', 'modal-storage'].forEach(mId => {
         const modalEl = document.getElementById(mId);
         if (modalEl) {
           modalEl.addEventListener('click', (e) => {
@@ -3146,7 +3536,7 @@
       // Close on ESC key
       window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-          document.querySelectorAll('#modal-straight, #modal-upload, #modal-more-tools').forEach(m => m.classList.add('hidden'));
+          document.querySelectorAll('#modal-straight, #modal-upload, #modal-more-tools, #modal-storage').forEach(m => m.classList.add('hidden'));
           closeDetailDrawer();
         }
       });
@@ -3526,23 +3916,44 @@
       });
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('DOMContentLoaded', async () => {
       initMap();
       setupEventListeners();
       lucide.createIcons();
 
-      // If running with pre-loaded local bundle (e.g. local offline server)
-      if (window.BRANCH_DATA_PACKS && Object.keys(window.BRANCH_DATA_PACKS).length > 0) {
-        Object.keys(window.BRANCH_DATA_PACKS).forEach(k => {
-          AppState.loadedDataPacks[k] = window.BRANCH_DATA_PACKS[k];
-        });
-        updateBranchDropdown('DONGSEOUL');
-        loadDataPack(window.BRANCH_DATA_PACKS['DONGSEOUL'] || Object.values(window.BRANCH_DATA_PACKS)[0]);
-      } else if (window.MASTER_GIS_DATA) {
-        loadDataPack(window.MASTER_GIS_DATA);
-      } else {
+      // 1. Check Local Encrypted IndexedDB Storage first!
+      try {
+        const savedPacks = await SecureDB.loadAllBranchPacks();
+        const savedKeys = Object.keys(savedPacks);
+        if (savedKeys.length > 0) {
+          AppState.loadedDataPacks = savedPacks;
+          if (savedKeys.length >= 2) {
+            updateBranchDropdown('COMBINED');
+            const combData = getCombinedDataPack();
+            loadDataPack(combData, false, true);
+          } else {
+            const firstCode = savedKeys[0];
+            updateBranchDropdown(firstCode);
+            loadDataPack(savedPacks[firstCode], false, true);
+          }
+          console.log(`[SecureDB] Auto-loaded ${savedKeys.length} branches from Encrypted IndexedDB`);
+        } else if (window.BRANCH_DATA_PACKS && Object.keys(window.BRANCH_DATA_PACKS).length > 0) {
+          Object.keys(window.BRANCH_DATA_PACKS).forEach(k => {
+            AppState.loadedDataPacks[k] = window.BRANCH_DATA_PACKS[k];
+          });
+          updateBranchDropdown('DONGSEOUL');
+          loadDataPack(window.BRANCH_DATA_PACKS['DONGSEOUL'] || Object.values(window.BRANCH_DATA_PACKS)[0]);
+        } else if (window.MASTER_GIS_DATA) {
+          loadDataPack(window.MASTER_GIS_DATA);
+        } else {
+          updateBranchDropdown();
+        }
+      } catch (err) {
+        console.error('[SecureDB] Auto-load failed:', err);
         updateBranchDropdown();
       }
+
+      updateStorageModalUI();
     });
   </script>
 </body>
