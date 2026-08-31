@@ -862,110 +862,40 @@
 
 
 
-              <!-- CCTV Layer -->
-
+                            <!-- CCTV Layer -->
               <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
-
                 <input type="checkbox" id="layer-cctv" class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
-
                 <div class="flex items-center space-x-1.5">
-
                   <i data-lucide="video" class="w-3 h-3 text-blue-400"></i>
-
-                  <span class="text-slate-200">본선 CCTV</span>
-
+                  <span class="text-slate-200">본선 CCTV (<span id="count-cctv">0</span>)</span>
                 </div>
-
               </label>
-
-
 
               <!-- VDS Layer -->
-
               <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
-
                 <input type="checkbox" id="layer-vds" class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
-
                 <div class="flex items-center space-x-1.5">
-
                   <i data-lucide="activity" class="w-3 h-3 text-emerald-400"></i>
-
-                  <span class="text-slate-200">VDS 검지기</span>
-
+                  <span class="text-slate-200">VDS 검지기 (<span id="count-vds">0</span>)</span>
                 </div>
-
               </label>
-
-
 
               <!-- VMS Layer -->
-
               <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
-
                 <input type="checkbox" id="layer-vms" class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
-
                 <div class="flex items-center space-x-1.5">
-
                   <i data-lucide="monitor" class="w-3 h-3 text-amber-400"></i>
-
-                  <span class="text-slate-200">VMS 전광판</span>
-
+                  <span class="text-slate-200">VMS 전광판 (<span id="count-vms">0</span>)</span>
                 </div>
-
               </label>
-
-
-
-              <!-- DSRC Layer -->
-
-              <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
-
-                <input type="checkbox" id="layer-dsrc" class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
-
-                <div class="flex items-center space-x-1.5">
-
-                  <i data-lucide="wifi" class="w-3 h-3 text-purple-400"></i>
-
-                  <span class="text-slate-200">DSRC 기지국</span>
-
-                </div>
-
-              </label>
-
-
 
               <!-- C-ITS Layer -->
-
               <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
-
                 <input type="checkbox" id="layer-cits" class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
-
                 <div class="flex items-center space-x-1.5">
-
                   <i data-lucide="radio" class="w-3 h-3 text-rose-400"></i>
-
-                  <span class="text-slate-200">C-ITS RSU</span>
-
+                  <span class="text-slate-200">C-ITS RSU (<span id="count-cits">0</span>)</span>
                 </div>
-
-              </label>
-
-
-
-              <!-- Utility Pole Layer -->
-
-              <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80 cursor-pointer transition">
-
-                <input type="checkbox" id="layer-poles" class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
-
-                <div class="flex items-center space-x-1.5">
-
-                  <i data-lucide="zap" class="w-3 h-3 text-yellow-400"></i>
-
-                  <span class="text-slate-200">전주 (<span id="count-poles">7</span>)</span>
-
-                </div>
-
               </label>
 
             </div>
@@ -1850,7 +1780,7 @@
 
         cits: L.layerGroup(),
 
-        poles: L.layerGroup(),
+        
 
         inspectionHighlight: L.layerGroup(),
 
@@ -3148,33 +3078,7 @@
 
 
 
-      // 5. Render Utility Poles
 
-      if (document.getElementById('layer-poles').checked) {
-
-        AppState.data.poles.forEach(p => {
-
-          if (!p.lat || !p.lng) return;
-
-          const poleIcon = L.divIcon({
-
-            className: 'custom-icon',
-
-            html: `<div class="w-4 h-4 rounded bg-yellow-500 text-slate-950 flex items-center justify-center shadow border border-white cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition"><i data-lucide="zap" class="w-2.5 h-2.5"></i></div>`,
-
-            iconSize: [16, 16]
-
-          });
-
-          const poleMarker = L.marker([p.lat, p.lng], { icon: poleIcon });
-
-          poleMarker.on('click', () => showDetailDrawer('pole', p));
-
-          AppState.layerGroups.poles.addLayer(poleMarker);
-
-        });
-
-      }
 
 
 
@@ -5854,9 +5758,19 @@
 
       if (countCables) countCables.innerText = `${(jsonData.cables || []).length}`;
 
-      const countPoles = document.getElementById('count-poles');
+            const cctvCount = (jsonData.manholes || []).filter(m => m.cctv).length;
+      const vdsCount = (jsonData.manholes || []).filter(m => m.vds).length;
+      const vmsCount = (jsonData.manholes || []).filter(m => m.vms).length;
+      const citsCount = (jsonData.manholes || []).filter(m => m.cits).length;
 
-      if (countPoles) countPoles.innerText = `${(jsonData.poles || []).length}`;
+      const countCCTV = document.getElementById('count-cctv');
+      if (countCCTV) countCCTV.innerText = `${cctvCount}`;
+      const countVDS = document.getElementById('count-vds');
+      if (countVDS) countVDS.innerText = `${vdsCount}`;
+      const countVMS = document.getElementById('count-vms');
+      if (countVMS) countVMS.innerText = `${vmsCount}`;
+      const countCITS = document.getElementById('count-cits');
+      if (countCITS) countCITS.innerText = `${citsCount}`;
 
 
 
@@ -6026,7 +5940,7 @@
 
       document.getElementById('btn-toggle-all-layers')?.addEventListener('click', () => {
 
-        const layerIds = ['layer-offices', 'layer-interchanges', 'layer-manholes', 'layer-conduits', 'layer-cables', 'layer-cctv', 'layer-vds', 'layer-vms', 'layer-cits', 'layer-poles'];
+        const layerIds = ['layer-offices', 'layer-interchanges', 'layer-manholes', 'layer-conduits', 'layer-cables', 'layer-cctv', 'layer-vds', 'layer-vms', 'layer-cits'];
 
         const checkboxes = layerIds.map(id => document.getElementById(id)).filter(Boolean);
 
@@ -6042,7 +5956,7 @@
 
       // Layer checkboxes
 
-      ['layer-offices', 'layer-interchanges', 'layer-manholes', 'layer-conduits', 'layer-cables', 'layer-cctv', 'layer-vds', 'layer-vms', 'layer-cits', 'layer-poles'].forEach(id => {
+      ['layer-offices', 'layer-interchanges', 'layer-manholes', 'layer-conduits', 'layer-cables', 'layer-cctv', 'layer-vds', 'layer-vms', 'layer-cits'].forEach(id => {
 
         const el = document.getElementById(id);
 
