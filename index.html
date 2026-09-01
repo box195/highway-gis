@@ -1634,9 +1634,9 @@
 
           <div>
 
-            <h3 class="font-bold text-sm text-white">로컬 암호화 저장소 (IndexedDB)</h3>
+            <h3 class="font-bold text-sm text-white">로컬 암호화 보안 저장소</h3>
 
-            <p class="text-[11px] text-slate-400">Web Crypto AES-256 클라이언트 단독 저장 엔진</p>
+            <p class="text-[11px] text-slate-400">Web Crypto AES-256 로컬 단독 구동 엔진</p>
 
           </div>
 
@@ -1687,9 +1687,7 @@
         </div>
 
         <p class="text-[10px] text-slate-400 leading-relaxed">
-
-          데이터는 브라우저 전용 암호화 샌드박스(IndexedDB)에 <b>AES-GCM 256비트 암호화</b>되어 보관되며, GitHub나 외부 서버로 일체 전송되지 않습니다. 브라우저를 새로고침하거나 다시 접속해도 자동 로드됩니다.
-
+          모든 인프라 데이터는 단말기(로컬 브라우저) 내 <b>AES-GCM 256비트 암호화 샌드박스</b>에서만 독립적으로 복호화 및 연산되며, <b>외부 서버로 일체 전송되지 않는 100% 로컬 독립 보안 환경</b>에서 구동됩니다.
         </p>
 
       </div>
@@ -6240,7 +6238,7 @@
 
           loadDataPack(combData, false, true);
 
-          alert(`🔒 [총 ${validPacks.length}개 지사 암호화 데이터팩 로드 및 로컬 DB 저장 완료!]\n- 등록된 지사: ${Object.values(AppState.loadedDataPacks).map(p => p.branch_name).join(', ')}\n- [전체 지사 통합 현황] 모드로 가동되며 브라우저 IndexedDB에 영구 암호화 보관됩니다.`);
+          alert(`🔒 [총 ${validPacks.length}개 지사 암호화 데이터팩 로드 및 로컬 DB 저장 완료!]\n- 등록된 지사: ${Object.values(AppState.loadedDataPacks).map(p => p.branch_name).join(', ')}\n- [전체 지사 통합 현황] 모드로 가동되며 로컬 보안 저장소에 영구 암호화 보관됩니다.`);
 
         } else {
 
@@ -6252,7 +6250,7 @@
 
           loadDataPack(single, true);
 
-          alert(`🔒 [${single.branch_name || '지사'} 암호화 데이터팩 로드 완료!]\n- 브라우저 IndexedDB에 영구 암호화 보관되어 다음 접속 시 자동 로드됩니다.`);
+          alert(`🔒 [${single.branch_name || '지사'} 암호화 데이터팩 로드 완료!]\n- 로컬 보안 저장소에 영구 암호화 보관되어 다음 접속 시 자동 로드됩니다.`);
 
         }
 
@@ -6876,7 +6874,7 @@
 
       document.getElementById('btn-clear-storage')?.addEventListener('click', async () => {
 
-        if (!confirm('브라우저 로컬 암호화 저장소(IndexedDB)의 모든 지사 데이터를 완전히 초기화하시겠습니까?')) {
+        if (!confirm('브라우저 로컬 암호화 보안 저장소의 모든 지사 데이터를 완전히 초기화하시겠습니까?')) {
 
           return;
 
