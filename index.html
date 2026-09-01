@@ -494,7 +494,7 @@
 
         <i data-lucide="calendar" class="w-3.5 h-3.5 text-indigo-300"></i>
 
-        <span>8월 점검계획</span>
+        <span>9월 점검계획</span>
 
       </button>
 
@@ -558,7 +558,7 @@
 
       </button>
 
-      <button id="btn-plan-mobile" title="8월 점검계획" class="p-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/50 transition cursor-pointer">
+      <button id="btn-plan-mobile" title="9월 점검계획" class="p-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/50 transition cursor-pointer">
 
         <i data-lucide="calendar" class="w-4 h-4"></i>
 
@@ -976,7 +976,7 @@
 
                 <i data-lucide="calendar" class="w-4 h-4 text-indigo-400"></i>
 
-                <span>2026년 8월 ITS 점검계획표</span>
+                <span>2026년 9월 ITS 점검계획표</span>
 
               </div>
 
@@ -1022,7 +1022,7 @@
 
             <div class="text-[11px] font-bold text-slate-300 flex items-center justify-between">
 
-              <span>8월 달력에서 날짜를 선택하세요</span>
+              <span>9월 달력에서 날짜를 선택하세요</span>
 
               <button id="btn-clear-plan-date" class="hidden text-[10px] text-cyan-400 hover:underline flex items-center gap-1">
 
@@ -1118,7 +1118,7 @@
 
             <div id="inspection-list-title" class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider px-1">
 
-              8월 전체 점검 일정 리스트
+              9월 전체 점검 일정 리스트
 
             </div>
 
@@ -4268,21 +4268,14 @@
 
       
 
-      // 2026 August 1st starts on Saturday (idx 6)
-
+            // 2026 September 1st starts on Tuesday (idx 2)
       let gridHtml = '';
-
-      for (let i = 0; i < 6; i++) {
-
+      for (let i = 0; i < 2; i++) {
         gridHtml += `<div class="p-1 text-slate-700 text-[10px]">&nbsp;</div>`;
-
       }
 
-
-
-      for (let day = 1; day <= 31; day++) {
-
-        const dayKey = `2026-08-${day < 10 ? '0' + day : day}`;
+      for (let day = 1; day <= 30; day++) {
+        const dayKey = `2026-09-${day < 10 ? '0' + day : day}`;
 
         const plan = schedule[dayKey];
 
@@ -4320,7 +4313,7 @@
 
         } else {
 
-          const dateObj = new Date(2026, 7, day);
+          const dateObj = new Date(2026, 8, day);
 
           const dow = dateObj.getDay();
 
@@ -4362,7 +4355,7 @@
 
       if (listTitle) {
 
-        listTitle.innerText = `8월 전체 점검 일정 리스트 (${planKeys.length}건)`;
+        listTitle.innerText = `9월 전체 점검 일정 리스트 (${planKeys.length}건)`;
 
       }
 
@@ -4404,7 +4397,7 @@
 
                 <span class="px-1.5 py-0.2 rounded text-[10px] font-bold ${isOffice ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'}">
 
-                  8월 ${p.day}일 (${getDayOfWeek(k)})
+                  9월 ${p.day}일 (${getDayOfWeek(k)})
 
                 </span>
 
@@ -4476,15 +4469,15 @@
 
 
 
-      // 3. Fallback matching day in 2026-08
+      // 3. Fallback matching day in 2026-09
 
-      const augDay = `2026-08-${da}`;
+      const septDay = `2026-09-${da}`;
 
-      if (schedule[augDay]) return augDay;
+      if (schedule[septDay]) return septDay;
 
-      const augUpcoming = dates.find(d => d >= augDay);
+      const septUpcoming = dates.find(d => d >= septDay);
 
-      if (augUpcoming) return augUpcoming;
+      if (septUpcoming) return septUpcoming;
 
 
 
@@ -4534,7 +4527,7 @@
 
         banner.classList.remove('hidden');
 
-        bannerBadge.innerText = `8/${plan.day} (${getDayOfWeek(dateKey)})`;
+        bannerBadge.innerText = `9/${plan.day} (${getDayOfWeek(dateKey)})`;
 
         bannerTitle.innerText = plan.title;
 
@@ -7240,7 +7233,7 @@
 
               <div>
 
-                <div class="text-[10px] text-indigo-300 font-medium">8월 정기 점검 일정</div>
+                <div class="text-[10px] text-indigo-300 font-medium">9월 정기 점검 일정</div>
 
                 <div class="text-[11px] text-slate-300">월간 M / 분기 Q / 반기 H 점검 계획</div>
 
