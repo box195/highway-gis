@@ -3935,270 +3935,194 @@
         `;
 
       } else if (type === 'inspection') {
-
         badge.className = 'px-2 py-0.5 rounded text-[10px] font-bold ' + (item.type === 'OFFICE' ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30');
-
         badge.innerText = item.type === 'OFFICE' ? '🏢 거점 구내점검' : '🛣️ 선로 현장점검';
-
         title.innerText = item.title;
-
-
 
         let bodyHtml = '';
 
-
-
         if (item.type === 'OFFICE') {
-
           const off = item.office_match || {};
+          
+          // Group transmission by office
+          const transByOff = {};
+          (item.transmission || []).forEach(t => {
+            const oName = t.office || item.office_name;
+            if (!transByOff[oName]) transByOff[oName] = [];
+            transByOff[oName].push(t);
+          });
+
+          // Group wired by office
+          const wiredByOff = {};
+          (item.wired || []).forEach(w => {
+            const oName = w.office || item.office_name;
+            if (!wiredByOff[oName]) wiredByOff[oName] = [];
+            wiredByOff[oName].push(w);
+          });
 
           bodyHtml = `
-
             <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
-
               <div class="flex justify-between items-center text-slate-300 text-xs">
-
                 <span class="text-slate-400">점검 일자</span>
-
                 <span class="font-bold text-white">${item.date} (${getDayOfWeek(item.date)})</span>
-
               </div>
-
               <div class="flex justify-between items-center text-slate-300 text-xs">
-
-                <span class="text-slate-400">점검 대상 거점</span>
-
+                <span class="text-slate-400">점검 대상 국사</span>
                 <span class="font-bold text-blue-400">${item.office_name}</span>
-
               </div>
-
               <div class="flex justify-between items-center text-slate-300 text-xs">
-
                 <span class="text-slate-400">점검 주기</span>
-
-                <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-medium">월간점검 (M)</span>
-
+                <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-medium">${item.cycle || '월간(M) · 분기(Q)'}</span>
               </div>
-
               ${off.address ? `
-
               <div class="flex justify-between items-center text-slate-300 text-xs">
-
                 <span class="text-slate-400">도로명 주소</span>
-
                 <span class="text-slate-200 text-right max-w-[200px] truncate">${off.address}</span>
-
               </div>` : ''}
-
               ${off.jibun_address ? `
-
               <div class="flex justify-between items-center text-slate-300 text-xs">
-
                 <span class="text-slate-400">지번 주소</span>
-
                 <span class="text-amber-300 font-medium text-right max-w-[200px] truncate">${off.jibun_address}</span>
-
               </div>` : ''}
-
             </div>
 
-
-
-            <!-- 전송설비 점검 목록 -->
-
-            ${item.transmission && item.transmission.length > 0 ? `
-
-            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
-
-              <div class="text-[11px] font-bold text-slate-300 flex items-center justify-between">
-
-                <span class="flex items-center gap-1.5"><i data-lucide="radio" class="w-4 h-4 text-blue-400"></i> 전송설비 점검 대상</span>
-
-                <span class="text-[10px] px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono font-bold">${item.transmission.length}종</span>
-
+            <!-- [1. 전송설비 세부 점검내역] -->
+            ${Object.keys(transByOff).length > 0 ? `
+            <div class="p-3 bg-slate-950 rounded-xl border border-blue-500/30 space-y-2">
+              <div class="text-[11px] font-bold text-blue-300 flex items-center justify-between">
+                <span class="flex items-center gap-1.5"><i data-lucide="radio" class="w-4 h-4 text-blue-400"></i> 1. 전송설비 점검 대상</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono font-bold">총 ${item.transmission.length}종</span>
               </div>
-
-              <div class="grid grid-cols-2 gap-1.5 text-xs">
-
-                ${item.transmission.map(t => `
-
-                  <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
-
-                    <span class="font-medium text-slate-200">${t.facility}</span>
-
-                    <span class="text-[10px] px-1.5 py-0.2 rounded bg-slate-800 text-amber-300 font-bold">${t.cycle}</span>
-
-                  </div>
-
-                `).join('')}
-
-              </div>
-
-            </div>` : ''}
-
-
-
-            <!-- 유선/방범설비 점검 목록 -->
-
-            ${item.wired && item.wired.length > 0 ? `
-
-            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
-
-              <div class="text-[11px] font-bold text-slate-300 flex items-center justify-between">
-
-                <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i> 유선설비 점검 대상</span>
-
-                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">${item.wired.length}종</span>
-
-              </div>
-
-              <div class="grid grid-cols-2 gap-1.5 text-xs">
-
-                ${item.wired.map(w => `
-
-                  <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
-
-                    <span class="font-medium text-slate-200">${w.facility}</span>
-
-                    <span class="text-[10px] px-1.5 py-0.2 rounded bg-slate-800 text-amber-300 font-bold">${w.cycle}</span>
-
-                  </div>
-
-                `).join('')}
-
-              </div>
-
-            </div>` : ''}
-
-          `;
-
-        } else if (item.type === 'LINE') {
-
-          const l = item.line;
-
-          bodyHtml = `
-
-            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
-
-              <div class="flex justify-between items-center text-slate-300 text-xs">
-
-                <span class="text-slate-400">점검 일자</span>
-
-                <span class="font-bold text-white">${item.date} (${getDayOfWeek(item.date)})</span>
-
-              </div>
-
-              <div class="flex justify-between items-center text-slate-300 text-xs">
-
-                <span class="text-slate-400">고속도로 구간</span>
-
-                <span class="font-bold text-emerald-400">${l.section_label}</span>
-
-              </div>
-
-              <div class="flex justify-between items-center text-slate-300 text-xs">
-
-                <span class="text-slate-400">점검 이정 범위</span>
-
-                <span class="font-mono text-cyan-300 font-bold">${l.milepost_range} km</span>
-
-              </div>
-
-              <div class="flex justify-between items-center text-slate-300 text-xs">
-
-                <span class="text-slate-400">점검 주기</span>
-
-                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-medium">${l.cycle}</span>
-
-              </div>
-
-            </div>
-
-
-
-            <!-- 점검 대상 맨홀/수공 리스트 -->
-
-            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
-
-              <div class="text-[11px] font-bold text-slate-300 flex items-center justify-between">
-
-                <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4 text-cyan-400"></i> 점검 대상 맨홀/수공 (${l.manholes.length}개소)</span>
-
-                <span class="text-[10px] text-slate-400">클릭 시 지도 이동</span>
-
-              </div>
-
-              <div class="space-y-1.5 max-h-56 overflow-y-auto pr-0.5">
-
-                ${l.manholes.map((mh, idx) => `
-
-                  <div onclick="focusManholeDirect('${mh.name}')" class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 cursor-pointer flex items-center justify-between transition">
-
-                    <div class="flex items-center gap-2">
-
-                      <span class="w-5 h-5 rounded-full bg-emerald-600/30 text-emerald-400 border border-emerald-500/40 text-[10px] font-bold flex items-center justify-center">#${idx + 1}</span>
-
-                      <div>
-
-                        <div class="font-bold text-white text-xs flex items-center gap-1.5">
-
-                          <span>${mh.name}</span>
-
-                          <span class="text-[10px] text-slate-400 font-normal">(${mh.category} · ${mh.type})</span>
-
-                        </div>
-
-                        <div class="text-[11px] text-slate-400">${mh.section || l.section_label} · 이정 ${mh.milepost || '-'}km (${mh.bound || '상행선'})</div>
-
+              ${Object.entries(transByOff).map(([oName, items]) => `
+                <div class="space-y-1">
+                  ${Object.keys(transByOff).length > 1 ? `<div class="text-[10px] font-bold text-slate-400 pl-1">📍 ${oName}</div>` : ''}
+                  <div class="grid grid-cols-2 gap-1.5 text-xs">
+                    ${items.map(t => `
+                      <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
+                        <span class="font-medium text-slate-200">${t.facility}</span>
+                        <span class="text-[10px] px-1.5 py-0.2 rounded font-bold ${t.cycle === 'M' ? 'bg-blue-500/20 text-blue-300' : (t.cycle === 'Q' ? 'bg-amber-500/20 text-amber-300' : 'bg-rose-500/20 text-rose-300')}">${t.cycle}</span>
                       </div>
-
-                    </div>
-
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
-
+                    `).join('')}
                   </div>
-
-                `).join('')}
-
-              </div>
-
-            </div>
-
-
-
-            <!-- 특수 설비 (교량첨가, 접속함체) -->
-
-            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
-
-              <div class="text-[11px] font-bold text-slate-300">특수 및 부속 설비 점검</div>
-
-              <div class="grid grid-cols-2 gap-1.5 text-xs">
-
-                <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
-
-                  <span class="text-[10px] text-slate-400">교량첨가 (반기 H)</span>
-
-                  <div class="font-bold text-amber-300">${l.bridge || '해당 없음'}</div>
-
                 </div>
+              `).join('')}
+            </div>` : ''}
 
-                <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
-
-                  <span class="text-[10px] text-slate-400">광접속함체 (반기 H)</span>
-
-                  <div class="font-bold text-cyan-300">${l.joint_box_h ? l.joint_box_h + '개소' : (l.joint_box_q ? l.joint_box_q + '개소(Q)' : '없음')}</div>
-
-                </div>
-
+            <!-- [2. 유선 / 방범설비 세부 점검내역] -->
+            ${Object.keys(wiredByOff).length > 0 ? `
+            <div class="p-3 bg-slate-950 rounded-xl border border-emerald-500/30 space-y-2">
+              <div class="text-[11px] font-bold text-emerald-300 flex items-center justify-between">
+                <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i> 2. 유선 및 방범설비 점검 대상</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">총 ${item.wired.length}종</span>
               </div>
+              ${Object.entries(wiredByOff).map(([oName, items]) => `
+                <div class="space-y-1">
+                  ${Object.keys(wiredByOff).length > 1 ? `<div class="text-[10px] font-bold text-slate-400 pl-1">📍 ${oName}</div>` : ''}
+                  <div class="grid grid-cols-2 gap-1.5 text-xs">
+                    ${items.map(w => `
+                      <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
+                        <span class="font-medium text-slate-200">${w.facility}</span>
+                        <span class="text-[10px] px-1.5 py-0.2 rounded font-bold ${w.cycle === 'M' ? 'bg-blue-500/20 text-blue-300' : (w.cycle === 'Q' ? 'bg-amber-500/20 text-amber-300' : 'bg-rose-500/20 text-rose-300')}">${w.cycle}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              `).join('')}
+            </div>` : ''}
 
-            </div>
-
+            <!-- [3. 케이블 & OFD 분기점검 내역] -->
+            ${(item.cable_check || item.ofd_check) ? `
+            <div class="p-3 bg-slate-950 rounded-xl border border-purple-500/30 space-y-2">
+              <div class="text-[11px] font-bold text-purple-300 flex items-center gap-1.5">
+                <i data-lucide="git-branch" class="w-4 h-4 text-purple-400"></i> 3. 광케이블 & 국소 OFD 분기점검
+              </div>
+              <div class="space-y-1.5 text-xs">
+                ${item.cable_check ? `
+                  <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
+                    <div>
+                      <div class="font-bold text-purple-300">${item.cable_check.name}</div>
+                      <div class="text-[10px] text-slate-400">${item.cable_check.detail || '광케이블 인입 및 분기 상태'}</div>
+                    </div>
+                    <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-bold border border-purple-500/30">${item.cable_check.cycle}</span>
+                  </div>
+                ` : ''}
+                ${item.ofd_check ? `
+                  <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
+                    <div>
+                      <div class="font-bold text-cyan-300">${item.ofd_check.name}</div>
+                      <div class="text-[10px] text-slate-400">${item.ofd_check.detail || '통신실 OFD 분기점검'}</div>
+                    </div>
+                    <span class="text-[10px] px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/30">${item.ofd_check.cycle}</span>
+                  </div>
+                ` : ''}
+              </div>
+            </div>` : ''}
           `;
+        } else if (item.type === 'LINE') {
+          const l = item.line;
+          bodyHtml = `
+            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
+              <div class="flex justify-between items-center text-slate-300 text-xs">
+                <span class="text-slate-400">점검 일자</span>
+                <span class="font-bold text-white">${item.date} (${getDayOfWeek(item.date)})</span>
+              </div>
+              <div class="flex justify-between items-center text-slate-300 text-xs">
+                <span class="text-slate-400">고속도로 구간</span>
+                <span class="font-bold text-emerald-400">${l.section_label}</span>
+              </div>
+              <div class="flex justify-between items-center text-slate-300 text-xs">
+                <span class="text-slate-400">점검 이정 범위</span>
+                <span class="font-mono text-cyan-300 font-bold">${l.milepost_range} km</span>
+              </div>
+              <div class="flex justify-between items-center text-slate-300 text-xs">
+                <span class="text-slate-400">점검 주기</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-medium">${l.cycle}</span>
+              </div>
+            </div>
 
+            <!-- [1. 선로설비 - 점검 대상 맨홀/수공 리스트] -->
+            <div class="p-3 bg-slate-950 rounded-xl border border-emerald-500/30 space-y-2">
+              <div class="text-[11px] font-bold text-emerald-300 flex items-center justify-between">
+                <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4 text-cyan-400"></i> 1. 선로 맨홀/수공 점검 (${l.manholes.length}개소)</span>
+                <span class="text-[10px] text-slate-400">클릭 시 지도 이동</span>
+              </div>
+              <div class="space-y-1.5 max-h-56 overflow-y-auto pr-0.5">
+                ${l.manholes.map((mh, idx) => `
+                  <div onclick="focusManholeDirect('${mh.name}')" class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 cursor-pointer flex items-center justify-between transition">
+                    <div class="flex items-center gap-2">
+                      <span class="w-5 h-5 rounded-full bg-emerald-600/30 text-emerald-400 border border-emerald-500/40 text-[10px] font-bold flex items-center justify-center">#${idx + 1}</span>
+                      <div>
+                        <div class="font-bold text-white text-xs flex items-center gap-1.5">
+                          <span>${mh.name}</span>
+                          <span class="text-[10px] text-slate-400 font-normal">(${mh.category} · ${mh.type})</span>
+                        </div>
+                        <div class="text-[11px] text-slate-400">${mh.section || l.section_label} · 이정 ${mh.milepost || '-'}km (${mh.bound || '상행선'})</div>
+                      </div>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- [2. 선로 부속 설비 (교량첨가, 접속함체)] -->
+            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
+              <div class="text-[11px] font-bold text-slate-300 flex items-center gap-1.5">
+                <i data-lucide="layers" class="w-4 h-4 text-amber-400"></i> 2. 특수 및 부속 설비 점검
+              </div>
+              <div class="grid grid-cols-2 gap-1.5 text-xs">
+                <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
+                  <span class="text-[10px] text-slate-400">교량첨가 (반기 H)</span>
+                  <div class="font-bold text-amber-300">${l.bridge || '해당 없음'}</div>
+                </div>
+                <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
+                  <span class="text-[10px] text-slate-400">광접속함체 (${l.joint_box_cycle || '반기 H'})</span>
+                  <div class="font-bold text-cyan-300">${l.joint_box_count ? l.joint_box_count + '개소' : (l.joint_box_h ? l.joint_box_h + '개소' : (l.joint_box_q ? l.joint_box_q + '개소' : '없음'))}</div>
+                </div>
+              </div>
+            </div>
+          `;
         }
-
-
 
         body.innerHTML = bodyHtml;
 
