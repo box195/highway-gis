@@ -4082,7 +4082,7 @@
               </div>
               <div class="space-y-1.5 max-h-56 overflow-y-auto pr-0.5">
                 ${l.manholes.map((mh, idx) => `
-                  <div onclick="focusManholeDirect('${mh.name}')" class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 cursor-pointer flex items-center justify-between transition">
+                  <div onclick="focusManholeDirect('${mh.name}', '${item.branch_code || (item.branch_name && item.branch_name.includes('광주') ? 'GWANGJU' : 'DONGSEOUL')}')" class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 cursor-pointer flex items-center justify-between transition">
                     <div class="flex items-center gap-2">
                       <span class="w-5 h-5 rounded-full bg-emerald-600/30 text-emerald-400 border border-emerald-500/40 text-[10px] font-bold flex items-center justify-center">#${idx + 1}</span>
                       <div>
@@ -4626,18 +4626,22 @@
 
 
 
-    function focusManholeDirect(mhName) {
-
-      const mh = (AppState.data.manholes || []).find(m => m.name === mhName);
-
-      if (mh && mh.lat && mh.lng) {
-
-        AppState.map.flyTo([mh.lat, mh.lng], 17, { animate: true, duration: 0.8 });
-
-        showDetailDrawer('manhole', mh);
-
+        function focusManholeDirect(mhName, branchCode) {
+      let bCode = branchCode;
+      if (!bCode && AppState.activeInspectionDate && AppState.data.inspection_schedule) {
+        const p = AppState.data.inspection_schedule[AppState.activeInspectionDate];
+        if (p) bCode = p.branch_code || (p.branch_name && p.branch_name.includes('광주') ? 'GWANGJU' : 'DONGSEOUL');
       }
 
+      // Priority matching: matching name and branch_code
+      const mhs = AppState.data.manholes || [];
+      const mh = mhs.find(m => m.name === mhName && (!bCode || !m.branch_code || m.branch_code === bCode))
+              || mhs.find(m => m.name === mhName);
+
+      if (mh && mh.lat && mh.lng) {
+        AppState.map.flyTo([mh.lat, mh.lng], 17, { animate: true, duration: 0.8 });
+        showDetailDrawer('manhole', mh);
+      }
     }
 
 
@@ -7714,82 +7718,56 @@
 
 
 
-    window.addEventListener('DOMContentLoaded', async () => {
-
+        window.addEventListener('DOMContentLoaded', async () => {
       initMap();
-
       setupEventListeners();
-
       lucide.createIcons();
 
-
-
-      // 1. Check Local Encrypted IndexedDB Storage first!
-
       try {
+        let loadedPacks = {};
 
-        const savedPacks = await SecureDB.loadAllBranchPacks();
-
-        const savedKeys = Object.keys(savedPacks);
-
-        if (savedKeys.length > 0) {
-
-          AppState.loadedDataPacks = savedPacks;
-
-          if (savedKeys.length >= 2) {
-
-            updateBranchDropdown('COMBINED');
-
-            const combData = getCombinedDataPack();
-
-            loadDataPack(combData, false, true);
-
-          } else {
-
-            const firstCode = savedKeys[0];
-
-            updateBranchDropdown(firstCode);
-
-            loadDataPack(savedPacks[firstCode], false, true);
-
+        // 1. Auto-decrypt embedded encrypted branch packs from server bundle if available
+        if (window.ENCRYPTED_BRANCH_PACKS && typeof CryptoEngine !== 'undefined') {
+          for (const [bKey, encPack] of Object.entries(window.ENCRYPTED_BRANCH_PACKS)) {
+            try {
+              const decrypted = await CryptoEngine.decryptDataPack(encPack);
+              if (decrypted) {
+                loadedPacks[bKey] = decrypted;
+                await SecureDB.saveBranchPack(bKey, decrypted);
+              }
+            } catch (e) {
+              console.warn(`[AutoDecrypt] Could not decrypt ${bKey}:`, e);
+            }
           }
-
-          console.log(`[SecureDB] Auto-loaded ${savedKeys.length} branches from Encrypted IndexedDB`);
-
-        } else if (window.BRANCH_DATA_PACKS && Object.keys(window.BRANCH_DATA_PACKS).length > 0) {
-
-          Object.keys(window.BRANCH_DATA_PACKS).forEach(k => {
-
-            AppState.loadedDataPacks[k] = window.BRANCH_DATA_PACKS[k];
-
-          });
-
-          updateBranchDropdown('DONGSEOUL');
-
-          loadDataPack(window.BRANCH_DATA_PACKS['DONGSEOUL'] || Object.values(window.BRANCH_DATA_PACKS)[0]);
-
-        } else if (window.MASTER_GIS_DATA) {
-
-          loadDataPack(window.MASTER_GIS_DATA);
-
-        } else {
-
-          updateBranchDropdown();
-
         }
 
+        // 2. If nothing bundled, fallback to local IndexedDB
+        if (Object.keys(loadedPacks).length === 0) {
+          loadedPacks = await SecureDB.loadAllBranchPacks();
+        }
+
+        const packKeys = Object.keys(loadedPacks);
+        if (packKeys.length > 0) {
+          AppState.loadedDataPacks = loadedPacks;
+          if (packKeys.length >= 2) {
+            updateBranchDropdown('COMBINED');
+            const combData = getCombinedDataPack();
+            loadDataPack(combData, false, true);
+          } else {
+            const firstCode = packKeys[0];
+            updateBranchDropdown(firstCode);
+            loadDataPack(loadedPacks[firstCode], false, true);
+          }
+          console.log(`[AutoLoad] Successfully activated ${packKeys.length} branch packs!`);
+        } else {
+          updateBranchDropdown();
+        }
       } catch (err) {
-
-        console.error('[SecureDB] Auto-load failed:', err);
-
+        console.error('[AutoLoad] Initialization error:', err);
         updateBranchDropdown();
-
       }
 
-
-
       updateStorageModalUI();
-
     });
 
   </script>
