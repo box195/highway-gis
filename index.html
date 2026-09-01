@@ -2194,13 +2194,7 @@
 
           // Render only the target Office with highlight ring (Strict branch isolation)
 
-          const off = activePlan.office_match || (AppState.data.offices || []).find(o => {
-
-            if (planBranch && o.branch_code && o.branch_code !== planBranch) return false;
-
-            return activePlan.office_name && (o.name === activePlan.office_name || o.name.includes(activePlan.office_name.replace('영업소', '')));
-
-          });
+                    const off = findMatchingOffice(activePlan);
 
           if (off && off.lat && off.lng) {
 
@@ -3942,7 +3936,7 @@
         let bodyHtml = '';
 
         if (item.type === 'OFFICE') {
-          const off = item.office_match || {};
+          const off = findMatchingOffice(item) || {};
           
           // Group transmission by office
           const transByOff = {};
@@ -4177,6 +4171,69 @@
     }
 
 
+
+        function findMatchingOffice(plan) {
+      if (!plan) return null;
+      if (plan.office_match && plan.office_match.lat && plan.office_match.lng) return plan.office_match;
+      const offices = AppState.data.offices || [];
+      const pName = (plan.office_name || plan.title || '').trim();
+      const planBranch = plan.branch_code || (plan.branch_name && plan.branch_name.includes('동서울') ? 'DONGSEOUL' : (plan.branch_name && plan.branch_name.includes('광주') ? 'GWANGJU' : null));
+      
+      const filteredOffices = offices.filter(o => !planBranch || !o.branch_code || o.branch_code === planBranch);
+
+      // 1. Specific Keyword Disambiguation (Exact Office Mapping)
+      if (pName.includes('경기광주영업소') || pName.includes('광주영업소')) {
+        const found = filteredOffices.find(o => o.name.includes('경기광주영업소') || (o.name.includes('경기광주') && o.name.includes('영업소')));
+        if (found) return found;
+      }
+      if (pName.includes('경기광주지사')) {
+        const found = filteredOffices.find(o => o.name.includes('경기광주지사') || (o.name.includes('경기광주') && !o.name.includes('영업소')));
+        if (found) return found;
+      }
+      if (pName.includes('동서울지사')) {
+        const found = filteredOffices.find(o => o.name.includes('동서울지사') || o.name.includes('한국도로공사 동서울'));
+        if (found) return found;
+      }
+      if (pName.includes('서울경기본부')) {
+        const found = filteredOffices.find(o => o.name.includes('서울경기본부'));
+        if (found) return found;
+      }
+      if (pName.includes('동서울영업소')) {
+        const found = filteredOffices.find(o => o.name.includes('동서울영업소') || (o.name.includes('동서울') && o.name.includes('영업소')));
+        if (found) return found;
+      }
+      if (pName.includes('성남')) {
+        const found = filteredOffices.find(o => o.name.includes('성남'));
+        if (found) return found;
+      }
+      if (pName.includes('청계')) {
+        const found = filteredOffices.find(o => o.name.includes('청계'));
+        if (found) return found;
+      }
+      if (pName.includes('구리')) {
+        const found = filteredOffices.find(o => o.name.includes('구리'));
+        if (found) return found;
+      }
+      if (pName.includes('토평')) {
+        const found = filteredOffices.find(o => o.name.includes('토평'));
+        if (found) return found;
+      }
+      if (pName.includes('곤지암')) {
+        const found = filteredOffices.find(o => o.name.includes('곤지암'));
+        if (found) return found;
+      }
+      if (pName.includes('서이천')) {
+        const found = filteredOffices.find(o => o.name.includes('서이천'));
+        if (found) return found;
+      }
+      if (pName.includes('하남')) {
+        const found = filteredOffices.find(o => o.name.includes('하남영업소') || (o.name.includes('하남') && !o.name.includes('지사')));
+        if (found) return found;
+      }
+
+      // 2. Generic exact/partial match
+      return filteredOffices.find(o => o.name === pName || pName.includes(o.name) || o.name.includes(pName)) || filteredOffices[0] || null;
+    }
 
     function renderInspectionCalendar() {
 
@@ -4481,13 +4538,7 @@
 
       if (plan.type === 'OFFICE') {
 
-        const offObj = plan.office_match || (AppState.data.offices || []).find(o => {
-
-          if (planBranch && o.branch_code && o.branch_code !== planBranch) return false;
-
-          return plan.office_name && (o.name === plan.office_name || o.name.includes(plan.office_name.replace('영업소', '')));
-
-        });
+        const offObj = findMatchingOffice(plan);
 
         if (offObj && offObj.lat && offObj.lng) {
 
