@@ -990,7 +990,7 @@
 
 
 
-        <span>9월 점검계획</span>
+        <span>10월 점검계획</span>
 
 
 
@@ -1118,7 +1118,7 @@
 
 
 
-      <button id="btn-plan-mobile" title="9월 점검계획" class="p-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/50 transition cursor-pointer">
+      <button id="btn-plan-mobile" title="10월 점검계획" class="p-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/50 transition cursor-pointer">
 
 
 
@@ -1954,7 +1954,7 @@
 
 
 
-                <span>2026년 9월 ITS 점검계획표</span>
+                <span>2026년 10월 ITS 점검계획표</span>
 
 
 
@@ -2046,7 +2046,7 @@
 
 
 
-              <span>9월 달력에서 날짜를 선택하세요</span>
+              <span>10월 달력에서 날짜를 선택하세요</span>
 
 
 
@@ -2238,7 +2238,7 @@
 
 
 
-              9월 전체 점검 일정 리스트
+              10월 전체 점검 일정 리스트
 
 
 
@@ -3583,6 +3583,7 @@
 
 
       activeInspectionDate: null,
+      activeInspectionPlanIndex: 0,
 
 
 
@@ -4358,7 +4359,8 @@
 
 
 
-      const activePlan = isInspectionActive ? AppState.data.inspection_schedule[AppState.activeInspectionDate] : null;
+      const activePlanEntry = isInspectionActive ? AppState.data.inspection_schedule[AppState.activeInspectionDate] : null;
+      const activePlan = activePlanEntry?.plans ? (activePlanEntry.plans[AppState.activeInspectionPlanIndex || 0] || activePlanEntry.plans[0]) : activePlanEntry;
 
 
 
@@ -8496,11 +8498,11 @@
 
 
 
-            // 2026 September 1st starts on Tuesday (idx 2)
+            // 2026 October 1st starts on Thursday (idx 4)
 
       let gridHtml = '';
 
-      for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < 4; i++) {
 
         gridHtml += `<div class="p-1 text-slate-700 text-[10px]">&nbsp;</div>`;
 
@@ -8508,9 +8510,9 @@
 
 
 
-      for (let day = 1; day <= 30; day++) {
+      for (let day = 1; day <= 31; day++) {
 
-        const dayKey = `2026-09-${day < 10 ? '0' + day : day}`;
+        const dayKey = `2026-10-${day < 10 ? '0' + day : day}`;
 
 
 
@@ -8586,7 +8588,7 @@
 
 
 
-          const dateObj = new Date(2026, 8, day);
+          const dateObj = new Date(2026, 9, day);
 
 
 
@@ -8650,161 +8652,69 @@
 
 
 
+      const planCount = planKeys.reduce((sum, k) => sum + ((schedule[k].plans || [schedule[k]]).length), 0);
+
       if (planBadge) {
 
-
-
-        planBadge.innerText = `총 ${planKeys.length}개 일정`;
-
-
+        planBadge.innerText = `총 ${planCount}개 일정`;
 
       }
-
-
 
       const listTitle = document.getElementById('inspection-list-title');
 
-
-
       if (listTitle) {
 
-
-
-        listTitle.innerText = `9월 전체 점검 일정 리스트 (${planKeys.length}건)`;
-
-
+        listTitle.innerText = `10월 전체 점검 일정 리스트 (${planCount}건)`;
 
       }
 
+      cardsList.innerHTML = planKeys.flatMap(k => {
 
+        const entry = schedule[k];
 
-      cardsList.innerHTML = planKeys.map(k => {
+        const dayPlans = entry.plans || [entry];
 
+        return dayPlans.map((p, planIndex) => {
 
+          const isSelected = AppState.activeInspectionDate === k && (AppState.activeInspectionPlanIndex || 0) === planIndex;
 
-        const p = schedule[k];
+          const isOffice = p.type === 'OFFICE';
 
+          const cardBorder = isSelected
 
+            ? (isOffice ? 'border-blue-400 bg-blue-950/60 ring-1 ring-blue-400' : 'border-emerald-400 bg-emerald-950/60 ring-1 ring-emerald-400')
 
-        const isSelected = AppState.activeInspectionDate === k;
+            : 'border-slate-800 bg-slate-900 hover:bg-slate-800';
 
+          const branchTag = p.branch_name || (p.branch_code === 'DONGSEOUL' ? '동서울' : '경기광주');
 
+          const branchColor = p.branch_code === 'DONGSEOUL' ? 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30' : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30';
 
-        const isOffice = p.type === 'OFFICE';
+          return `
 
-
-
-        const cardBorder = isSelected 
-
-
-
-          ? (isOffice ? 'border-blue-400 bg-blue-950/60 ring-1 ring-blue-400' : 'border-emerald-400 bg-emerald-950/60 ring-1 ring-emerald-400')
-
-
-
-          : 'border-slate-800 bg-slate-900 hover:bg-slate-800';
-
-
-
-
-
-
-
-        const branchTag = p.branch_name || (p.branch_code === 'DONGSEOUL' ? '동서울' : '경기광주');
-
-
-
-        const branchColor = p.branch_code === 'DONGSEOUL' ? 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30' : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30';
-
-
-
-
-
-
-
-        return `
-
-
-
-          <div onclick="selectInspectionDate('${k}')" class="p-2.5 rounded-xl border ${cardBorder} cursor-pointer transition space-y-1">
-
-
+          <div onclick="selectInspectionDate('${k}', false, false, ${planIndex})" class="p-2.5 rounded-xl border ${cardBorder} cursor-pointer transition space-y-1">
 
             <div class="flex items-center justify-between">
 
+              <div class="flex items-center gap-1.5 min-w-0">
 
+                <span class="px-1.5 py-0.2 rounded text-[10px] font-bold border ${branchColor}">${branchTag}</span>
 
-              <div class="flex items-center gap-1.5 flex-wrap">
-
-
-
-                <span class="px-1.5 py-0.2 rounded text-[10px] font-bold border ${branchColor}">
-
-
-
-                  ${branchTag}
-
-
-
-                </span>
-
-
-
-                <span class="px-1.5 py-0.2 rounded text-[10px] font-bold ${isOffice ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'}">
-
-
-
-                  9월 ${p.day}일 (${getDayOfWeek(k)})
-
-
-
-                </span>
-
-
+                <span class="px-1.5 py-0.2 rounded text-[10px] font-bold ${isOffice ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'}">10월 ${p.day}일 (${getDayOfWeek(k)})</span>
 
                 <span class="text-xs font-bold text-white truncate max-w-[140px] sm:max-w-[170px]">${isOffice ? p.office_name : p.line?.section_label}</span>
 
-
-
               </div>
 
-
-
-              <span class="text-[9px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-300 font-medium">
-
-
-
-                ${isOffice ? '거점 M' : '선로 Q·H'}
-
-
-
-              </span>
-
-
+              <span class="text-[9px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-300 font-medium">${isOffice ? '거점 M' : '선로 Q·H'}</span>
 
             </div>
 
+            <div class="text-[11px] text-slate-400 truncate">${isOffice ? `전송설비 ${p.transmission.length}종 · 유선방범 ${p.wired.length}종 점검` : `이정 ${p.line?.milepost_range}km · 맨홀 ${p.line?.manholes.length}개소`}</div>
 
+          </div>`;
 
-            <div class="text-[11px] text-slate-400 truncate">
-
-
-
-              ${isOffice ? `전송설비 ${p.transmission.length}종 · 유선방범 ${p.wired.length}종 점검` : `이정 ${p.line?.milepost_range}km · 맨홀 ${p.line?.manholes.length}개소`}
-
-
-
-            </div>
-
-
-
-          </div>
-
-
-
-        `;
-
-
+        });
 
       }).join('');
 
@@ -8898,23 +8808,23 @@
 
 
 
-      // 3. Fallback matching day in 2026-09
+      // 3. Fallback matching day in 2026-10
 
 
 
-      const septDay = `2026-09-${da}`;
+      const octDay = `2026-10-${da}`;
 
 
 
-      if (schedule[septDay]) return septDay;
+      if (schedule[octDay]) return octDay;
 
 
 
-      const septUpcoming = dates.find(d => d >= septDay);
+      const octUpcoming = dates.find(d => d >= octDay);
 
 
 
-      if (septUpcoming) return septUpcoming;
+      if (octUpcoming) return octUpcoming;
 
 
 
@@ -8934,7 +8844,7 @@
 
 
 
-    function selectInspectionDate(dateKey, shouldOpenDrawer = false, keepSidebar = false) {
+    function selectInspectionDate(dateKey, shouldOpenDrawer = false, keepSidebar = false, planIndex = 0) {
 
 
 
@@ -8958,11 +8868,15 @@
 
 
 
-      const plan = schedule[dateKey];
+      const entry = schedule[dateKey];
 
+      if (!entry) return;
 
+      const plans = entry.plans || [entry];
 
-      if (!plan) return;
+      AppState.activeInspectionPlanIndex = Math.max(0, Math.min(planIndex, plans.length - 1));
+
+      const plan = plans[AppState.activeInspectionPlanIndex];
 
 
 
@@ -9014,7 +8928,7 @@
 
 
 
-        bannerBadge.innerText = `9/${plan.day} (${getDayOfWeek(dateKey)})`;
+        bannerBadge.innerText = `10/${plan.day} (${getDayOfWeek(dateKey)})`;
 
 
 
@@ -9206,6 +9120,7 @@
 
 
       AppState.activeInspectionDate = null;
+      AppState.activeInspectionPlanIndex = 0;
 
 
 
@@ -11307,27 +11222,31 @@
 
         Object.entries(pack.inspection_schedule || {}).forEach(([k, plan]) => {
 
-
-
-          combined.inspection_schedule[k] = {
-
-
+          const incoming = {
 
             ...plan,
 
-
-
             branch_code: plan.branch_code || pack.branch_code,
-
-
 
             branch_name: plan.branch_name || pack.branch_name || pack.branch_code
 
-
-
           };
 
+          const existing = combined.inspection_schedule[k];
 
+          if (!existing) {
+
+            combined.inspection_schedule[k] = incoming;
+
+          } else {
+
+            const plans = existing.plans ? existing.plans.slice() : [existing];
+
+            plans.push(incoming);
+
+            combined.inspection_schedule[k] = { ...plans[0], title: `${plans.length}개 지사 점검`, plans };
+
+          }
 
         });
 
@@ -14400,7 +14319,7 @@
 
 
 
-                <div class="text-[10px] text-indigo-300 font-medium">9월 정기 점검 일정</div>
+                <div class="text-[10px] text-indigo-300 font-medium">10월 정기 점검 일정</div>
 
 
 
