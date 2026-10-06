@@ -286,7 +286,7 @@
 
 
 
-  <script src="./data/master_data.js?v=20261006_v1"></script>
+  <script src="./data/master_data.js?v=20261006_v2"></script>
 
 
 
@@ -1653,6 +1653,8 @@
 
 
 
+
+              <p id="coordinate-audit-summary" class="px-2 text-[10px] text-amber-300 leading-relaxed"></p>
 
               <!-- Conduit Layer -->
 
@@ -6756,7 +6758,7 @@
 
 
 
-              <span>정밀 좌표 정보</span>
+              <span>좌표 정보</span>
 
 
 
@@ -6765,6 +6767,14 @@
 
 
             </div>
+
+            <div class="text-[11px] ${item.coordinate_status === 'REGISTERED' ? 'text-cyan-300' : 'text-amber-300'}">
+              ${item.coordinate_status === 'REGISTERED' ? '등록표 GPS 대조 완료' : item.coordinate_status === 'SOURCE_ERROR' ? '원본 GPS 오류 · 추정 좌표' : item.coordinate_status === 'ESTIMATED' ? 'GPS 미등록 · 추정 좌표' : '좌표 출처 미확인'}
+            </div>
+            <div class="text-[10px] text-slate-400">${item.coordinate_source || '좌표 원본 미확인'}</div>
+            ${item.milepost_conflict ? `<div class="text-[11px] text-amber-300">이정 원본 불일치: 등록표 ${item.registry_milepost ?? item.milepost}km / 이정표 ${item.ledger_milepost}km</div>` : ''}
+
+
 
 
 
@@ -11357,6 +11367,13 @@
 
 
       if (countManholes) countManholes.innerText = `${(jsonData.manholes || []).length}`;
+      const coordinateAuditSummary = document.getElementById('coordinate-audit-summary');
+      if (coordinateAuditSummary) {
+        const total = (jsonData.manholes || []).length;
+        const registered = (jsonData.manholes || []).filter(m => m.coordinate_status === 'REGISTERED').length;
+        coordinateAuditSummary.innerText = `등록표 GPS ${registered}개 · GPS 미확인 ${total - registered}개 (추정 위치)`;
+      }
+
 
 
 
