@@ -2711,6 +2711,7 @@
 
 
 
+        <button id="btn-highway-navigation" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs cursor-pointer">고속도로 길찾기</button>
         <button id="btn-copy-coords" class="w-full py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold flex items-center justify-center gap-2 transition text-xs shadow-md cursor-pointer">
 
 
@@ -15473,6 +15474,15 @@
 
 
 
+  <script>
+    window.HighwayApp = {
+      get data() { return AppState.data; },
+      get map() { return AppState.map; },
+      get selected() { return AppState.selectedFacility; },
+      officeFor: findMatchingOffice
+    };
+  </script>
+  <script type="module" src="./data/highway-navigation.mjs"></script>
 </body>
 
 

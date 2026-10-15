@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:highway": "node --test tests/highway-routing.test.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",
