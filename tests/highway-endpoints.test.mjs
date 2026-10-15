@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {buildGraph,route,navigationURL,nearestHighwayPoint,originOptions,ROADS,distance} from '../data/highway-routing.mjs';
-import {officeEndpoint,departureEndpoint,roadFrom,GATE_PROFILES} from '../data/highway-endpoints.mjs';
+import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,roadFrom,GATE_PROFILES} from '../data/highway-endpoints.mjs';
 import {TOLL_GATES} from '../data/highway-tollgates.mjs';
 import {TOLL_ACCESS} from '../data/highway-toll-access.mjs';
 const graph=buildGraph(JSON.parse(fs.readFileSync(new URL('../data/highway-roads.json',import.meta.url),'utf8')));
@@ -11,6 +11,27 @@ const booth=id=>TOLL_GATES.find(g=>g.id===id);
 // infrastructure pack or user GPS position is committed in these tests.
 const office=(name,id)=>({name,lat:booth(id).lat+.0007,lng:booth(id).lng-.0015});
 const suwon=office('수원신갈영업소',1814821448),gonjiam=office('곤지암영업소',436295655),icheon=office('서이천영업소',436294773);
+
+test('nearest-office departure works away from the office and ignores the GPS travel heading',()=>{
+  const gps={lat:suwon.lat-.01,lng:suwon.lng,speed:20,heading:180,accuracy:10};
+  const start=nearestOfficeDeparture(gps,[gonjiam,{name:'좌표 없음'},suwon],[],TOLL_GATES);
+  assert.equal(start.officeName,suwon.name);assert.equal(start.gateName,'수원신갈톨게이트');
+  assert.ok(start.officeDistance>1000);assert.equal(start.heading,null);assert.equal(start.speed,0);
+  const goal=officeEndpoint(office('동서울영업소',436295787),[],TOLL_GATES);
+  const choices=originOptions(graph,start,goal);
+  assert.equal(choices.length,2);
+  for(const c of choices){
+    const r=route(graph,start,goal,null,c.key);
+    assert.equal(r.waypoints.length,4);assert.ok(nearestHighwayPoint(graph,r.start).gap<1);
+    assert.ok(distance(r.start,gps)>500);
+    const q=new URL(navigationURL(r,'https://example.com/')).searchParams;
+    assert.equal(Number(q.get('slat')),r.start.lat);assert.notEqual(Number(q.get('slat')),gps.lat);
+  }
+});
+
+test('nearest-office departure reports missing saved coordinates',()=>{
+  assert.throws(()=>nearestOfficeDeparture({lat:37,lng:127},[{name:'좌표 없음'}]),/저장된 거점이 없습니다/);
+});
 test('office identity resolves to its gate and correct motorway, not the nearest parallel road',()=>{
   for(const item of [gonjiam,icheon]){
     const p=officeEndpoint(item,[],TOLL_GATES);

@@ -1,5 +1,5 @@
-import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261016-dongseoul';
-import {TOLL_ACCESS} from './highway-toll-access.mjs?v=20261016-dongseoul';
+import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261016-nearest-origin';
+import {TOLL_ACCESS} from './highway-toll-access.mjs?v=20261016-nearest-origin';
 
 // Gate identity and motorway are explicit: the nearest parallel motorway can
 // belong to a different route (notably Jungbu vs Second Jungbu).
@@ -42,4 +42,12 @@ export function departureEndpoint(graph,gps,offices=[],interchanges=[],gates=[])
   const nearby=offices.filter(o=>validPoint({lat:Number(o.lat),lng:Number(o.lng)})).map(o=>({o,gap:distance(gps,{lat:Number(o.lat),lng:Number(o.lng)})})).filter(v=>v.gap<=400).sort((a,b)=>a.gap-b.gap)[0];
   if(!nearby)return gps;
   return {...gps,...officeEndpoint(nearby.o,interchanges,gates),heading:null};
+}
+export function nearestOfficeDeparture(gps,offices=[],interchanges=[],gates=[]){
+  if(!validPoint(gps))throw new Error('현재 위치를 확인할 수 없습니다.');
+  const nearest=offices.map(o=>({o,p:{lat:Number(o.lat),lng:Number(o.lng)}}))
+    .filter(v=>validPoint(v.p)).map(v=>({...v,gap:distance(gps,v.p)})).sort((a,b)=>a.gap-b.gap)[0];
+  if(!nearest)throw new Error('좌표가 있는 저장된 거점이 없습니다.');
+  return {...officeEndpoint(nearest.o,interchanges,gates),heading:null,speed:0,
+    departureMode:'nearest-office',officeName:nearest.o.name,officeDistance:nearest.gap,accuracy:gps.accuracy};
 }

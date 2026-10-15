@@ -1,5 +1,5 @@
-import {ROAD_QUERY,buildGraph,route,originOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261016-dongseoul';
-import {officeEndpoint,departureEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261016-dongseoul';
+import {ROAD_QUERY,buildGraph,route,originOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261016-nearest-origin';
+import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,roadFrom} from './highway-endpoints.mjs?v=20261016-nearest-origin';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 
 let graphPromise, generation=0, previewLayer, currentResult, context, openedSelection;
@@ -9,9 +9,12 @@ modal.id='highway-navigation-dialog';
 modal.setAttribute('aria-labelledby','highway-navigation-title');
 modal.innerHTML=`<form method="dialog" class="hn-header"><h2 id="highway-navigation-title">고속도로 경유지 안내</h2><button aria-label="닫기">✕</button></form>
   <div class="hn-body"><label for="hn-goal">목적지 · 저장된 GIS 지점</label><select id="hn-goal"></select>
-  <p class="hn-muted">현재 위치에서 출발 · 영업소는 해당 톨게이트 인근 본선 접속점으로 안내합니다. 제2중부선은 그 위의 점검 지점을 갈 때만 이용합니다.</p>
+  <label for="hn-origin-mode">출발지 기준</label><select id="hn-origin-mode"><option value="gps">현재 위치</option><option value="nearest-office">현재 위치에서 가장 가까운 거점</option></select>
+  <p class="hn-muted">가까운 거점은 현재 위치와의 직선거리로 고릅니다. 거점 출발은 그 거점부터의 경로이며, 현재 위치에서 거점까지의 이동은 포함하지 않습니다.</p>
+  <p id="hn-origin-info" class="hn-muted" hidden></p>
+  <p class="hn-muted">영업소는 해당 톨게이트 인근 본선 접속점으로 안내합니다. 제2중부선은 그 위의 점검 지점을 갈 때만 이용합니다.</p>
   <label id="hn-direction-label" for="hn-direction" hidden>출발 고속도로 · 진행 방향</label><select id="hn-direction" hidden></select>
-  <button type="button" id="hn-build" class="hn-primary">현재 위치로 고속도로 경로 만들기</button>
+  <button type="button" id="hn-build" class="hn-primary">고속도로 경로 만들기</button>
   <p id="hn-status" role="status" aria-live="polite"></p><div id="hn-preview"></div>
   <a id="hn-launch" class="hn-primary" hidden>네이버지도에서 경로 확인</a>
   <p class="hn-muted">고속도로 본선과 노선 간 연결로로 경유지를 만듭니다. 진출입 구간은 일반도로가 포함될 수 있으며, 네이버가 계산한 최종 경로는 다를 수 있습니다.</p>
@@ -37,7 +40,7 @@ function point(item,label,office=false){
   return {lat:Number(item?.lat),lng:Number(item?.lng),roadHint:roadFrom(`${item?.section||''} ${item?.route_name||''} ${item?.route||''}`),name:(label||item?.name||item?.title||item?.id||'선택한 지점')+(approximate?' · 추정 위치':'')};
 }
 function open(){
-  reset();context=null;openedSelection=window.HighwayApp.selected;$('hn-direction').hidden=true;$('hn-direction-label').hidden=true;destinations=[];$('hn-goal').replaceChildren();
+  reset();context=null;openedSelection=window.HighwayApp.selected;$('hn-origin-info').hidden=true;$('hn-direction').replaceChildren();$('hn-direction').hidden=true;$('hn-direction-label').hidden=true;destinations=[];$('hn-goal').replaceChildren();
   const {data,selected,officeFor}=window.HighwayApp;
   if(selected){const {type,item}=selected;
     if(type==='inspection'&&item.type==='OFFICE'){const off=officeFor(item);if(off)optionGroup('선택한 점검지',[point(off,undefined,true)]);}
@@ -96,7 +99,10 @@ $('hn-build').addEventListener('click',async()=>{
     const [rawStart,graph]=context && Date.now()-context.time<30000?[context.start,context.graph]:await Promise.all([gps(),loadGraph()]);
     if(token!==generation||!modal.open)return;
     const data=window.HighwayApp.data;
-    const start=departureEndpoint(graph,rawStart,data.offices||[],data.interchanges||[],TOLL_GATES);
+    const fromOffice=$('hn-origin-mode').value==='nearest-office';
+    const start=fromOffice?nearestOfficeDeparture(rawStart,data.offices||[],data.interchanges||[],TOLL_GATES):departureEndpoint(graph,rawStart,data.offices||[],data.interchanges||[],TOLL_GATES);
+    $('hn-origin-info').hidden=false;
+    $('hn-origin-info').textContent=fromOffice?`출발 거점: ${start.officeName} · 현재 위치에서 직선 약 ${(start.officeDistance/1000).toFixed(1)}km · 이 거점부터 경로를 계산합니다.`:`출발: ${start.endpointKind==='office'?start.name:'현재 GPS 위치'}`;
     const choices=originOptions(graph,start,goal);
     if(!Number.isFinite(start.heading) && choices.length>1){
       const direction=$('hn-direction');
@@ -132,6 +138,10 @@ $('hn-build').addEventListener('click',async()=>{
 });
 $('hn-goal').addEventListener('change',()=>{reset();$('hn-build').disabled=false;status('목적지가 바뀌었습니다. 경로를 다시 만드세요.');});
 $('hn-direction').addEventListener('change',()=>{reset();$('hn-build').disabled=false;status('출발 방향을 선택했습니다. 경로 만들기를 누르세요.');});
+$('hn-origin-mode').addEventListener('change',()=>{
+  reset();context=null;$('hn-origin-info').hidden=true;$('hn-direction').replaceChildren();$('hn-direction').hidden=true;$('hn-direction-label').hidden=true;
+  $('hn-build').disabled=!destinations.length;status('출발지 기준이 바뀌었습니다. 경로를 다시 만드세요.');
+});
 $('hn-launch').addEventListener('click',e=>{
   if(!currentResult||Date.now()-currentResult.created>120000){e.preventDefault();reset();status('출발 위치를 갱신하기 위해 경로를 다시 만드세요.');return;}
 });
