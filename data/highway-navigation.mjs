@@ -1,5 +1,5 @@
-import {ROAD_QUERY,buildGraph,route,originOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261016-tollgates';
-import {officeEndpoint,departureEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261016-tollgates';
+import {ROAD_QUERY,buildGraph,route,originOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261016-arrival';
+import {officeEndpoint,departureEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261016-arrival';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 
 let graphPromise, generation=0, previewLayer, currentResult, context, openedSelection;
@@ -113,6 +113,7 @@ $('hn-build').addEventListener('click',async()=>{
     const roads=document.createElement('p');roads.textContent=result.roads.map(n=>n.replace('고속도로','선')).join(' → ');box.append(roads);
     if(start.endpointKind==='office'){const p=document.createElement('p');p.className='hn-muted';p.textContent=`출발 보정: ${result.start.name}`;box.append(p);}
     if(goal.endpointKind==='office'){const p=document.createElement('p');p.className='hn-muted';p.textContent='도착지는 영업소 건물이 아닌 톨게이트 인근 본선 좌표입니다.';box.append(p);}
+    if(result.arrivalDirection){const p=document.createElement('p');p.className='hn-muted';p.textContent=`도착 방향: ${result.arrivalDirection}`;box.append(p);}
     const info=document.createElement('p');info.className='hn-muted';info.textContent=`본선 약 ${(result.length/1000).toFixed(1)}km · 접속 직선거리 출발 ${Math.round(result.entryGap)}m / 도착 ${Math.round(result.exitGap)}m · GPS 오차 ${Math.round(start.accuracy)}m`;box.append(info);
     const list=document.createElement('ol');for(const wp of result.waypoints){const li=document.createElement('li');li.textContent=wp.name.replace(/^\d+\. /,'');list.append(li);}box.append(list);
     const map=window.HighwayApp.map;

@@ -1,4 +1,5 @@
-import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261016-tollgates';
+import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261016-arrival';
+import {TOLL_ACCESS} from './highway-toll-access.mjs';
 
 // Gate identity and motorway are explicit: the nearest parallel motorway can
 // belong to a different route (notably Jungbu vs Second Jungbu).
@@ -32,7 +33,8 @@ export function officeEndpoint(item,interchanges=[],gates=[],label){
   const savedGates=interchanges.map(p=>({...p,lat:Number(p.lat),lng:Number(p.lng)})).filter(matches).sort((a,b)=>Number(/TG|톨게이트|요금소/i.test(b.name))-Number(/TG|톨게이트|요금소/i.test(a.name))||distance(original,a)-distance(original,b));
   const anchor=publicGates[0]||savedGates[0]||original;
   const reference=profile?.gate||`${item.name||'거점'} 인근`;
-  return {...original,lat:anchor.lat,lng:anchor.lng,name:`${label||item.name} → ${reference} 본선 접속점`,gateName:profile?.gate,roadHint,snapToHighway:true,original,endpointKind:'office'};
+  const arrivalAnchors=publicGates.flatMap(g=>(TOLL_ACCESS[g.id]||[]).filter(a=>!roadHint||a.road===roadHint).map(a=>({...a,gateId:g.id})));
+  return {...original,lat:anchor.lat,lng:anchor.lng,name:`${label||item.name} → ${reference} 본선 접속점`,gateName:profile?.gate,roadHint,snapToHighway:true,original,endpointKind:'office',arrivalAnchors,hasGateTopology:publicGates.length>0};
 }
 export function departureEndpoint(graph,gps,offices=[],interchanges=[],gates=[]){
   // A point already on the carriageway (including roadside manholes) stays put.

@@ -52,7 +52,8 @@ export function buildGraph(osm) {
   }
   const available=[...new Set(mains.map(w=>w.tags.name))];
   if(available.length!==ROADS.length)throw new Error('다섯 노선의 도로 데이터가 모두 필요합니다. 누락: '+ROADS.filter(n=>!available.includes(n)).join(', '));
-  return {nodes,adj,edges,mainEdges:edges.filter(e=>e.road),available};
+  const mainEdges=edges.filter(e=>e.road), mainEdgeByKey=new Map(mainEdges.map(e=>[`${e.a}:${e.b}`,e]));
+  return {nodes,adj,edges,mainEdges,mainEdgeByKey,available};
 }
 function project(p,a,b){
   const c=Math.cos(p.lat*Math.PI/180), dx=(b.lng-a.lng)*c, dy=b.lat-a.lat;
@@ -70,7 +71,19 @@ export function nearestHighwayPoint(graph,p){
   if(!best)throw new Error('해당 노선의 고속도로 접속점을 찾지 못했습니다.');
   return {...best.point,gap:best.gap,road:best.edge.road};
 }
-function candidates(graph,p,heading){
+function candidates(graph,p,heading,side='departure'){
+  if(side==='arrival'&&p.hasGateTopology){
+    const result=[];
+    for(const anchor of p.arrivalAnchors||[]){
+      const edge=graph.mainEdgeByKey.get(anchor.edgeKey);
+      if(!edge||edge.road!==anchor.road||p.roadHint&&edge.road!==p.roadHint||p.avoidSecond&&edge.road==='제2중부고속도로')continue;
+      const q=project(anchor,graph.nodes.get(edge.a),graph.nodes.get(edge.b));
+      if(q.gap>2)continue;
+      result.push({...q,gap:0,edge,anchor});
+    }
+    if(!result.length)throw new Error('해당 요금소의 도착 방향을 확인할 수 없습니다. 도로 데이터를 확인해주세요.');
+    return result;
+  }
   const all=graph.mainEdges.filter(edge=>(!p.roadHint||edge.road===p.roadHint)&&(!p.avoidSecond||edge.road!=='제2중부고속도로')).map(edge=>({...project(p,graph.nodes.get(edge.a),graph.nodes.get(edge.b)),edge})).sort((a,b)=>a.gap-b.gap);
   if(!all.length || all[0].gap>3000)throw new Error('현재 위치 또는 목적지가 허용 고속도로에서 3km 이상 떨어져 있습니다. 지정 루트가 필요한 구간입니다.');
   const best=all[0].gap, groups=new Set(), result=[];
@@ -105,7 +118,7 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
   if(!validPoint(start)||!validPoint(goal))throw new Error('목적지의 위도·경도가 올바르지 않습니다.');
   if(distance(start,goal)<30)throw new Error('목적지에 도착했거나 현재 위치와 너무 가깝습니다.');
   const policy=routingPolicy(graph,start,goal), second='제2중부고속도로';
-  let sources=candidates(graph,policy.source,heading);const targets=candidates(graph,policy.target,null);
+  let sources=candidates(graph,policy.source,heading);const targets=candidates(graph,policy.target,null,'arrival');
   if(sourceKey)sources=sources.filter(s=>`${s.edge.a}:${s.edge.b}`===sourceKey);
   if(!sources.length)throw new Error('출발 위치가 바뀌었습니다. 진행 방향을 다시 선택하세요.');
   const heap=new Heap(), costs=new Map(), previous=new Map(), origins=new Map();
@@ -140,8 +153,11 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
   // Navigation must receive the same carriageway endpoints used by this graph,
   // rather than sending the original office building back to Naver.
   const navStart=start.snapToHighway?{...start,...best.s.point}:start;
-  const navGoal=goal.snapToHighway?{...goal,...best.t.point}:goal;
-  return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap};
+  const arrival=best.t.anchor;
+  const directions=['북','북동','동','남동','남','남서','서','북서'];
+  const arrivalDirection=arrival?`${directions[Math.round(arrival.bearing/45)%8]}쪽 진행 · ${arrival.kind==='through'?'요금소 통과 방향':'요금소 진출 방향'}`:null;
+  const navGoal=goal.snapToHighway?{...goal,...best.t.point,...(arrivalDirection?{name:`${goal.name} · ${arrivalDirection}`}:{})}:goal;
+  return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap,arrivalDirection,arrivalBearing:arrival?.bearing,arrivalGateId:arrival?.gateId};
 }
 export function makeWaypoints(points,roads){
   const cum=[0];for(let i=1;i<points.length;i++)cum.push(cum.at(-1)+distance(points[i-1],points[i]));

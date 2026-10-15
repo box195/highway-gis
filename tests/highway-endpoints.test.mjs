@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import {buildGraph,route,navigationURL,nearestHighwayPoint,ROADS,distance} from '../data/highway-routing.mjs';
 import {officeEndpoint,departureEndpoint,roadFrom,GATE_PROFILES} from '../data/highway-endpoints.mjs';
 import {TOLL_GATES} from '../data/highway-tollgates.mjs';
+import {TOLL_ACCESS} from '../data/highway-toll-access.mjs';
 const graph=buildGraph(JSON.parse(fs.readFileSync(new URL('../data/highway-roads.json',import.meta.url),'utf8')));
 const booth=id=>TOLL_GATES.find(g=>g.id===id);
 // Synthetic office positions offset from public OSM toll nodes. No private
@@ -57,4 +58,43 @@ test('leaving Second Jungbu permits only an initial exit, without re-entering la
 });
 test('facility metadata distinguishes Jungbu from Second Jungbu',()=>{
   assert.equal(roadFrom('제2중부선 (하남-호법)'),ROADS[3]);assert.equal(roadFrom('중부선 광주IC'),ROADS[2]);
+});
+
+test('through-toll arrivals keep the approach carriageway in both directions without a return loop',()=>{
+  const incoming=new Map();for(const e of graph.mainEdges){if(!incoming.has(e.b))incoming.set(e.b,[]);incoming.get(e.b).push(e);}
+  for(const [name,id] of [['청계영업소',4340329006],['성남영업소',734816282],['구리남양주영업소',5338499735],['동서울영업소',436295787]]){
+    const goal=officeEndpoint(office(name,id),[],TOLL_GATES);
+    // Deliberately retain an office near just one side of the toll plaza.
+    // The arrival must still be reachable directly from either carriageway.
+    const headings=new Set();
+    for(const anchor of goal.arrivalAnchors){
+      if(anchor.kind!=='through')continue;
+      const group=Math.round(anchor.bearing/90)%4;if(headings.has(group))continue;headings.add(group);
+      let edge=graph.mainEdgeByKey.get(anchor.edgeKey),travelled=0;
+      const seen=new Set();
+      while(travelled<1200&&!seen.has(edge.a)){
+        seen.add(edge.a);const prev=(incoming.get(edge.a)||[]).find(e=>e.road===edge.road);if(!prev)break;
+        travelled+=edge.length;edge=prev;
+      }
+      const a=graph.nodes.get(edge.a),b=graph.nodes.get(edge.b),start={lat:(a.lat+b.lat)/2,lng:(a.lng+b.lng)/2};
+      const result=route(graph,start,goal,null,`${edge.a}:${edge.b}`);
+      const delta=Math.abs(((result.arrivalBearing-anchor.bearing+540)%360)-180);
+      assert.ok(delta<60,`${name}: wrong arrival direction ${delta}`);
+      assert.ok(result.length<4000,`${name}: unnecessary return loop ${result.length}`);
+      assert.ok(result.arrivalDirection.includes('요금소 통과 방향'));
+      const q=new URL(navigationURL(result,'https://example.com/')).searchParams;
+      assert.ok(q.get('dname').includes(result.arrivalDirection));assert.equal(Number(q.get('dlat')),result.goal.lat);
+    }
+    assert.ok(headings.size>=2,`${name}: both carriageways need coverage`);
+  }
+});
+test('arrival at an IC uses an exit booth, never the nearest entry-only booth',()=>{
+  assert.equal(TOLL_ACCESS[436295655].length,0);assert.ok(TOLL_ACCESS[436295298].length>0);
+  const goal=officeEndpoint(gonjiam,[],TOLL_GATES),r=route(graph,officeEndpoint(suwon,[],TOLL_GATES),goal);
+  assert.equal(r.arrivalGateId,436295298);assert.ok(r.arrivalDirection.includes('요금소 진출 방향'));
+  assert.ok(!r.roads.includes('제2중부고속도로'));
+});
+test('unknown toll approach topology fails instead of guessing the opposite carriageway',()=>{
+  const goal={...officeEndpoint(gonjiam,[],TOLL_GATES),arrivalAnchors:[]};
+  assert.throws(()=>route(graph,officeEndpoint(suwon,[],TOLL_GATES),goal),/도착 방향을 확인할 수 없습니다/);
 });
