@@ -124,16 +124,25 @@ export function makeWaypoints(points,roads){
   const total=cum.at(-1);if(total<100)return [];
   const picks=new Set();
   const at=d=>picks.add(d);
-  at(Math.min(300,total/2));at(Math.max(total-300,total/2));
-  let from=0,road=roads[0];
+  const runs=[];let from=0,road=roads[0];
   for(let i=1;i<=points.length;i++){
     const next=roads[i];if(i===points.length||(next&&next!==road)){
       const end=Math.min(i,points.length-1),span=cum[end]-cum[from];
-      // Intermediate anchors keep long ring-road arcs from collapsing to the other arc.
-      const count=Math.max(1,Math.ceil(span/40000));
-      for(let j=1;j<=count;j++)at(cum[from]+span*j/(count+1));
+      runs.push({from:cum[from],to:cum[end],span,road});
       from=i;road=next;
     }
+  }
+  runs.forEach((run,i)=>{
+    // The first and last road's direction anchors double as road anchors,
+    // leaving one waypoint per road instead of spending seven on five roads.
+    if(runs.length===1){at(Math.min(300,total/2));at(Math.max(total-300,total/2));}
+    else at(i===0?run.from+Math.min(300,run.span/2):i===runs.length-1?run.to-Math.min(300,run.span/2):(run.from+run.to)/2);
+    if(run.span>40000)for(let j=1;j<=Math.ceil(run.span/40000);j++)at(run.from+run.span*j/(Math.ceil(run.span/40000)+1));
+  });
+  // Spend remaining capacity on long gaps to better guide Naver between roads.
+  while(picks.size<5){const ordered=[0,...[...picks].sort((a,b)=>a-b),total];let left=0,gap=0;
+    for(let i=1;i<ordered.length;i++)if(ordered[i]-ordered[i-1]>gap){gap=ordered[i]-ordered[i-1];left=ordered[i-1];}
+    if(gap<3000)break;at(left+gap/2);
   }
   const selected=[];for(const d of [...picks].sort((a,b)=>a-b))if(!selected.length||d-selected.at(-1)>=200)selected.push(d);
   if(selected.length>5)throw new Error('이 경로는 방향·노선을 유지하려면 경유지가 5개 넘게 필요합니다. 더 가까운 저장 지점을 목적지로 선택해 구간을 나누세요.');

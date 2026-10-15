@@ -13,7 +13,7 @@ modal.innerHTML=`<form method="dialog" class="hn-header"><h2 id="highway-navigat
   <p id="hn-status" role="status" aria-live="polite"></p><div id="hn-preview"></div>
   <a id="hn-launch" class="hn-primary" hidden>네이버지도에서 경로 확인</a>
   <p class="hn-muted">고속도로 본선과 노선 간 연결로로 경유지를 만듭니다. 진출입 구간은 일반도로가 포함될 수 있으며, 네이버가 계산한 최종 경로는 다를 수 있습니다.</p>
-  <details><summary>공개 도로 데이터</summary><p class="hn-muted">OpenStreetMap의 다섯 노선 전체를 조회합니다. 현재 위치와 시설물 좌표는 이 조회에 전송하지 않습니다. 공개 API 연결이 안 되면 동일한 Overpass JSON 파일을 가져올 수 있습니다.</p>
+  <details><summary>공개 도로 데이터</summary><p class="hn-muted">앱에 포함된 OpenStreetMap의 다섯 노선을 이용합니다. 현재 위치와 시설물 좌표는 도로 데이터 서버에 전송하지 않습니다. 갱신한 원본 OSM JSON 파일을 가져와 사용할 수도 있습니다.</p>
   <label for="hn-import">도로 데이터 가져오기 (Overpass JSON)</label><input id="hn-import" type="file" accept=".json,application/json"><button id="hn-query" type="button">도로 조회문 복사</button>
   <p class="hn-muted"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors · ODbL</a></p></details></div>`;
 document.body.append(modal);
@@ -54,6 +54,12 @@ function open(){
 async function loadGraph(){
   if(graphPromise)return graphPromise;
   graphPromise=(async()=>{
+    // Versioned public snapshot ships with the app: no public API dependency
+    // for ordinary navigation, and no precise-location requests to a router.
+    try{
+      const snapshot=await fetch(new URL('./highway-roads.json',import.meta.url));
+      if(snapshot.ok)return buildGraph(await snapshot.json());
+    }catch{/* A missing snapshot can still use the public-query fallback. */}
     let cache;const key=new URL('./highway-public-road-cache.json',import.meta.url).href;
     try{cache=await caches.open('highway-public-road-v1');const saved=await cache.match(key);
       if(saved && Date.now()-Number(saved.headers.get('x-saved-at'))<7*86400000)return buildGraph(await saved.json());
@@ -82,7 +88,7 @@ function gps(){return new Promise((resolve,reject)=>{
 $('hn-build').addEventListener('click',async()=>{
   reset();const token=generation, goal=destinations[Number($('hn-goal').value)];
   if(!goal)return;
-  $('hn-build').disabled=true;status('GPS와 공개 고속도로 데이터를 확인하고 있습니다. 최초 도로 조회에는 최대 2분 정도 걸릴 수 있습니다.');
+  $('hn-build').disabled=true;status('현재 위치와 고속도로 지도를 확인하고 있습니다.');
   try{
     const [start,graph]=context && Date.now()-context.time<30000?[context.start,context.graph]:await Promise.all([gps(),loadGraph()]);
     if(token!==generation||!modal.open)return;
