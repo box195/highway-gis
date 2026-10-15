@@ -61,15 +61,24 @@ function project(p,a,b){
   return {point,t,gap:distance(p,point)};
 }
 function bearing(a,b){return (Math.atan2((b.lng-a.lng)*Math.cos(a.lat*Math.PI/180),b.lat-a.lat)*180/Math.PI+360)%360;}
+export function nearestHighwayPoint(graph,p){
+  if(!validPoint(p))throw new Error('고속도로 접속점의 좌표가 올바르지 않습니다.');
+  let best;
+  for(const edge of graph.mainEdges){if(p.roadHint&&edge.road!==p.roadHint||p.avoidSecond&&edge.road==='제2중부고속도로')continue;
+    const q={...project(p,graph.nodes.get(edge.a),graph.nodes.get(edge.b)),edge};if(!best||q.gap<best.gap)best=q;
+  }
+  if(!best)throw new Error('해당 노선의 고속도로 접속점을 찾지 못했습니다.');
+  return {...best.point,gap:best.gap,road:best.edge.road};
+}
 function candidates(graph,p,heading){
-  const all=graph.mainEdges.map(edge=>({...project(p,graph.nodes.get(edge.a),graph.nodes.get(edge.b)),edge})).sort((a,b)=>a.gap-b.gap);
+  const all=graph.mainEdges.filter(edge=>(!p.roadHint||edge.road===p.roadHint)&&(!p.avoidSecond||edge.road!=='제2중부고속도로')).map(edge=>({...project(p,graph.nodes.get(edge.a),graph.nodes.get(edge.b)),edge})).sort((a,b)=>a.gap-b.gap);
   if(!all.length || all[0].gap>3000)throw new Error('현재 위치 또는 목적지가 허용 고속도로에서 3km 이상 떨어져 있습니다. 지정 루트가 필요한 구간입니다.');
   const best=all[0].gap, groups=new Set(), result=[];
   for(const s of all){
     if(s.gap>best+80)break;
     const angle=bearing(graph.nodes.get(s.edge.a),graph.nodes.get(s.edge.b));
     if(Number.isFinite(heading) && Math.abs(((angle-heading+540)%360)-180)>75)continue;
-    const key=s.edge.road+':'+Math.round(angle/30);
+    const key=s.edge.road+':'+(Math.round(angle/30)%12);
     if(groups.has(key))continue;groups.add(key);result.push(s);if(result.length===8)break;
   }
   if(!result.length)throw new Error('현재 진행 방향에 맞는 고속도로를 찾지 못했습니다. 안전한 장소에서 위치를 다시 확인하세요.');
@@ -80,14 +89,23 @@ class Heap {
   push(v){let i=this.a.length;this.a.push(v);while(i){const p=(i-1)>>1;if(this.a[p].cost<=v.cost)break;this.a[i]=this.a[p];i=p;}this.a[i]=v;}
   pop(){const first=this.a[0],v=this.a.pop();if(this.a.length){let i=0;while(i*2+1<this.a.length){let j=i*2+1;if(j+1<this.a.length&&this.a[j+1].cost<this.a[j].cost)j++;if(v.cost<=this.a[j].cost)break;this.a[i]=this.a[j];i=j;}this.a[i]=v;}return first;}
 }
-export function originOptions(graph,start){
+export function routingPolicy(graph,start,goal){
+  const second='제2중부고속도로';
+  const destination=goal&&nearestHighwayPoint(graph,goal);
+  const allowSecond=!!goal && goal.endpointKind!=='office' && (goal.roadHint===second||(!goal.roadHint&&destination.road===second&&destination.gap<=45));
+  const origin=nearestHighwayPoint(graph,start);
+  const onSecond=origin.road===second&&origin.gap<=45;
+  return {allowSecond,source:{...start,roadHint:start.roadHint||(onSecond?second:undefined),avoidSecond:!allowSecond&&!onSecond},target:{...goal,avoidSecond:!allowSecond}};
+}
+export function originOptions(graph,start,goal){
   const directions=['북','북동','동','남동','남','남서','서','북서'];
-  return candidates(graph,start,null).map(s=>{const angle=bearing(graph.nodes.get(s.edge.a),graph.nodes.get(s.edge.b));return {key:`${s.edge.a}:${s.edge.b}`,label:`${s.edge.road} · ${directions[Math.round(angle/45)%8]}쪽 진행 (${Math.round(angle)}°)`};});
+  return candidates(graph,routingPolicy(graph,start,goal).source,null).map(s=>{const angle=bearing(graph.nodes.get(s.edge.a),graph.nodes.get(s.edge.b));return {key:`${s.edge.a}:${s.edge.b}`,label:`${s.edge.road} · ${directions[Math.round(angle/45)%8]}쪽 진행 (${Math.round(angle)}°)`};});
 }
 export function route(graph,start,goal,heading=null,sourceKey=null){
   if(!validPoint(start)||!validPoint(goal))throw new Error('목적지의 위도·경도가 올바르지 않습니다.');
   if(distance(start,goal)<30)throw new Error('목적지에 도착했거나 현재 위치와 너무 가깝습니다.');
-  let sources=candidates(graph,start,heading);const targets=candidates(graph,goal,null);
+  const policy=routingPolicy(graph,start,goal), second='제2중부고속도로';
+  let sources=candidates(graph,policy.source,heading);const targets=candidates(graph,policy.target,null);
   if(sourceKey)sources=sources.filter(s=>`${s.edge.a}:${s.edge.b}`===sourceKey);
   if(!sources.length)throw new Error('출발 위치가 바뀌었습니다. 진행 방향을 다시 선택하세요.');
   const heap=new Heap(), costs=new Map(), previous=new Map(), origins=new Map();
@@ -95,17 +113,19 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
   const accept=(cost,s,t,path,direct=false)=>{if(!best||cost<best.cost)best={cost,s,t,path,direct};};
   // Same directed segment needs no trip around the network.
   for(const s of sources)for(const t of targets)if(s.edge===t.edge && t.t>=s.t)accept((t.t-s.t)*s.edge.length+20*(s.gap+t.gap),s,t,[],true);
-  for(const s of sources){const cost=(1-s.t)*s.edge.length+20*s.gap,id=s.edge.b;
-    if(cost<(costs.get(id)??Infinity)){costs.set(id,cost);origins.set(id,s);previous.delete(id);heap.push({id,cost});}
+  for(const s of sources){const cost=(1-s.t)*s.edge.length+20*s.gap,id=s.edge.b,closed=!policy.allowSecond&&s.edge.road!==second,key=`${id}:${Number(closed)}`;
+    if(cost<(costs.get(key)??Infinity)){costs.set(key,cost);origins.set(key,s);previous.delete(key);heap.push({id,cost,key,closed});}
   }
   const targetMap=new Map();for(const t of targets){if(!targetMap.has(t.edge.a))targetMap.set(t.edge.a,[]);targetMap.get(t.edge.a).push(t);}
   while(heap.a.length){
-    const {id,cost}=heap.pop();if(cost!==costs.get(id))continue;if(best&&cost>best.cost)break;
+    const {id,cost,key,closed}=heap.pop();if(cost!==costs.get(key))continue;if(best&&cost>best.cost)break;
     for(const t of targetMap.get(id)||[]){const total=cost+t.t*t.edge.length+20*t.gap;
-      if(!best||total<best.cost){const path=[];let cursor=id;while(previous.has(cursor)){const e=previous.get(cursor);path.push(e);cursor=e.a;}path.reverse();accept(total,origins.get(id),t,path);}
+      if(!best||total<best.cost){const path=[];let cursor=key;while(previous.has(cursor)){const v=previous.get(cursor);path.push(v.edge);cursor=v.previousKey;}path.reverse();accept(total,origins.get(key),t,path);}
     }
-    for(const e of graph.adj.get(id)||[]){const next=cost+e.length;
-      if(next<(costs.get(e.b)??Infinity)){costs.set(e.b,next);previous.set(e.b,e);origins.set(e.b,origins.get(id));heap.push({id:e.b,cost:next});}
+    for(const e of graph.adj.get(id)||[]){
+      if(!policy.allowSecond&&closed&&e.road===second)continue;
+      const next=cost+e.length,nextClosed=closed||(!policy.allowSecond&&!!e.road&&e.road!==second),nextKey=`${e.b}:${Number(nextClosed)}`;
+      if(next<(costs.get(nextKey)??Infinity)){costs.set(nextKey,next);previous.set(nextKey,{edge:e,previousKey:key});origins.set(nextKey,origins.get(key));heap.push({id:e.b,cost:next,key:nextKey,closed:nextClosed});}
     }
   }
   if(!best)throw new Error('허용된 다섯 노선의 연결로만 갈 수 있는 경로가 없습니다. 다른 노선이나 지정 루트가 필요합니다.');
@@ -117,7 +137,11 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
   const roads=[];for(const e of edges)if(e.road&&roads.at(-1)!==e.road)roads.push(e.road);
   let length=0;for(let i=1;i<points.length;i++)length+=distance(points[i-1],points[i]);
   const waypoints=makeWaypoints(points,pointRoads);
-  return {start,goal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap};
+  // Navigation must receive the same carriageway endpoints used by this graph,
+  // rather than sending the original office building back to Naver.
+  const navStart=start.snapToHighway?{...start,...best.s.point}:start;
+  const navGoal=goal.snapToHighway?{...goal,...best.t.point}:goal;
+  return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap};
 }
 export function makeWaypoints(points,roads){
   const cum=[0];for(let i=1;i<points.length;i++)cum.push(cum.at(-1)+distance(points[i-1],points[i]));
@@ -154,7 +178,7 @@ export function makeWaypoints(points,roads){
 }
 export function navigationURL(result, appURL, android=false){
   if(!validPoint(result.start)||!validPoint(result.goal)||result.waypoints.length>5||result.waypoints.some(p=>!validPoint(p)))throw new Error('네이버지도에 전달할 경로가 올바르지 않습니다.');
-  const q=new URLSearchParams({slat:String(result.start.lat),slng:String(result.start.lng),sname:'현재 위치',dlat:String(result.goal.lat),dlng:String(result.goal.lng),dname:result.goal.name||'선택한 지점',appname:appURL});
+  const q=new URLSearchParams({slat:String(result.start.lat),slng:String(result.start.lng),sname:result.start.name||'현재 위치',dlat:String(result.goal.lat),dlng:String(result.goal.lng),dname:result.goal.name||'선택한 지점',appname:appURL});
   result.waypoints.forEach((p,i)=>{q.set(`v${i+1}lat`,String(p.lat));q.set(`v${i+1}lng`,String(p.lng));q.set(`v${i+1}name`,p.name);});
   return android?`intent://navigation?${q}#Intent;scheme=nmap;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.nhn.android.nmap;end`:`nmap://navigation?${q}`;
 }

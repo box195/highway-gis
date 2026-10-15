@@ -1,4 +1,6 @@
-import {ROAD_QUERY,buildGraph,route,originOptions,validPoint,navigationURL} from './highway-routing.mjs';
+import {ROAD_QUERY,buildGraph,route,originOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261016-tollgates';
+import {officeEndpoint,departureEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261016-tollgates';
+import {TOLL_GATES} from './highway-tollgates.mjs';
 
 let graphPromise, generation=0, previewLayer, currentResult, context, openedSelection;
 const button=document.getElementById('btn-highway-navigation');
@@ -7,7 +9,7 @@ modal.id='highway-navigation-dialog';
 modal.setAttribute('aria-labelledby','highway-navigation-title');
 modal.innerHTML=`<form method="dialog" class="hn-header"><h2 id="highway-navigation-title">고속도로 경유지 안내</h2><button aria-label="닫기">✕</button></form>
   <div class="hn-body"><label for="hn-goal">목적지 · 저장된 GIS 지점</label><select id="hn-goal"></select>
-  <p class="hn-muted">현재 위치에서 출발 · 수도권제1순환선 / 경부선 / 중부선 / 제2중부선 / 영동선</p>
+  <p class="hn-muted">현재 위치에서 출발 · 영업소는 해당 톨게이트 인근 본선 접속점으로 안내합니다. 제2중부선은 그 위의 점검 지점을 갈 때만 이용합니다.</p>
   <label id="hn-direction-label" for="hn-direction" hidden>출발 고속도로 · 진행 방향</label><select id="hn-direction" hidden></select>
   <button type="button" id="hn-build" class="hn-primary">현재 위치로 고속도로 경로 만들기</button>
   <p id="hn-status" role="status" aria-live="polite"></p><div id="hn-preview"></div>
@@ -29,23 +31,24 @@ function optionGroup(label,items){
   for(const p of items){if(!validPoint(p))continue;const i=destinations.push(p)-1;const o=new Option(p.name,String(i));group.append(o);}
   if(group.children.length)$('hn-goal').append(group);
 }
-function point(item,label){
+function point(item,label,office=false){
+  if(office)return officeEndpoint(item,window.HighwayApp.data.interchanges||[],TOLL_GATES,label);
   const approximate=['ESTIMATED','SOURCE_ERROR'].includes(item?.coordinate_status);
-  return {lat:Number(item?.lat),lng:Number(item?.lng),name:(label||item?.name||item?.title||item?.id||'선택한 지점')+(approximate?' · 추정 위치':'')};
+  return {lat:Number(item?.lat),lng:Number(item?.lng),roadHint:roadFrom(`${item?.section||''} ${item?.route_name||''} ${item?.route||''}`),name:(label||item?.name||item?.title||item?.id||'선택한 지점')+(approximate?' · 추정 위치':'')};
 }
 function open(){
   reset();context=null;openedSelection=window.HighwayApp.selected;$('hn-direction').hidden=true;$('hn-direction-label').hidden=true;destinations=[];$('hn-goal').replaceChildren();
   const {data,selected,officeFor}=window.HighwayApp;
   if(selected){const {type,item}=selected;
-    if(type==='inspection'&&item.type==='OFFICE'){const off=officeFor(item);if(off)optionGroup('선택한 점검지',[point(off)]);}
+    if(type==='inspection'&&item.type==='OFFICE'){const off=officeFor(item);if(off)optionGroup('선택한 점검지',[point(off,undefined,true)]);}
     else if(type==='inspection'&&item.type==='LINE'){
       const names=item.line?.manhole_names||[];
       const branch=item.branch_code || (item.branch_name?.includes('동서울')?'DONGSEOUL':item.branch_name?.includes('광주')?'GWANGJU':/중부|광주/.test(item.title||'')?'GWANGJU':'DONGSEOUL');
       optionGroup('선택한 점검계획의 지점',(data.manholes||[]).filter(m=>names.includes(m.name)&&(!m.branch_code||m.branch_code===branch)).map(m=>point(m)));
-    }else optionGroup('선택한 지점',[point(item)]);
+    }else optionGroup('선택한 지점',[point(item,undefined,type==='office')]);
   }
   const offices=(data.offices||[]).slice().sort((a,b)=>Number(/수원.*(신갈|영업)/.test(b.name))-Number(/수원.*(신갈|영업)/.test(a.name)));
-  optionGroup('저장된 거점',offices.map(o=>point(o,`${o.name}${o.branch_name||o.branch_code?' · '+(o.branch_name||({DONGSEOUL:'동서울',GWANGJU:'경기광주'}[o.branch_code]||o.branch_code)):''}`)));
+  optionGroup('저장된 거점',offices.map(o=>point(o,`${o.name}${o.branch_name||o.branch_code?' · '+(o.branch_name||({DONGSEOUL:'동서울',GWANGJU:'경기광주'}[o.branch_code]||o.branch_code)):''}`,true)));
   optionGroup('저장된 맨홀·수공',(data.manholes||[]).map(m=>point(m,`${m.name} · ${m.section||m.branch_name||''}`)));
   status(destinations.length?'목적지를 선택한 뒤 현재 위치로 경로를 만드세요.':'좌표가 있는 데이터팩을 먼저 불러오세요.');
   $('hn-build').disabled=!destinations.length;
@@ -82,7 +85,7 @@ function gps(){return new Promise((resolve,reject)=>{
   if(!navigator.geolocation)return reject(new Error('이 브라우저는 현재 위치를 지원하지 않습니다.'));
   navigator.geolocation.getCurrentPosition(p=>{
     if(p.coords.accuracy>150)return reject(new Error('현재 위치의 오차가 150m보다 큽니다. GPS 수신이 좋은 곳에서 다시 시도하세요.'));
-    resolve({lat:p.coords.latitude,lng:p.coords.longitude,heading:p.coords.speed>2?p.coords.heading:null,accuracy:p.coords.accuracy});
+    resolve({lat:p.coords.latitude,lng:p.coords.longitude,speed:p.coords.speed,heading:p.coords.speed>2?p.coords.heading:null,accuracy:p.coords.accuracy});
   },e=>reject(new Error(({1:'위치 권한을 허용한 뒤 다시 시도하세요.',2:'현재 위치를 확인할 수 없습니다.',3:'현재 위치 요청 시간이 초과됐습니다.'})[e.code]||'위치를 가져오지 못했습니다.')),{enableHighAccuracy:true,timeout:20000,maximumAge:0});
 });}
 $('hn-build').addEventListener('click',async()=>{
@@ -90,14 +93,16 @@ $('hn-build').addEventListener('click',async()=>{
   if(!goal)return;
   $('hn-build').disabled=true;status('현재 위치와 고속도로 지도를 확인하고 있습니다.');
   try{
-    const [start,graph]=context && Date.now()-context.time<30000?[context.start,context.graph]:await Promise.all([gps(),loadGraph()]);
+    const [rawStart,graph]=context && Date.now()-context.time<30000?[context.start,context.graph]:await Promise.all([gps(),loadGraph()]);
     if(token!==generation||!modal.open)return;
-    const choices=originOptions(graph,start);
+    const data=window.HighwayApp.data;
+    const start=departureEndpoint(graph,rawStart,data.offices||[],data.interchanges||[],TOLL_GATES);
+    const choices=originOptions(graph,start,goal);
     if(!Number.isFinite(start.heading) && choices.length>1){
       const direction=$('hn-direction');
       if(!context || !choices.some(c=>c.key===direction.value)){
         direction.replaceChildren(new Option('현재 주행할 방향을 선택하세요',''),...choices.map(c=>new Option(c.label,c.key)));
-        direction.hidden=false;$('hn-direction-label').hidden=false;context={start,graph,time:Date.now()};
+        direction.hidden=false;$('hn-direction-label').hidden=false;context={start:rawStart,graph,time:Date.now()};
         status('GPS에서 진행 방향을 확인할 수 없습니다. 출발할 고속도로·방향을 선택하고 경로 만들기를 다시 누르세요.');return;
       }
     }
@@ -106,6 +111,8 @@ $('hn-build').addEventListener('click',async()=>{
     currentResult={...result,created:Date.now()};
     const box=$('hn-preview'),title=document.createElement('p');title.style.fontWeight='700';title.textContent=goal.name;box.append(title);
     const roads=document.createElement('p');roads.textContent=result.roads.map(n=>n.replace('고속도로','선')).join(' → ');box.append(roads);
+    if(start.endpointKind==='office'){const p=document.createElement('p');p.className='hn-muted';p.textContent=`출발 보정: ${result.start.name}`;box.append(p);}
+    if(goal.endpointKind==='office'){const p=document.createElement('p');p.className='hn-muted';p.textContent='도착지는 영업소 건물이 아닌 톨게이트 인근 본선 좌표입니다.';box.append(p);}
     const info=document.createElement('p');info.className='hn-muted';info.textContent=`본선 약 ${(result.length/1000).toFixed(1)}km · 접속 직선거리 출발 ${Math.round(result.entryGap)}m / 도착 ${Math.round(result.exitGap)}m · GPS 오차 ${Math.round(start.accuracy)}m`;box.append(info);
     const list=document.createElement('ol');for(const wp of result.waypoints){const li=document.createElement('li');li.textContent=wp.name.replace(/^\d+\. /,'');list.append(li);}box.append(list);
     const map=window.HighwayApp.map;
