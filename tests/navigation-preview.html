@@ -9,10 +9,10 @@
 <script type="module">
   import {TOLL_GATES} from '../data/highway-tollgates.mjs';
   const map=L.map('map').setView([37.4,127.15],10);
-  const params=new URLSearchParams(location.search),tollgate=params.get('case')==='tollgate';
+  const params=new URLSearchParams(location.search),tollgate=['tollgate','dongseoul'].includes(params.get('case'));
   const office=(name,id)=>{const p=TOLL_GATES.find(g=>g.id===id);return {name,lat:p.lat+.0007,lng:p.lng-.0015};};
   const suwon=office('수원신갈영업소',1814821448);
-  const offices=tollgate?[office('곤지암영업소',436295655),office('서이천영업소',436294773),suwon]:[{name:'공개 도로 테스트 도착점 A',lat:37.43,lng:127.15},{name:'공개 도로 테스트 도착점 B',lat:37.5,lng:127.21}];
+  const offices=tollgate?[params.get('case')==='dongseoul'?office('동서울영업소',436295787):office('곤지암영업소',436295655),office('서이천영업소',436294773),suwon]:[{name:'공개 도로 테스트 도착점 A',lat:37.43,lng:127.15},{name:'공개 도로 테스트 도착점 B',lat:37.5,lng:127.21}];
   window.HighwayApp={map,data:{offices},selected:{type:'office',item:offices[0]}};
   const mode=params.get('gps'),stationary=mode==='no-heading'||tollgate;
   Object.defineProperty(navigator,'geolocation',{value:{getCurrentPosition(success,error){queueMicrotask(()=>mode==='denied'?error({code:1}):success({coords:{latitude:tollgate?suwon.lat:37.30,longitude:tollgate?suwon.lng:127.10,accuracy:5,speed:stationary?0:10,heading:stationary?null:0}}));}}});

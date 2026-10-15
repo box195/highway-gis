@@ -1,5 +1,5 @@
-import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261016-arrival';
-import {TOLL_ACCESS} from './highway-toll-access.mjs';
+import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261016-dongseoul';
+import {TOLL_ACCESS} from './highway-toll-access.mjs?v=20261016-dongseoul';
 
 // Gate identity and motorway are explicit: the nearest parallel motorway can
 // belong to a different route (notably Jungbu vs Second Jungbu).

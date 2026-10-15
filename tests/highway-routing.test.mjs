@@ -67,6 +67,12 @@ test('too many direction anchors never silently truncate',()=>{
   const points=Array.from({length:25},(_,i)=>({lat:37,lng:127+i*.04}));
   assert.throws(()=>makeWaypoints(points,points.map((_,i)=>ROADS[i%5])),/5개 넘게/);
 });
+test('a long two-road route uses one pre-junction and one post-junction anchor, without distance fillers',()=>{
+  const points=Array.from({length:65},(_,i)=>({lat:37,lng:127+i*.02}));
+  const roads=points.map((_,i)=>i<32?ROADS[4]:ROADS[2]);
+  const waypoints=makeWaypoints(points,roads);
+  assert.equal(waypoints.length,2);assert.ok(waypoints[0].name.includes('분기 전'));assert.ok(waypoints[1].name.includes('합류 후'));
+});
 test('Naver URL encodes all names, lat/lng order and exact waypoint count',()=>{
   const r={start:{lat:37.1,lng:127.2},goal:{lat:37.3,lng:127.4,name:'수원 & 신갈 #1'},waypoints:[{lat:37.2,lng:127.3,name:'경부 → 영동'}]};
   const u=new URL(navigationURL(r,'https://box195.github.io/highway-gis/'));

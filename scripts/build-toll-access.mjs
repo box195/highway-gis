@@ -24,7 +24,7 @@ for(const gate of TOLL_GATES){
     // Finish beyond the plaza on its own directed carriageway. A point in
     // the middle of a wide plaza can otherwise snap to the opposite side.
     for(const incoming of mainIn.get(gate.id)||[]){
-      let id=gate.id,remaining=150,previous=incoming;
+      let id=gate.id,remaining=700,previous=incoming;
       const seen=new Set();let endpoint;
       while(remaining>0&&!seen.has(id)){
         seen.add(id);const outs=(graph.adj.get(id)||[]).filter(e=>e.road===incoming.road);
@@ -32,7 +32,7 @@ for(const gate of TOLL_GATES){
         outs.sort((a,b)=>Math.abs(((bearing(graph.nodes.get(a.a),graph.nodes.get(a.b))-angle+540)%360)-180)-Math.abs(((bearing(graph.nodes.get(b.a),graph.nodes.get(b.b))-angle+540)%360)-180));
         const e=outs[0];if(!e)break;
         const a=graph.nodes.get(e.a),b=graph.nodes.get(e.b),fraction=Math.min(1,remaining/(e.length||1));
-        endpoint=anchor(e,{lat:a.lat+(b.lat-a.lat)*fraction,lng:a.lng+(b.lng-a.lng)*fraction},'through');
+        endpoint={...anchor(e,{lat:a.lat+(b.lat-a.lat)*fraction,lng:a.lng+(b.lng-a.lng)*fraction},'through'),offset:700};
         remaining-=e.length;previous=e;id=e.b;
       }
       if(endpoint)arrivals.push(endpoint);

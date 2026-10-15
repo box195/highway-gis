@@ -112,12 +112,23 @@ export function routingPolicy(graph,start,goal){
 }
 export function originOptions(graph,start,goal){
   const directions=['북','북동','동','남동','남','남서','서','북서'];
-  return candidates(graph,routingPolicy(graph,start,goal).source,null).map(s=>{const angle=bearing(graph.nodes.get(s.edge.a),graph.nodes.get(s.edge.b));return {key:`${s.edge.a}:${s.edge.b}`,label:`${s.edge.road} · ${directions[Math.round(angle/45)%8]}쪽 진행 (${Math.round(angle)}°)`};});
+  const sources=candidates(graph,routingPolicy(graph,start,goal).source,null);
+  if(start.gateName==='수원신갈톨게이트'&&goal?.gateName==='동서울톨게이트'){
+    const north=sources.find(s=>s.edge.road==='경부고속도로'&&Math.cos(bearing(graph.nodes.get(s.edge.a),graph.nodes.get(s.edge.b))*Math.PI/180)>0);
+    if(north){const key=`${north.edge.a}:${north.edge.b}`;return [{key:`${key}|hanam`,label:'판교·하남 경유 → 동서울 남하 도착'},{key:`${key}|hobeop`,label:'신갈·호법 경유 → 동서울 북상 도착'}];}
+  }
+  return sources.map(s=>{const angle=bearing(graph.nodes.get(s.edge.a),graph.nodes.get(s.edge.b));return {key:`${s.edge.a}:${s.edge.b}`,label:`${s.edge.road} · ${directions[Math.round(angle/45)%8]}쪽 진행 (${Math.round(angle)}°)`};});
 }
 export function route(graph,start,goal,heading=null,sourceKey=null){
   if(!validPoint(start)||!validPoint(goal))throw new Error('목적지의 위도·경도가 올바르지 않습니다.');
   if(distance(start,goal)<30)throw new Error('목적지에 도착했거나 현재 위치와 너무 가깝습니다.');
   const policy=routingPolicy(graph,start,goal), second='제2중부고속도로';
+  let corridor;
+  if(sourceKey?.includes('|')){
+    const [key,preference]=sourceKey.split('|');
+    if(start.gateName!=='수원신갈톨게이트'||goal.gateName!=='동서울톨게이트'||!['hanam','hobeop'].includes(preference))throw new Error('선택한 경유 경로가 올바르지 않습니다.');
+    sourceKey=key;corridor=new Set(['경부고속도로','중부고속도로',preference==='hanam'?'수도권제1순환고속도로':'영동고속도로']);
+  }
   let sources=candidates(graph,policy.source,heading);const targets=candidates(graph,policy.target,null,'arrival');
   if(sourceKey)sources=sources.filter(s=>`${s.edge.a}:${s.edge.b}`===sourceKey);
   if(!sources.length)throw new Error('출발 위치가 바뀌었습니다. 진행 방향을 다시 선택하세요.');
@@ -136,6 +147,7 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
       if(!best||total<best.cost){const path=[];let cursor=key;while(previous.has(cursor)){const v=previous.get(cursor);path.push(v.edge);cursor=v.previousKey;}path.reverse();accept(total,origins.get(key),t,path);}
     }
     for(const e of graph.adj.get(id)||[]){
+      if(corridor&&e.road&&!corridor.has(e.road))continue;
       if(!policy.allowSecond&&closed&&e.road===second)continue;
       const next=cost+e.length,nextClosed=closed||(!policy.allowSecond&&!!e.road&&e.road!==second),nextKey=`${e.b}:${Number(nextClosed)}`;
       if(next<(costs.get(nextKey)??Infinity)){costs.set(nextKey,next);previous.set(nextKey,{edge:e,previousKey:key});origins.set(nextKey,origins.get(key));heap.push({id:e.b,cost:next,key:nextKey,closed:nextClosed});}
@@ -149,47 +161,51 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
   points.push(best.t.point);pointRoads.push(best.t.edge.road);
   const roads=[];for(const e of edges)if(e.road&&roads.at(-1)!==e.road)roads.push(e.road);
   let length=0;for(let i=1;i<points.length;i++)length+=distance(points[i-1],points[i]);
-  const waypoints=makeWaypoints(points,pointRoads);
+  const arrival=best.t.anchor;
+  const waypoints=makeWaypoints(points,pointRoads,arrival);
   // Navigation must receive the same carriageway endpoints used by this graph,
   // rather than sending the original office building back to Naver.
   const navStart=start.snapToHighway?{...start,...best.s.point}:start;
-  const arrival=best.t.anchor;
   const directions=['북','북동','동','남동','남','남서','서','북서'];
-  const arrivalDirection=arrival?`${directions[Math.round(arrival.bearing/45)%8]}쪽 진행 · ${arrival.kind==='through'?'요금소 통과 방향':'요금소 진출 방향'}`:null;
+  const approach=arrival&&goal.gateName==='동서울톨게이트'?(Math.cos(arrival.bearing*Math.PI/180)>=0?'하남 방향(북상)':'광주·호법 방향(남하)'):arrival?`${directions[Math.round(arrival.bearing/45)%8]}쪽 진행`:null;
+  const arrivalDirection=arrival?`${approach} · ${arrival.kind==='through'?'요금소 통과 방향':'요금소 진출 방향'}`:null;
   const navGoal=goal.snapToHighway?{...goal,...best.t.point,...(arrivalDirection?{name:`${goal.name} · ${arrivalDirection}`}:{})}:goal;
-  return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap,arrivalDirection,arrivalBearing:arrival?.bearing,arrivalGateId:arrival?.gateId};
+  return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap,arrivalDirection,arrivalBearing:arrival?.bearing,arrivalGateId:arrival?.gateId,arrivalOffset:arrival?.offset};
 }
-export function makeWaypoints(points,roads){
+export function makeWaypoints(points,roads,arrival=null){
   const cum=[0];for(let i=1;i<points.length;i++)cum.push(cum.at(-1)+distance(points[i-1],points[i]));
   const total=cum.at(-1);if(total<100)return [];
-  const picks=new Set();
-  const at=d=>picks.add(d);
-  const runs=[];let from=0,road=roads[0];
-  for(let i=1;i<=points.length;i++){
-    const next=roads[i];if(i===points.length||(next&&next!==road)){
-      const end=Math.min(i,points.length-1),span=cum[end]-cum[from];
-      runs.push({from:cum[from],to:cum[end],span,road});
-      from=i;road=next;
-    }
+  // One useful anchor per motorway run, located on the main carriageway.
+  // Distance alone never creates extra waypoints. Ramp geometry is excluded.
+  const runs=[];
+  for(let i=0;i<points.length-1;i++){
+    if(!roads[i]||cum[i+1]===cum[i])continue;
+    let run=runs.at(-1);
+    if(!run||run.road!==roads[i]){run={road:roads[i],from:cum[i],to:cum[i+1],segments:[]};runs.push(run);}
+    run.to=cum[i+1];run.segments.push({from:cum[i],to:cum[i+1]});
   }
+  if(runs.length>5)throw new Error('이 경로는 노선 변경을 표현하는 데 경유지가 5개 넘게 필요합니다. 목적지를 나눠서 선택해주세요.');
+  const picks=[];
+  const at=(run,desired,label)=>{
+    let best;for(const s of run.segments){const d=Math.max(s.from,Math.min(s.to,desired)),gap=Math.abs(d-desired);if(!best||gap<best.gap)best={d,gap};}
+    if(best&&!picks.some(p=>p.road===run.road&&Math.abs(p.d-best.d)<30))picks.push({d:best.d,road:run.road,label});
+  };
   runs.forEach((run,i)=>{
-    // The first and last road's direction anchors double as road anchors,
-    // leaving one waypoint per road instead of spending seven on five roads.
-    if(runs.length===1){at(Math.min(300,total/2));at(Math.max(total-300,total/2));}
-    else at(i===0?run.from+Math.min(300,run.span/2):i===runs.length-1?run.to-Math.min(300,run.span/2):(run.from+run.to)/2);
-    if(run.span>40000)for(let j=1;j<=Math.ceil(run.span/40000);j++)at(run.from+run.span*j/(Math.ceil(run.span/40000)+1));
+    const span=run.to-run.from,last=i===runs.length-1;
+    if(!last)at(run,run.to-Math.min(600,span/2),'분기 전');
+    else if(arrival?.kind==='through'){
+      // Keep the final guide BEFORE the plaza and the destination well AFTER
+      // it: Naver must cross the plaza on one continuous directed carriageway.
+      const beforePlaza=total-(arrival.offset||700)-650;
+      if(runs.length<5&&runs.length>1)at(run,run.from+Math.min(600,span/2),'합류 후');
+      at(run,Math.max(run.from+Math.min(50,span/2),beforePlaza),'요금소 진입 방향');
+    }else at(run,runs.length===1?(run.from+run.to)/2:run.from+Math.min(600,span/2),'합류 후');
   });
-  // Spend remaining capacity on long gaps to better guide Naver between roads.
-  while(picks.size<5){const ordered=[0,...[...picks].sort((a,b)=>a-b),total];let left=0,gap=0;
-    for(let i=1;i<ordered.length;i++)if(ordered[i]-ordered[i-1]>gap){gap=ordered[i]-ordered[i-1];left=ordered[i-1];}
-    if(gap<3000)break;at(left+gap/2);
-  }
-  const selected=[];for(const d of [...picks].sort((a,b)=>a-b))if(!selected.length||d-selected.at(-1)>=200)selected.push(d);
-  if(selected.length>5)throw new Error('이 경로는 방향·노선을 유지하려면 경유지가 5개 넘게 필요합니다. 더 가까운 저장 지점을 목적지로 선택해 구간을 나누세요.');
-  return selected.map((d,k)=>{
+  const selected=picks.sort((a,b)=>a.d-b.d);
+  return selected.map(({d,road,label},k)=>{
     let i=cum.findIndex(v=>v>=d);if(i<1)i=1;
     const a=points[i-1],b=points[i],t=(d-cum[i-1])/(cum[i]-cum[i-1]||1);
-    return {lat:a.lat+t*(b.lat-a.lat),lng:a.lng+t*(b.lng-a.lng),name:`${k+1}. ${roads[i-1]||'고속도로 연결로'}`};
+    return {lat:a.lat+t*(b.lat-a.lat),lng:a.lng+t*(b.lng-a.lng),name:`${k+1}. ${road} · ${label}`};
   });
 }
 export function navigationURL(result, appURL, android=false){

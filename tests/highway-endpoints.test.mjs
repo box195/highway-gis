@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {buildGraph,route,navigationURL,nearestHighwayPoint,ROADS,distance} from '../data/highway-routing.mjs';
+import {buildGraph,route,navigationURL,nearestHighwayPoint,originOptions,ROADS,distance} from '../data/highway-routing.mjs';
 import {officeEndpoint,departureEndpoint,roadFrom,GATE_PROFILES} from '../data/highway-endpoints.mjs';
 import {TOLL_GATES} from '../data/highway-tollgates.mjs';
 import {TOLL_ACCESS} from '../data/highway-toll-access.mjs';
@@ -97,4 +97,33 @@ test('arrival at an IC uses an exit booth, never the nearest entry-only booth',(
 test('unknown toll approach topology fails instead of guessing the opposite carriageway',()=>{
   const goal={...officeEndpoint(gonjiam,[],TOLL_GATES),arrivalAnchors:[]};
   assert.throws(()=>route(graph,officeEndpoint(suwon,[],TOLL_GATES),goal),/도착 방향을 확인할 수 없습니다/);
+});
+
+test('Suwon north via Pangyo and Hanam finishes southbound at Dongseoul without plaza-side ambiguity',()=>{
+  const goal=officeEndpoint(office('동서울영업소',436295787),[],TOLL_GATES),start=officeEndpoint(suwon,[],TOLL_GATES);
+  const key=originOptions(graph,start,goal).find(c=>c.key.endsWith('|hanam')).key;
+  const r=route(graph,start,goal,null,key),gate=booth(436296492),guide=r.waypoints.at(-1);
+  assert.deepEqual(r.roads,['경부고속도로','수도권제1순환고속도로','중부고속도로']);
+  assert.ok(r.arrivalDirection.includes('광주·호법 방향(남하)'));assert.equal(r.arrivalOffset,700);
+  assert.ok(guide.lat>gate.lat);assert.ok(r.goal.lat<gate.lat);
+  assert.ok(distance(guide,gate)>500);assert.ok(distance(r.goal,gate)>600);
+  assert.ok(r.waypoints.length<=5);
+});
+test('five motorway runs on the southern Dongseoul detour fit five waypoints',()=>{
+  const goal=officeEndpoint(office('동서울영업소',436295787),[],TOLL_GATES),start=officeEndpoint(gonjiam,[],TOLL_GATES);
+  const key=originOptions(graph,start,goal).find(c=>c.label.includes('남쪽')).key;
+  const r=route(graph,start,goal,null,key);
+  assert.deepEqual(r.roads,['중부고속도로','영동고속도로','경부고속도로','수도권제1순환고속도로','중부고속도로']);
+  assert.equal(r.waypoints.length,5);assert.ok(r.waypoints.every(p=>!p.name.includes('연결로')));
+});
+test('Suwon offers two actual corridors, both departing north and arriving on opposite Dongseoul carriageways',()=>{
+  const start=officeEndpoint(suwon,[],TOLL_GATES),goal=officeEndpoint(office('동서울영업소',436295787),[],TOLL_GATES);
+  const choices=originOptions(graph,start,goal);assert.equal(choices.length,2);
+  const hanam=route(graph,start,goal,null,choices.find(c=>c.key.endsWith('|hanam')).key);
+  const hobeop=route(graph,start,goal,null,choices.find(c=>c.key.endsWith('|hobeop')).key);
+  assert.deepEqual(hanam.roads,['경부고속도로','수도권제1순환고속도로','중부고속도로']);
+  assert.deepEqual(hobeop.roads,['경부고속도로','영동고속도로','중부고속도로']);
+  assert.ok(hanam.arrivalDirection.includes('남하'));assert.ok(hobeop.arrivalDirection.includes('북상'));
+  assert.ok(hanam.waypoints.length<=5);assert.ok(hobeop.waypoints.length<=5);
+  const gate=booth(436295787);assert.ok(hanam.goal.lat<gate.lat);assert.ok(hobeop.goal.lat>gate.lat);
 });
