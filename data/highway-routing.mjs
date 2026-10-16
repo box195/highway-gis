@@ -113,21 +113,28 @@ export function routingPolicy(graph,start,goal){
 export function originOptions(graph,start,goal){
   const directions=['북','북동','동','남동','남','남서','서','북서'];
   const sources=candidates(graph,routingPolicy(graph,start,goal).source,null);
-  if(start.gateName==='수원신갈톨게이트'&&goal?.gateName==='동서울톨게이트'){
+  if(suwonCorridors(graph,start,goal)){
     const north=sources.find(s=>s.edge.road==='경부고속도로'&&Math.cos(bearing(graph.nodes.get(s.edge.a),graph.nodes.get(s.edge.b))*Math.PI/180)>0);
-    if(north){const key=`${north.edge.a}:${north.edge.b}`;return [{key:`${key}|hanam`,label:'판교·하남 경유 → 동서울 남하 도착'},{key:`${key}|hobeop`,label:'신갈·호법 경유 → 동서울 북상 도착'}];}
+    if(north){const key=`${north.edge.a}:${north.edge.b}`,dongseoul=goal.gateName==='동서울톨게이트';return [{key:`${key}|hanam`,label:`판교·하남 경유${dongseoul?' → 동서울 남하 도착':''}`},{key:`${key}|hobeop`,label:`신갈·호법 경유${dongseoul?' → 동서울 북상 도착':''}`}];}
   }
   return sources.map(s=>{const angle=bearing(graph.nodes.get(s.edge.a),graph.nodes.get(s.edge.b));return {key:`${s.edge.a}:${s.edge.b}`,label:`${s.edge.road} · ${directions[Math.round(angle/45)%8]}쪽 진행 (${Math.round(angle)}°)`};});
+}
+function suwonCorridors(graph,start,goal){
+  if(start.gateName!=='수원신갈톨게이트'||!goal)return false;
+  const road=goal.roadHint||nearestHighwayPoint(graph,{...goal,avoidSecond:true}).road;
+  return road==='중부고속도로'||road==='수도권제1순환고속도로'&&goal.lat>=37.5&&goal.lng>=127.1;
 }
 export function route(graph,start,goal,heading=null,sourceKey=null){
   if(!validPoint(start)||!validPoint(goal))throw new Error('목적지의 위도·경도가 올바르지 않습니다.');
   if(distance(start,goal)<30)throw new Error('목적지에 도착했거나 현재 위치와 너무 가깝습니다.');
   const policy=routingPolicy(graph,start,goal), second='제2중부고속도로';
-  let corridor;
+  let corridor,required=[];
   if(sourceKey?.includes('|')){
     const [key,preference]=sourceKey.split('|');
-    if(start.gateName!=='수원신갈톨게이트'||goal.gateName!=='동서울톨게이트'||!['hanam','hobeop'].includes(preference))throw new Error('선택한 경유 경로가 올바르지 않습니다.');
-    sourceKey=key;corridor=new Set(['경부고속도로','중부고속도로',preference==='hanam'?'수도권제1순환고속도로':'영동고속도로']);
+    if(!suwonCorridors(graph,start,goal)||!['hanam','hobeop'].includes(preference))throw new Error('선택한 경유 경로가 올바르지 않습니다.');
+    sourceKey=key;
+    required=preference==='hanam'?['경부고속도로','수도권제1순환고속도로']:['경부고속도로','영동고속도로','중부고속도로'];
+    corridor=new Set([...required,'수도권제1순환고속도로','중부고속도로']);
   }
   let sources=candidates(graph,policy.source,heading);const targets=candidates(graph,policy.target,null,'arrival');
   if(sourceKey)sources=sources.filter(s=>`${s.edge.a}:${s.edge.b}`===sourceKey);
@@ -136,21 +143,31 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
   let best=null;
   const accept=(cost,s,t,path,direct=false)=>{if(!best||cost<best.cost)best={cost,s,t,path,direct};};
   // Same directed segment needs no trip around the network.
-  for(const s of sources)for(const t of targets)if(s.edge===t.edge && t.t>=s.t)accept((t.t-s.t)*s.edge.length+20*(s.gap+t.gap),s,t,[],true);
-  for(const s of sources){const cost=(1-s.t)*s.edge.length+20*s.gap,id=s.edge.b,closed=!policy.allowSecond&&s.edge.road!==second,key=`${id}:${Number(closed)}`;
-    if(cost<(costs.get(key)??Infinity)){costs.set(key,cost);origins.set(key,s);previous.delete(key);heap.push({id,cost,key,closed});}
+  for(const s of sources)for(const t of targets)if(!required.length&&s.edge===t.edge && t.t>=s.t)accept((t.t-s.t)*s.edge.length+20*(s.gap+t.gap),s,t,[],true);
+  for(const s of sources){
+    if(required.length&&s.edge.road!==required[0])continue;
+    const stage=required.length?1:0,cost=(1-s.t)*s.edge.length+20*s.gap,id=s.edge.b,closed=!policy.allowSecond&&s.edge.road!==second,key=`${id}:${Number(closed)}:${stage}`;
+    if(cost<(costs.get(key)??Infinity)){costs.set(key,cost);origins.set(key,s);previous.delete(key);heap.push({id,cost,key,closed,stage});}
   }
   const targetMap=new Map();for(const t of targets){if(!targetMap.has(t.edge.a))targetMap.set(t.edge.a,[]);targetMap.get(t.edge.a).push(t);}
   while(heap.a.length){
-    const {id,cost,key,closed}=heap.pop();if(cost!==costs.get(key))continue;if(best&&cost>best.cost)break;
+    const {id,cost,key,closed,stage}=heap.pop();if(cost!==costs.get(key))continue;if(best&&cost>best.cost)break;
     for(const t of targetMap.get(id)||[]){const total=cost+t.t*t.edge.length+20*t.gap;
+      if(stage<required.length)continue;
       if(!best||total<best.cost){const path=[];let cursor=key;while(previous.has(cursor)){const v=previous.get(cursor);path.push(v.edge);cursor=v.previousKey;}path.reverse();accept(total,origins.get(key),t,path);}
     }
     for(const e of graph.adj.get(id)||[]){
       if(corridor&&e.road&&!corridor.has(e.road))continue;
+      // Keep progress in the search state: a road allowlist alone can choose
+      // Pangyo even after the user selected Singal/Hobeop for a Ring destination.
+      let nextStage=stage;
+      if(stage<required.length&&e.road){
+        if(e.road===required[stage])nextStage++;
+        else if(e.road!==required[stage-1])continue;
+      }
       if(!policy.allowSecond&&closed&&e.road===second)continue;
-      const next=cost+e.length,nextClosed=closed||(!policy.allowSecond&&!!e.road&&e.road!==second),nextKey=`${e.b}:${Number(nextClosed)}`;
-      if(next<(costs.get(nextKey)??Infinity)){costs.set(nextKey,next);previous.set(nextKey,{edge:e,previousKey:key});origins.set(nextKey,origins.get(key));heap.push({id:e.b,cost:next,key:nextKey,closed:nextClosed});}
+      const next=cost+e.length,nextClosed=closed||(!policy.allowSecond&&!!e.road&&e.road!==second),nextKey=`${e.b}:${Number(nextClosed)}:${nextStage}`;
+      if(next<(costs.get(nextKey)??Infinity)){costs.set(nextKey,next);previous.set(nextKey,{edge:e,previousKey:key});origins.set(nextKey,origins.get(key));heap.push({id:e.b,cost:next,key:nextKey,closed:nextClosed,stage:nextStage});}
     }
   }
   if(!best)throw new Error('허용된 다섯 노선의 연결로만 갈 수 있는 경로가 없습니다. 다른 노선이나 지정 루트가 필요합니다.');

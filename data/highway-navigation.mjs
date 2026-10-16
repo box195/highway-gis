@@ -1,5 +1,5 @@
-import {ROAD_QUERY,buildGraph,route,originOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261016-fewer-waypoints';
-import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,roadFrom} from './highway-endpoints.mjs?v=20261016-fewer-waypoints';
+import {ROAD_QUERY,buildGraph,route,originOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261016-junction-corridors';
+import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,roadFrom} from './highway-endpoints.mjs?v=20261016-junction-corridors';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 
 let graphPromise, generation=0, previewLayer, currentResult, context, openedSelection;
@@ -104,17 +104,17 @@ $('hn-build').addEventListener('click',async()=>{
     $('hn-origin-info').hidden=false;
     $('hn-origin-info').textContent=fromOffice?`출발 거점: ${start.officeName} · 현재 위치에서 직선 약 ${(start.officeDistance/1000).toFixed(1)}km · 이 거점부터 경로를 계산합니다.`:`출발: ${start.endpointKind==='office'?start.name:'현재 GPS 위치'}`;
     const choices=originOptions(graph,start,goal);
-    if(!Number.isFinite(start.heading) && choices.length>1){
+    const corridorChoices=choices.some(c=>c.key.includes('|'));
+    if((corridorChoices||!Number.isFinite(start.heading)) && choices.length>1){
       const direction=$('hn-direction');
       if(!context || !choices.some(c=>c.key===direction.value)){
-        const corridorChoices=choices.some(c=>c.key.includes('|'));
-        direction.replaceChildren(new Option(corridorChoices?'경유 경로와 도착 방향을 선택하세요':'현재 주행할 방향을 선택하세요',''),...choices.map(c=>new Option(c.label,c.key)));
+        direction.replaceChildren(new Option(corridorChoices?'중간에 거칠 분기점 경로를 선택하세요':'출발 지점에서 진행할 방향을 선택하세요',''),...choices.map(c=>new Option(c.label,c.key)));
         direction.hidden=false;$('hn-direction-label').hidden=false;context={start:rawStart,graph,time:Date.now()};
-        $('hn-direction-label').textContent=corridorChoices?'경유 경로 · 동서울 도착 방향':'출발 고속도로 · 진행 방향';
-        status(corridorChoices?'두 경로 모두 경부선 북상으로 출발합니다. 하남 경유는 남하 차로, 호법 경유는 북상 차로로 도착합니다. 경로를 선택하고 다시 만드세요.':'GPS에서 진행 방향을 확인할 수 없습니다. 출발할 고속도로·방향을 선택하고 경로 만들기를 다시 누르세요.');return;
+        $('hn-direction-label').textContent=corridorChoices?'중간 경유 경로':'출발 지점의 고속도로 · 진행 방향';
+        status(corridorChoices?'두 경로 모두 경부선 북상으로 출발합니다. 판교·하남 또는 신갈·호법에서 연결되는 경로를 선택하고 다시 만드세요.':'GPS에서 진행 방향을 확인할 수 없습니다. 출발 지점에서 진행할 고속도로·방향을 선택하고 경로 만들기를 다시 누르세요.');return;
       }
     }
-    const sourceKey=Number.isFinite(start.heading)?null:$('hn-direction').value||null;
+    const sourceKey=corridorChoices||!Number.isFinite(start.heading)?$('hn-direction').value||null:null;
     const result=route(graph,start,goal,start.heading,sourceKey);
     currentResult={...result,created:Date.now()};
     const box=$('hn-preview'),title=document.createElement('p');title.style.fontWeight='700';title.textContent=goal.name;box.append(title);
@@ -137,7 +137,7 @@ $('hn-build').addEventListener('click',async()=>{
   finally{if(token===generation)$('hn-build').disabled=false;}
 });
 $('hn-goal').addEventListener('change',()=>{reset();$('hn-build').disabled=false;status('목적지가 바뀌었습니다. 경로를 다시 만드세요.');});
-$('hn-direction').addEventListener('change',()=>{reset();$('hn-build').disabled=false;status('출발 방향을 선택했습니다. 경로 만들기를 누르세요.');});
+$('hn-direction').addEventListener('change',()=>{reset();$('hn-build').disabled=false;status('경로 선택을 반영하려면 경로 만들기를 누르세요.');});
 $('hn-origin-mode').addEventListener('change',()=>{
   reset();context=null;$('hn-origin-info').hidden=true;$('hn-direction').replaceChildren();$('hn-direction').hidden=true;$('hn-direction-label').hidden=true;
   $('hn-build').disabled=!destinations.length;status('출발지 기준이 바뀌었습니다. 경로를 다시 만드세요.');

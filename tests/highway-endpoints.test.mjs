@@ -148,3 +148,41 @@ test('Suwon offers two actual corridors, both departing north and arriving on op
   assert.ok(hanam.waypoints.length<=5);assert.ok(hobeop.waypoints.length<=5);
   const gate=booth(436295787);assert.ok(hanam.goal.lat<gate.lat);assert.ok(hobeop.goal.lat>gate.lat);
 });
+
+test('Suwon to Topyeong selects junction corridors instead of north/south departure',()=>{
+  const start=officeEndpoint(suwon,[],TOLL_GATES),goal=officeEndpoint(office('토평영업소',414691638),[],TOLL_GATES);
+  const choices=originOptions(graph,start,goal);
+  assert.deepEqual(choices.map(c=>c.label),['판교·하남 경유','신갈·호법 경유']);
+  const hanam=route(graph,start,goal,null,choices[0].key),hobeop=route(graph,start,goal,null,choices[1].key);
+  assert.deepEqual(hanam.roads,['경부고속도로','수도권제1순환고속도로']);
+  assert.deepEqual(hobeop.roads,['경부고속도로','영동고속도로','중부고속도로','수도권제1순환고속도로']);
+  for(const r of [hanam,hobeop]){
+    assert.ok(r.points[1].lat>r.points[0].lat);assert.ok(r.waypoints.length<=5);
+    assert.ok(!r.roads.includes('제2중부고속도로'));
+    const q=new URL(navigationURL(r,'https://example.com/')).searchParams;
+    assert.equal(Number(q.get('slat')),r.start.lat);assert.equal(Number(q.get('dlat')),r.goal.lat);
+  }
+});
+
+test('Suwon corridors work for Gwangju offices and a branch-style destination without Dongseoul identity',()=>{
+  const start=officeEndpoint(suwon,[],TOLL_GATES);
+  // Public toll coordinates, not the user's private branch coordinates.
+  const goals=[officeEndpoint(office('경기광주영업소',685222361),[],TOLL_GATES),
+    {name:'경기광주지사 인근 본선 테스트',lat:booth(685222361).lat,lng:booth(685222361).lng}];
+  for(const goal of goals){
+    const choices=originOptions(graph,start,goal);assert.equal(choices.length,2);
+    const hanam=route(graph,start,goal,null,choices[0].key),hobeop=route(graph,start,goal,null,choices[1].key);
+    assert.deepEqual(hanam.roads,['경부고속도로','수도권제1순환고속도로','중부고속도로']);
+    assert.deepEqual(hobeop.roads,['경부고속도로','영동고속도로','중부고속도로']);
+    for(const r of [hanam,hobeop]){assert.ok(r.waypoints.length<=5);assert.ok(r.points[1].lat>r.points[0].lat);}
+  }
+});
+
+test('junction corridor keys cannot be used from an unrelated departure',()=>{
+  const start=officeEndpoint(gonjiam,[],TOLL_GATES),goal=officeEndpoint(office('토평영업소',414691638),[],TOLL_GATES);
+  const choices=originOptions(graph,start,goal);
+  assert.ok(choices.every(c=>!c.key.includes('|')));
+  assert.throws(()=>route(graph,start,goal,null,choices[0].key+'|hobeop'),/선택한 경유 경로/);
+  const nearbyGoal=officeEndpoint(office('성남영업소',734816282),[],TOLL_GATES);
+  assert.ok(originOptions(graph,officeEndpoint(suwon,[],TOLL_GATES),nearbyGoal).every(c=>!c.key.includes('|')));
+});
