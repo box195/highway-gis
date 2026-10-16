@@ -22,7 +22,7 @@ test('nearest-office departure works away from the office and ignores the GPS tr
   assert.equal(choices.length,2);
   for(const c of choices){
     const r=route(graph,start,goal,null,c.key);
-    assert.equal(r.waypoints.length,4);assert.ok(nearestHighwayPoint(graph,r.start).gap<1);
+    assert.equal(r.waypoints.length,3);assert.ok(nearestHighwayPoint(graph,r.start).gap<1);
     assert.ok(distance(r.start,gps)>500);
     const q=new URL(navigationURL(r,'https://example.com/')).searchParams;
     assert.equal(Number(q.get('slat')),r.start.lat);assert.notEqual(Number(q.get('slat')),gps.lat);

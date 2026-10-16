@@ -162,7 +162,7 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
   const roads=[];for(const e of edges)if(e.road&&roads.at(-1)!==e.road)roads.push(e.road);
   let length=0;for(let i=1;i<points.length;i++)length+=distance(points[i-1],points[i]);
   const arrival=best.t.anchor;
-  const waypoints=makeWaypoints(points,pointRoads,arrival);
+  const waypoints=makeWaypoints(points,pointRoads,arrival,{anchoredStart:!!start.snapToHighway,anchoredGoal:!!goal.snapToHighway});
   // Navigation must receive the same carriageway endpoints used by this graph,
   // rather than sending the original office building back to Naver.
   const navStart=start.snapToHighway?{...start,...best.s.point}:start;
@@ -172,7 +172,7 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
   const navGoal=goal.snapToHighway?{...goal,...best.t.point,...(arrivalDirection?{name:`${goal.name} · ${arrivalDirection}`}:{})}:goal;
   return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap,arrivalDirection,arrivalBearing:arrival?.bearing,arrivalGateId:arrival?.gateId,arrivalOffset:arrival?.offset};
 }
-export function makeWaypoints(points,roads,arrival=null){
+export function makeWaypoints(points,roads,arrival=null,{anchoredStart=false,anchoredGoal=false}={}){
   const cum=[0];for(let i=1;i<points.length;i++)cum.push(cum.at(-1)+distance(points[i-1],points[i]));
   const total=cum.at(-1);if(total<100)return [];
   // One useful anchor per motorway run, located on the main carriageway.
@@ -184,7 +184,6 @@ export function makeWaypoints(points,roads,arrival=null){
     if(!run||run.road!==roads[i]){run={road:roads[i],from:cum[i],to:cum[i+1],segments:[]};runs.push(run);}
     run.to=cum[i+1];run.segments.push({from:cum[i],to:cum[i+1]});
   }
-  if(runs.length>5)throw new Error('이 경로는 노선 변경을 표현하는 데 경유지가 5개 넘게 필요합니다. 목적지를 나눠서 선택해주세요.');
   const picks=[];
   const at=(run,desired,label)=>{
     let best;for(const s of run.segments){const d=Math.max(s.from,Math.min(s.to,desired)),gap=Math.abs(d-desired);if(!best||gap<best.gap)best={d,gap};}
@@ -197,10 +196,14 @@ export function makeWaypoints(points,roads,arrival=null){
       // Keep the final guide BEFORE the plaza and the destination well AFTER
       // it: Naver must cross the plaza on one continuous directed carriageway.
       const beforePlaza=total-(arrival.offset||700)-650;
-      if(runs.length<5&&runs.length>1)at(run,run.from+Math.min(600,span/2),'합류 후');
       at(run,Math.max(run.from+Math.min(50,span/2),beforePlaza),'요금소 진입 방향');
-    }else at(run,runs.length===1?(run.from+run.to)/2:run.from+Math.min(600,span/2),'합류 후');
+    }else if(!anchoredGoal)at(run,runs.length===1?(run.from+run.to)/2:run.from+Math.min(600,span/2),'합류 후');
   });
+  // A snapped departure already identifies the first directed carriageway.
+  // Only use that redundancy when needed to fit the app's waypoint budget;
+  // never discard an intermediate motorway or the pre-plaza arrival guide.
+  if(picks.length>5&&anchoredStart&&runs.length>1&&picks[0]?.label==='분기 전')picks.shift();
+  if(picks.length>5)throw new Error('이 경로는 노선 변경을 표현하는 데 경유지가 5개 넘게 필요합니다. 목적지를 나눠서 선택해주세요.');
   const selected=picks.sort((a,b)=>a.d-b.d);
   return selected.map(({d,road,label},k)=>{
     let i=cum.findIndex(v=>v>=d);if(i<1)i=1;

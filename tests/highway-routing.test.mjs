@@ -81,3 +81,35 @@ test('Naver URL encodes all names, lat/lng order and exact waypoint count',()=>{
   assert.equal(u.searchParams.has('v2lat'),false);assert.ok(navigationURL(r,'https://example.com',true).includes('package=com.nhn.android.nmap;end'));
   assert.throws(()=>navigationURL({...r,waypoints:Array(6).fill(r.waypoints[0])},'x'),/올바르지/);
 });
+
+test('through-toll routes omit the merge guide but retain the pre-plaza guide',()=>{
+  const points=Array.from({length:31},(_,i)=>({lat:37,lng:127+i*.002}));
+  const roads=points.map((_,i)=>ROADS[Math.min(2,Math.floor(i/10))]);
+  const waypoints=makeWaypoints(points,roads,{kind:'through',offset:700});
+  assert.equal(waypoints.length,3);
+  assert.ok(waypoints.slice(0,-1).every(p=>p.name.includes('분기 전')));
+  assert.ok(waypoints.at(-1).name.includes('요금소 진입 방향'));
+  assert.ok(!waypoints.some(p=>p.name.includes('합류 후')));
+});
+
+test('six runs fit only with a known snapped departure and preserve all later guides',()=>{
+  const points=Array.from({length:61},(_,i)=>({lat:37,lng:127+i*.002}));
+  const roads=points.map((_,i)=>ROADS[Math.floor(i/10)%5]);
+  const arrival={kind:'through',offset:700};
+  assert.throws(()=>makeWaypoints(points,roads,arrival),/5개 넘게/);
+  const waypoints=makeWaypoints(points,roads,arrival,{anchoredStart:true});
+  assert.equal(waypoints.length,5);
+  for(let i=0;i<4;i++)assert.ok(waypoints[i].name.includes(ROADS[i+1]+' · 분기 전'));
+  assert.ok(waypoints.at(-1).name.includes('요금소 진입 방향'));
+  assert.ok(waypoints.every((p,i)=>!i||p.lng>waypoints[i-1].lng));
+  const longer=Array.from({length:71},(_,i)=>({lat:37,lng:127+i*.002}));
+  assert.throws(()=>makeWaypoints(longer,longer.map((_,i)=>ROADS[Math.floor(i/10)%5]),arrival,{anchoredStart:true}),/5개 넘게/);
+});
+
+test('a snapped mainline destination replaces only its final merge guide',()=>{
+  const points=Array.from({length:21},(_,i)=>({lat:37,lng:127+i*.002}));
+  const roads=points.map((_,i)=>i<10?ROADS[1]:ROADS[2]);
+  const regular=makeWaypoints(points,roads),anchored=makeWaypoints(points,roads,null,{anchoredGoal:true});
+  assert.equal(regular.length,2);assert.equal(anchored.length,1);
+  assert.deepEqual(anchored[0],regular[0]);
+});

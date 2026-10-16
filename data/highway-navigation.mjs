@@ -1,5 +1,5 @@
-import {ROAD_QUERY,buildGraph,route,originOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261016-nearest-origin';
-import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,roadFrom} from './highway-endpoints.mjs?v=20261016-nearest-origin';
+import {ROAD_QUERY,buildGraph,route,originOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261016-fewer-waypoints';
+import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,roadFrom} from './highway-endpoints.mjs?v=20261016-fewer-waypoints';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 
 let graphPromise, generation=0, previewLayer, currentResult, context, openedSelection;
