@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {buildGraph,route,navigationURL,nearestHighwayPoint,originOptions,ROADS,distance} from '../data/highway-routing.mjs';
-import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,roadFrom,GATE_PROFILES} from '../data/highway-endpoints.mjs';
+import {buildGraph,route,navigationURL,nearestHighwayPoint,originOptions,availableOriginOptions,ROADS,distance} from '../data/highway-routing.mjs';
+import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,roadFrom,GATE_PROFILES,supportsHighwayOffice} from '../data/highway-endpoints.mjs';
 import {TOLL_GATES} from '../data/highway-tollgates.mjs';
 import {TOLL_ACCESS} from '../data/highway-toll-access.mjs';
 const graph=buildGraph(JSON.parse(fs.readFileSync(new URL('../data/highway-roads.json',import.meta.url),'utf8')));
@@ -185,4 +185,57 @@ test('junction corridor keys cannot be used from an unrelated departure',()=>{
   assert.throws(()=>route(graph,start,goal,null,choices[0].key+'|hobeop'),/선택한 경유 경로/);
   const nearbyGoal=officeEndpoint(office('성남영업소',734816282),[],TOLL_GATES);
   assert.ok(originOptions(graph,officeEndpoint(suwon,[],TOLL_GATES),nearbyGoal).every(c=>!c.key.includes('|')));
+});
+
+test('Gwangju branch uses Gonjiam rather than Gwangju toll regardless of building proximity',()=>{
+  const building=office('경기광주지사',685222361),goal=officeEndpoint(building,[],TOLL_GATES);
+  assert.equal(goal.gateName,'곤지암톨게이트');assert.equal(goal.roadHint,'중부고속도로');
+  assert.ok(goal.arrivalAnchors.length>0);assert.ok(goal.arrivalAnchors.every(a=>a.gateId===436295298));
+  const start=officeEndpoint(suwon,[],TOLL_GATES);
+  for(const c of originOptions(graph,start,goal)){
+    const r=route(graph,start,goal,null,c.key);assert.equal(r.arrivalGateId,436295298);assert.ok(r.waypoints.length<=5);
+  }
+});
+
+test('Dongseoul branch and regional office use both directed Seo-hanam exits',()=>{
+  for(const name of ['동서울지사','서울경기본부']){
+    const goal=officeEndpoint({...suwon,name},[],TOLL_GATES);
+    assert.equal(goal.gateName,'서하남IC');assert.equal(goal.arrivalAnchors.length,2);
+    for(const anchor of goal.arrivalAnchors){
+      const e=graph.mainEdgeByKey.get(anchor.edgeKey),a=graph.nodes.get(e.a),b=graph.nodes.get(e.b);
+      const start={lat:a.lat+(b.lat-a.lat)*.1,lng:a.lng+(b.lng-a.lng)*.1,roadHint:e.road};
+      const r=route(graph,start,goal,null,anchor.edgeKey);
+      assert.ok(r.length<200);assert.ok(r.arrivalDirection.includes('진출 방향'));
+      assert.ok(distance(r.goal,anchor)<1);
+    }
+    const start=officeEndpoint(suwon,[],TOLL_GATES);
+    for(const c of originOptions(graph,start,goal))assert.ok(route(graph,start,goal,null,c.key).waypoints.length<=5);
+  }
+});
+
+test('Gwangam management building preserves the specified Plus Code and traffic centres are excluded',()=>{
+  const goal=officeEndpoint({...suwon,name:'광암터널관리동'},[],TOLL_GATES);
+  assert.equal(goal.lat,37.5163875);assert.equal(goal.lng,127.174515625);
+  const r=route(graph,officeEndpoint(suwon,[],TOLL_GATES),goal);
+  assert.equal(r.goal,goal);assert.ok(r.waypoints.length<=5);
+  assert.equal(supportsHighwayOffice({name:'수도권 교통 센터'}),false);
+  assert.equal(supportsHighwayOffice({name:'경기광주지사'}),true);
+  const gps={lat:suwon.lat,lng:suwon.lng};
+  const chosen=nearestOfficeDeparture(gps,[{...suwon,name:'교통센터'},{...gonjiam}],[],TOLL_GATES);
+  assert.equal(chosen.officeName,gonjiam.name);
+  assert.throws(()=>nearestOfficeDeparture(gps,[{...suwon,name:'교통센터'}],[],TOLL_GATES),/저장된 거점이 없습니다/);
+});
+
+test('only precomputed viable directions are offered and their routes are reused',()=>{
+  const start=officeEndpoint(suwon,[],TOLL_GATES);
+  for(const [name,id] of [['청계영업소',4340329006],['성남영업소',734816282]]){
+    const goal=officeEndpoint(office(name,id),[],TOLL_GATES),{choices,rejected}=availableOriginOptions(graph,start,goal);
+    assert.equal(choices.length,1);assert.ok(choices[0].label.includes('북쪽'));
+    assert.ok(rejected.some(c=>c.label.includes('남쪽')));
+    assert.ok(choices[0].result.waypoints.length<=5);
+    assert.deepEqual(choices[0].result,route(graph,start,goal,null,choices[0].key));
+  }
+  const goal=officeEndpoint(office('토평영업소',414691638),[],TOLL_GATES);
+  const {choices}=availableOriginOptions(graph,start,goal);
+  assert.equal(choices.length,2);assert.ok(choices.every(c=>c.key.includes('|')&&c.result.waypoints.length<=5));
 });

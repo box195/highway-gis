@@ -124,6 +124,14 @@ function suwonCorridors(graph,start,goal){
   const road=goal.roadHint||nearestHighwayPoint(graph,{...goal,avoidSecond:true}).road;
   return road==='중부고속도로'||road==='수도권제1순환고속도로'&&goal.lat>=37.5&&goal.lng>=127.1;
 }
+export function availableOriginOptions(graph,start,goal){
+  const choices=[],rejected=[];
+  for(const choice of originOptions(graph,start,goal)){
+    try{choices.push({...choice,result:route(graph,start,goal,null,choice.key)});}
+    catch(error){rejected.push({...choice,error:error.message});}
+  }
+  return {choices,rejected};
+}
 export function route(graph,start,goal,heading=null,sourceKey=null){
   if(!validPoint(start)||!validPoint(goal))throw new Error('목적지의 위도·경도가 올바르지 않습니다.');
   if(distance(start,goal)<30)throw new Error('목적지에 도착했거나 현재 위치와 너무 가깝습니다.');
