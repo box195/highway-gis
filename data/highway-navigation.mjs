@@ -1,7 +1,7 @@
-import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261016-songpa-saved';
-import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261016-songpa-saved';
+import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261016-songpa-vm9';
+import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261016-songpa-vm9';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261016-songpa-saved';
+import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261016-songpa-vm9';
 
 let graphPromise, generation=0, previewLayer, currentResult, context, openedSelection;
 const button=document.getElementById('btn-highway-navigation');
@@ -13,7 +13,7 @@ modal.innerHTML=`<form method="dialog" class="hn-header"><h2 id="highway-navigat
   <div id="hn-saved-controls" class="hn-fields" hidden>
   <label for="hn-saved-start">출발지</label><select id="hn-saved-start"></select>
   <label for="hn-saved-goal">목적지</label><select id="hn-saved-goal"></select>
-  <p class="hn-muted">수원신갈영업소와 송파IC 사이의 방향별 경유지 3개를 그대로 사용합니다. 수원신갈톨게이트는 통과할 수 있습니다. 실제 주행 경로는 네이버에서 확인하세요.</p></div>
+  <p class="hn-muted">수원신갈영업소에서 송파IC로 가는 경유지 3개를 그대로 사용합니다. 수원신갈톨게이트는 통과할 수 있습니다. 실제 주행 경로는 네이버에서 확인하세요.</p></div>
   <div id="hn-highway-controls" class="hn-fields"><label for="hn-goal">목적지 · 저장된 GIS 지점</label><select id="hn-goal"></select>
   <label for="hn-origin-mode">출발지 기준</label><select id="hn-origin-mode"><option value="gps">현재 위치</option><option value="nearest-office">현재 위치에서 가장 가까운 거점</option><option value="saved-office">거점 직접 선택</option></select>
   <label id="hn-origin-office-label" for="hn-origin-office" hidden>출발 거점</label><select id="hn-origin-office" hidden></select>
@@ -36,7 +36,7 @@ style.textContent+=' .hn-fields{display:flex;flex-direction:column;gap:12px}.hn-
 const $=id=>document.getElementById(id);
 let destinations=[],origins=[];
 const canBuild=()=>$('hn-route-mode').value==='saved'||destinations.length>0;
-for(const id of ['hn-saved-start','hn-saved-goal'])$(id).replaceChildren(...SAVED_HUBS.map(h=>new Option(h.name,h.id)));
+for(const id of ['hn-saved-start','hn-saved-goal'])$(id).replaceChildren(...SAVED_HUBS.filter(h=>h.id===(id==='hn-saved-start'?'suwon':'songpa')).map(h=>new Option(h.name,h.id)));
 $('hn-saved-goal').value='songpa';
 function updateMode(){
   const saved=$('hn-route-mode').value==='saved';
@@ -93,7 +93,7 @@ function showSavedRoute(){
     map.fitBounds(L.latLngBounds(result.points.map(p=>[p.lat,p.lng])),{padding:[35,35]});
     $('hn-launch').href=navigationURL(result,location.origin+location.pathname,/Android/i.test(navigator.userAgent));$('hn-launch').hidden=false;
     const show=document.createElement('button');show.type='button';show.className='hn-primary';show.textContent='GIS 지도에서 저장 지점 보기';show.addEventListener('click',()=>modal.close('preview'));box.append(show);
-    status('방향별 경유지 3개를 준비했습니다. 네이버에서 원하는 길로 연결되는지 확인하세요.');
+    status('저장 경유지 3개를 준비했습니다. 네이버에서 원하는 길로 연결되는지 확인하세요.');
   }catch(e){status(e.message,true);}
 }
 async function loadGraph(){
@@ -183,8 +183,6 @@ $('hn-build').addEventListener('click',async()=>{
 $('hn-route-mode').addEventListener('change',()=>{reset();context=null;$('hn-direction').replaceChildren();$('hn-direction').hidden=true;$('hn-direction-label').hidden=true;updateMode();});
 for(const id of ['hn-saved-start','hn-saved-goal'])$(id).addEventListener('change',()=>{
   reset();context=null;
-  const other=$(id==='hn-saved-start'?'hn-saved-goal':'hn-saved-start');
-  if(other.value===$(id).value)other.value=SAVED_HUBS.find(h=>h.id!==$(id).value).id;
   status('저장 경로의 출발·도착지가 바뀌었습니다. 다시 불러오세요.');
 });
 $('hn-goal').addEventListener('change',()=>{reset();$('hn-build').disabled=false;status('목적지가 바뀌었습니다. 경로를 다시 만드세요.');});
