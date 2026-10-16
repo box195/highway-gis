@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {buildGraph,route,navigationURL,nearestHighwayPoint,originOptions,availableOriginOptions,ROADS,distance} from '../data/highway-routing.mjs';
-import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,roadFrom,GATE_PROFILES,supportsHighwayOffice} from '../data/highway-endpoints.mjs';
+import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,GATE_PROFILES,supportsHighwayOffice} from '../data/highway-endpoints.mjs';
 import {TOLL_GATES} from '../data/highway-tollgates.mjs';
 import {TOLL_ACCESS} from '../data/highway-toll-access.mjs';
 const graph=buildGraph(JSON.parse(fs.readFileSync(new URL('../data/highway-roads.json',import.meta.url),'utf8')));
@@ -50,7 +50,7 @@ test('ordinary office routes use Jungbu and Naver gets on-carriageway endpoints'
     assert.ok(nearestHighwayPoint(graph,r.start).gap<1);assert.ok(nearestHighwayPoint(graph,r.goal).gap<1);
     const q=new URL(navigationURL(r,'https://example.com/')).searchParams;
     assert.equal(Number(q.get('slat')),r.start.lat);assert.equal(Number(q.get('dlat')),r.goal.lat);
-    assert.notEqual(Number(q.get('dlat')),item.lat);assert.ok(q.get('dname').includes('톨게이트'));
+    assert.notEqual(Number(q.get('dlat')),item.lat);assert.equal(q.get('dname'),item.name);
   }
 });
 test('IC fallback uses exact gate identity instead of another similarly named interchange',()=>{
@@ -104,7 +104,7 @@ test('through-toll arrivals keep the approach carriageway in both directions wit
       assert.ok(result.length<4000,`${name}: unnecessary return loop ${result.length}`);
       assert.ok(result.arrivalDirection.includes('요금소 통과 방향'));
       const q=new URL(navigationURL(result,'https://example.com/')).searchParams;
-      assert.ok(q.get('dname').includes(result.arrivalDirection));assert.equal(Number(q.get('dlat')),result.goal.lat);
+      assert.equal(q.get('dname'),name);assert.equal(Number(q.get('dlat')),result.goal.lat);
     }
     assert.ok(headings.size>=2,`${name}: both carriageways need coverage`);
   }
@@ -238,4 +238,21 @@ test('only precomputed viable directions are offered and their routes are reused
   const goal=officeEndpoint(office('토평영업소',414691638),[],TOLL_GATES);
   const {choices}=availableOriginOptions(graph,start,goal);
   assert.equal(choices.length,2);assert.ok(choices.every(c=>c.key.includes('|')&&c.result.waypoints.length<=5));
+});
+
+test('manual office departure uses only the chosen hub and keeps short endpoint names',()=>{
+  const start=savedOfficeDeparture({...suwon,heading:180,speed:20},[],TOLL_GATES);
+  assert.equal(start.name,suwon.name);assert.equal(start.officeName,suwon.name);
+  assert.equal(start.heading,null);assert.equal(start.departureMode,'saved-office');assert.equal(start.accuracy,null);
+  const goal=officeEndpoint(office('동서울영업소',436295787),[],TOLL_GATES);
+  for(const c of availableOriginOptions(graph,start,goal).choices){
+    const q=new URL(navigationURL(c.result,'https://example.com/')).searchParams;
+    assert.equal(q.get('sname'),suwon.name);assert.equal(q.get('dname'),'동서울영업소');
+    assert.ok(nearestHighwayPoint(graph,c.result.start).gap<1);
+  }
+  for(const name of ['경기광주지사','동서울지사','서울경기본부','광암터널관리동']){
+    const item={...suwon,name},departure=savedOfficeDeparture(item,[],TOLL_GATES);
+    assert.equal(departure.name,name);assert.equal(officeEndpoint(item,[],TOLL_GATES).name,name);
+  }
+  for(const item of [undefined,{name:'좌표 없음'},{...suwon,name:'교통센터'}])assert.throws(()=>savedOfficeDeparture(item,[],TOLL_GATES),/출발 거점/);
 });

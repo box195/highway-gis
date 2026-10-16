@@ -1,5 +1,5 @@
-import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261016-office-access';
-import {TOLL_ACCESS} from './highway-toll-access.mjs?v=20261016-office-access';
+import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261016-manual-origin';
+import {TOLL_ACCESS} from './highway-toll-access.mjs?v=20261016-manual-origin';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 import {SEO_HANAM_ACCESS} from './highway-office-access.mjs';
 
@@ -31,11 +31,11 @@ export function officeEndpoint(item,interchanges=[],gates=[],label){
   const officeName=(item.name||'').replace(/\s/g,'');
   if(/동서울지사|서울경기본부/.test(officeName)){
     const lat=(SEO_HANAM_ACCESS[0].lat+SEO_HANAM_ACCESS[1].lat)/2,lng=(SEO_HANAM_ACCESS[0].lng+SEO_HANAM_ACCESS[1].lng)/2;
-    return {lat,lng,name:`${label||item.name} → 서하남IC 본선 접속점`,original,endpointKind:'office',gateName:'서하남IC',roadHint:'수도권제1순환고속도로',snapToHighway:true,hasGateTopology:true,arrivalAnchors:SEO_HANAM_ACCESS};
+    return {lat,lng,name:label||item.name,original,endpointKind:'office',gateName:'서하남IC',roadHint:'수도권제1순환고속도로',snapToHighway:true,hasGateTopology:true,arrivalAnchors:SEO_HANAM_ACCESS};
   }
   if(/광암터널.*관리|광암관리/.test(officeName)){
     // Centre of the user's full Plus Code 8Q99G58F+HR2 (11-digit OLC).
-    return {lat:37.5163875,lng:127.174515625,name:`${label||item.name} → 지정 위치`,original,endpointKind:'office',roadHint:'수도권제1순환고속도로',snapToHighway:false,endpointNote:'광암터널관리동은 지정한 Plus Code 8Q99G58F+HR2 위치로 안내합니다.'};
+    return {lat:37.5163875,lng:127.174515625,name:label||item.name,original,endpointKind:'office',roadHint:'수도권제1순환고속도로',snapToHighway:false,endpointNote:'광암터널관리동은 지정한 Plus Code 8Q99G58F+HR2 위치로 안내합니다.'};
   }
   const branch=/경기광주지사/.test(officeName);
   const profile=branch?{gate:'곤지암톨게이트',road:'중부고속도로',aliases:['곤지암'],gateIds:[436295298,436295655]}:GATE_PROFILES.find(p=>p.match.test(officeName));
@@ -45,9 +45,12 @@ export function officeEndpoint(item,interchanges=[],gates=[],label){
   const publicGates=(branch?TOLL_GATES:gates).filter(p=>profile?.gateIds?profile.gateIds.includes(p.id):matches(p)||(profile&&p.unnamed&&distance(original,p)<250)).sort((a,b)=>distance(original,a)-distance(original,b));
   const savedGates=interchanges.map(p=>({...p,lat:Number(p.lat),lng:Number(p.lng)})).filter(matches).sort((a,b)=>Number(/TG|톨게이트|요금소/i.test(b.name))-Number(/TG|톨게이트|요금소/i.test(a.name))||distance(original,a)-distance(original,b));
   const anchor=publicGates[0]||savedGates[0]||original;
-  const reference=profile?.gate||`${item.name||'거점'} 인근`;
   const arrivalAnchors=publicGates.flatMap(g=>(TOLL_ACCESS[g.id]||[]).filter(a=>!roadHint||a.road===roadHint).map(a=>({...a,gateId:g.id})));
-  return {...original,lat:anchor.lat,lng:anchor.lng,name:`${label||item.name} → ${reference} 본선 접속점`,gateName:profile?.gate,roadHint,snapToHighway:true,original,endpointKind:'office',arrivalAnchors,hasGateTopology:publicGates.length>0};
+  return {...original,lat:anchor.lat,lng:anchor.lng,name:label||item.name||'거점',gateName:profile?.gate,roadHint,snapToHighway:true,original,endpointKind:'office',arrivalAnchors,hasGateTopology:publicGates.length>0};
+}
+export function savedOfficeDeparture(item,interchanges=[],gates=[]){
+  if(!item||!supportsHighwayOffice(item)||!validPoint({lat:Number(item.lat),lng:Number(item.lng)}))throw new Error('좌표가 있는 출발 거점을 선택해주세요.');
+  return {...officeEndpoint(item,interchanges,gates),heading:null,speed:0,accuracy:null,departureMode:'saved-office',officeName:item.name};
 }
 export function departureEndpoint(graph,gps,offices=[],interchanges=[],gates=[]){
   // A point already on the carriageway (including roadside manholes) stays put.

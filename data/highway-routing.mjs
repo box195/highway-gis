@@ -194,7 +194,7 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
   const directions=['북','북동','동','남동','남','남서','서','북서'];
   const approach=arrival&&goal.gateName==='동서울톨게이트'?(Math.cos(arrival.bearing*Math.PI/180)>=0?'하남 방향(북상)':'광주·호법 방향(남하)'):arrival?`${directions[Math.round(arrival.bearing/45)%8]}쪽 진행`:null;
   const arrivalDirection=arrival?`${approach} · ${arrival.kind==='through'?'요금소 통과 방향':'요금소 진출 방향'}`:null;
-  const navGoal=goal.snapToHighway?{...goal,...best.t.point,...(arrivalDirection?{name:`${goal.name} · ${arrivalDirection}`}:{})}:goal;
+  const navGoal=goal.snapToHighway?{...goal,...best.t.point}:goal;
   return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap,arrivalDirection,arrivalBearing:arrival?.bearing,arrivalGateId:arrival?.gateId,arrivalOffset:arrival?.offset};
 }
 export function makeWaypoints(points,roads,arrival=null,{anchoredStart=false,anchoredGoal=false}={}){
