@@ -2,6 +2,7 @@ import {validPoint} from './highway-routing.mjs?v=20261018-arrival-goals';
 import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261018-arrival-goals';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 import {savedRoute,SONGPA_IC} from './saved-navigation.mjs?v=20261018-arrival-goals';
+import {SONGPA_EXIT_ACCESS} from './songpa-exit-access.mjs?v=20261018-songpa-exits';
 
 const order=new Intl.Collator('ko',{numeric:true,sensitivity:'base'});
 const keyOf=s=>(s||'').replace(/한국도로공사|\s|\([^)]*\)/g,'');
@@ -37,7 +38,8 @@ export function navigationCatalog(data={}){
 
 export function destinationPoint(item,data={}){
   if(item.kind==='office')return officeEndpoint(item.source,data.interchanges||[],TOLL_GATES,item.label);
-  if(item.id==='junction:songpa')return {...SONGPA_IC,roadHint:'수도권제1순환고속도로',snapToHighway:false};
+  if(item.id==='junction:songpa')return {name:SONGPA_IC.name,lat:SONGPA_EXIT_ACCESS[0].lat,lng:SONGPA_EXIT_ACCESS[0].lng,
+    roadHint:SONGPA_EXIT_ACCESS[0].road,snapToHighway:true,hasGateTopology:true,arrivalAnchors:SONGPA_EXIT_ACCESS};
   const p=item.source;
   return {lat:Number(p.lat),lng:Number(p.lng),name:item.label,
     roadHint:p.roadHint||roadFrom(`${p.section||''} ${p.route_name||''} ${p.route||''}`),snapToHighway:item.kind==='junction'&&item.id!=='junction:songpa'};

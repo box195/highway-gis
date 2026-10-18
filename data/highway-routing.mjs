@@ -213,9 +213,9 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
   const navStart=start.snapToHighway?{...start,...best.s.point}:start;
   const directions=['북','북동','동','남동','남','남서','서','북서'];
   const approach=arrival&&goal.gateName==='동서울톨게이트'?(Math.cos(arrival.bearing*Math.PI/180)>=0?'하남 방향(북상)':'광주·호법 방향(남하)'):arrival?`${directions[Math.round(arrival.bearing/45)%8]}쪽 진행`:null;
-  const arrivalDirection=arrival?`${approach} · ${arrival.kind==='through'?'요금소 통과 방향':'요금소 진출 방향'}`:null;
+  const arrivalDirection=arrival?`${approach} · ${arrival.kind==='through'?'요금소 통과 방향':arrival.kind==='ic-exit'?'IC 진출 방향':'요금소 진출 방향'}`:null;
   const navGoal=goal.snapToHighway?{...goal,...(goal.officeDestination||arrival?.destination||best.t.point)}:goal;
-  return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap,arrivalDirection,arrivalBearing:arrival?.bearing,arrivalGateId:arrival?.gateId,arrivalOffset:arrival?.offset,arrivalAtToll:!!arrival&&!goal.officeDestination&&(arrival.kind==='through'||!!arrival.destination),arrivalAtOffice:!!goal.officeDestination&&!goal.officeFrontExitToll,arrivalAtOfficeFrontToll:!!goal.officeFrontExitToll};
+  return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap,arrivalDirection,arrivalBearing:arrival?.bearing,arrivalGateId:arrival?.gateId,arrivalOffset:arrival?.offset,arrivalAtToll:!!arrival&&!goal.officeDestination&&arrival.kind!=='ic-exit'&&(arrival.kind==='through'||!!arrival.destination),arrivalAtOffice:!!goal.officeDestination&&!goal.officeFrontExitToll,arrivalAtOfficeFrontToll:!!goal.officeFrontExitToll};
 }
 export function makeWaypoints(points,roads,arrival=null,{anchoredStart=false,anchoredGoal=false}={}){
   const cum=[0];for(let i=1;i<points.length;i++)cum.push(cum.at(-1)+distance(points[i-1],points[i]));
@@ -245,7 +245,7 @@ export function makeWaypoints(points,roads,arrival=null,{anchoredStart=false,anc
     }else if(arrival?.destination){
       // Stay upstream of the IC/overpass itself so the map app is less likely
       // to snap this guide to a surface road crossing underneath the exit.
-      at(run,run.to-Math.min(350,span/2),'요금소 진출 방향');
+      at(run,run.to-Math.min(350,span/2),arrival.kind==='ic-exit'?'IC 진출 방향':'요금소 진출 방향');
     }
     else if(!anchoredGoal)at(run,runs.length===1?(run.from+run.to)/2:run.from+Math.min(600,span/2),'합류 후');
   });

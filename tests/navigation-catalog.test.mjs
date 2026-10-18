@@ -36,12 +36,12 @@ test('saved direction is offered only for the registered Suwon to Songpa trip',(
   assert.ok(distance(graph.nodes.get(436210017),SINGAL_JC)<.01);
 });
 
-test('Songpa saved and highway goals use the verified ramp, leaving the GIS marker unchanged',()=>{
+test('Songpa saved entry goal is unchanged while highway uses directed exit destinations',()=>{
   const gis={name:'송파IC',lat:'37.474512',lng:'127.127882'};
   const office={...TOLL_GATES.find(g=>g.id===1814821448),name:'수원신갈영업소'};
   const data={offices:[office],interchanges:[gis]},item=navigationCatalog(data)[0].items[0];
   const start=savedOfficeDeparture(office,[],TOLL_GATES),goal=destinationPoint(item,data);
-  assert.equal(goal.snapToHighway,false);
+  assert.equal(goal.snapToHighway,true);assert.equal(goal.hasGateTopology,true);assert.equal(goal.arrivalAnchors.length,2);
   assert.equal(item.source.lat,37.4743032763);assert.equal(item.source.lng,127.1294794184);
   const exact={lat:37.4743032763,lng:127.1294794184};assert.notDeepEqual(exact,{lat:Number(gis.lat),lng:Number(gis.lng)});
   const saved=savedDestinationRoute(start,item,data);
@@ -49,9 +49,9 @@ test('Songpa saved and highway goals use the verified ramp, leaving the GIS mark
   assert.equal(saved.waypoints.length,3);assert.equal(saved.waypoints[2].lng,127.1218);
   const {choices}=availableOriginOptions(graph,start,goal);assert.ok(choices.length);
   for(const {result:r} of choices){
-    assert.equal(r.goal.lat,exact.lat);assert.equal(r.goal.lng,exact.lng);
-    assert.equal(new URL(navigationURL(r,'https://example.com/')).searchParams.get('dlat'),String(exact.lat));
-    assert.equal(new URL(kakaoNavigationURL(r)).searchParams.get('ep'),`${exact.lat},${exact.lng}`);
+    assert.ok(goal.arrivalAnchors.some(a=>a.destination.lat===r.goal.lat&&a.destination.lng===r.goal.lng));
+    assert.equal(new URL(navigationURL(r,'https://example.com/')).searchParams.get('dlat'),String(r.goal.lat));
+    assert.equal(new URL(kakaoNavigationURL(r)).searchParams.get('ep'),`${r.goal.lat},${r.goal.lng}`);
   }
 });
 

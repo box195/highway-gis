@@ -1,3 +1,25 @@
+## Current Songpa IC HIGHWAY / SAVED destination policy (2026-10-18)
+
+This section supersedes historical statements below that both navigation modes share the Songpa entry-ramp goal.
+
+- HIGHWAY: two OSM-directed exits on the first Ring Expressway. Northbound WGS84 **37.47000181300962, 127.13160689644921** and southbound **37.47311468100521, 127.12669970838598**.
+- Northbound exit way chain: 908687231 -> 908687232 -> 908687237 -> 903231701. Southbound: 908687234 -> 908687236 -> 908687235.
+- Each destination is 35 metres upstream of its final mapped motorway_link node. The selected directed approach determines the exact endpoint sent to both KakaoMap and Naver; neither is the opposite lane, the saved entry ramp or a surface-road projection.
+- SAVED: Suwon to Songpa only, with the ENTRY-ramp endpoint **37.4743032763, 127.1294794184**, and three controls **[37.3778625,127.101984375]**, **[37.4562625,127.119484375]**, **[37.4671625,127.1218]** unchanged.
+- GIS original interchange marker, branch/office destinations, Gonjiam/Hanam, Gwangju, and max-five-waypoint policy remain untouched.
+
+Regenerate metadata from the existing public OSM extract:
+
+    node scripts/build-songpa-exit-access.mjs ../roads-osm.json
+
+Print generated Suwon and both Ring approach routes, ordered controls, provider URI and human Kakao browser validation links:
+
+    node scripts/preview-songpa-highway.mjs
+
+Open the printed `kakaoBrowser` link manually, inspect the actual provider route and verify it exits Songpa IC without a Heolleung-ro U-turn, opposite-carriageway jump, or re-entry. Browser execution and live map-provider behavior were not verified by local tests. The source OSM extract excludes surface roads; the 35-metre upstream offset intentionally stops within the last mapped ramp.
+
+---
+
 ## 현재 도착점 보정 (2026-10-18)
 
 곤지암영업소(37.3550644, 127.3225997; OSM 436295298)와 하남영업소(37.5284503, 127.2179637; OSM 10705706620)는 **영업소 앞 진출 톨게이트**를 내비게이션 최종 도착점으로 전달합니다. **영업소 건물 입구까지 안내하는 것이 아닙니다.** Codex가 카카오 웹 경로에서 확인한 국도 회차 제거에 따른 예외이며, 기존 진출 방향 경유지는 그대로 둡니다.
