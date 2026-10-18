@@ -1,6 +1,6 @@
 // Direction-specific public-road control points supplied for this saved route.
 // Keep these coordinates exact: motorway snapping changes the intended path.
-import {validPoint} from './highway-routing.mjs?v=20261018-toll-office';
+import {validPoint} from './highway-routing.mjs?v=20261018-toll-office2';
 
 export const SAVED_HUBS=[
   {id:'suwon',name:'수원신갈영업소'},

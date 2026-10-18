@@ -1,9 +1,9 @@
-import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261018-toll-office';
-import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261018-toll-office';
-import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261018-toll-office';
+import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261018-toll-office2';
+import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261018-toll-office2';
+import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261018-toll-office2';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261018-toll-office';
-import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261018-toll-office';
+import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261018-toll-office2';
+import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261018-toll-office2';
 
 let generation=0, previewLayer, currentResult, context, openedSelection;
 const button=document.getElementById('btn-highway-navigation');

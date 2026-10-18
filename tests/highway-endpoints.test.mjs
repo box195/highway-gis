@@ -84,7 +84,7 @@ test('facility metadata distinguishes Jungbu from Second Jungbu',()=>{
   assert.equal(roadFrom('제2중부선 (하남-호법)'),ROADS[3]);assert.equal(roadFrom('중부선 광주IC'),ROADS[2]);
 });
 
-test('through-toll arrivals use the office-side approach and preserve the saved office destination',()=>{
+test('through-toll arrivals preserve both directed approaches and the saved office destination',()=>{
   const incoming=new Map();for(const e of graph.mainEdges){if(!incoming.has(e.b))incoming.set(e.b,[]);incoming.get(e.b).push(e);}
   for(const [name,id] of [['청계영업소',4340329006],['성남영업소',734816282],['구리남양주영업소',5338499735],['동서울영업소',436295787]]){
     const goal=officeEndpoint(office(name,id),[],TOLL_GATES);
@@ -111,7 +111,7 @@ test('through-toll arrivals use the office-side approach and preserve the saved 
       const q=new URL(navigationURL(result,'https://example.com/')).searchParams;
       assert.equal(q.get('dname'),name);assert.equal(Number(q.get('dlat')),result.goal.lat);
     }
-    assert.equal(headings.size,1,`${name}: arrival must stay on the office side`);
+    assert.ok(headings.size>=2,`${name}: preserve both direct approaches`);
   }
 });
 test('arrival at an IC uses an exit booth, never the nearest entry-only booth',()=>{
@@ -170,12 +170,12 @@ test('both Suwon corridors finish at the same Dongseoul office-side destination'
   const hobeop=route(graph,start,goal,null,choices.find(c=>c.key.endsWith('|hobeop')).key);
   assert.deepEqual(hanam.roads,['경부고속도로','수도권제1순환고속도로','중부고속도로']);
   assert.deepEqual(hobeop.roads.slice(0,3),['경부고속도로','영동고속도로','중부고속도로']);
-  assert.ok(hanam.arrivalDirection.includes('남하'));assert.ok(hobeop.arrivalDirection.includes('남하'));
+  assert.ok(hanam.arrivalDirection.includes('남하'));assert.ok(hobeop.arrivalDirection.includes('북상'));
   assert.ok(hanam.waypoints.length<=5);assert.ok(hobeop.waypoints.length<=5);
-  assert.equal(hanam.arrivalGateId,436296492);assert.equal(hobeop.arrivalGateId,436296492);
+  assert.equal(hanam.arrivalGateId,436296492);assert.equal(hobeop.arrivalGateId,436295787);
   for(const r of [hanam,hobeop]){
     assert.deepEqual({lat:r.goal.lat,lng:r.goal.lng},goal.original);
-    assert.ok(r.waypoints.at(-1).lat>r.goal.lat);assert.equal(r.arrivalAtOffice,true);
+    assert.equal(r.arrivalAtOffice,true);assert.ok(r.length<100000);
   }
 });
 

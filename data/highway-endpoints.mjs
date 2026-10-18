@@ -1,5 +1,5 @@
-import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261018-toll-office';
-import {TOLL_ACCESS} from './highway-toll-access.mjs?v=20261018-toll-office';
+import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261018-toll-office2';
+import {TOLL_ACCESS} from './highway-toll-access.mjs?v=20261018-toll-office2';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 import {SEO_HANAM_ACCESS} from './highway-office-access.mjs';
 
@@ -48,9 +48,8 @@ export function officeEndpoint(item,interchanges=[],gates=[],label){
   let arrivalAnchors=publicGates.flatMap(g=>(TOLL_ACCESS[g.id]||[]).filter(a=>!roadHint||a.road===roadHint).map(a=>({...a,gateId:g.id})));
   const through=arrivalAnchors.filter(a=>a.kind==='through').sort((a,b)=>distance(original,a)-distance(original,b));
   const officeDestination=through.length?original:null;
-  // Through plazas finish at the saved office location, approached from its
-  // own side. Keep departure selection independent of this arrival policy.
-  if(through.length)arrivalAnchors=through.filter(a=>Math.abs(((a.bearing-through[0].bearing+540)%360)-180)<60);
+  // Only the office destination is fixed. Preserve both direct approaches;
+  // forcing the opposite carriageway creates a motorway-scale return loop.
   return {...original,lat:anchor.lat,lng:anchor.lng,name:label||item.name||'거점',gateName:profile?.gate,roadHint,snapToHighway:true,original,officeDestination,endpointKind:'office',arrivalAnchors,hasGateTopology:publicGates.length>0};
 }
 export function savedOfficeDeparture(item,interchanges=[],gates=[]){
