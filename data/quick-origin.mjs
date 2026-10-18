@@ -1,5 +1,6 @@
 // Quick-navigation source choices are distinct from arrival-only anchors.
 import {navigationCatalog} from './navigation-catalog.mjs?v=20261019-poi-pangyo';
+import {SONGPA_RETURN_START} from './saved-navigation.mjs?v=20261019-songpa-departure';
 import {savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261019-poi-pangyo';
 import {validPoint} from './highway-routing.mjs?v=20261019-poi-pangyo';
 import {TOLL_GATES} from './highway-tollgates.mjs';
@@ -19,7 +20,7 @@ export function quickOriginChoices(data={}){
   const groups=navigationCatalog(data);
   for(const item of groups.filter(g=>g.key==='junctions'||g.key==='other-junctions').flatMap(g=>g.items)){
     if(!hasPoint(item.source)||seen.has(item.id))continue;
-    seen.add(item.id);choices.push({...item,group:'junctions'});
+    seen.add(item.id);choices.push({...item,source:item.id==='junction:songpa'?{...item.source,...SONGPA_RETURN_START,roadHint:'수도권제1순환고속도로'}:item.source,group:'junctions'});
   }
   return choices;
 }
@@ -44,7 +45,7 @@ export function manualOriginDeparture(item,data={},gates=TOLL_GATES){
   // determines available OUTGOING mainline directions from this saved junction.
   return {lat:Number(p.lat),lng:Number(p.lng),name:item.label,officeName:item.label,
     roadHint:p.roadHint||roadFrom(`${p.section||''} ${p.route_name||''} ${p.route||''}`),
-    snapToHighway:true,heading:null,speed:0,accuracy:null,
+    snapToHighway:item.id!=='junction:songpa',heading:null,speed:0,accuracy:null,
     originId:item.id,departureMode:'manual-junction'};
 }
 export async function resolveQuickOrigin(id,choices,data,gpsDeparture){

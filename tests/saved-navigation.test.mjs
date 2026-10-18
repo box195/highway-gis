@@ -65,9 +65,10 @@ test('Songpa saved return reverses the verified local corridor, not Ring 1/Gyeon
  const up=savedRoute('suwon','songpa',[office]),back=savedRoute('songpa','suwon',[office]);
  assert.deepEqual(back.start,SONGPA_RETURN_START);
  assert.deepEqual(back.goal,office);
- // Start on public OSM southbound EXIT link rather than on the Ring 1 merge.
- assert.deepEqual([back.start.lat,back.start.lng],[
-  SONGPA_EXIT_ACCESS[1].destination.lat,SONGPA_EXIT_ACCESS[1].destination.lng]);
+ // User-specified full Plus Code departure: exact cell centre, not old EXIT ramp or ENTRY destination.
+ assert.equal(back.start.plusCode,'8Q99F4HM+HH3');
+ assert.deepEqual([back.start.lat,back.start.lng],[37.4788875,127.133921875]);
+ assert.notDeepEqual([back.start.lat,back.start.lng],[SONGPA_EXIT_ACCESS[1].destination.lat,SONGPA_EXIT_ACCESS[1].destination.lng]);
  assert.notDeepEqual(back.start,up.goal);
  assert.equal(back.waypoints.length,5);
  assert.deepEqual(back.waypoints.map(p=>p.code),[

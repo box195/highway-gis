@@ -2,7 +2,7 @@ import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261019-so
 import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261019-poi-pangyo';
 import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261019-poi-pangyo';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261019-songpa-return';
+import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261019-songpa-departure';
 import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-poi-pangyo';
 
 let generation=0, previewLayer, currentResult, context, openedSelection;

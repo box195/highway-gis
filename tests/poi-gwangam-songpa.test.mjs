@@ -34,6 +34,43 @@ test('Songpa exact OLC first return guide, existing remaining guides and departu
  assert.equal(a.waypoints[0].code,'8Q99F48C+QWM');
  assert.deepEqual([a.waypoints[0].lat,a.waypoints[0].lng],[37.4669625,127.122296875]);
  assert.equal(a.waypoints.length,5);assert.deepEqual(a.start,SONGPA_RETURN_START);
+ assert.deepEqual([a.start.lat,a.start.lng],[37.4788875,127.133921875]);
+ assert.equal(a.start.plusCode,'8Q99F4HM+HH3');
  assert.deepEqual(b.goal,SONGPA_IC);
  assert.equal(new URL(kakaoNavigationURL(a)).searchParams.get('vp'),'37.4669625,127.122296875');
+});
+
+import {quickOriginChoices,manualOriginDeparture} from '../data/quick-origin.mjs';
+import {navigationCatalog,savedDestinationRoute,returnDestination} from '../data/navigation-catalog.mjs';
+const decodeOLC=code=>{
+ const alphabet='23456789CFGHJMPQRVWX',s=code.replace('+','');
+ let lat=-90,lng=-180,stepLat=20,stepLng=20;
+ for(let i=0;i<10;i+=2){if(i){stepLat/=20;stepLng/=20;}lat+=alphabet.indexOf(s[i])*stepLat;lng+=alphabet.indexOf(s[i+1])*stepLng;}
+ for(let i=10;i<s.length;i++){stepLat/=5;stepLng/=4;const n=alphabet.indexOf(s[i]);lat+=Math.floor(n/4)*stepLat;lng+=(n%4)*stepLng;}
+ return {lat:Number((lat+stepLat/2).toFixed(12)),lng:Number((lng+stepLng/2).toFixed(12))};
+};
+test('exact user Songpa departure OLC is preserved for saved return and manual source only',()=>{
+ const code='8Q99F4HM+HH3',point=decodeOLC(code);
+ assert.deepEqual(point,{lat:37.4788875,lng:127.133921875});
+ assert.deepEqual({lat:SONGPA_RETURN_START.lat,lng:SONGPA_RETURN_START.lng},point);
+ const userData={offices:[{name:'수원신갈영업소',lat:37.26694,lng:127.10244}]};
+ const manualItem=quickOriginChoices(userData).find(v=>v.id==='junction:songpa');
+ assert.ok(manualItem);
+ assert.deepEqual({lat:manualItem.source.lat,lng:manualItem.source.lng},point);
+ const manual=manualOriginDeparture(manualItem,userData);
+ assert.deepEqual({lat:manual.lat,lng:manual.lng},point);
+ assert.equal(manual.snapToHighway,false);
+ assert.equal(manual.originId,'junction:songpa');
+ const suwon=returnDestination(navigationCatalog(userData),userData);
+ const ret=savedDestinationRoute(manual,suwon,userData);
+ assert.deepEqual({lat:ret.start.lat,lng:ret.start.lng},point);
+ assert.deepEqual(ret.waypoints.map(v=>v.code),['8Q99F48C+QWM','OSM:186410728:south','OSM:473590580:south','OSM:277611773:south','OSM:624073974:south']);
+ const songpaDest=navigationCatalog(userData)[0].items[0];
+ assert.deepEqual({lat:songpaDest.source.lat,lng:songpaDest.source.lng},{lat:SONGPA_IC.lat,lng:SONGPA_IC.lng});
+ assert.notDeepEqual({lat:songpaDest.source.lat,lng:songpaDest.source.lng},point);
+ assert.deepEqual(savedRoute('suwon','songpa',userData.offices).goal,SONGPA_IC);
+ const web=new URL(kakaoNavigationURL(ret)).searchParams;
+ assert.equal(web.get('sp'),'37.4788875,127.133921875');
+ assert.equal(web.get('vp'),'37.4669625,127.122296875');
+ assert.equal(web.has('vp6'),false);
 });

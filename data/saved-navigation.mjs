@@ -25,10 +25,9 @@ const south=[
   {code:'OSM:277611773:south',lat:37.34,lng:127.102675866},   // 신수로 oneway=yes
   {code:'OSM:624073974:south',lat:37.3,lng:127.101818703}     // 신수로 oneway=yes
 ];
-// Return departure remains directed Songpa IC EXIT motorway_link 908687235.
-// Parcel '서울 송파구 장지동 354-3' not verifiable in one lookup; exact motorway departure remains unresolved.
-// Never modify separate saved ENTRY destination.
-export const SONGPA_RETURN_START={name:'송파IC · 진출 연결로',lat:37.47311468100521,lng:127.12669970838598};
+// User-specified departure-only FULL Plus Code 8Q99F4HM+HH3 (11-digit OLC).
+// Exact cell center, no map-projection, snap or offset; ENTRY goal remains separate.
+export const SONGPA_RETURN_START={name:'송파IC · 출발 지정점',lat:37.4788875,lng:127.133921875,plusCode:'8Q99F4HM+HH3'};
 // Navigation-only: Kakao WCONGNAMUL 528633,1104150 (EPSG:5181 at 1/2.5 scale).
 export const SONGPA_IC={name:'송파IC',lat:37.4743032763,lng:127.1294794184};
 function endpoint(id,offices,interchanges){

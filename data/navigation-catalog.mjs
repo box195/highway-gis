@@ -1,7 +1,7 @@
 import {validPoint} from './highway-routing.mjs?v=20261019-poi-pangyo';
 import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261019-poi-pangyo';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {savedRoute,SONGPA_IC} from './saved-navigation.mjs?v=20261019-songpa-return';
+import {savedRoute,SONGPA_IC} from './saved-navigation.mjs?v=20261019-songpa-departure';
 import {SONGPA_EXIT_ACCESS} from './songpa-exit-access.mjs?v=20261019-songpa-return';
 
 const order=new Intl.Collator('ko',{numeric:true,sensitivity:'base'});

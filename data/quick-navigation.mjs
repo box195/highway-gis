@@ -1,10 +1,10 @@
 import {loadGraph,gps} from './navigation-runtime.mjs?v=20261019-songpa-return';
 import {availableOriginOptions,navigationURL} from './highway-routing.mjs?v=20261019-poi-pangyo';
 import {nearestOfficeDeparture} from './highway-endpoints.mjs?v=20261019-poi-pangyo';
-import {quickOriginChoices,getOriginPreference,setOriginPreference,resolveQuickOrigin} from './quick-origin.mjs?v=20261019-quick-origin';
+import {quickOriginChoices,getOriginPreference,setOriginPreference,resolveQuickOrigin} from './quick-origin.mjs?v=20261019-songpa-departure';
 import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-poi-pangyo';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261019-poi-pangyo';
+import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261019-songpa-departure';
 import {navigationCatalog,destinationPoint,savedDestinationRoute,returnDestination} from './navigation-catalog.mjs?v=20261019-poi-pangyo';
 
 const page=document.createElement('section');page.id='quick-navigation-page';page.hidden=true;page.setAttribute('aria-label','빠른 길찾기');
