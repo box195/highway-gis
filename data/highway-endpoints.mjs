@@ -1,5 +1,5 @@
-import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261018-quick-nav';
-import {TOLL_ACCESS} from './highway-toll-access.mjs?v=20261018-quick-nav';
+import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261018-toll-office';
+import {TOLL_ACCESS} from './highway-toll-access.mjs?v=20261018-toll-office';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 import {SEO_HANAM_ACCESS} from './highway-office-access.mjs';
 
@@ -45,8 +45,13 @@ export function officeEndpoint(item,interchanges=[],gates=[],label){
   const publicGates=(branch?TOLL_GATES:gates).filter(p=>profile?.gateIds?profile.gateIds.includes(p.id):matches(p)||(profile&&p.unnamed&&distance(original,p)<250)).sort((a,b)=>distance(original,a)-distance(original,b));
   const savedGates=interchanges.map(p=>({...p,lat:Number(p.lat),lng:Number(p.lng)})).filter(matches).sort((a,b)=>Number(/TG|톨게이트|요금소/i.test(b.name))-Number(/TG|톨게이트|요금소/i.test(a.name))||distance(original,a)-distance(original,b));
   const anchor=publicGates[0]||savedGates[0]||original;
-  const arrivalAnchors=publicGates.flatMap(g=>(TOLL_ACCESS[g.id]||[]).filter(a=>!roadHint||a.road===roadHint).map(a=>({...a,gateId:g.id})));
-  return {...original,lat:anchor.lat,lng:anchor.lng,name:label||item.name||'거점',gateName:profile?.gate,roadHint,snapToHighway:true,original,endpointKind:'office',arrivalAnchors,hasGateTopology:publicGates.length>0};
+  let arrivalAnchors=publicGates.flatMap(g=>(TOLL_ACCESS[g.id]||[]).filter(a=>!roadHint||a.road===roadHint).map(a=>({...a,gateId:g.id})));
+  const through=arrivalAnchors.filter(a=>a.kind==='through').sort((a,b)=>distance(original,a)-distance(original,b));
+  const officeDestination=through.length?original:null;
+  // Through plazas finish at the saved office location, approached from its
+  // own side. Keep departure selection independent of this arrival policy.
+  if(through.length)arrivalAnchors=through.filter(a=>Math.abs(((a.bearing-through[0].bearing+540)%360)-180)<60);
+  return {...original,lat:anchor.lat,lng:anchor.lng,name:label||item.name||'거점',gateName:profile?.gate,roadHint,snapToHighway:true,original,officeDestination,endpointKind:'office',arrivalAnchors,hasGateTopology:publicGates.length>0};
 }
 export function savedOfficeDeparture(item,interchanges=[],gates=[]){
   if(!item||!supportsHighwayOffice(item)||!validPoint({lat:Number(item.lat),lng:Number(item.lng)}))throw new Error('좌표가 있는 출발 거점을 선택해주세요.');

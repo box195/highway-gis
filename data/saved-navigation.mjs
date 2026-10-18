@@ -1,6 +1,6 @@
 // Direction-specific public-road control points supplied for this saved route.
 // Keep these coordinates exact: motorway snapping changes the intended path.
-import {validPoint} from './highway-routing.mjs?v=20261018-quick-nav';
+import {validPoint} from './highway-routing.mjs?v=20261018-toll-office';
 
 export const SAVED_HUBS=[
   {id:'suwon',name:'수원신갈영업소'},
@@ -9,7 +9,9 @@ export const SAVED_HUBS=[
 const north=[
   {code:'8Q9994H2+4QX',lat:37.3778625,lng:127.101984375},
   {code:'8Q99F449+GQ5',lat:37.4562625,lng:127.119484375},
-  {code:'8Q99F48C+VM9',lat:37.4671625,lng:127.121734375}
+  // East of the Heolleung-ro 758-gil centreline, for the northbound lane.
+  // Moved ~5.8m east from the original 8Q99F48C+VM9 at the user's request.
+  {code:'8Q99F48C+VP7',lat:37.4671625,lng:127.1218}
 ];
 function endpoint(id,offices){
   if(id==='suwon'){

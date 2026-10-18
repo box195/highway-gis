@@ -65,6 +65,7 @@ test('all viable public office-pair highway directions deliver identical endpoin
     for(const {result:r} of out.choices){
       const n=new URL(navigationURL(r,'https://example.com/')).searchParams,k=new URL(kakaoNavigationURL(r)).searchParams;
       assert.equal(k.get('sp'),`${n.get('slat')},${n.get('slng')}`);assert.equal(k.get('ep'),`${n.get('dlat')},${n.get('dlng')}`);
+      if(r.arrivalAtToll)assert.ok(distance(r.goal,TOLL_GATES.find(g=>g.id===r.arrivalGateId))<1);
       r.waypoints.forEach((p,i)=>assert.equal(k.get(i===0?'vp':`vp${i+1}`),`${n.get(`v${i+1}lat`)},${n.get(`v${i+1}lng`)}`));
       assert.ok(r.waypoints.length<=5);assert.ok(!r.roads.includes('제2중부고속도로'));checked++;
     }

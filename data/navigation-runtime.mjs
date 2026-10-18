@@ -1,4 +1,4 @@
-import {ROAD_QUERY,buildGraph} from './highway-routing.mjs?v=20261018-quick-nav';
+import {ROAD_QUERY,buildGraph} from './highway-routing.mjs?v=20261018-toll-office';
 let graphPromise;
 export async function loadGraph(){
   if(graphPromise)return graphPromise;

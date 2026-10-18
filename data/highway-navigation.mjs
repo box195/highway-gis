@@ -1,9 +1,9 @@
-import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261018-quick-nav';
-import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261018-quick-nav';
-import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261018-quick-nav';
+import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261018-toll-office';
+import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261018-toll-office';
+import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261018-toll-office';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261018-quick-nav';
-import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261018-quick-nav';
+import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261018-toll-office';
+import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261018-toll-office';
 
 let generation=0, previewLayer, currentResult, context, openedSelection;
 const button=document.getElementById('btn-highway-navigation');
@@ -136,7 +136,7 @@ $('hn-build').addEventListener('click',async()=>{
     const box=$('hn-preview'),title=document.createElement('p');title.style.fontWeight='700';title.textContent=goal.name;box.append(title);
     const roads=document.createElement('p');roads.textContent=result.roads.map(n=>n.replace('고속도로','선')).join(' → ');box.append(roads);
     if(start.endpointKind==='office'){const p=document.createElement('p');p.className='hn-muted';p.textContent=`출발 보정: ${result.start.name}`;box.append(p);}
-    if(goal.endpointKind==='office'){const p=document.createElement('p');p.className='hn-muted';p.textContent=goal.endpointNote||'도착지는 지정된 톨게이트·IC 인근 본선 접속점입니다.';box.append(p);}
+    if(goal.endpointKind==='office'){const p=document.createElement('p');p.className='hn-muted';p.textContent=goal.endpointNote||(result.arrivalAtOffice?'통과형 톨게이트는 저장된 영업소 위치로 안내합니다.':result.arrivalAtToll?'도착지는 선택한 접근 방향의 실제 톨게이트입니다.':'도착지는 지정된 IC 본선 접속점입니다.');box.append(p);}
     if(result.arrivalDirection){const p=document.createElement('p');p.className='hn-muted';p.textContent=`도착 방향: ${result.arrivalDirection}`;box.append(p);}
     if(result.arrivalOffset){const p=document.createElement('p');p.className='hn-muted';p.textContent=`넓은 요금소 영역에서 반대편으로 잡히지 않도록 통과 후 약 ${result.arrivalOffset}m의 같은 방향 본선으로 안내합니다.`;box.append(p);}
     const info=document.createElement('p');info.className='hn-muted';info.textContent=`본선 약 ${(result.length/1000).toFixed(1)}km · 접속 직선거리 출발 ${Math.round(result.entryGap)}m / 도착 ${Math.round(result.exitGap)}m${Number.isFinite(start.accuracy)?` · GPS 오차 ${Math.round(start.accuracy)}m`:''}`;box.append(info);
@@ -144,6 +144,7 @@ $('hn-build').addEventListener('click',async()=>{
     const map=window.HighwayApp.map;
     previewLayer=L.layerGroup().addTo(map);
     L.polyline(result.points.map(p=>[p.lat,p.lng]),{color:'#22d3ee',weight:6}).addTo(previewLayer);
+    L.marker([result.goal.lat,result.goal.lng]).addTo(previewLayer).bindTooltip(`도착: ${result.goal.name}`);
     result.waypoints.forEach((wp,i)=>L.marker([wp.lat,wp.lng]).addTo(previewLayer).bindTooltip(`${i+1}. ${wp.name.replace(/^\d+\. /,'')}`));
     map.fitBounds(L.latLngBounds(result.points.map(p=>[p.lat,p.lng])),{padding:[35,35]});
     $('hn-launch').href=navigationURL(result,location.origin+location.pathname,/Android/i.test(navigator.userAgent));$('hn-launch').hidden=false;

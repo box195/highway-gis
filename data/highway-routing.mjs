@@ -127,7 +127,7 @@ export function originOptions(graph,start,goal){
   const sources=candidates(graph,routingPolicy(graph,start,goal).source,null);
   if(suwonCorridors(graph,start,goal)){
     const north=sources.find(s=>s.edge.road==='경부고속도로'&&Math.cos(bearing(graph.nodes.get(s.edge.a),graph.nodes.get(s.edge.b))*Math.PI/180)>0);
-    if(north){const key=`${north.edge.a}:${north.edge.b}`,dongseoul=goal.gateName==='동서울톨게이트';return [{key:`${key}|hanam`,label:`판교·하남 경유${dongseoul?' → 동서울 남하 도착':''}`},{key:`${key}|hobeop`,label:`신갈·호법 경유${dongseoul?' → 동서울 북상 도착':''}`}];}
+    if(north){const key=`${north.edge.a}:${north.edge.b}`,suffix=goal.officeDestination?' → 영업소 위치 도착':'';return [{key:`${key}|hanam`,label:`판교·하남 경유${suffix}`},{key:`${key}|hobeop`,label:`신갈·호법 경유${suffix}`}];}
   }
   return sources.map(s=>{const angle=bearing(graph.nodes.get(s.edge.a),graph.nodes.get(s.edge.b));return {key:`${s.edge.a}:${s.edge.b}`,label:`${s.edge.road} · ${directions[Math.round(angle/45)%8]}쪽 진행 (${Math.round(angle)}°)`};});
 }
@@ -201,14 +201,21 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
   let length=0;for(let i=1;i<points.length;i++)length+=distance(points[i-1],points[i]);
   const arrival=best.t.anchor;
   const waypoints=makeWaypoints(points,pointRoads,arrival,{anchoredStart:!!start.snapToHighway,anchoredGoal:!!goal.snapToHighway});
+  // The highway search stops at a directed exit. Include only its verified
+  // public ramp geometry to the actual exit booth, never the office building
+  // or an arbitrary surface-road projection underneath the motorway.
+  if(arrival?.destination){
+    if(!validPoint(arrival.destination)||!arrival.rampPoints?.length||arrival.rampPoints.some(p=>!validPoint(p))||distance(arrival.rampPoints.at(-1),arrival.destination)>2)throw new Error('해당 톨게이트의 진출 연결을 확인할 수 없습니다.');
+    for(const p of arrival.rampPoints){length+=distance(points.at(-1),p);points.push(p);}
+  }
   // Navigation must receive the same carriageway endpoints used by this graph,
   // rather than sending the original office building back to Naver.
   const navStart=start.snapToHighway?{...start,...best.s.point}:start;
   const directions=['북','북동','동','남동','남','남서','서','북서'];
   const approach=arrival&&goal.gateName==='동서울톨게이트'?(Math.cos(arrival.bearing*Math.PI/180)>=0?'하남 방향(북상)':'광주·호법 방향(남하)'):arrival?`${directions[Math.round(arrival.bearing/45)%8]}쪽 진행`:null;
   const arrivalDirection=arrival?`${approach} · ${arrival.kind==='through'?'요금소 통과 방향':'요금소 진출 방향'}`:null;
-  const navGoal=goal.snapToHighway?{...goal,...best.t.point}:goal;
-  return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap,arrivalDirection,arrivalBearing:arrival?.bearing,arrivalGateId:arrival?.gateId,arrivalOffset:arrival?.offset};
+  const navGoal=goal.snapToHighway?{...goal,...(goal.officeDestination||arrival?.destination||best.t.point)}:goal;
+  return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap,arrivalDirection,arrivalBearing:arrival?.bearing,arrivalGateId:arrival?.gateId,arrivalOffset:arrival?.offset,arrivalAtToll:!!arrival&&!goal.officeDestination&&(arrival.kind==='through'||!!arrival.destination),arrivalAtOffice:!!goal.officeDestination};
 }
 export function makeWaypoints(points,roads,arrival=null,{anchoredStart=false,anchoredGoal=false}={}){
   const cum=[0];for(let i=1;i<points.length;i++)cum.push(cum.at(-1)+distance(points[i-1],points[i]));
@@ -231,11 +238,16 @@ export function makeWaypoints(points,roads,arrival=null,{anchoredStart=false,anc
     const span=run.to-run.from,last=i===runs.length-1;
     if(!last)at(run,run.to-Math.min(600,span/2),'분기 전');
     else if(arrival?.kind==='through'){
-      // Keep the final guide BEFORE the plaza and the destination well AFTER
-      // it: Naver must cross the plaza on one continuous directed carriageway.
-      const beforePlaza=total-(arrival.offset||700)-650;
+      // Keep the final guide before the plaza on the selected carriageway.
+      // New access data ends at the booth (offset=0); support older snapshots.
+      const beforePlaza=total-(arrival.offset??700)-650;
       at(run,Math.max(run.from+Math.min(50,span/2),beforePlaza),'요금소 진입 방향');
-    }else if(!anchoredGoal)at(run,runs.length===1?(run.from+run.to)/2:run.from+Math.min(600,span/2),'합류 후');
+    }else if(arrival?.destination){
+      // Stay upstream of the IC/overpass itself so the map app is less likely
+      // to snap this guide to a surface road crossing underneath the exit.
+      at(run,run.to-Math.min(350,span/2),'요금소 진출 방향');
+    }
+    else if(!anchoredGoal)at(run,runs.length===1?(run.from+run.to)/2:run.from+Math.min(600,span/2),'합류 후');
   });
   // A snapped departure already identifies the first directed carriageway.
   // Only use that redundancy when needed to fit the app's waypoint budget;

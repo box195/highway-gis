@@ -1,7 +1,7 @@
-import {validPoint} from './highway-routing.mjs?v=20261018-quick-nav';
-import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261018-quick-nav';
+import {validPoint} from './highway-routing.mjs?v=20261018-toll-office';
+import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261018-toll-office';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {savedRoute} from './saved-navigation.mjs?v=20261018-quick-nav';
+import {savedRoute} from './saved-navigation.mjs?v=20261018-toll-office';
 
 const order=new Intl.Collator('ko',{numeric:true,sensitivity:'base'});
 const keyOf=s=>(s||'').replace(/한국도로공사|\s|\([^)]*\)/g,'');

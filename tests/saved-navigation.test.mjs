@@ -33,9 +33,11 @@ test('KakaoMap rejects invalid routes and preserves the five-waypoint limit',()=
 test('Songpa outbound route retains all three controls with the updated third point',()=>{
   assert.ok(SAVED_HUBS.some(h=>h.id==='songpa'&&h.name==='송파IC'));
   const up=savedRoute('suwon','songpa');
-  assert.deepEqual(up.waypoints.map(p=>p.code),['8Q9994H2+4QX','8Q99F449+GQ5','8Q99F48C+VM9']);
+  assert.deepEqual(up.waypoints.map(p=>p.code),['8Q9994H2+4QX','8Q99F449+GQ5','8Q99F48C+VP7']);
   assert.equal(up.waypoints[0].lat,37.3778625);assert.equal(up.waypoints[0].lng,127.101984375);
-  assert.equal(up.waypoints[2].lng,127.121734375);
+  assert.equal(up.waypoints[2].lat,37.4671625);assert.equal(up.waypoints[2].lng,127.1218);
+  // Northbound is the east side of this roughly N-S two-way road.
+  assert.ok(up.waypoints[2].lng>127.1217531089459);
   assert.throws(()=>savedRoute('songpa','suwon'),/저장되지 않은/);
   for(const r of [up]){
     assert.equal(r.kind,'saved');assert.equal(r.points.length,5);
