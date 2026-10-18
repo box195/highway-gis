@@ -36,6 +36,23 @@ test('saved direction is offered only for the registered Suwon to Songpa trip',(
   assert.ok(distance(graph.nodes.get(436210017),SINGAL_JC)<.01);
 });
 
+test('Songpa saved and highway destinations both retain the runtime GIS marker without motorway snapping',()=>{
+  const gis={name:'송파IC',lat:'37.474512',lng:'127.127882'};
+  const office={...TOLL_GATES.find(g=>g.id===1814821448),name:'수원신갈영업소'};
+  const data={offices:[office],interchanges:[gis]},item=navigationCatalog(data)[0].items[0];
+  const start=savedOfficeDeparture(office,[],TOLL_GATES),goal=destinationPoint(item,data);
+  assert.equal(goal.snapToHighway,false);
+  const exact={lat:Number(gis.lat),lng:Number(gis.lng)};
+  const saved=savedDestinationRoute(start,item,data);
+  assert.equal(saved.goal.lat,exact.lat);assert.equal(saved.goal.lng,exact.lng);
+  assert.equal(saved.waypoints.length,3);assert.equal(saved.waypoints[2].lng,127.1218);
+  const {choices}=availableOriginOptions(graph,start,goal);assert.ok(choices.length);
+  for(const {result:r} of choices){
+    assert.equal(r.goal.lat,exact.lat);assert.equal(r.goal.lng,exact.lng);
+    assert.equal(new URL(kakaoNavigationURL(r)).searchParams.get('ep'),`${exact.lat},${exact.lng}`);
+  }
+});
+
 test('Second Jungbu section names on an actual Jungbu carriageway do not route to a distant motorway',()=>{
   const gate=TOLL_GATES.find(g=>g.id===436295787);
   const actual=nearestHighwayPoint(graph,{...gate,roadHint:'중부고속도로'});

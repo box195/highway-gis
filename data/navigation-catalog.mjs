@@ -1,7 +1,7 @@
-import {validPoint} from './highway-routing.mjs?v=20261018-toll-office2';
-import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261018-toll-office2';
+import {validPoint} from './highway-routing.mjs?v=20261018-gis-destinations';
+import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261018-gis-destinations';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {savedRoute} from './saved-navigation.mjs?v=20261018-toll-office2';
+import {savedRoute} from './saved-navigation.mjs?v=20261018-gis-destinations';
 
 const order=new Intl.Collator('ko',{numeric:true,sensitivity:'base'});
 const keyOf=s=>(s||'').replace(/한국도로공사|\s|\([^)]*\)/g,'');
@@ -39,12 +39,12 @@ export function destinationPoint(item,data={}){
   if(item.kind==='office')return officeEndpoint(item.source,data.interchanges||[],TOLL_GATES,item.label);
   const p=item.source;
   return {lat:Number(p.lat),lng:Number(p.lng),name:item.label,
-    roadHint:p.roadHint||roadFrom(`${p.section||''} ${p.route_name||''} ${p.route||''}`),snapToHighway:item.kind==='junction'};
+    roadHint:p.roadHint||roadFrom(`${p.section||''} ${p.route_name||''} ${p.route||''}`),snapToHighway:item.kind==='junction'&&item.id!=='junction:songpa'};
 }
 
 export function savedDestinationRoute(start,item,data={}){
   if(start.gateName!=='수원신갈톨게이트'||item.id!=='junction:songpa')throw new Error('이 구간의 저장경로가 아직 등록되지 않았습니다.');
-  return savedRoute('suwon','songpa',data.offices||[]);
+  return savedRoute('suwon','songpa',data.offices||[],data.interchanges||[]);
 }
 
 export function returnDestination(groups){

@@ -1,5 +1,5 @@
-import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261018-toll-office2';
-import {TOLL_ACCESS} from './highway-toll-access.mjs?v=20261018-toll-office2';
+import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261018-gis-destinations';
+import {TOLL_ACCESS} from './highway-toll-access.mjs?v=20261018-gis-destinations';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 import {SEO_HANAM_ACCESS} from './highway-office-access.mjs';
 
@@ -45,9 +45,12 @@ export function officeEndpoint(item,interchanges=[],gates=[],label){
   const publicGates=(branch?TOLL_GATES:gates).filter(p=>profile?.gateIds?profile.gateIds.includes(p.id):matches(p)||(profile&&p.unnamed&&distance(original,p)<250)).sort((a,b)=>distance(original,a)-distance(original,b));
   const savedGates=interchanges.map(p=>({...p,lat:Number(p.lat),lng:Number(p.lng)})).filter(matches).sort((a,b)=>Number(/TG|톨게이트|요금소/i.test(b.name))-Number(/TG|톨게이트|요금소/i.test(a.name))||distance(original,a)-distance(original,b));
   const anchor=publicGates[0]||savedGates[0]||original;
-  let arrivalAnchors=publicGates.flatMap(g=>(TOLL_ACCESS[g.id]||[]).filter(a=>!roadHint||a.road===roadHint).map(a=>({...a,gateId:g.id})));
-  const through=arrivalAnchors.filter(a=>a.kind==='through').sort((a,b)=>distance(original,a)-distance(original,b));
-  const officeDestination=through.length?original:null;
+  const arrivalAnchors=publicGates.flatMap(g=>(TOLL_ACCESS[g.id]||[]).filter(a=>!roadHint||a.road===roadHint).map(a=>({...a,gateId:g.id})));
+  // The user confirmed Gwangju's existing exit-booth destination is correct.
+  // Other offices finish at their saved office-side location, not a booth
+  // chosen solely by the direction of the motorway exit.
+  const keepGate=/경기광주영업소|^광주영업소/.test(officeName);
+  const officeDestination=!keepGate&&/영업소/.test(officeName)?original:null;
   // Only the office destination is fixed. Preserve both direct approaches;
   // forcing the opposite carriageway creates a motorway-scale return loop.
   return {...original,lat:anchor.lat,lng:anchor.lng,name:label||item.name||'거점',gateName:profile?.gate,roadHint,snapToHighway:true,original,officeDestination,endpointKind:'office',arrivalAnchors,hasGateTopology:publicGates.length>0};

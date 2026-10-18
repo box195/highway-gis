@@ -1,9 +1,9 @@
-import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261018-toll-office2';
-import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261018-toll-office2';
-import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261018-toll-office2';
+import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261018-gis-destinations';
+import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261018-gis-destinations';
+import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261018-gis-destinations';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261018-toll-office2';
-import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261018-toll-office2';
+import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261018-gis-destinations';
+import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261018-gis-destinations';
 
 let generation=0, previewLayer, currentResult, context, openedSelection;
 const button=document.getElementById('btn-highway-navigation');
@@ -85,7 +85,8 @@ function open(){
 }
 function showSavedRoute(){
   try{
-    const result=savedRoute($('hn-saved-start').value,$('hn-saved-goal').value,window.HighwayApp.data.offices||[]);
+    const savedData=window.HighwayApp.navigationData||window.HighwayApp.data;
+    const result=savedRoute($('hn-saved-start').value,$('hn-saved-goal').value,savedData.offices||[],savedData.interchanges||[]);
     currentResult={...result,created:Date.now()};
     const box=$('hn-preview'),title=document.createElement('p');title.style.fontWeight='700';title.textContent=`${result.start.name} → ${result.goal.name}`;box.append(title);
     const list=document.createElement('ol');for(const wp of result.waypoints){const li=document.createElement('li');li.textContent=wp.code;list.append(li);}box.append(list);
@@ -136,7 +137,7 @@ $('hn-build').addEventListener('click',async()=>{
     const box=$('hn-preview'),title=document.createElement('p');title.style.fontWeight='700';title.textContent=goal.name;box.append(title);
     const roads=document.createElement('p');roads.textContent=result.roads.map(n=>n.replace('고속도로','선')).join(' → ');box.append(roads);
     if(start.endpointKind==='office'){const p=document.createElement('p');p.className='hn-muted';p.textContent=`출발 보정: ${result.start.name}`;box.append(p);}
-    if(goal.endpointKind==='office'){const p=document.createElement('p');p.className='hn-muted';p.textContent=goal.endpointNote||(result.arrivalAtOffice?'통과형 톨게이트는 저장된 영업소 위치로 안내합니다.':result.arrivalAtToll?'도착지는 선택한 접근 방향의 실제 톨게이트입니다.':'도착지는 지정된 IC 본선 접속점입니다.');box.append(p);}
+    if(goal.endpointKind==='office'){const p=document.createElement('p');p.className='hn-muted';p.textContent=goal.endpointNote||(result.arrivalAtOffice?'도착지는 GIS에 저장된 영업소 위치입니다.':result.arrivalAtToll?'도착지는 선택한 접근 방향의 실제 톨게이트입니다.':'도착지는 지정된 IC 본선 접속점입니다.');box.append(p);}
     if(result.arrivalDirection){const p=document.createElement('p');p.className='hn-muted';p.textContent=`도착 방향: ${result.arrivalDirection}`;box.append(p);}
     if(result.arrivalOffset){const p=document.createElement('p');p.className='hn-muted';p.textContent=`넓은 요금소 영역에서 반대편으로 잡히지 않도록 통과 후 약 ${result.arrivalOffset}m의 같은 방향 본선으로 안내합니다.`;box.append(p);}
     const info=document.createElement('p');info.className='hn-muted';info.textContent=`본선 약 ${(result.length/1000).toFixed(1)}km · 접속 직선거리 출발 ${Math.round(result.entryGap)}m / 도착 ${Math.round(result.exitGap)}m${Number.isFinite(start.accuracy)?` · GPS 오차 ${Math.round(start.accuracy)}m`:''}`;box.append(info);

@@ -41,19 +41,19 @@ test('office identity resolves to its gate and correct motorway, not the nearest
   assert.equal(officeEndpoint(suwon,[],TOLL_GATES).roadHint,'경부고속도로');
   assert.equal(GATE_PROFILES.length,10);
 });
-test('ordinary office routes use Jungbu and finish at actual exit booths',()=>{
+test('ordinary office routes use Jungbu and finish at the saved office location',()=>{
   const start=departureEndpoint(graph,{...suwon,speed:0,accuracy:10},[suwon],[],TOLL_GATES);
   assert.equal(start.endpointKind,'office');
   for(const item of [gonjiam,icheon]){
     const r=route(graph,start,officeEndpoint(item,[],TOLL_GATES));
     assert.equal(r.roads.at(-1),'중부고속도로');assert.ok(!r.roads.includes('제2중부고속도로'));
-    assert.ok(nearestHighwayPoint(graph,r.start).gap<1);assert.ok(distance(r.goal,booth(r.arrivalGateId))<1);
+    assert.ok(nearestHighwayPoint(graph,r.start).gap<1);assert.equal(r.goal.lat,item.lat);assert.equal(r.goal.lng,item.lng);
     assert.ok(nearestHighwayPoint(graph,r.waypoints.at(-1)).gap<1);
     assert.ok(r.waypoints.at(-1).name.includes('요금소 진출 방향'));
-    assert.ok(distance(r.points.at(-1),r.goal)<1);assert.equal(r.arrivalAtToll,true);
+    assert.ok(distance(r.points.at(-1),booth(r.arrivalGateId))<1);assert.equal(r.arrivalAtOffice,true);
     const q=new URL(navigationURL(r,'https://example.com/')).searchParams;
     assert.equal(Number(q.get('slat')),r.start.lat);assert.equal(Number(q.get('dlat')),r.goal.lat);
-    assert.notEqual(Number(q.get('dlat')),item.lat);assert.equal(q.get('dname'),item.name);
+    assert.equal(Number(q.get('dlat')),item.lat);assert.equal(q.get('dname'),item.name);
   }
 });
 test('IC fallback uses exact gate identity instead of another similarly named interchange',()=>{
@@ -121,9 +121,9 @@ test('arrival at an IC uses an exit booth, never the nearest entry-only booth',(
   assert.ok(!r.roads.includes('제2중부고속도로'));
 });
 
-test('Gwangju-area toll destinations keep their chosen motorway exit guide and end at the actual booth',()=>{
+test('Gwangju-area offices preserve exit guides while using office-side destinations',()=>{
   const start=officeEndpoint(suwon,[],TOLL_GATES);
-  for(const [name,id] of [['경기광주영업소',685222361],['곤지암영업소',436295655],['서이천영업소',436294773],['경기광주지사',685222361]]){
+  for(const [name,id] of [['경기광주영업소',685222361],['곤지암영업소',436295655],['서이천영업소',436294773],['하남영업소',TOLL_GATES.find(g=>/^하남/.test(g.name)).id],['경기광주지사',685222361]]){
     const goal=officeEndpoint(office(name,id),[],TOLL_GATES);
     const {choices}=availableOriginOptions(graph,start,goal);assert.ok(choices.length);
     for(const {result:r} of choices){
@@ -131,8 +131,9 @@ test('Gwangju-area toll destinations keep their chosen motorway exit guide and e
       assert.ok(chosen,`${name}: missing direction-specific exit guide`);
       assert.ok(nearestHighwayPoint(graph,r.waypoints.at(-1)).gap<1);
       assert.ok(distance(chosen,r.waypoints.at(-1))>200);
-      assert.ok(distance(r.goal,booth(r.arrivalGateId))<1);
-      assert.ok(distance(r.points.at(-1),r.goal)<1);assert.ok(r.waypoints.length<=5);
+      const expected=goal.officeDestination||booth(r.arrivalGateId);
+      assert.ok(distance(r.goal,expected)<1);
+      assert.ok(distance(r.points.at(-1),booth(r.arrivalGateId))<1);assert.ok(r.waypoints.length<=5);
       assert.ok(r.waypoints.at(-1).name.includes('요금소 진출 방향'));
       assert.equal(chosen.kind,'exit');assert.ok(chosen.rampPoints.length>=2);
       // The line includes the real ramp to the booth, rather than a straight
@@ -182,7 +183,7 @@ test('both Suwon corridors finish at the same Dongseoul office-side destination'
 test('Suwon to Topyeong selects junction corridors instead of north/south departure',()=>{
   const start=officeEndpoint(suwon,[],TOLL_GATES),goal=officeEndpoint(office('토평영업소',414691638),[],TOLL_GATES);
   const choices=originOptions(graph,start,goal);
-  assert.deepEqual(choices.map(c=>c.label),['판교·하남 경유','신갈·호법 경유']);
+  assert.deepEqual(choices.map(c=>c.label),['판교·하남 경유 → 영업소 위치 도착','신갈·호법 경유 → 영업소 위치 도착']);
   const hanam=route(graph,start,goal,null,choices[0].key),hobeop=route(graph,start,goal,null,choices[1].key);
   assert.deepEqual(hanam.roads,['경부고속도로','수도권제1순환고속도로']);
   assert.deepEqual(hobeop.roads,['경부고속도로','영동고속도로','중부고속도로','수도권제1순환고속도로']);
