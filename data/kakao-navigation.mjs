@@ -1,4 +1,4 @@
-import {validPoint} from './highway-routing.mjs?v=20261016-songpa-vm9';
+import {validPoint} from './highway-routing.mjs?v=20261018-quick-nav';
 
 // KakaoMap 6.0+ route scheme uses latitude,longitude pairs, with vp (not
 // vp1) for the first waypoint. Hand off directly to the installed app:

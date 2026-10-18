@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test:highway": "node --test tests/highway-routing.test.mjs tests/highway-snapshot.test.mjs tests/highway-endpoints.test.mjs tests/saved-navigation.test.mjs"
+    "test:highway": "node --test tests/highway-routing.test.mjs tests/highway-snapshot.test.mjs tests/highway-endpoints.test.mjs tests/saved-navigation.test.mjs tests/navigation-catalog.test.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

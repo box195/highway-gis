@@ -997,6 +997,7 @@
 
 
       </button>
+      <button id="btn-quick-navigation" type="button" title="빠른 길찾기" aria-label="빠른 길찾기 전용 화면 열기" class="p-2 rounded-lg bg-cyan-600/30 text-cyan-200 border border-cyan-500/50 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m3 10 18-7-7 18-3-8-8-3Z"/></svg></button>
 
 
 
@@ -1129,6 +1130,7 @@
 
 
       </button>
+      <button id="btn-quick-navigation-mobile" type="button" title="빠른 길찾기" aria-label="빠른 길찾기 전용 화면 열기" class="p-2 rounded-lg bg-cyan-600/30 text-cyan-200 border border-cyan-500/50 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m3 10 18-7-7 18-3-8-8-3Z"/></svg></button>
 
 
 
@@ -11357,6 +11359,7 @@
 
 
       AppState.data = jsonData;
+      window.dispatchEvent(new Event('highway:datachange'));
       const bridges = jsonData.bridges || [];
       const countBridges = document.getElementById('count-bridges');
       if (countBridges) countBridges.innerText = bridges.length;
@@ -15477,12 +15480,19 @@
   <script>
     window.HighwayApp = {
       get data() { return AppState.data; },
+      get navigationData() {
+        const packs = Object.values(AppState.loadedDataPacks || {});
+        if (!packs.length) return AppState.data;
+        return { offices: packs.flatMap(p => p.offices || []), interchanges: packs.flatMap(p => p.interchanges || []),
+          manholes: packs.flatMap(p => (p.manholes || []).map(m => ({...m, branch_code: m.branch_code || p.branch_code, branch_name: m.branch_name || p.branch_name}))) };
+      },
       get map() { return AppState.map; },
       get selected() { return AppState.selectedFacility; },
       officeFor: findMatchingOffice
     };
   </script>
-  <script type="module" src="./data/highway-navigation.mjs?v=20261018-songpa-kakao"></script>
+  <script type="module" src="./data/highway-navigation.mjs?v=20261018-quick-nav"></script>
+  <script type="module" src="./data/quick-navigation.mjs?v=20261018-quick-nav"></script>
 </body>
 
 

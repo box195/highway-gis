@@ -102,7 +102,19 @@ class Heap {
   push(v){let i=this.a.length;this.a.push(v);while(i){const p=(i-1)>>1;if(this.a[p].cost<=v.cost)break;this.a[i]=this.a[p];i=p;}this.a[i]=v;}
   pop(){const first=this.a[0],v=this.a.pop();if(this.a.length){let i=0;while(i*2+1<this.a.length){let j=i*2+1;if(j+1<this.a.length&&this.a[j+1].cost<this.a[j].cost)j++;if(v.cost<=this.a[j].cost)break;this.a[i]=this.a[j];i=j;}this.a[i]=v;}return first;}
 }
+export function topologyPoint(graph,p){
+  // Facility sections may label the common Jungbu carriageway north of the
+  // Second Jungbu split as "Second Jungbu". Trust a close physical Jungbu
+  // carriageway only when Second Jungbu is clearly elsewhere. Never switch
+  // between the two parallel motorways merely because one is slightly closer.
+  if(p?.roadHint!=='제2중부고속도로')return p;
+  const hinted=nearestHighwayPoint(graph,p);
+  if(hinted.gap<=500)return p;
+  const actual=nearestHighwayPoint(graph,{...p,roadHint:'중부고속도로'});
+  return actual.gap<=45?{...p,roadHint:'중부고속도로'}:p;
+}
 export function routingPolicy(graph,start,goal){
+  start=topologyPoint(graph,start);goal=topologyPoint(graph,goal);
   const second='제2중부고속도로';
   const destination=goal&&nearestHighwayPoint(graph,goal);
   const allowSecond=!!goal && goal.endpointKind!=='office' && (goal.roadHint===second||(!goal.roadHint&&destination.road===second&&destination.gap<=45));
@@ -121,7 +133,8 @@ export function originOptions(graph,start,goal){
 }
 function suwonCorridors(graph,start,goal){
   if(start.gateName!=='수원신갈톨게이트'||!goal)return false;
-  const road=goal.roadHint||nearestHighwayPoint(graph,{...goal,avoidSecond:true}).road;
+  const target=topologyPoint(graph,goal);
+  const road=target.roadHint||nearestHighwayPoint(graph,{...target,avoidSecond:true}).road;
   return road==='중부고속도로'||road==='수도권제1순환고속도로'&&goal.lat>=37.5&&goal.lng>=127.1;
 }
 export function availableOriginOptions(graph,start,goal){

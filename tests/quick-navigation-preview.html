@@ -1,0 +1,24 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>빠른 길찾기 테스트 · 모의 GPS</title>
+<style>body{background:#0f172a;color:white;font:16px system-ui}button{padding:16px}</style>
+<h1>빠른 길찾기 테스트 · 모의 GPS</h1><p>실제 GPS와 지도앱을 실행하지 않습니다.</p>
+<button id="btn-quick-navigation">빠른 길찾기 전용 화면 열기</button><p id="gps-requests">모의 GPS 요청: 0회</p><p id="test-launch"></p>
+<script type="module">
+  import {TOLL_GATES} from '../data/highway-tollgates.mjs';
+  const params=new URLSearchParams(location.search);
+  const office=(name,id)=>{const g=TOLL_GATES.find(g=>g.id===id);return {name,lat:g.lat+.0007,lng:g.lng-.0015};};
+  const suwon=office('수원신갈영업소',1814821448),gonjiam=office('곤지암영업소',436295655);
+  const offices=[suwon,gonjiam,office('동서울영업소',436295787),office('서이천영업소',436294773),
+    {name:'한국도로공사 동서울지사',lat:37.52,lng:127.15},{name:'경기광주지사',lat:37.35,lng:127.32},office('하남영업소',436295787)];
+  const g=TOLL_GATES.find(g=>g.id===436295787);
+  const data={offices,manholes:[{name:'2M',lat:g.lat,lng:g.lng,branch_code:'DONGSEOUL',section:'중부선'},
+    {name:'1M',lat:g.lat,lng:g.lng,branch_code:'GWANGJU',section:'중부선'}]};
+  window.HighwayApp={data,navigationData:data};
+  let count=0;const source=params.get('origin')==='gonjiam'?gonjiam:suwon;
+  Object.defineProperty(navigator,'geolocation',{value:{getCurrentPosition(success,error){
+    document.getElementById('gps-requests').textContent=`모의 GPS 요청: ${++count}회`;
+    queueMicrotask(()=>params.get('gps')==='denied'?error({code:1}):success({coords:{latitude:source.lat,longitude:source.lng,accuracy:5,speed:20,heading:180}}));
+  }}});
+  document.addEventListener('click',e=>{const a=e.target.closest('.qn-direction');if(!a)return;e.preventDefault();document.getElementById('test-launch').textContent=a.href;document.title='지도앱 연결 확인 · 모의 테스트';});
+</script>
+<script type="module" src="../data/quick-navigation.mjs?v=20261018-quick-nav"></script></html>

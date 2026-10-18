@@ -1,10 +1,11 @@
-import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261016-songpa-vm9';
-import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261016-songpa-vm9';
+import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261018-quick-nav';
+import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261018-quick-nav';
+import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261018-quick-nav';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261016-songpa-vm9';
-import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261018-songpa-kakao';
+import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261018-quick-nav';
+import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261018-quick-nav';
 
-let graphPromise, generation=0, previewLayer, currentResult, context, openedSelection;
+let generation=0, previewLayer, currentResult, context, openedSelection;
 const button=document.getElementById('btn-highway-navigation');
 const modal=document.createElement('dialog');
 modal.id='highway-navigation-dialog';
@@ -16,7 +17,7 @@ modal.innerHTML=`<form method="dialog" class="hn-header"><h2 id="highway-navigat
   <label for="hn-saved-goal">목적지</label><select id="hn-saved-goal"></select>
   <p class="hn-muted">수원신갈영업소에서 송파IC로 가는 경유지 3개를 그대로 사용합니다. 수원신갈톨게이트는 통과할 수 있습니다. 실제 주행 경로는 연결한 지도앱에서 확인하세요.</p></div>
   <div id="hn-highway-controls" class="hn-fields"><label for="hn-goal">목적지 · 저장된 GIS 지점</label><select id="hn-goal"></select>
-  <label for="hn-origin-mode">출발지 기준</label><select id="hn-origin-mode"><option value="gps">현재 위치</option><option value="nearest-office">현재 위치에서 가장 가까운 거점</option><option value="saved-office">거점 직접 선택</option></select>
+  <label for="hn-origin-mode">출발지 기준</label><select id="hn-origin-mode"><option value="nearest-office">현재 위치에서 가장 가까운 거점</option></select>
   <label id="hn-origin-office-label" for="hn-origin-office" hidden>출발 거점</label><select id="hn-origin-office" hidden></select>
   <p class="hn-muted">가까운 거점은 현재 위치와의 직선거리로 고릅니다. 거점 출발은 그 거점부터의 경로이며, 현재 위치에서 거점까지의 이동은 포함하지 않습니다.</p>
   <p id="hn-origin-info" class="hn-muted" hidden></p>
@@ -25,8 +26,8 @@ modal.innerHTML=`<form method="dialog" class="hn-header"><h2 id="highway-navigat
   <button type="button" id="hn-build" class="hn-primary">고속도로 경로 만들기</button>
   <p id="hn-status" role="status" aria-live="polite"></p><div id="hn-preview"></div>
   <a id="hn-launch" class="hn-primary" hidden>네이버지도에서 경로 확인</a>
-  <a id="hn-kakao-launch" class="hn-primary hn-kakao" hidden>카카오맵 앱에서 저장 경로 확인</a>
-  <p id="hn-kakao-note" class="hn-muted" hidden>카카오맵이 설치된 휴대폰에서 열어주세요. 수원영 → 송파IC의 저장 경유지 3개를 전달하며, 경로 확인 후 안내를 시작합니다.</p>
+  <a id="hn-kakao-launch" class="hn-primary hn-kakao" hidden>카카오맵 앱에서 경로 확인</a>
+  <p id="hn-kakao-note" class="hn-muted" hidden>카카오맵이 설치된 휴대폰에서 열어주세요. 선택한 출발·도착·경유지를 전달합니다. 앱에서 실제 경로를 확인한 후 안내를 시작합니다.</p>
   <p id="hn-highway-note" class="hn-muted">고속도로 본선과 노선 간 연결로로 경유지를 만듭니다. 진출입 구간은 일반도로가 포함될 수 있으며, 네이버가 계산한 최종 경로는 다를 수 있습니다.</p>
   <details id="hn-highway-data"><summary>공개 도로 데이터</summary><p class="hn-muted">앱에 포함된 OpenStreetMap의 다섯 노선을 이용합니다. 현재 위치와 시설물 좌표는 도로 데이터 서버에 전송하지 않습니다. 갱신한 원본 OSM JSON 파일을 가져와 사용할 수도 있습니다.</p>
   <label for="hn-import">도로 데이터 가져오기 (Overpass JSON)</label><input id="hn-import" type="file" accept=".json,application/json"><button id="hn-query" type="button">도로 조회문 복사</button>
@@ -101,40 +102,6 @@ function showSavedRoute(){
     status('저장 경유지 3개를 준비했습니다. 네이버지도 또는 카카오맵 앱에서 원하는 길로 연결되는지 확인하세요.');
   }catch(e){status(e.message,true);}
 }
-async function loadGraph(){
-  if(graphPromise)return graphPromise;
-  graphPromise=(async()=>{
-    // Versioned public snapshot ships with the app: no public API dependency
-    // for ordinary navigation, and no precise-location requests to a router.
-    try{
-      const snapshot=await fetch(new URL('./highway-roads.json',import.meta.url));
-      if(snapshot.ok)return buildGraph(await snapshot.json());
-    }catch{/* A missing snapshot can still use the public-query fallback. */}
-    let cache;const key=new URL('./highway-public-road-cache.json',import.meta.url).href;
-    try{cache=await caches.open('highway-public-road-v1');const saved=await cache.match(key);
-      if(saved && Date.now()-Number(saved.headers.get('x-saved-at'))<7*86400000)return buildGraph(await saved.json());
-    }catch{/* Caching is optional, including private browsing. */}
-    const controller=new AbortController(), timeout=setTimeout(()=>controller.abort(),135000);
-    try{
-      const res=await fetch('https://overpass-api.de/api/interpreter',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({data:ROAD_QUERY}),signal:controller.signal});
-      if(!res.ok)throw new Error('HTTP '+res.status);
-      const osm=await res.json();if(osm.remark)throw new Error(osm.remark);
-      const graph=buildGraph(osm);
-      try{await cache?.put(key,new Response(JSON.stringify(osm),{headers:{'Content-Type':'application/json','x-saved-at':String(Date.now())}}));}catch{/* Quota failure does not block navigation. */}
-      return graph;
-    }catch(error){throw new Error('공개 도로 데이터를 불러오지 못했습니다. 잠시 후 다시 시도하거나 공개 도로 데이터 메뉴에서 Overpass JSON을 가져오세요. ('+(error.name==='AbortError'?'응답 시간 초과':error.message)+')');}
-    finally{clearTimeout(timeout);}
-  })().catch(e=>{graphPromise=null;throw e;});
-  return graphPromise;
-}
-function gps(){return new Promise((resolve,reject)=>{
-  if(!window.isSecureContext)return reject(new Error('위치 기능은 HTTPS 또는 localhost에서 사용할 수 있습니다.'));
-  if(!navigator.geolocation)return reject(new Error('이 브라우저는 현재 위치를 지원하지 않습니다.'));
-  navigator.geolocation.getCurrentPosition(p=>{
-    if(p.coords.accuracy>150)return reject(new Error('현재 위치의 오차가 150m보다 큽니다. GPS 수신이 좋은 곳에서 다시 시도하세요.'));
-    resolve({lat:p.coords.latitude,lng:p.coords.longitude,speed:p.coords.speed,heading:p.coords.speed>2?p.coords.heading:null,accuracy:p.coords.accuracy});
-  },e=>reject(new Error(({1:'위치 권한을 허용한 뒤 다시 시도하세요.',2:'현재 위치를 확인할 수 없습니다.',3:'현재 위치 요청 시간이 초과됐습니다.'})[e.code]||'위치를 가져오지 못했습니다.')),{enableHighAccuracy:true,timeout:20000,maximumAge:0});
-});}
 $('hn-build').addEventListener('click',async()=>{
   reset();if($('hn-route-mode').value==='saved'){showSavedRoute();return;}
   const token=generation, goal=destinations[Number($('hn-goal').value)];
@@ -180,7 +147,8 @@ $('hn-build').addEventListener('click',async()=>{
     result.waypoints.forEach((wp,i)=>L.marker([wp.lat,wp.lng]).addTo(previewLayer).bindTooltip(`${i+1}. ${wp.name.replace(/^\d+\. /,'')}`));
     map.fitBounds(L.latLngBounds(result.points.map(p=>[p.lat,p.lng])),{padding:[35,35]});
     $('hn-launch').href=navigationURL(result,location.origin+location.pathname,/Android/i.test(navigator.userAgent));$('hn-launch').hidden=false;
-    status('경유지가 준비됐습니다. 지도에서 출발 방향·진입 위치와 네이버 최종 경로를 확인하세요.');
+    $('hn-kakao-launch').href=kakaoNavigationURL(result,/Android/i.test(navigator.userAgent));$('hn-kakao-launch').hidden=false;$('hn-kakao-note').hidden=false;
+    status('경유지가 준비됐습니다. 지도에서 출발 방향·진입 위치와 지도앱의 최종 경로를 확인하세요.');
     const show=document.createElement('button');show.type='button';show.className='hn-primary';show.textContent='GIS 지도에서 경로 보기';show.addEventListener('click',()=>{modal.close('preview');});box.append(show);
   }catch(e){if(token===generation&&modal.open)status(e.message,true);}
   finally{if(token===generation)$('hn-build').disabled=false;}
@@ -207,7 +175,7 @@ for(const id of ['hn-launch','hn-kakao-launch'])$(id).addEventListener('click',e
 $('hn-import').addEventListener('change',async e=>{
   reset();context=null;$('hn-direction').replaceChildren();$('hn-direction').hidden=true;$('hn-direction-label').hidden=true;const token=generation;
   try{const f=e.target.files[0];if(!f)return;if(f.size>50*1024*1024)throw new Error('도로 파일은 50MB 이하로 가져오세요.');
-    const graph=buildGraph(JSON.parse(await f.text()));if(token!==generation)return;graphPromise=Promise.resolve(graph);status('다섯 노선 도로 데이터를 가져왔습니다. 현재 위치로 경로를 만드세요.');
+    const graph=buildGraph(JSON.parse(await f.text()));if(token!==generation)return;replaceGraph(graph);status('다섯 노선 도로 데이터를 가져왔습니다. 현재 위치로 경로를 만드세요.');
   }catch(err){status(err.message,true);}finally{$('hn-build').disabled=!canBuild();e.target.value='';}
 });
 $('hn-query').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(ROAD_QUERY);status('다섯 노선의 공개 도로 조회문을 복사했습니다. Overpass Turbo에서 실행 후 원본 JSON으로 내보내세요.');}catch{status('클립보드를 사용할 수 없습니다.',true);}});
