@@ -4,7 +4,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>body{background:#0f172a;color:white;font:16px system-ui;padding:12px}button{padding:12px}#map{height:70vh;margin-top:12px}</style>
 <h1>고속도로 길찾기 UI 테스트 · 모의 GPS</h1>
-<p>사용자의 실제 위치를 요청하지 않습니다. 공개 도로 위의 고정 테스트 위치를 사용하며 네이버 앱 실행도 차단합니다.</p>
+<p>사용자의 실제 위치를 요청하지 않습니다. 공개 도로 위의 고정 테스트 위치를 사용하며 지도앱 실행도 차단합니다.</p>
 <p id="gps-requests">모의 GPS 요청: 0회</p>
 <button id="btn-highway-navigation">고속도로 길찾기 테스트</button><div id="map"></div>
 <script type="module">
@@ -19,6 +19,6 @@
   const mode=params.get('gps'),stationary=mode==='no-heading'||tollgate;
   let gpsRequests=0;
   Object.defineProperty(navigator,'geolocation',{value:{getCurrentPosition(success,error){document.getElementById('gps-requests').textContent=`모의 GPS 요청: ${++gpsRequests}회`;queueMicrotask(()=>mode==='denied'?error({code:1}):success({coords:{latitude:tollgate?suwon.lat:37.30,longitude:tollgate?suwon.lng:127.10,accuracy:5,speed:stationary?0:10,heading:stationary?null:0}}));}}});
-  document.addEventListener('click',event=>{if(event.target.closest('#hn-launch')){event.preventDefault();document.title='네이버 경유지 링크 생성 확인 · 모의 테스트';}});
+  document.addEventListener('click',event=>{if(event.target.closest('#hn-launch,#hn-kakao-launch')){event.preventDefault();document.title=event.target.closest('#hn-kakao-launch')?'카카오맵 경유지 링크 생성 확인 · 모의 테스트':'네이버 경유지 링크 생성 확인 · 모의 테스트';}});
 </script>
 <script type="module" src="../data/highway-navigation.mjs"></script></html>

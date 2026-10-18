@@ -2,6 +2,7 @@ import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigation
 import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261016-songpa-vm9';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261016-songpa-vm9';
+import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261018-songpa-kakao';
 
 let graphPromise, generation=0, previewLayer, currentResult, context, openedSelection;
 const button=document.getElementById('btn-highway-navigation');
@@ -13,7 +14,7 @@ modal.innerHTML=`<form method="dialog" class="hn-header"><h2 id="highway-navigat
   <div id="hn-saved-controls" class="hn-fields" hidden>
   <label for="hn-saved-start">출발지</label><select id="hn-saved-start"></select>
   <label for="hn-saved-goal">목적지</label><select id="hn-saved-goal"></select>
-  <p class="hn-muted">수원신갈영업소에서 송파IC로 가는 경유지 3개를 그대로 사용합니다. 수원신갈톨게이트는 통과할 수 있습니다. 실제 주행 경로는 네이버에서 확인하세요.</p></div>
+  <p class="hn-muted">수원신갈영업소에서 송파IC로 가는 경유지 3개를 그대로 사용합니다. 수원신갈톨게이트는 통과할 수 있습니다. 실제 주행 경로는 연결한 지도앱에서 확인하세요.</p></div>
   <div id="hn-highway-controls" class="hn-fields"><label for="hn-goal">목적지 · 저장된 GIS 지점</label><select id="hn-goal"></select>
   <label for="hn-origin-mode">출발지 기준</label><select id="hn-origin-mode"><option value="gps">현재 위치</option><option value="nearest-office">현재 위치에서 가장 가까운 거점</option><option value="saved-office">거점 직접 선택</option></select>
   <label id="hn-origin-office-label" for="hn-origin-office" hidden>출발 거점</label><select id="hn-origin-office" hidden></select>
@@ -24,6 +25,8 @@ modal.innerHTML=`<form method="dialog" class="hn-header"><h2 id="highway-navigat
   <button type="button" id="hn-build" class="hn-primary">고속도로 경로 만들기</button>
   <p id="hn-status" role="status" aria-live="polite"></p><div id="hn-preview"></div>
   <a id="hn-launch" class="hn-primary" hidden>네이버지도에서 경로 확인</a>
+  <a id="hn-kakao-launch" class="hn-primary hn-kakao" hidden>카카오맵 앱에서 저장 경로 확인</a>
+  <p id="hn-kakao-note" class="hn-muted" hidden>카카오맵이 설치된 휴대폰에서 열어주세요. 수원영 → 송파IC의 저장 경유지 3개를 전달하며, 경로 확인 후 안내를 시작합니다.</p>
   <p id="hn-highway-note" class="hn-muted">고속도로 본선과 노선 간 연결로로 경유지를 만듭니다. 진출입 구간은 일반도로가 포함될 수 있으며, 네이버가 계산한 최종 경로는 다를 수 있습니다.</p>
   <details id="hn-highway-data"><summary>공개 도로 데이터</summary><p class="hn-muted">앱에 포함된 OpenStreetMap의 다섯 노선을 이용합니다. 현재 위치와 시설물 좌표는 도로 데이터 서버에 전송하지 않습니다. 갱신한 원본 OSM JSON 파일을 가져와 사용할 수도 있습니다.</p>
   <label for="hn-import">도로 데이터 가져오기 (Overpass JSON)</label><input id="hn-import" type="file" accept=".json,application/json"><button id="hn-query" type="button">도로 조회문 복사</button>
@@ -33,6 +36,7 @@ const style=document.createElement('style');
 style.textContent=`#highway-navigation-dialog{background:#0f172a;color:#e2e8f0;border:1px solid #475569;border-radius:16px;padding:0;width:min(94vw,540px);max-height:88dvh;margin:auto;font:14px/1.5 system-ui;z-index:9999}#highway-navigation-dialog::backdrop{background:#020617b8}.hn-header{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid #334155}.hn-header h2{font-weight:800;font-size:17px}.hn-header button{padding:4px 10px}.hn-body{padding:16px;display:flex;flex-direction:column;gap:12px}.hn-body select{background:#020617;border:1px solid #475569;padding:10px;border-radius:8px;max-width:100%;color:#fff}.hn-primary{display:block;text-align:center;padding:12px;border-radius:10px;background:#0891b2;color:white;font-weight:700;cursor:pointer}.hn-primary[hidden]{display:none}.hn-primary:disabled{opacity:.5;cursor:wait}.hn-muted{color:#94a3b8;font-size:12px}.hn-body ol{padding-left:22px;list-style:decimal}.hn-body details{border-top:1px solid #334155;padding-top:12px;font-size:12px}.hn-body input{max-width:100%;margin:8px 0}.hn-body #hn-query{padding:6px;border:1px solid #475569;border-radius:6px}.hn-body #hn-status[data-error=true]{color:#fda4af}.hn-body a:focus-visible,.hn-body button:focus-visible,.hn-body select:focus-visible{outline:2px solid #67e8f9;outline-offset:3px}`;
 document.head.append(style);
 style.textContent+=' .hn-fields{display:flex;flex-direction:column;gap:12px}.hn-fields[hidden]{display:none}';
+style.textContent+=' .hn-kakao{background:#fee500;color:#191919}';
 const $=id=>document.getElementById(id);
 let destinations=[],origins=[];
 const canBuild=()=>$('hn-route-mode').value==='saved'||destinations.length>0;
@@ -47,7 +51,7 @@ function updateMode(){
   status(saved?'출발지와 목적지를 고른 뒤 저장 경로를 불러오세요.':destinations.length?'목적지와 출발지를 고른 뒤 경로를 만드세요.':'좌표가 있는 데이터팩을 먼저 불러오세요.');
 }
 function status(text,error=false){$('hn-status').textContent=text;$('hn-status').dataset.error=String(error);}
-function reset(){generation++;currentResult=null;$('hn-launch').hidden=true;$('hn-launch').removeAttribute('href');$('hn-preview').replaceChildren();if(previewLayer){previewLayer.remove();previewLayer=null;}}
+function reset(){generation++;currentResult=null;for(const id of ['hn-launch','hn-kakao-launch']){$(id).hidden=true;$(id).removeAttribute('href');}$('hn-kakao-note').hidden=true;$('hn-preview').replaceChildren();if(previewLayer){previewLayer.remove();previewLayer=null;}}
 function optionGroup(label,items){
   const group=document.createElement('optgroup');group.label=label;
   for(const p of items){if(!validPoint(p))continue;const i=destinations.push(p)-1;const o=new Option(p.name,String(i));group.append(o);}
@@ -84,7 +88,7 @@ function showSavedRoute(){
     currentResult={...result,created:Date.now()};
     const box=$('hn-preview'),title=document.createElement('p');title.style.fontWeight='700';title.textContent=`${result.start.name} → ${result.goal.name}`;box.append(title);
     const list=document.createElement('ol');for(const wp of result.waypoints){const li=document.createElement('li');li.textContent=wp.code;list.append(li);}box.append(list);
-    const note=document.createElement('p');note.className='hn-muted';note.textContent='지도에는 출발·도착·경유지 위치만 표시합니다. 도로를 따라가는 실제 경로는 네이버에서 확인하세요.';box.append(note);
+    const note=document.createElement('p');note.className='hn-muted';note.textContent='지도에는 출발·도착·경유지 위치만 표시합니다. 도로를 따라가는 실제 경로는 연결한 지도앱에서 확인하세요.';box.append(note);
     const map=window.HighwayApp.map;previewLayer=L.layerGroup().addTo(map);
     for(const [i,p] of result.points.entries()){
       const label=document.createElement('span');label.textContent=i===0?`출발: ${p.name}`:i===result.points.length-1?`도착: ${p.name}`:`${i}. ${p.code}`;
@@ -92,8 +96,9 @@ function showSavedRoute(){
     }
     map.fitBounds(L.latLngBounds(result.points.map(p=>[p.lat,p.lng])),{padding:[35,35]});
     $('hn-launch').href=navigationURL(result,location.origin+location.pathname,/Android/i.test(navigator.userAgent));$('hn-launch').hidden=false;
+    $('hn-kakao-launch').href=kakaoNavigationURL(result,/Android/i.test(navigator.userAgent));$('hn-kakao-launch').hidden=false;$('hn-kakao-note').hidden=false;
     const show=document.createElement('button');show.type='button';show.className='hn-primary';show.textContent='GIS 지도에서 저장 지점 보기';show.addEventListener('click',()=>modal.close('preview'));box.append(show);
-    status('저장 경유지 3개를 준비했습니다. 네이버에서 원하는 길로 연결되는지 확인하세요.');
+    status('저장 경유지 3개를 준비했습니다. 네이버지도 또는 카카오맵 앱에서 원하는 길로 연결되는지 확인하세요.');
   }catch(e){status(e.message,true);}
 }
 async function loadGraph(){
@@ -196,7 +201,7 @@ $('hn-origin-office').addEventListener('change',()=>{
   reset();context=null;$('hn-origin-info').hidden=true;$('hn-direction').replaceChildren();$('hn-direction').hidden=true;$('hn-direction-label').hidden=true;
   $('hn-build').disabled=!canBuild();status('출발 거점이 바뀌었습니다. 경로를 다시 만드세요.');
 });
-$('hn-launch').addEventListener('click',e=>{
+for(const id of ['hn-launch','hn-kakao-launch'])$(id).addEventListener('click',e=>{
   if(!currentResult||currentResult.kind!=='saved'&&Date.now()-currentResult.created>120000){e.preventDefault();reset();status('출발 위치를 갱신하기 위해 경로를 다시 만드세요.');return;}
 });
 $('hn-import').addEventListener('change',async e=>{
