@@ -17,11 +17,9 @@ export const GATE_PROFILES=[
   {match:/곤지암영업소/,gate:'곤지암톨게이트',road:'중부고속도로',aliases:['곤지암']},
   {match:/서이천영업소/,gate:'서이천톨게이트',road:'중부고속도로',aliases:['서이천']}
 ];
-// Navigation-only office-front exit toll goals (not building entrances).
-// Exact centres of the user's 11-digit FULL Open Location Codes.
-// Never snap, offset or substitute either destination with OSM toll data.
+// Retained Seongnam user-selected full Plus Code arrival (not building entrance).
+// Dongseoul office now uses its original GIS building coordinates.
 export const USER_ARRIVAL_OVERRIDES=[
-  {match:/동서울영업소/,plusCode:'8Q99G68C+Q8F',lat:37.5169375,lng:127.220796875},
   {match:/성남영업소/,plusCode:'8Q99C4PF+6FG',lat:37.4355625,lng:127.123703125}
 ];
 const FRONT_EXIT_TOLLS=[
@@ -58,10 +56,11 @@ export function officeEndpoint(item,interchanges=[],gates=[],label){
   const arrivalAnchors=publicGates.flatMap(g=>(TOLL_ACCESS[g.id]||[]).filter(a=>!roadHint||a.road===roadHint).map(a=>({...a,gateId:g.id})));
   // The user confirmed Gwangju's existing exit-booth destination is correct.
   // Only Gonjiam finishes at the verified office-front exit toll. Hanam stays at its entry-side office.
+  // Dongseoul office finishes at the original GIS building, with both directed guide approaches retained.
   // All other offices retain their previous destination policy.
   const keepGate=/경기광주영업소|^광주영업소/.test(officeName);
   const exitToll=FRONT_EXIT_TOLLS.find(p=>p.match.test(officeName));
-  const stopAtPlaza=/성남영업소|동서울영업소|서이천영업소/.test(officeName);
+  const stopAtPlaza=/성남영업소|서이천영업소/.test(officeName);
   const pinnedArrival=USER_ARRIVAL_OVERRIDES.find(p=>p.match.test(officeName));
   // Hanam office is on the entry side; let the external navigator find a legal U-turn/re-entry.
   const officeDestination=stopAtPlaza?null:exitToll?{lat:exitToll.lat,lng:exitToll.lng}:!keepGate&&/영업소/.test(officeName)?original:null;

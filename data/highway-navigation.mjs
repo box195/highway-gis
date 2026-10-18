@@ -1,9 +1,9 @@
-import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261018-arrival-goals';
-import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261018-arrival-goals';
-import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261018-arrival-goals';
+import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261019-songpa-return';
+import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261019-songpa-return';
+import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261019-songpa-return';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261018-arrival-goals';
-import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261018-arrival-goals';
+import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261019-songpa-return';
+import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-songpa-return';
 
 let generation=0, previewLayer, currentResult, context, openedSelection;
 const button=document.getElementById('btn-highway-navigation');

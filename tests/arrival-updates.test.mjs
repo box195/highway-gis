@@ -16,10 +16,9 @@ const starts=[
 ];
 const tollDestinations=[
   office('성남영업소',734816282),
-  office('동서울영업소',436295787),
   office('서이천영업소',436294773)
 ];
-test('three toll destinations use both directed arrivals and stop upstream of the right-hand toll edge',()=>{
+test('Seongnam and SeoIcheon toll destinations use both directed arrivals and stop upstream of the right-hand toll edge',()=>{
   for(const dest of tollDestinations){
     const goal=officeEndpoint(dest,[],TOLL_GATES);
     assert.equal(goal.stopBeforeToll,true,dest.name);

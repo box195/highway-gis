@@ -11,7 +11,7 @@ const graph=buildGraph(JSON.parse(fs.readFileSync(new URL('../data/highway-roads
 test('destination buttons keep priority, branches, office order; replace manholes with sorted GIS IC/JC',()=>{
   const at={lat:37.3,lng:127.1};
   const data={offices:[{...at,name:'하남영업소'},{...at,name:'한국도로공사 동서울지사'},{...at,name:'경기광주지사'},
-    {...at,name:'곤지암영업소'},{...at,name:'수원신갈영업소'},{...at,name:'수원신갈영업소'},{...at,name:'본부'}],
+    {...at,name:'곤지암영업소'},{...at,name:'수원신갈영업소'},{...at,name:'수원신갈영업소'},{...at,name:'광암터널관리동'},{...at,name:'본부'}],
     manholes:[{...at,name:'신원IC',branch_code:'DONGSEOUL'},{...at,name:'2M',branch_code:'GWANGJU'}],
     interchanges:[{...at,name:'판교JC'},{...at,name:'송파IC'},{...at,name:'광주IC'},{...at,name:'안성JC'},
       {...at,name:'광주IC'},{...at,name:'신갈JC'},{...at,name:'자연공원'},{name:'무좌표IC'}]};
@@ -19,7 +19,10 @@ test('destination buttons keep priority, branches, office order; replace manhole
   assert.deepEqual(groups.map(g=>g.key),['junctions','branches','offices','other-junctions']);
   assert.deepEqual(groups[0].items.map(x=>x.label),['송파IC','신갈JC']);
   assert.deepEqual(groups[1].items.map(x=>x.label),['경기광주지사','동서울지사']);
-  assert.deepEqual(groups[2].items.map(x=>x.label),['곤지암영업소','하남영업소']);
+  assert.deepEqual(groups[2].items.map(x=>x.label),['곤지암영업소','광암터널관리동','하남영업소']);
+  const gwangam=groups[2].items.find(x=>x.label==='광암터널관리동');
+  const chosen=destinationPoint(gwangam,data);assert.equal(chosen.lat,37.5163875);assert.equal(chosen.lng,127.174515625);
+  assert.equal(chosen.snapToHighway,false);assert.deepEqual(gwangam.source,{...at,name:'광암터널관리동'});
   assert.deepEqual(groups[3].items.map(x=>x.label),['광주IC','안성JC','판교JC'].sort(new Intl.Collator('ko',{numeric:true,sensitivity:'base'}).compare));
   assert.ok(groups.flatMap(g=>g.items).every(x=>x.kind!=='manhole'));
   assert.deepEqual(returnDestination(groups,data).label,'수원신갈영업소');
@@ -27,12 +30,17 @@ test('destination buttons keep priority, branches, office order; replace manhole
   assert.equal(returnDestination(groups),undefined);
 });
 
-test('saved direction is offered only for the registered Suwon to Songpa trip',()=>{
+test('only registered Suwon–Songpa and Songpa–Suwon saved trips are offered',()=>{
   const g=navigationCatalog(),songpa=g[0].items[0],singal=g[0].items[1];
   const from={gateName:'수원신갈톨게이트'};
   assert.equal(savedDestinationRoute(from,songpa).waypoints.length,3);
-  assert.throws(()=>savedDestinationRoute({gateName:'동서울톨게이트'},songpa),/등록되지/);
-  assert.throws(()=>savedDestinationRoute(from,singal),/등록되지/);
+  assert.throws(()=>savedDestinationRoute({gateName:'동서울톨게이트'},songpa),/저장된/);
+  assert.throws(()=>savedDestinationRoute(from,singal),/저장된/);
+  const site={name:'수원신갈영업소',lat:37.26694,lng:127.10244};
+  const target=returnDestination(navigationCatalog({offices:[site]}),{offices:[site]});
+  const returning=savedDestinationRoute({originId:'junction:songpa',officeName:'송파IC'},target,{offices:[site]});
+  assert.equal(returning.waypoints.length,5);assert.deepEqual(returning.goal,site);
+  assert.throws(()=>savedDestinationRoute({originId:'office:동서울영업소'},target,{offices:[site]}),/송파IC/);
   const p=destinationPoint(singal);assert.equal(p.roadHint,'경부고속도로');assert.equal(p.snapToHighway,true);
   assert.ok(distance(graph.nodes.get(436210017),SINGAL_JC)<.01);
 });

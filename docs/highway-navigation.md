@@ -1,3 +1,16 @@
+## Songpa IC → Suwon-Singal shared saved return (2026-10-19)
+
+- **Implemented only**: Songpa IC manual origin -> Suwon-Singal office top **SAVED RETURN** button. Other six origins do **not** have saved hybrid routes yet and show an unsupported-origin explanation. This does not change nearest-origin / manual-origin policy, the highway return button, or provider app links.
+- Return **start**, WGS84: **37.47496233343897, 127.12880007529834**, southwest-running Ring 1 carriageway after the Songpa IC ramp merge (public OSM).
+- Four return controls in order, each on directed public OSM roads: (1) **37.467587435693986, 127.12534885167113** Ring 1 southwest; (2) **37.40764245477234, 127.10681988958095** Ring 1 southwest before Pangyo; (3) **37.3778653722917, 127.10309435514655** Gyeongbu southbound; (4) **37.27021872946055, 127.10367176332836** Gyeongbu southbound before Suwon toll exit. They are not a reversed copy of the original northbound controls. Four is under the five-point limit.
+- Return **goal**: runtime Suwon-Singal office GIS building coordinates, WGS84 **37.26694, 127.10244** in the current navigation fields. If that office is absent from a loaded data pack, saved-navigation's existing public toll-booth fallback is **37.2656246, 127.1027408**. Original GIS dataset is unchanged.
+- [Official Kakao browser route with A/V1–V4/B positions](https://map.kakao.com/link/by/car/A,37.47496233343897,127.12880007529834/V1,37.467587435693986,127.12534885167113/V2,37.40764245477234,127.10681988958095/V3,37.3778653722917,127.10309435514655/V4,37.27021872946055,127.10367176332836/B,37.26694,127.10244). This is a **reproducible link for Codex to verify**, not a claim that the live Kakao-selected itinerary was tested here. App links retain kakaomap://route and navigation route schemes.
+- Outbound Suwon -> Songpa remains three existing northbound guide points and the exact Songpa **entry ramp** goal, unmodified. The saved return instead follows southwest Ring 1 -> southbound Gyeongbu opposite carriageways through the public directed road graph. Note: the public OSM extract lacks parallel local surface road lanes; this return is a motorway corridor and must not be presented as a verified surface-road retrace of the outbound controls.
+- Dongseoul toll office now finishes at its actual GIS office building; only its former explicit 8Q99G68C+Q8F arrival override is removed. Both approach guides are retained. Seongnam's 8Q99C4PF+6FG override and Gwangam tunnel management building's 8Q99G58F+HR2 arrival remain exact. Gwangam is listed in the offices destination group. Dongseoul branch and Seoul-Gyeonggi HQ share the existing Seo-Hanam entrance and keep their branch policies unchanged.
+- Run npm run test:highway, node scripts/stamp-route-cache.mjs --check and node scripts/stamp-route-cache.mjs --verify-newlines. No browser routing/real-drive verification, commits, pushes or deployment are performed by the Worker.
+
+---
+
 ## Current Songpa IC HIGHWAY / SAVED destination policy (2026-10-18)
 
 This section supersedes historical statements below that both navigation modes share the Songpa entry-ramp goal.
@@ -180,3 +193,7 @@ Geofabrik의 한국 OSM 원본에서 다섯 노선과 노선 간 연결로만 �
 - 상단 출발지 선택기는 기본 GPS 최근접 거점과 저장 영업소/지사/IC/JC를 지원합니다. 선택된 저장 출발지는 GPS를 요청하지 않습니다. 수원신갈영업소는 목적지 버튼에서는 빠지고 출발 목록 및 상단 복귀에는 남습니다. 맨홀 데이터는 사용하지 않습니다. 수동 IC/JC 출발 시 도착 전용 진출 앵커를 재사용하지 않으며, 출발 본선 방향 후보를 별도로 계산합니다.
 - 출발 거점 ID 선택값만 로컬에 저장합니다. 오래된 거점 ID는 기본 GPS 선택으로 복귀하고, 출발 ID/방식과 사용자 지정 도착 좌표는 캐시 키에 반영합니다. 텍스트 파일 지문은 LF/CRLF 변환을 정규화합니다. `node scripts/stamp-route-cache.mjs --verify-newlines` 테스트로 동일 결과를 검증합니다.
 - 실제 카카오/네이버 길찾기와 현장 차량 접근은 별도 검증이 필요합니다. 사용자의 승인 없이 커밋/푸시/배포하지 않습니다.
+
+## 2026-10-19 Songpa IC saved return corridor correction
+
+The saved Songpa IC -> Suwon return uses the reverse of the existing local-road corridor, not Ring 1/Gyeongbu. Outbound Suwon -> Songpa original three guides and entry goal remain unchanged. The return starts on directed public OSM Songpa southbound EXIT link 908687235 (37.47311468100521, 127.12669970838598), then heads south via Heolleung-ro 758-gil, Tancheon-ro, Daewangpangyo-ro, and Shinsu-ro to the runtime Suwon office (37.26694, 127.10244). The last two guide points lie on separately mapped southbound one-way Shinsu-ro carriageways, OSM 277611773 and 624073974. The first three road locations have OSM two-way centerline geometries with direction-side guides, OSM 382238694, 186410728, and 473590580. Full local South Korea PBF was inspected. This is topology/geometry validation only; live Kakao driving result is NOT_RUN pending user phone confirmation. Five waypoints maximum. Six extra hybrid hub routes remain future work.

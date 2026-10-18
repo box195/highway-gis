@@ -1,11 +1,11 @@
-import {loadGraph,gps} from './navigation-runtime.mjs?v=20261019-route-arrival';
-import {availableOriginOptions,navigationURL} from './highway-routing.mjs?v=20261019-route-arrival';
-import {nearestOfficeDeparture} from './highway-endpoints.mjs?v=20261019-route-arrival';
+import {loadGraph,gps} from './navigation-runtime.mjs?v=20261019-songpa-return';
+import {availableOriginOptions,navigationURL} from './highway-routing.mjs?v=20261019-songpa-return';
+import {nearestOfficeDeparture} from './highway-endpoints.mjs?v=20261019-songpa-return';
 import {quickOriginChoices,getOriginPreference,setOriginPreference,resolveQuickOrigin} from './quick-origin.mjs?v=20261019-quick-origin';
-import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-route-arrival';
+import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-songpa-return';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261019-route-cache';
-import {navigationCatalog,destinationPoint,savedDestinationRoute,returnDestination} from './navigation-catalog.mjs?v=20261019-route-arrival';
+import {navigationCatalog,destinationPoint,savedDestinationRoute,returnDestination} from './navigation-catalog.mjs?v=20261019-songpa-return';
 
 const page=document.createElement('section');page.id='quick-navigation-page';page.hidden=true;page.setAttribute('aria-label','빠른 길찾기');
 page.innerHTML=`<header class="qn-header"><button id="qn-back" type="button">← GIS</button><h1>빠른 길찾기</h1><label class="qn-origin">출발<select id="qn-origin" aria-label="출발 거점"><option value="">현재 위치 · 가까운 거점</option></select></label><label class="qn-provider">지도앱<select id="qn-provider" aria-label="지도앱"><option value="kakao">카카오맵</option><option value="naver">네이버지도</option></select></label></header>
@@ -136,7 +136,10 @@ function showDirections(){
 $('qn-back').addEventListener('click',backToGIS);
 $('qn-flow-close').addEventListener('click',()=>flow.close());flow.addEventListener('close',clearFlow);
 $('qn-return-highway').addEventListener('click',()=>{const item=returnDestination(groups,data());if(item)begin(item,'highway');});
-$('qn-return-saved').addEventListener('click',()=>{clearFlow();activeItem=null;$('qn-flow-title').textContent='수원영 저장경로 복귀';message('수원영 복귀 저장경로가 아직 등록되지 않았습니다.',true);if(!flow.open)flow.showModal();});
+$('qn-return-saved').addEventListener('click',()=>{const item=returnDestination(groups,data());
+  if(item)begin(item,'saved');
+  else{$('qn-page-status').textContent='수원신갈영업소 데이터가 없어 복귀 목적지를 선택할 수 없습니다.';}
+});
 $('qn-origin').addEventListener('change',()=>{
   setOriginPreference($('qn-origin').value,localStorageSafe());
   if(flow.open)flow.close();

@@ -80,3 +80,10 @@ test('standalone quick-nav header contains accessible origin selector and narrow
   assert.match(source,/setOriginPreference/);
   assert.ok(source.includes('if(flow.open)flow.close()'));
 });
+
+test('top Suwon SAVED RETURN control invokes stored route while retaining origin selector',()=>{
+ const js=fs.readFileSync(new URL('../data/quick-navigation.mjs',import.meta.url),'utf8');
+ assert.match(js,/id="qn-return-saved"/);assert.match(js,/getOrigin()/);
+ assert.ok(js.includes("qn-return-saved').addEventListener"));assert.ok(js.includes("begin(item,'saved')"));
+ assert.ok(js.includes("qn-origin').addEventListener('change'"));
+});

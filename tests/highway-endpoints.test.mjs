@@ -160,7 +160,7 @@ test('Suwon north via Pangyo and Hanam finishes southbound at Dongseoul without 
   assert.deepEqual(r.roads,['경부고속도로','수도권제1순환고속도로','중부고속도로']);
   assert.ok(r.arrivalDirection.includes('광주·호법 방향(남하)'));assert.equal(r.arrivalOffset,0);
   assert.ok(guide.lat>gate.lat);assert.equal(r.arrivalGateId,gate.id);
-  assert.ok(distance(guide,gate)>500);assert.ok(distance(r.goal,gate)>8&&distance(r.goal,gate)<90);
+  assert.ok(distance(guide,gate)>500);assert.deepEqual({lat:r.goal.lat,lng:r.goal.lng},goal.officeDestination);assert.equal(r.arrivalAtOffice,true);
   assert.ok(r.waypoints.length<=5);
 });
 test('five motorway runs on the southern Dongseoul detour fit five waypoints',()=>{
@@ -181,8 +181,8 @@ test('both Suwon corridors reach the correct opposite pre-plaza Dongseoul approa
   assert.ok(hanam.waypoints.length<=5);assert.ok(hobeop.waypoints.length<=5);
   assert.equal(hanam.arrivalGateId,436296492);assert.equal(hobeop.arrivalGateId,436295787);
   for(const r of [hanam,hobeop]){
-    assert.ok(distance(r.goal,booth(r.arrivalGateId))>8&&distance(r.goal,booth(r.arrivalGateId))<90);
-    assert.equal(r.arrivalAtOffice,false);assert.equal(r.arrivalAtToll,true);assert.ok(r.length<100000);
+    assert.deepEqual({lat:r.goal.lat,lng:r.goal.lng},goal.officeDestination);
+    assert.equal(r.arrivalAtOffice,true);assert.equal(r.arrivalAtToll,false);assert.ok(r.length<100000);
   }
 });
 
@@ -324,5 +324,5 @@ test('Gonjiam exit booth and Hanam entry-side office retain directional guides a
   const gwangju=officeEndpoint(office('경기광주영업소',685222361),[],TOLL_GATES);
   assert.equal(gwangju.officeDestination,null);
   const through=office('동서울영업소',436295787),throughGoal=officeEndpoint(through,[],TOLL_GATES);
-  assert.equal(throughGoal.officeDestination,null);assert.equal(throughGoal.stopBeforeToll,true);
+  assert.deepEqual(throughGoal.officeDestination,{lat:through.lat,lng:through.lng});assert.equal(throughGoal.stopBeforeToll,false);
 });

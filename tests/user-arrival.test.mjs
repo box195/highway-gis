@@ -25,10 +25,9 @@ function decodeFullOLCCenter(code){
   return {lat:Number((lat+stepLat/2).toFixed(12)),lng:Number((lng+stepLng/2).toFixed(12))};
 }
 const cases=[
-  {name:'동서울영업소',code:'8Q99G68C+Q8F',lat:37.5169375,lng:127.220796875,expectedDirections:[156,336]},
   {name:'성남영업소',code:'8Q99C4PF+6FG',lat:37.4355625,lng:127.123703125,expectedDirections:[173,351]}
 ];
-test('two full 11-character OLC cell centres decode precisely (no snap/offset)',()=>{
+test('Seongnam full 11-character OLC cell centre decode precisely (no snap/offset)',()=>{
   for(const item of cases){
     assert.deepEqual(decodeFullOLCCenter(item.code),{lat:item.lat,lng:item.lng});
     const profile=USER_ARRIVAL_OVERRIDES.find(x=>x.match.test(item.name));
@@ -37,7 +36,7 @@ test('two full 11-character OLC cell centres decode precisely (no snap/offset)',
     assert.deepEqual({lat:profile.lat,lng:profile.lng},{lat:item.lat,lng:item.lng});
   }
 });
-test('both directed arrivals pin the exact user-selected centre while retaining highway guide options',()=>{
+test('both directed Seongnam arrivals pin the exact user-selected centre while retaining highway guide options',()=>{
   for(const item of cases){
     const publicGate=TOLL_GATES.find(x=>x.name.includes(item.name.replace('영업소','')));
     assert.ok(publicGate,item.name);
@@ -71,4 +70,26 @@ test('user overrides do not change untouched SeoIcheon, Hanam and Gonjiam endpoi
     const goal=officeEndpoint({...gate,name:sample.name,lat:gate.lat+.0006},[],TOLL_GATES);
     assert.equal(goal.userArrivalOverride,undefined,sample.name);
   }
+});
+
+test('Dongseoul overrides removed: directed guides lead to actual GIS office building',()=>{
+  assert.equal(USER_ARRIVAL_OVERRIDES.some(x=>x.match.test('동서울영업소')),false);
+  const g=TOLL_GATES.find(x=>x.name.includes('동서울'));
+  const site={name:'동서울영업소',lat:g.lat+.0004,lng:g.lng+.0004};
+  const goal=officeEndpoint(site,[],TOLL_GATES);
+  assert.equal(goal.userArrivalOverride,undefined);
+  assert.equal(goal.stopBeforeToll,false);
+  assert.deepEqual(goal.officeDestination,{lat:site.lat,lng:site.lng});
+  assert.ok(goal.arrivalAnchors.length>=2);
+  const origin={name:'수원신갈영업소',lat:37.26694,lng:127.10244};
+  const result=availableOriginOptions(graph,savedOfficeDeparture(origin,[],TOLL_GATES),goal);
+  const directions=new Set();
+  for(const {result:r} of result.choices){
+    assert.deepEqual({lat:r.goal.lat,lng:r.goal.lng},goal.officeDestination);
+    assert.equal(r.arrivalAtOffice,true);
+    assert.equal(r.arrivalAtToll,false);
+    assert.ok(r.waypoints.length<=5);
+    directions.add(r.arrivalBearing);
+  }
+  assert.deepEqual([...directions].sort((a,b)=>a-b),[156,336]);
 });

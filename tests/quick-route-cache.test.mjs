@@ -4,6 +4,8 @@ import {execFileSync} from 'node:child_process';
 import {navigationURL} from '../data/highway-routing.mjs';
 import {kakaoNavigationURL} from '../data/kakao-navigation.mjs';
 import {CACHE_KEY,routeCache,routeCacheKey,resolveQuickChoices,CACHE_MAX} from '../data/quick-route-cache.mjs';
+import {navigationCatalog,returnDestination,savedDestinationRoute,destinationPoint} from '../data/navigation-catalog.mjs';
+import {quickOriginChoices,manualOriginDeparture} from '../data/quick-origin.mjs';
 const map=new Map();
 const store={getItem:k=>map.get(k)||null,setItem:(k,v)=>map.set(k,v),removeItem:k=>map.delete(k)};
 const start={officeName:'nearest office',gateName:'test toll',lat:37.42,lng:127.13,roadHint:'중부고속도로',accuracy:9};
@@ -76,4 +78,24 @@ test('manually chosen origin and nearest GPS hub use independent cache keys even
   const other=routeCacheKey({...start,originId:'junction:gis:nearest',departureMode:'manual-junction'},item,'highway',destination);
   assert.notEqual(base,manual);assert.notEqual(manual,other);
   assert.notEqual(base,routeCacheKey(start,item,'highway',{...destination,userArrivalOverride:{lat:37.43,lng:127.14}}));
+});
+
+test('Songpa manual origin + Suwon saved return button yields cached five-point route, partitioned from other origins',async()=>{
+  const office={name:'수원신갈영업소',lat:37.26694,lng:127.10244};
+  const d={offices:[office],interchanges:[{name:'송파IC',lat:37.4745104494,lng:127.1278789719}]};
+  const group=navigationCatalog(d),item=returnDestination(group,d);
+  const origin=quickOriginChoices(d).find(o=>o.id==='junction:songpa');assert.ok(origin);
+  const manual=manualOriginDeparture(origin,d),destination=destinationPoint(item,d);
+  assert.equal(manual.originId,'junction:songpa');
+  const memory=new Map(),local={getItem:k=>memory.get(k)||null,setItem:(k,v)=>memory.set(k,v),removeItem:k=>memory.delete(k)};
+  const args={start:manual,item,mode:'saved',destination,data:d,loadGraph:()=>{throw Error('saved must not load road graph');},
+    availableOriginOptions:()=>{throw Error('saved must not dynamically route');},savedDestinationRoute};
+  const a=await resolveQuickChoices({...args,cache:routeCache(local,1000)});
+  assert.equal(a.fromCache,false);assert.equal(a.choices[0].result.waypoints.length,5);
+  const b=await resolveQuickChoices({...args,cache:routeCache(local,1001),savedDestinationRoute:()=>{throw Error('cache miss')}});
+  assert.equal(b.fromCache,true);assert.equal(b.choices[0].result.waypoints.length,5);
+  const key=routeCacheKey(manual,item,'saved',destination);
+  assert.notEqual(key,routeCacheKey({...manual,originId:'office:동서울영업소',officeName:'동서울영업소'},item,'saved',destination));
+  assert.notEqual(key,routeCacheKey(manual,item,'highway',destination));
+  assert.ok(!memory.get(CACHE_KEY).includes('original'));
 });
