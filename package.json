@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test:highway": "node --test tests/highway-routing.test.mjs tests/highway-snapshot.test.mjs tests/highway-endpoints.test.mjs tests/saved-navigation.test.mjs tests/navigation-catalog.test.mjs tests/songpa-exit.test.mjs tests/quick-route-cache.test.mjs tests/arrival-updates.test.mjs tests/quick-origin.test.mjs tests/user-arrival.test.mjs"
+    "test:highway": "node --test tests/highway-routing.test.mjs tests/highway-snapshot.test.mjs tests/highway-endpoints.test.mjs tests/saved-navigation.test.mjs tests/navigation-catalog.test.mjs tests/songpa-exit.test.mjs tests/quick-route-cache.test.mjs tests/arrival-updates.test.mjs tests/quick-origin.test.mjs tests/user-arrival.test.mjs tests/poi-gwangam-songpa.test.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

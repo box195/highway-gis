@@ -1,5 +1,5 @@
-import {validPoint} from './highway-routing.mjs?v=20261019-songpa-return';
-import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261019-songpa-return';
+import {validPoint} from './highway-routing.mjs?v=20261019-poi-pangyo';
+import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261019-poi-pangyo';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 import {savedRoute,SONGPA_IC} from './saved-navigation.mjs?v=20261019-songpa-return';
 import {SONGPA_EXIT_ACCESS} from './songpa-exit-access.mjs?v=20261019-songpa-return';

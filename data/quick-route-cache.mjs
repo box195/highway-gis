@@ -1,5 +1,5 @@
 // Persistent, bounded quick-navigation choices. No GPS samples or GIS records.
-import {ROUTE_DATA_REVISION} from './route-cache-revision.mjs';
+import {ROUTE_DATA_REVISION} from './route-cache-revision.mjs?v=20261019-poi-pangyo';
 export const CACHE_KEY='highway-quick-choices-v1';
 export const CACHE_TTL_MS=7*86400000;
 export const CACHE_MAX=32;
@@ -17,11 +17,14 @@ export function routeCacheKey(start,item,mode,destination){
     start.lat,start.lng,start.roadHint,item.source?.lat,item.source?.lng,
     destination.lat,destination.lng,destination.original?.lat,destination.original?.lng,
     destination.officeDestination?.lat,destination.officeDestination?.lng,
-    destination.gateName,destination.roadHint,destination.stopBeforeToll,
+    destination.gateName,destination.roadHint,destination.stopBeforeToll,destination.providerPlace?.name,destination.providerPlace?.placeId,destination.providerPlace?.verification,destination.gwangamPangyoOnly,
     destination.userArrivalOverride?.lat,destination.userArrivalOverride?.lng,
-    destination.arrivalAnchors?.map(a=>[a.edgeKey,a.kind,a.destination?.lat,a.destination?.lng])]);
+    destination.arrivalAnchors?.map(a=>[a.edgeKey,a.kind,a.bearing,a.lat,a.lng,a.destination?.lat,a.destination?.lng])]);
 }
-const cleanPoint=p=>point(p)?{lat:p.lat,lng:p.lng,name:typeof p.name==='string'?p.name.slice(0,90):''}:null;
+const cleanPoint=p=>point(p)?{lat:p.lat,lng:p.lng,name:typeof p.name==='string'?p.name.slice(0,90):'',
+  ...(p.providerPlace?.provider==='kakao'&&p.providerPlace.name==='동서울영업소'?{providerPlace:{provider:'kakao',name:'동서울영업소',
+    placeId:/^\d+$/.test(p.providerPlace.placeId||'')?p.providerPlace.placeId:null,
+    verification:p.providerPlace.verification==='verified'?'verified':'search-selection-required'}}:{})}:null;
 const cleanResult=r=>{
   if(!r||!Array.isArray(r.waypoints)||r.waypoints.length>5||!Array.isArray(r.roads)||r.roads.length>8)return null;
   const start=cleanPoint(r.start),goal=cleanPoint(r.goal),waypoints=r.waypoints.map(cleanPoint);

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {USER_ARRIVAL_OVERRIDES,officeEndpoint,savedOfficeDeparture} from '../data/highway-endpoints.mjs';
 import {TOLL_GATES} from '../data/highway-tollgates.mjs';
-import {buildGraph,availableOriginOptions,distance} from '../data/highway-routing.mjs';
+import {buildGraph,availableOriginOptions,distance,navigationURL} from '../data/highway-routing.mjs';
 import {kakaoNavigationURL} from '../data/kakao-navigation.mjs';
 const graph=buildGraph(JSON.parse(fs.readFileSync(new URL('../data/highway-roads.json',import.meta.url),'utf8')));
 const alphabet='23456789CFGHJMPQRVWX';
@@ -72,22 +72,24 @@ test('user overrides do not change untouched SeoIcheon, Hanam and Gonjiam endpoi
   }
 });
 
-test('Dongseoul overrides removed: directed guides lead to actual GIS office building',()=>{
+test('Dongseoul uses named Kakao POI selection instead of GIS building coordinates',()=>{
   assert.equal(USER_ARRIVAL_OVERRIDES.some(x=>x.match.test('동서울영업소')),false);
   const g=TOLL_GATES.find(x=>x.name.includes('동서울'));
   const site={name:'동서울영업소',lat:g.lat+.0004,lng:g.lng+.0004};
   const goal=officeEndpoint(site,[],TOLL_GATES);
   assert.equal(goal.userArrivalOverride,undefined);
   assert.equal(goal.stopBeforeToll,false);
-  assert.deepEqual(goal.officeDestination,{lat:site.lat,lng:site.lng});
+  assert.equal(goal.officeDestination,null);assert.deepEqual(goal.providerPlace,{provider:'kakao',name:'동서울영업소',placeId:null,verification:'search-selection-required'});
   assert.ok(goal.arrivalAnchors.length>=2);
   const origin={name:'수원신갈영업소',lat:37.26694,lng:127.10244};
   const result=availableOriginOptions(graph,savedOfficeDeparture(origin,[],TOLL_GATES),goal);
   const directions=new Set();
   for(const {result:r} of result.choices){
-    assert.deepEqual({lat:r.goal.lat,lng:r.goal.lng},goal.officeDestination);
-    assert.equal(r.arrivalAtOffice,true);
-    assert.equal(r.arrivalAtToll,false);
+    assert.equal(r.goal.providerPlace?.name,'동서울영업소');
+    assert.notDeepEqual({lat:r.goal.lat,lng:r.goal.lng},{lat:site.lat,lng:site.lng});
+    assert.equal(r.arrivalAtOffice,false);assert.equal(r.arrivalAtToll,false);
+    assert.equal(kakaoNavigationURL(r),'https://map.kakao.com/link/search/'+encodeURIComponent('동서울영업소'));
+    assert.equal(navigationURL(r,'https://example.com/'),'https://map.naver.com/p/search/'+encodeURIComponent('동서울영업소'));
     assert.ok(r.waypoints.length<=5);
     directions.add(r.arrivalBearing);
   }

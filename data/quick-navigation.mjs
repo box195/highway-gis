@@ -1,11 +1,11 @@
 import {loadGraph,gps} from './navigation-runtime.mjs?v=20261019-songpa-return';
-import {availableOriginOptions,navigationURL} from './highway-routing.mjs?v=20261019-songpa-return';
-import {nearestOfficeDeparture} from './highway-endpoints.mjs?v=20261019-songpa-return';
+import {availableOriginOptions,navigationURL} from './highway-routing.mjs?v=20261019-poi-pangyo';
+import {nearestOfficeDeparture} from './highway-endpoints.mjs?v=20261019-poi-pangyo';
 import {quickOriginChoices,getOriginPreference,setOriginPreference,resolveQuickOrigin} from './quick-origin.mjs?v=20261019-quick-origin';
-import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-songpa-return';
+import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-poi-pangyo';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261019-route-cache';
-import {navigationCatalog,destinationPoint,savedDestinationRoute,returnDestination} from './navigation-catalog.mjs?v=20261019-songpa-return';
+import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261019-poi-pangyo';
+import {navigationCatalog,destinationPoint,savedDestinationRoute,returnDestination} from './navigation-catalog.mjs?v=20261019-poi-pangyo';
 
 const page=document.createElement('section');page.id='quick-navigation-page';page.hidden=true;page.setAttribute('aria-label','빠른 길찾기');
 page.innerHTML=`<header class="qn-header"><button id="qn-back" type="button">← GIS</button><h1>빠른 길찾기</h1><label class="qn-origin">출발<select id="qn-origin" aria-label="출발 거점"><option value="">현재 위치 · 가까운 거점</option></select></label><label class="qn-provider">지도앱<select id="qn-provider" aria-label="지도앱"><option value="kakao">카카오맵</option><option value="naver">네이버지도</option></select></label></header>
@@ -121,16 +121,28 @@ async function prepare(mode){
 }
 function appURL(result){return $('qn-provider').value==='kakao'?kakaoNavigationURL(result,/Android/i.test(navigator.userAgent)):navigationURL(result,location.origin+location.pathname,/Android/i.test(navigator.userAgent));}
 function showDirections(){
-  if(!prepared)return;$('qn-flow-options').replaceChildren();message('진행할 방향을 누르면 지도앱으로 바로 연결됩니다.');
+  if(!prepared)return;$('qn-flow-options').replaceChildren();
+  const poi=prepared.choices.some(c=>c.result.goal?.providerPlace);
+  message(poi?'동서울영업소는 장소 검색에서 직접 선택하세요(동서울지사 아님). 경유지는 자동 적용되지 않아 수동 설정이 필요합니다.':prepared.choices.some(c=>c.result.gwangamReentry)?'광암터널 판교방향은 공개 OSM 회차 연결만 확인했습니다. 실제 도로 규제·지도앱 경로는 미검증이므로 반드시 확인하세요.':'진행할 방향을 누르면 지도앱으로 바로 연결됩니다.');
   for(const choice of prepared.choices){
     const result=choice.result,a=document.createElement('a');a.className='qn-direction'+($('qn-provider').value==='kakao'?' qn-launch-kakao':'');a.href=appURL(result);a.append(document.createTextNode(choice.label));
-    const info=document.createElement('small');info.textContent=[result.roads?.map(s=>s.replace('고속도로','선')).join(' → '),result.arrivalDirection,`경유 ${result.waypoints.length}개 · ${$('qn-provider').value==='kakao'?'카카오맵':'네이버지도'}`].filter(Boolean).join(' · ');a.append(info);
+    const info=document.createElement('small');info.textContent=[result.roads?.map(s=>s.replace('고속도로','선')).join(' → '),result.arrivalDirection,
+      result.goal?.providerPlace?'장소 검색·직접 선택 · 경유지 자동 반영 안 됨':`경유 ${result.waypoints.length}개 · ${$('qn-provider').value==='kakao'?'카카오맵':'네이버지도'}`].filter(Boolean).join(' · ');a.append(info);
     a.addEventListener('click',e=>{
       if(!prepared||Date.now()-prepared.created>120000){e.preventDefault();if(prepared)prepare(prepared.mode);return;}
       // The native app URL is ready before this user click; no asynchronous
       // location fetch here, which would lose mobile launch activation.
-      message('지도앱에서 경유지와 최종 경로를 확인해주세요.');
+      message(result.goal?.providerPlace?'지도앱의 검색 결과에서 동서울영업소를 직접 선택하고, 필요 시 경유지를 수동 입력하세요.':'지도앱에서 경유지와 최종 경로를 확인해주세요.');
     });$('qn-flow-options').append(a);
+    if(result.goal?.providerPlace){
+      const help=document.createElement('div');help.className='qn-note';
+      const guide=result.waypoints.map((p,i)=>`${i+1}. ${p.name}: ${p.lat}, ${p.lng}`).join('\n');
+      const copy=document.createElement('button');copy.type='button';copy.textContent='이 방향의 경유지 좌표 복사';
+      copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(guide);message('경유지 좌표를 복사했습니다. 지도앱에서 직접 추가하세요.');}catch{message('복사가 차단됐습니다. 아래 좌표를 직접 확인하세요.',true);}});
+      const detail=document.createElement('details');const summary=document.createElement('summary');summary.textContent='경유지 '+result.waypoints.length+'개 상세 보기';detail.append(summary);
+      const pre=document.createElement('pre');pre.style.whiteSpace='pre-wrap';pre.textContent=guide;detail.append(pre);
+      help.append(copy,detail);$('qn-flow-options').append(help);
+    }
   }addStageBack();
 }
 $('qn-back').addEventListener('click',backToGIS);

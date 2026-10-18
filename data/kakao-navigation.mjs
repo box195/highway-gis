@@ -1,9 +1,15 @@
-import {validPoint} from './highway-routing.mjs?v=20261018-gis-destinations';
+import {validPoint} from './highway-routing.mjs?v=20261019-poi-pangyo';
 
 // KakaoMap 6.0+ route scheme uses latitude,longitude pairs, with vp (not
 // vp1) for the first waypoint. Hand off directly to the installed app:
 // the desktop redirect of the mobile-web scheme can lose via points.
 export function kakaoNavigationURL(result,android=false){
+  // Official Kakao web supports a POI ID, but app route takes coordinates only.
+  // Do not substitute GIS office coordinates for a map-provider POI.
+  if(result?.goal?.providerPlace){const p=result.goal.providerPlace;
+    if(p.provider!=='kakao'||p.name!=='동서울영업소')throw new Error('카카오 장소 식별자가 올바르지 않습니다.');
+    return 'https://map.kakao.com/link/search/'+encodeURIComponent(p.name);
+  }
   if(!result||!validPoint(result.start)||!validPoint(result.goal)||
     !Array.isArray(result.waypoints)||result.waypoints.length>5||result.waypoints.some(p=>!validPoint(p)))
     throw new Error('카카오맵에 전달할 경로가 올바르지 않습니다.');

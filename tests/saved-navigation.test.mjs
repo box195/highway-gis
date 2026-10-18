@@ -71,7 +71,7 @@ test('Songpa saved return reverses the verified local corridor, not Ring 1/Gyeon
  assert.notDeepEqual(back.start,up.goal);
  assert.equal(back.waypoints.length,5);
  assert.deepEqual(back.waypoints.map(p=>p.code),[
-  'OSM:382238694:south','OSM:186410728:south','OSM:473590580:south',
+  '8Q99F48C+QWM','OSM:186410728:south','OSM:473590580:south',
   'OSM:277611773:south','OSM:624073974:south']);
  assert.deepEqual(back.roads,[
   '송파대로','헌릉로','헌릉로758길','탄천로','여수대로','대왕판교로','신수로']);
@@ -80,8 +80,9 @@ test('Songpa saved return reverses the verified local corridor, not Ring 1/Gyeon
   [37.3778625,127.101984375],[37.4562625,127.119484375],[37.4671625,127.1218]]);
  assert.deepEqual([up.goal.lat,up.goal.lng],[37.4743032763,127.1294794184]);
  // Reverse lanes lie WEST of two-way OSM centerlines and original north points.
+ assert.deepEqual([back.waypoints[0].lat,back.waypoints[0].lng],[37.4669625,127.122296875]);
  const osmCenters=[127.121754505,127.119450392,127.101943322];
- for(let i=0;i<3;i++){
+ for(let i=1;i<3;i++){
   const p=back.waypoints[i];
   assert.ok(p.lng<osmCenters[i]&&p.lng<up.waypoints[2-i].lng);
   const lateralMeters=(osmCenters[i]-p.lng)*88100;

@@ -1,9 +1,9 @@
 import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261019-songpa-return';
-import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261019-songpa-return';
-import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261019-songpa-return';
+import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261019-poi-pangyo';
+import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261019-poi-pangyo';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261019-songpa-return';
-import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-songpa-return';
+import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-poi-pangyo';
 
 let generation=0, previewLayer, currentResult, context, openedSelection;
 const button=document.getElementById('btn-highway-navigation');
@@ -21,7 +21,7 @@ modal.innerHTML=`<form method="dialog" class="hn-header"><h2 id="highway-navigat
   <label id="hn-origin-office-label" for="hn-origin-office" hidden>출발 거점</label><select id="hn-origin-office" hidden></select>
   <p class="hn-muted">가까운 거점은 현재 위치와의 직선거리로 고릅니다. 거점 출발은 그 거점부터의 경로이며, 현재 위치에서 거점까지의 이동은 포함하지 않습니다.</p>
   <p id="hn-origin-info" class="hn-muted" hidden></p>
-  <p class="hn-muted">거점은 지정된 톨게이트·IC 접속점으로 안내합니다. 광암터널관리동은 지정 위치를 사용하며, 교통센터는 제외합니다. 제2중부선은 그 위의 점검 지점을 갈 때만 이용합니다.</p>
+  <p class="hn-muted">거점은 지정된 톨게이트·IC 접속점으로 안내합니다. 광암터널관리동은 판교방향 본선 도착으로 안내하며, 교통센터는 제외합니다. 제2중부선은 그 위의 점검 지점을 갈 때만 이용합니다.</p>
   <label id="hn-direction-label" for="hn-direction" hidden>출발 고속도로 · 진행 방향</label><select id="hn-direction" hidden></select></div>
   <button type="button" id="hn-build" class="hn-primary">고속도로 경로 만들기</button>
   <p id="hn-status" role="status" aria-live="polite"></p><div id="hn-preview"></div>
@@ -150,7 +150,13 @@ $('hn-build').addEventListener('click',async()=>{
     map.fitBounds(L.latLngBounds(result.points.map(p=>[p.lat,p.lng])),{padding:[35,35]});
     $('hn-launch').href=navigationURL(result,location.origin+location.pathname,/Android/i.test(navigator.userAgent));$('hn-launch').hidden=false;
     $('hn-kakao-launch').href=kakaoNavigationURL(result,/Android/i.test(navigator.userAgent));$('hn-kakao-launch').hidden=false;$('hn-kakao-note').hidden=false;
-    status('경유지가 준비됐습니다. 지도에서 출발 방향·진입 위치와 지도앱의 최종 경로를 확인하세요.');
+    const poi=!!result.goal.providerPlace;
+    $('hn-launch').textContent=poi?'네이버지도 장소 검색 · 직접 선택':'네이버지도에서 경로 확인';
+    $('hn-kakao-launch').textContent=poi?'카카오맵에서 동서울영업소 검색 · 직접 선택':'카카오맵 앱에서 경로 확인';
+    $('hn-kakao-note').textContent=poi?'동서울지사가 아닌 동서울영업소 장소를 선택해야 합니다. 좌표 기반 앱 길찾기에는 장소 ID와 경유지를 동시에 전달할 수 없어, 경유지는 아래 표기를 보고 직접 추가하세요.':'카카오맵이 설치된 휴대폰에서 열어주세요. 출발·도착·경유지를 전달합니다. 지도앱에서 확인하세요.';
+    if(poi){const detail=document.createElement('pre');detail.style.whiteSpace='pre-wrap';detail.className='hn-muted';
+      detail.textContent='수동 설정할 경유지:\n'+result.waypoints.map((p,i)=>`${i+1}. ${p.name}: ${p.lat}, ${p.lng}`).join('\n');box.append(detail);}
+    status(poi?'동서울영업소는 장소 검색에서 직접 선택하세요. 경유지는 자동 설정되지 않습니다.':'경유지가 준비됐습니다. 지도에서 출발 방향·진입 위치와 지도앱의 최종 경로를 확인하세요.');
     const show=document.createElement('button');show.type='button';show.className='hn-primary';show.textContent='GIS 지도에서 경로 보기';show.addEventListener('click',()=>{modal.close('preview');});box.append(show);
   }catch(e){if(token===generation&&modal.open)status(e.message,true);}
   finally{if(token===generation)$('hn-build').disabled=false;}

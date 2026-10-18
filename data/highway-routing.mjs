@@ -1,3 +1,5 @@
+import {GWANGAM_REENTRY} from './gwangam-reentry.mjs';
+
 // Public road topology only. Facility coordinates never go to Overpass.
 export const ROADS = ['수도권제1순환고속도로', '경부고속도로', '중부고속도로', '제2중부고속도로', '영동고속도로'];
 export const ROAD_QUERY = `[out:json][timeout:120][bbox:34,126,38.8,130];way[highway=motorway][name~"^(${ROADS.join('|')})$"]->.main;way(around.main:2500)[highway=motorway_link]->.links;(.main;.links;);out body;>;out skel qt;`;
@@ -145,6 +147,33 @@ export function availableOriginOptions(graph,start,goal){
   }
   return {choices,rejected};
 }
+function gwangamPublicGraphReentry(graph,start,goal,heading,sourceKey){
+  // Only the nearby opposite carriageway is handled here. For unknown origins,
+  // fail closed rather than offering a huge motorway-only reversal.
+  if(distance(start,goal)>5000||start.roadHint&&start.roadHint!=='수도권제1순환고속도로')
+    throw new Error('광암터널관리동의 반대차로 복귀는 이 출발점에서 검증되지 않았습니다. 지도앱의 실제 합법 경로를 확인하세요.');
+  const ring='수도권제1순환고속도로';
+  const access={edgeKey:'436249420:436249421',lat:37.5224,lng:127.19187,road:ring,bearing:40,kind:'through',offset:0};
+  const stage=route(graph,start,{lat:access.lat,lng:access.lng,name:'광암 회차용 제1순환선 동행 접속',
+    roadHint:ring,snapToHighway:true,hasGateTopology:true,arrivalAnchors:[access]},heading,sourceKey);
+  if(stage.length>15000||stage.waypoints.length>1)
+    throw new Error('광암터널 반대차로 회차에 필요한 경유지가 5개를 초과하거나 경로가 과도합니다.');
+  const via=[...stage.waypoints.map(p=>({...p,name:'제1순환선 동행 · 하남드림휴게소 접근'})),
+    ...GWANGAM_REENTRY.anchors.map(p=>({name:p.name,lat:p.lat,lng:p.lng}))];
+  if(via.length>5)throw new Error('광암 회차 경로의 경유지가 5개를 초과합니다.');
+  const path=GWANGAM_REENTRY.path;
+  const join=path.findIndex(([id])=>id===GWANGAM_REENTRY.startJoinNode);
+  if(join<0||path.at(-1)[0]!==GWANGAM_REENTRY.finishNode)
+    throw new Error('광암 휴게소 회차 공개 도로 자료가 유효하지 않습니다.');
+  const tail=path.slice(join).map(([,lat,lng])=>({lat,lng}));
+  const points=[...stage.points,...tail];
+  let length=0;for(let i=1;i<points.length;i++)length+=distance(points[i-1],points[i]);
+  return {...stage,goal:{...goal,lat:37.5163803548384,lng:127.17451770787038},
+    waypoints:via,points,length,roads:[...stage.roads,'중부고속도로',ring],
+    arrivalDirection:'하남드림휴게소 공용 진출·회차·재진입 → 제1순환선 판교방향(서행) 본선',
+    arrivalBearing:257,arrivalAtOffice:false,arrivalAtToll:false,gwangamReentry:true,
+    routeVerification:'public-osm-directed-graph-only'};
+}
 export function route(graph,start,goal,heading=null,sourceKey=null){
   if(!validPoint(start)||!validPoint(goal))throw new Error('목적지의 위도·경도가 올바르지 않습니다.');
   if(distance(start,goal)<30)throw new Error('목적지에 도착했거나 현재 위치와 너무 가깝습니다.');
@@ -213,7 +242,7 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
   const navStart=start.snapToHighway?{...start,...best.s.point}:start;
   const directions=['북','북동','동','남동','남','남서','서','북서'];
   const approach=arrival&&goal.gateName==='동서울톨게이트'?(Math.cos(arrival.bearing*Math.PI/180)>=0?'하남 방향(북상)':'광주·호법 방향(남하)'):arrival?`${directions[Math.round(arrival.bearing/45)%8]}쪽 진행`:null;
-  const arrivalDirection=arrival?`${approach} · ${arrival.kind==='through'?'요금소 통과 방향':arrival.kind==='ic-exit'?'IC 진출 방향':'요금소 진출 방향'}`:null;
+  const arrivalDirection=goal.gwangamPangyoOnly?'판교방향(서행) 제1순환선 본선 · 반대차로 도착 금지':arrival?`${approach} · ${arrival.kind==='through'?'요금소 통과 방향':arrival.kind==='ic-exit'?'IC 진출 방향':'요금소 진출 방향'}`:null;
   // Stop on the right edge of the directed approach just before the toll line.
   // Never pick an arbitrary building point or invert the one-way carriageway.
   let tollStop;
@@ -233,8 +262,11 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
     tollStop={lat:position.lat-4*Math.sin(theta)/111320,
       lng:position.lng+4*Math.cos(theta)/(111320*Math.cos(position.lat*Math.PI/180))};
   }
+  // Disallow motorway-only 199km loops presented as a nearby legal U-turn.
+  if(goal.gwangamPangyoOnly&&length>Math.max(35000,distance(start,goal)*4))
+    return gwangamPublicGraphReentry(graph,start,goal,heading,sourceKey);
   const navGoal=goal.snapToHighway?{...goal,...(goal.userArrivalOverride||goal.officeDestination||tollStop||arrival?.destination||best.t.point)}:goal;
-  return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap,arrivalDirection,arrivalBearing:arrival?.bearing,arrivalGateId:arrival?.gateId,arrivalOffset:arrival?.offset,arrivalAtToll:!!arrival&&!goal.officeDestination&&arrival.kind!=='ic-exit'&&(arrival.kind==='through'||!!arrival.destination),arrivalAtOffice:!!goal.officeDestination&&!goal.officeFrontExitToll,arrivalAtOfficeFrontToll:!!goal.officeFrontExitToll};
+  return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap,arrivalDirection,arrivalBearing:arrival?.bearing,arrivalGateId:arrival?.gateId,arrivalOffset:arrival?.offset,arrivalAtToll:!!arrival&&!goal.providerPlace&&!goal.officeDestination&&arrival.kind!=='ic-exit'&&(arrival.kind==='through'||!!arrival.destination),arrivalAtOffice:!!goal.officeDestination&&!goal.officeFrontExitToll,arrivalAtOfficeFrontToll:!!goal.officeFrontExitToll};
 }
 export function makeWaypoints(points,roads,arrival=null,{anchoredStart=false,anchoredGoal=false,branchExit=false}={}){
   const cum=[0];for(let i=1;i<points.length;i++)cum.push(cum.at(-1)+distance(points[i-1],points[i]));
@@ -285,6 +317,8 @@ export function makeWaypoints(points,roads,arrival=null,{anchoredStart=false,anc
   });
 }
 export function navigationURL(result, appURL, android=false){
+  // Naver route scheme has no verified POI ID here: open named-place search.
+  if(result?.goal?.providerPlace)return 'https://map.naver.com/p/search/'+encodeURIComponent(result.goal.providerPlace.name);
   if(!validPoint(result.start)||!validPoint(result.goal)||result.waypoints.length>5||result.waypoints.some(p=>!validPoint(p)))throw new Error('네이버지도에 전달할 경로가 올바르지 않습니다.');
   const q=new URLSearchParams({slat:String(result.start.lat),slng:String(result.start.lng),sname:result.start.name||'현재 위치',dlat:String(result.goal.lat),dlng:String(result.goal.lng),dname:result.goal.name||'선택한 지점',appname:appURL});
   result.waypoints.forEach((p,i)=>{q.set(`v${i+1}lat`,String(p.lat));q.set(`v${i+1}lng`,String(p.lng));q.set(`v${i+1}name`,p.name);});

@@ -1,6 +1,6 @@
 // Direction-specific public-road control points supplied for this saved route.
 // Keep these coordinates exact: motorway snapping changes the intended path.
-import {validPoint} from './highway-routing.mjs?v=20261018-arrival-goals';
+import {validPoint} from './highway-routing.mjs?v=20261019-poi-pangyo';
 
 export const SAVED_HUBS=[
   {id:'suwon',name:'수원신갈영업소'},
@@ -14,19 +14,20 @@ const north=[
   {code:'8Q99F48C+VP7',lat:37.4671625,lng:127.1218}
 ];
 // Return follows the existing saved local-road corridor, not Ring 1/Gyeongbu.
-// The first three OSM ways are TWO-WAY centre-lines; positions below are on the
-// west (southbound, Korean right-hand-traffic) side of their verified geometry.
+// First return guide uses exact user-specified Daewang bridge OLC cell center.
+// Guides 2-3 use previously validated public-road geometry, without new offsets.
 // Tancheon has 4 mapped lanes, Daewangpangyo has 8.
 // Shinsu-ro has independently mapped ONE-WAY southbound carriageways.
 const south=[
-  {code:'OSM:382238694:south',lat:37.467157189,lng:127.1217091}, // 헌릉로758길
+  {code:'8Q99F48C+QWM',lat:37.4669625,lng:127.122296875}, // user-provided Daewang bridge; exact full OLC center
   {code:'OSM:186410728:south',lat:37.456263302,lng:127.1193993}, // 탄천로
   {code:'OSM:473590580:south',lat:37.377869162,lng:127.1018525}, // 대왕판교로
   {code:'OSM:277611773:south',lat:37.34,lng:127.102675866},   // 신수로 oneway=yes
   {code:'OSM:624073974:south',lat:37.3,lng:127.101818703}     // 신수로 oneway=yes
 ];
-// Directed Songpa IC EXIT motorway_link 908687235, 35 m before Songpa-daero.
-// Never use the Ring 1 mainline, or modify the separate saved ENTRY destination.
+// Return departure remains directed Songpa IC EXIT motorway_link 908687235.
+// Parcel '서울 송파구 장지동 354-3' not verifiable in one lookup; exact motorway departure remains unresolved.
+// Never modify separate saved ENTRY destination.
 export const SONGPA_RETURN_START={name:'송파IC · 진출 연결로',lat:37.47311468100521,lng:127.12669970838598};
 // Navigation-only: Kakao WCONGNAMUL 528633,1104150 (EPSG:5181 at 1/2.5 scale).
 export const SONGPA_IC={name:'송파IC',lat:37.4743032763,lng:127.1294794184};

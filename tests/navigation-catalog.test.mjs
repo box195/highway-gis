@@ -21,8 +21,8 @@ test('destination buttons keep priority, branches, office order; replace manhole
   assert.deepEqual(groups[1].items.map(x=>x.label),['경기광주지사','동서울지사']);
   assert.deepEqual(groups[2].items.map(x=>x.label),['곤지암영업소','광암터널관리동','하남영업소']);
   const gwangam=groups[2].items.find(x=>x.label==='광암터널관리동');
-  const chosen=destinationPoint(gwangam,data);assert.equal(chosen.lat,37.5163875);assert.equal(chosen.lng,127.174515625);
-  assert.equal(chosen.snapToHighway,false);assert.deepEqual(gwangam.source,{...at,name:'광암터널관리동'});
+  const chosen=destinationPoint(gwangam,data);assert.equal(chosen.lat,37.5163803548384);assert.equal(chosen.lng,127.17451770787038);
+  assert.equal(chosen.snapToHighway,true);assert.equal(chosen.arrivalAnchors[0].bearing,257);assert.deepEqual(gwangam.source,{...at,name:'광암터널관리동'});
   assert.deepEqual(groups[3].items.map(x=>x.label),['광주IC','안성JC','판교JC'].sort(new Intl.Collator('ko',{numeric:true,sensitivity:'base'}).compare));
   assert.ok(groups.flatMap(g=>g.items).every(x=>x.kind!=='manhole'));
   assert.deepEqual(returnDestination(groups,data).label,'수원신갈영업소');
@@ -91,6 +91,12 @@ test('all viable public office-pair highway directions deliver identical endpoin
     if(distance(start,goal)<30)continue;
     const out=availableOriginOptions(graph,start,goal);assert.ok(out.choices.length,`${from.name} → ${to.name}`);
     for(const {result:r} of out.choices){
+      if(r.goal.providerPlace){
+        assert.equal(r.goal.providerPlace.name,'동서울영업소');
+        assert.ok(navigationURL(r,'https://example.com/').includes('search/'));
+        assert.ok(kakaoNavigationURL(r).includes('link/search/'));
+        assert.ok(r.waypoints.length<=5);checked++;continue;
+      }
       const n=new URL(navigationURL(r,'https://example.com/')).searchParams,k=new URL(kakaoNavigationURL(r)).searchParams;
       assert.equal(k.get('sp'),`${n.get('slat')},${n.get('slng')}`);assert.equal(k.get('ep'),`${n.get('dlat')},${n.get('dlng')}`);
       if(r.arrivalAtToll){
