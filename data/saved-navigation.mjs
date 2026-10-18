@@ -1,6 +1,6 @@
 // Direction-specific public-road control points supplied for this saved route.
 // Keep these coordinates exact: motorway snapping changes the intended path.
-import {validPoint} from './highway-routing.mjs?v=20261018-gis-destinations';
+import {validPoint} from './highway-routing.mjs?v=20261018-arrival-goals';
 
 export const SAVED_HUBS=[
   {id:'suwon',name:'수원신갈영업소'},
@@ -13,7 +13,8 @@ const north=[
   // Moved ~5.8m east from the original 8Q99F48C+VM9 at the user's request.
   {code:'8Q99F48C+VP7',lat:37.4671625,lng:127.1218}
 ];
-export const SONGPA_IC={name:'송파IC',lat:37.47451,lng:127.12788};
+// Navigation-only: Kakao WCONGNAMUL 528633,1104150 (EPSG:5181 at 1/2.5 scale).
+export const SONGPA_IC={name:'송파IC',lat:37.4743032763,lng:127.1294794184};
 function endpoint(id,offices,interchanges){
   if(id==='suwon'){
     const office=offices.find(o=>/수원.*신갈|수원영업소/.test(o.name||'')&&validPoint({lat:Number(o.lat),lng:Number(o.lng)}));
@@ -22,8 +23,7 @@ function endpoint(id,offices,interchanges){
     return office?{name:office.name,lat:Number(office.lat),lng:Number(office.lng)}:{name:'수원신갈영업소',lat:37.2656246,lng:127.1027408};
   }
   if(id==='songpa'){
-    const ic=interchanges.find(p=>/송파\s*IC/i.test(p.name||'')&&validPoint({lat:Number(p.lat),lng:Number(p.lng)}));
-    return ic?{name:'송파IC',lat:Number(ic.lat),lng:Number(ic.lng)}:{...SONGPA_IC};
+    return {...SONGPA_IC};
   }
   throw new Error('저장 경로의 출발지와 목적지를 선택해주세요.');
 }

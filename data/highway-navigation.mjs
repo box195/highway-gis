@@ -1,9 +1,9 @@
-import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261018-gis-destinations';
-import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261018-gis-destinations';
-import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261018-gis-destinations';
+import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261018-arrival-goals';
+import {ROAD_QUERY,buildGraph,route,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261018-arrival-goals';
+import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261018-arrival-goals';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261018-gis-destinations';
-import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261018-gis-destinations';
+import {SAVED_HUBS,savedRoute} from './saved-navigation.mjs?v=20261018-arrival-goals';
+import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261018-arrival-goals';
 
 let generation=0, previewLayer, currentResult, context, openedSelection;
 const button=document.getElementById('btn-highway-navigation');

@@ -1,5 +1,5 @@
-import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261018-gis-destinations';
-import {TOLL_ACCESS} from './highway-toll-access.mjs?v=20261018-gis-destinations';
+import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261018-arrival-goals';
+import {TOLL_ACCESS} from './highway-toll-access.mjs?v=20261018-arrival-goals';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 import {SEO_HANAM_ACCESS} from './highway-office-access.mjs';
 
@@ -16,6 +16,11 @@ export const GATE_PROFILES=[
   {match:/경기광주영업소|^광주영업소/,gate:'경기광주톨게이트',road:'중부고속도로',aliases:['경기광주','광주']},
   {match:/곤지암영업소/,gate:'곤지암톨게이트',road:'중부고속도로',aliases:['곤지암']},
   {match:/서이천영업소/,gate:'서이천톨게이트',road:'중부고속도로',aliases:['서이천']}
+];
+// Navigation-only office-front exit toll goals (not building entrances).
+const FRONT_EXIT_TOLLS=[
+  {match:/곤지암영업소/,lat:37.3550644,lng:127.3225997},
+  {match:/하남영업소/,lat:37.5284503,lng:127.2179637}
 ];
 const clean=s=>(s||'').replace(/\s/g,'').replace(/(톨게이트|요금소|영업소|TG|IC|JCT|JC)$/i,'');
 export const supportsHighwayOffice=item=>!/교통.*센터/.test((item?.name||'').replace(/\s/g,''));
@@ -47,13 +52,14 @@ export function officeEndpoint(item,interchanges=[],gates=[],label){
   const anchor=publicGates[0]||savedGates[0]||original;
   const arrivalAnchors=publicGates.flatMap(g=>(TOLL_ACCESS[g.id]||[]).filter(a=>!roadHint||a.road===roadHint).map(a=>({...a,gateId:g.id})));
   // The user confirmed Gwangju's existing exit-booth destination is correct.
-  // Other offices finish at their saved office-side location, not a booth
-  // chosen solely by the direction of the motorway exit.
+  // Only Gonjiam and Hanam finish at verified office-front exit tolls.
+  // All other offices retain their previous destination policy.
   const keepGate=/경기광주영업소|^광주영업소/.test(officeName);
-  const officeDestination=!keepGate&&/영업소/.test(officeName)?original:null;
+  const exitToll=FRONT_EXIT_TOLLS.find(p=>p.match.test(officeName));
+  const officeDestination=exitToll?{lat:exitToll.lat,lng:exitToll.lng}:!keepGate&&/영업소/.test(officeName)?original:null;
   // Only the office destination is fixed. Preserve both direct approaches;
   // forcing the opposite carriageway creates a motorway-scale return loop.
-  return {...original,lat:anchor.lat,lng:anchor.lng,name:label||item.name||'거점',gateName:profile?.gate,roadHint,snapToHighway:true,original,officeDestination,endpointKind:'office',arrivalAnchors,hasGateTopology:publicGates.length>0};
+  return {...original,lat:anchor.lat,lng:anchor.lng,name:label||item.name||'거점',gateName:profile?.gate,roadHint,snapToHighway:true,original,officeDestination,...(exitToll?{officeFrontExitToll:true,endpointNote:'영업소 앞 진출 톨게이트 도착점입니다. 건물 입구는 아닙니다.'}:{}),endpointKind:'office',arrivalAnchors,hasGateTopology:publicGates.length>0};
 }
 export function savedOfficeDeparture(item,interchanges=[],gates=[]){
   if(!item||!supportsHighwayOffice(item)||!validPoint({lat:Number(item.lat),lng:Number(item.lng)}))throw new Error('좌표가 있는 출발 거점을 선택해주세요.');

@@ -1,4 +1,4 @@
-import {ROAD_QUERY,buildGraph} from './highway-routing.mjs?v=20261018-gis-destinations';
+import {ROAD_QUERY,buildGraph} from './highway-routing.mjs?v=20261018-arrival-goals';
 let graphPromise;
 export async function loadGraph(){
   if(graphPromise)return graphPromise;

@@ -36,19 +36,21 @@ test('saved direction is offered only for the registered Suwon to Songpa trip',(
   assert.ok(distance(graph.nodes.get(436210017),SINGAL_JC)<.01);
 });
 
-test('Songpa saved and highway destinations both retain the runtime GIS marker without motorway snapping',()=>{
+test('Songpa saved and highway goals use the verified ramp, leaving the GIS marker unchanged',()=>{
   const gis={name:'송파IC',lat:'37.474512',lng:'127.127882'};
   const office={...TOLL_GATES.find(g=>g.id===1814821448),name:'수원신갈영업소'};
   const data={offices:[office],interchanges:[gis]},item=navigationCatalog(data)[0].items[0];
   const start=savedOfficeDeparture(office,[],TOLL_GATES),goal=destinationPoint(item,data);
   assert.equal(goal.snapToHighway,false);
-  const exact={lat:Number(gis.lat),lng:Number(gis.lng)};
+  assert.equal(item.source.lat,37.4743032763);assert.equal(item.source.lng,127.1294794184);
+  const exact={lat:37.4743032763,lng:127.1294794184};assert.notDeepEqual(exact,{lat:Number(gis.lat),lng:Number(gis.lng)});
   const saved=savedDestinationRoute(start,item,data);
   assert.equal(saved.goal.lat,exact.lat);assert.equal(saved.goal.lng,exact.lng);
   assert.equal(saved.waypoints.length,3);assert.equal(saved.waypoints[2].lng,127.1218);
   const {choices}=availableOriginOptions(graph,start,goal);assert.ok(choices.length);
   for(const {result:r} of choices){
     assert.equal(r.goal.lat,exact.lat);assert.equal(r.goal.lng,exact.lng);
+    assert.equal(new URL(navigationURL(r,'https://example.com/')).searchParams.get('dlat'),String(exact.lat));
     assert.equal(new URL(kakaoNavigationURL(r)).searchParams.get('ep'),`${exact.lat},${exact.lng}`);
   }
 });

@@ -1,7 +1,7 @@
-import {validPoint} from './highway-routing.mjs?v=20261018-gis-destinations';
-import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261018-gis-destinations';
+import {validPoint} from './highway-routing.mjs?v=20261018-arrival-goals';
+import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261018-arrival-goals';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {savedRoute} from './saved-navigation.mjs?v=20261018-gis-destinations';
+import {savedRoute,SONGPA_IC} from './saved-navigation.mjs?v=20261018-arrival-goals';
 
 const order=new Intl.Collator('ko',{numeric:true,sensitivity:'base'});
 const keyOf=s=>(s||'').replace(/한국도로공사|\s|\([^)]*\)/g,'');
@@ -17,7 +17,7 @@ export function navigationCatalog(data={}){
   const office=p=>({id:`office:${keyOf(p.name)}`,label:keyOf(p.name),kind:'office',source:p});
   const branches=['경기광주지사','동서울지사'].flatMap(name=>{const p=offices.find(p=>keyOf(p.name)===name);return p?[office(p)]:[];});
   const songpa=(data.interchanges||[]).find(p=>/송파IC/i.test(p.name||'')&&located(p));
-  const songpaPoint=songpa?{...songpa,lat:Number(songpa.lat),lng:Number(songpa.lng)}:savedRoute('suwon','songpa').goal;
+  const songpaPoint={...(songpa||{}),...SONGPA_IC};
   const junctions=[{id:'junction:songpa',label:'송파IC',kind:'junction',source:{...songpaPoint,roadHint:'수도권제1순환고속도로'}},
     {id:'junction:singal',label:'신갈JC',kind:'junction',source:SINGAL_JC}];
   const group=(key,label,items)=>({key,label,items});
@@ -37,6 +37,7 @@ export function navigationCatalog(data={}){
 
 export function destinationPoint(item,data={}){
   if(item.kind==='office')return officeEndpoint(item.source,data.interchanges||[],TOLL_GATES,item.label);
+  if(item.id==='junction:songpa')return {...SONGPA_IC,roadHint:'수도권제1순환고속도로',snapToHighway:false};
   const p=item.source;
   return {lat:Number(p.lat),lng:Number(p.lng),name:item.label,
     roadHint:p.roadHint||roadFrom(`${p.section||''} ${p.route_name||''} ${p.route||''}`),snapToHighway:item.kind==='junction'&&item.id!=='junction:songpa'};

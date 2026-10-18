@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import {buildGraph,route,navigationURL,nearestHighwayPoint,originOptions,availableOriginOptions,ROADS,distance} from '../data/highway-routing.mjs';
 import {officeEndpoint,departureEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,GATE_PROFILES,supportsHighwayOffice} from '../data/highway-endpoints.mjs';
 import {TOLL_GATES} from '../data/highway-tollgates.mjs';
+import {kakaoNavigationURL} from '../data/kakao-navigation.mjs';
 import {TOLL_ACCESS} from '../data/highway-toll-access.mjs';
 const graph=buildGraph(JSON.parse(fs.readFileSync(new URL('../data/highway-roads.json',import.meta.url),'utf8')));
 const booth=id=>TOLL_GATES.find(g=>g.id===id);
@@ -41,19 +42,19 @@ test('office identity resolves to its gate and correct motorway, not the nearest
   assert.equal(officeEndpoint(suwon,[],TOLL_GATES).roadHint,'경부고속도로');
   assert.equal(GATE_PROFILES.length,10);
 });
-test('ordinary office routes use Jungbu and finish at the saved office location',()=>{
+test('ordinary office routes preserve Jungbu approaches and finish at the selected office goal',()=>{
   const start=departureEndpoint(graph,{...suwon,speed:0,accuracy:10},[suwon],[],TOLL_GATES);
   assert.equal(start.endpointKind,'office');
   for(const item of [gonjiam,icheon]){
     const r=route(graph,start,officeEndpoint(item,[],TOLL_GATES));
     assert.equal(r.roads.at(-1),'중부고속도로');assert.ok(!r.roads.includes('제2중부고속도로'));
-    assert.ok(nearestHighwayPoint(graph,r.start).gap<1);assert.equal(r.goal.lat,item.lat);assert.equal(r.goal.lng,item.lng);
+    assert.ok(nearestHighwayPoint(graph,r.start).gap<1);const expected=item.name==='곤지암영업소'?{lat:37.3550644,lng:127.3225997}:item;assert.equal(r.goal.lat,expected.lat);assert.equal(r.goal.lng,expected.lng);
     assert.ok(nearestHighwayPoint(graph,r.waypoints.at(-1)).gap<1);
     assert.ok(r.waypoints.at(-1).name.includes('요금소 진출 방향'));
-    assert.ok(distance(r.points.at(-1),booth(r.arrivalGateId))<1);assert.equal(r.arrivalAtOffice,true);
+    assert.ok(distance(r.points.at(-1),booth(r.arrivalGateId))<1);assert.equal(r.arrivalAtOffice,item.name!=='곤지암영업소');assert.equal(r.arrivalAtOfficeFrontToll,item.name==='곤지암영업소');
     const q=new URL(navigationURL(r,'https://example.com/')).searchParams;
     assert.equal(Number(q.get('slat')),r.start.lat);assert.equal(Number(q.get('dlat')),r.goal.lat);
-    assert.equal(Number(q.get('dlat')),item.lat);assert.equal(q.get('dname'),item.name);
+    assert.equal(Number(q.get('dlat')),expected.lat);assert.equal(q.get('dname'),item.name);
   }
 });
 test('IC fallback uses exact gate identity instead of another similarly named interchange',()=>{
@@ -286,4 +287,43 @@ test('manual office departure uses only the chosen hub and keeps short endpoint 
     assert.equal(departure.name,name);assert.equal(officeEndpoint(item,[],TOLL_GATES).name,name);
   }
   for(const item of [undefined,{name:'좌표 없음'},{...suwon,name:'교통센터'}])assert.throws(()=>savedOfficeDeparture(item,[],TOLL_GATES),/출발 거점/);
+});
+
+test('verified Gonjiam and Hanam office-front toll goals keep exit controls and provider parity',()=>{
+  const start=officeEndpoint(suwon,[],TOLL_GATES);
+  const scenarios=[
+    {name:'곤지암영업소',gate:436295655,point:{lat:37.3550644,lng:127.3225997}},
+    {name:'하남영업소',gate:10705706620,point:{lat:37.5284503,lng:127.2179637}}
+  ];
+  for(const {name,gate,point} of scenarios){
+    const original=office(name,gate),goal=officeEndpoint(original,[],TOLL_GATES);
+    assert.deepEqual(goal.officeDestination,point);
+    assert.deepEqual(goal.original,{lat:original.lat,lng:original.lng});
+    assert.equal(goal.officeFrontExitToll,true);
+    assert.ok(goal.endpointNote.includes('건물 입구는 아닙니다'));
+    assert.ok(goal.arrivalAnchors.length>0);
+    const choices=availableOriginOptions(graph,start,goal).choices;
+    assert.ok(choices.length>0,name);
+    for(const {result:r} of choices){
+      assert.deepEqual({lat:r.goal.lat,lng:r.goal.lng},point);
+      assert.equal(r.arrivalAtOffice,false);
+      assert.equal(r.arrivalAtOfficeFrontToll,true);
+      assert.ok(r.waypoints.length<=5);
+      assert.ok(r.waypoints.at(-1).name.includes('요금소 진출 방향'));
+      const chosen=goal.arrivalAnchors.find(a=>a.gateId===r.arrivalGateId&&a.bearing===r.arrivalBearing);
+      assert.ok(chosen,name);
+      assert.ok(distance(r.points.at(-1),booth(r.arrivalGateId))<1);
+      const n=new URL(navigationURL(r,'https://example.com/')).searchParams;
+      const k=new URL(kakaoNavigationURL(r)).searchParams;
+      assert.equal(Number(n.get('dlat')),point.lat);
+      assert.equal(Number(n.get('dlng')),point.lng);
+      assert.equal(k.get('ep'),n.get('dlat')+','+n.get('dlng'));
+      r.waypoints.forEach((p,i)=>assert.equal(k.get(i===0?'vp':'vp'+(i+1)),n.get('v'+(i+1)+'lat')+','+n.get('v'+(i+1)+'lng')));
+    }
+  }
+  const gwangju=officeEndpoint(office('경기광주영업소',685222361),[],TOLL_GATES);
+  assert.equal(gwangju.officeDestination,null);
+  const through=office('동서울영업소',436295787),throughGoal=officeEndpoint(through,[],TOLL_GATES);
+  assert.deepEqual(throughGoal.officeDestination,{lat:through.lat,lng:through.lng});
+  assert.equal(throughGoal.officeFrontExitToll,undefined);
 });
