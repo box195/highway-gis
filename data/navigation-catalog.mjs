@@ -1,8 +1,8 @@
-import {validPoint} from './highway-routing.mjs?v=20261018-arrival-goals';
-import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261018-arrival-goals';
+import {validPoint} from './highway-routing.mjs?v=20261019-route-arrival';
+import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261019-route-arrival';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {savedRoute,SONGPA_IC} from './saved-navigation.mjs?v=20261018-arrival-goals';
-import {SONGPA_EXIT_ACCESS} from './songpa-exit-access.mjs?v=20261018-songpa-exits';
+import {savedRoute,SONGPA_IC} from './saved-navigation.mjs?v=20261019-route-arrival';
+import {SONGPA_EXIT_ACCESS} from './songpa-exit-access.mjs?v=20261019-route-arrival';
 
 const order=new Intl.Collator('ko',{numeric:true,sensitivity:'base'});
 const keyOf=s=>(s||'').replace(/한국도로공사|\s|\([^)]*\)/g,'');
@@ -22,18 +22,17 @@ export function navigationCatalog(data={}){
   const junctions=[{id:'junction:songpa',label:'송파IC',kind:'junction',source:{...songpaPoint,roadHint:'수도권제1순환고속도로'}},
     {id:'junction:singal',label:'신갈JC',kind:'junction',source:SINGAL_JC}];
   const group=(key,label,items)=>({key,label,items});
-  const manholes={DONGSEOUL:[],GWANGJU:[]},seen=new Set();
-  for(const p of data.manholes||[]){
-    const branch=p.branch_code||(/동서울/.test(p.branch_name||'')?'DONGSEOUL':/광주/.test(p.branch_name||'')?'GWANGJU':/제\s*2\s*중부|중부/.test(p.section||'')?'GWANGJU':'DONGSEOUL');
-    if(!manholes[branch]||!located(p))continue;
-    const id=`manhole:${branch}:${p.id||p.name}:${p.lat}:${p.lng}`;
-    if(seen.has(id))continue;seen.add(id);
-    manholes[branch].push({id,label:p.name||p.id,kind:'manhole',source:p,branch,approximate:['ESTIMATED','SOURCE_ERROR'].includes(p.coordinate_status)});
-  }
-  for(const items of Object.values(manholes))items.sort((a,b)=>order.compare(a.label,b.label));
+  // Only the destination list is changed: original GIS/manhole records remain untouched.
+  const seen=new Set(junctions.map(i=>i.label.replace(/\s/g,'').toUpperCase()));
+  const remaining=(data.interchanges||[]).filter(p=>located(p)&&/(?:IC|JC|JCT)\s*$/i.test(p.name||''))
+    .map(p=>({id:`junction:gis:${keyOf(p.name)}`,label:keyOf(p.name),kind:'junction',source:p}))
+    .filter(i=>{const key=i.label.replace(/\s/g,'').toUpperCase().replace(/JCT$/,'JC');
+      if(seen.has(key))return false;seen.add(key);return true;})
+    .sort((a,b)=>order.compare(a.label,b.label));
   return [group('junctions','IC · JC',junctions),group('branches','지사',branches),
-    group('offices','영업소',offices.filter(p=>/영업소/.test(p.name||'')).map(office).sort((a,b)=>order.compare(a.label,b.label))),
-    group('dongseoul','동서울지사 맨홀',manholes.DONGSEOUL),group('gwangju','경기광주지사 관내 맨홀',manholes.GWANGJU)];
+    group('offices','영업소',offices.filter(p=>/영업소/.test(p.name||'')&&!/수원신갈/.test(p.name||''))
+      .map(office).sort((a,b)=>order.compare(a.label,b.label))),
+    group('other-junctions','그 밖의 IC · JC',remaining)];
 }
 
 export function destinationPoint(item,data={}){
@@ -50,6 +49,7 @@ export function savedDestinationRoute(start,item,data={}){
   return savedRoute('suwon','songpa',data.offices||[],data.interchanges||[]);
 }
 
-export function returnDestination(groups){
-  return groups.flatMap(g=>g.items).find(i=>i.kind==='office'&&/수원.*신갈|수원영업소/.test(i.label));
+export function returnDestination(groups,data={}){
+  const selected=(data.offices||[]).find(p=>located(p)&&/수원.*신갈|수원영업소/.test(p.name||''));
+  return selected?{id:`office:${keyOf(selected.name)}`,label:keyOf(selected.name),kind:'office',source:selected}:undefined;
 }

@@ -8,22 +8,23 @@ import {kakaoNavigationURL} from '../data/kakao-navigation.mjs';
 import {TOLL_GATES} from '../data/highway-tollgates.mjs';
 const graph=buildGraph(JSON.parse(fs.readFileSync(new URL('../data/highway-roads.json',import.meta.url),'utf8')));
 
-test('quick-navigation catalog has requested fixed order, Korean office sorting and separate branch manholes',()=>{
+test('destination buttons keep priority, branches, office order; replace manholes with sorted GIS IC/JC',()=>{
   const at={lat:37.3,lng:127.1};
   const data={offices:[{...at,name:'하남영업소'},{...at,name:'한국도로공사 동서울지사'},{...at,name:'경기광주지사'},
-    {...at,name:'곤지암영업소'},{...at,name:'수원신갈영업소'},{...at,name:'수원신갈영업소'},{...at,name:'본부'}, {name:'좌표 없는 영업소'}],
-    manholes:[{...at,name:'10M',branch_code:'DONGSEOUL'},{...at,name:'2M',branch_code:'DONGSEOUL'},
-      {...at,name:'2M',branch_code:'GWANGJU'},{...at,name:'1M',branch_code:'GWANGJU',coordinate_status:'ESTIMATED'},
-      {...at,name:'2M',branch_code:'GWANGJU'},{name:'없는 좌표',branch_code:'GWANGJU'}]};
-  const g=navigationCatalog(data);
-  assert.deepEqual(g.map(x=>x.key),['junctions','branches','offices','dongseoul','gwangju']);
-  assert.deepEqual(g[0].items.map(x=>x.label),['송파IC','신갈JC']);
-  assert.deepEqual(g[1].items.map(x=>x.label),['경기광주지사','동서울지사']);
-  assert.deepEqual(g[2].items.map(x=>x.label),['곤지암영업소','수원신갈영업소','하남영업소']);
-  assert.deepEqual(g[3].items.map(x=>x.label),['2M','10M']);assert.deepEqual(g[4].items.map(x=>x.label),['1M','2M']);
-  assert.equal(g[4].items[0].approximate,true);assert.notEqual(g[3].items[0].id,g[4].items[1].id);
-  assert.equal(returnDestination(g).label,'수원신갈영업소');
-  assert.equal(returnDestination(navigationCatalog()),undefined);
+    {...at,name:'곤지암영업소'},{...at,name:'수원신갈영업소'},{...at,name:'수원신갈영업소'},{...at,name:'본부'}],
+    manholes:[{...at,name:'신원IC',branch_code:'DONGSEOUL'},{...at,name:'2M',branch_code:'GWANGJU'}],
+    interchanges:[{...at,name:'판교JC'},{...at,name:'송파IC'},{...at,name:'광주IC'},{...at,name:'안성JC'},
+      {...at,name:'광주IC'},{...at,name:'신갈JC'},{...at,name:'자연공원'},{name:'무좌표IC'}]};
+  const groups=navigationCatalog(data);
+  assert.deepEqual(groups.map(g=>g.key),['junctions','branches','offices','other-junctions']);
+  assert.deepEqual(groups[0].items.map(x=>x.label),['송파IC','신갈JC']);
+  assert.deepEqual(groups[1].items.map(x=>x.label),['경기광주지사','동서울지사']);
+  assert.deepEqual(groups[2].items.map(x=>x.label),['곤지암영업소','하남영업소']);
+  assert.deepEqual(groups[3].items.map(x=>x.label),['광주IC','안성JC','판교JC'].sort(new Intl.Collator('ko',{numeric:true,sensitivity:'base'}).compare));
+  assert.ok(groups.flatMap(g=>g.items).every(x=>x.kind!=='manhole'));
+  assert.deepEqual(returnDestination(groups,data).label,'수원신갈영업소');
+  assert.equal(groups.flatMap(g=>g.items).some(x=>x.label==='수원신갈영업소'),false);
+  assert.equal(returnDestination(groups),undefined);
 });
 
 test('saved direction is offered only for the registered Suwon to Songpa trip',()=>{
@@ -84,7 +85,10 @@ test('all viable public office-pair highway directions deliver identical endpoin
     for(const {result:r} of out.choices){
       const n=new URL(navigationURL(r,'https://example.com/')).searchParams,k=new URL(kakaoNavigationURL(r)).searchParams;
       assert.equal(k.get('sp'),`${n.get('slat')},${n.get('slng')}`);assert.equal(k.get('ep'),`${n.get('dlat')},${n.get('dlng')}`);
-      if(r.arrivalAtToll)assert.ok(distance(r.goal,TOLL_GATES.find(g=>g.id===r.arrivalGateId))<1);
+      if(r.arrivalAtToll){
+        if(goal.userArrivalOverride)assert.deepEqual({lat:r.goal.lat,lng:r.goal.lng},goal.userArrivalOverride);
+        else assert.ok(distance(r.goal,TOLL_GATES.find(g=>g.id===r.arrivalGateId))<80);
+      }
       r.waypoints.forEach((p,i)=>assert.equal(k.get(i===0?'vp':`vp${i+1}`),`${n.get(`v${i+1}lat`)},${n.get(`v${i+1}lng`)}`));
       assert.ok(r.waypoints.length<=5);assert.ok(!r.roads.includes('제2중부고속도로'));checked++;
     }

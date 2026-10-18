@@ -200,7 +200,7 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
   const roads=[];for(const e of edges)if(e.road&&roads.at(-1)!==e.road)roads.push(e.road);
   let length=0;for(let i=1;i<points.length;i++)length+=distance(points[i-1],points[i]);
   const arrival=best.t.anchor;
-  const waypoints=makeWaypoints(points,pointRoads,arrival,{anchoredStart:!!start.snapToHighway,anchoredGoal:!!goal.snapToHighway});
+  const waypoints=makeWaypoints(points,pointRoads,arrival,{anchoredStart:!!start.snapToHighway,anchoredGoal:!!goal.snapToHighway,branchExit:goal.gateName==='서하남IC'});
   // The highway search stops at a directed exit. Include only its verified
   // public ramp geometry to the actual exit booth, never the office building
   // or an arbitrary surface-road projection underneath the motorway.
@@ -214,10 +214,29 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
   const directions=['북','북동','동','남동','남','남서','서','북서'];
   const approach=arrival&&goal.gateName==='동서울톨게이트'?(Math.cos(arrival.bearing*Math.PI/180)>=0?'하남 방향(북상)':'광주·호법 방향(남하)'):arrival?`${directions[Math.round(arrival.bearing/45)%8]}쪽 진행`:null;
   const arrivalDirection=arrival?`${approach} · ${arrival.kind==='through'?'요금소 통과 방향':arrival.kind==='ic-exit'?'IC 진출 방향':'요금소 진출 방향'}`:null;
-  const navGoal=goal.snapToHighway?{...goal,...(goal.officeDestination||arrival?.destination||best.t.point)}:goal;
+  // Stop on the right edge of the directed approach just before the toll line.
+  // Never pick an arbitrary building point or invert the one-way carriageway.
+  let tollStop;
+  if(goal.stopBeforeToll&&arrival){
+    const line=arrival.destination&&arrival.rampPoints?.length?arrival.rampPoints:
+      [graph.nodes.get(best.t.edge.a),best.t.point];
+    let remaining=32,position=line.at(-1),upstream=line.at(-2);
+    for(let i=line.length-2;i>=0;i--){
+      const segment=distance(line[i],position);
+      if(segment>=remaining){
+        upstream=line[i];position={lat:position.lat+(upstream.lat-position.lat)*remaining/segment,
+          lng:position.lng+(upstream.lng-position.lng)*remaining/segment};break;
+      }
+      remaining-=segment;position=line[i];upstream=line[Math.max(0,i-1)];
+    }
+    const theta=bearing(upstream,line.at(-1))*Math.PI/180;
+    tollStop={lat:position.lat-4*Math.sin(theta)/111320,
+      lng:position.lng+4*Math.cos(theta)/(111320*Math.cos(position.lat*Math.PI/180))};
+  }
+  const navGoal=goal.snapToHighway?{...goal,...(goal.userArrivalOverride||goal.officeDestination||tollStop||arrival?.destination||best.t.point)}:goal;
   return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap,arrivalDirection,arrivalBearing:arrival?.bearing,arrivalGateId:arrival?.gateId,arrivalOffset:arrival?.offset,arrivalAtToll:!!arrival&&!goal.officeDestination&&arrival.kind!=='ic-exit'&&(arrival.kind==='through'||!!arrival.destination),arrivalAtOffice:!!goal.officeDestination&&!goal.officeFrontExitToll,arrivalAtOfficeFrontToll:!!goal.officeFrontExitToll};
 }
-export function makeWaypoints(points,roads,arrival=null,{anchoredStart=false,anchoredGoal=false}={}){
+export function makeWaypoints(points,roads,arrival=null,{anchoredStart=false,anchoredGoal=false,branchExit=false}={}){
   const cum=[0];for(let i=1;i<points.length;i++)cum.push(cum.at(-1)+distance(points[i-1],points[i]));
   const total=cum.at(-1);if(total<100)return [];
   // One useful anchor per motorway run, located on the main carriageway.
@@ -246,6 +265,10 @@ export function makeWaypoints(points,roads,arrival=null,{anchoredStart=false,anc
       // Stay upstream of the IC/overpass itself so the map app is less likely
       // to snap this guide to a surface road crossing underneath the exit.
       at(run,run.to-Math.min(350,span/2),arrival.kind==='ic-exit'?'IC 진출 방향':'요금소 진출 방향');
+    }
+    else if(branchExit&&arrival?.kind==='exit'){
+      // Guide on the directed motorway just before Seo-Hanam exit, not on the office building.
+      at(run,run.to-Math.min(350,span/2),'서하남IC 진출 방향');
     }
     else if(!anchoredGoal)at(run,runs.length===1?(run.from+run.to)/2:run.from+Math.min(600,span/2),'합류 후');
   });
