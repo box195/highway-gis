@@ -24,6 +24,7 @@ export const USER_SAVED_RETURN_DEPARTURES={
 };
 export const GWANGJU_FIRST={code:'8Q9996WJ+69C',lat:37.3955625,lng:127.230890625};
 export const SEOICHEON_FIRST={code:'8Q99793C+WGJ',lat:37.2548375,lng:127.371265625};
+export const SEOICHEON_SECOND={code:'8Q996683+GGJ',lat:37.2163375,lng:127.203765625};
 export const SEOICHEON_ONLY={code:'8Q9974C4+5WH',lat:37.2704375,lng:127.107359375};
 export function directSavedReturn(start,item,data={}){
   if(!isDirectSavedReturn(start,item))throw new Error('이 거점의 저장 복귀 경로는 등록되지 않았습니다.');
@@ -36,7 +37,7 @@ export function directSavedReturn(start,item,data={}){
     office==='동서울영업소'?original: // restored Tancheon from original Songpa saved return
     office==='경기광주영업소'||office==='곤지암영업소'||office==='경기광주지사'?
       [GWANGJU_FIRST,CHEONGGYE_FIRST,original.at(-1)]:
-    [SEOICHEON_FIRST,SEOICHEON_ONLY]; // Seoicheon exact two user-saved guides
+    [SEOICHEON_FIRST,SEOICHEON_SECOND,SEOICHEON_ONLY]; // Seoicheon exact three user-saved guides
   const routeStart=USER_SAVED_RETURN_DEPARTURES[office]?
     {...start,...USER_SAVED_RETURN_DEPARTURES[office]}:{...start};
   const waypoints=controls.map((p,i)=>({...p,name:(i+1)+'. 저장 경유지'}));

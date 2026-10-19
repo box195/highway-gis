@@ -4,7 +4,7 @@ import {nearestOfficeDeparture} from './highway-endpoints.mjs?v=20261019-saved-r
 import {quickOriginChoices,getOriginPreference,setOriginPreference,resolveQuickOrigin} from './quick-origin.mjs?v=20261019-saved-return-4';
 import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-s3-dscoord-ga4';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261019-saved-return-4';
+import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261019-seoicheon3';
 import {navigationCatalog,destinationPoint,savedDestinationRoute,returnDestination} from './navigation-catalog.mjs?v=20261019-saved-return-4';
 
 const page=document.createElement('section');page.id='quick-navigation-page';page.hidden=true;page.setAttribute('aria-label','빠른 길찾기');

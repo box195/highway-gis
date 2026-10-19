@@ -16,7 +16,7 @@ const cases=[
   {name:'곤지암영업소',gis:[37.355,127.3214],start:['8Q99983C+XG6',37.3549125,127.321265625],vias:['8Q9996WJ+69C','8Q9994H2+GVJ','8Q9973CW+CJR']},
   // Synthetic GIS coordinate fixture only; return itself MUST share Gonjiam's override.
   {name:'경기광주지사',gis:[37.30,127.27],start:['8Q99983C+XG6',37.3549125,127.321265625],vias:['8Q9996WJ+69C','8Q9994H2+GVJ','8Q9973CW+CJR']},
-  {name:'서이천영업소',gis:[37.2705,127.1073],start:null,vias:['8Q99793C+WGJ','8Q9974C4+5WH']}
+  {name:'서이천영업소',gis:[37.2705,127.1073],start:null,vias:['8Q99793C+WGJ','8Q996683+GGJ','8Q9974C4+5WH']}
 ];
 const data={offices:[...cases.map(c=>({name:c.name,lat:c.gis[0],lng:c.gis[1]})),{name:'수원신갈영업소',lat:37.267,lng:127.1024}],interchanges:[]};
 const item=returnDestination(navigationCatalog(data),data),destination=destinationPoint(item,data);
@@ -34,6 +34,7 @@ const knownVias={
   '8Q99F48C+QWM':[37.4669625,127.122296875],
   'OSM:186410728:south':[37.456263302,127.1193993],
   '8Q99793C+WGJ':[37.2548375,127.371265625],
+  '8Q996683+GGJ':[37.2163375,127.203765625],
   '8Q9996WJ+69C':[37.3955625,127.230890625],
   '8Q9994H2+GVJ':[37.3788375,127.102140625],
   '8Q9973CW+CJR':[37.2711125,127.096515625],
