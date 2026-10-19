@@ -1,6 +1,6 @@
 // Persistent, bounded quick-navigation choices. No GPS samples or GIS records.
-import {ROUTE_DATA_REVISION} from './route-cache-revision.mjs?v=20261019-hybrid-return-1';
-import {hybridSavedReturn,isHybridSavedReturn} from './hybrid-saved-return.mjs?v=20261019-hybrid-return-1';
+import {ROUTE_DATA_REVISION} from './route-cache-revision.mjs?v=20261019-saved-return-2';
+import {hybridSavedReturn,isHybridSavedReturn,directSavedReturn,isDirectSavedReturn} from './hybrid-saved-return.mjs?v=20261019-saved-return-2';
 export const CACHE_KEY='highway-quick-choices-v1';
 export const CACHE_TTL_MS=7*86400000;
 export const CACHE_MAX=32;
@@ -71,7 +71,8 @@ export async function resolveQuickChoices({start,item,mode,destination,cache=rou
   if(hit)return {choices:hit,fromCache:true};
   let choices;
   if(mode==='saved'){
-    if(isHybridSavedReturn(start,item)){
+    if(isDirectSavedReturn(start,item))choices=directSavedReturn(start,item,data).choices;
+    else if(isHybridSavedReturn(start,item)){
       const graph=await loadGraph();
       choices=hybridSavedReturn(graph,start,item,data).choices;
     }else choices=[{key:'saved',label:`${start.officeName} → ${item.label} · 저장 경로`,

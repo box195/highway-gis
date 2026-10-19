@@ -1,6 +1,6 @@
 // Quick-navigation source choices are distinct from arrival-only anchors.
-import {navigationCatalog} from './navigation-catalog.mjs?v=20261019-s3-dscoord-ga4';
-import {SONGPA_RETURN_START} from './saved-navigation.mjs?v=20261019-s3-dscoord-ga4';
+import {navigationCatalog} from './navigation-catalog.mjs?v=20261019-saved-return-2';
+import {SONGPA_RETURN_START} from './saved-navigation.mjs?v=20261019-saved-return-2';
 import {savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261019-s3-dscoord-ga4';
 import {validPoint} from './highway-routing.mjs?v=20261019-s3-dscoord-ga4';
 import {TOLL_GATES} from './highway-tollgates.mjs';

@@ -40,7 +40,7 @@ test('Songpa outbound route retains all three controls with the updated third po
   // Northbound is the east side of this roughly N-S two-way road.
   assert.ok(up.waypoints[2].lng>127.1217531089459);
   const back=savedRoute('songpa','suwon');
-  assert.equal(back.waypoints.length,3);
+  assert.equal(back.waypoints.length,2);
   assert.notDeepEqual(back.waypoints.map(p=>[p.lat,p.lng]),[...up.waypoints].reverse().map(p=>[p.lat,p.lng]));
   for(const r of [up]){
     assert.equal(r.kind,'saved');assert.equal(r.points.length,5);
@@ -60,7 +60,7 @@ test('saved paths use the runtime Suwon location without motorway correction and
   assert.throws(()=>savedRoute('other','suwon'),/저장되지 않은/);
 });
 
-test('Songpa saved return has precisely three guides and exact navigation-only Suwon destination',()=>{
+test('Songpa saved return omits original second guide and retains exact Suwon destination',()=>{
  const office={name:'수원신갈영업소',lat:37.26694,lng:127.10244};
  const before={...office};
  const up=savedRoute('suwon','songpa',[office]),back=savedRoute('songpa','suwon',[office]);
@@ -73,11 +73,11 @@ test('Songpa saved return has precisely three guides and exact navigation-only S
  assert.notDeepEqual(back.goal,office);
  assert.deepEqual(office,before);
  assert.deepEqual(up.start,office);
- assert.deepEqual(back.waypoints.map(p=>p.code),['8Q99F48C+QWM','OSM:186410728:south','8Q9973CW+CJR']);
+ assert.deepEqual(back.waypoints.map(p=>p.code),['8Q99F48C+QWM','8Q9973CW+CJR']);
  assert.deepEqual(back.waypoints.map(p=>[p.lat,p.lng]),[
-  [37.4669625,127.122296875],[37.456263302,127.1193993],[37.2711125,127.096515625]]);
- assert.equal(back.waypoints.length,3);
- assert.equal(back.points.length,5);
+  [37.4669625,127.122296875],[37.2711125,127.096515625]]);
+ assert.equal(back.waypoints.length,2);
+ assert.equal(back.points.length,4);
  assert.deepEqual(back.points[0],back.start);
  assert.deepEqual(back.points.at(-1),back.goal);
  assert.ok(back.roads.every(s=>!s.includes('고속도로')));
@@ -88,12 +88,12 @@ test('Songpa saved return has precisely three guides and exact navigation-only S
  assert.equal(q.get('sp'),'37.4788875,127.133921875');
  assert.equal(q.get('ep'),'37.2674875,127.102359375');
  assert.equal(q.get('by'),'car');
- for(let i=0;i<3;i++)assert.equal(q.get(i?'vp'+(i+1):'vp'),
+ for(let i=0;i<2;i++)assert.equal(q.get(i?'vp'+(i+1):'vp'),
   back.waypoints[i].lat+','+back.waypoints[i].lng);
- assert.equal(q.has('vp4'),false);
+ assert.equal(q.has('vp3'),false);
  const n=new URL(navigationURL(back,'https://example.com/')).searchParams;
  assert.equal(n.get('dlat'),'37.2674875');assert.equal(n.get('dlng'),'127.102359375');
- assert.equal(n.has('v4lat'),false);
- for(let i=0;i<3;i++)assert.equal(
+ assert.equal(n.has('v3lat'),false);
+ for(let i=0;i<2;i++)assert.equal(
   n.get('v'+(i+1)+'lat')+','+n.get('v'+(i+1)+'lng'),q.get(i?'vp'+(i+1):'vp'));
 });

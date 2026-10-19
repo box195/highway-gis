@@ -19,7 +19,7 @@ test('destination buttons keep priority, branches, office order; replace manhole
   assert.deepEqual(groups.map(g=>g.key),['junctions','branches','offices','other-junctions']);
   assert.deepEqual(groups[0].items.map(x=>x.label),['송파IC','신갈JC']);
   assert.deepEqual(groups[1].items.map(x=>x.label),['경기광주지사','동서울지사']);
-  assert.deepEqual(groups[2].items.map(x=>x.label),['곤지암영업소','광암터널관리동','하남영업소']);
+  assert.deepEqual(groups[2].items.map(x=>x.label),['곤지암영업소','하남영업소','광암터널관리동']);
   const gwangam=groups[2].items.find(x=>x.label==='광암터널관리동');
   const chosen=destinationPoint(gwangam,data);assert.equal(chosen.lat,37.5163803548384);assert.equal(chosen.lng,127.17451770787038);
   assert.equal(chosen.snapToHighway,true);assert.equal(chosen.arrivalAnchors[0].bearing,257);assert.deepEqual(gwangam.source,{...at,name:'광암터널관리동'});
@@ -39,7 +39,7 @@ test('only registered Suwon–Songpa and Songpa–Suwon saved trips are offered'
   const site={name:'수원신갈영업소',lat:37.26694,lng:127.10244};
   const target=returnDestination(navigationCatalog({offices:[site]}),{offices:[site]});
   const returning=savedDestinationRoute({originId:'junction:songpa',officeName:'송파IC'},target,{offices:[site]});
-  assert.equal(returning.waypoints.length,3);assert.deepEqual([returning.goal.lat,returning.goal.lng],[37.2674875,127.102359375]);assert.equal(returning.goal.plusCode,'8Q997482+XWX');
+  assert.equal(returning.waypoints.length,2);assert.deepEqual([returning.goal.lat,returning.goal.lng],[37.2674875,127.102359375]);assert.equal(returning.goal.plusCode,'8Q997482+XWX');
   assert.throws(()=>savedDestinationRoute({originId:'office:동서울영업소'},target,{offices:[site]}),/송파IC/);
   const p=destinationPoint(singal);assert.equal(p.roadHint,'경부고속도로');assert.equal(p.snapToHighway,true);
   assert.ok(distance(graph.nodes.get(436210017),SINGAL_JC)<.01);

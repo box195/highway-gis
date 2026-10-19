@@ -15,10 +15,10 @@ const north=[
 ];
 // Return follows the existing saved local-road corridor, not Ring 1/Gyeongbu.
 // First return guide uses exact user-specified Daewang bridge OLC cell center.
-// Guide 2 keeps existing coordinate; guide 3 uses user-supplied OLC center.
+// Historical three-guide snapshot: do not renumber before removing the original second guide.
 // Tancheon has 4 mapped lanes, Daewangpangyo has 8.
 // Shinsu-ro has independently mapped ONE-WAY southbound carriageways.
-const south=[
+export const RETURN_SURFACE_SNAPSHOT=[
   {code:'8Q99F48C+QWM',lat:37.4669625,lng:127.122296875}, // user-provided Daewang bridge; exact full OLC center
   {code:'OSM:186410728:south',lat:37.456263302,lng:127.1193993}, // 탄천로
   {code:'8Q9973CW+CJR',lat:37.2711125,lng:127.096515625} // user exact OLC center
@@ -42,7 +42,7 @@ function endpoint(id,offices,interchanges){
 }
 export function savedRoute(startId,goalId,offices=[],interchanges=[]){
   if(startId===goalId)throw new Error('출발지와 목적지를 다르게 선택해주세요.');
-  const controls=startId==='suwon'&&goalId==='songpa'?north:startId==='songpa'&&goalId==='suwon'?south:null;
+  const controls=startId==='suwon'&&goalId==='songpa'?north:startId==='songpa'&&goalId==='suwon'?RETURN_SURFACE_SNAPSHOT.filter((_,i)=>i!==1):null;
   if(!controls)throw new Error('아직 저장되지 않은 구간입니다.');
   const start=startId==='songpa'?{...SONGPA_RETURN_START}:endpoint(startId,offices,interchanges);
   // Navigation-only return override, preserving original GIS office/outbound origin.
