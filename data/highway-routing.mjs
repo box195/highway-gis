@@ -158,8 +158,9 @@ function gwangamPublicGraphReentry(graph,start,goal,heading,sourceKey){
     roadHint:ring,snapToHighway:true,hasGateTopology:true,arrivalAnchors:[access]},heading,sourceKey);
   if(stage.length>15000||stage.waypoints.length>1)
     throw new Error('광암터널 반대차로 회차에 필요한 경유지가 5개를 초과하거나 경로가 과도합니다.');
-  const via=[...stage.waypoints.map(p=>({...p,name:'제1순환선 동행 · 하남드림휴게소 접근'})),
-    ...GWANGAM_REENTRY.anchors.map(p=>({name:p.name,lat:p.lat,lng:p.lng}))];
+  // Retain only original guide four (zero-based index 3), unchanged coordinates.
+  const fourth=GWANGAM_REENTRY.anchors[2];
+  const via=[{name:fourth.name,lat:fourth.lat,lng:fourth.lng}];
   if(via.length>5)throw new Error('광암 회차 경로의 경유지가 5개를 초과합니다.');
   const path=GWANGAM_REENTRY.path;
   const join=path.findIndex(([id])=>id===GWANGAM_REENTRY.startJoinNode);

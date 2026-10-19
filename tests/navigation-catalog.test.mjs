@@ -39,7 +39,7 @@ test('only registered Suwon–Songpa and Songpa–Suwon saved trips are offered'
   const site={name:'수원신갈영업소',lat:37.26694,lng:127.10244};
   const target=returnDestination(navigationCatalog({offices:[site]}),{offices:[site]});
   const returning=savedDestinationRoute({originId:'junction:songpa',officeName:'송파IC'},target,{offices:[site]});
-  assert.equal(returning.waypoints.length,5);assert.deepEqual(returning.goal,site);
+  assert.equal(returning.waypoints.length,3);assert.deepEqual([returning.goal.lat,returning.goal.lng],[37.2674875,127.102359375]);assert.equal(returning.goal.plusCode,'8Q997482+XWX');
   assert.throws(()=>savedDestinationRoute({originId:'office:동서울영업소'},target,{offices:[site]}),/송파IC/);
   const p=destinationPoint(singal);assert.equal(p.roadHint,'경부고속도로');assert.equal(p.snapToHighway,true);
   assert.ok(distance(graph.nodes.get(436210017),SINGAL_JC)<.01);

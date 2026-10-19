@@ -1,4 +1,4 @@
-import {ROAD_QUERY,buildGraph} from './highway-routing.mjs?v=20261019-poi-pangyo';
+import {ROAD_QUERY,buildGraph} from './highway-routing.mjs?v=20261019-s3-dscoord-ga4';
 let graphPromise;
 export async function loadGraph(){
   if(graphPromise)return graphPromise;

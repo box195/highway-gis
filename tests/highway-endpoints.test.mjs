@@ -25,7 +25,7 @@ test('nearest-office departure works away from the office and ignores the GPS tr
     const r=route(graph,start,goal,null,c.key);
     assert.ok(r.waypoints.length<=5);assert.ok(nearestHighwayPoint(graph,r.start).gap<1);
     assert.ok(distance(r.start,gps)>500);
-    assert.equal(navigationURL(r,'https://example.com/'),'https://map.naver.com/p/search/'+encodeURIComponent('동서울영업소'));
+    assert.equal(new URL(navigationURL(r,'https://example.com/')).searchParams.get('dlat'),'37.5166875');
     assert.ok(distance(r.start,gps)>500);
   }
 });
@@ -112,8 +112,8 @@ test('through-toll arrivals preserve both directed approaches and target policy'
         assert.equal(result.arrivalAtOffice,false);assert.equal(result.arrivalAtToll,true);
       }else if(name==='동서울영업소'){
         assert.equal(goal.officeDestination,null);assert.equal(result.arrivalAtOffice,false);
-        assert.equal(result.goal.providerPlace?.name,name);assert.ok(distance(result.goal,goal.original)>1);
-        assert.equal(navigationURL(result,'https://example.com/'),'https://map.naver.com/p/search/'+encodeURIComponent(name));
+        assert.deepEqual([result.goal.lat,result.goal.lng],[37.5166875,127.221015625]);assert.equal(result.goal.providerPlace,undefined);assert.ok(distance(result.goal,goal.original)>1);
+        assert.equal(new URL(navigationURL(result,'https://example.com/')).searchParams.get('dlng'),'127.221015625');
       }else{
         assert.equal(result.goal.lat,goal.original.lat);assert.equal(result.goal.lng,goal.original.lng);
         assert.equal(result.arrivalAtOffice,true);assert.equal(result.arrivalAtToll,false);
@@ -166,7 +166,7 @@ test('Suwon north via Pangyo and Hanam finishes southbound at Dongseoul without 
   assert.deepEqual(r.roads,['경부고속도로','수도권제1순환고속도로','중부고속도로']);
   assert.ok(r.arrivalDirection.includes('광주·호법 방향(남하)'));assert.equal(r.arrivalOffset,0);
   assert.ok(guide.lat>gate.lat);assert.equal(r.arrivalGateId,gate.id);
-  assert.ok(distance(guide,gate)>500);assert.equal(goal.officeDestination,null);assert.equal(r.goal.providerPlace?.name,'동서울영업소');assert.equal(r.arrivalAtOffice,false);
+  assert.ok(distance(guide,gate)>500);assert.equal(goal.officeDestination,null);assert.deepEqual([r.goal.lat,r.goal.lng],[37.5166875,127.221015625]);assert.equal(r.arrivalAtOffice,false);
   assert.ok(r.waypoints.length<=5);
 });
 test('five motorway runs on the southern Dongseoul detour fit five waypoints',()=>{
@@ -187,8 +187,8 @@ test('both Suwon corridors reach the correct opposite pre-plaza Dongseoul approa
   assert.ok(hanam.waypoints.length<=5);assert.ok(hobeop.waypoints.length<=5);
   assert.equal(hanam.arrivalGateId,436296492);assert.equal(hobeop.arrivalGateId,436295787);
   for(const r of [hanam,hobeop]){
-    assert.equal(goal.officeDestination,null);assert.equal(r.goal.providerPlace?.name,'동서울영업소');
-    assert.equal(r.arrivalAtOffice,false);assert.equal(r.arrivalAtToll,false);assert.ok(r.length<100000);
+    assert.equal(goal.officeDestination,null);assert.deepEqual([r.goal.lat,r.goal.lng],[37.5166875,127.221015625]);
+    assert.equal(r.arrivalAtOffice,false);assert.equal(r.arrivalAtToll,true);assert.ok(r.length<100000);
   }
 });
 
@@ -290,7 +290,7 @@ test('manual office departure uses only the chosen hub and keeps short endpoint 
   assert.equal(start.heading,null);assert.equal(start.departureMode,'saved-office');assert.equal(start.accuracy,null);
   const goal=officeEndpoint(office('동서울영업소',436295787),[],TOLL_GATES);
   for(const c of availableOriginOptions(graph,start,goal).choices){
-    assert.equal(navigationURL(c.result,'https://example.com/'),'https://map.naver.com/p/search/'+encodeURIComponent('동서울영업소'));
+    assert.equal(new URL(navigationURL(c.result,'https://example.com/')).searchParams.get('dlat'),'37.5166875');
     assert.ok(nearestHighwayPoint(graph,c.result.start).gap<1);
   }
   for(const name of ['경기광주지사','동서울지사','서울경기본부','광암터널관리동']){
@@ -330,5 +330,5 @@ test('Gonjiam exit booth and Hanam entry-side office retain directional guides a
   const gwangju=officeEndpoint(office('경기광주영업소',685222361),[],TOLL_GATES);
   assert.equal(gwangju.officeDestination,null);
   const through=office('동서울영업소',436295787),throughGoal=officeEndpoint(through,[],TOLL_GATES);
-  assert.equal(throughGoal.officeDestination,null);assert.equal(throughGoal.providerPlace.name,'동서울영업소');assert.equal(throughGoal.stopBeforeToll,false);
+  assert.equal(throughGoal.officeDestination,null);assert.deepEqual(throughGoal.userArrivalOverride,{lat:37.5166875,lng:127.221015625});assert.equal(throughGoal.stopBeforeToll,false);
 });

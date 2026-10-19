@@ -1,5 +1,5 @@
-import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261019-poi-pangyo';
-import {TOLL_ACCESS} from './highway-toll-access.mjs?v=20261019-route-arrival';
+import {distance,validPoint,nearestHighwayPoint} from './highway-routing.mjs?v=20261019-s3-dscoord-ga4';
+import {TOLL_ACCESS} from './highway-toll-access.mjs?v=20261019-s3-dscoord-ga4';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 import {SEO_HANAM_ACCESS} from './highway-office-access.mjs';
 
@@ -18,9 +18,10 @@ export const GATE_PROFILES=[
   {match:/서이천영업소/,gate:'서이천톨게이트',road:'중부고속도로',aliases:['서이천']}
 ];
 // Retained Seongnam user-selected full Plus Code arrival (not building entrance).
-// Dongseoul toll office uses provider POI selection, not GIS coordinates.
+// Dongseoul toll office uses exact user-selected full OLC destination.
 export const USER_ARRIVAL_OVERRIDES=[
-  {match:/성남영업소/,plusCode:'8Q99C4PF+6FG',lat:37.4355625,lng:127.123703125}
+  {match:/성남영업소/,plusCode:'8Q99C4PF+6FG',lat:37.4355625,lng:127.123703125},
+  {match:/^동서울영업소$/,plusCode:'8Q99G68C+MCC',lat:37.5166875,lng:127.221015625}
 ];
 // ODbL public OSM way 86197957; Ring1 westbound Pangyo carriageway.
 export const GWANGAM_PANGYO_ACCESS=[{edgeKey:'1000475753:2153572261',lat:37.5163803548384,lng:127.17451770787038,road:'수도권제1순환고속도로',bearing:257,kind:'through',offset:0}];
@@ -58,19 +59,18 @@ export function officeEndpoint(item,interchanges=[],gates=[],label){
   const arrivalAnchors=publicGates.flatMap(g=>(TOLL_ACCESS[g.id]||[]).filter(a=>!roadHint||a.road===roadHint).map(a=>({...a,gateId:g.id})));
   // The user confirmed Gwangju's existing exit-booth destination is correct.
   // Only Gonjiam finishes at the verified office-front exit toll. Hanam stays at its entry-side office.
-  // Dongseoul toll office never uses the GIS building for final arrival.
+  // Dongseoul final navigation arrival is user-pinned, not GIS building.
   // All other offices retain their previous destination policy.
   const keepGate=/경기광주영업소|^광주영업소/.test(officeName);
   const exitToll=FRONT_EXIT_TOLLS.find(p=>p.match.test(officeName));
   const stopAtPlaza=/성남영업소|서이천영업소/.test(officeName);
   const pinnedArrival=USER_ARRIVAL_OVERRIDES.find(p=>p.match.test(officeName));
   // Hanam office is on the entry side; let the external navigator find a legal U-turn/re-entry.
-  const dongseoulPoi=/^동서울영업소$/.test(officeName);
-  const providerPlace=dongseoulPoi?{provider:'kakao',name:'동서울영업소',placeId:null,verification:'search-selection-required'}:undefined;
-  const officeDestination=stopAtPlaza||dongseoulPoi?null:exitToll?{lat:exitToll.lat,lng:exitToll.lng}:!keepGate&&/영업소/.test(officeName)?original:null;
+  const dongseoulToll=/^동서울영업소$/.test(officeName);
+  const officeDestination=stopAtPlaza||dongseoulToll?null:exitToll?{lat:exitToll.lat,lng:exitToll.lng}:!keepGate&&/영업소/.test(officeName)?original:null;
   // Only the office destination is fixed. Preserve both direct approaches;
   // forcing the opposite carriageway creates a motorway-scale return loop.
-  return {...original,lat:anchor.lat,lng:anchor.lng,name:label||item.name||'거점',gateName:profile?.gate,roadHint,snapToHighway:true,original,officeDestination,providerPlace,...(exitToll?{officeFrontExitToll:true,endpointNote:'영업소 앞 진출 톨게이트 도착점입니다. 건물 입구는 아닙니다.'}:{}),endpointKind:'office',stopBeforeToll:stopAtPlaza,...(pinnedArrival?{userArrivalOverride:{lat:pinnedArrival.lat,lng:pinnedArrival.lng},userArrivalPlusCode:pinnedArrival.plusCode}:{}),arrivalAnchors,hasGateTopology:publicGates.length>0};
+  return {...original,lat:anchor.lat,lng:anchor.lng,name:label||item.name||'거점',gateName:profile?.gate,roadHint,snapToHighway:true,original,officeDestination,...(exitToll?{officeFrontExitToll:true,endpointNote:'영업소 앞 진출 톨게이트 도착점입니다. 건물 입구는 아닙니다.'}:{}),endpointKind:'office',stopBeforeToll:stopAtPlaza,...(pinnedArrival?{userArrivalOverride:{lat:pinnedArrival.lat,lng:pinnedArrival.lng},userArrivalPlusCode:pinnedArrival.plusCode}:{}),arrivalAnchors,hasGateTopology:publicGates.length>0};
 }
 export function savedOfficeDeparture(item,interchanges=[],gates=[]){
   if(!item||!supportsHighwayOffice(item)||!validPoint({lat:Number(item.lat),lng:Number(item.lng)}))throw new Error('좌표가 있는 출발 거점을 선택해주세요.');

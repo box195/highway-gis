@@ -1,11 +1,11 @@
-import {loadGraph,gps} from './navigation-runtime.mjs?v=20261019-songpa-return';
-import {availableOriginOptions,navigationURL} from './highway-routing.mjs?v=20261019-poi-pangyo';
-import {nearestOfficeDeparture} from './highway-endpoints.mjs?v=20261019-poi-pangyo';
-import {quickOriginChoices,getOriginPreference,setOriginPreference,resolveQuickOrigin} from './quick-origin.mjs?v=20261019-songpa-departure';
-import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-poi-pangyo';
+import {loadGraph,gps} from './navigation-runtime.mjs?v=20261019-s3-dscoord-ga4';
+import {availableOriginOptions,navigationURL} from './highway-routing.mjs?v=20261019-s3-dscoord-ga4';
+import {nearestOfficeDeparture} from './highway-endpoints.mjs?v=20261019-s3-dscoord-ga4';
+import {quickOriginChoices,getOriginPreference,setOriginPreference,resolveQuickOrigin} from './quick-origin.mjs?v=20261019-s3-dscoord-ga4';
+import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-s3-dscoord-ga4';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261019-songpa-departure';
-import {navigationCatalog,destinationPoint,savedDestinationRoute,returnDestination} from './navigation-catalog.mjs?v=20261019-poi-pangyo';
+import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261019-s3-dscoord-ga4';
+import {navigationCatalog,destinationPoint,savedDestinationRoute,returnDestination} from './navigation-catalog.mjs?v=20261019-s3-dscoord-ga4';
 
 const page=document.createElement('section');page.id='quick-navigation-page';page.hidden=true;page.setAttribute('aria-label','빠른 길찾기');
 page.innerHTML=`<header class="qn-header"><button id="qn-back" type="button">← GIS</button><h1>빠른 길찾기</h1><label class="qn-origin">출발<select id="qn-origin" aria-label="출발 거점"><option value="">현재 위치 · 가까운 거점</option></select></label><label class="qn-provider">지도앱<select id="qn-provider" aria-label="지도앱"><option value="kakao">카카오맵</option><option value="naver">네이버지도</option></select></label></header>

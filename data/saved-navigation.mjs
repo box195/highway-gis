@@ -1,6 +1,6 @@
 // Direction-specific public-road control points supplied for this saved route.
 // Keep these coordinates exact: motorway snapping changes the intended path.
-import {validPoint} from './highway-routing.mjs?v=20261019-poi-pangyo';
+import {validPoint} from './highway-routing.mjs?v=20261019-s3-dscoord-ga4';
 
 export const SAVED_HUBS=[
   {id:'suwon',name:'수원신갈영업소'},
@@ -15,15 +15,13 @@ const north=[
 ];
 // Return follows the existing saved local-road corridor, not Ring 1/Gyeongbu.
 // First return guide uses exact user-specified Daewang bridge OLC cell center.
-// Guides 2-3 use previously validated public-road geometry, without new offsets.
+// Guide 2 keeps existing coordinate; guide 3 uses user-supplied OLC center.
 // Tancheon has 4 mapped lanes, Daewangpangyo has 8.
 // Shinsu-ro has independently mapped ONE-WAY southbound carriageways.
 const south=[
   {code:'8Q99F48C+QWM',lat:37.4669625,lng:127.122296875}, // user-provided Daewang bridge; exact full OLC center
   {code:'OSM:186410728:south',lat:37.456263302,lng:127.1193993}, // 탄천로
-  {code:'OSM:473590580:south',lat:37.377869162,lng:127.1018525}, // 대왕판교로
-  {code:'OSM:277611773:south',lat:37.34,lng:127.102675866},   // 신수로 oneway=yes
-  {code:'OSM:624073974:south',lat:37.3,lng:127.101818703}     // 신수로 oneway=yes
+  {code:'8Q9973CW+CJR',lat:37.2711125,lng:127.096515625} // user exact OLC center
 ];
 // User-specified departure-only FULL Plus Code 8Q99F4HM+HH3 (11-digit OLC).
 // Exact cell center, no map-projection, snap or offset; ENTRY goal remains separate.
@@ -46,7 +44,9 @@ export function savedRoute(startId,goalId,offices=[],interchanges=[]){
   if(startId===goalId)throw new Error('출발지와 목적지를 다르게 선택해주세요.');
   const controls=startId==='suwon'&&goalId==='songpa'?north:startId==='songpa'&&goalId==='suwon'?south:null;
   if(!controls)throw new Error('아직 저장되지 않은 구간입니다.');
-  const start=startId==='songpa'?{...SONGPA_RETURN_START}:endpoint(startId,offices,interchanges),goal=endpoint(goalId,offices,interchanges);
+  const start=startId==='songpa'?{...SONGPA_RETURN_START}:endpoint(startId,offices,interchanges);
+  // Navigation-only return override, preserving original GIS office/outbound origin.
+  const goal=startId==='songpa'&&goalId==='suwon'?{...endpoint(goalId,offices,interchanges),lat:37.2674875,lng:127.102359375,plusCode:'8Q997482+XWX'}:endpoint(goalId,offices,interchanges);
   const waypoints=controls.map((p,i)=>({...p,name:`${i+1}. 저장 경유지`}));
   return {kind:'saved',start,goal,waypoints,points:[start,...waypoints,goal],
     roads:startId==='songpa'?['송파대로','헌릉로','헌릉로758길','탄천로','여수대로','대왕판교로','신수로']:[]};

@@ -72,26 +72,39 @@ test('user overrides do not change untouched SeoIcheon, Hanam and Gonjiam endpoi
   }
 });
 
-test('Dongseoul uses named Kakao POI selection instead of GIS building coordinates',()=>{
-  assert.equal(USER_ARRIVAL_OVERRIDES.some(x=>x.match.test('동서울영업소')),false);
-  const g=TOLL_GATES.find(x=>x.name.includes('동서울'));
-  const site={name:'동서울영업소',lat:g.lat+.0004,lng:g.lng+.0004};
-  const goal=officeEndpoint(site,[],TOLL_GATES);
-  assert.equal(goal.userArrivalOverride,undefined);
-  assert.equal(goal.stopBeforeToll,false);
-  assert.equal(goal.officeDestination,null);assert.deepEqual(goal.providerPlace,{provider:'kakao',name:'동서울영업소',placeId:null,verification:'search-selection-required'});
-  assert.ok(goal.arrivalAnchors.length>=2);
-  const origin={name:'수원신갈영업소',lat:37.26694,lng:127.10244};
-  const result=availableOriginOptions(graph,savedOfficeDeparture(origin,[],TOLL_GATES),goal);
-  const directions=new Set();
-  for(const {result:r} of result.choices){
-    assert.equal(r.goal.providerPlace?.name,'동서울영업소');
-    assert.notDeepEqual({lat:r.goal.lat,lng:r.goal.lng},{lat:site.lat,lng:site.lng});
-    assert.equal(r.arrivalAtOffice,false);assert.equal(r.arrivalAtToll,false);
-    assert.equal(kakaoNavigationURL(r),'https://map.kakao.com/link/search/'+encodeURIComponent('동서울영업소'));
-    assert.equal(navigationURL(r,'https://example.com/'),'https://map.naver.com/p/search/'+encodeURIComponent('동서울영업소'));
-    assert.ok(r.waypoints.length<=5);
-    directions.add(r.arrivalBearing);
-  }
-  assert.deepEqual([...directions].sort((a,b)=>a-b),[156,336]);
+test('Dongseoul exact 11-character full OLC is final direct destination for both approaches',()=>{
+ const code='8Q99G68C+MCC',point={lat:37.5166875,lng:127.221015625};
+ assert.deepEqual(decodeFullOLCCenter(code),point);
+ const policy=USER_ARRIVAL_OVERRIDES.find(x=>x.match.test('동서울영업소'));
+ assert.ok(policy);assert.equal(policy.plusCode,code);
+ assert.deepEqual({lat:policy.lat,lng:policy.lng},point);
+ const gate=TOLL_GATES.find(x=>x.name.includes('동서울'));
+ const site={name:'동서울영업소',lat:gate.lat+.0004,lng:gate.lng+.0004};
+ const goal=officeEndpoint(site,[],TOLL_GATES);
+ assert.deepEqual(goal.userArrivalOverride,point);
+ assert.equal(goal.userArrivalPlusCode,code);
+ assert.equal(goal.providerPlace,undefined);
+ assert.equal(goal.officeDestination,null);
+ assert.notDeepEqual(goal.original,point);
+ assert.ok(goal.arrivalAnchors.length>=2);
+ const origin={name:'수원신갈영업소',lat:37.26694,lng:127.10244};
+ const result=availableOriginOptions(graph,savedOfficeDeparture(origin,[],TOLL_GATES),goal);
+ const bearings=new Set();
+ assert.ok(result.choices.length>=2);
+ for(const {result:r} of result.choices){
+  assert.deepEqual({lat:r.goal.lat,lng:r.goal.lng},point);
+  assert.equal(r.goal.providerPlace,undefined);
+  assert.ok(r.waypoints.length<=5);
+  const kakao=kakaoNavigationURL(r);
+  const naver=navigationURL(r,'https://example.com/');
+  assert.ok(kakao.startsWith('kakaomap://route?'));
+  assert.ok(naver.startsWith('nmap://navigation?'));
+  assert.equal(new URL(kakao).searchParams.get('ep'),'37.5166875,127.221015625');
+  assert.equal(new URL(naver).searchParams.get('dlat'),'37.5166875');
+  assert.equal(new URL(naver).searchParams.get('dlng'),'127.221015625');
+  assert.ok(!kakao.includes('/search/')&&!naver.includes('/search/'));
+  assert.ok(r.waypoints.length>=1);
+  bearings.add(r.arrivalBearing);
+ }
+ assert.deepEqual([...bearings].sort((a,b)=>a-b),[156,336]);
 });
