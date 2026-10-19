@@ -4,7 +4,8 @@ const files=[
   'data/highway-roads.json','data/gwangam-reentry.mjs','data/highway-routing.mjs','data/highway-endpoints.mjs',
   'data/navigation-catalog.mjs','data/highway-toll-access.mjs','data/highway-office-access.mjs',
   'data/highway-tollgates.mjs','data/saved-navigation.mjs','data/songpa-exit-access.mjs',
-  'data/quick-origin.mjs','data/kakao-navigation.mjs','data/quick-route-cache.mjs'
+  'data/quick-origin.mjs','data/kakao-navigation.mjs','data/quick-route-cache.mjs',
+  'data/hybrid-saved-return.mjs'
 ];
 const normalize=value=>value.replace(/\r\n?/g,'\n');
 const revision=(convert=identity)=>{

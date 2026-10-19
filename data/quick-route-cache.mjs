@@ -1,5 +1,6 @@
 // Persistent, bounded quick-navigation choices. No GPS samples or GIS records.
-import {ROUTE_DATA_REVISION} from './route-cache-revision.mjs?v=20261019-s3-dscoord-ga4';
+import {ROUTE_DATA_REVISION} from './route-cache-revision.mjs?v=20261019-hybrid-return-1';
+import {hybridSavedReturn,isHybridSavedReturn} from './hybrid-saved-return.mjs?v=20261019-hybrid-return-1';
 export const CACHE_KEY='highway-quick-choices-v1';
 export const CACHE_TTL_MS=7*86400000;
 export const CACHE_MAX=32;
@@ -26,10 +27,11 @@ const cleanPoint=p=>point(p)?{lat:p.lat,lng:p.lng,name:typeof p.name==='string'?
     placeId:/^\d+$/.test(p.providerPlace.placeId||'')?p.providerPlace.placeId:null,
     verification:p.providerPlace.verification==='verified'?'verified':'search-selection-required'}}:{})}:null;
 const cleanResult=r=>{
-  if(!r||!Array.isArray(r.waypoints)||r.waypoints.length>5||!Array.isArray(r.roads)||r.roads.length>8)return null;
+  if(!r||!Array.isArray(r.waypoints)||r.waypoints.length>5||!Array.isArray(r.roads)||r.roads.length>16)return null;
   const start=cleanPoint(r.start),goal=cleanPoint(r.goal),waypoints=r.waypoints.map(cleanPoint);
   if(!start||!goal||waypoints.some(p=>!p)||r.roads.some(v=>typeof v!=='string'||v.length>80))return null;
-  return {start,goal,waypoints,roads:r.roads,arrivalDirection:typeof r.arrivalDirection==='string'?r.arrivalDirection.slice(0,150):null,
+  return {start,goal,waypoints,roads:r.roads,kind:r.kind==='hybrid-saved-return'?'hybrid-saved-return':undefined,
+    songpaExitApproach:['northbound','southbound'].includes(r.songpaExitApproach)?r.songpaExitApproach:undefined,arrivalDirection:typeof r.arrivalDirection==='string'?r.arrivalDirection.slice(0,150):null,
     arrivalBearing:Number.isFinite(r.arrivalBearing)?r.arrivalBearing:null};
 };
 const cleanChoices=choices=>{
@@ -68,8 +70,13 @@ export async function resolveQuickChoices({start,item,mode,destination,cache=rou
   const key=routeCacheKey(start,item,mode,destination),hit=cache.get(key);
   if(hit)return {choices:hit,fromCache:true};
   let choices;
-  if(mode==='saved')choices=[{key:'saved',label:`${start.officeName} → ${item.label} · 저장 경로`,
-    result:savedDestinationRoute(start,item,data)}];
+  if(mode==='saved'){
+    if(isHybridSavedReturn(start,item)){
+      const graph=await loadGraph();
+      choices=hybridSavedReturn(graph,start,item,data).choices;
+    }else choices=[{key:'saved',label:`${start.officeName} → ${item.label} · 저장 경로`,
+      result:savedDestinationRoute(start,item,data)}];
+  }
   else{
     const graph=await loadGraph();
     const found=availableOriginOptions(graph,start,destination);
