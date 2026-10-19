@@ -11,10 +11,12 @@ import {navigationURL} from '../data/highway-routing.mjs';
 import {TOLL_GATES} from '../data/highway-tollgates.mjs';
 
 const cases=[
-  {name:'동서울영업소',gis:[37.5166,127.221],start:['8Q99G68C+4FH',37.5153125,127.221234375],vias:['8Q99F48C+QWM','8Q9973CW+CJR']},
+  {name:'동서울영업소',gis:[37.5166,127.221],start:['8Q99G68C+4FH',37.5153125,127.221234375],vias:['8Q99F48C+QWM','OSM:186410728:south','8Q9973CW+CJR']},
   {name:'경기광주영업소',gis:[37.4465,127.2668],start:['8Q99C7W8+HQ3',37.4463875,127.266921875],vias:['8Q9996WJ+69C','8Q9994H2+GVJ','8Q9973CW+CJR']},
   {name:'곤지암영업소',gis:[37.355,127.3214],start:['8Q99983C+XG6',37.3549125,127.321265625],vias:['8Q9996WJ+69C','8Q9994H2+GVJ','8Q9973CW+CJR']},
-  {name:'서이천영업소',gis:[37.2705,127.1073],start:null,vias:['8Q9974C4+5WH']}
+  // Synthetic GIS coordinate fixture only; return itself MUST share Gonjiam's override.
+  {name:'경기광주지사',gis:[37.30,127.27],start:['8Q99983C+XG6',37.3549125,127.321265625],vias:['8Q9996WJ+69C','8Q9994H2+GVJ','8Q9973CW+CJR']},
+  {name:'서이천영업소',gis:[37.2705,127.1073],start:null,vias:['8Q99793C+WGJ','8Q9974C4+5WH']}
 ];
 const data={offices:[...cases.map(c=>({name:c.name,lat:c.gis[0],lng:c.gis[1]})),{name:'수원신갈영업소',lat:37.267,lng:127.1024}],interchanges:[]};
 const item=returnDestination(navigationCatalog(data),data),destination=destinationPoint(item,data);
@@ -30,6 +32,8 @@ function decodeFullOLCCenter(code){
 }
 const knownVias={
   '8Q99F48C+QWM':[37.4669625,127.122296875],
+  'OSM:186410728:south':[37.456263302,127.1193993],
+  '8Q99793C+WGJ':[37.2548375,127.371265625],
   '8Q9996WJ+69C':[37.3955625,127.230890625],
   '8Q9994H2+GVJ':[37.3788375,127.102140625],
   '8Q9973CW+CJR':[37.2711125,127.096515625],
@@ -38,10 +42,10 @@ const knownVias={
 };
 test('exact user-provided 11-character OLC centres are locally reproducible',()=>{
   for(const c of cases)if(c.start)assert.deepEqual(decodeFullOLCCenter(c.start[0]).map(n=>+n.toFixed(12)),c.start.slice(1));
-  for(const [code,center] of Object.entries(knownVias))
+  for(const [code,center] of Object.entries(knownVias).filter(([code])=>code.includes('+')))
     assert.deepEqual(decodeFullOLCCenter(code).map(n=>+n.toFixed(12)),center);
 });
-test('four new office routes dispatch manually and GPS-nearest without graph, exact starts/vias, both providers',async()=>{
+test('five special offices and branches dispatch manually and GPS-nearest without graph, exact starts/vias, both providers',async()=>{
   const catalog=quickOriginChoices(data);
   for(const c of cases){
     const source=catalog.find(x=>x.label===c.name);assert.ok(source,c.name);
@@ -96,4 +100,9 @@ test('Dongseoul arrival pin and original office/GIS and Songpa saved-return rema
   assert.equal(JSON.stringify(dong),before);
   assert.deepEqual(savedRoute('songpa','suwon',data.offices).waypoints.map(p=>p.code),['8Q99F48C+QWM','8Q9973CW+CJR']);
   assert.deepEqual(savedRoute('suwon','songpa',data.offices).waypoints.map(p=>p.code),['8Q9994H2+4QX','8Q99F449+GQ5','8Q99F48C+VP7']);
+});
+test('branch shares Gonjiam immutable return controls and departure override',()=>{
+  assert.equal(USER_SAVED_RETURN_DEPARTURES['경기광주지사'],USER_SAVED_RETURN_DEPARTURES['곤지암영업소']);
+  assert.notEqual(USER_SAVED_RETURN_DEPARTURES['경기광주지사'],USER_SAVED_RETURN_DEPARTURES['경기광주영업소']);
+  assert.deepEqual(cases.find(c=>c.name==='경기광주지사').vias,cases.find(c=>c.name==='곤지암영업소').vias);
 });

@@ -1,7 +1,7 @@
 import {validPoint} from './highway-routing.mjs?v=20261019-s3-dscoord-ga4';
-import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261019-s3-dscoord-ga4';
+import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261019-saved-return-4';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {savedRoute,SONGPA_IC} from './saved-navigation.mjs?v=20261019-saved-return-3';
+import {savedRoute,SONGPA_IC} from './saved-navigation.mjs?v=20261019-saved-return-4';
 import {SONGPA_EXIT_ACCESS} from './songpa-exit-access.mjs?v=20261019-s3-dscoord-ga4';
 
 const order=new Intl.Collator('ko',{numeric:true,sensitivity:'base'});
@@ -32,9 +32,7 @@ export function navigationCatalog(data={}){
   return [group('junctions','IC · JC',junctions),group('branches','지사',branches),
     group('offices','영업소',[
       ...offices.filter(p=>/영업소/.test(p.name||'')&&!/수원신갈|^서울영업소$/.test(keyOf(p.name))).map(office).sort((a,b)=>order.compare(a.label,b.label)),
-      ...offices.filter(p=>/광암터널.*관리|광암관리/.test(p.name||'')).map(office),
-      // Seoul is last ONLY when the live GIS source has a real coordinate.
-      ...offices.filter(p=>keyOf(p.name)==='서울영업소').map(office)
+      ...offices.filter(p=>/광암터널.*관리|광암관리/.test(p.name||'')).map(office)
     ]),
     group('other-junctions','그 밖의 IC · JC',remaining)];
 }

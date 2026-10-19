@@ -29,7 +29,7 @@ const FRONT_EXIT_TOLLS=[
   {match:/곤지암영업소/,lat:37.3550644,lng:127.3225997}
 ];
 const clean=s=>(s||'').replace(/\s/g,'').replace(/(톨게이트|요금소|영업소|TG|IC|JCT|JC)$/i,'');
-export const supportsHighwayOffice=item=>!/교통.*센터/.test((item?.name||'').replace(/\s/g,''));
+export const supportsHighwayOffice=item=>!/교통.*센터|^서울영업소$/.test((item?.name||'').replace(/한국도로공사|\s/g,''));
 export function roadFrom(text){
   if(/제\s*2\s*중부/.test(text))return '제2중부고속도로';
   if(/중부/.test(text))return '중부고속도로';

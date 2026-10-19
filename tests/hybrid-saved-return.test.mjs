@@ -78,10 +78,11 @@ test('manual Songpa pure saved and outbound unchanged; unknown origin unsupporte
 test('special-source saved returns preserve source-specific ORIGINAL controls in manual/GPS modes',async()=>{
  const special=[
   {name:'성남영업소',lat:37.435,lng:127.124,expected:['8Q99F48C+QWM','OSM:186410728:south','8Q9973CW+CJR']},
-  {name:'서울영업소',lat:37.42,lng:127.12,expected:['8Q9973CW+CJR']},
   {name:'청계영업소',lat:37.379,lng:127.102,expected:['8Q9994H2+GVJ','8Q9973CW+CJR']}
  ]; // Coordinates above are synthetic test fixtures, NOT replacements for GIS records.
- const localData={offices:[...data.offices,...special],interchanges:[]};
+ // Cancelled Seoul exists as a GIS fixture but must not register in navigation.
+ const cancelledSeoul={name:'서울영업소',lat:37.42,lng:127.12};
+ const localData={offices:[...data.offices,...special,cancelledSeoul],interchanges:[]};
  const localSources=quickOriginChoices(localData);
  const localItem=returnDestination(navigationCatalog(localData),localData);
  for(const office of special){
@@ -108,7 +109,10 @@ test('special-source saved returns preserve source-specific ORIGINAL controls in
   }
  }
  const ordered=navigationCatalog(localData).find(g=>g.key==='offices').items.map(x=>x.label);
- assert.deepEqual(ordered.slice(-2),['광암터널관리동','서울영업소']);
+ assert.equal(ordered.at(-1),'광암터널관리동');
+ assert.equal(ordered.includes('서울영업소'),false);
+ assert.equal(localSources.some(i=>i.label==='서울영업소'),false);
+ assert.equal(nearestOfficeDeparture({lat:37.42,lng:127.12},localData.offices,[],TOLL_GATES).officeName==='서울영업소',false);
  assert.equal(navigationCatalog(data).find(g=>g.key==='offices').items.some(i=>i.label==='서울영업소'),false,
   'never synthesize missing GIS office coordinates');
 });
