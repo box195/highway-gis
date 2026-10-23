@@ -992,7 +992,7 @@
 
 
 
-        <span>10월 점검계획</span>
+        <span>점검계획</span>
 
 
 
@@ -1121,7 +1121,7 @@
 
 
 
-      <button id="btn-plan-mobile" title="10월 점검계획" class="p-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/50 transition cursor-pointer">
+      <button id="btn-plan-mobile" title="점검계획" class="p-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/50 transition cursor-pointer">
 
 
 
@@ -1965,7 +1965,7 @@
 
 
 
-                <span>2026년 10월 ITS 점검계획표</span>
+                <span id="inspection-plan-heading">ITS 점검계획표</span>
 
 
 
@@ -1997,7 +1997,7 @@
 
 
 
-            <div class="grid grid-cols-2 gap-1.5 text-[11px] pt-1">
+            <div id="inspection-native-legend" class="grid grid-cols-2 gap-1.5 text-[11px] pt-1">
 
 
 
@@ -2049,7 +2049,7 @@
 
 
 
-          <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+          <div id="inspection-calendar-panel" class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
 
 
 
@@ -2057,7 +2057,7 @@
 
 
 
-              <span>10월 달력에서 날짜를 선택하세요</span>
+              <span id="inspection-calendar-prompt">달력에서 날짜를 선택하세요</span>
 
 
 
@@ -2241,7 +2241,7 @@
 
 
 
-          <div class="space-y-1.5">
+          <div id="inspection-current-list" class="space-y-1.5">
 
 
 
@@ -8522,11 +8522,16 @@
 
 
 
-            // 2026 October 1st starts on Thursday (idx 4)
+            const monthKey = Object.keys(schedule).filter(k => /^\d{4}-\d{2}-\d{2}$/.test(k)).sort().at(-1)?.slice(0, 7)
+        || new Date().getFullYear() + '-' + String(new Date().getMonth() + 1).padStart(2, '0');
+      const [year, month] = monthKey.split('-').map(Number);
+      const firstWeekday = new Date(year, month - 1, 1).getDay();
+      const daysInMonth = new Date(year, month, 0).getDate();
+      document.getElementById('inspection-calendar-prompt').textContent = month + '월 달력에서 날짜를 선택하세요';
 
       let gridHtml = '';
 
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < firstWeekday; i++) {
 
         gridHtml += `<div class="p-1 text-slate-700 text-[10px]">&nbsp;</div>`;
 
@@ -8534,9 +8539,9 @@
 
 
 
-      for (let day = 1; day <= 31; day++) {
+      for (let day = 1; day <= daysInMonth; day++) {
 
-        const dayKey = `2026-10-${day < 10 ? '0' + day : day}`;
+        const dayKey = `${monthKey}-${String(day).padStart(2, '0')}`;
 
 
 
@@ -8612,7 +8617,7 @@
 
 
 
-          const dateObj = new Date(2026, 9, day);
+          const dateObj = new Date(year, month - 1, day);
 
 
 
@@ -8668,7 +8673,7 @@
 
 
 
-      const planKeys = Object.keys(schedule).sort();
+      const planKeys = Object.keys(schedule).filter(k => k.startsWith(monthKey + '-')).sort();
 
 
 
@@ -8688,7 +8693,7 @@
 
       if (listTitle) {
 
-        listTitle.innerText = `10월 전체 점검 일정 리스트 (${planCount}건)`;
+        listTitle.innerText = `${month}월 전체 점검 일정 리스트 (${planCount}건)`;
 
       }
 
@@ -8724,7 +8729,7 @@
 
                 <span class="px-1.5 py-0.2 rounded text-[10px] font-bold border ${branchColor}">${branchTag}</span>
 
-                <span class="px-1.5 py-0.2 rounded text-[10px] font-bold ${isOffice ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'}">10월 ${p.day}일 (${getDayOfWeek(k)})</span>
+                <span class="px-1.5 py-0.2 rounded text-[10px] font-bold ${isOffice ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'}">${month}월 ${p.day}일 (${getDayOfWeek(k)})</span>
 
                 <span class="text-xs font-bold text-white truncate max-w-[140px] sm:max-w-[170px]">${isOffice ? p.office_name : p.line?.section_label}</span>
 
@@ -8749,6 +8754,7 @@
 
 
       lucide.createIcons();
+      window.dispatchEvent(new Event('inspection:render'));
 
 
 
@@ -8832,11 +8838,11 @@
 
 
 
-      // 3. Fallback matching day in 2026-10
+      // 3. Match the day in the latest month supplied by the active data pack
 
 
 
-      const octDay = `2026-10-${da}`;
+      const octDay = `${dates[dates.length - 1].slice(0,7)}-${da}`;
 
 
 
@@ -8952,7 +8958,7 @@
 
 
 
-        bannerBadge.innerText = `10/${plan.day} (${getDayOfWeek(dateKey)})`;
+        bannerBadge.innerText = `${Number(dateKey.slice(5,7))}/${plan.day} (${getDayOfWeek(dateKey)})`;
 
 
 
@@ -11988,7 +11994,7 @@
 
 
 
-            if (t.content === 'tab-plan') {
+            if (t.content === 'tab-plan' && !window.InspectionApp?.archiveActive) {
 
 
 
@@ -12051,7 +12057,7 @@
       const handlePlanHeaderClick = () => {
         document.getElementById('tab-plan-btn')?.click();
         openMobileSidebar();
-        const targetDate = AppState.activeInspectionDate || getClosestOrTodayInspectionDate();
+        const targetDate = window.InspectionApp?.archiveActive ? null : AppState.activeInspectionDate || getClosestOrTodayInspectionDate();
         if (targetDate) {
           selectInspectionDate(targetDate, false, true); // Keep sidebar open on mobile
         }
@@ -15478,6 +15484,12 @@
 
 
   <script>
+    window.InspectionApp = {
+      get data() { return AppState.data; },
+      clearInspectionDate,
+      decrypt: payload => SecureDB.decryptFilePayload(payload),
+      archiveActive: false
+    };
     window.HighwayApp = {
       get data() { return AppState.data; },
       get navigationData() {
@@ -15491,6 +15503,7 @@
       officeFor: findMatchingOffice
     };
   </script>
+  <script type="module" src="./data/inspection-history.mjs?v=20261023-history"></script>
   <script type="module" src="./data/highway-navigation.mjs?v=20261019-saved-return-4"></script>
   <script type="module" src="./data/quick-navigation.mjs?v=20261019-seoicheon3"></script>
 </body>
