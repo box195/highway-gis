@@ -119,6 +119,8 @@ def extract(directory):
         year = years.pop()
         groups, invalid, marked = [], [], 0
         for sheet in workbook:
+            if re.sub(r"[-_]통합.*$", "", sheet.title).strip() not in {"동서울지사", "경기광주지사"}:
+                continue
             rows, count, issues = extract_sheet(sheet, year, month)
             groups.extend(rows)
             marked += count

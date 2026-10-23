@@ -4372,7 +4372,7 @@
 
 
 
-      const activePlanEntry = isInspectionActive ? AppState.data.inspection_schedule[AppState.activeInspectionDate] : null;
+      const activePlanEntry = isInspectionActive ? getInspectionSchedule()[AppState.activeInspectionDate] : null;
       const activePlan = activePlanEntry?.plans ? (activePlanEntry.plans[AppState.activeInspectionPlanIndex || 0] || activePlanEntry.plans[0]) : activePlanEntry;
 
 
@@ -8261,6 +8261,21 @@
 
 
         body.innerHTML = bodyHtml;
+        if (item.history && item.history_items) {
+          const original = document.createElement('div');
+          original.className = 'p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2';
+          const heading = document.createElement('div');
+          heading.className = 'text-xs font-bold text-slate-200';
+          heading.textContent = '원본 점검표';
+          original.append(heading);
+          for (const entry of item.history_items) {
+            const row = document.createElement('p');
+            row.className = 'text-xs text-slate-300';
+            row.textContent = entry.section + ' · ' + entry.equipment + ': ' + entry.value;
+            original.append(row);
+          }
+          body.append(original);
+        }
 
 
 
@@ -8386,6 +8401,10 @@
 
 
 
+      if (plan.history) {
+        const normalize = name => (name || '').replace(/\([^)]*\)/g, '').replace(/\s/g, '').replace(/^한국도로공사/, '').replace(/영$/, '영업소').replace(/^구리영업소$/, '구리남양주영업소');
+        return filteredOffices.find(o => normalize(o.name) === normalize(pName)) || null;
+      }
       // 1. Specific Keyword Disambiguation (Exact Office Mapping)
 
       if (pName.includes('경기광주영업소') || pName.includes('광주영업소')) {
@@ -8494,6 +8513,9 @@
 
 
 
+    function getInspectionSchedule() {
+      return window.InspectionApp?.scheduleOverride || AppState.data.inspection_schedule || {};
+    }
     function renderInspectionCalendar() {
 
 
@@ -8514,7 +8536,7 @@
 
 
 
-      const schedule = AppState.data.inspection_schedule || {};
+      const schedule = getInspectionSchedule();
 
 
 
@@ -8522,7 +8544,7 @@
 
 
 
-            const monthKey = Object.keys(schedule).filter(k => /^\d{4}-\d{2}-\d{2}$/.test(k)).sort().at(-1)?.slice(0, 7)
+            const monthKey = window.InspectionApp?.monthOverride || Object.keys(schedule).filter(k => /^\d{4}-\d{2}-\d{2}$/.test(k)).sort().at(-1)?.slice(0, 7)
         || new Date().getFullYear() + '-' + String(new Date().getMonth() + 1).padStart(2, '0');
       const [year, month] = monthKey.split('-').map(Number);
       const firstWeekday = new Date(year, month - 1, 1).getDay();
@@ -8770,7 +8792,7 @@
 
 
 
-      const schedule = AppState.data.inspection_schedule || {};
+      const schedule = getInspectionSchedule();
 
 
 
@@ -8894,7 +8916,7 @@
 
 
 
-      const schedule = AppState.data.inspection_schedule || {};
+      const schedule = getInspectionSchedule();
 
 
 
@@ -9200,7 +9222,7 @@
 
       if (!bCode && AppState.activeInspectionDate && AppState.data.inspection_schedule) {
 
-        const p = AppState.data.inspection_schedule[AppState.activeInspectionDate];
+        const p = getInspectionSchedule()[AppState.activeInspectionDate];
 
         if (p) bCode = p.branch_code || (p.branch_name && p.branch_name.includes('광주') ? 'GWANGJU' : 'DONGSEOUL');
 
@@ -11994,7 +12016,7 @@
 
 
 
-            if (t.content === 'tab-plan' && !window.InspectionApp?.archiveActive) {
+            if (t.content === 'tab-plan') {
 
 
 
@@ -12057,7 +12079,7 @@
       const handlePlanHeaderClick = () => {
         document.getElementById('tab-plan-btn')?.click();
         openMobileSidebar();
-        const targetDate = window.InspectionApp?.archiveActive ? null : AppState.activeInspectionDate || getClosestOrTodayInspectionDate();
+        const targetDate = AppState.activeInspectionDate || getClosestOrTodayInspectionDate();
         if (targetDate) {
           selectInspectionDate(targetDate, false, true); // Keep sidebar open on mobile
         }
@@ -12129,7 +12151,7 @@
 
 
 
-          const plan = AppState.data.inspection_schedule[AppState.activeInspectionDate];
+          const plan = getInspectionSchedule()[AppState.activeInspectionDate];
 
 
 
@@ -15488,7 +15510,13 @@
       get data() { return AppState.data; },
       clearInspectionDate,
       decrypt: payload => SecureDB.decryptFilePayload(payload),
-      archiveActive: false
+      scheduleOverride: null,
+      monthOverride: null,
+      setSchedule(schedule, month) {
+        this.scheduleOverride = schedule;
+        this.monthOverride = month;
+        clearInspectionDate();
+      }
     };
     window.HighwayApp = {
       get data() { return AppState.data; },
@@ -15503,7 +15531,7 @@
       officeFor: findMatchingOffice
     };
   </script>
-  <script type="module" src="./data/inspection-history.mjs?v=20261023-history"></script>
+  <script type="module" src="./data/inspection-history.mjs?v=20261023-calendar"></script>
   <script type="module" src="./data/highway-navigation.mjs?v=20261019-saved-return-4"></script>
   <script type="module" src="./data/quick-navigation.mjs?v=20261019-seoicheon3"></script>
 </body>
