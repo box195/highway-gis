@@ -18,7 +18,7 @@ test('monthly lists filter by branch and equipment, preserve source order, and k
   assert.equal(month.groups[0].date,'2026-04-30');
 });
 
-test('encrypted archive covers April to October with total workbooks preferred and June marked partial',async()=>{
+test('encrypted archive covers April to November with total workbooks preferred and June marked partial',async()=>{
   const html=fs.readFileSync(new URL('../index.html',import.meta.url),'utf8');
   const declaration=html.match(/const MASTER_KEY_SEED\s*=\s*("[^"]+")/);
   const hash=await webcrypto.subtle.digest('SHA-256',new TextEncoder().encode(JSON.parse(declaration[1])));
@@ -27,7 +27,8 @@ test('encrypted archive covers April to October with total workbooks preferred a
   assert.equal(encoded.encrypted,true);assert.equal(encoded.months,undefined);
   const bytes=await webcrypto.subtle.decrypt({name:'AES-GCM',iv:new Uint8Array(encoded.iv)},key,new Uint8Array(encoded.ciphertext));
   const archive=JSON.parse(new TextDecoder().decode(bytes));
-  assert.deepEqual(archive.months.map(m=>m.month),['2026-04','2026-05','2026-06','2026-07','2026-08','2026-09','2026-10']);
+  assert.deepEqual(archive.months.map(m=>m.month),['2026-04','2026-05','2026-06','2026-07','2026-08','2026-09','2026-10','2026-11']);
+  const november=archive.months.at(-1); assert.equal(november.groups.length,33); assert.equal(november.cell_count,109); assert.equal(november.sha256,'ac92224da9136b2522552e7851471fb10ba48c8e430a81eef6d47e8a1c85058c');
   for(const month of archive.months){
     assert.equal(month.source_kind,month.month==='2026-06'?'1팀':'총괄');
     assert.deepEqual(month.branches,['경기광주지사','동서울지사']);

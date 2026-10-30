@@ -1,4 +1,4 @@
-import {archiveMonths,monthLabel,calendarSchedule,INSPECTION_BRANCHES} from './inspection-history-model.mjs?v=20261023-calendar';
+import {archiveMonths,monthLabel,calendarSchedule,INSPECTION_BRANCHES} from './inspection-history-model.mjs?v=20261030-november';
 const app=window.InspectionApp,tab=document.getElementById('tab-plan');
 const $=id=>document.getElementById(id);
 let archive=null,loading=false;
@@ -31,7 +31,7 @@ window.addEventListener('highway:datachange',()=>{if(selectedMonth())applyMonth(
 async function load(){
   if(loading)return;loading=true;retry.hidden=true;labels();
   try{
-    const response=await fetch(new URL('./inspection-history.enc.json?v=20261023-calendar',import.meta.url));
+    const response=await fetch(new URL('./inspection-history.enc.json?v=20261030-november',import.meta.url));
     if(!response.ok)throw new Error('archive download');
     const data=await app.decrypt(await response.json());
     if(data?.version!==1||!data.months?.length)throw new Error('archive format');
