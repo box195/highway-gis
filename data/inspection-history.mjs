@@ -1,7 +1,7 @@
-import {archiveMonths,monthLabel,calendarSchedule,INSPECTION_BRANCHES} from './inspection-history-model.mjs?v=20261030-november';
+import {archiveMonths,monthLabel,calendarSchedule,INSPECTION_BRANCHES} from './inspection-history-model.mjs?v=20261109-latest';
 const app=window.InspectionApp,tab=document.getElementById('tab-plan');
 const $=id=>document.getElementById(id);
-let archive=null,loading=false;
+let archive=null,loading=false,monthSelectedByUser=false;
 function el(tag,className,text){const e=document.createElement(tag);if(className)e.className=className;if(text!==undefined)e.textContent=text;return e;}
 const controls=el('div','space-y-2 p-3 rounded-xl bg-slate-950 border border-slate-800');
 const label=el('label','block text-xs font-bold text-slate-200','조회할 점검계획');label.htmlFor='inspection-month';
@@ -13,9 +13,16 @@ const retry=el('button','text-xs text-cyan-300 underline','이전 달 자료 다
 controls.append(label,select,branchLabel,branch,source,retry);
 tab.insertBefore(controls,$('inspection-calendar-panel'));
 function selectedMonth(){return archive?.months.find(m=>m.month===select.value);}
+function currentPackMonth(){
+  return Object.keys(app.data.inspection_schedule||{}).filter(k=>/^\d{4}-\d{2}-\d{2}$/.test(k)).sort().at(-1)?.slice(0,7);
+}
 function labels(){
-  const month=selectedMonth(),keys=Object.keys(app.data.inspection_schedule||{}).filter(k=>/^\d{4}-\d{2}-\d{2}$/.test(k)).sort(),key=keys.at(-1)?.slice(0,7);
+  const month=selectedMonth(),key=currentPackMonth(),displayMonth=month?.month||key;
   $('inspection-plan-heading').textContent=month?`${monthLabel(month.month)} ITS 점검계획표`:key?`${monthLabel(key)} ITS 점검계획표`:'ITS 점검계획표';
+  const headerLabel=displayMonth?`${Number(displayMonth.slice(5))}월 점검계획`:'점검계획';
+  const headerText=$('btn-plan-header')?.querySelector('span');
+  if(headerText)headerText.textContent=headerLabel;
+  if($('btn-plan-mobile'))$('btn-plan-mobile').title=headerLabel;
   select.options[0].textContent=key?`${monthLabel(key)} · 현재 데이터팩`:'현재 점검계획';
   branch.hidden=branchLabel.hidden=!month;
   source.textContent=month?`${month.source} · 동서울·경기광주${month.source_kind==='1팀'?' · 1팀 자료':' · 총괄파일 기준'}`:loading?'이전 달 자료를 불러오는 중입니다.':archive?'이전 달도 위 목록에서 선택해 달력으로 확인하세요.':'이전 달 자료를 아직 불러오지 못했습니다.';
@@ -25,9 +32,21 @@ function applyMonth(){
   app.setSchedule(month?calendarSchedule(month,app.data,branch.value):null,month?.month||null);
   labels();
 }
-select.addEventListener('change',applyMonth);branch.addEventListener('change',applyMonth);
+function applyDefaultMonth(){
+  if(!archive||!app.data.branch_code)return;
+  if(!monthSelectedByUser){
+    const latest=archiveMonths(archive)[0]?.month;
+    select.value=latest&&latest>(currentPackMonth()||'')?latest:'current';
+  }
+  if(selectedMonth()||app.scheduleOverride)applyMonth();
+  else labels();
+}
+select.addEventListener('change',()=>{monthSelectedByUser=true;applyMonth();});branch.addEventListener('change',applyMonth);
 window.addEventListener('inspection:render',labels);
-window.addEventListener('highway:datachange',()=>{if(selectedMonth())applyMonth();});
+window.addEventListener('highway:datachange',()=>{
+  branch.value=INSPECTION_BRANCHES[app.data.branch_name]?app.data.branch_name:'ALL';
+  applyDefaultMonth();
+});
 async function load(){
   if(loading)return;loading=true;retry.hidden=true;labels();
   try{
@@ -35,7 +54,11 @@ async function load(){
     if(!response.ok)throw new Error('archive download');
     const data=await app.decrypt(await response.json());
     if(data?.version!==1||!data.months?.length)throw new Error('archive format');
+    const previous=select.value;
     archive=data;select.replaceChildren(new Option(select.options[0].textContent,'current'),...archiveMonths(archive).map(m=>new Option(`${monthLabel(m.month)} · ${m.source_kind}`,m.month)));
+    if(monthSelectedByUser)select.value=previous;
+    if(INSPECTION_BRANCHES[app.data.branch_name]&&!app.scheduleOverride)branch.value=app.data.branch_name;
+    applyDefaultMonth();
   }catch{retry.hidden=false;}finally{loading=false;labels();}
 }
 retry.addEventListener('click',load);void load();

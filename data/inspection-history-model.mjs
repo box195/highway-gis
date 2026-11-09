@@ -19,6 +19,30 @@ export function inspectionOfficeName(name){
   const value=name.replace(/\s/g,'').replace(/^한국도로공사/,'').replace(/영$/,'영업소');
   return value==='구리영업소'?'구리남양주영업소':value;
 }
+
+function matchManhole(data, plan, name, route, milepost){
+  const assetName = m => m.name.replace(/^\[[^\]]+\]\s*/, '');
+  let candidates = (data.manholes || []).filter(m =>
+    (!m.branch_code || m.branch_code === plan.branch_code) && assetName(m) === name);
+  if (['수도권제1순환선', '제2중부선', '중부선'].includes(route)) {
+    candidates = candidates.filter(m => !m.route || m.route === route);
+  }
+  const chainage = (milepost || '').trim().replace(/\s*km$/i, '');
+  const bounds = /^\d+(?:\.\d+)?\.?\s*(?:~\s*\d+(?:\.\d+)?)?$/.test(chainage)
+    ? chainage.match(/\d+(?:\.\d+)?/g).map(Number) : [];
+  const gap = m => {
+    if (!bounds.length || !Number.isFinite(m.milepost)) return null;
+    return Math.max(Math.min(...bounds) - m.milepost, m.milepost - Math.max(...bounds), 0);
+  };
+  if (bounds.length) {
+    // Endpoints in the source may omit an adjacent named asset, but must identify the same section.
+    candidates = candidates.filter(m => gap(m) === null || gap(m) <= 1);
+  }
+  if (candidates.length !== 1) return {name, category:name.endsWith('M')?'인공':'수공', type:'위치 확인 필요', section:route, location_unresolved:true};
+  const [match] = candidates;
+  return {...match, ...(gap(match) > 0.05 ? {inspection_milepost_outside:true} : {})};
+}
+
 export function calendarSchedule(month,data={},branch='ALL'){
   const groups=inspectionRows(month,branch).filter(g=>INSPECTION_BRANCHES[g.branch]);
   const plans=new Map();
@@ -31,7 +55,7 @@ export function calendarSchedule(month,data={},branch='ALL'){
     if(!p){
       p={history:true,date:g.date,day:Number(g.date.slice(8)),branch_name:g.branch,branch_code:INSPECTION_BRANCHES[g.branch],type:office?'OFFICE':'LINE',title:`${target} 점검`,history_items:[]};
       if(office)Object.assign(p,{office_name:target,transmission:[],wired:[]});
-      else p.line={section_label:target,milepost_range:g.milepost||'원본 미기재',manhole_names:[],manholes:[],bridge:'',joint_box_count:0};
+      else p.line={section_label:target,milepost_range:g.milepost||'원본 미기재',manhole_names:[],mapped_manhole_names:[],manholes:[],bridge:'',joint_box_count:0};
       plans.set(id,p);
     }
     for(const item of g.items){
@@ -48,8 +72,9 @@ export function calendarSchedule(month,data={},branch='ALL'){
           for(const name of item.value.match(/\d+(?:-\d+)?[MH]/g)||[]){
             if(p.line.manhole_names.includes(name))continue;
             p.line.manhole_names.push(name);
-            const known=(data.manholes||[]).find(m=>m.name===name&&(!m.branch_code||m.branch_code===p.branch_code));
-            p.line.manholes.push(known?{...known}:{name,category:name.endsWith('M')?'인공':'수공',type:'원본 계획',section:target});
+            const match=matchManhole(data,p,name,target,g.milepost);
+            p.line.manholes.push(match);
+            if(!match.location_unresolved)p.line.mapped_manhole_names.push(match.name);
           }
         }else if(/교량/.test(item.equipment))p.line.bridge=[p.line.bridge,item.value].filter(Boolean).join(' · ');
         else if(/접속함체/.test(item.equipment)){p.line.joint_box_count+=Number(item.value)||0;p.line.joint_box_cycle=item.cycle;}

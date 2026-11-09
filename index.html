@@ -2249,7 +2249,7 @@
 
 
 
-              10월 전체 점검 일정 리스트
+              전체 점검 일정 리스트
 
 
 
@@ -4541,7 +4541,7 @@
 
 
 
-          const mhNames = activePlan.line.manhole_names || [];
+          const mhNames = activePlan.line.mapped_manhole_names ?? activePlan.line.manhole_names ?? [];
 
 
 
@@ -8188,7 +8188,7 @@
 
                 ${l.manholes.map((mh, idx) => `
 
-                  <div onclick="focusManholeDirect('${mh.name}', '${item.branch_code || (item.branch_name && item.branch_name.includes('광주') ? 'GWANGJU' : 'DONGSEOUL')}')" class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 cursor-pointer flex items-center justify-between transition">
+                  <div ${mh.location_unresolved ? '' : `onclick="focusManholeDirect('${mh.name}', '${item.branch_code || (item.branch_name && item.branch_name.includes('광주') ? 'GWANGJU' : 'DONGSEOUL')}')"`} class="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 cursor-pointer flex items-center justify-between transition">
 
                     <div class="flex items-center gap-2">
 
@@ -8204,7 +8204,7 @@
 
                         </div>
 
-                        <div class="text-[11px] text-slate-400">${mh.section || l.section_label} · 이정 ${mh.milepost || '-'}km (${mh.bound || '상행선'})</div>
+                        <div class="text-[11px] text-slate-400">${mh.location_unresolved ? '원본 이정과 대조 필요 · 지도 위치 미연결' : `${mh.section || l.section_label} · 이정 ${mh.milepost ?? '-'}km (${mh.bound || '상행선'})${mh.inspection_milepost_outside ? ' · 원본 범위 밖' : ''}`}</div>
 
                       </div>
 
@@ -9060,7 +9060,7 @@
 
 
 
-        const mhNames = plan.line.manhole_names || [];
+        const mhNames = plan.line.mapped_manhole_names ?? plan.line.manhole_names ?? [];
 
 
 
@@ -13430,7 +13430,7 @@
 
 
 
-          const names = item.line.manhole_names || item.line.manholes || [];
+          const names = item.line.mapped_manhole_names ?? item.line.manhole_names ?? item.line.manholes ?? [];
 
 
 
@@ -13954,7 +13954,7 @@
 
 
 
-      const schedule = data.inspection_schedule || {};
+      const schedule = getInspectionSchedule();
 
 
 
@@ -14394,7 +14394,7 @@
 
 
 
-                <div class="text-[10px] text-indigo-300 font-medium">10월 정기 점검 일정</div>
+                <div class="text-[10px] text-indigo-300 font-medium">선택한 달 정기 점검 일정</div>
 
 
 
@@ -14410,7 +14410,7 @@
 
 
 
-                ${Object.keys(schedule).length} <span class="text-xs font-normal text-slate-400">일정</span>
+                ${Object.values(schedule).reduce((n, entry) => n + (entry.plans?.length || 1), 0)} <span class="text-xs font-normal text-slate-400">일정</span>
 
 
 
@@ -15531,7 +15531,7 @@
       officeFor: findMatchingOffice
     };
   </script>
-  <script type="module" src="./data/inspection-history.mjs?v=20261030-november"></script>
+  <script type="module" src="./data/inspection-history.mjs?v=20261109-latest"></script>
   <script type="module" src="./data/highway-navigation.mjs?v=20261019-saved-return-4"></script>
   <script type="module" src="./data/quick-navigation.mjs?v=20261019-seoicheon3"></script>
 </body>
