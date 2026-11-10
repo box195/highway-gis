@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {buildGraph,availableOriginOptions,navigationURL} from '../data/highway-routing.mjs';
+import {buildGraph,availableOriginOptions,navigationURL,route,shortestHighwayRoute,ROADS,distance} from '../data/highway-routing.mjs';
 import {kakaoNavigationURL} from '../data/kakao-navigation.mjs';
 import {navigationCatalog,destinationPoint,savedDestinationRoute} from '../data/navigation-catalog.mjs';
-import {savedOfficeDeparture} from '../data/highway-endpoints.mjs';
+import {savedOfficeDeparture,officeEndpoint} from '../data/highway-endpoints.mjs';
 import {TOLL_GATES} from '../data/highway-tollgates.mjs';
 import {resolveQuickChoices,routeCache,routeCacheKey} from '../data/quick-route-cache.mjs';
 
@@ -88,4 +88,28 @@ test('estimated and source-error destinations are held instead of creating fabri
   }
   const missing={id:'office:missing',kind:'office',label:'미확인',source:{name:'미확인'}};
   await assert.rejects(resolveQuickChoices(args(origin,missing,'saved',{lat:NaN,lng:NaN})),/안내를 보류/);
+});
+
+test('shortest mode blocks unreasonably long five-road loops for adjacent toll offices',()=>{
+  const guri={name:'구리남양주영업소',lat:37.59044,lng:127.15527};
+  const topyeong={name:'토평영업소',lat:37.58198,lng:127.15603};
+  const from=savedOfficeDeparture(guri,[],TOLL_GATES),to=officeEndpoint(topyeong,[],TOLL_GATES);
+  const raw=route(graph,from,to,null,null,{distanceFirst:true});
+  assert.ok(raw.length>35000 && raw.length>4*distance(from,to));
+  assert.throws(()=>shortestHighwayRoute(graph,from,to),/과도한 우회 경로/);
+  const selected=availableOriginOptions(graph,from,to,{singleShortest:true});
+  assert.equal(selected.choices.length,0);
+  assert.match(selected.rejected[0].error,/안내를 보류/);
+});
+
+test('shortest mode adds only verified motorway mainline guides without discarding essential exit guides',()=>{
+  const output=shortestHighwayRoute(graph,start,songpaGoal);
+  assert.ok(output.waypoints.length<=5);
+  assert.ok(output.waypoints.every(p=>ROADS.some(r=>p.name.includes(r))));
+  assert.ok(output.waypoints.every(p=>Number.isFinite(p.lat)&&Number.isFinite(p.lng)));
+  assert.ok(output.waypoints.some(p=>/진출 방향|분기 전|본선 유지/.test(p.name)));
+  const n=new URL(navigationURL(output,'https://example.com')).searchParams;
+  const k=new URL(kakaoNavigationURL(output)).searchParams;
+  assert.equal(n.get('v'+output.waypoints.length+'lat'),String(output.waypoints.at(-1).lat));
+  assert.equal(k.get(output.waypoints.length===1?'vp':'vp'+output.waypoints.length),String(output.waypoints.at(-1).lat)+','+String(output.waypoints.at(-1).lng));
 });

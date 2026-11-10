@@ -240,7 +240,7 @@ export function route(graph,start,goal,heading=null,sourceKey=null,options={}){
   const roads=[];for(const e of edges)if(e.road&&roads.at(-1)!==e.road)roads.push(e.road);
   let length=0;for(let i=1;i<points.length;i++)length+=distance(points[i-1],points[i]);
   const arrival=best.t.anchor;
-  const waypoints=makeWaypoints(points,pointRoads,arrival,{anchoredStart:!!start.snapToHighway,anchoredGoal:!!goal.snapToHighway,branchExit:goal.gateName==='서하남IC'});
+  const waypoints=makeWaypoints(points,pointRoads,arrival,{anchoredStart:!!start.snapToHighway,anchoredGoal:!!goal.snapToHighway,branchExit:goal.gateName==='서하남IC',reinforceHighway:distanceFirst});
   // The highway search stops at a directed exit. Include only its verified
   // public ramp geometry to the actual exit booth, never the office building
   // or an arbitrary surface-road projection underneath the motorway.
@@ -280,9 +280,15 @@ export function route(graph,start,goal,heading=null,sourceKey=null,options={}){
   return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap,arrivalDirection,arrivalBearing:arrival?.bearing,arrivalGateId:arrival?.gateId,arrivalOffset:arrival?.offset,arrivalAtToll:!!arrival&&!goal.providerPlace&&!goal.officeDestination&&arrival.kind!=='ic-exit'&&(arrival.kind==='through'||!!arrival.destination),arrivalAtOffice:!!goal.officeDestination&&!goal.officeFrontExitToll,arrivalAtOfficeFrontToll:!!goal.officeFrontExitToll};
 }
 export function shortestHighwayRoute(graph,start,goal){
-  return {...route(graph,start,goal,Number.isFinite(start?.heading)?start.heading:null,null,{distanceFirst:true}),kind:'highway-shortest',routeVerification:'app-embedded-osm-directed-network'};
+  const result=route(graph,start,goal,Number.isFinite(start?.heading)?start.heading:null,null,{distanceFirst:true});
+  // The five-road public graph omits surface-road U-turns and some interchanges.
+  // Do not present a motorway-scale reversal of a nearby trip as a normal shortest route.
+  // Unknown access must fail closed, never become an invented road shortcut.
+  if(result.length>Math.max(35000,4*distance(start,goal)))
+    throw new Error('허용된 5개 고속도로만으로는 과도한 우회 경로가 계산됩니다. 확인된 진출입 연결이 없어 이 경로의 안내를 보류합니다.');
+  return {...result,kind:'highway-shortest',routeVerification:'app-embedded-osm-directed-network'};
 }
-export function makeWaypoints(points,roads,arrival=null,{anchoredStart=false,anchoredGoal=false,branchExit=false}={}){
+export function makeWaypoints(points,roads,arrival=null,{anchoredStart=false,anchoredGoal=false,branchExit=false,reinforceHighway=false}={}){
   const cum=[0];for(let i=1;i<points.length;i++)cum.push(cum.at(-1)+distance(points[i-1],points[i]));
   const total=cum.at(-1);if(total<100)return [];
   // One useful anchor per motorway run, located on the main carriageway.
@@ -323,6 +329,24 @@ export function makeWaypoints(points,roads,arrival=null,{anchoredStart=false,anc
   // never discard an intermediate motorway or the pre-plaza arrival guide.
   if(picks.length>5&&anchoredStart&&runs.length>1&&picks[0]?.label==='분기 전')picks.shift();
   if(picks.length>5)throw new Error('이 경로는 노선 변경을 표현하는 데 경유지가 5개 넘게 필요합니다. 목적지를 나눠서 선택해주세요.');
+  if(reinforceHighway){
+    // Keep every essential junction/exit guide. Use only spare provider slots
+    // for more main-carriageway checkpoints; never place a guide on a ramp.
+    // Waypoints encourage a motorway itinerary but CANNOT lock the map provider.
+    for(let step=0;step<5 && picks.length<5;step++){
+      let longest=null;
+      for(const run of runs){
+        const marks=[run.from,...picks.filter(p=>p.d>run.from&&p.d<run.to).map(p=>p.d),run.to].sort((a,b)=>a-b);
+        for(let i=1;i<marks.length;i++){
+          const gap=marks[i]-marks[i-1];
+          if(gap>14000&&(!longest||gap>longest.gap))longest={run,gap,at:(marks[i]+marks[i-1])/2};
+        }
+      }
+      if(!longest)break;
+      const before=picks.length;at(longest.run,longest.at,'본선 유지');
+      if(picks.length===before)break;
+    }
+  }
   const selected=picks.sort((a,b)=>a.d-b.d);
   return selected.map(({d,road,label},k)=>{
     let i=cum.findIndex(v=>v>=d);if(i<1)i=1;

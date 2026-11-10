@@ -1,3 +1,10 @@
+## 2026-11-10 strict five-highway correction
+
+- The embedded motorway graph still admits only the five named motorways and their verified inter-motorway links. Distance-first routing is **not** external-provider highway-only mode.
+- A road-network detour longer than both 35 km and four times the origin–destination aerial separation is now rejected, rather than being shown as a plausible shortest trip (observed nearby office pairs previously yielded loops exceeding 100 km).
+- Spare waypoint slots, up to the provider's five-point limit, are assigned to verified mainline highway portions, retaining mandatory junction/exit guides. This improves map-provider guidance but cannot force adherence to a named highway.
+- Both navigation screens explicitly tell users that Kakao/Naver can reroute onto unlisted roads; actual mobile routing is not validated. Saved route recipes and destination-only results are unchanged.
+
 ## 2026-11-10 navigation behavior (supersedes older UI descriptions)
 
 - Quick navigation (`/#navigation`) and facility-detail navigation share `resolveQuickChoices`. The user may select the closest GPS office or an explicit origin hub, and the mobile map provider remains selectable.

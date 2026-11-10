@@ -1,8 +1,8 @@
 // Persistent, bounded quick-navigation choices. No GPS samples or GIS records.
 import {ROUTE_DATA_REVISION} from './route-cache-revision.mjs?v=20261019-seoicheon3';
 import {hybridSavedReturn,isHybridSavedReturn,directSavedReturn,isDirectSavedReturn} from './hybrid-saved-return.mjs?v=20261019-seoicheon3';
-import {isRegisteredSavedPair,uncertainCoordinate} from './navigation-catalog.mjs?v=20261110-shortest1';
-import {validPoint} from './highway-routing.mjs?v=20261110-shortest1';
+import {isRegisteredSavedPair,uncertainCoordinate} from './navigation-catalog.mjs?v=20261110-strict2';
+import {validPoint} from './highway-routing.mjs?v=20261110-strict2';
 export const CACHE_KEY='highway-quick-choices-v1';
 export const CACHE_TTL_MS=7*86400000;
 export const CACHE_MAX=32;

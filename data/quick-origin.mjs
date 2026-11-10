@@ -1,5 +1,5 @@
 // Quick-navigation source choices are distinct from arrival-only anchors.
-import {navigationCatalog,uncertainCoordinate} from './navigation-catalog.mjs?v=20261110-shortest1';
+import {navigationCatalog,uncertainCoordinate} from './navigation-catalog.mjs?v=20261110-strict2';
 import {SONGPA_RETURN_START} from './saved-navigation.mjs?v=20261019-saved-return-4';
 import {savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261019-saved-return-4';
 import {validPoint} from './highway-routing.mjs?v=20261019-s3-dscoord-ga4';

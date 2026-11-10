@@ -1,10 +1,10 @@
-import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261110-shortest1';
-import {ROAD_QUERY,buildGraph,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261110-shortest1';
-import {officeEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261110-shortest1';
+import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261110-strict2';
+import {ROAD_QUERY,buildGraph,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261110-strict2';
+import {officeEndpoint,nearestOfficeDeparture,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261110-strict2';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-s3-dscoord-ga4';
-import {navigationCatalog,destinationPoint,savedDestinationRoute,uncertainCoordinate} from './navigation-catalog.mjs?v=20261110-shortest1';
-import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261110-shortest1';
+import {navigationCatalog,destinationPoint,savedDestinationRoute,uncertainCoordinate} from './navigation-catalog.mjs?v=20261110-strict2';
+import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261110-strict2';
 
 let generation=0,previewLayer=null,currentResult=null,openedSelection=null;
 const button=document.getElementById('btn-highway-navigation');
@@ -24,8 +24,8 @@ modal.innerHTML=`<form method="dialog" class="hn-header"><h2 id="highway-navigat
 <button type="button" id="hn-build" class="hn-primary">경로 계산하기</button>
 <p id="hn-status" role="status" aria-live="polite"></p><div id="hn-preview"></div>
 <a id="hn-launch" class="hn-primary" hidden>선택한 지도앱으로 열기</a>
-<p id="hn-launch-note" class="hn-muted" hidden>지도앱은 전달받은 지점 사이를 다시 탐색합니다. GIS의 경로와 같다고 보장할 수 없습니다.</p>
-<p id="hn-highway-note" class="hn-muted">고속도로 결과와 거리는 앱에 포함된 도로망 기준입니다. 일방통행·진출입이 확인되지 않는 구간은 경로로 만들지 않습니다. 광암터널관리동은 기존 판교방향 본선 조건을 유지합니다.</p>
+<p id="hn-launch-note" class="hn-muted" hidden>지도앱은 지정 5개 고속도로만 이용하도록 강제할 수 없습니다. GIS 경로와 다를 수 있으니 출발 전 실제 경로와 IC 진출입을 반드시 확인하세요.</p>
+<p id="hn-highway-note" class="hn-muted">고속도로 결과와 거리는 앱에 포함된 도로망 기준입니다. 일방통행·진출입이 확인되지 않거나 과도하게 우회해야 하는 구간은 경로로 만들지 않습니다. 광암터널관리동은 기존 판교방향 본선 조건을 유지합니다.</p>
 <details id="hn-highway-data"><summary>공개 도로 데이터</summary><p class="hn-muted">OpenStreetMap의 허용 노선 5개를 사용합니다. 시설물 좌표를 도로 데이터 서버에 보내지 않습니다.</p>
 <label for="hn-import">도로 데이터 가져오기 (Overpass JSON)</label><input id="hn-import" type="file" accept=".json,application/json">
 <button id="hn-query" type="button">도로 조회문 복사</button><p class="hn-muted"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors · ODbL</a></p></details></div>`;
@@ -108,7 +108,7 @@ function renderResult(result,start,choiceCount){
   title.textContent=`${result.start.name||start.officeName||'출발지'} → ${result.goal.name||'목적지'}`;box.append(title);
   const note=document.createElement('p');note.className='hn-muted';
   if(result.kind==='destination-only')note.textContent='목적지 안내 · 등록 경유지 없음. 경로 제한 조건은 따로 지정하지 않았습니다. 지도앱이 실제 주행 경로를 계산합니다.';
-  else if(result.kind==='highway-shortest')note.textContent=`앱에 포함된 도로망 기준 약 ${(result.length/1000).toFixed(1)}km · 최단거리 1개. 실제 지도앱 경로 및 소요거리는 다를 수 있습니다.`;
+  else if(result.kind==='highway-shortest')note.textContent=`앱에 포함된 도로망 기준 약 ${(result.length/1000).toFixed(1)}km · 최단거리 1개. 지도앱에서는 허용 노선 5개만 이용하도록 강제할 수 없으므로 실제 경로를 확인하세요.`;
   else note.textContent='등록된 저장경로의 출발·경유·도착 순서입니다. 실제 주행 경로는 지도앱에서 확인하세요.';
   box.append(note);
   if(result.roads?.length){const p=document.createElement('p');p.className='hn-muted';p.textContent=result.roads.map(n=>n.replace('고속도로','선')).join(' → ');box.append(p);}
