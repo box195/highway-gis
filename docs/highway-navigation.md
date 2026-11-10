@@ -1,3 +1,11 @@
+## Current GPS departure (2026-11-10)
+
+- Quick navigation and the facility-detail dialog now use the device's current GPS coordinate, rather than replacing it with the closest saved office.
+- Manual departures keep their registered coordinates; saved route recipes are unchanged.
+- A fresh browser GPS fix (accuracy <=150m) is required, with no automatic office fallback. The exact live GPS coordinate is displayed in the route source notice.
+- Route graph mainline projection is for internal shortest-path search only; the external navigator receives the raw GPS origin. It determines the legal entrance from that position.
+- Live GPS routes are not written to persistent route-choice cache; stored-office route caching remains enabled.
+
 ## 2026-11-10 strict five-highway correction
 
 - The embedded motorway graph still admits only the five named motorways and their verified inter-motorway links. Distance-first routing is **not** external-provider highway-only mode.

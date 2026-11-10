@@ -48,6 +48,16 @@ export function manualOriginDeparture(item,data={},gates=TOLL_GATES){
     snapToHighway:item.id!=='junction:songpa',heading:null,speed:0,accuracy:null,
     originId:item.id,departureMode:'manual-junction'};
 }
+export function gpsCurrentDeparture(sample){
+  if(!hasPoint(sample)||!Number.isFinite(sample?.accuracy)||sample.accuracy<0||sample.accuracy>150)
+    throw new Error('현재 GPS 좌표가 없거나 정확도가 150m를 초과합니다. 위치 권한과 휴대폰의 정확한 위치 설정을 확인해 주세요.');
+  // Keep the device's exact coordinates. Graph snapping is internal only.
+  return {lat:Number(sample.lat),lng:Number(sample.lng),name:'현재 위치',officeName:'현재 위치',
+    departureMode:'gps-current',snapToHighway:false,accuracy:sample.accuracy,
+    speed:Number.isFinite(sample.speed)?sample.speed:null,
+    heading:Number.isFinite(sample.heading)&&sample.speed>2?sample.heading:null};
+}
+
 export async function resolveQuickOrigin(id,choices,data,gpsDeparture){
   const item=id&&choices.find(i=>i.id===id);
   return item?manualOriginDeparture(item,data):gpsDeparture();

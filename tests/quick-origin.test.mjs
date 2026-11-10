@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {quickOriginChoices,getOriginPreference,setOriginPreference,manualOriginDeparture,resolveQuickOrigin,ORIGIN_PREFERENCE_KEY} from '../data/quick-origin.mjs';
+import {quickOriginChoices,getOriginPreference,setOriginPreference,manualOriginDeparture,resolveQuickOrigin,gpsCurrentDeparture,ORIGIN_PREFERENCE_KEY} from '../data/quick-origin.mjs';
 import {routeCacheKey} from '../data/quick-route-cache.mjs';
 import {navigationCatalog,savedDestinationRoute,destinationPoint} from '../data/navigation-catalog.mjs';
 import {buildGraph,availableOriginOptions,nearestHighwayPoint} from '../data/highway-routing.mjs';
@@ -44,7 +44,7 @@ test('selected office and IC/JC need no GPS and create source-side road topology
   assert.ok(route.choices.length>0);
   assert.equal(calls,0);
 });
-test('default and unknown origin selection use nearest GPS callback with no direct current-location storage',async()=>{
+test('default and unknown origin selection use current GPS callback without choosing a nearby office',async()=>{
   const choices=quickOriginChoices(data);let gpsCalls=0;
   const gps=async()=>{gpsCalls++;return {officeName:'nearest',lat:37.4,lng:127.2,departureMode:'nearest-office'};};
   assert.equal((await resolveQuickOrigin('',choices,data,gps)).officeName,'nearest');
@@ -86,4 +86,33 @@ test('top Suwon SAVED RETURN control invokes stored route while retaining origin
  assert.match(js,/id="qn-return-saved"/);assert.match(js,/getOrigin()/);
  assert.ok(js.includes("qn-return-saved').addEventListener"));assert.ok(js.includes("begin(item,'saved')"));
  assert.ok(js.includes("qn-origin').addEventListener('change'"));
+});
+
+test('actual GPS origin stays at the device coordinate instead of using any office',async()=>{
+  const position={lat:37.26694,lng:127.10244,accuracy:13.4,speed:0,heading:270};
+  const from=gpsCurrentDeparture(position);
+  assert.deepEqual([from.lat,from.lng],[position.lat,position.lng]);
+  assert.equal(from.name,'현재 위치');
+  assert.equal(from.officeName,'현재 위치');
+  assert.equal(from.departureMode,'gps-current');
+  assert.equal(from.snapToHighway,false);
+  assert.equal(from.roadHint,undefined);
+  assert.equal(from.gateName,undefined);
+  assert.equal(from.heading,null);
+  assert.equal(from.accuracy,13.4);
+  const chosen=await resolveQuickOrigin('',quickOriginChoices(data),data,async()=>gpsCurrentDeparture(position));
+  assert.deepEqual([chosen.lat,chosen.lng],[position.lat,position.lng]);
+  assert.throws(()=>gpsCurrentDeparture({...position,accuracy:151}),/GPS/);
+  assert.throws(()=>gpsCurrentDeparture({...position,accuracy:undefined}),/GPS/);
+  assert.throws(()=>gpsCurrentDeparture({...position,lat:NaN}),/GPS/);
+});
+test('both UI entry points request raw GPS and keep explicit manual office controls',()=>{
+  const quick=fs.readFileSync(new URL('../data/quick-navigation.mjs',import.meta.url),'utf8');
+  const detail=fs.readFileSync(new URL('../data/highway-navigation.mjs',import.meta.url),'utf8');
+  assert.match(quick,/gps\(\)\.then\(gpsCurrentDeparture\)/);
+  assert.doesNotMatch(quick,/nearestOfficeDeparture|gpsContext/);
+  assert.match(detail,/gpsCurrentDeparture\(raw\)/);
+  assert.doesNotMatch(detail,/nearestOfficeDeparture/);
+  assert.match(detail,/value="gps-current"/);
+  assert.match(detail,/value="saved-office"/);
 });

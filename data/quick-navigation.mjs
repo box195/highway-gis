@@ -1,16 +1,14 @@
 import {loadGraph,gps} from './navigation-runtime.mjs?v=20261019-s3-dscoord-ga4';
-import {availableOriginOptions,navigationURL} from './highway-routing.mjs?v=20261110-strict2';
-import {nearestOfficeDeparture} from './highway-endpoints.mjs?v=20261019-saved-return-4';
-import {quickOriginChoices,getOriginPreference,setOriginPreference,resolveQuickOrigin} from './quick-origin.mjs?v=20261110-strict2';
+import {availableOriginOptions,navigationURL} from './highway-routing.mjs?v=20261110-gps1';
+import {quickOriginChoices,getOriginPreference,setOriginPreference,resolveQuickOrigin,gpsCurrentDeparture} from './quick-origin.mjs?v=20261110-gps1';
 import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-s3-dscoord-ga4';
-import {TOLL_GATES} from './highway-tollgates.mjs';
-import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261110-strict2';
-import {navigationCatalog,destinationPoint,savedDestinationRoute,returnDestination} from './navigation-catalog.mjs?v=20261110-strict2';
+import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261110-gps1';
+import {navigationCatalog,destinationPoint,savedDestinationRoute,returnDestination} from './navigation-catalog.mjs?v=20261110-gps1';
 
 const page=document.createElement('section');page.id='quick-navigation-page';page.hidden=true;page.setAttribute('aria-label','빠른 길찾기');
-page.innerHTML=`<header class="qn-header"><button id="qn-back" type="button">← GIS</button><h1>빠른 길찾기</h1><label class="qn-origin">출발<select id="qn-origin" aria-label="출발 거점"><option value="">현재 위치 · 가까운 거점</option></select></label><label class="qn-provider">지도앱<select id="qn-provider" aria-label="지도앱"><option value="kakao">카카오맵</option><option value="naver">네이버지도</option></select></label></header>
+page.innerHTML=`<header class="qn-header"><button id="qn-back" type="button">← GIS</button><h1>빠른 길찾기</h1><label class="qn-origin">출발<select id="qn-origin" aria-label="출발 거점"><option value="">현재 위치 (GPS)</option></select></label><label class="qn-provider">지도앱<select id="qn-provider" aria-label="지도앱"><option value="kakao">카카오맵</option><option value="naver">네이버지도</option></select></label></header>
 <main class="qn-content"><div class="qn-return"><button id="qn-return-highway" type="button"><small>수원영</small><strong>고속도로 복귀</strong></button><button id="qn-return-saved" type="button"><small>수원영</small><strong>저장경로 복귀</strong></button></div>
-<p class="qn-note">출발 거점을 고르거나 현재 위치 기준 가까운 거점을 사용하세요. 고속도로는 최단거리 1개, 저장경로가 없으면 등록된 목적지 좌표를 경유지 없이 지도앱에 전달합니다.</p><p id="qn-page-status" role="status"></p><div id="qn-destinations"></div></main>`;
+<p class="qn-note">기본 출발지는 휴대폰의 실제 현재 위치(GPS)입니다. 다른 거점에서 출발하려면 위에서 직접 선택하세요. GPS를 못 받으면 임의의 거점으로 바꾸지 않습니다.</p><p id="qn-page-status" role="status"></p><div id="qn-destinations"></div></main>`;
 const flow=document.createElement('dialog');flow.id='quick-navigation-flow';flow.setAttribute('aria-labelledby','qn-flow-title');
 flow.innerHTML=`<header class="qn-flow-header"><h2 id="qn-flow-title">경로 선택</h2><button id="qn-flow-close" type="button" aria-label="길찾기 선택창 닫기">✕</button></header><div class="qn-flow-body"><p id="qn-flow-source" class="qn-note"></p><p id="qn-flow-status" role="status" aria-live="polite"></p><div id="qn-flow-options"></div></div>`;
 page.append(flow);document.body.append(page);
@@ -25,7 +23,7 @@ const style=document.createElement('style');style.textContent=`
 `;document.head.append(style);
 const $=id=>document.getElementById(id);
 const data=()=>window.HighwayApp.navigationData||window.HighwayApp.data||{};
-let groups=[],serial=0,prepared=null,activeItem=null,gpsContext=null,gpsPending=null,pushed=false,oldOverflow='',previousFocus=null;
+let groups=[],serial=0,prepared=null,activeItem=null,gpsPending=null,pushed=false,oldOverflow='',previousFocus=null;
 const inertState=new Map();
 try{$('qn-provider').value=localStorage.getItem('highway-navigation-provider')==='naver'?'naver':'kakao';}catch{}
 function localStorageSafe(){try{return window.localStorage;}catch{return null;}}
@@ -35,7 +33,7 @@ function render(){
   groups=navigationCatalog(data());$('qn-destinations').replaceChildren();
   const origins=quickOriginChoices(data()),select=$('qn-origin');
   const previous=select.value;
-  select.replaceChildren(new Option('현재 위치 · 가까운 거점',''));
+  select.replaceChildren(new Option('현재 위치 (GPS)',''));
   for(const [group,label] of [['saved-hubs','영업소 · 지사 · 거점'],['junctions','IC · JC']]){
     const entries=origins.filter(o=>o.group===group);
     if(!entries.length)continue;
@@ -68,7 +66,7 @@ function showPage(push=true){
   if(push&&location.hash!=='#navigation'){history.pushState({quickNavigation:true},'',`${location.pathname}${location.search}#navigation`);pushed=true;}
 }
 function hidePage(){
-  if(flow.open)flow.close();clearFlow();gpsContext=null;page.hidden=true;document.body.style.overflow=oldOverflow;
+  if(flow.open)flow.close();clearFlow();page.hidden=true;document.body.style.overflow=oldOverflow;
   for(const [el,value] of inertState)el.inert=value;inertState.clear();previousFocus?.focus?.();
 }
 function backToGIS(){
@@ -95,12 +93,9 @@ async function getOrigin(){
   return resolveQuickOrigin($('qn-origin').value,quickOriginChoices(data()),data(),gpsOrigin);
 }
 async function gpsOrigin(){
-  const now=Date.now();
-  if(!gpsContext||now-gpsContext.time>30000){
-    if(!gpsPending)gpsPending=gps().then(point=>{gpsContext={point,time:Date.now()};}).finally(()=>{gpsPending=null;});
-    await gpsPending;
-  }
-  return nearestOfficeDeparture(gpsContext.point,data().offices||[],data().interchanges||[],TOLL_GATES);
+  // Request a fresh fix for every navigation request (GPS maximumAge: 0).
+  if(!gpsPending)gpsPending=gps().then(gpsCurrentDeparture).finally(()=>{gpsPending=null;});
+  return gpsPending;
 }
 async function prepare(mode){
   clearFlow();const token=serial,item=activeItem;$('qn-flow-title').textContent=item.label;
@@ -108,9 +103,9 @@ async function prepare(mode){
   try{
     const start=await getOrigin();
     if(token!==serial||!flow.open||page.hidden)return;
-    $('qn-flow-source').textContent=start.departureMode==='nearest-office'?
-      `출발: ${start.officeName} · 현재 위치에서 직선 약 ${(start.officeDistance/1000).toFixed(1)}km`:
-      `출발: ${start.officeName} · 직접 선택한 거점`;
+    $('qn-flow-source').textContent=start.departureMode==='gps-current'?
+      '출발: 현재 위치 (GPS 정확도 ±'+Math.round(start.accuracy)+'m · '+start.lat.toFixed(5)+', '+start.lng.toFixed(5)+')':
+      '출발: '+start.officeName+' · 직접 선택한 출발 거점';
     const {choices}=await resolveQuickChoices({
       start,item,mode,destination:destinationPoint(item,data()),cache:routeCache(),
       loadGraph,availableOriginOptions,savedDestinationRoute,data:data()
@@ -163,5 +158,5 @@ $('qn-provider').addEventListener('change',()=>{try{localStorage.setItem('highwa
 for(const id of ['btn-quick-navigation','btn-quick-navigation-mobile'])$(id)?.addEventListener('click',()=>showPage());
 const syncHistory=()=>{if(location.hash==='#navigation')showPage(false);else if(!page.hidden)hidePage();};
 window.addEventListener('popstate',syncHistory);window.addEventListener('hashchange',syncHistory);
-window.addEventListener('highway:datachange',()=>{gpsContext=null;if(!page.hidden){if(flow.open)flow.close();render();}});
+window.addEventListener('highway:datachange',()=>{if(!page.hidden){if(flow.open)flow.close();render();}});
 syncHistory();

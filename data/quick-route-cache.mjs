@@ -14,7 +14,8 @@ const hash=value=>{
   return h.toString(16).padStart(16,'0');
 };
 export function routeCacheKey(start,item,mode,destination){
-  if(!['highway','saved'].includes(mode)||!start?.officeName||!item?.id||!destination)return null;
+  // Raw device GPS positions must never enter persistent route-choice storage.
+  if(start?.departureMode==='gps-current'||!['highway','saved'].includes(mode)||!start?.officeName||!item?.id||!destination)return null;
   // Hash all source/destination topology selectors. Never persist raw GIS or GPS.
   return hash([ROUTE_DATA_REVISION,mode,item.id,start.originId||null,start.departureMode||null,start.officeName,start.gateName,
     start.lat,start.lng,start.roadHint,item.source?.lat,item.source?.lng,item.source?.coordinate_status,

@@ -6,7 +6,8 @@ import {kakaoNavigationURL} from '../data/kakao-navigation.mjs';
 import {navigationCatalog,destinationPoint,savedDestinationRoute} from '../data/navigation-catalog.mjs';
 import {savedOfficeDeparture,officeEndpoint} from '../data/highway-endpoints.mjs';
 import {TOLL_GATES} from '../data/highway-tollgates.mjs';
-import {resolveQuickChoices,routeCache,routeCacheKey} from '../data/quick-route-cache.mjs';
+import {gpsCurrentDeparture} from '../data/quick-origin.mjs';
+import {resolveQuickChoices,routeCache,routeCacheKey,CACHE_KEY} from '../data/quick-route-cache.mjs';
 
 const graph=buildGraph(JSON.parse(fs.readFileSync(new URL('../data/highway-roads.json',import.meta.url),'utf8')));
 const suwon={name:'수원신갈영업소',lat:37.26694,lng:127.10244};
@@ -112,4 +113,24 @@ test('shortest mode adds only verified motorway mainline guides without discardi
   const k=new URL(kakaoNavigationURL(output)).searchParams;
   assert.equal(n.get('v'+output.waypoints.length+'lat'),String(output.waypoints.at(-1).lat));
   assert.equal(k.get(output.waypoints.length===1?'vp':'vp'+output.waypoints.length),String(output.waypoints.at(-1).lat)+','+String(output.waypoints.at(-1).lng));
+});
+
+test('live device GPS is sent unchanged to Kakao and Naver and never cached persistently',async()=>{
+  const gpsStart=gpsCurrentDeparture({lat:37.26694,lng:127.10244,accuracy:14,speed:0,heading:null});
+  const storage=store();
+  assert.equal(routeCacheKey(gpsStart,songpa,'highway',songpaGoal),null);
+  assert.equal(routeCacheKey(gpsStart,songpa,'saved',songpaGoal),null);
+  const result=await resolveQuickChoices({...args(gpsStart,songpa,'highway',songpaGoal),cache:routeCache(storage,3000)});
+  const route=result.choices[0].result;
+  assert.equal(route.kind,'highway-shortest');
+  assert.deepEqual([route.start.lat,route.start.lng],[gpsStart.lat,gpsStart.lng]);
+  assert.equal(new URL(kakaoNavigationURL(route)).searchParams.get('sp'),'37.26694,127.10244');
+  assert.equal(new URL(navigationURL(route,'https://example.test/')).searchParams.get('slat'),'37.26694');
+  assert.equal(new URL(navigationURL(route,'https://example.test/')).searchParams.get('slng'),'127.10244');
+  assert.equal(storage.getItem(CACHE_KEY),null);
+  const saved=await resolveQuickChoices({...args(gpsStart,songpa,'saved',songpaGoal),cache:routeCache(storage,3001)});
+  assert.equal(saved.choices[0].result.kind,'destination-only');
+  assert.equal(saved.choices[0].result.waypoints.length,0);
+  assert.equal(new URL(kakaoNavigationURL(saved.choices[0].result)).searchParams.get('sp'),'37.26694,127.10244');
+  assert.equal(storage.getItem(CACHE_KEY),null);
 });
