@@ -295,6 +295,7 @@
 
 
   <script src="./data/bridge_ui.js?v=20261008_bridges2"></script>
+  <script src="./data/office-inventory.js?v=20261110"></script>
 
   <style>
 
@@ -3359,6 +3360,11 @@
 
 
       </div>
+      <section class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-1.5" aria-label="거점 자산관리대장">
+        <button type="button" data-office-inventory-import class="rounded-lg bg-cyan-900 px-3 py-2 font-semibold text-xs text-cyan-100">자산관리대장 불러오기</button>
+        <p class="text-[11px] text-slate-400">GIS 자산관리대장 JSON을 선택하면 이 브라우저에서만 사용합니다.</p>
+        <p role="status" data-office-inventory-status class="text-[11px] text-cyan-300 empty:hidden"></p>
+      </section>
 
 
 
@@ -5013,7 +5019,7 @@
 
 
 
-          const deviceCount = off.devices ? off.devices.length : 0;
+          const deviceCount = OfficeInventory.devices(off).length;
 
 
 
@@ -6272,7 +6278,7 @@
 
 
 
-        const devices = item.devices || [];
+
 
 
 
@@ -6281,6 +6287,7 @@
 
 
         body.innerHTML = `
+          ${OfficeInventory.render(item)}
 
 
 
@@ -6296,7 +6303,7 @@
 
 
 
-              <span class="font-bold text-white text-xs md:text-sm">${item.org || item.name}</span>
+              <span class="font-bold text-white text-xs md:text-sm">${bridgeHtml(item.org || item.name || "미기재")}</span>
 
 
 
@@ -6312,7 +6319,7 @@
 
 
 
-              <span class="font-medium text-cyan-300">${item.section}</span>
+              <span class="font-medium text-cyan-300">${bridgeHtml(item.section || "미기재")}</span>
 
 
 
@@ -6328,7 +6335,7 @@
 
 
 
-              <span class="text-slate-200 text-right max-w-[200px] truncate">${item.address || '-'}</span>
+              <span class="text-slate-200 text-right max-w-[200px] truncate">${bridgeHtml(item.address || "미기재")}</span>
 
 
 
@@ -6348,7 +6355,7 @@
 
 
 
-              <span class="text-amber-300 font-medium text-right max-w-[200px] truncate">${item.jibun_address}</span>
+              <span class="text-amber-300 font-medium text-right max-w-[200px] truncate">${bridgeHtml(item.jibun_address)}</span>
 
 
 
@@ -6360,7 +6367,7 @@
 
 
 
-              ℹ️ ${item.desc || '한국도로공사 관할 주요 거점 시설물'}
+              ℹ️ ${bridgeHtml(item.desc || "한국도로공사 관할 주요 거점 시설물")}
 
 
 
@@ -6408,7 +6415,7 @@
 
 
 
-                <span class="text-cyan-300 font-bold">${item.lat ? item.lat.toFixed(6) : 'N/A'}</span>
+                <span class="text-cyan-300 font-bold">${item.lat && Number.isFinite(Number(item.lat)) ? Number(item.lat).toFixed(6) : '미기재'}</span>
 
 
 
@@ -6424,7 +6431,7 @@
 
 
 
-                <span class="text-cyan-300 font-bold">${item.lng ? item.lng.toFixed(6) : 'N/A'}</span>
+                <span class="text-cyan-300 font-bold">${item.lng && Number.isFinite(Number(item.lng)) ? Number(item.lng).toFixed(6) : '미기재'}</span>
 
 
 
@@ -6457,166 +6464,6 @@
 
 
 
-
-
-
-          <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2">
-
-
-
-            <div class="flex items-center justify-between">
-
-
-
-              <div class="text-[11px] font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
-
-
-
-                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
-
-
-
-                <span>구내 방범 및 통신 설비 현황 (자산관리대장)</span>
-
-
-
-              </div>
-
-
-
-              ${devices.length > 0 ? `
-
-
-
-                <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-mono font-bold border border-emerald-500/30">
-
-
-
-                  총 ${devices.length}대
-
-
-
-                </span>
-
-
-
-              ` : ''}
-
-
-
-            </div>
-
-
-
-
-
-
-
-            <div class="space-y-2 max-h-72 overflow-y-auto pr-0.5">
-
-
-
-              ${devices.length === 0 ? `
-
-
-
-                <div class="text-center text-slate-500 py-4 text-xs bg-slate-900 rounded-lg">
-
-
-
-                  📍 세부 장비 목록 없음 (위치 정보 등록 거점)
-
-
-
-                </div>
-
-
-
-              ` : devices.map(d => `
-
-
-
-                <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-xs space-y-1.5">
-
-
-
-                  <div class="flex items-center justify-between border-b border-slate-800 pb-1">
-
-
-
-                    <div class="font-bold text-cyan-300 text-xs flex items-center gap-1.5">
-
-
-
-                      <span class="text-slate-400 font-mono text-[10px]">#${d.seq}</span>
-
-
-
-                      <span>${d.name}</span>
-
-
-
-                    </div>
-
-
-
-                    <span class="text-[10px] px-1.5 py-0.2 rounded bg-slate-800 text-amber-300 font-medium">${d.equip_name}</span>
-
-
-
-                  </div>
-
-
-
-                  
-
-
-
-                  <div class="grid grid-cols-2 gap-x-2 gap-y-1 text-[11px] text-slate-300">
-
-
-
-                    <div><span class="text-slate-500">기기번호:</span> <span class="text-slate-200 font-mono">${d.dev_no || '-'}</span></div>
-
-
-
-                    <div><span class="text-slate-500">IP 주소:</span> <span class="text-emerald-400 font-mono font-bold">${d.ip}</span></div>
-
-
-
-                    <div><span class="text-slate-500">서브넷:</span> <span class="text-slate-300 font-mono">${d.subnet}</span></div>
-
-
-
-                    <div><span class="text-slate-500">G/W:</span> <span class="text-slate-300 font-mono">${d.gw}</span></div>
-
-
-
-                    <div class="col-span-2"><span class="text-slate-500">S/N:</span> <span class="text-slate-200 font-mono">${d.model_sn}</span></div>
-
-
-
-                    <div class="col-span-2"><span class="text-slate-500">MAC 주소:</span> <span class="text-slate-400 font-mono">${d.mac}</span></div>
-
-
-
-                  </div>
-
-
-
-                </div>
-
-
-
-              `).join('')}
-
-
-
-            </div>
-
-
-
-          </div>
 
 
 
@@ -12643,31 +12490,8 @@
 
 
 
-          const matchEquip = (o.devices || []).some(d => {
-
-
-
-            return (d.name && d.name.toLowerCase().includes(query)) ||
-
-
-
-                   (d.ip && d.ip.toLowerCase().includes(query)) ||
-
-
-
-                   (d.model_sn && d.model_sn.toLowerCase().includes(query)) ||
-
-
-
-                   (d.mac && d.mac.toLowerCase().includes(query)) ||
-
-
-
-                   (d.dev_no && d.dev_no.toLowerCase().includes(query));
-
-
-
-          });
+          const matchEquip = OfficeInventory.devices(o).some(d =>
+            [d.system, d.model, d.location, d.ip, d.asset_number].some(value => value.toLowerCase().includes(query)));
 
 
 
@@ -12786,7 +12610,7 @@
 
 
 
-                  <div class="text-[11px] text-slate-400">${o.section} ${o.devices && o.devices.length > 0 ? `· 방범설비 ${o.devices.length}대` : ''}</div>
+                  <div class="text-[11px] text-slate-400">${o.section} ${OfficeInventory.devices(o).length ? `· 장비 ${OfficeInventory.devices(o).length}대` : ''}</div>
 
 
 
@@ -14034,34 +13858,15 @@
 
 
 
+      const countedSites = new Set();
       offices.forEach(o => {
-
-
-
-        (o.devices || []).forEach(d => {
-
-
-
+        if (o.id && countedSites.has(o.id)) return;
+        if (o.id) countedSites.add(o.id);
+        OfficeInventory.devices(o).forEach(d => {
           totalDevices++;
-
-
-
-          const dName = (d.name || '') + (d.type || '');
-
-
-
-          if (dName.includes('CCTV') || dName.includes('카메라')) cctvCount++;
-
-
-
+          if (d.kind === 'camera') cctvCount++;
           else netCount++;
-
-
-
         });
-
-
-
       });
 
 
@@ -14370,7 +14175,7 @@
 
 
 
-                ${totalDevices > 0 ? `방범CCTV ${cctvCount}대 · 무선AP/네트워크 스위치 ${netCount}대 등록 완료` : '현장 거점 위치 및 이정 기반 연동'}
+                ${totalDevices > 0 ? `CCTV ${cctvCount}대 · 기타 장비 ${netCount}대` : '현장 거점 위치 및 이정 기반 연동'}
 
 
 
@@ -15411,6 +15216,14 @@
       initMap();
 
       setupEventListeners();
+      OfficeInventory.init(() => {
+        const selected = AppState.selectedFacility;
+        if (selected?.type === 'office' && document.getElementById('detail-drawer').classList.contains('drawer-open')) {
+          showDetailDrawer('office', selected.item);
+        }
+        renderAllLayers();
+        renderStatsTab();
+      });
 
       lucide.createIcons();
 
