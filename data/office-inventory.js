@@ -59,17 +59,17 @@ const OfficeInventory = (() => {
     const other = scoped ? records.filter(d => d.kind !== 'camera') : records;
     const shell = 'p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2';
     const heading = (title, count) => `<h3 class="font-bold text-white">${title}${count == null ? '' : ` <span class="ml-1 text-[10px] text-cyan-300">${count}대</span>`}</h3>`;
-    const ip = v => `<span class="font-mono font-semibold text-emerald-300" style="overflow-wrap:anywhere">${show(v)}</span>`;
+    const ip = (v, singleLine = false) => `<span class="font-mono font-semibold text-emerald-300" style="${singleLine ? 'white-space:nowrap' : 'overflow-wrap:anywhere'}">${show(v)}</span>`;
     return `${scoped ? `<section class="${shell}" aria-label="CCTV 현황">
       <div class="flex flex-wrap items-center justify-between gap-2">${heading('CCTV 현황',cameras.length)}</div>
       ${source ? `<p class="text-[11px] text-slate-400">${html(source)} · 설치위치 기준 분류</p>` : ''}
       ${cameras.length ? `<table class="w-full table-fixed text-left text-[11px] text-slate-200">
-        <colgroup><col style="width:39%"><col style="width:26%"><col style="width:35%"></colgroup>
+        <colgroup><col><col style="width:26%"><col style="width:8rem"></colgroup>
         <thead class="bg-slate-800 text-slate-300"><tr><th scope="col" class="px-2 py-2">설치 위치</th><th scope="col" class="px-2 py-2">카메라 종류</th><th scope="col" class="px-2 py-2">IP</th></tr></thead>
         <tbody>${cameras.map(d => `<tr class="border-b border-slate-800 align-top">
           <td class="px-2 py-2 break-words">${show(d.location)}</td>
           <td class="px-2 py-2 break-words">${show(d.model || d.system)}</td>
-          <td class="px-2 py-2">${ip(d.ip)}</td></tr>`).join('')}</tbody></table>`
+          <td class="px-2 py-2">${ip(d.ip, true)}</td></tr>`).join('')}</tbody></table>`
         : '<p class="p-2 rounded bg-slate-900 text-slate-400">등록된 CCTV 자료가 없습니다.</p>'}
       </section>` : ''}
       <section class="${shell}" aria-label="장비 현황">
