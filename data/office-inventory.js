@@ -65,7 +65,7 @@ const OfficeInventory = (() => {
       ${source ? `<p class="text-[11px] text-slate-400">${html(source)} · 설치위치 기준 분류</p>` : ''}
       ${cameras.length ? `<div class="overflow-x-auto"><table class="w-full table-auto text-left text-[11px] text-slate-200">
         <colgroup><col class="w-1/3"><col><col class="w-px"></colgroup>
-        <thead class="bg-slate-800 text-slate-300"><tr><th scope="col" class="px-1.5 py-2">설치 위치</th><th scope="col" class="px-1.5 py-2">카메라 종류</th><th scope="col" class="px-1.5 py-2">IP</th></tr></thead>
+        <thead class="bg-slate-800 text-slate-300"><tr><th scope="col" class="px-1.5 py-2">설치 위치</th><th scope="col" class="px-1.5 py-2">카메라 모델</th><th scope="col" class="px-1.5 py-2">IP</th></tr></thead>
         <tbody>${cameras.map(d => `<tr class="border-b border-slate-800 align-top">
           <td class="px-1.5 py-2 [overflow-wrap:anywhere]">${show(d.location)}</td>
           <td class="px-1.5 py-2 [overflow-wrap:anywhere]">${show(d.model || d.system)}</td>
