@@ -29,6 +29,6 @@ const body=`// Routing and public graph fingerprint; run node scripts/stamp-rout
 export const ROUTE_DATA_REVISION='${stamp}';
 `;
 if(process.argv.includes('--check')){
-  if(fs.readFileSync(target,'utf8')!==body)throw Error('Route cache revision stale. Run node scripts/stamp-route-cache.mjs');
+  if(normalize(fs.readFileSync(target,'utf8'))!==body)throw Error('Route cache revision stale. Run node scripts/stamp-route-cache.mjs');
   console.log('cache fingerprint current:',stamp);
 }else{fs.writeFileSync(target,body);console.log('cache fingerprint stamped:',stamp);}
