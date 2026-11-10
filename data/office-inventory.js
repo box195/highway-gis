@@ -45,12 +45,14 @@ const OfficeInventory = (() => {
   function devices(office) {
     const imported = inScope(office) && inventory?.offices[office?.id];
     if (imported) return imported;
-    return (Array.isArray(office?.devices) ? office.devices : []).filter(d => d && typeof d === 'object').map(legacyRecord);
+    const records = (Array.isArray(office?.devices) ? office.devices : []).filter(d => d && typeof d === 'object').map(legacyRecord);
+    // Some legacy branch packs contain placeholder inventory rows with no real IP.
+    return inScope(office) ? records.filter(d => d.location && d.model && d.ip) : records;
   }
 
   function validate(pack) {
     if (pack?.format !== FORMAT || !pack.offices || Array.isArray(pack.offices) || typeof pack.offices !== 'object')
-      throw new Error('자산관리대장용 JSON 파일을 선택하세요.');
+      throw new Error('자산관리대장 엑셀 또는 GIS 대장 JSON을 선택하세요.');
     const offices = Object.create(null);
     let count = 0;
     for (const [id, rows] of Object.entries(pack.offices)) {
@@ -66,7 +68,8 @@ const OfficeInventory = (() => {
       });
     }
     if (!count) throw new Error('불러올 장비가 없습니다.');
-    return {format:FORMAT, source:text(pack.source).slice(0,120), sheet:text(pack.sheet).slice(0,100), offices};
+    const unmatched = Array.isArray(pack.unmatched) ? pack.unmatched.filter(row => Number.isInteger(row) && row > 4).slice(0,2500) : [];
+    return {format:FORMAT, source:text(pack.source).slice(0,120), sheet:text(pack.sheet).slice(0,100), offices, unmatched};
   }
 
   function openDB() {
@@ -116,7 +119,7 @@ const OfficeInventory = (() => {
   function init(onChange) {
     const input = document.createElement('input');
     input.type = 'file';
-    input.accept = '.json,application/json';
+    input.accept = '.xlsx,.json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/json';
     input.id = 'office-inventory-file';
     input.hidden = true;
     document.body.append(input);
@@ -130,12 +133,15 @@ const OfficeInventory = (() => {
       if (!file || loading) return;
       loading = true;
       try {
-        if (file.size > 2_000_000) throw new Error('2MB 이하의 자산관리대장 JSON을 선택하세요.');
-        const pack = validate(JSON.parse((await file.text()).replace(/^\uFEFF/, '')));
+        const xlsx = /\.xlsx$/i.test(file.name);
+        if (!xlsx && !/\.json$/i.test(file.name)) throw new Error('.xlsx 또는 .json 파일을 선택하세요.');
+        if (file.size > (xlsx ? 8_000_000 : 2_000_000)) throw new Error('엑셀은 8MB, JSON은 2MB 이하 파일을 선택하세요.');
+        const pack = validate(xlsx ? await OfficeInventoryXlsx.read(file) : JSON.parse((await file.text()).replace(/^\uFEFF/, '')));
         revision++;
         inventory = pack;
         const label = `${Object.keys(pack.offices).length}개 거점 자산관리대장`;
-        let message = `${label}을 이 브라우저에 저장했습니다.`;
+        const note = pack.unmatched.length ? ` 설치위치에서 거점을 확인하지 못한 ${pack.unmatched.length}행은 제외했습니다.` : '';
+        let message = `${label}을 이 브라우저에 저장했습니다.${note}`;
         try { await storeLocal(pack); } catch { message = `${label}을 불러왔습니다. 브라우저 저장이 제한되어 이 탭에서만 표시합니다.`; }
         report(message);
         onChange();
@@ -159,11 +165,11 @@ const OfficeInventory = (() => {
     const other = scoped ? records.filter(d => d.kind !== 'camera') : records;
     const shell = 'p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2';
     const fileButton = `<button type="button" data-office-inventory-import class="shrink-0 rounded border border-cyan-700 px-2 py-1 text-[11px] text-cyan-200 hover:bg-cyan-900">자산관리대장 불러오기</button>`;
-    const heading = (title, count) => `<h3 class="font-bold text-white">${title} <span class="ml-1 text-[10px] text-cyan-300">${count}대</span></h3>`;
+    const heading = (title, count) => `<h3 class="font-bold text-white">${title}${count == null ? '' : ` <span class="ml-1 text-[10px] text-cyan-300">${count}대</span>`}</h3>`;
     const ip = v => `<span class="font-mono font-semibold text-emerald-300" style="overflow-wrap:anywhere">${show(v)}</span>`;
     return `${scoped ? `<section class="${shell}" aria-label="CCTV 현황">
-      <div class="flex flex-wrap items-center justify-between gap-2">${heading('CCTV 현황',cameras.length)}${fileButton}</div>
-      <p class="text-[11px] text-slate-400">${imported ? `${html(inventory.source)} · 이 브라우저의 대장` : '기존 등록 자료 · 최신 IP와 장비는 자산관리대장을 불러오세요.'}</p>
+      <div class="flex flex-wrap items-center justify-between gap-2">${heading('CCTV 현황',imported || cameras.length ? cameras.length : null)}${fileButton}</div>
+      <p class="text-[11px] text-slate-400">${imported ? `${html(inventory.source)} · 설치위치 기준 분류` : records.length ? '기존 등록 자료 · 원본 엑셀을 불러오면 대장 기준으로 표시합니다.' : '자산관리대장.xlsx를 불러오면 설치위치에 따라 거점별로 표시합니다.'}</p>
       <p class="text-[11px] text-cyan-300 empty:hidden" role="status" data-office-inventory-status>${html(status)}</p>
       ${cameras.length ? `<table class="w-full table-fixed text-left text-[11px] text-slate-200">
         <colgroup><col style="width:39%"><col style="width:26%"><col style="width:35%"></colgroup>
@@ -172,17 +178,17 @@ const OfficeInventory = (() => {
           <td class="px-2 py-2 break-words">${show(d.location)}</td>
           <td class="px-2 py-2 break-words">${show(d.model || d.system)}</td>
           <td class="px-2 py-2">${ip(d.ip)}</td></tr>`).join('')}</tbody></table>`
-        : '<p class="p-2 rounded bg-slate-900 text-slate-400">등록된 CCTV 자료가 없습니다.</p>'}
+        : imported ? '<p class="p-2 rounded bg-slate-900 text-slate-400">이 거점의 CCTV가 대장에 없습니다.</p>' : ''}
       </section>` : ''}
       <section class="${shell}" aria-label="장비 현황">
-        ${heading(scoped ? '기타 장비 현황' : '장비 현황',other.length)}
+        ${heading(scoped ? '기타 장비 현황' : '장비 현황',scoped && !imported && !other.length ? null : other.length)}
         ${other.length ? other.map(d => `<article class="rounded-lg border border-slate-800 bg-slate-900 p-2.5">
           <div class="flex flex-wrap justify-between gap-x-2 gap-y-1">
             <span class="font-semibold text-cyan-200">${show(d.system || d.model, '장비명 미기재')}</span>${ip(d.ip)}
           </div>
-          <div class="mt-1 text-[11px] break-words text-slate-300">${show(d.location)} · ${show(d.model, '모델 미기재')}</div>
+          ${d.location || d.model ? `<div class="mt-1 text-[11px] break-words text-slate-300">${[d.location,d.model].filter(Boolean).map(html).join(' · ')}</div>` : ''}
           ${d.maker || d.asset_number ? `<div class="mt-1 text-[10px] break-words text-slate-400">${[d.maker, d.asset_number].filter(Boolean).map(html).join(' · ')}</div>` : ''}
-        </article>`).join('') : '<p class="p-2 rounded bg-slate-900 text-slate-400">등록된 장비 자료가 없습니다.</p>'}
+        </article>`).join('') : `<p class="p-2 rounded bg-slate-900 text-slate-400">${scoped && !imported ? '대장을 불러오면 장비를 표시합니다.' : '등록된 장비 자료가 없습니다.'}</p>`}
       </section>`;
   }
 
