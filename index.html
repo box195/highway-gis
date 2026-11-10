@@ -286,7 +286,7 @@
 
 
 
-  <script src="./data/master_data.js?v=20261008_bridges2"></script>
+  <script src="./data/master_data.js?v=20261110-asset-bundled"></script>
 
 
 
@@ -295,8 +295,7 @@
 
 
   <script src="./data/bridge_ui.js?v=20261008_bridges2"></script>
-  <script src="./data/office-inventory-xlsx.js?v=20261110-xlsx"></script>
-  <script src="./data/office-inventory.js?v=20261110-xlsx"></script>
+  <script src="./data/office-inventory.js?v=20261110-bundled"></script>
 
   <style>
 
@@ -3361,11 +3360,6 @@
 
 
       </div>
-      <section class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-1.5" aria-label="거점 자산관리대장">
-        <button type="button" data-office-inventory-import class="rounded-lg bg-cyan-900 px-3 py-2 font-semibold text-xs text-cyan-100">자산관리대장 불러오기</button>
-        <p class="text-[11px] text-slate-400">자산관리대장.xlsx를 선택하면 설치위치 기준으로 분류해 이 브라우저에서만 사용합니다.</p>
-        <p role="status" data-office-inventory-status class="text-[11px] text-cyan-300 empty:hidden"></p>
-      </section>
 
 
 
@@ -15217,14 +15211,6 @@
       initMap();
 
       setupEventListeners();
-      OfficeInventory.init(() => {
-        const selected = AppState.selectedFacility;
-        if (selected?.type === 'office' && document.getElementById('detail-drawer').classList.contains('drawer-open')) {
-          showDetailDrawer('office', selected.item);
-        }
-        renderAllLayers();
-        renderStatsTab();
-      });
 
       lucide.createIcons();
 
