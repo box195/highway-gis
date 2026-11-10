@@ -1,3 +1,15 @@
+## 2026-11-10 navigation behavior (supersedes older UI descriptions)
+
+- Quick navigation (`/#navigation`) and facility-detail navigation share `resolveQuickChoices`. The user may select the closest GPS office or an explicit origin hub, and the mobile map provider remains selectable.
+- **Highway mode** produces exactly one shortest-distance result over the app's bundled five-road directed graph, respecting source heading when known, exit topology, Second Jungbu policy and verified exit-ramp geometry. There is no direction/corridor selector or second Calculate click. The reported distance is **app-embedded road-network distance**, not an external navigation mileage guarantee.
+- **Saved / destination mode** prefers the actual registered source-destination recipe, including Songpa entry/exit distinctions, Suwon saved waypoints, Seoicheon's second waypoint, Gwangju-branch/Gonjiam return equivalence and hybrid Songpa returns. A registered recipe that fails remains a failure; it does not silently degrade.
+- A **nonregistered** pair with verified origin/destination coordinates receives a `destination-only` result: zero waypoints, no toll avoidance / national-road preference, and the external map app calculates the real road itinerary. Pinned user arrival coordinates supersede source GIS coordinates. Missing / estimated / source-error coordinates are blocked without fabricated points.
+- Quick navigation still excludes manholes and Seoul toll office from its destination buttons. The facility-detail modal retains selected facility and inspection manhole choices, now has one external-map launch button, and uses the same mode rules.
+- Client routing does not prove that a provider app follows the GIS-selected path. No live Kakao/Naver device reroute or on-road legal verification has been performed. The bundle's public graph and exact pinned user controls are intentionally kept separate.
+- Verify: `npm run test:highway`, `npm run test:inspection`, `node scripts/stamp-route-cache.mjs --check`, `node scripts/stamp-route-cache.mjs --verify-newlines`.
+
+---
+
 ## Songpa IC → Suwon-Singal shared saved return (2026-10-19)
 
 - **Implemented only**: Songpa IC manual origin -> Suwon-Singal office top **SAVED RETURN** button. Other six origins do **not** have saved hybrid routes yet and show an unsupported-origin explanation. This does not change nearest-origin / manual-origin policy, the highway return button, or provider app links.

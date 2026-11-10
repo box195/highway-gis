@@ -42,7 +42,7 @@ test('Songpa exact OLC first return guide, existing remaining guides and departu
  const a=savedRoute('songpa','suwon'),b=savedRoute('suwon','songpa');
  assert.equal(a.waypoints[0].code,'8Q99F48C+QWM');
  assert.deepEqual([a.waypoints[0].lat,a.waypoints[0].lng],[37.4669625,127.122296875]);
- assert.equal(a.waypoints.length,3);assert.deepEqual(a.start,SONGPA_RETURN_START);
+ assert.equal(a.waypoints.length,2);assert.deepEqual(a.start,SONGPA_RETURN_START);
  assert.deepEqual([a.start.lat,a.start.lng],[37.4788875,127.133921875]);
  assert.equal(a.start.plusCode,'8Q99F4HM+HH3');
  assert.deepEqual(b.goal,SONGPA_IC);
@@ -73,7 +73,7 @@ test('exact user Songpa departure OLC is preserved for saved return and manual s
  const suwon=returnDestination(navigationCatalog(userData),userData);
  const ret=savedDestinationRoute(manual,suwon,userData);
  assert.deepEqual({lat:ret.start.lat,lng:ret.start.lng},point);
- assert.deepEqual(ret.waypoints.map(v=>v.code),['8Q99F48C+QWM','OSM:186410728:south','8Q9973CW+CJR']);
+ assert.deepEqual(ret.waypoints.map(v=>v.code),['8Q99F48C+QWM','8Q9973CW+CJR']);
  const songpaDest=navigationCatalog(userData)[0].items[0];
  assert.deepEqual({lat:songpaDest.source.lat,lng:songpaDest.source.lng},{lat:SONGPA_IC.lat,lng:SONGPA_IC.lng});
  assert.notDeepEqual({lat:songpaDest.source.lat,lng:songpaDest.source.lng},point);

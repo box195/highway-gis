@@ -1,16 +1,16 @@
 import {loadGraph,gps} from './navigation-runtime.mjs?v=20261019-s3-dscoord-ga4';
-import {availableOriginOptions,navigationURL} from './highway-routing.mjs?v=20261019-s3-dscoord-ga4';
+import {availableOriginOptions,navigationURL} from './highway-routing.mjs?v=20261110-shortest1';
 import {nearestOfficeDeparture} from './highway-endpoints.mjs?v=20261019-saved-return-4';
-import {quickOriginChoices,getOriginPreference,setOriginPreference,resolveQuickOrigin} from './quick-origin.mjs?v=20261019-saved-return-4';
+import {quickOriginChoices,getOriginPreference,setOriginPreference,resolveQuickOrigin} from './quick-origin.mjs?v=20261110-shortest1';
 import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-s3-dscoord-ga4';
 import {TOLL_GATES} from './highway-tollgates.mjs';
-import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261019-seoicheon3';
-import {navigationCatalog,destinationPoint,savedDestinationRoute,returnDestination} from './navigation-catalog.mjs?v=20261019-saved-return-4';
+import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261110-shortest1';
+import {navigationCatalog,destinationPoint,savedDestinationRoute,returnDestination} from './navigation-catalog.mjs?v=20261110-shortest1';
 
 const page=document.createElement('section');page.id='quick-navigation-page';page.hidden=true;page.setAttribute('aria-label','빠른 길찾기');
 page.innerHTML=`<header class="qn-header"><button id="qn-back" type="button">← GIS</button><h1>빠른 길찾기</h1><label class="qn-origin">출발<select id="qn-origin" aria-label="출발 거점"><option value="">현재 위치 · 가까운 거점</option></select></label><label class="qn-provider">지도앱<select id="qn-provider" aria-label="지도앱"><option value="kakao">카카오맵</option><option value="naver">네이버지도</option></select></label></header>
 <main class="qn-content"><div class="qn-return"><button id="qn-return-highway" type="button"><small>수원영</small><strong>고속도로 복귀</strong></button><button id="qn-return-saved" type="button"><small>수원영</small><strong>저장경로 복귀</strong></button></div>
-<p class="qn-note">출발 거점을 고르거나 기본값(현재 위치에서 가장 가까운 거점)을 유지한 뒤 목적지·경로·진행 방향을 선택하세요.</p><p id="qn-page-status" role="status"></p><div id="qn-destinations"></div></main>`;
+<p class="qn-note">출발 거점을 고르거나 현재 위치 기준 가까운 거점을 사용하세요. 고속도로는 최단거리 1개, 저장경로가 없으면 등록된 목적지 좌표를 경유지 없이 지도앱에 전달합니다.</p><p id="qn-page-status" role="status"></p><div id="qn-destinations"></div></main>`;
 const flow=document.createElement('dialog');flow.id='quick-navigation-flow';flow.setAttribute('aria-labelledby','qn-flow-title');
 flow.innerHTML=`<header class="qn-flow-header"><h2 id="qn-flow-title">경로 선택</h2><button id="qn-flow-close" type="button" aria-label="길찾기 선택창 닫기">✕</button></header><div class="qn-flow-body"><p id="qn-flow-source" class="qn-note"></p><p id="qn-flow-status" role="status" aria-live="polite"></p><div id="qn-flow-options"></div></div>`;
 page.append(flow);document.body.append(page);
@@ -81,7 +81,7 @@ function backToGIS(){
 function modeOptions(){
   clearFlow();$('qn-flow-title').textContent=activeItem.label;message('이동할 경로를 선택하세요.');
   const row=document.createElement('div');row.className='qn-mode-row';
-  for(const [mode,label] of [['highway','고속도로'],['saved','국도']]){
+  for(const [mode,label] of [['highway','고속도로 최단'],['saved','저장경로 / 목적지 안내']]){
     const b=document.createElement('button');b.type='button';b.className='qn-mode';b.textContent=label;b.addEventListener('click',()=>prepare(mode));row.append(b);
   }$('qn-flow-options').append(row);
 }
@@ -104,7 +104,7 @@ async function gpsOrigin(){
 }
 async function prepare(mode){
   clearFlow();const token=serial,item=activeItem;$('qn-flow-title').textContent=item.label;
-  message(mode==='highway'?'선택한 출발 거점의 고속도로 경로를 확인하고 있습니다.':'선택한 출발 거점의 저장경로를 확인하고 있습니다.');
+  message(mode==='highway'?'앱 도로망 기준 고속도로 최단거리를 계산하고 있습니다.':'등록된 저장경로를 확인하고, 미등록 시 목적지 안내를 준비하고 있습니다.');
   try{
     const start=await getOrigin();
     if(token!==serial||!flow.open||page.hidden)return;
@@ -125,10 +125,10 @@ function appURL(result){return $('qn-provider').value==='kakao'?kakaoNavigationU
 function showDirections(){
   if(!prepared)return;$('qn-flow-options').replaceChildren();
   const poi=prepared.choices.some(c=>c.result.goal?.providerPlace);
-  message(poi?'동서울영업소는 장소 검색에서 직접 선택하세요(동서울지사 아님). 경유지는 자동 적용되지 않아 수동 설정이 필요합니다.':prepared.choices.some(c=>c.result.gwangamReentry)?'광암터널 판교방향은 공개 OSM 회차 연결만 확인했습니다. 실제 도로 규제·지도앱 경로는 미검증이므로 반드시 확인하세요.':'진행할 방향을 누르면 지도앱으로 바로 연결됩니다.');
+  message(prepared.choices.some(c=>c.result.kind==='destination-only')?'목적지 안내 · 등록 경유지 없음. 실제 주행 경로는 지도앱에서 계산합니다.':poi?'동서울영업소는 장소 검색에서 직접 선택하세요(동서울지사 아님). 경유지는 자동 적용되지 않아 수동 설정이 필요합니다.':prepared.choices.some(c=>c.result.gwangamReentry)?'광암터널 판교방향은 공개 OSM 회차 연결만 확인했습니다. 실제 도로 규제·지도앱 경로는 미검증이므로 반드시 확인하세요.':prepared.mode==='highway'?'앱에 포함된 도로망 기준의 최단거리 1개입니다. 지도앱의 실제 경로는 다를 수 있습니다.':'저장된 경유지 순서입니다. 실제 경로는 지도앱에서 확인하세요.');
   for(const choice of prepared.choices){
     const result=choice.result,a=document.createElement('a');a.className='qn-direction'+($('qn-provider').value==='kakao'?' qn-launch-kakao':'');a.href=appURL(result);a.append(document.createTextNode(choice.label));
-    const info=document.createElement('small');info.textContent=[result.roads?.map(s=>s.replace('고속도로','선')).join(' → '),result.arrivalDirection,
+    const info=document.createElement('small');info.textContent=[result.kind==='highway-shortest'&&Number.isFinite(result.length)?`도로망 약 ${(result.length/1000).toFixed(1)}km`:null,result.roads?.map(s=>s.replace('고속도로','선')).join(' → '),result.arrivalDirection,
       result.goal?.providerPlace?'장소 검색·직접 선택 · 경유지 자동 반영 안 됨':`경유 ${result.waypoints.length}개 · ${$('qn-provider').value==='kakao'?'카카오맵':'네이버지도'}`].filter(Boolean).join(' · ');a.append(info);
     a.addEventListener('click',e=>{
       if(!prepared||Date.now()-prepared.created>120000){e.preventDefault();if(prepared)prepare(prepared.mode);return;}

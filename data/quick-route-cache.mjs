@@ -1,6 +1,8 @@
 // Persistent, bounded quick-navigation choices. No GPS samples or GIS records.
 import {ROUTE_DATA_REVISION} from './route-cache-revision.mjs?v=20261019-seoicheon3';
 import {hybridSavedReturn,isHybridSavedReturn,directSavedReturn,isDirectSavedReturn} from './hybrid-saved-return.mjs?v=20261019-seoicheon3';
+import {isRegisteredSavedPair,uncertainCoordinate} from './navigation-catalog.mjs?v=20261110-shortest1';
+import {validPoint} from './highway-routing.mjs?v=20261110-shortest1';
 export const CACHE_KEY='highway-quick-choices-v1';
 export const CACHE_TTL_MS=7*86400000;
 export const CACHE_MAX=32;
@@ -15,7 +17,7 @@ export function routeCacheKey(start,item,mode,destination){
   if(!['highway','saved'].includes(mode)||!start?.officeName||!item?.id||!destination)return null;
   // Hash all source/destination topology selectors. Never persist raw GIS or GPS.
   return hash([ROUTE_DATA_REVISION,mode,item.id,start.originId||null,start.departureMode||null,start.officeName,start.gateName,
-    start.lat,start.lng,start.roadHint,item.source?.lat,item.source?.lng,
+    start.lat,start.lng,start.roadHint,item.source?.lat,item.source?.lng,item.source?.coordinate_status,
     destination.lat,destination.lng,destination.original?.lat,destination.original?.lng,
     destination.officeDestination?.lat,destination.officeDestination?.lng,
     destination.gateName,destination.roadHint,destination.stopBeforeToll,destination.providerPlace?.name,destination.providerPlace?.placeId,destination.providerPlace?.verification,destination.gwangamPangyoOnly,
@@ -30,7 +32,11 @@ const cleanResult=r=>{
   if(!r||!Array.isArray(r.waypoints)||r.waypoints.length>5||!Array.isArray(r.roads)||r.roads.length>16)return null;
   const start=cleanPoint(r.start),goal=cleanPoint(r.goal),waypoints=r.waypoints.map(cleanPoint);
   if(!start||!goal||waypoints.some(p=>!p)||r.roads.some(v=>typeof v!=='string'||v.length>80))return null;
-  return {start,goal,waypoints,roads:r.roads,kind:r.kind==='hybrid-saved-return'?'hybrid-saved-return':undefined,
+  return {start,goal,waypoints,roads:r.roads,
+    kind:['saved','hybrid-saved-return','destination-only','highway-shortest'].includes(r.kind)?r.kind:undefined,
+    length:Number.isFinite(r.length)&&r.length>=0?r.length:null,
+    entryGap:Number.isFinite(r.entryGap)?r.entryGap:null,exitGap:Number.isFinite(r.exitGap)?r.exitGap:null,
+    gwangamReentry:r.gwangamReentry===true,
     songpaExitApproach:['northbound','southbound'].includes(r.songpaExitApproach)?r.songpaExitApproach:undefined,arrivalDirection:typeof r.arrivalDirection==='string'?r.arrivalDirection.slice(0,150):null,
     arrivalBearing:Number.isFinite(r.arrivalBearing)?r.arrivalBearing:null};
 };
@@ -66,7 +72,20 @@ export function routeCache(storage,now=Date.now()){
       save([{key,at:now,choices:safe},...load().filter(e=>e.key!==key)].slice(0,CACHE_MAX));}
   };
 }
+export function destinationOnlyRoute(start,destination,item){
+  if(uncertainCoordinate(item?.source)||item?.approximate||uncertainCoordinate(start)||!validPoint(start)||!validPoint(destination))
+    throw new Error('출발지 또는 목적지 좌표가 없거나 추정·오류로 표시되어 안내를 보류합니다.');
+  const source=validPoint(start.original)?start.original:start;
+  const target=destination.userArrivalOverride||destination.officeDestination||destination.original||destination;
+  if(!validPoint(source)||!validPoint(target))throw new Error('등록된 출발·도착 좌표를 확인할 수 없어 안내를 보류합니다.');
+  const from={lat:source.lat,lng:source.lng,name:start.name||start.officeName||'출발지'};
+  const to={lat:target.lat,lng:target.lng,name:destination.name||item?.label||'목적지'};
+  return {kind:'destination-only',start:from,goal:to,waypoints:[],points:[from,to],roads:[],
+    routeVerification:'provider-calculated-only'};
+}
 export async function resolveQuickChoices({start,item,mode,destination,cache=routeCache(),loadGraph,availableOriginOptions,savedDestinationRoute,data}){
+  if(!validPoint(start)||!validPoint(destination)||uncertainCoordinate(item?.source)||item?.approximate||uncertainCoordinate(start))
+    throw new Error('출발지 또는 목적지 좌표가 없거나 추정·오류로 표시되어 안내를 보류합니다.');
   const key=routeCacheKey(start,item,mode,destination),hit=cache.get(key);
   if(hit)return {choices:hit,fromCache:true};
   let choices;
@@ -75,13 +94,14 @@ export async function resolveQuickChoices({start,item,mode,destination,cache=rou
     else if(isHybridSavedReturn(start,item)){
       const graph=await loadGraph();
       choices=hybridSavedReturn(graph,start,item,data).choices;
-    }else choices=[{key:'saved',label:`${start.officeName} → ${item.label} · 저장 경로`,
+    }else if(isRegisteredSavedPair(start,item))choices=[{key:'saved',label:`${start.officeName} → ${item.label} · 저장 경로`,
       result:savedDestinationRoute(start,item,data)}];
+    else choices=[{key:'destination-only',label:'목적지 안내 · 등록 경유지 없음',result:destinationOnlyRoute(start,destination,item)}];
   }
   else{
     const graph=await loadGraph();
-    const found=availableOriginOptions(graph,start,destination);
-    choices=found.choices;
+    const found=availableOriginOptions(graph,start,destination,{singleShortest:true});
+    choices=found.choices.length>1?[...found.choices].sort((a,b)=>(a.result.length??Infinity)-(b.result.length??Infinity)).slice(0,1):found.choices;
     if(!choices.length)throw new Error(found.rejected[0]?.error||'해당 구간에서 사용할 수 있는 고속도로 경로가 없습니다.');
   }
   cache.set(key,choices);

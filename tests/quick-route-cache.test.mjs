@@ -63,7 +63,8 @@ test('bounded LRU entries and live saved route not conflated with highway',async
   assert.equal(JSON.parse(map.get(CACHE_KEY)).entries.length,CACHE_MAX);
   const saved=await resolveQuickChoices({...inputs(cache),mode:'saved',loadGraph:()=>{throw Error('saved needs no graph')},
     savedDestinationRoute:()=>route});
-  assert.equal(saved.choices[0].result.waypoints.length,1);
+  assert.equal(saved.choices[0].result.waypoints.length,0);
+  assert.equal(saved.choices[0].result.kind,'destination-only');
 });
 test('the pinned cache revision exactly fingerprints current graph/routing/endpoints/saved route files',()=>{
   assert.match(execFileSync(process.execPath,['scripts/stamp-route-cache.mjs','--check'],{encoding:'utf8'}),/fingerprint current/);

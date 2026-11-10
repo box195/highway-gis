@@ -6,7 +6,8 @@ import {SONGPA_EXIT_ACCESS} from './songpa-exit-access.mjs?v=20261019-s3-dscoord
 
 const order=new Intl.Collator('ko',{numeric:true,sensitivity:'base'});
 const keyOf=s=>(s||'').replace(/한국도로공사|\s|\([^)]*\)/g,'');
-const located=p=>validPoint({lat:Number(p.lat),lng:Number(p.lng)});
+const located=p=>validPoint({lat:Number(p?.lat),lng:Number(p?.lng)});
+export const uncertainCoordinate=p=>['ESTIMATED','SOURCE_ERROR'].includes(String(p?.coordinate_status||'').toUpperCase())||p?.approximate===true;
 // Public OSM motorway_junction 436210017, Shin-gal JC northbound merge.
 // Public snapshot: Geofabrik South Korea 2026-10-14, ODbL-1.0.
 export const SINGAL_JC={name:'신갈JC',lat:37.295386,lng:127.103562,roadHint:'경부고속도로'};
@@ -15,7 +16,7 @@ export function navigationCatalog(data={}){
   const unique=new Map();
   for(const p of data.offices||[])if(located(p)&&!unique.has(keyOf(p.name)))unique.set(keyOf(p.name),p);
   const offices=[...unique.values()];
-  const office=p=>({id:`office:${keyOf(p.name)}`,label:keyOf(p.name),kind:'office',source:p});
+  const office=p=>({id:`office:${keyOf(p.name)}`,label:keyOf(p.name),kind:'office',source:p,approximate:uncertainCoordinate(p)});
   const branches=['경기광주지사','동서울지사'].flatMap(name=>{const p=offices.find(p=>keyOf(p.name)===name);return p?[office(p)]:[];});
   const songpa=(data.interchanges||[]).find(p=>/송파IC/i.test(p.name||'')&&located(p));
   const songpaPoint={...(songpa||{}),...SONGPA_IC};
@@ -25,7 +26,7 @@ export function navigationCatalog(data={}){
   // Only the destination list is changed: original GIS/manhole records remain untouched.
   const seen=new Set(junctions.map(i=>i.label.replace(/\s/g,'').toUpperCase()));
   const remaining=(data.interchanges||[]).filter(p=>located(p)&&/(?:IC|JC|JCT)\s*$/i.test(p.name||''))
-    .map(p=>({id:`junction:gis:${keyOf(p.name)}`,label:keyOf(p.name),kind:'junction',source:p}))
+    .map(p=>({id:`junction:gis:${keyOf(p.name)}`,label:keyOf(p.name),kind:'junction',source:p,approximate:uncertainCoordinate(p)}))
     .filter(i=>{const key=i.label.replace(/\s/g,'').toUpperCase().replace(/JCT$/,'JC');
       if(seen.has(key))return false;seen.add(key);return true;})
     .sort((a,b)=>order.compare(a.label,b.label));
@@ -38,12 +39,20 @@ export function navigationCatalog(data={}){
 }
 
 export function destinationPoint(item,data={}){
+  if(!item||item.approximate||uncertainCoordinate(item.source)||!located(item.source)&&item.id!=='junction:songpa')
+    throw new Error('목적지 좌표가 미확인·추정 또는 오류로 표시되어 안내를 보류합니다.');
   if(item.kind==='office')return officeEndpoint(item.source,data.interchanges||[],TOLL_GATES,item.label);
   if(item.id==='junction:songpa')return {name:SONGPA_IC.name,lat:SONGPA_EXIT_ACCESS[0].lat,lng:SONGPA_EXIT_ACCESS[0].lng,
     roadHint:SONGPA_EXIT_ACCESS[0].road,snapToHighway:true,hasGateTopology:true,arrivalAnchors:SONGPA_EXIT_ACCESS};
   const p=item.source;
+  if(!located(p)||uncertainCoordinate(p))throw new Error('목적지 좌표가 미확인·추정 또는 오류로 표시되어 안내를 보류합니다.');
   return {lat:Number(p.lat),lng:Number(p.lng),name:item.label,
     roadHint:p.roadHint||roadFrom(`${p.section||''} ${p.route_name||''} ${p.route||''}`),snapToHighway:item.kind==='junction'&&item.id!=='junction:songpa'};
+}
+
+export function isRegisteredSavedPair(start,item){
+  return !!(start?.originId==='junction:songpa'&&item?.kind==='office'&&/수원신갈|수원영업소/.test(item.source?.name||'')||
+    start?.gateName==='수원신갈톨게이트'&&item?.id==='junction:songpa');
 }
 
 export function savedDestinationRoute(start,item,data={}){

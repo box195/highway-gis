@@ -139,7 +139,11 @@ function suwonCorridors(graph,start,goal){
   const road=target.roadHint||nearestHighwayPoint(graph,{...target,avoidSecond:true}).road;
   return road==='중부고속도로'||road==='수도권제1순환고속도로'&&goal.lat>=37.5&&goal.lng>=127.1;
 }
-export function availableOriginOptions(graph,start,goal){
+export function availableOriginOptions(graph,start,goal,{singleShortest=false}={}){
+  if(singleShortest){
+    try{const result=shortestHighwayRoute(graph,start,goal);return {choices:[{key:'shortest',label:`최단거리 · 앱 도로망 기준 ${(result.length/1000).toFixed(1)}km`,result}],rejected:[]};}
+    catch(error){return {choices:[],rejected:[{key:'shortest',error:error.message}]};}
+  }
   const choices=[],rejected=[];
   for(const choice of originOptions(graph,start,goal)){
     try{choices.push({...choice,result:route(graph,start,goal,null,choice.key)});}
@@ -175,7 +179,8 @@ function gwangamPublicGraphReentry(graph,start,goal,heading,sourceKey){
     arrivalBearing:257,arrivalAtOffice:false,arrivalAtToll:false,gwangamReentry:true,
     routeVerification:'public-osm-directed-graph-only'};
 }
-export function route(graph,start,goal,heading=null,sourceKey=null){
+export function route(graph,start,goal,heading=null,sourceKey=null,options={}){
+  const distanceFirst=options.distanceFirst===true;
   if(!validPoint(start)||!validPoint(goal))throw new Error('목적지의 위도·경도가 올바르지 않습니다.');
   if(distance(start,goal)<30)throw new Error('목적지에 도착했거나 현재 위치와 너무 가깝습니다.');
   const policy=routingPolicy(graph,start,goal), second='제2중부고속도로';
@@ -192,18 +197,23 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
   if(!sources.length)throw new Error('출발 위치가 바뀌었습니다. 진행 방향을 다시 선택하세요.');
   const heap=new Heap(), costs=new Map(), previous=new Map(), origins=new Map();
   let best=null;
+  // Compare verified exit-ramp geometry as part of the highway network distance.
+  const exitRampLength=t=>{
+    if(!t.anchor?.destination||!Array.isArray(t.anchor.rampPoints))return 0;
+    let prev=t.point,total=0;for(const p of t.anchor.rampPoints){total+=distance(prev,p);prev=p;}return total;
+  };
   const accept=(cost,s,t,path,direct=false)=>{if(!best||cost<best.cost)best={cost,s,t,path,direct};};
   // Same directed segment needs no trip around the network.
-  for(const s of sources)for(const t of targets)if(!required.length&&s.edge===t.edge && t.t>=s.t)accept((t.t-s.t)*s.edge.length+20*(s.gap+t.gap),s,t,[],true);
+  for(const s of sources)for(const t of targets)if(!required.length&&s.edge===t.edge && t.t>=s.t)accept((t.t-s.t)*s.edge.length+(distanceFirst?exitRampLength(t):20*(s.gap+t.gap)),s,t,[],true);
   for(const s of sources){
     if(required.length&&s.edge.road!==required[0])continue;
-    const stage=required.length?1:0,cost=(1-s.t)*s.edge.length+20*s.gap,id=s.edge.b,closed=!policy.allowSecond&&s.edge.road!==second,key=`${id}:${Number(closed)}:${stage}`;
+    const stage=required.length?1:0,cost=(1-s.t)*s.edge.length+(distanceFirst?0:20*s.gap),id=s.edge.b,closed=!policy.allowSecond&&s.edge.road!==second,key=`${id}:${Number(closed)}:${stage}`;
     if(cost<(costs.get(key)??Infinity)){costs.set(key,cost);origins.set(key,s);previous.delete(key);heap.push({id,cost,key,closed,stage});}
   }
   const targetMap=new Map();for(const t of targets){if(!targetMap.has(t.edge.a))targetMap.set(t.edge.a,[]);targetMap.get(t.edge.a).push(t);}
   while(heap.a.length){
     const {id,cost,key,closed,stage}=heap.pop();if(cost!==costs.get(key))continue;if(best&&cost>best.cost)break;
-    for(const t of targetMap.get(id)||[]){const total=cost+t.t*t.edge.length+20*t.gap;
+    for(const t of targetMap.get(id)||[]){const total=cost+t.t*t.edge.length+(distanceFirst?exitRampLength(t):20*t.gap);
       if(stage<required.length)continue;
       if(!best||total<best.cost){const path=[];let cursor=key;while(previous.has(cursor)){const v=previous.get(cursor);path.push(v.edge);cursor=v.previousKey;}path.reverse();accept(total,origins.get(key),t,path);}
     }
@@ -268,6 +278,9 @@ export function route(graph,start,goal,heading=null,sourceKey=null){
     return gwangamPublicGraphReentry(graph,start,goal,heading,sourceKey);
   const navGoal=goal.snapToHighway?{...goal,...(goal.userArrivalOverride||goal.officeDestination||tollStop||arrival?.destination||best.t.point)}:goal;
   return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap,arrivalDirection,arrivalBearing:arrival?.bearing,arrivalGateId:arrival?.gateId,arrivalOffset:arrival?.offset,arrivalAtToll:!!arrival&&!goal.providerPlace&&!goal.officeDestination&&arrival.kind!=='ic-exit'&&(arrival.kind==='through'||!!arrival.destination),arrivalAtOffice:!!goal.officeDestination&&!goal.officeFrontExitToll,arrivalAtOfficeFrontToll:!!goal.officeFrontExitToll};
+}
+export function shortestHighwayRoute(graph,start,goal){
+  return {...route(graph,start,goal,Number.isFinite(start?.heading)?start.heading:null,null,{distanceFirst:true}),kind:'highway-shortest',routeVerification:'app-embedded-osm-directed-network'};
 }
 export function makeWaypoints(points,roads,arrival=null,{anchoredStart=false,anchoredGoal=false,branchExit=false}={}){
   const cum=[0];for(let i=1;i<points.length;i++)cum.push(cum.at(-1)+distance(points[i-1],points[i]));

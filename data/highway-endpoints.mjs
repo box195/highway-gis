@@ -73,7 +73,7 @@ export function officeEndpoint(item,interchanges=[],gates=[],label){
   return {...original,lat:anchor.lat,lng:anchor.lng,name:label||item.name||'거점',gateName:profile?.gate,roadHint,snapToHighway:true,original,officeDestination,...(exitToll?{officeFrontExitToll:true,endpointNote:'영업소 앞 진출 톨게이트 도착점입니다. 건물 입구는 아닙니다.'}:{}),endpointKind:'office',stopBeforeToll:stopAtPlaza,...(pinnedArrival?{userArrivalOverride:{lat:pinnedArrival.lat,lng:pinnedArrival.lng},userArrivalPlusCode:pinnedArrival.plusCode}:{}),arrivalAnchors,hasGateTopology:publicGates.length>0};
 }
 export function savedOfficeDeparture(item,interchanges=[],gates=[]){
-  if(!item||!supportsHighwayOffice(item)||!validPoint({lat:Number(item.lat),lng:Number(item.lng)}))throw new Error('좌표가 있는 출발 거점을 선택해주세요.');
+  if(!item||['ESTIMATED','SOURCE_ERROR'].includes(String(item.coordinate_status||'').toUpperCase())||!supportsHighwayOffice(item)||!validPoint({lat:Number(item.lat),lng:Number(item.lng)}))throw new Error('좌표가 있는 출발 거점을 선택해주세요.');
   return {...officeEndpoint(item,interchanges,gates),heading:null,speed:0,accuracy:null,departureMode:'saved-office',officeName:item.name};
 }
 export function departureEndpoint(graph,gps,offices=[],interchanges=[],gates=[]){
@@ -85,7 +85,7 @@ export function departureEndpoint(graph,gps,offices=[],interchanges=[],gates=[])
 }
 export function nearestOfficeDeparture(gps,offices=[],interchanges=[],gates=[]){
   if(!validPoint(gps))throw new Error('현재 위치를 확인할 수 없습니다.');
-  const nearest=offices.filter(supportsHighwayOffice).map(o=>({o,p:{lat:Number(o.lat),lng:Number(o.lng)}}))
+  const nearest=offices.filter(o=>supportsHighwayOffice(o)&&!['ESTIMATED','SOURCE_ERROR'].includes(String(o.coordinate_status||'').toUpperCase())).map(o=>({o,p:{lat:Number(o.lat),lng:Number(o.lng)}}))
     .filter(v=>validPoint(v.p)).map(v=>({...v,gap:distance(gps,v.p)})).sort((a,b)=>a.gap-b.gap)[0];
   if(!nearest)throw new Error('좌표가 있는 저장된 거점이 없습니다.');
   return {...officeEndpoint(nearest.o,interchanges,gates),heading:null,speed:0,
