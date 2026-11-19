@@ -1,7 +1,8 @@
 // Quick-navigation source choices are distinct from arrival-only anchors.
-import {navigationCatalog,uncertainCoordinate} from './navigation-catalog.mjs?v=20261110-strict2';
+import {navigationCatalog,uncertainCoordinate} from './navigation-catalog.mjs?v=20261119-hanam-nearest1';
 import {SONGPA_RETURN_START} from './saved-navigation.mjs?v=20261019-saved-return-4';
-import {savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261019-saved-return-4';
+import {savedOfficeDeparture,nearestOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261119-hanam-nearest1';
+import {EXTRA_NAV_OFFICES} from './navigation-extra-points.mjs';
 import {validPoint} from './highway-routing.mjs?v=20261019-s3-dscoord-ga4';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 
@@ -10,7 +11,7 @@ const keyOf=s=>(s||'').replace(/한국도로공사|\s|\([^)]*\)/g,'');
 const hasPoint=p=>validPoint({lat:Number(p?.lat),lng:Number(p?.lng)});
 export function quickOriginChoices(data={}){
   const seen=new Set(),choices=[];
-  for(const p of data.offices||[]){
+  for(const p of [...(data.offices||[]),...EXTRA_NAV_OFFICES]){
     if(!hasPoint(p)||uncertainCoordinate(p)||!supportsHighwayOffice(p))continue;
     const id=`office:${keyOf(p.name)}`;
     if(!keyOf(p.name)||seen.has(id))continue;
@@ -58,7 +59,14 @@ export function gpsCurrentDeparture(sample){
     heading:Number.isFinite(sample.heading)&&sample.speed>2?sample.heading:null};
 }
 
+export function gpsNearestOfficeDeparture(sample,data={},gates=TOLL_GATES){
+  if(!hasPoint(sample)||!Number.isFinite(sample.accuracy)||sample.accuracy>150)
+    throw new Error('현재 GPS 위치를 확인할 수 없습니다. 위치 권한을 확인해 주세요.');
+  const offices=[...(data.offices||[]),...EXTRA_NAV_OFFICES.filter(p=>!(data.offices||[]).some(o=>keyOf(o.name)===keyOf(p.name)))];
+  return nearestOfficeDeparture(sample,offices,data.interchanges||[],gates);
+}
 export async function resolveQuickOrigin(id,choices,data,gpsDeparture){
+  if(id==='nearest-office')return gpsDeparture('nearest-office');
   const item=id&&choices.find(i=>i.id===id);
-  return item?manualOriginDeparture(item,data):gpsDeparture();
+  return item?manualOriginDeparture(item,data):gpsDeparture('gps-current');
 }

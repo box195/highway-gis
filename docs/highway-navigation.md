@@ -1,3 +1,11 @@
+## 2026-11-19 GPS default, optional nearby office, extra reference locations and Hanam Dream
+
+- The default origin is always current browser GPS on each quick-navigation open and facility-detail dialog open. A nearby office remains available only by explicitly selecting '가까운 거점 (GPS 기준)'. A GPS permission/fix failure never silently changes modes.
+- Explicit manually selected offices, IC/JC and previously saved route recipes continue to work; manual locations never trigger a GPS request.
+- Added 서울영업소 (public Seoul TG centre 37.3651583,127.1033500), 판교IC (public junction centre 37.39742,127.10066), 성남IC (public junction centre 37.42724,127.12338) to origin and destination selections. These are public **centres**, not verified exit-gate ramps. Existing trusted GIS coordinates take priority when present.
+- 광암터널관리동's Pangyo-bound arrival compares the normal five-motorway route to the preexisting directed public OSM Hanam Dream shared-service-area reversal. It preserves the entrance, internal turnaround, and opposite carriageway re-entry controls, up to the five-waypoint cap, and selects the shorter supported route. A missing connection or too many mandatory controls fails closed.
+- Validation includes exact URL waypoints for Naver/Kakao. Actual mobile app turn permissions and provider route replication have NOT been run; users must confirm signage and route preview.
+
 ## Current GPS departure (2026-11-10)
 
 - Quick navigation and the facility-detail dialog now use the device's current GPS coordinate, rather than replacing it with the closest saved office.

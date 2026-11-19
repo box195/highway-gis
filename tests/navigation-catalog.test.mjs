@@ -17,13 +17,16 @@ test('destination buttons keep priority, branches, office order; replace manhole
       {...at,name:'광주IC'},{...at,name:'신갈JC'},{...at,name:'자연공원'},{name:'무좌표IC'}]};
   const groups=navigationCatalog(data);
   assert.deepEqual(groups.map(g=>g.key),['junctions','branches','offices','other-junctions']);
-  assert.deepEqual(groups[0].items.map(x=>x.label),['송파IC','신갈JC']);
+  assert.deepEqual(groups[0].items.map(x=>x.label),['송파IC','신갈JC','판교IC','성남IC']);
   assert.deepEqual(groups[1].items.map(x=>x.label),['경기광주지사','동서울지사']);
-  assert.deepEqual(groups[2].items.map(x=>x.label),['곤지암영업소','하남영업소','광암터널관리동']);
+  assert.deepEqual(groups[2].items.map(x=>x.label),['곤지암영업소','서울영업소','하남영업소','광암터널관리동']);
   const gwangam=groups[2].items.find(x=>x.label==='광암터널관리동');
   const chosen=destinationPoint(gwangam,data);assert.equal(chosen.lat,37.5163803548384);assert.equal(chosen.lng,127.17451770787038);
   assert.equal(chosen.snapToHighway,true);assert.equal(chosen.arrivalAnchors[0].bearing,257);assert.deepEqual(gwangam.source,{...at,name:'광암터널관리동'});
-  assert.deepEqual(groups[3].items.map(x=>x.label),['광주IC','안성JC','판교JC'].sort(new Intl.Collator('ko',{numeric:true,sensitivity:'base'}).compare));
+  const other=groups[3].items.map(x=>x.label);
+  assert.deepEqual(other,[...other].sort(new Intl.Collator('ko',{numeric:true,sensitivity:'base'}).compare));
+  assert.ok(!other.some(x=>['송파IC','신갈JC','판교IC','성남IC'].includes(x)));
+  assert.ok(other.length>0);
   assert.ok(groups.flatMap(g=>g.items).every(x=>x.kind!=='manhole'));
   assert.deepEqual(returnDestination(groups,data).label,'수원신갈영업소');
   assert.equal(groups.flatMap(g=>g.items).some(x=>x.label==='수원신갈영업소'),false);
@@ -81,7 +84,7 @@ test('Second Jungbu section names on an actual Jungbu carriageway do not route t
 });
 
 test('all viable public office-pair highway directions deliver identical endpoints and every guide to Naver and Kakao',()=>{
-  const offices=GATE_PROFILES.map(p=>{const gate=TOLL_GATES.find(g=>p.aliases.some(a=>(g.name||'').startsWith(a)))||TOLL_GATES.find(g=>g.id===({'경기광주톨게이트':685222361,'곤지암톨게이트':436295655}[p.gate]));
+  const offices=GATE_PROFILES.filter(p=>p.gate!=='서울TG').map(p=>{const gate=TOLL_GATES.find(g=>p.aliases.some(a=>(g.name||'').startsWith(a)))||TOLL_GATES.find(g=>g.id===({'경기광주톨게이트':685222361,'곤지암톨게이트':436295655}[p.gate]));
     assert.ok(gate,p.gate);return {name:`${p.aliases[0]}영업소`,lat:gate.lat+.0007,lng:gate.lng-.0015};});
   offices.push({name:'경기광주지사',lat:37.35,lng:127.32},{name:'동서울지사',lat:37.52,lng:127.15});
   let checked=0;

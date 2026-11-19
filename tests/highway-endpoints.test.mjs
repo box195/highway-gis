@@ -40,7 +40,7 @@ test('office identity resolves to its gate and correct motorway, not the nearest
     assert.ok(p.gateName.includes(item.name.replace('영업소','')));assert.notEqual(p.lat,item.lat);
   }
   assert.equal(officeEndpoint(suwon,[],TOLL_GATES).roadHint,'경부고속도로');
-  assert.equal(GATE_PROFILES.length,10);
+  assert.equal(GATE_PROFILES.length,11);
 });
 test('ordinary office routes preserve Jungbu approaches and stop before Seo-Icheon plaza',()=>{
   const start=departureEndpoint(graph,{...suwon,speed:0,accuracy:10},[suwon],[],TOLL_GATES);

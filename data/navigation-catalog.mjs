@@ -1,6 +1,7 @@
 import {validPoint} from './highway-routing.mjs?v=20261019-s3-dscoord-ga4';
-import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261019-saved-return-4';
+import {officeEndpoint,roadFrom} from './highway-endpoints.mjs?v=20261119-hanam-nearest1';
 import {TOLL_GATES} from './highway-tollgates.mjs';
+import {EXTRA_NAV_OFFICES,EXTRA_NAV_JUNCTIONS} from './navigation-extra-points.mjs';
 import {savedRoute,SONGPA_IC} from './saved-navigation.mjs?v=20261019-saved-return-4';
 import {SONGPA_EXIT_ACCESS} from './songpa-exit-access.mjs?v=20261019-s3-dscoord-ga4';
 
@@ -15,13 +16,18 @@ export const SINGAL_JC={name:'신갈JC',lat:37.295386,lng:127.103562,roadHint:'�
 export function navigationCatalog(data={}){
   const unique=new Map();
   for(const p of data.offices||[])if(located(p)&&!unique.has(keyOf(p.name)))unique.set(keyOf(p.name),p);
+  for(const p of EXTRA_NAV_OFFICES)if(located(p)&&!unique.has(keyOf(p.name)))unique.set(keyOf(p.name),p);
   const offices=[...unique.values()];
   const office=p=>({id:`office:${keyOf(p.name)}`,label:keyOf(p.name),kind:'office',source:p,approximate:uncertainCoordinate(p)});
   const branches=['경기광주지사','동서울지사'].flatMap(name=>{const p=offices.find(p=>keyOf(p.name)===name);return p?[office(p)]:[];});
   const songpa=(data.interchanges||[]).find(p=>/송파IC/i.test(p.name||'')&&located(p));
   const songpaPoint={...(songpa||{}),...SONGPA_IC};
   const junctions=[{id:'junction:songpa',label:'송파IC',kind:'junction',source:{...songpaPoint,roadHint:'수도권제1순환고속도로'}},
-    {id:'junction:singal',label:'신갈JC',kind:'junction',source:SINGAL_JC}];
+    {id:'junction:singal',label:'신갈JC',kind:'junction',source:SINGAL_JC},
+    ...EXTRA_NAV_JUNCTIONS.map(p=>{
+      const registered=(data.interchanges||[]).find(x=>keyOf(x.name)===keyOf(p.name)&&located(x)&&!uncertainCoordinate(x));
+      return {id:'junction:extra:'+keyOf(p.name),label:p.name,kind:'junction',source:registered||p};
+    })];
   const group=(key,label,items)=>({key,label,items});
   // Only the destination list is changed: original GIS/manhole records remain untouched.
   const seen=new Set(junctions.map(i=>i.label.replace(/\s/g,'').toUpperCase()));
@@ -32,7 +38,7 @@ export function navigationCatalog(data={}){
     .sort((a,b)=>order.compare(a.label,b.label));
   return [group('junctions','IC · JC',junctions),group('branches','지사',branches),
     group('offices','영업소',[
-      ...offices.filter(p=>/영업소/.test(p.name||'')&&!/수원신갈|^서울영업소$/.test(keyOf(p.name))).map(office).sort((a,b)=>order.compare(a.label,b.label)),
+      ...offices.filter(p=>/영업소/.test(p.name||'')&&!/수원신갈/.test(keyOf(p.name))).map(office).sort((a,b)=>order.compare(a.label,b.label)),
       ...offices.filter(p=>/광암터널.*관리|광암관리/.test(p.name||'')).map(office)
     ]),
     group('other-junctions','그 밖의 IC · JC',remaining)];

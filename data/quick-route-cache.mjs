@@ -1,5 +1,5 @@
 // Persistent, bounded quick-navigation choices. No GPS samples or GIS records.
-import {ROUTE_DATA_REVISION} from './route-cache-revision.mjs?v=20261019-seoicheon3';
+import {ROUTE_DATA_REVISION} from './route-cache-revision.mjs?v=20261119-hanam-nearest1';
 import {hybridSavedReturn,isHybridSavedReturn,directSavedReturn,isDirectSavedReturn} from './hybrid-saved-return.mjs?v=20261019-seoicheon3';
 import {isRegisteredSavedPair,uncertainCoordinate} from './navigation-catalog.mjs?v=20261110-strict2';
 import {validPoint} from './highway-routing.mjs?v=20261110-strict2';

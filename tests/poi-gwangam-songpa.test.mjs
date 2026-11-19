@@ -33,8 +33,11 @@ test('Gwangam opposite lane uses bounded rest-area path to Pangyo carriageway',(
  assert.equal(goal.arrivalAnchors[0].edgeKey,'1000475753:2153572261');
  const r=route(graph,{lat:37.5160558,lng:127.174612,roadHint:goal.roadHint,heading:77},goal,77);
  assert.equal(r.gwangamReentry,true);assert.equal(r.arrivalBearing,257);
- assert.deepEqual(r.waypoints,[{name:'중부선 반대방향 재진입',lat:37.5317917,lng:127.2071051}]);
- assert.ok(r.length<12000&&r.waypoints.length===1);
+ assert.equal(r.waypoints.length,5);
+ assert.ok(r.waypoints.some(p=>p.lat===37.5312922&&p.lng===127.2058142));
+ assert.ok(r.waypoints.some(p=>p.lat===37.5315927&&p.lng===127.2091211));
+ assert.ok(r.waypoints.some(p=>p.lat===37.5317917&&p.lng===127.2071051));
+ assert.ok(r.length<12000);
  assert.equal(r.goal.lat,37.5163803548384);assert.equal(r.goal.lng,127.17451770787038);
  assert.ok(r.arrivalDirection.includes('판교'));
 });

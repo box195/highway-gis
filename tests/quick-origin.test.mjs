@@ -77,7 +77,8 @@ test('standalone quick-nav header contains accessible origin selector and narrow
   assert.match(source,/id="qn-origin" aria-label="출발 거점"/);
   assert.match(source,/max-width:680px/);
   assert.match(source,/resolveQuickOrigin/);
-  assert.match(source,/setOriginPreference/);
+  assert.match(source,/new Option\('가까운 거점/);
+  assert.ok(source.includes("$('qn-origin').value='';render()"));
   assert.ok(source.includes('if(flow.open)flow.close()'));
 });
 
@@ -109,10 +110,13 @@ test('actual GPS origin stays at the device coordinate instead of using any offi
 test('both UI entry points request raw GPS and keep explicit manual office controls',()=>{
   const quick=fs.readFileSync(new URL('../data/quick-navigation.mjs',import.meta.url),'utf8');
   const detail=fs.readFileSync(new URL('../data/highway-navigation.mjs',import.meta.url),'utf8');
-  assert.match(quick,/gps\(\)\.then\(gpsCurrentDeparture\)/);
+  assert.match(quick,/gps\(\)\.finally/);
+  assert.match(quick,/gpsCurrentDeparture\(point\)/);
+  assert.match(quick,/gpsNearestOfficeDeparture\(point/);
   assert.doesNotMatch(quick,/nearestOfficeDeparture|gpsContext/);
   assert.match(detail,/gpsCurrentDeparture\(raw\)/);
   assert.doesNotMatch(detail,/nearestOfficeDeparture/);
   assert.match(detail,/value="gps-current"/);
   assert.match(detail,/value="saved-office"/);
+  assert.match(detail,/value="nearest-office"/);
 });

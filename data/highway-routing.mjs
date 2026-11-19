@@ -152,32 +152,41 @@ export function availableOriginOptions(graph,start,goal,{singleShortest=false}={
   return {choices,rejected};
 }
 function gwangamPublicGraphReentry(graph,start,goal,heading,sourceKey){
-  // Only the nearby opposite carriageway is handled here. For unknown origins,
-  // fail closed rather than offering a huge motorway-only reversal.
-  if(distance(start,goal)>5000||start.roadHint&&start.roadHint!=='수도권제1순환고속도로')
-    throw new Error('광암터널관리동의 반대차로 복귀는 이 출발점에서 검증되지 않았습니다. 지도앱의 실제 합법 경로를 확인하세요.');
+  // Public OSM directed Ring1 eastbound -> Jungbu -> shared Hanam Dream
+  // service-area U-turn -> Jungbu -> Ring1 Pangyo westbound.
   const ring='수도권제1순환고속도로';
   const access={edgeKey:'436249420:436249421',lat:37.5224,lng:127.19187,road:ring,bearing:40,kind:'through',offset:0};
-  const stage=route(graph,start,{lat:access.lat,lng:access.lng,name:'광암 회차용 제1순환선 동행 접속',
-    roadHint:ring,snapToHighway:true,hasGateTopology:true,arrivalAnchors:[access]},heading,sourceKey);
-  if(stage.length>15000||stage.waypoints.length>1)
-    throw new Error('광암터널 반대차로 회차에 필요한 경유지가 5개를 초과하거나 경로가 과도합니다.');
-  // Retain only original guide four (zero-based index 3), unchanged coordinates.
-  const fourth=GWANGAM_REENTRY.anchors[2];
-  const via=[{name:fourth.name,lat:fourth.lat,lng:fourth.lng}];
-  if(via.length>5)throw new Error('광암 회차 경로의 경유지가 5개를 초과합니다.');
+  const stage=route(graph,start,{lat:access.lat,lng:access.lng,name:'하남드림 회차용 제1순환선 접속',
+    roadHint:ring,snapToHighway:true,hasGateTopology:true,arrivalAnchors:[access]},heading,sourceKey,{distanceFirst:true});
+  // Only discard optional extra mainline guides, never junction/exit controls.
+  const required=stage.waypoints.filter(p=>!p.name.includes('본선 유지')).map(p=>
+    p.name.includes('요금소 진입 방향')?{...p,name:'제1순환선 하남JC 접근 (동행)'}:p);
+  if(required.length>2)throw new Error('하남드림 회차와 기존 분기점을 함께 표시할 경유지가 부족해 안내를 보류합니다.');
+  const anchors=GWANGAM_REENTRY.anchors;
+  const extra=anchors.map(a=>({name:a.name,lat:a.lat,lng:a.lng}));
+  const via=[...required,...extra.slice(0,Math.min(4,5-required.length))];
+  if(via.length>5||!via.some(p=>p.lat===extra[1].lat)||!via.some(p=>p.lat===extra[2].lat))
+    throw new Error('하남드림휴게소 내부 회차·반대방향 재진입 경유지를 보존할 수 없습니다.');
   const path=GWANGAM_REENTRY.path;
   const join=path.findIndex(([id])=>id===GWANGAM_REENTRY.startJoinNode);
   if(join<0||path.at(-1)[0]!==GWANGAM_REENTRY.finishNode)
-    throw new Error('광암 휴게소 회차 공개 도로 자료가 유효하지 않습니다.');
+    throw new Error('공개 휴게소 회차 연결 자료가 유효하지 않습니다.');
   const tail=path.slice(join).map(([,lat,lng])=>({lat,lng}));
+  if(distance(stage.points.at(-1),tail[0])>200)
+    throw new Error('휴게소 회차로의 진입 연결이 끊겨 안내할 수 없습니다.');
+  let last=-1;
+  for(const anchor of anchors){
+    const position=path.findIndex(([id])=>id===anchor.node);
+    if(position<=last)throw new Error('휴게소 회차·재진입 순서가 공개 도로 데이터와 다릅니다.');
+    last=position;
+  }
   const points=[...stage.points,...tail];
   let length=0;for(let i=1;i<points.length;i++)length+=distance(points[i-1],points[i]);
   return {...stage,goal:{...goal,lat:37.5163803548384,lng:127.17451770787038},
     waypoints:via,points,length,roads:[...stage.roads,'중부고속도로',ring],
     arrivalDirection:'하남드림휴게소 공용 진출·회차·재진입 → 제1순환선 판교방향(서행) 본선',
     arrivalBearing:257,arrivalAtOffice:false,arrivalAtToll:false,gwangamReentry:true,
-    routeVerification:'public-osm-directed-graph-only'};
+    routeVerification:'public-osm-directed-graph-only;live-provider-not-verified'};
 }
 export function route(graph,start,goal,heading=null,sourceKey=null,options={}){
   const distanceFirst=options.distanceFirst===true;
@@ -273,9 +282,16 @@ export function route(graph,start,goal,heading=null,sourceKey=null,options={}){
     tollStop={lat:position.lat-4*Math.sin(theta)/111320,
       lng:position.lng+4*Math.cos(theta)/(111320*Math.cos(position.lat*Math.PI/180))};
   }
-  // Disallow motorway-only 199km loops presented as a nearby legal U-turn.
-  if(goal.gwangamPangyoOnly&&length>Math.max(35000,distance(start,goal)*4))
-    return gwangamPublicGraphReentry(graph,start,goal,heading,sourceKey);
+  if(goal.gwangamPangyoOnly){
+    // Compare directed Hanam Dream turnaround to the five-road detour
+    // even for departure locations outside the former 5 km radius.
+    let dream;
+    try{dream=gwangamPublicGraphReentry(graph,start,goal,heading,sourceKey);}
+    catch{/* If the public connection cannot be confirmed, never invent it. */}
+    if(dream&&dream.length+200<length)return dream;
+    if(length>Math.max(35000,distance(start,goal)*4))
+      throw new Error('광암터널 판교방향으로 확인된 경로가 없어 과도한 호법 우회 안내를 보류합니다.');
+  }
   const navGoal=goal.snapToHighway?{...goal,...(goal.userArrivalOverride||goal.officeDestination||tollStop||arrival?.destination||best.t.point)}:goal;
   return {start:navStart,goal:navGoal,points,roads,length,waypoints,entryGap:best.s.gap,exitGap:best.t.gap,arrivalDirection,arrivalBearing:arrival?.bearing,arrivalGateId:arrival?.gateId,arrivalOffset:arrival?.offset,arrivalAtToll:!!arrival&&!goal.providerPlace&&!goal.officeDestination&&arrival.kind!=='ic-exit'&&(arrival.kind==='through'||!!arrival.destination),arrivalAtOffice:!!goal.officeDestination&&!goal.officeFrontExitToll,arrivalAtOfficeFrontToll:!!goal.officeFrontExitToll};
 }
