@@ -1,3 +1,11 @@
+## Navigation list order correction (2026-11-19)
+
+- The upper IC/JC group is restored to 송파IC and 신갈JC only.
+- The original in-jurisdiction offices section does not include out-of-area 서울영업소.
+- Existing other GIS IC/JC records remain in their lower group.
+- 판교IC and 성남IC appear in a bottom extra-IC section, followed by 서울영업소 as the final out-of-area office.
+- The same order applies to quick-navigation origins and detailed navigation destinations. The default start remains current GPS.
+
 ## 2026-11-19 GPS default, optional nearby office, extra reference locations and Hanam Dream
 
 - The default origin is always current browser GPS on each quick-navigation open and facility-detail dialog open. A nearby office remains available only by explicitly selecting '가까운 거점 (GPS 기준)'. A GPS permission/fix failure never silently changes modes.

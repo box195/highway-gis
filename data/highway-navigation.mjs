@@ -1,12 +1,12 @@
-import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261119-hanam-nearest1';
-import {ROAD_QUERY,buildGraph,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261119-hanam-nearest1';
-import {officeEndpoint,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261119-hanam-nearest1';
-import {quickOriginChoices,manualOriginDeparture,gpsCurrentDeparture,gpsNearestOfficeDeparture} from './quick-origin.mjs?v=20261119-hanam-nearest1';
+import {loadGraph,gps,replaceGraph} from './navigation-runtime.mjs?v=20261119-order2';
+import {ROAD_QUERY,buildGraph,availableOriginOptions,validPoint,navigationURL} from './highway-routing.mjs?v=20261119-order2';
+import {officeEndpoint,savedOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261119-order2';
+import {quickOriginChoices,manualOriginDeparture,gpsCurrentDeparture,gpsNearestOfficeDeparture} from './quick-origin.mjs?v=20261119-order2';
 import {EXTRA_NAV_OFFICES} from './navigation-extra-points.mjs';
 import {TOLL_GATES} from './highway-tollgates.mjs';
 import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-s3-dscoord-ga4';
-import {navigationCatalog,destinationPoint,savedDestinationRoute,uncertainCoordinate} from './navigation-catalog.mjs?v=20261119-hanam-nearest1';
-import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261119-hanam-nearest1';
+import {navigationCatalog,destinationPoint,savedDestinationRoute,uncertainCoordinate} from './navigation-catalog.mjs?v=20261119-order2';
+import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261119-order2';
 
 let generation=0,previewLayer=null,currentResult=null,openedSelection=null;
 const button=document.getElementById('btn-highway-navigation');
@@ -79,15 +79,19 @@ function open(){
   }
   const offices=[...(all.offices||[]),...EXTRA_NAV_OFFICES.filter(p=>!(all.offices||[]).some(o=>(o.name||'').replace(/\s/g,'')===p.name))]
     .sort((a,b)=>Number(/수원.*(신갈|영업소)/.test(b.name))-Number(/수원.*(신갈|영업소)/.test(a.name)));
-  optionGroup('등록된 거점',offices.map(o=>point(o,undefined,true)));
-  const junctions=navigationCatalog(all).filter(g=>['junctions','other-junctions'].includes(g.key)).flatMap(g=>g.items);
-  optionGroup('등록된 IC · JC',junctions.map(item=>({
+  optionGroup('등록된 영업소',offices.filter(o=>(o.name||'').replace(/한국도로공사|\s/g,'')!=='서울영업소').map(o=>point(o,undefined,true)));
+  const catalog=navigationCatalog(all);
+  const junctionPoints=items=>items.map(item=>({
     ...(blocked(item.source)?{lat:NaN,lng:NaN}:destinationPoint(item,all)),name:item.label,source:item.source,navItem:item
-  })));
+  }));
+  optionGroup('IC · JC (송파·신갈)',junctionPoints(catalog.find(g=>g.key==='junctions')?.items||[]));
   origins=quickOriginChoices(all);
   $('hn-origin-office').replaceChildren(new Option('출발 거점·IC를 선택하세요',''),...origins.map((o,i)=>new Option(o.label,String(i))));
   $('hn-origin-office').hidden=$('hn-origin-office-label').hidden=$('hn-origin-mode').value!=='saved-office';
   optionGroup('등록된 맨홀·수공',(data.manholes||[]).map(m=>point(m,`${m.name} · ${m.section||m.branch_name||''}`)));
+  optionGroup('그 외 등록 IC · JC',junctionPoints(catalog.find(g=>g.key==='other-junctions')?.items||[]));
+  optionGroup('추가 IC · 관외 참고',junctionPoints(catalog.find(g=>g.key==='extra-junctions')?.items||[]));
+  optionGroup('관외 영업소',junctionPoints(catalog.find(g=>g.key==='out-of-area')?.items||[]));
   updateMode();modal.showModal();
 }
 function updateMode(){

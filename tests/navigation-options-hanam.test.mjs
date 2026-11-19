@@ -84,3 +84,20 @@ test('direct Dongseoul approach stays short; Seongnam and Pangyo can reach Hanam
    assert.ok(r.length<30000&&r.waypoints.length<=5);
  }
 });
+
+test('only Songpa and Singal are in the first IC group; extra IC and outside Seoul are last',()=>{
+  const groups=navigationCatalog(sample);
+  assert.deepEqual(groups[0].items.map(i=>i.label),['송파IC','신갈JC']);
+  assert.deepEqual(groups.at(-2).items.map(i=>i.label),['판교IC','성남IC']);
+  assert.deepEqual(groups.at(-1).items.map(i=>i.label),['서울영업소']);
+  assert.ok(!groups.find(g=>g.key==='offices').items.some(i=>i.label==='서울영업소'));
+  const origins=quickOriginChoices(sample);
+  assert.deepEqual(origins.filter(i=>i.group==='junctions').map(i=>i.label),['송파IC','신갈JC']);
+  assert.deepEqual(origins.filter(i=>i.group==='extra-junctions').map(i=>i.label),['판교IC','성남IC']);
+  assert.deepEqual(origins.filter(i=>i.group==='out-of-area').map(i=>i.label),['서울영업소']);
+  const quick=fs.readFileSync(new URL('../data/quick-navigation.mjs',import.meta.url),'utf8');
+  const detail=fs.readFileSync(new URL('../data/highway-navigation.mjs',import.meta.url),'utf8');
+  assert.ok(quick.indexOf("['extra-junctions'")<quick.indexOf("['out-of-area'"));
+  assert.ok(detail.indexOf("optionGroup('추가 IC · 관외 참고'")<detail.indexOf("optionGroup('관외 영업소'"));
+  assert.ok(detail.includes("optionGroup('IC · JC (송파·신갈)'"));
+});
