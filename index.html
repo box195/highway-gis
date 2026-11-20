@@ -841,10 +841,20 @@
 
 
 
+
+    /* Labels move independently of their geographic anchor / office icon. */
+    [data-map-label] { position: relative; z-index: 2; }
+    .node-highway-card { font-size: 8.5px; padding: 2px 4px; gap: 3px; }
+    .node-highway-card .node-tag { font-size: 7px; padding: 0 2px; }
+    .map-label-anchor, .map-inspection-anchor { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: #38bdf8; border: 1px solid white; transform: translate(-50%, -50%); }
+    .map-label-anchor { left: 30px; top: 12px; }
+    .map-inspection-anchor { left: 35px; top: 14px; background: #10b981; }
+    .map-office-label { width: max-content; }
   </style>
 
 
 
+  <script src="./data/map-display.js?v=20261120-label-layout"></script>
 </head>
 
 
@@ -1662,7 +1672,7 @@
               <p id="coordinate-audit-summary" class="px-2 text-[10px] text-amber-300 leading-relaxed"></p>
 
               <label class="flex items-center space-x-2 p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 cursor-pointer">
-                <input type="checkbox" id="layer-bridges" checked class="rounded w-4 h-4 bg-slate-900 text-violet-500">
+                <input type="checkbox" id="layer-bridges" class="rounded w-4 h-4 bg-slate-900 text-violet-500">
                 <span class="text-violet-300">🌉 교량 (<span id="count-bridges">0</span>)</span>
               </label>
               <p id="bridge-audit-summary" class="px-2 text-[10px] text-amber-300 leading-relaxed"></p>
@@ -1674,7 +1684,7 @@
 
 
 
-                <input type="checkbox" id="layer-conduits" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
+                <input type="checkbox" id="layer-conduits" class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
 
 
 
@@ -1710,7 +1720,7 @@
 
 
 
-                <input type="checkbox" id="layer-cables" checked class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
+                <input type="checkbox" id="layer-cables" class="rounded border-slate-700 text-cyan-500 focus:ring-cyan-500 w-4 h-4 bg-slate-900">
 
 
 
@@ -3978,6 +3988,7 @@
 
 
       AppState.map = map;
+      AppState.mapLabels = HighwayMapDisplay.create(map, L);
 
 
 
@@ -4130,6 +4141,7 @@
 
 
       if (!AppState.map) return;
+      AppState.mapLabels?.begin();
 
 
 
@@ -4213,11 +4225,12 @@
 
 
 
-      if (showInterchanges && AppState.data.interchanges) {
+      const mapInterchanges = HighwayMapDisplay.withJunctions(AppState.data.interchanges);
+      if (showInterchanges) {
 
 
 
-        AppState.data.interchanges.forEach(node => {
+        mapInterchanges.forEach(node => {
 
 
 
@@ -4261,7 +4274,8 @@
 
 
 
-              <div class="node-highway-card ${typeClass}">
+              <span class="map-label-anchor" aria-hidden="true"></span>
+              <div data-map-label class="node-highway-card ${typeClass}">
 
 
 
@@ -4309,7 +4323,7 @@
 
 
 
-              <div class="text-slate-300 text-[11px]">${node.desc} (이정 ${node.milepost}km)</div>
+              <div class="text-slate-300 text-[11px]">${node.desc || ''}${node.milepost != null ? ` (이정 ${node.milepost}km)` : ''}</div>
 
 
 
@@ -4342,6 +4356,7 @@
 
 
           AppState.layerGroups.interchanges.addLayer(icMarker);
+          AppState.mapLabels?.add(icMarker, 1);
 
 
 
@@ -4474,7 +4489,7 @@
 
 
 
-                  <div class="mt-1 px-2.5 py-1 rounded-full bg-slate-950 border border-blue-400 shadow-xl text-xs font-black text-white whitespace-nowrap flex items-center gap-1">
+                  <div data-map-label class="map-office-label mt-1 px-2.5 py-1 rounded-full bg-slate-950 border border-blue-400 shadow-xl text-xs font-black text-white whitespace-nowrap flex items-center gap-1">
 
 
 
@@ -4527,6 +4542,7 @@
 
 
             AppState.layerGroups.offices.addLayer(marker);
+          AppState.mapLabels?.add(marker, 10, '#38bdf8');
 
 
 
@@ -4638,7 +4654,8 @@
 
 
 
-                  <div class="inspection-pin-card">
+                  <span class="map-inspection-anchor" aria-hidden="true"></span>
+                  <div data-map-label class="inspection-pin-card">
 
 
 
@@ -4675,6 +4692,7 @@
 
 
               AppState.layerGroups.inspectionHighlight.addLayer(pMarker);
+              AppState.mapLabels?.add(pMarker, 20, '#10b981');
 
 
 
@@ -5050,7 +5068,7 @@
 
 
 
-                <div class="mt-0.5 px-1.5 py-0.5 rounded bg-slate-900 border ${badgeBorder} shadow text-[10px] font-bold text-white whitespace-nowrap flex items-center gap-1">
+                <div data-map-label class="map-office-label mt-0.5 px-1.5 py-0.5 rounded bg-slate-900 border ${badgeBorder} shadow text-[10px] font-bold text-white whitespace-nowrap flex items-center gap-1">
 
 
 
@@ -5163,6 +5181,7 @@
 
 
           AppState.layerGroups.offices.addLayer(marker);
+          AppState.mapLabels?.add(marker, 10, '#38bdf8');
 
 
 
@@ -11250,7 +11269,7 @@
 
 
 
-      if (countInterchanges) countInterchanges.innerText = `${(jsonData.interchanges || []).length}개소`;
+      if (countInterchanges) countInterchanges.innerText = `${HighwayMapDisplay.withJunctions(jsonData.interchanges).length}개소`;
 
 
 
