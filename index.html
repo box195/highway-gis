@@ -854,7 +854,7 @@
 
 
 
-  <script src="./data/map-display.js?v=20261120-label-layout"></script>
+  <script src="./data/map-display.js?v=20261120-stable-labels"></script>
 </head>
 
 
@@ -11082,7 +11082,7 @@
 
 
 
-          const key = (o.id || o.name) + '_' + (o.branch_code || pack.branch_code || '');
+          const key = HighwayMapDisplay.officeKey(o);
 
 
 

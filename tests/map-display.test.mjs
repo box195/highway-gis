@@ -3,7 +3,7 @@ import vm from 'node:vm';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 const context={};vm.runInNewContext(fs.readFileSync(new URL('../data/map-display.js',import.meta.url),'utf8'),context);
-const {placeLabels,overlaps,withJunctions}=context.HighwayMapDisplay;
+const {placeLabels,placeStableLabels,overlaps,withJunctions,officeKey}=context.HighwayMapDisplay;
 function check(items,width,height){
  const before=JSON.stringify(items),placed=placeLabels(items,width,height);
  assert.equal(placed.length,items.length);assert.equal(JSON.stringify(items),before);
@@ -20,10 +20,32 @@ test('overlapping map names separate below or right while preserving exact ancho
 test('dense labels stay separate on narrow mobile viewports and at map edges',()=>{
  for(const width of [360,390,900])check(Array.from({length:24},(_,i)=>({id:i,x:width-120,y:80,width:i%3?90:200,height:22,anchor:{x:width-30,y:110+i*3},priority:i%3})),width,640);
 });
-test('zooming and panning recalculate the layout rather than accumulating offsets',()=>{
+test('zooming computes a repeatable collision-free layout without accumulating offsets',()=>{
  const make=scale=>Array.from({length:10},(_,i)=>({id:i,x:50+i*scale,y:90+i*scale,width:100,height:20,anchor:{x:60+i*scale,y:100+i*scale}}));
  for(const scale of [2,5,10,30])check(make(scale),800,600);
  const a=placeLabels(make(5),800,600),b=placeLabels(make(5),800,600);assert.equal(JSON.stringify(a),JSON.stringify(b));
+});
+test('panning preserves every existing label offset, including clipping at viewport edges',()=>{
+ const items=Array.from({length:15},(_,i)=>({id:`asset-${i}`,x:160,y:120,width:100,height:20,anchor:{x:185,y:140}}));
+ const offsets=new Map();
+ const original=placeStableLabels(items,800,600,[],offsets);assert.equal(original.length,15);
+ for(const [dx,dy] of [[70,50],[-340,100],[200,-90],[0,0]]) {
+  const moved=items.map(x=>({...x,x:x.x+dx,y:x.y+dy,anchor:{x:x.anchor.x+dx,y:x.anchor.y+dy}}));
+  const placed=placeStableLabels(moved,800,600,[],offsets);
+  for(const p of placed){const old=original.find(x=>x.id===p.id);assert.equal(p.dx,old.dx);assert.equal(p.dy,old.dy);assert.equal(p.x,old.x+dx);assert.equal(p.y,old.y+dy);}
+ }
+});
+test('a newly visible label cannot displace existing labels',()=>{
+ const initial=[{id:'one',x:100,y:100,width:90,height:20,anchor:{x:120,y:120}}];
+ const offsets=new Map();const old=placeStableLabels(initial,400,600,[],offsets)[0];
+ const placed=placeStableLabels([...initial,{...initial[0],id:'two'}],400,600,[],offsets);
+ assert.equal(placed.length,2);assert.equal(placed[0].x,old.x);assert.equal(placed[0].y,old.y);assert.equal(overlaps(placed[0],placed[1]),false);
+});
+test('same physical shared office deduplicates across branches without conflating different places',()=>{
+ const ds={id:'OFFICE-SUWON-SINGAL',name:'수원신갈영업소',lat:37.26694,lng:127.10244,branch_code:'DONGSEOUL'};
+ const gw={...ds,branch_code:'GWANGJU'};
+ assert.equal(officeKey(ds),officeKey(gw));assert.notEqual(officeKey(ds),officeKey({...gw,lat:37.4}));
+ const html=fs.readFileSync(new URL('../index.html',import.meta.url),'utf8');assert.ok(html.includes('const key = HighwayMapDisplay.officeKey(o);'));
 });
 test('Pangyo IC and Singal JC supplement the map once without replacing user GIS coordinates',()=>{
  const items=[{name:'신갈JCT',lat:37.3,lng:127.1},{name:'판교IC',lat:37.4,lng:127.2}];
