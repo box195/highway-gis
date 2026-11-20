@@ -850,11 +850,23 @@
     .map-label-anchor { left: 30px; top: 12px; }
     .map-inspection-anchor { left: 35px; top: 14px; background: #10b981; }
     .map-office-label { width: max-content; }
+
+    /* Names may overlap. Only compact symbols move within 28px of the real point. */
+    .custom-office-icon > div { width: 0 !important; height: 0 !important; display: block !important; transform: none !important; }
+    .custom-office-symbol { position: absolute !important; left: 0; top: 0; width: var(--map-office-icon-size,16px) !important; height: var(--map-office-icon-size,16px) !important; border-width: 1px !important; border-radius: 4px !important; margin: 0 !important; transform: translate(-50%, -50%); box-shadow: 0 1px 3px #0008 !important; }
+    .custom-office-symbol > span { font-size: calc(var(--map-office-icon-size,16px) * .62) !important; line-height: 1 !important; }
+    .custom-office-icon .map-office-label { position: absolute; left: 11px; top: -8px; margin: 0; font-size: 8.5px; line-height: 12px; padding: 1px 3px; pointer-events: none; }
+    .custom-office-icon > div > div:nth-child(3) { display: none; }
+    .custom-office-icon > div > div:last-child { position: absolute; left: 0; top: 0; width: 3px !important; height: 3px !important; margin: 0 !important; transform: translate(-50%, -50%); border-width: 0 !important; }
+    .map-junction-symbol { position: absolute; left: 30px; top: 12px; width: var(--map-junction-icon-size,14px); height: calc(var(--map-junction-icon-size,14px) * .85); border: 1px solid white; border-radius: 3px; background: #059669; color: white; font-size: calc(var(--map-junction-icon-size,14px) * .43); line-height: calc(var(--map-junction-icon-size,14px) * .7); text-align: center; font-weight: 800; transform: translate(-50%, -50%); z-index: 3; }
+    .map-junction-symbol.type-jct { background: #2563eb; }
+    .map-junction-symbol.type-tg { background: #7e22ce; }
+    .node-highway-badge .node-highway-card { position: absolute; left: 39px; top: 3px; padding: 1px 3px; font-size: 8px; line-height: 12px; pointer-events: none; }
   </style>
 
 
 
-  <script src="./data/map-display.js?v=20261120-stable-labels"></script>
+  <script src="./data/map-display.js?v=20261120-compact-icons"></script>
 </head>
 
 
@@ -4275,11 +4287,12 @@
 
 
               <span class="map-label-anchor" aria-hidden="true"></span>
+              <span class="map-junction-symbol ${typeClass}">${tagText === 'JCT' ? 'JC' : tagText}</span>
               <div data-map-label class="node-highway-card ${typeClass}">
 
 
 
-                <span class="node-tag">${tagText}</span>
+
 
 
 
