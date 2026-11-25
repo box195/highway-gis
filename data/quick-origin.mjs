@@ -1,5 +1,5 @@
 // Quick-navigation source choices are distinct from arrival-only anchors.
-import {navigationCatalog,uncertainCoordinate} from './navigation-catalog.mjs?v=20261119-order2';
+import {navigationCatalog,uncertainCoordinate} from './navigation-catalog.mjs?v=20261125-cheonggye1';
 import {SONGPA_RETURN_START} from './saved-navigation.mjs?v=20261019-saved-return-4';
 import {savedOfficeDeparture,nearestOfficeDeparture,roadFrom,supportsHighwayOffice} from './highway-endpoints.mjs?v=20261119-order2';
 import {EXTRA_NAV_OFFICES} from './navigation-extra-points.mjs';
@@ -16,13 +16,15 @@ export function quickOriginChoices(data={}){
     const id=`office:${keyOf(p.name)}`;
     if(!keyOf(p.name)||seen.has(id))continue;
     seen.add(id);
-    choices.push({id,label:keyOf(p.name),kind:'office',group:keyOf(p.name)==='서울영업소'?'out-of-area':'saved-hubs',source:p});
+    choices.push({id,label:keyOf(p.name),kind:'office',group:'saved-hubs',source:p});
   }
+  // Keep Seoul last in the existing office/hub section.
+  choices.sort((a,b)=>Number(a.label==='서울영업소')-Number(b.label==='서울영업소'));
   const groups=navigationCatalog(data);
-  for(const item of groups.filter(g=>['junctions','other-junctions','extra-junctions'].includes(g.key)).flatMap(g=>g.items)){
+  for(const item of groups.filter(g=>['junctions','other-junctions'].includes(g.key)).flatMap(g=>g.items)){
     if(!hasPoint(item.source)||uncertainCoordinate(item.source)||seen.has(item.id))continue;
     seen.add(item.id);choices.push({...item,source:item.id==='junction:songpa'?{...item.source,...SONGPA_RETURN_START,roadHint:'수도권제1순환고속도로'}:item.source,
-      group:item.id.startsWith('junction:extra:')?'extra-junctions':item.id.startsWith('junction:gis:')?'other-junctions':'junctions'});
+      group:item.id.startsWith('junction:extra:')||item.id.startsWith('junction:gis:')?'other-junctions':'junctions'});
   }
   return choices;
 }

@@ -1,6 +1,6 @@
 // Directed motorway plus immutable user-saved Songpa->Suwon return.
 import {availableOriginOptions,distance} from './highway-routing.mjs?v=20261019-s3-dscoord-ga4';
-import {destinationPoint} from './navigation-catalog.mjs?v=20261019-saved-return-4';
+import {destinationPoint} from './navigation-catalog.mjs?v=20261125-cheonggye1';
 import {SONGPA_EXIT_ACCESS} from './songpa-exit-access.mjs?v=20261019-s3-dscoord-ga4';
 import {savedRoute,RETURN_SURFACE_SNAPSHOT} from './saved-navigation.mjs?v=20261019-saved-return-4';
 
@@ -34,7 +34,7 @@ export function directSavedReturn(start,item,data={}){
   const original=RETURN_SURFACE_SNAPSHOT;
   const controls=office==='성남영업소'?original:
     office==='청계영업소'?[CHEONGGYE_FIRST,original.at(-1)]:
-    office==='동서울영업소'?original: // restored Tancheon from original Songpa saved return
+    office==='동서울영업소'?[original.at(-1)]: // retain only ORIGINAL guide 3
     office==='경기광주영업소'||office==='곤지암영업소'||office==='경기광주지사'?
       [GWANGJU_FIRST,CHEONGGYE_FIRST,original.at(-1)]:
     [SEOICHEON_FIRST,SEOICHEON_SECOND,SEOICHEON_ONLY]; // Seoicheon exact three user-saved guides

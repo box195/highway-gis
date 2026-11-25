@@ -1,9 +1,9 @@
 import {loadGraph,gps} from './navigation-runtime.mjs?v=20261019-s3-dscoord-ga4';
 import {availableOriginOptions,navigationURL} from './highway-routing.mjs?v=20261119-order2';
-import {quickOriginChoices,resolveQuickOrigin,gpsCurrentDeparture,gpsNearestOfficeDeparture} from './quick-origin.mjs?v=20261119-order2';
+import {quickOriginChoices,resolveQuickOrigin,gpsCurrentDeparture,gpsNearestOfficeDeparture} from './quick-origin.mjs?v=20261125-cheonggye1';
 import {kakaoNavigationURL} from './kakao-navigation.mjs?v=20261019-s3-dscoord-ga4';
-import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261119-order2';
-import {navigationCatalog,destinationPoint,savedDestinationRoute,returnDestination} from './navigation-catalog.mjs?v=20261119-order2';
+import {resolveQuickChoices,routeCache} from './quick-route-cache.mjs?v=20261125-cheonggye1';
+import {navigationCatalog,destinationPoint,savedDestinationRoute,returnDestination} from './navigation-catalog.mjs?v=20261125-cheonggye1';
 
 const page=document.createElement('section');page.id='quick-navigation-page';page.hidden=true;page.setAttribute('aria-label','빠른 길찾기');
 page.innerHTML=`<header class="qn-header"><button id="qn-back" type="button">← GIS</button><h1>빠른 길찾기</h1><label class="qn-origin">출발<select id="qn-origin" aria-label="출발 거점"><option value="">현재 위치 (GPS)</option></select></label><label class="qn-provider">지도앱<select id="qn-provider" aria-label="지도앱"><option value="kakao">카카오맵</option><option value="naver">네이버지도</option></select></label></header>
@@ -35,7 +35,7 @@ function render(){
   const previous=select.value;
   select.replaceChildren(new Option('현재 위치 (GPS)',''),new Option('가까운 거점 (GPS 기준)','nearest-office'));
   for(const [group,label] of [['saved-hubs','영업소 · 지사 · 거점'],['junctions','IC · JC (송파·신갈)'],
-    ['other-junctions','그 외 등록 IC · JC'],['extra-junctions','추가 IC · 관외 참고'],['out-of-area','관외 영업소']]){
+    ['other-junctions','그 외 등록 IC · JC']]){
     const entries=origins.filter(o=>o.group===group);
     if(!entries.length)continue;
     const optgroup=document.createElement('optgroup');optgroup.label=label;

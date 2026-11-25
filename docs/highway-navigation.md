@@ -1,3 +1,9 @@
+## Navigation changes (2026-11-25)
+
+- Saved routes to 청계영업소 use one exact user guide 8Q999472+MJ5 and destination 8Q9992VF+3HG from the selected departure. Existing return and highway-only routes are unchanged. Provider routing remains subject to map-app calculation.
+- 동서울영업소 → 수원신갈영업소 saved return retains only the original third guide 8Q9973CW+CJR; departure and final destination unchanged.
+- 서울영업소 is last within the existing office group; 판교IC and 성남IC are last in the existing other IC/JC group. No separate out-of-area groups. The top 송파IC/신갈JC group is unchanged.
+
 ## Navigation list order correction (2026-11-19)
 
 - The upper IC/JC group is restored to 송파IC and 신갈JC only.

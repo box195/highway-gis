@@ -11,7 +11,7 @@ import {navigationURL} from '../data/highway-routing.mjs';
 import {TOLL_GATES} from '../data/highway-tollgates.mjs';
 
 const cases=[
-  {name:'동서울영업소',gis:[37.5166,127.221],start:['8Q99G68C+4FH',37.5153125,127.221234375],vias:['8Q99F48C+QWM','OSM:186410728:south','8Q9973CW+CJR']},
+  {name:'동서울영업소',gis:[37.5166,127.221],start:['8Q99G68C+4FH',37.5153125,127.221234375],vias:['8Q9973CW+CJR']},
   {name:'경기광주영업소',gis:[37.4465,127.2668],start:['8Q99C7W8+HQ3',37.4463875,127.266921875],vias:['8Q9996WJ+69C','8Q9994H2+GVJ','8Q9973CW+CJR']},
   {name:'곤지암영업소',gis:[37.355,127.3214],start:['8Q99983C+XG6',37.3549125,127.321265625],vias:['8Q9996WJ+69C','8Q9994H2+GVJ','8Q9973CW+CJR']},
   // Synthetic GIS coordinate fixture only; return itself MUST share Gonjiam's override.
@@ -31,6 +31,8 @@ function decodeFullOLCCenter(code){
   return [lat,lng];
 }
 const knownVias={
+  '8Q999472+MJ5':[37.3641375,127.101609375],
+  '8Q9992VF+3HG':[37.3926875,127.023953125],
   '8Q99F48C+QWM':[37.4669625,127.122296875],
   'OSM:186410728:south':[37.456263302,127.1193993],
   '8Q99793C+WGJ':[37.2548375,127.371265625],
@@ -106,4 +108,29 @@ test('branch shares Gonjiam immutable return controls and departure override',()
   assert.equal(USER_SAVED_RETURN_DEPARTURES['경기광주지사'],USER_SAVED_RETURN_DEPARTURES['곤지암영업소']);
   assert.notEqual(USER_SAVED_RETURN_DEPARTURES['경기광주지사'],USER_SAVED_RETURN_DEPARTURES['경기광주영업소']);
   assert.deepEqual(cases.find(c=>c.name==='경기광주지사').vias,cases.find(c=>c.name==='곤지암영업소').vias);
+});
+
+test('Cheonggye outbound only uses exact single via and destination, both providers, GPS and manual',async()=>{
+  const office={name:'청계영업소',lat:37.379,lng:127.102};
+  const fixture={...data,offices:[...data.offices,office]};
+  const target=navigationCatalog(fixture).flatMap(g=>g.items).find(i=>i.label===office.name);
+  const dest=destinationPoint(target,fixture);
+  const manual=manualOriginDeparture(quickOriginChoices(fixture).find(i=>i.label==='수원신갈영업소'),fixture,TOLL_GATES);
+  const gps={lat:37.267,lng:127.1024,name:'현재 위치',officeName:'현재 위치',departureMode:'gps-current'};
+  for(const start of [gps,manual]){
+    const {choices}=await resolveQuickChoices({start,item:target,mode:'saved',destination:dest,data:fixture,cache:routeCache(null),loadGraph:async()=>{throw Error('saved outbound must not load graph');},savedDestinationRoute});
+    const r=choices[0].result;
+    assert.equal(r.kind,'saved');assert.equal(r.waypoints.length,1);
+    assert.equal(r.waypoints[0].code,'8Q999472+MJ5');assert.equal(r.goal.plusCode,'8Q9992VF+3HG');
+    assert.deepEqual([r.waypoints[0].lat,r.waypoints[0].lng],knownVias['8Q999472+MJ5']);
+    assert.deepEqual([r.goal.lat,r.goal.lng],knownVias['8Q9992VF+3HG']);
+    const origin=start.original||start;assert.deepEqual([r.start.lat,r.start.lng],[origin.lat,origin.lng]);
+    const k=new URL(kakaoNavigationURL(r)).searchParams,n=new URL(navigationURL(r,'https://example.org/gis')).searchParams;
+    assert.equal(k.get('vp'),'37.3641375,127.101609375');assert.equal(k.get('ep'),'37.3926875,127.023953125');assert.equal(k.has('vp2'),false);
+    assert.equal(n.get('v1lat'),'37.3641375');assert.equal(n.get('v1lng'),'127.101609375');assert.equal(n.get('dlat'),'37.3926875');assert.equal(n.get('dlng'),'127.023953125');assert.equal(n.has('v2lat'),false);
+  }
+  const start=manualOriginDeparture(quickOriginChoices(fixture).find(i=>i.label===office.name),fixture,TOLL_GATES);
+  const {choices}=await resolveQuickChoices({start,item,mode:'saved',destination,data:fixture,cache:routeCache(null),loadGraph:async()=>{throw Error('saved return must not load graph');},savedDestinationRoute});
+  assert.deepEqual(choices[0].result.waypoints.map(p=>p.code),['8Q9994H2+GVJ','8Q9973CW+CJR']);
+  assert.deepEqual([choices[0].result.goal.lat,choices[0].result.goal.lng],[37.2674875,127.102359375]);
 });

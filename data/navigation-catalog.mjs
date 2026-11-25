@@ -39,11 +39,10 @@ export function navigationCatalog(data={}){
   return [group('junctions','IC · JC',junctions),group('branches','지사',branches),
     group('offices','영업소',[
       ...offices.filter(p=>/영업소/.test(p.name||'')&&!/수원신갈|^서울영업소$/.test(keyOf(p.name))).map(office).sort((a,b)=>order.compare(a.label,b.label)),
-      ...offices.filter(p=>/광암터널.*관리|광암관리/.test(p.name||'')).map(office)
+      ...offices.filter(p=>/광암터널.*관리|광암관리/.test(p.name||'')).map(office),
+      ...offices.filter(p=>keyOf(p.name)==='서울영업소').map(office)
     ]),
-    group('other-junctions','그 외 IC · JC',remaining),
-    group('extra-junctions','추가 IC · 관외 참고',extraJunctions),
-    group('out-of-area','관외 영업소',offices.filter(p=>keyOf(p.name)==='서울영업소').map(office))];
+    group('other-junctions','그 외 IC · JC',[...remaining,...extraJunctions])];
 }
 
 export function destinationPoint(item,data={}){
@@ -58,12 +57,26 @@ export function destinationPoint(item,data={}){
     roadHint:p.roadHint||roadFrom(`${p.section||''} ${p.route_name||''} ${p.route||''}`),snapToHighway:item.kind==='junction'&&item.id!=='junction:songpa'};
 }
 
+// User-pinned outbound route only; do not change Cheonggye return or highway mode.
+export const CHEONGGYE_OUTBOUND_VIA={code:'8Q999472+MJ5',lat:37.3641375,lng:127.101609375};
+export const CHEONGGYE_OUTBOUND_GOAL={plusCode:'8Q9992VF+3HG',lat:37.3926875,lng:127.023953125};
+const isCheonggyeOutbound=(start,item)=>item?.kind==='office'&&keyOf(item.source?.name||item.label)==='청계영업소'&&keyOf(start?.officeName)!=='청계영업소';
 export function isRegisteredSavedPair(start,item){
+  if(isCheonggyeOutbound(start,item))return true;
   return !!(start?.originId==='junction:songpa'&&item?.kind==='office'&&/수원신갈|수원영업소/.test(item.source?.name||'')||
     start?.gateName==='수원신갈톨게이트'&&item?.id==='junction:songpa');
 }
 
 export function savedDestinationRoute(start,item,data={}){
+  if(isCheonggyeOutbound(start,item)){
+    const source=validPoint(start.original)?start.original:start;
+    if(!validPoint(source))throw new Error('저장 출발 좌표를 확인할 수 없습니다.');
+    const from={lat:source.lat,lng:source.lng,name:start.name||start.officeName||'출발지'};
+    const goal={...CHEONGGYE_OUTBOUND_GOAL,name:item.label||'청계영업소'};
+    const waypoints=[{...CHEONGGYE_OUTBOUND_VIA,name:'1. 저장 경유지'}];
+    return {kind:'saved',start:from,goal,waypoints,points:[from,...waypoints,goal],roads:[],
+      arrivalDirection:'청계영업소행 · 사용자 지정 저장 경유지',routeVerification:'user-specified-waypoints-provider-not-verified'};
+  }
   if(start.originId==='junction:songpa'&&item.kind==='office'&&/수원신갈|수원영업소/.test(item.source?.name||''))
     return savedRoute('songpa','suwon',data.offices||[],data.interchanges||[]);
   if(start.gateName==='수원신갈톨게이트'&&item.id==='junction:songpa')
